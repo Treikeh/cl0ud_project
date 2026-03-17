@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dfwa3ko7oftnj"]
+
+[ext_resource type="Script" uid="uid://o3jq0suibbq8" path="res://entities/player/player.gd" id="1_symyc"]
+[ext_resource type="Script" uid="uid://d25wwc75tdqj5" path="res://entities/player/player_interact_ray.gd" id="2_abrql"]
+[ext_resource type="Script" uid="uid://cxekl8tsteanp" path="res://entities/player/player_ground_check.gd" id="3_bls4j"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bls4j"]
+friction = 0.0
+rough = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sfv1e"]
+radius = 0.4
+height = 1.5
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bls4j"]
+radius = 0.25
+height = 1.0
+
+[node name="Player" type="RigidBody3D" unique_id=913738857 node_paths=PackedStringArray("_orientation", "_head", "_interact_ray", "_ground_check")]
+collision_layer = 2
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_bls4j")
+lock_rotation = true
+script = ExtResource("1_symyc")
+_orientation = NodePath("Orientation")
+_head = NodePath("Orientation/Head")
+_interact_ray = NodePath("Orientation/Head/InteractRay")
+_air_accel = 250.0
+_ground_check = NodePath("GroundCheck")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1270325616]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+shape = SubResource("CapsuleShape3D_sfv1e")
+
+[node name="Orientation" type="Node3D" parent="." unique_id=255627194]
+
+[node name="Head" type="Node3D" parent="Orientation" unique_id=328004600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Orientation/Head" unique_id=1569207722]
+fov = 90.0
+
+[node name="InteractRay" type="RayCast3D" parent="Orientation/Head" unique_id=1370547296]
+target_position = Vector3(0, 0, -1.7)
+collision_mask = 17
+collide_with_areas = true
+script = ExtResource("2_abrql")
+
+[node name="GroundCheck" type="ShapeCast3D" parent="." unique_id=1000335560 node_paths=PackedStringArray("_ray_cast_3d")]
+shape = SubResource("CapsuleShape3D_bls4j")
+margin = 0.1
+max_results = 1
+debug_shape_custom_color = Color(1, 0, 0.2833333, 1)
+script = ExtResource("3_bls4j")
+_max_slope_angle = null
+_leave_floor_force = 3.0
+_rest_height = null
+_spring_force = null
+_spring_damping = null
+_ray_cast_3d = NodePath("RayCast3D")
+
+[node name="RayCast3D" type="RayCast3D" parent="GroundCheck" unique_id=1829849717]
+target_position = Vector3(0, -1.6, 0)
+debug_shape_custom_color = Color(1, 0, 0.28235295, 1)
