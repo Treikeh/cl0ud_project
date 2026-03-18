@@ -32,6 +32,12 @@ height = 0.1
 radial_segments = 8
 rings = 0
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_fkugw"]
+radius = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bls4j"]
+radius = 0.25
+
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_sglur"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sglur"]
@@ -44,10 +50,7 @@ transitions = ["Start", "End", SubResource("AnimationNodeStateMachineTransition_
 radius = 0.25
 height = 1.0
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_bls4j"]
-radius = 0.25
-
-[node name="Player" type="RigidBody3D" unique_id=913738857 node_paths=PackedStringArray("_orientation", "_head", "_interact_ray", "_ground_check", "_fishing_rod", "_hook", "_fishing_line", "_fishing_line_makrer")]
+[node name="Player" type="RigidBody3D" unique_id=913738857 node_paths=PackedStringArray("_orientation", "_head", "_interact_ray", "_ground_check", "_fishing_rod", "_hook", "_fishing_line", "_fishing_line_makrer", "_pin_joint", "_pin_anchor")]
 collision_layer = 2
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_bls4j")
@@ -59,10 +62,12 @@ _interact_ray = NodePath("Orientation/Head/InteractRay")
 _air_accel = 250.0
 _ground_check = NodePath("GroundCheck")
 _fishing_rod = NodePath("Orientation/Head/FishingRod")
-_hook = NodePath("Hook")
+_hook = NodePath("Orientation/Head/FishingRod/Mesh/LineMarker/Hook")
 _fishing_line = NodePath("Orientation/Head/FishingRod/LineMesh")
 _fishing_line_makrer = NodePath("Orientation/Head/FishingRod/Mesh/LineMarker")
 _fishing_line_mat = SubResource("StandardMaterial3D_fkugw")
+_pin_joint = NodePath("Orientation/Head/FishingRod/Mesh/LineMarker/PinJoint3D")
+_pin_anchor = NodePath("Orientation/Head/FishingRod/Mesh/LineMarker/PinAnchor")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1270325616]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
@@ -98,6 +103,31 @@ mesh = SubResource("CylinderMesh_bls4j")
 [node name="LineMarker" type="Marker3D" parent="Orientation/Head/FishingRod/Mesh" unique_id=1007376455]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 1.3999999, 0)
 
+[node name="PinJoint3D" type="PinJoint3D" parent="Orientation/Head/FishingRod/Mesh/LineMarker" unique_id=863355038]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 0, 0)
+node_a = NodePath("../PinAnchor")
+node_b = NodePath("../Hook")
+
+[node name="PinAnchor" type="StaticBody3D" parent="Orientation/Head/FishingRod/Mesh/LineMarker" unique_id=1549217174]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Orientation/Head/FishingRod/Mesh/LineMarker/PinAnchor" unique_id=244702126]
+shape = SubResource("SphereShape3D_fkugw")
+
+[node name="Hook" type="RigidBody3D" parent="Orientation/Head/FishingRod/Mesh/LineMarker" unique_id=2060728186]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, -0.7071068, 0, 0.7071068, 0.7071068, 0, -0.3954885, -0.39548856)
+collision_layer = 8
+collision_mask = 8
+linear_damp = 2.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Orientation/Head/FishingRod/Mesh/LineMarker/Hook" unique_id=10005906]
+shape = SubResource("SphereShape3D_bls4j")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="Fishing_Hook_001_FBX" parent="Orientation/Head/FishingRod/Mesh/LineMarker/Hook" unique_id=1270857284 instance=ExtResource("4_bls4j")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.6, 0)
+
 [node name="LineMesh" type="MeshInstance3D" parent="Orientation/Head/FishingRod" unique_id=569322381]
 top_level = true
 mesh = SubResource("ImmediateMesh_sglur")
@@ -120,17 +150,5 @@ _ray_cast_3d = NodePath("RayCast3D")
 [node name="RayCast3D" type="RayCast3D" parent="GroundCheck" unique_id=1829849717]
 target_position = Vector3(0, -1.6, 0)
 debug_shape_custom_color = Color(1, 0, 0.28235295, 1)
-
-[node name="Hook" type="RigidBody3D" parent="." unique_id=2060728186]
-top_level = true
-collision_layer = 8
-collision_mask = 8
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hook" unique_id=10005906]
-shape = SubResource("SphereShape3D_bls4j")
-debug_color = Color(1, 0, 0, 0.41960785)
-
-[node name="Fishing_Hook_001_FBX" parent="Hook" unique_id=1270857284 instance=ExtResource("4_bls4j")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.4, 0)
 
 [node name="Hud" parent="." unique_id=905877039 instance=ExtResource("5_fkugw")]

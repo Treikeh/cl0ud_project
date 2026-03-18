@@ -17,7 +17,7 @@ var _move_input: Vector2
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-	_reset_hook()
+	#_reset_hook()
 	Globals.fish_caught.connect(_on_fish_caught)
 	
 	# Add timer for fishing
@@ -67,8 +67,7 @@ func _process(delta: float) -> void:
 		var _v_rot: float = atan2(dir_to_hook.y, -dir_to_hook.z)
 		_head.rotation.x = lerp_angle(_head.rotation.x, _v_rot - Globals.minigame_look_dir.y, 3.0 * delta)
 	
-	if _fishing_state == FishingState.WAITING or _fishing_state == FishingState.FISH_HOOKED:
-		_display_fishing_line()
+	_display_fishing_line()
 
 
 func _physics_process(delta: float) -> void:
@@ -148,6 +147,8 @@ enum FishingState {
 @export var _fishing_line: MeshInstance3D
 @export var _fishing_line_makrer: Marker3D
 @export var _fishing_line_mat: Material
+@export var _pin_joint: PinJoint3D
+@export var _pin_anchor: StaticBody3D
 
 @onready var _line_mesh: ImmediateMesh = _fishing_line.mesh
 
@@ -160,25 +161,32 @@ func _ready_fishing_rod() -> void:
 
 
 func _throw_hook() -> void:
-	_hook.show()
-	_hook.process_mode = Node.PROCESS_MODE_INHERIT
-	_hook.global_position = _head.global_position
-	_hook.apply_central_impulse(-_head.global_basis.z * 15.0)
+	_pin_joint.node_b = _pin_anchor.get_path()
+	_hook.top_level = true
+	_hook.linear_damp = 0.0
 	
 	_fish_timer.start()
 	
 	_fishing_state = FishingState.WAITING
+	
+	await get_tree().physics_frame
+	_hook.global_position = _head.global_position
+	_hook.apply_central_impulse(-_head.global_basis.z * 15.0)
 
 
 func _reset_hook() -> void:
-	_hook.hide()
+	_hook.top_level = false
 	_hook.linear_velocity = Vector3.ZERO
 	_hook.angular_velocity = Vector3.ZERO
-	_hook.process_mode = Node.PROCESS_MODE_DISABLED
-	
-	_line_mesh.clear_surfaces()
+	_hook.linear_damp = 2.0
+	_hook.gravity_scale = 1.0
 	
 	_fishing_state = FishingState.IDLE
+	
+	await get_tree().physics_frame
+	_hook.rotation_degrees = Vector3.ZERO
+	_hook.global_position = _fishing_line_makrer.global_position + (-_fishing_line_makrer.global_basis.y * 0.5)
+	_pin_joint.node_b = _hook.get_path()
 
 
 func _fish_hooked() -> void:
@@ -191,12 +199,12 @@ func _display_fishing_line() -> void:
 	_line_mesh.clear_surfaces()
 	_line_mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLE_STRIP, _fishing_line_mat)
 	# End point
-	_line_mesh.surface_add_vertex(_hook.global_position + _hook.global_basis.x * 0.1)
-	_line_mesh.surface_add_vertex(_hook.global_position - _hook.global_basis.x * 0.1)
+	_line_mesh.surface_add_vertex(_hook.global_position + _hook.global_basis.x * 0.05)
+	_line_mesh.surface_add_vertex(_hook.global_position - _hook.global_basis.x * 0.05)
 	
 	# Start point
-	_line_mesh.surface_add_vertex(_fishing_line_makrer.global_position + global_basis.x * 0.1)
-	_line_mesh.surface_add_vertex(_fishing_line_makrer.global_position - global_basis.x * 0.1)
+	_line_mesh.surface_add_vertex(_fishing_line_makrer.global_position + global_basis.x * 0.05)
+	_line_mesh.surface_add_vertex(_fishing_line_makrer.global_position - global_basis.x * 0.05)
 	
 	_line_mesh.surface_end()
 
