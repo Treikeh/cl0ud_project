@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cu6p31ihl50lr"]
+
+[ext_resource type="PackedScene" uid="uid://c381j0jew4pue" path="res://entities/player/art/Fishing_Hook_001_FBX.fbx" id="1_1lkct"]
+
+[node name="Fishing_Hook_001_FBX" unique_id=1270857284 instance=ExtResource("1_1lkct")]

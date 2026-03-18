@@ -13,7 +13,7 @@ var ground_normal: Vector3 = Vector3.UP
 
 @export_group(" ")
 @export var _ray_cast_3d: RayCast3D
-@onready var _player: Pla = get_owner()
+@onready var _player: Player = get_owner()
 
 
 func _ready() -> void:

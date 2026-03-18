@@ -1,6 +1,47 @@
 [gd_scene format=3 uid="uid://eikdd5p1w6ay"]
 
-[node name="Hud" type="Control" unique_id=905877039]
+[ext_resource type="Script" uid="uid://dgpjp7pblgnxr" path="res://gui/hud/hud.gd" id="1_34rqw"]
+[ext_resource type="Script" uid="uid://drlcq8ygjjqww" path="res://gui/hud/minigame/catch_minigame.gd" id="2_4w87a"]
+[ext_resource type="Script" uid="uid://b6ql3glvvy5g3" path="res://gui/hud/minigame/minigames_root.gd" id="2_rllpj"]
+[ext_resource type="Script" uid="uid://if1588sw7wgk" path="res://gui/hud/minigame/reel_inn_minigame.gd" id="4_y7mac"]
+
+[sub_resource type="Gradient" id="Gradient_i4ntl"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.5395189)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tq0k8"]
+gradient = SubResource("Gradient_i4ntl")
+width = 500
+height = 500
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_y7mac"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.61648744, 0.7060932)
+colors = PackedColorArray(0, 0, 0, 0, 0.21230483, 0.21230483, 0.21230483, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uffwq"]
+gradient = SubResource("Gradient_y7mac")
+width = 80
+height = 80
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_uffwq"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.63799286, 0.6953405)
+colors = PackedColorArray(0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yi2h0"]
+gradient = SubResource("Gradient_uffwq")
+width = 80
+height = 80
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Hud" type="Control" unique_id=905877039 node_paths=PackedStringArray("_minigames_root")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -8,3 +49,179 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_34rqw")
+_minigames_root = NodePath("MinigamesRoot")
+
+[node name="MinigamesRoot" type="Control" parent="." unique_id=1124943892 node_paths=PackedStringArray("_catch_minigame", "_reel_inn_minigame")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_rllpj")
+_catch_minigame = NodePath("CatchMinigame")
+_reel_inn_minigame = NodePath("ReelInnMinigame")
+
+[node name="CatchMinigame" type="Control" parent="MinigamesRoot" unique_id=506971923 node_paths=PackedStringArray("_background", "_hit_area", "_hit_marker")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_4w87a")
+_background = NodePath("Background")
+_hit_area = NodePath("Background/HitArea")
+_hit_marker = NodePath("Background/HitMarker")
+
+[node name="Background" type="ColorRect" parent="MinigamesRoot/CatchMinigame" unique_id=890102945]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = 126.0
+offset_right = 400.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+color = Color(0, 0, 0, 1)
+
+[node name="HitArea" type="ColorRect" parent="MinigamesRoot/CatchMinigame/Background" unique_id=708200049]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -12.0
+offset_right = 105.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+color = Color(0, 1, 0, 1)
+
+[node name="HitMarker" type="ColorRect" parent="MinigamesRoot/CatchMinigame/Background" unique_id=957523996]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 10.0
+offset_bottom = 20.0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="ReelInnMinigame" type="Control" parent="MinigamesRoot" unique_id=1363834575 node_paths=PackedStringArray("_center", "_cursor", "_border", "_slice_root", "_lives_container")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_y7mac")
+_center = NodePath("Center")
+_cursor = NodePath("Cursor")
+_border = NodePath("CircleBorder")
+_slice_root = NodePath("SliceRoot")
+_lives_container = NodePath("LivesContainer")
+
+[node name="SliceRoot" type="TextureRect" parent="MinigamesRoot/ReelInnMinigame" unique_id=1995171793]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_tq0k8")
+
+[node name="Center" type="Control" parent="MinigamesRoot/ReelInnMinigame" unique_id=1880764443]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CircleBorder" type="TextureProgressBar" parent="MinigamesRoot/ReelInnMinigame" unique_id=95924162]
+texture_filter = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+max_value = 3.0
+value = 1.0
+fill_mode = 4
+texture_under = SubResource("GradientTexture2D_uffwq")
+texture_progress = SubResource("GradientTexture2D_yi2h0")
+
+[node name="LivesContainer" type="HBoxContainer" parent="MinigamesRoot/ReelInnMinigame" unique_id=2064892866]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -249.0
+offset_right = 35.0
+offset_bottom = -209.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="MinigamesRoot/ReelInnMinigame/LivesContainer" unique_id=1455903133]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="MinigamesRoot/ReelInnMinigame/LivesContainer" unique_id=1752318289]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="ColorRect3" type="ColorRect" parent="MinigamesRoot/ReelInnMinigame/LivesContainer" unique_id=1716919454]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Cursor" type="ColorRect" parent="MinigamesRoot/ReelInnMinigame" unique_id=612254619]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)

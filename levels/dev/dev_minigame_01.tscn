@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bumk7cb6vn276"]
 
 [ext_resource type="Material" uid="uid://ce2hxdgei0dpw" path="res://common/materials/dev_grid_gray_01.tres" id="1_8iyw0"]
+[ext_resource type="Script" uid="uid://yujpmwatwi0d" path="res://levels/dev/dev_minigame_01.gd" id="1_o8832"]
 [ext_resource type="PackedScene" uid="uid://dfwa3ko7oftnj" path="res://entities/player/player.tscn" id="2_jg8us"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qwri6"]
@@ -15,8 +16,14 @@ background_mode = 2
 sky = SubResource("Sky_8iyw0")
 tonemap_mode = 2
 glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jg8us"]
+size = Vector3(100, 40, 100)
 
 [node name="DevMinigame01" type="Node3D" unique_id=1968061625]
+script = ExtResource("1_o8832")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1604946950]
 environment = SubResource("Environment_jg8us")
@@ -30,26 +37,28 @@ shadow_enabled = true
 [node name="Building01" type="CSGBox3D" parent="Environment" unique_id=873620130]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50, 0)
 use_collision = true
-size = Vector3(10, 100, 10)
+size = Vector3(20, 100, 20)
 material = ExtResource("1_8iyw0")
 
 [node name="Building01" type="CSGBox3D" parent="Environment/Building01" unique_id=1499289973]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50.2, 0)
 operation = 2
-size = Vector3(9.5, 1, 9.5)
+size = Vector3(19.5, 1, 19.5)
 material = ExtResource("1_8iyw0")
 
-[node name="Building02" type="CSGBox3D" parent="Environment" unique_id=859206604]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50, 0)
-use_collision = true
-size = Vector3(10, 100, 10)
-material = ExtResource("1_8iyw0")
+[node name="FogVolume" type="FogVolume" parent="Environment" unique_id=937911758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -32.419815, 0)
+size = Vector3(100, 40, 100)
 
-[node name="Building01" type="CSGBox3D" parent="Environment/Building02" unique_id=1718386344]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50.2, 0)
-operation = 2
-size = Vector3(9.5, 1, 9.5)
-material = ExtResource("1_8iyw0")
+[node name="FogArea" type="Area3D" parent="Environment/FogVolume" unique_id=1200789376]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/FogVolume/FogArea" unique_id=1095005817]
+shape = SubResource("BoxShape3D_jg8us")
 
 [node name="Player" parent="." unique_id=913738857 instance=ExtResource("2_jg8us")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[connection signal="body_entered" from="Environment/FogVolume/FogArea" to="." method="_on_fog_area_body_entered"]

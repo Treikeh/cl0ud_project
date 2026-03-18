@@ -96,6 +96,7 @@ reel_hook={
 
 3d_physics/layer_1="environment"
 3d_physics/layer_2="character"
+3d_physics/layer_4="hook"
 3d_physics/layer_5="interact"
 
 [physics]

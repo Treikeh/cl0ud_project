@@ -9,22 +9,24 @@ const GRAVITY_DIR: Vector3 = Vector3.DOWN
 @export var _head: Node3D
 @export var _interact_ray: RayCast3D
 
+var _is_jumping: bool = false
 var _camera_sens: float = 0.1
 var _move_input: Vector2
-
-@export_group("Movement")
-@export var _move_speed: float = 6.0
-@export var _ground_accel: float = 500.0
-@export var _air_accel: float = 200.0
-@export var _jump_force: float = 5.0
-@export var _ground_check: ShapeCast3D
-
-var _is_jumping: bool = false
-var _move_dir: Vector3
 
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	_reset_hook()
+	Globals.fish_caught.connect(_on_fish_caught)
+	
+	# Add timer for fishing
+	_fish_timer = Timer.new()
+	_fish_timer.wait_time = 3.0
+	_fish_timer.one_shot = true
+	_fish_timer.autostart = false
+	_fishing_rod.add_child(_fish_timer)
+	_fish_timer.timeout.connect(_fish_hooked)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -41,8 +43,32 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		_interact_ray.try_interact()
 	
+	if event.is_action_pressed("throw_hook"):
+		if _fishing_state == FishingState.IDLE:
+			_ready_fishing_rod()
+	if event.is_action_released("throw_hook"):
+		if _fishing_state == FishingState.READY_THROW:
+			_throw_hook()
+	
+	if event.is_action_pressed("reel_hook"):
+		if _fishing_state != FishingState.IDLE:
+			_reset_hook()
+	
 	_move_input = Input.get_vector("move_l", "move_r", "move_f", "move_b")
 	_move_dir = _orientation.global_basis * Vector3(_move_input.x, 0.0, _move_input.y).normalized()
+
+
+func _process(delta: float) -> void:
+	if _fishing_state == FishingState.FISH_HOOKED:
+		# Make the camera look at the hook
+		var dir_to_hook: Vector3 = _head.global_position.direction_to(_hook.global_position)
+		var _h_rot: float = atan2(-dir_to_hook.x, -dir_to_hook.z)
+		_orientation.rotation.y = lerp_angle(_orientation.rotation.y, _h_rot - Globals.minigame_look_dir.x, 3.0 * delta)
+		var _v_rot: float = atan2(dir_to_hook.y, -dir_to_hook.z)
+		_head.rotation.x = lerp_angle(_head.rotation.x, _v_rot - Globals.minigame_look_dir.y, 3.0 * delta)
+	
+	if _fishing_state == FishingState.WAITING or _fishing_state == FishingState.FISH_HOOKED:
+		_display_fishing_line()
 
 
 func _physics_process(delta: float) -> void:
@@ -50,6 +76,18 @@ func _physics_process(delta: float) -> void:
 		_walking_physics(delta)
 	else:
 		_falling_physics(delta)
+
+
+#region Movement
+
+@export_group("Movement")
+@export var _move_speed: float = 6.0
+@export var _ground_accel: float = 500.0
+@export var _air_accel: float = 200.0
+@export var _jump_force: float = 5.0
+@export var _ground_check: ShapeCast3D
+
+var _move_dir: Vector3
 
 
 func _walking_physics(delta: float) -> void:
@@ -89,3 +127,89 @@ func _falling_physics(delta: float) -> void:
 
 func _jump() -> void:
 	set_axis_velocity(-GRAVITY_DIR * _jump_force)
+
+#endregion
+
+
+#region Fishing
+
+
+enum FishingState {
+	IDLE,
+	READY_THROW,
+	WAITING,
+	FISH_HOOKED,
+}
+
+
+@export_group("Fishing")
+@export var _fishing_rod: Node3D
+@export var _hook: RigidBody3D
+@export var _fishing_line: MeshInstance3D
+@export var _fishing_line_makrer: Marker3D
+@export var _fishing_line_mat: Material
+
+@onready var _line_mesh: ImmediateMesh = _fishing_line.mesh
+
+var _fishing_state: FishingState = FishingState.IDLE
+var _fish_timer: Timer
+
+
+func _ready_fishing_rod() -> void:
+	_fishing_state = FishingState.READY_THROW
+
+
+func _throw_hook() -> void:
+	_hook.show()
+	_hook.process_mode = Node.PROCESS_MODE_INHERIT
+	_hook.global_position = _head.global_position
+	_hook.apply_central_impulse(-_head.global_basis.z * 15.0)
+	
+	_fish_timer.start()
+	
+	_fishing_state = FishingState.WAITING
+
+
+func _reset_hook() -> void:
+	_hook.hide()
+	_hook.linear_velocity = Vector3.ZERO
+	_hook.angular_velocity = Vector3.ZERO
+	_hook.process_mode = Node.PROCESS_MODE_DISABLED
+	
+	_line_mesh.clear_surfaces()
+	
+	_fishing_state = FishingState.IDLE
+
+
+func _fish_hooked() -> void:
+	if _fishing_state == FishingState.WAITING:
+		_fishing_state = FishingState.FISH_HOOKED
+		Globals.fish_hooked.emit()
+
+
+func _display_fishing_line() -> void:
+	_line_mesh.clear_surfaces()
+	_line_mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLE_STRIP, _fishing_line_mat)
+	# End point
+	_line_mesh.surface_add_vertex(_hook.global_position + _hook.global_basis.x * 0.1)
+	_line_mesh.surface_add_vertex(_hook.global_position - _hook.global_basis.x * 0.1)
+	
+	# Start point
+	_line_mesh.surface_add_vertex(_fishing_line_makrer.global_position + global_basis.x * 0.1)
+	_line_mesh.surface_add_vertex(_fishing_line_makrer.global_position - global_basis.x * 0.1)
+	
+	_line_mesh.surface_end()
+
+
+func _on_fish_caught()-> void:
+	_reset_hook()
+	_fishing_state = FishingState.IDLE
+
+#endregion
+
+
+#region UI
+
+
+
+#endregion
