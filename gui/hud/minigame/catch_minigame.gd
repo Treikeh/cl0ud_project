@@ -12,6 +12,9 @@ signal failed
 
 
 func _input(event: InputEvent) -> void:
+	if not visible:
+		return
+	
 	if event.is_action_pressed("throw_hook"):
 		_try_hit_area()
 

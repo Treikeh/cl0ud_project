@@ -5,22 +5,22 @@ signal succeeded
 signal failed
 
 
-const SLICE_SCENE: PackedScene = preload("res://gui/hud/minigame/minigame_slice.tscn")
-
-
-@export var _max_lives: int = 3
-@export var _required_hits: int = 5
+@export var _hit_area_rotation_speed: float = 50.0
+@export var _increase_speed: float = 30.0
+@export var _decrease_speed: float = 20.0
 @export var _center: Control
 @export var _cursor: Control
 @export var _border: TextureProgressBar
-@export var _slice_root: Control
-@export var _lives_container: HBoxContainer
+@export var _hit_area: TextureProgressBar
+@export var _hit_area_target: Control
+@export var _hit_area_timer: Timer
 
-var _lives: int
-var _successful_hits: int = 0
+var player: Player
+var _hit_area_rotation_direction: int = 1
+var _rotate_hit_area: bool = true
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if not visible:
 		return
 	
@@ -33,8 +33,32 @@ func _process(_delta: float) -> void:
 	
 	_cursor.position = cursor_start + (cursor_dir * cursor_distance) - (_cursor.size / 2.0)
 	# Get the rotation of the cursor from the center of the minigame
-	Globals.minigame_look_dir = (cursor_dir * remap(cursor_distance, 0.0, 100.0, 0.0, 1.0)) / 10.0
-	#cursor_rotation = rad_to_deg(atan2(cursor_dir.x, -cursor_dir.y))
+	player.minigame_look_dir = (cursor_dir * remap(cursor_distance, 0.0, 100.0, 0.0, 1.0)) / 7.5
+	
+	# Rotate hit area
+	if _rotate_hit_area:
+		_hit_area.rotation_degrees += _hit_area_rotation_direction * _hit_area_rotation_speed * delta
+		if _hit_area.rotation_degrees > 180.0:
+			_hit_area.rotation_degrees = -179.0
+		elif _hit_area.rotation_degrees < -180.0:
+			_hit_area.rotation_degrees = 179.0
+	
+	# Get the direction of the hit area
+	var hit_area_dir: Vector2 = cursor_start.direction_to(_hit_area_target.global_position)
+	var hit_area_rot: float = rad_to_deg(atan2(hit_area_dir.x, -hit_area_dir.y))
+	var hit_area_offset: float = _hit_area.value
+	
+	var cursor_rotation: float = rad_to_deg(atan2(cursor_dir.x, -cursor_dir.y))
+	if cursor_rotation >= (hit_area_rot - hit_area_offset) and cursor_rotation <= (hit_area_rot + hit_area_offset):
+		# Increase value if inside hit area
+		_border.value += _increase_speed * delta
+		if _border.value >= 100.0:
+			succeeded.emit()
+	else:
+		# Decrease value if outside of hit area
+		_border.value -= _decrease_speed * delta
+		if _border.value <= 0.0:
+			failed.emit()
 
 
 func start_minigame() -> void:
@@ -42,58 +66,32 @@ func start_minigame() -> void:
 	show()
 	process_mode = Node.PROCESS_MODE_INHERIT
 	# Reset minigame
-	_lives = 0
-	_successful_hits = 0
-	_border.value = 0
-	_border.max_value = _required_hits
+	_border.value = 50.0
+	_hit_area.rotation_degrees = randf_range(-180.0, 180.0)
+	_hit_area_timer.wait_time = randf_range(1.0, 2.0)
+	_hit_area_timer.start()
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
-	
-	# Reset health bars
-	for child: ColorRect in _lives_container.get_children():
-		child.color = Color.WHITE
-	
-	# Spawn the first slice
-	_spawn_slice()
 
 
 func end_minigame() -> void:
-	# Remove all slices
-	for child: Control in _slice_root.get_children():
-		_slice_root.remove_child(child)
-		child.queue_free()
 	# Disable minigame
+	_hit_area_timer.stop()
 	hide()
 	process_mode = Node.PROCESS_MODE_DISABLED
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
-func _spawn_slice() -> void:
-	var center_pos: Vector2 = _center.global_position
-	var spawn_dir: Vector2 = Vector2(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)).normalized()
-	var slice: Control = SLICE_SCENE.instantiate().with_data(center_pos)
-	_slice_root.add_child(slice)
-	slice.global_position = center_pos + (spawn_dir * 400.0)
+func _on_rotate_hit_area_timer_timeout() -> void:
+	_rotate_hit_area = false
 	
-	slice.hit.connect(_hit_slice)
-	slice.missed.connect(_missed_slice)
-
-
-func _hit_slice() -> void:
-	# Increase the hit
-	_successful_hits += 1
-	_border.value = float(_successful_hits)
-	if _successful_hits >= _required_hits:
-		succeeded.emit()
-	else:
-		_spawn_slice()
-
-
-func _missed_slice() -> void:
-	# Lives goes in reverse order so that it's easeir to change the children of the lives container
-	_lives_container.get_child(_lives).color = Color.BLACK
-	_lives += 1
-	if _lives >= _max_lives:
-		failed.emit()
-	else:
-		_spawn_slice()
+	var hit_area_rot: float = randf_range(-180.0, 180.0)
+	var tween: Tween = create_tween()
+	tween.tween_property(_hit_area, "rotation_degrees", hit_area_rot, 0.75)
+	
+	await tween.finished
+	_hit_area_timer.wait_time = randf_range(1.0, 2.0)
+	_hit_area_timer.start()
+	# Make the hit area rotate again
+	_rotate_hit_area = true
+	_hit_area_rotation_direction = 1 if randi() & 1 else -1

@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://d25wwc75tdqj5" path="res://entities/player/player_interact_ray.gd" id="2_abrql"]
 [ext_resource type="Script" uid="uid://cxekl8tsteanp" path="res://entities/player/player_ground_check.gd" id="3_bls4j"]
 [ext_resource type="PackedScene" uid="uid://cu6p31ihl50lr" path="res://entities/player/art/fishing_hook_001_fbx.tscn" id="4_bls4j"]
-[ext_resource type="PackedScene" uid="uid://eikdd5p1w6ay" path="res://gui/hud/hud.tscn" id="5_fkugw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bls4j"]
 friction = 0.0
@@ -116,7 +115,7 @@ collision_mask = 0
 shape = SubResource("SphereShape3D_fkugw")
 
 [node name="Hook" type="RigidBody3D" parent="Orientation/Head/FishingRod/Mesh/LineMarker" unique_id=2060728186]
-transform = Transform3D(1, 0, 0, 0, 0.7071068, -0.7071068, 0, 0.7071068, 0.7071068, 0, -0.3954885, -0.39548856)
+transform = Transform3D(1, 0, 0, 0, 0.7071068, -0.7071068, 0, 0.7071068, 0.7071068, 0, -0.25406718, -0.25406718)
 collision_layer = 8
 collision_mask = 8
 linear_damp = 2.0
@@ -124,6 +123,9 @@ linear_damp = 2.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Orientation/Head/FishingRod/Mesh/LineMarker/Hook" unique_id=10005906]
 shape = SubResource("SphereShape3D_bls4j")
 debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="HookMarker" type="Marker3D" parent="Orientation/Head/FishingRod/Mesh/LineMarker/Hook" unique_id=1937369007]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.49999997, 0)
 
 [node name="Fishing_Hook_001_FBX" parent="Orientation/Head/FishingRod/Mesh/LineMarker/Hook" unique_id=1270857284 instance=ExtResource("4_bls4j")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.6, 0)
@@ -150,5 +152,3 @@ _ray_cast_3d = NodePath("RayCast3D")
 [node name="RayCast3D" type="RayCast3D" parent="GroundCheck" unique_id=1829849717]
 target_position = Vector3(0, -1.6, 0)
 debug_shape_custom_color = Color(1, 0, 0.28235295, 1)
-
-[node name="Hud" parent="." unique_id=905877039 instance=ExtResource("5_fkugw")]

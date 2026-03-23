@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ciah8v4sm6mal"]
+
+[ext_resource type="Texture2D" uid="uid://d15kjse6cmudb" path="res://entities/fish/test_fish/art/fish_PNG25128.png" id="1_ygg6o"]
+
+[node name="TestFish" type="Node3D" unique_id=1775532849]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=112473690]
+transform = Transform3D(-2.1855695e-09, -0.05, 0, 0.05, -2.1855695e-09, 0, 0, 0, 0.05, -0.038699776, -0.32945567, 0)
+texture = ExtResource("1_ygg6o")
