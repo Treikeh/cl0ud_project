@@ -1,8 +1,19 @@
 [gd_scene format=3 uid="uid://ciah8v4sm6mal"]
 
+[ext_resource type="Script" uid="uid://bn8cvi8v24chh" path="res://entities/fish/fish.gd" id="1_83501"]
 [ext_resource type="Texture2D" uid="uid://d15kjse6cmudb" path="res://entities/fish/test_fish/art/fish_PNG25128.png" id="1_ygg6o"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/inventory/item_data.gd" id="3_4664w"]
 
-[node name="TestFish" type="Node3D" unique_id=1775532849]
+[sub_resource type="Resource" id="Resource_st48c"]
+script = ExtResource("3_4664w")
+icon = ExtResource("1_ygg6o")
+mesh_scene = "uid://ciah8v4sm6mal"
+metadata/_custom_type_script = "uid://cpwq317sdbfrp"
+
+[node name="TestFish" type="Node3D" unique_id=543626414]
+script = ExtResource("1_83501")
+item_data = SubResource("Resource_st48c")
+metadata/_custom_type_script = "uid://bn8cvi8v24chh"
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=112473690]
 transform = Transform3D(-2.1855695e-09, -0.05, 0, 0.05, -2.1855695e-09, 0, 0, 0, 0.05, -0.038699776, -0.32945567, 0)

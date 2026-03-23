@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cs35qk6fai74g"]
+
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_228g5"]
+[ext_resource type="Script" uid="uid://c8tl41bthlca" path="res://gui/inventory/inventory_slot/inventory_slot.gd" id="1_birfg"]
+
+[node name="InventorySlot" type="PanelContainer" unique_id=1513532196 node_paths=PackedStringArray("_icon")]
+custom_minimum_size = Vector2(40, 40)
+script = ExtResource("1_birfg")
+_icon = NodePath("MarginContainer/TextureRect")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1987953409]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=453834868]
+layout_mode = 2
+texture = ExtResource("1_228g5")
+expand_mode = 2
+stretch_mode = 5

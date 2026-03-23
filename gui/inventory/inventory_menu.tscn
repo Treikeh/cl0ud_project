@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://6lg7o50gd213"]
+
+[ext_resource type="Script" uid="uid://dqae2162fmbul" path="res://gui/inventory/inventory_menu.gd" id="1_l30io"]
+[ext_resource type="PackedScene" uid="uid://cs35qk6fai74g" path="res://gui/inventory/inventory_slot/inventory_slot.tscn" id="2_6o4wp"]
+
+[node name="Inventory" type="Control" unique_id=814013906 node_paths=PackedStringArray("_slot_grid", "_mesh_marker", "_select_marker")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l30io")
+_slot_grid = NodePath("VBoxContainer/SlotGrid")
+_mesh_marker = NodePath("VBoxContainer/PreviewMeshViewport/SubViewport/MeshMarker")
+_select_marker = NodePath("SelectMarker")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1852054816]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = -152.0
+offset_right = 274.0
+offset_bottom = 152.0
+grow_vertical = 2
+
+[node name="PreviewMeshViewport" type="SubViewportContainer" parent="VBoxContainer" unique_id=104791471]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="VBoxContainer/PreviewMeshViewport" unique_id=63324869]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(172, 128)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="VBoxContainer/PreviewMeshViewport/SubViewport" unique_id=930334337]
+
+[node name="MeshMarker" type="Marker3D" parent="VBoxContainer/PreviewMeshViewport/SubViewport" unique_id=2092301341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.90000004)
+
+[node name="SlotGrid" type="GridContainer" parent="VBoxContainer" unique_id=212685224]
+layout_mode = 2
+columns = 4
+
+[node name="InventorySlot" parent="VBoxContainer/SlotGrid" unique_id=1513532196 instance=ExtResource("2_6o4wp")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="VBoxContainer/SlotGrid" unique_id=1089592522 instance=ExtResource("2_6o4wp")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="VBoxContainer/SlotGrid" unique_id=52542229 instance=ExtResource("2_6o4wp")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="VBoxContainer/SlotGrid" unique_id=1622904605 instance=ExtResource("2_6o4wp")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="VBoxContainer/SlotGrid" unique_id=2007485940 instance=ExtResource("2_6o4wp")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="VBoxContainer/SlotGrid" unique_id=706433875 instance=ExtResource("2_6o4wp")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="VBoxContainer/SlotGrid" unique_id=996935915 instance=ExtResource("2_6o4wp")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="VBoxContainer/SlotGrid" unique_id=1689553578 instance=ExtResource("2_6o4wp")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="VBoxContainer/SlotGrid" unique_id=1991645615 instance=ExtResource("2_6o4wp")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="VBoxContainer/SlotGrid" unique_id=1182240907 instance=ExtResource("2_6o4wp")]
+layout_mode = 2
+
+[node name="InventorySlot11" parent="VBoxContainer/SlotGrid" unique_id=97321689 instance=ExtResource("2_6o4wp")]
+layout_mode = 2
+
+[node name="InventorySlot12" parent="VBoxContainer/SlotGrid" unique_id=1515028502 instance=ExtResource("2_6o4wp")]
+layout_mode = 2
+
+[node name="InventorySlot13" parent="VBoxContainer/SlotGrid" unique_id=1725802157 instance=ExtResource("2_6o4wp")]
+layout_mode = 2
+
+[node name="InventorySlot14" parent="VBoxContainer/SlotGrid" unique_id=1973276136 instance=ExtResource("2_6o4wp")]
+layout_mode = 2
+
+[node name="InventorySlot15" parent="VBoxContainer/SlotGrid" unique_id=698048425 instance=ExtResource("2_6o4wp")]
+layout_mode = 2
+
+[node name="InventorySlot16" parent="VBoxContainer/SlotGrid" unique_id=910111742 instance=ExtResource("2_6o4wp")]
+layout_mode = 2
+
+[node name="SelectMarker" type="ColorRect" parent="." unique_id=1670304881]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0

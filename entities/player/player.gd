@@ -165,7 +165,7 @@ enum FishingState {
 
 var _fishing_state: FishingState = FishingState.IDLE
 var _fish_timer: Timer
-var _hooked_fish: Node3D
+var _hooked_fish: Fish
 
 
 func _ready_fishing_rod() -> void:
@@ -236,6 +236,7 @@ func _on_minigames_failed() -> void:
 
 
 func _collect_fish() -> void:
+	inventory.add_item(_hooked_fish.item_data)
 	_hooked_fish.queue_free()
 
 #endregion
@@ -247,6 +248,10 @@ signal fish_hooked
 
 
 const HUD_SCENE: PackedScene = preload("res://gui/hud/hud.tscn")
+
+@export_group("UI")
+@warning_ignore("unused_variable")
+@export var inventory: Inventory
 
 
 func _setup_hud() -> void:
