@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cj7rn0g8ei4lc"]
+
+[ext_resource type="Script" uid="uid://bnft5uq1tqk2w" path="res://common/scripts/interact_area_3d.gd" id="1_yvegl"]
+
+[node name="InteractArea3D" type="Area3D" unique_id=1933536461]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_yvegl")
+metadata/_custom_type_script = "uid://bnft5uq1tqk2w"

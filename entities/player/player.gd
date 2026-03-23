@@ -68,7 +68,7 @@ func _process(delta: float) -> void:
 		var dir_to_hook: Vector3 = _head.global_position.direction_to(_hook.global_position)
 		var _h_rot: float = atan2(-dir_to_hook.x, -dir_to_hook.z)
 		_orientation.rotation.y = lerp_angle(_orientation.rotation.y, _h_rot - minigame_look_dir.x, 3.0 * delta)
-		var _v_rot: float = atan2(dir_to_hook.y, -dir_to_hook.z)
+		var _v_rot: float = atan2(dir_to_hook.y, abs(-dir_to_hook.z))
 		_head.rotation.x = lerp_angle(_head.rotation.x, _v_rot - minigame_look_dir.y, 3.0 * delta)
 	
 	_display_fishing_line()
@@ -156,7 +156,6 @@ enum FishingState {
 @export var _fishing_rod: Node3D
 @export var _hook: RigidBody3D
 @export var _fishing_line: MeshInstance3D
-@export var _fishing_line_makrer: Marker3D
 @export var _fishing_line_mat: Material
 @export var _pin_joint: PinJoint3D
 @export var _pin_anchor: StaticBody3D
@@ -196,8 +195,8 @@ func _reset_hook() -> void:
 	_fishing_state = FishingState.IDLE
 	
 	_hook.rotation_degrees = Vector3.ZERO
-	var hook_offset: Vector3 = -_fishing_line_makrer.global_basis.y * 0.3
-	_hook.global_position = _fishing_line_makrer.global_position + hook_offset
+	var hook_offset: Vector3 = -_pin_anchor.global_basis.y * 0.3
+	_hook.global_position = _pin_anchor.global_position + hook_offset
 	_pin_joint.node_b = _hook.get_path()
 
 
@@ -215,8 +214,8 @@ func _display_fishing_line() -> void:
 	_line_mesh.surface_add_vertex(_hook.global_position - _hook.global_basis.x * 0.02)
 	
 	# Start point
-	_line_mesh.surface_add_vertex(_fishing_line_makrer.global_position + global_basis.x * 0.02)
-	_line_mesh.surface_add_vertex(_fishing_line_makrer.global_position - global_basis.x * 0.02)
+	_line_mesh.surface_add_vertex(_pin_anchor.global_position + global_basis.x * 0.02)
+	_line_mesh.surface_add_vertex(_pin_anchor.global_position - global_basis.x * 0.02)
 	
 	_line_mesh.surface_end()
 
@@ -260,6 +259,8 @@ func _setup_hud() -> void:
 	
 	hud.minigames_root.minigames_succeeded.connect(_on_minigames_succeeded)
 	hud.minigames_root.minigames_failed.connect(_on_minigames_failed)
+	
+	_interact_ray.prompt_updated.connect(hud.on_interact_prompt_updated)
 
 
 #endregion

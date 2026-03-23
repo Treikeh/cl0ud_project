@@ -3,6 +3,7 @@
 [ext_resource type="Material" uid="uid://ce2hxdgei0dpw" path="res://common/materials/dev_grid_gray_01.tres" id="1_8iyw0"]
 [ext_resource type="Script" uid="uid://yujpmwatwi0d" path="res://levels/dev/dev_minigame_01.gd" id="1_o8832"]
 [ext_resource type="PackedScene" uid="uid://dfwa3ko7oftnj" path="res://entities/player/player.tscn" id="2_jg8us"]
+[ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/vendor/vendor.tscn" id="4_8kye5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qwri6"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -60,5 +61,8 @@ shape = SubResource("BoxShape3D_jg8us")
 
 [node name="Player" parent="." unique_id=913738857 instance=ExtResource("2_jg8us")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[node name="Vendor" parent="." unique_id=520470945 instance=ExtResource("4_8kye5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 6.9)
 
 [connection signal="body_entered" from="Environment/FogVolume/FogArea" to="." method="_on_fog_area_body_entered"]

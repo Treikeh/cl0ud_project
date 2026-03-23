@@ -3,6 +3,7 @@ extends Control
 
 @export var _inventory_menu: Control
 @export var minigames_root: Control
+@export var _interact_prompt: Label
 
 var _player: Player
 
@@ -28,4 +29,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			_inventory_menu.close()
 		else:
 			_inventory_menu.open()
-			
+
+
+func on_interact_prompt_updated(prompt: String) -> void:
+	_interact_prompt.text = prompt

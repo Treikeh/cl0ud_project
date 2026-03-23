@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d4epumjlgldtn"]
+
+[ext_resource type="Script" uid="uid://yltpfdtj76i6" path="res://gui/vendor/sell_entry/sell_entry.gd" id="1_23urj"]
+
+[node name="SellEntry" type="PanelContainer" unique_id=309478878 node_paths=PackedStringArray("_name_label", "_value_label")]
+script = ExtResource("1_23urj")
+_name_label = NodePath("HBoxContainer/NameLabel")
+_value_label = NodePath("HBoxContainer/ValueLabel")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1915501191]
+layout_mode = 2
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="HBoxContainer" unique_id=1217494960]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name"
+
+[node name="ValueLabel" type="Label" parent="HBoxContainer" unique_id=1986768850]
+layout_mode = 2
+text = "{value}"

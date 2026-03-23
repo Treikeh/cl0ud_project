@@ -1,7 +1,7 @@
 extends Control
 
 
-const SLOT_SCENE: PackedScene = preload("res://gui/inventory/inventory_slot/inventory_slot.tscn")
+const SLOT_SCENE: PackedScene = preload("uid://cs35qk6fai74g")
 
 @export var _slot_grid: GridContainer
 @export var _mesh_marker: Marker3D
@@ -14,13 +14,13 @@ func _ready() -> void:
 	_select_marker.hide()
 
 
+func _process(delta: float) -> void:
+	_mesh_marker.rotate_object_local(Vector3.UP, deg_to_rad(30.0 * delta))
+
+
 func setup(inventory: Inventory) -> void:
 	_inventory = inventory
 	_inventory.updated.connect(_populate_slot_grid)
-
-
-func _process(delta: float) -> void:
-	_mesh_marker.rotate_object_local(Vector3.UP, deg_to_rad(30.0 * delta))
 
 
 func open() -> void:
@@ -57,9 +57,15 @@ func _on_slot_pressed(slot_index: int) -> void:
 	_select_marker.global_position = pressed_slot.global_position
 	
 	# Show new mesh preview
-	var item_data: ItemData = _inventory.get_slot(slot_index)
+	var item_data: ItemData = _inventory.get_slot_data(slot_index)
 	if item_data:
 		_show_preview_mesh(item_data)
+
+
+func _show_preview_mesh(item_data: ItemData) -> void:
+	var mesh: Node3D = load(item_data.mesh_scene).instantiate()
+	_mesh_marker.add_child(mesh)
+	_mesh_marker.rotation_degrees.y = 0.0
 
 
 func _remove_preview_mesh() -> void:
@@ -67,9 +73,3 @@ func _remove_preview_mesh() -> void:
 	for child: Node in _mesh_marker.get_children():
 		_mesh_marker.remove_child(child)
 		child.queue_free()
-
-
-func _show_preview_mesh(item_data: ItemData) -> void:
-	var mesh: Node3D = load(item_data.mesh_scene).instantiate()
-	_mesh_marker.add_child(mesh)
-	_mesh_marker.rotation_degrees.y = 0.0
