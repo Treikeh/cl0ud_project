@@ -1,6 +1,8 @@
 extends Node3D
 class_name PlayerMovement
 
+# Movement states the player can be in
+enum {WALKING, FALLING, JUMPING}
 
 const GRAVITY_DIR: Vector3 = Vector3.DOWN
 
@@ -15,21 +17,26 @@ var _move_dir: Vector3
 
 @onready var _player: Player = get_owner()
 @onready var _ground_check: ShapeCast3D = get_child(0)
+@onready var _state_machine := StateMachine.new({
+	WALKING: {StateMachine.PHYSICS: _walking_physics},
+	FALLING: {StateMachine.PHYSICS: _falling_physics},
+	JUMPING: {StateMachine.ENTER: _jumping},
+})
 
 
 func _ready() -> void:
 	_player.movement = self
 	_ground_check.setup(_player, GRAVITY_DIR)
+	
+	# Init first state
+	_state_machine.switch(FALLING)
 
 
 func _physics_process(delta: float) -> void:
 	if not _enabled:
 		return
 	
-	if _ground_check.is_grounded():
-		_walking_physics(delta)
-	else:
-		_falling_physics(delta)
+	_state_machine.physics(delta)
 
 
 func _walking_physics(delta: float) -> void:
@@ -38,7 +45,11 @@ func _walking_physics(delta: float) -> void:
 	_ground_check.target_position.y = -1.0
 	
 	if _is_jumping:
-		_jump()
+		_state_machine.switch(JUMPING)
+		return
+	
+	if not _ground_check.is_grounded():
+		_state_machine.switch(FALLING)
 		return
 	
 	var target_vel: Vector3 = _move_dir * _move_speed
@@ -51,6 +62,10 @@ func _walking_physics(delta: float) -> void:
 func _falling_physics(delta: float) -> void:
 	_player.gravity_scale = 1.0
 	_ground_check.target_position.y = -0.6
+	
+	if _ground_check.is_grounded():
+		_state_machine.switch(WALKING)
+		return
 	
 	var target_vel: Vector3 = _move_dir * _move_speed
 	var slope_normal: Vector3 = Vector3.ZERO
@@ -66,8 +81,9 @@ func _falling_physics(delta: float) -> void:
 	_player.apply_central_force(needed_vel * _air_accel * delta)
 
 
-func _jump() -> void:
+func _jumping() -> void:
 	_player.set_axis_velocity(-GRAVITY_DIR * _jump_force)
+	_state_machine.switch(FALLING)
 
 
 #region Public
