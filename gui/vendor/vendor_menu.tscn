@@ -1,8 +1,17 @@
 [gd_scene format=3 uid="uid://diy715xds7cni"]
 
 [ext_resource type="Script" uid="uid://dojfj2q1p8ef2" path="res://gui/vendor/vendor_menu.gd" id="1_44yr2"]
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="2_51ia8"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/inventory/item_data.gd" id="3_vu42w"]
 
-[node name="VendorMenu" type="Control" unique_id=1724820824 node_paths=PackedStringArray("_sell_list")]
+[sub_resource type="Resource" id="Resource_l8016"]
+script = ExtResource("3_vu42w")
+value = 3
+icon = ExtResource("2_51ia8")
+mesh_scene = "uid://rbxdptqx6skw"
+metadata/_custom_type_script = "uid://cpwq317sdbfrp"
+
+[node name="VendorMenu" type="Control" unique_id=1724820824 node_paths=PackedStringArray("_sell_list", "_buy_list", "_currency_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,21 +19,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_44yr2")
-_sell_list = NodePath("SellList")
-
-[node name="SellList" type="VBoxContainer" parent="." unique_id=482506070]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -358.0
-offset_top = -265.0
-offset_right = 358.0
-offset_bottom = 265.0
-grow_horizontal = 2
-grow_vertical = 2
+_sell_list = NodePath("TabContainer/Sell/SellList")
+_buy_list = NodePath("TabContainer/Buy/BuyList")
+_currency_label = NodePath("CurrencyLabel")
+_buy_item = SubResource("Resource_l8016")
 
 [node name="CloseButton" type="Button" parent="." unique_id=839376987]
 layout_mode = 1
@@ -40,15 +38,53 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Close"
 
-[node name="Label" type="Label" parent="." unique_id=2139235965]
+[node name="CurrencyLabel" type="Label" parent="." unique_id=990211706]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 77.0
+offset_right = 197.0
+offset_bottom = 100.0
+text = "0$"
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=29980569]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -30.0
-offset_right = 30.0
-offset_bottom = 23.0
+anchor_bottom = 0.5
+offset_left = -421.0
+offset_top = -252.0
+offset_right = 421.0
+offset_bottom = 252.0
 grow_horizontal = 2
-text = "Sell fish"
+grow_vertical = 2
+tab_alignment = 1
+current_tab = 0
+
+[node name="Buy" type="Control" parent="TabContainer" unique_id=1988680213]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="BuyList" type="VBoxContainer" parent="TabContainer/Buy" unique_id=1573507270]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sell" type="Control" parent="TabContainer" unique_id=497809201]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="SellList" type="VBoxContainer" parent="TabContainer/Sell" unique_id=482506070]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

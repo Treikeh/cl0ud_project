@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c381j0jew4pue"
-path="res://.godot/imported/Fishing_Hook_001_FBX.fbx-4ff68d7f07069fa904bbc31ca7d9aad1.scn"
+path="res://.godot/imported/Fishing_Hook_001_FBX.fbx-c9d353493557051efe6a56c6ab646e0b.scn"
 
 [deps]
 
-source_file="res://entities/player/art/Fishing_Hook_001_FBX.fbx"
-dest_files=["res://.godot/imported/Fishing_Hook_001_FBX.fbx-4ff68d7f07069fa904bbc31ca7d9aad1.scn"]
+source_file="res://entities/player/fishing_rod/art/Fishing_Hook_001_FBX.fbx"
+dest_files=["res://.godot/imported/Fishing_Hook_001_FBX.fbx-c9d353493557051efe6a56c6ab646e0b.scn"]
 
 [params]
 

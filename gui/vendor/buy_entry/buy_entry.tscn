@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://3gn1kqoo470b"]
+
+[ext_resource type="Script" uid="uid://dpp8na32kj1c6" path="res://gui/vendor/buy_entry/buy_entry.gd" id="1_6wlvj"]
+
+[node name="BuyEntry" type="PanelContainer" unique_id=208481528 node_paths=PackedStringArray("_name_label", "_value_label")]
+offset_right = 105.0
+offset_bottom = 23.0
+script = ExtResource("1_6wlvj")
+_name_label = NodePath("HBoxContainer/NameLabel")
+_value_label = NodePath("HBoxContainer/ValueLabel")
+metadata/_custom_type_script = "uid://dpp8na32kj1c6"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1915501191]
+layout_mode = 2
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="HBoxContainer" unique_id=1217494960]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name"
+
+[node name="ValueLabel" type="Label" parent="HBoxContainer" unique_id=1986768850]
+layout_mode = 2
+text = "{value}"

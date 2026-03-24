@@ -1,0 +1,167 @@
+extends Node3D
+
+
+signal fish_hooked
+signal look_at_hook(look_dir: Vector2, delta: float)
+
+
+enum FishingState {
+	IDLE,
+	READY_THROW,
+	WAITING,
+	FISH_HOOKED,
+	REEL_IN,
+}
+
+
+@export var _hook: RigidBody3D
+@export var _pin_joint: PinJoint3D
+@export var _pin_anchor: StaticBody3D
+@export var _fishing_line: MeshInstance3D
+@export var _fishing_line_mat: Material
+
+var _fish_timer: Timer
+var _hooked_fish: Fish
+var _fishing_state: FishingState = FishingState.IDLE
+
+@onready var _player: Player = get_owner()
+@onready var _line_mesh: ImmediateMesh = _fishing_line.mesh
+
+
+func _ready() -> void:
+	_player.fishing_rod = self
+	
+	# Connect signals
+	fish_hooked.connect(_player._on_fish_hooked)
+	look_at_hook.connect(_player._on_look_at_hook)
+	
+	# Add timer for fishing
+	_fish_timer = Timer.new()
+	_fish_timer.wait_time = 3.0
+	_fish_timer.one_shot = true
+	_fish_timer.autostart = false
+	add_child(_fish_timer)
+	_fish_timer.timeout.connect(_on_fish_hooked)
+
+
+func _process(delta: float) -> void:
+	if _fishing_state == FishingState.FISH_HOOKED:
+		# Make the camera look at the hook
+		var dir_to_hook: Vector3 = global_position.direction_to(_hook.global_position)
+		var look_dir: Vector2 = Vector2.ZERO
+		look_dir.x = atan2(-dir_to_hook.x, -dir_to_hook.z)
+		look_dir.y = atan2(dir_to_hook.y, abs(-dir_to_hook.z))
+		look_at_hook.emit(look_dir, delta)
+	
+	_display_fishing_line()
+
+
+func _physics_process(_delta: float) -> void:
+	if _fishing_state == FishingState.REEL_IN:
+		var launch_dir: Vector3 = _hook.global_position.direction_to(global_position) + (Vector3.UP * 0.15)
+		var launch_force: float = _hook.global_position.distance_to(global_position) * 0.75
+		_hook.apply_central_force(launch_dir * launch_force)
+		if _hook.global_position.distance_squared_to(global_position) <= 25.0:
+			_reset_rod()
+
+
+func _display_fishing_line() -> void:
+	_line_mesh.clear_surfaces()
+	_line_mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLE_STRIP, _fishing_line_mat)
+	# End point
+	_line_mesh.surface_add_vertex(_hook.global_position + _hook.global_basis.x * 0.02)
+	_line_mesh.surface_add_vertex(_hook.global_position - _hook.global_basis.x * 0.02)
+	
+	# Start point
+	_line_mesh.surface_add_vertex(_pin_anchor.global_position + global_basis.x * 0.02)
+	_line_mesh.surface_add_vertex(_pin_anchor.global_position - global_basis.x * 0.02)
+	
+	_line_mesh.surface_end()
+
+
+func _ready_rod() -> void:
+	_fishing_state = FishingState.READY_THROW
+
+
+func _throw_hook() -> void:
+	_fishing_state = FishingState.WAITING
+	
+	# Disconnect hook from pin
+	_pin_joint.node_b = _pin_anchor.get_path()
+	_hook.top_level = true
+	_hook.linear_damp = 0.0
+	
+	_fishing_state = FishingState.WAITING
+	
+	_hook.global_position = global_position
+	_hook.apply_central_impulse(-global_basis.z * 15.0)
+
+
+func _reset_rod() -> void:
+	_fishing_state = FishingState.IDLE
+	
+	# Reset hook
+	_hook.top_level = false
+	_hook.linear_damp = 2.0
+	_hook.gravity_scale = 1.0
+	_hook.linear_velocity = Vector3.ZERO
+	_hook.angular_velocity = Vector3.ZERO
+	_hook.rotation_degrees = Vector3.ZERO
+	
+	# Reconnect hook to pin
+	var hook_offset: Vector3 = -_pin_anchor.global_basis.y * 0.3
+	_hook.global_position = _pin_anchor.global_position + hook_offset
+	_pin_joint.node_b = _hook.get_path()
+
+
+func _collect_fish() -> void:
+	_player.inventory.add_item(_hooked_fish.item_data)
+	_hooked_fish.queue_free()
+
+
+func _on_hook_hit_water() -> void:
+	_fish_timer.start()
+
+
+func _on_fish_hooked() -> void:
+	if _fishing_state == FishingState.WAITING:
+		_fishing_state = FishingState.FISH_HOOKED
+		fish_hooked.emit()
+
+
+func fish_caught() -> void:
+	_fishing_state = FishingState.REEL_IN
+	# Spawn a fish on the hook
+	var test_fish_scene: PackedScene = load("res://entities/fish/test_fish/test_fish.tscn")
+	_hooked_fish = test_fish_scene.instantiate()
+	_hook.get_child(1).add_child(_hooked_fish)
+
+
+func fish_escaped() -> void:
+	if _fishing_state == FishingState.FISH_HOOKED:
+		_fishing_state = FishingState.WAITING
+		_fish_timer.start()
+
+
+#region Public
+
+func use_rod() -> void:
+	if _fishing_state == FishingState.IDLE:
+		if _hooked_fish:
+			_collect_fish()
+		else:
+			_ready_rod()
+
+func stop_use_rod() -> void:
+	if _fishing_state == FishingState.READY_THROW:
+		_throw_hook()
+
+
+func reel_inn() -> void:
+	if _fishing_state != FishingState.IDLE:
+		_reset_rod()
+
+func stop_reel_inn() -> void:
+	pass
+
+#endregion

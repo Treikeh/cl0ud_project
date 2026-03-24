@@ -6,6 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_st48c"]
 script = ExtResource("3_4664w")
+value = 15
 icon = ExtResource("1_ygg6o")
 mesh_scene = "uid://ciah8v4sm6mal"
 metadata/_custom_type_script = "uid://cpwq317sdbfrp"

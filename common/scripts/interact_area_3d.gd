@@ -2,11 +2,11 @@ extends Area3D
 class_name InteractArea3D
 
 
-signal interacted(interactee: Node3D)
+signal interacted(interactee: Player)
 
 
 @export var prompt: String = "Interact"
 
 
-func interact(interactee: Node3D) -> void:
+func interact(interactee: Player) -> void:
 	interacted.emit(interactee)

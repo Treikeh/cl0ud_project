@@ -2,17 +2,26 @@ extends Node
 class_name Inventory
 
 
-signal updated
+signal item_added
+signal item_removed
 
 
 @export var items: Array[ItemData]
 
+var currency: int = 0
+
 var _first_empty_slot_index: int = 0
+
+@onready var _player: Player = get_owner()
+
+
+func _ready() -> void:
+	_player.inventory = self
 
 
 func add_item(item_data: ItemData) -> void:
 	items[_first_empty_slot_index] = item_data
-	updated.emit()
+	item_added.emit()
 	_update_first_empty_slot_index()
 
 
@@ -22,6 +31,7 @@ func remove_item(item_index: int) -> void:
 		return
 	
 	items[item_index] = null
+	item_removed.emit()
 	_update_first_empty_slot_index()
 
 

@@ -11,25 +11,26 @@ extends ShapeCast3D
 
 var ground_normal: Vector3 = Vector3.UP
 
-@export_group(" ")
-@export var _ray_cast_3d: RayCast3D
-@onready var _player: Player = get_owner()
+var _gravity_dir: Vector3
+var _player: Player
+
+@onready var _ray_cast_3d: RayCast3D = get_child(0)
 
 
-func _ready() -> void:
+func setup(player: Player, gravity_dir: Vector3) -> void:
+	_player = player
+	_gravity_dir = gravity_dir
 	_ray_cast_3d.collision_mask = collision_mask
 
 
-func is_on_walkable_slope() -> bool:
+func is_grounded() -> bool:
 	# Leave the ground if too much upwards force is applied
-	if _player.linear_velocity.dot(-_player.GRAVITY_DIR) >= _leave_floor_force:
-	#if player.linear_velocity.y >= leave_floor_force:
+	if _player.linear_velocity.y >= _leave_floor_force:
 		return false
 	
 	if is_colliding():
 		# Move RayCast to ShapeCast collision point on the XZ plane (don't change height)
 		var col_pos: Vector3 = get_collision_point(0)
-		#ray_cast_3d.global_position = col_pos - (player.gravity_direction * 0.5)
 		_ray_cast_3d.global_position.x = col_pos.x
 		_ray_cast_3d.global_position.z = col_pos.z
 		ground_normal = _ray_cast_3d.get_collision_normal()
@@ -50,4 +51,4 @@ func snap_to_ground() -> void:
 	var normal_vel: float = -ground_normal.dot(_player.linear_velocity)
 	var dispalcement: float = hit_distance - _rest_height
 	var force: float = (_spring_force * dispalcement) - (normal_vel * _spring_damping)
-	_player.apply_central_force(_player.GRAVITY_DIR * force * _player.mass)
+	_player.apply_central_force(_gravity_dir * force)

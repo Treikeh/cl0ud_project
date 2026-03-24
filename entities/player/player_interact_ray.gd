@@ -4,9 +4,9 @@ extends RayCast3D
 signal prompt_updated(prompt: String)
 
 
-@onready var _player: Player = get_owner()
-
 var _interact_target: InteractArea3D
+
+@onready var _player: Player = get_owner()
 
 
 func _process(_delta: float) -> void:
