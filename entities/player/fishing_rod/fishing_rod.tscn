@@ -53,12 +53,12 @@ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0
 mesh = SubResource("CylinderMesh_bls4j")
 
 [node name="PinJoint3D" type="PinJoint3D" parent="Mesh" unique_id=835895105]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 1.4000001, 3.7252903e-08)
+transform = Transform3D(1, 0, 0, 0, 0.7071067, -0.7071068, 0, 0.7071068, 0.7071067, 0, 1.4000001, 3.7252903e-08)
 node_a = NodePath("../PinAnchor")
 node_b = NodePath("../../Hook")
 
 [node name="PinAnchor" type="StaticBody3D" parent="Mesh" unique_id=346476059]
-transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 1.4000001, 3.7252903e-08)
+transform = Transform3D(1, 0, 0, 0, 0.70710665, -0.70710677, 0, 0.70710677, 0.70710665, 0, 1.4000001, 5.9604645e-08)
 collision_layer = 0
 collision_mask = 0
 

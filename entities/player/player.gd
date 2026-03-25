@@ -2,15 +2,49 @@ extends RigidBody3D
 class_name Player
 
 
-var minigame_look_dir: Vector2
+var _minigame_look_dir: Vector2
+var _look_position: Vector3
 
 var input: PlayerInput
 var movement: PlayerMovement
 var inventory: Inventory
+var hud: Hud
 
 
 func _ready() -> void:
-	_spawn_hud()
+	_interact_ray.prompt_updated.connect(hud.update_interact_prompt)
+
+
+func _process(delta: float) -> void:
+	if _look_position != Vector3.ZERO:
+		_look_at_position(delta)
+
+
+# Make the camera look at a point
+func _look_at_position(delta: float) -> void:
+	var dir_to_hook: Vector3 = _head.global_position.direction_to(_look_position)
+	var look_dir: Vector2 = Vector2(
+			atan2(-dir_to_hook.x, -dir_to_hook.z),
+			dir_to_hook.dot(global_basis.y)
+	)
+	
+	# Framerate independant lerp weight
+	const LERP_FACTOR: float = 3.0
+	var weight: float = 1.0 - exp(-LERP_FACTOR * delta)
+	# Lerp orientation
+	var desired_orientation: float = look_dir.x - _minigame_look_dir.x
+	_orientation.rotation.y = lerp_angle(_orientation.rotation.y, desired_orientation, weight)
+	# Lerp head angle
+	var desired_head_angle: float = look_dir.y - _minigame_look_dir.y
+	_head.rotation.x = lerp_angle(_head.rotation.x, desired_head_angle, weight)
+
+
+func update_look_position(look_position: Vector3 = Vector3.ZERO) -> void:
+	_look_position = look_position
+
+
+func update_minigame_look_dir(minigame_look_dir: Vector2) -> void:
+	_minigame_look_dir = minigame_look_dir
 
 
 #region Input
@@ -44,6 +78,9 @@ func _on_hook_reeled(reel_input: bool) -> void:
 
 
 func _on_looked(look_input: Vector2) -> void:
+	if _look_position != Vector3.ZERO:
+		return
+	
 	_orientation.rotate_object_local(Vector3.UP, -deg_to_rad(look_input.x))
 	_head.rotate_object_local(Vector3.RIGHT, -deg_to_rad(look_input.y))
 	_head.rotation.x = clampf(_head.rotation.x, deg_to_rad(-89.0), deg_to_rad(89))
@@ -58,17 +95,8 @@ func _on_moved(move_input: Vector2) -> void:
 
 #region UI
 
-const HUD_SCENE: PackedScene = preload("res://gui/hud/hud.tscn")
 const INVENTORY_SCENE: PackedScene = preload("uid://6lg7o50gd213")
 const MINIGMAES_SCENE: PackedScene = preload("uid://cge1q8m11mo65")
-
-var hud: Control
-
-func _spawn_hud() -> void:
-	hud = HUD_SCENE.instantiate()
-	add_child(hud)
-	
-	_interact_ray.prompt_updated.connect(hud.update_interact_prompt)
 
 
 func _on_inventory_opened() -> void:
@@ -102,18 +130,12 @@ func _on_fish_hooked() -> void:
 func _on_fish_caught() -> void:
 	input.set_enabled(true)
 	fishing_rod.fish_caught()
+	update_look_position(Vector3.ZERO)
 
 
 func _on_fish_escaped() -> void:
 	input.set_enabled(true)
 	fishing_rod.fish_escaped()
-
-
-func _on_look_at_hook(look_dir: Vector2, delta: float) -> void:
-	var desired_orientation_angle: float = look_dir.x - minigame_look_dir.x
-	_orientation.rotation.y = lerp_angle(_orientation.rotation.y, desired_orientation_angle, 3.0 * delta)
-	
-	var desired_head_angle: float = look_dir.y - minigame_look_dir.y
-	_head.rotation.x = lerp_angle(_head.rotation.x, desired_head_angle, 3.0 * delta)
+	update_look_position(Vector3.ZERO)
 
 #endregion

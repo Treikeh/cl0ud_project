@@ -2,7 +2,6 @@ extends Node3D
 
 
 signal fish_hooked
-signal look_at_hook(look_dir: Vector2, delta: float)
 
 
 enum FishingState {
@@ -33,7 +32,6 @@ func _ready() -> void:
 	
 	# Connect signals
 	fish_hooked.connect(_player._on_fish_hooked)
-	look_at_hook.connect(_player._on_look_at_hook)
 	
 	# Add timer for fishing
 	_fish_timer = Timer.new()
@@ -44,14 +42,9 @@ func _ready() -> void:
 	_fish_timer.timeout.connect(_on_fish_hooked)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if _fishing_state == FishingState.FISH_HOOKED:
-		# Make the camera look at the hook
-		var dir_to_hook: Vector3 = global_position.direction_to(_hook.global_position)
-		var look_dir: Vector2 = Vector2.ZERO
-		look_dir.x = atan2(-dir_to_hook.x, -dir_to_hook.z)
-		look_dir.y = atan2(dir_to_hook.y, abs(-dir_to_hook.z))
-		look_at_hook.emit(look_dir, delta)
+		_player.update_look_position(_hook.global_position)
 	
 	_display_fishing_line()
 
@@ -132,7 +125,7 @@ func _on_fish_hooked() -> void:
 func fish_caught() -> void:
 	_fishing_state = FishingState.REEL_IN
 	# Spawn a fish on the hook
-	var test_fish_scene: PackedScene = load("res://entities/fish/test_fish/test_fish.tscn")
+	var test_fish_scene: PackedScene = load("uid://i5dq3bivh8i0")
 	_hooked_fish = test_fish_scene.instantiate()
 	_hook.get_child(1).add_child(_hooked_fish)
 

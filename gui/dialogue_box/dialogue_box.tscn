@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://4tbnv1ykb0mi"]
+
+[ext_resource type="Script" uid="uid://ch5mutx6js8sn" path="res://gui/dialogue_box/dialogue_box.gd" id="1_lfny5"]
+
+[node name="DialogueBox" type="Control" unique_id=1119154544 node_paths=PackedStringArray("_text_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lfny5")
+_text_label = NodePath("Panel/TextLabel")
+
+[node name="Panel" type="Panel" parent="." unique_id=1632147214]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 213.0
+offset_top = -106.0
+offset_right = -213.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextLabel" type="Label" parent="Panel" unique_id=177122019]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "TEXT"

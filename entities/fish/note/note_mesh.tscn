@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://blh7c65i5bss1"]
+
+[ext_resource type="Texture2D" uid="uid://bopc0krq46by3" path="res://entities/fish/note/note_icon.png" id="1_qc2pu"]
+
+[node name="MessageFishMesh" type="Node3D" unique_id=1665173443]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=786757569]
+transform = Transform3D(-2.1855695e-09, 0.05, 0, -0.05, -2.1855695e-09, 0, 0, 0, 0.05, -0.0058874786, -0.37671068, 0)
+texture = ExtResource("1_qc2pu")

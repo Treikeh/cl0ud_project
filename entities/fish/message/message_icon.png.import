@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d15kjse6cmudb"
-path.s3tc="res://.godot/imported/fish_PNG25128.png-530c5439c4b90807d20ecf610cf93206.s3tc.ctex"
+uid="uid://cdh1uvulx0tfd"
+path.s3tc="res://.godot/imported/message_icon.png-38e4a9dc08d1dcb5dadbdd958dc5a787.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://entities/fish/test_fish/art/fish_PNG25128.png"
-dest_files=["res://.godot/imported/fish_PNG25128.png-530c5439c4b90807d20ecf610cf93206.s3tc.ctex"]
+source_file="res://entities/fish/message/message_icon.png"
+dest_files=["res://.godot/imported/message_icon.png-38e4a9dc08d1dcb5dadbdd958dc5a787.s3tc.ctex"]
 
 [params]
 

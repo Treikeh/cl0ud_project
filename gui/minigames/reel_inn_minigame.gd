@@ -33,11 +33,13 @@ func _process(delta: float) -> void:
 	
 	_cursor.position = cursor_start + (cursor_dir * cursor_distance) - (_cursor.size / 2.0)
 	# Get the rotation of the cursor from the center of the minigame
-	player.minigame_look_dir = (cursor_dir * remap(cursor_distance, 0.0, 100.0, 0.0, 1.0)) / 7.5
+	var look_dir: Vector2 = (cursor_dir * remap(cursor_distance, 0.0, 100.0, 0.0, 1.0)) / 7.5
+	player.update_minigame_look_dir(look_dir)
 	
 	# Rotate hit area
 	if _rotate_hit_area:
 		_hit_area.rotation_degrees += _hit_area_rotation_direction * _hit_area_rotation_speed * delta
+		#TODO: Check if clamp_angle can be used here
 		if _hit_area.rotation_degrees > 180.0:
 			_hit_area.rotation_degrees = -179.0
 		elif _hit_area.rotation_degrees < -180.0:

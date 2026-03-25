@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dojfj2q1p8ef2" path="res://gui/vendor/vendor_menu.gd" id="1_44yr2"]
 [ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="2_51ia8"]
-[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/inventory/item_data.gd" id="3_vu42w"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/scripts/inventory/item_data.gd" id="3_vu42w"]
 
 [sub_resource type="Resource" id="Resource_l8016"]
 script = ExtResource("3_vu42w")
 value = 3
 icon = ExtResource("2_51ia8")
-mesh_scene = "uid://rbxdptqx6skw"
+mesh_scene = "uid://cu6p31ihl50lr"
 metadata/_custom_type_script = "uid://cpwq317sdbfrp"
 
 [node name="VendorMenu" type="Control" unique_id=1724820824 node_paths=PackedStringArray("_sell_list", "_buy_list", "_currency_label")]
@@ -60,9 +60,10 @@ offset_bottom = 252.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 
 [node name="Buy" type="Control" parent="TabContainer" unique_id=1988680213]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -75,7 +76,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sell" type="Control" parent="TabContainer" unique_id=497809201]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 

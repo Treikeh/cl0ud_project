@@ -31,7 +31,7 @@ func _start_minigames() -> void:
 	_catch_minigame.process_mode = Node.PROCESS_MODE_INHERIT
 	_catch_minigame.start_minigame()
 	# Disable player input
-	_player.input.set_enabled(false)
+	#_player.input.set_enabled(false)
 
 
 func _end_minigames() -> void:

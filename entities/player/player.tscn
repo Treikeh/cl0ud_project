@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://cyr0p70n201cs" path="res://entities/player/fishing_rod/fishing_rod.tscn" id="3_26q78"]
 [ext_resource type="Script" uid="uid://cxekl8tsteanp" path="res://entities/player/player_ground_check.gd" id="3_bls4j"]
 [ext_resource type="Script" uid="uid://c706cj0ksgna4" path="res://entities/player/player_input.gd" id="5_26q78"]
-[ext_resource type="Script" uid="uid://c4u80mtdabi0p" path="res://common/inventory/inventory.gd" id="5_fkugw"]
+[ext_resource type="Script" uid="uid://c4u80mtdabi0p" path="res://common/scripts/inventory/inventory.gd" id="5_fkugw"]
 [ext_resource type="Script" uid="uid://b7maretlulvud" path="res://entities/player/player_movement.gd" id="5_qiwj3"]
-[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/inventory/item_data.gd" id="6_8fjmc"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/scripts/inventory/item_data.gd" id="6_8fjmc"]
+[ext_resource type="PackedScene" uid="uid://eikdd5p1w6ay" path="res://gui/hud/hud.tscn" id="9_bectd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bls4j"]
 friction = 0.0
@@ -72,4 +73,5 @@ script = ExtResource("5_26q78")
 [node name="Inventory" type="Node" parent="." unique_id=1803234307]
 script = ExtResource("5_fkugw")
 items = Array[ExtResource("6_8fjmc")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
-metadata/_custom_type_script = "uid://c4u80mtdabi0p"
+
+[node name="Hud" parent="." unique_id=905877039 instance=ExtResource("9_bectd")]
