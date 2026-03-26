@@ -15,7 +15,9 @@ func _ready() -> void:
 	_interact_ray.prompt_updated.connect(hud.update_interact_prompt)
 
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	#NOTE: In physics process to stop the hook from freezing when the camera is moving.
+	#TODO: Find a better way to handle the hook and line physics.
 	if _look_position != Vector3.ZERO:
 		_look_at_position(delta)
 
@@ -97,6 +99,7 @@ func _on_moved(move_input: Vector2) -> void:
 
 const INVENTORY_SCENE: PackedScene = preload("uid://6lg7o50gd213")
 const MINIGMAES_SCENE: PackedScene = preload("uid://cge1q8m11mo65")
+const PAUSE_SCENE: PackedScene = preload("uid://c0fsgd03bj03a")
 
 
 func _on_inventory_opened() -> void:
@@ -107,10 +110,21 @@ func _on_inventory_opened() -> void:
 	add_child(inventory_menu)
 	inventory_menu.closed.connect(_on_inventory_closed)
 
-
 func _on_inventory_closed() -> void:
 	# call_deffered to avoid having the inventory close in the same frame it's opened
 	input.set_enabled.call_deferred(true)
+
+
+func _on_pause_opened() -> void:
+	input.set_enabled(false)
+	
+	# Spawn pause menu
+	var pause_menu: Control = PAUSE_SCENE.instantiate()
+	add_child(pause_menu)
+	pause_menu.closed.connect(_on_pause_closed)
+
+func _on_pause_closed() -> void:
+	input.set_enabled(true)
 
 #endregion
 

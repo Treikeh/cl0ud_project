@@ -46,7 +46,8 @@ func _process(_delta: float) -> void:
 	if _fishing_state == FishingState.FISH_HOOKED:
 		_player.update_look_position(_hook.global_position)
 	
-	_display_fishing_line()
+	#NOTE: call_deferred to avoid the line being 1 frame late when using a controller to look around
+	_display_fishing_line.call_deferred()
 
 
 func _physics_process(_delta: float) -> void:

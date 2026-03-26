@@ -4,6 +4,7 @@ class_name PlayerInput
 
 signal interacted
 signal inventory_opened
+signal pause_pressed
 signal jumped(jump_input: bool)
 signal hook_thrown(throw_input: bool)
 signal hook_reeled(reel_input: bool)
@@ -25,6 +26,7 @@ func _ready() -> void:
 	# Connect signals
 	interacted.connect(_player._on_interacted)
 	inventory_opened.connect(_player._on_inventory_opened)
+	pause_pressed.connect(_player._on_pause_opened)
 	
 	jumped.connect(_player._on_jumped)
 	hook_thrown.connect(_player._on_hook_thrown)
@@ -66,14 +68,32 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_released("reel_hook"):
 		hook_reeled.emit(false)
 	
-	# Look input
-	if event is InputEventMouseMotion:
+	# Pause input
+	if event.is_action_pressed("pause"):
+		pause_pressed.emit()
+	
+	# Mouse look input
+	if event is InputEventMouseMotion: # and InputManager.get_type() == InputManager.MOUSE_KEYBOARD
 		var look_input: Vector2 = event.relative * _camera_sens
 		looked.emit(look_input)
 	
 	# Move input
 	var move_input: Vector2 = Input.get_vector("move_l", "move_r", "move_f", "move_b")
 	moved.emit(move_input)
+
+
+func _physics_process(delta: float) -> void:
+	#NOTE: In physics process to stop the hook from freezing when the camera is moving.
+	#TODO: Find a better way to handle the hook and line physics.
+	if not _enabled:# and InputManager.get_type() != InputManager.CONTROLLER
+		looked.emit(Vector2.ZERO)
+		moved.emit(Vector2.ZERO)
+		return
+	
+	# Controller look input
+	var look_input: Vector2 = Input.get_vector("look_l", "look_r", "look_u", "look_d")
+	if look_input:
+		looked.emit(look_input * delta * _camera_sens * 1000.0)
 
 
 #region Public
