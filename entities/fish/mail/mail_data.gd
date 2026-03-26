@@ -2,5 +2,7 @@ extends FishData
 class_name MailData
 
 
-func _init() -> void:
-	pass
+@export var from: String = "From"
+@export var to: String = "To"
+@export var subject: String = "Subject"
+@export_multiline() var content: String = "Content"

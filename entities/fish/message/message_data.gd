@@ -2,5 +2,5 @@ extends FishData
 class_name MessageData
 
 
-func _init() -> void:
-	pass
+@export var sender: String = "Sender"
+@export var recipient: String = "Recipient"

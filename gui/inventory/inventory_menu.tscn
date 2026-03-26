@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dqae2162fmbul" path="res://gui/inventory/inventory_menu.gd" id="1_l30io"]
 [ext_resource type="PackedScene" uid="uid://cs35qk6fai74g" path="res://gui/inventory/inventory_slot/inventory_slot.tscn" id="2_6o4wp"]
 
-[node name="Inventory" type="Control" unique_id=814013906 node_paths=PackedStringArray("_slot_grid", "_select_marker", "_currency_label", "_mesh_marker")]
+[node name="Inventory" type="Control" unique_id=814013906 node_paths=PackedStringArray("_slot_grid", "_select_marker", "_currency_label", "_fish_data_dispaly_root", "_mesh_marker")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +14,7 @@ script = ExtResource("1_l30io")
 _slot_grid = NodePath("VBoxContainer/SlotGrid")
 _select_marker = NodePath("SelectMarker")
 _currency_label = NodePath("CurrencyLabel")
+_fish_data_dispaly_root = NodePath("FishDataDisplayRoot")
 _mesh_marker = NodePath("VBoxContainer/PreviewMeshViewport/SubViewport/MeshMarker")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1852054816]
@@ -108,3 +109,10 @@ offset_top = 167.0
 offset_right = 143.0
 offset_bottom = 190.0
 text = "0$"
+
+[node name="FishDataDisplayRoot" type="Control" parent="." unique_id=102973274]
+anchors_preset = 0
+offset_left = 336.0
+offset_top = 119.0
+offset_right = 336.0
+offset_bottom = 119.0

@@ -6,9 +6,9 @@ signal item_added
 signal item_removed
 
 
+@export var currency: int = 0
 @export var items: Array[ItemData]
 
-var currency: int = 0
 
 var _first_empty_slot_index: int = 0
 

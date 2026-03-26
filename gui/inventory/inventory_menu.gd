@@ -9,6 +9,7 @@ const SLOT_SCENE: PackedScene = preload("uid://cs35qk6fai74g")
 @export var _slot_grid: GridContainer
 @export var _select_marker: ColorRect
 @export var _currency_label: Label
+@export var _fish_data_dispaly_root: Control
 @export var _mesh_marker: Marker3D
 
 var _inventory: Inventory
@@ -63,6 +64,7 @@ func _populate_slot_grid() -> void:
 func _on_slot_pressed(slot_index: int) -> void:
 	# Remove the old mesh preview
 	_remove_preview_mesh()
+	_remove_fish_data_display()
 	
 	# Get the new pressed slot
 	var pressed_slot: InventorySlot = _slot_grid.get_child(slot_index)
@@ -73,6 +75,7 @@ func _on_slot_pressed(slot_index: int) -> void:
 	var item_data: ItemData = _inventory.get_slot_data(slot_index)
 	if item_data:
 		_show_preview_mesh(item_data)
+		_show_fish_data_dispaly(item_data)
 
 
 func _show_preview_mesh(item_data: ItemData) -> void:
@@ -86,4 +89,21 @@ func _remove_preview_mesh() -> void:
 	# Remove the old mesh preview
 	for child: Node in _mesh_marker.get_children():
 		_mesh_marker.remove_child(child)
+		child.queue_free()
+
+
+func _show_fish_data_dispaly(item_data: ItemData) -> void:
+	var fish_data: FishData = item_data.fish_data
+	if fish_data == null:
+		return
+	
+	var display_scene_path: String = item_data.dispaly_scene
+	var dispaly_scene: Resource = load(display_scene_path)
+	var display: FishDataDispaly = dispaly_scene.instantiate().with_data(fish_data)
+	_fish_data_dispaly_root.add_child(display)
+
+
+func _remove_fish_data_display() -> void:
+	for child: Control in _fish_data_dispaly_root.get_children():
+		_fish_data_dispaly_root.remove_child(child)
 		child.queue_free()

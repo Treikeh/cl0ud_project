@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MailData" format=3 uid="uid://byqnmrj5d2e11"]
+
+[ext_resource type="Script" uid="uid://bgk7ttf5teu14" path="res://entities/fish/mail/mail_data.gd" id="1_5cb42"]
+
+[resource]
+script = ExtResource("1_5cb42")
+from = "From 01"
+to = "To 01"
+subject = "Subject 01"
+content = "Content 01"
+metadata/_custom_type_script = "uid://bgk7ttf5teu14"

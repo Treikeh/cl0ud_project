@@ -2,5 +2,4 @@ extends FishData
 class_name NoteData
 
 
-func _init() -> void:
-	pass
+@export_multiline() var text: String = "Text"

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cyuo21l0gwdm5"]
+
+[ext_resource type="Script" uid="uid://bu5n7qf877ogg" path="res://entities/fish/mail/mail_data_dispaly.gd" id="1_bejpv"]
+
+[node name="MailDataDispaly" type="Control" unique_id=307770116 node_paths=PackedStringArray("_from_label", "_to_label", "_subject_label", "_content_label")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_bejpv")
+_from_label = NodePath("PanelContainer/VBoxContainer/FromLabel")
+_to_label = NodePath("PanelContainer/VBoxContainer/ToLabel")
+_subject_label = NodePath("PanelContainer/VBoxContainer/SubjectLabel")
+_content_label = NodePath("PanelContainer/VBoxContainer/ContentLabel")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=581672]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1301804944]
+layout_mode = 2
+
+[node name="FromLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=2125725013]
+layout_mode = 2
+text = "From"
+
+[node name="ToLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=154115570]
+layout_mode = 2
+text = "To"
+
+[node name="SubjectLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=759668136]
+layout_mode = 2
+text = "Subject"
+
+[node name="ContentLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=976498209]
+layout_mode = 2
+text = "Content"

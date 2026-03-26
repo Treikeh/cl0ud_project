@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ds5flwipduxn0"]
+
+[ext_resource type="Script" uid="uid://b3o3balij3j1b" path="res://entities/fish/note/note_data_dispaly.gd" id="1_qfa5c"]
+
+[node name="NoteDataDispaly" type="Control" unique_id=307770116 node_paths=PackedStringArray("_text_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qfa5c")
+_text_label = NodePath("PanelContainer/TextLabel")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=245863684]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextLabel" type="Label" parent="PanelContainer" unique_id=1274155992]
+layout_mode = 2
+text = "Text"

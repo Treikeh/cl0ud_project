@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="NoteData" format=3 uid="uid://54o2oumiv5ml"]
+
+[ext_resource type="Script" uid="uid://ckvnbenl45otq" path="res://entities/fish/note/note_data.gd" id="1_q6e8u"]
+
+[resource]
+script = ExtResource("1_q6e8u")
+text = "Text 02"
+metadata/_custom_type_script = "uid://ckvnbenl45otq"
