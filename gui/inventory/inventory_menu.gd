@@ -69,6 +69,7 @@ func _on_slot_pressed(slot_index: int) -> void:
 	# Get the new pressed slot
 	var pressed_slot: InventorySlot = _slot_grid.get_child(slot_index)
 	# Move the select marker to the pressed slot
+	_select_marker.show()
 	_select_marker.global_position = pressed_slot.global_position
 	
 	# Show new mesh preview
@@ -97,7 +98,11 @@ func _show_fish_data_dispaly(item_data: ItemData) -> void:
 	if fish_data == null:
 		return
 	
+	# Make sure the path is valid before spawning the display
 	var display_scene_path: String = item_data.dispaly_scene
+	if display_scene_path == "":
+		return
+	
 	var dispaly_scene: Resource = load(display_scene_path)
 	var display: FishDataDispaly = dispaly_scene.instantiate().with_data(fish_data)
 	_fish_data_dispaly_root.add_child(display)
