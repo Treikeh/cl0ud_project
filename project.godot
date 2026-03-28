@@ -15,8 +15,11 @@ General/banks_path="res://common/fmod_banks/Desktop/"
 [application]
 
 config/name="C.L.0.U.D."
+config/version="0.0.1"
 config/tags=PackedStringArray("school")
 run/main_scene="uid://bumk7cb6vn276"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="cl0ud"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
