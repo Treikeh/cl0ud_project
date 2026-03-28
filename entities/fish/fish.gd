@@ -55,4 +55,4 @@ func _get_fish_data(path: String) -> FishData:
 	var file: String = files[file_index]
 	print(data_folder_path + file)
 	# Load the file
-	return load(data_folder_path + file)
+	return load(data_folder_path + file.trim_suffix(".remap"))

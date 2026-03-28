@@ -13,6 +13,8 @@ var hud: Hud
 
 func _ready() -> void:
 	_interact_ray.prompt_updated.connect(hud.update_interact_prompt)
+	
+	_load_save_data.call_deferred()
 
 
 func _physics_process(delta: float) -> void:
@@ -151,5 +153,31 @@ func _on_fish_escaped() -> void:
 	input.set_enabled(true)
 	fishing_rod.fish_escaped()
 	update_look_position(Vector3.ZERO)
+
+#endregion
+
+
+#region save/load
+
+const SAVE_DATA_KEY: String = "player"
+
+func get_save_data() -> Dictionary:
+	var data: Dictionary = {
+		SAVE_DATA_KEY: {
+			"position": var_to_str(global_position),
+			"head_rotation": var_to_str(_head.rotation_degrees),
+			"orientation": var_to_str(_orientation.rotation_degrees),
+		},
+	}
+	return data
+
+func _load_save_data() -> void:
+	var data: Dictionary = SaveManager.get_save_data(SAVE_DATA_KEY)
+	if data.is_empty():
+		return
+	
+	global_position = str_to_var(data.position)
+	_orientation.rotation_degrees = str_to_var(data.orientation)
+	_head.rotation_degrees = str_to_var(data.head_rotation)
 
 #endregion

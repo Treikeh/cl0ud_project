@@ -22,7 +22,7 @@ height = 1.5
 radius = 0.25
 height = 1.0
 
-[node name="Player" type="RigidBody3D" unique_id=913738857 node_paths=PackedStringArray("_orientation", "_head", "_interact_ray")]
+[node name="Player" type="RigidBody3D" unique_id=913738857 node_paths=PackedStringArray("_orientation", "_head", "_interact_ray") groups=["persistent"]]
 collision_layer = 2
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_bls4j")
@@ -70,7 +70,7 @@ debug_shape_custom_color = Color(1, 0, 0.28235295, 1)
 [node name="Input" type="Node" parent="." unique_id=891247422]
 script = ExtResource("5_26q78")
 
-[node name="Inventory" type="Node" parent="." unique_id=1803234307]
+[node name="Inventory" type="Node" parent="." unique_id=1803234307 groups=["persistent"]]
 script = ExtResource("5_fkugw")
 currency = 15
 items = Array[ExtResource("6_8fjmc")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])

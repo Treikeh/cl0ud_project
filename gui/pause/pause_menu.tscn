@@ -38,5 +38,10 @@ text = "Resume"
 layout_mode = 2
 text = "Quit"
 
+[node name="ReloadButton" type="Button" parent="VBoxContainer" unique_id=123866938]
+layout_mode = 2
+text = "Reload"
+
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_resume_game"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_quit_game"]
+[connection signal="pressed" from="VBoxContainer/ReloadButton" to="." method="_on_reload_button_pressed"]

@@ -17,5 +17,12 @@ func _resume_game() -> void:
 
 
 func _quit_game() -> void:
+	SaveManager.save_game()
 	get_tree().paused = false
 	get_tree().quit()
+
+
+func _on_reload_button_pressed() -> void:
+	SaveManager.save_game()
+	get_tree().paused = false
+	get_tree().reload_current_scene()
