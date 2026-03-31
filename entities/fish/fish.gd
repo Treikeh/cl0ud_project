@@ -34,16 +34,16 @@ func _create_item_data(type: Type) -> ItemData:
 	var data: Dictionary = {
 		"name": str(randi()),
 		"value": randi_range(1, 10),
-		"icon": load(files_path + type_as_text + "_icon.png"),
+		"icon": files_path + type_as_text + "_icon.png",
 		"mesh_scene": files_path + type_as_text + "_mesh.tscn",
 		"display_scene": files_path + type_as_text + "_data_display.tscn",
-		"fish_data": _get_fish_data(files_path)
+		"fish_data": _get_fish_data_path(files_path)
 	}
 	return ItemData.new(data)
 
 
-# Get a random data file from the foler of the fish type
-func _get_fish_data(path: String) -> FishData:
+# Get a random data file from the flder of the fish type
+func _get_fish_data_path(path: String) -> String:
 	# Get the data folder for the fish type
 	var data_folder_path: String = path + "data/"
 	# Open the folder
@@ -58,4 +58,4 @@ func _get_fish_data(path: String) -> FishData:
 	#NOTE: Resource files are given the .remap suffix in exported builds
 	file = file.trim_suffix(".remap")
 	# Load the file
-	return load(data_folder_path + file)
+	return data_folder_path + file

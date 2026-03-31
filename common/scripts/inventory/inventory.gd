@@ -63,7 +63,7 @@ func get_save_data() -> Dictionary:
 	
 	# Set save data
 	var data: Dictionary = {
-		"currency": var_to_str(currency),
+		"currency": currency,
 		"items": items_data,
 	}
 	return data
@@ -73,7 +73,7 @@ func load_save_data(data: Dictionary) -> void:
 		return
 	
 	# Update currency
-	currency = str_to_var(data.currency)
+	currency = int(data.currency)
 	
 	# Update items
 	var items_data: Dictionary = data.items

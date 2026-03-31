@@ -15,22 +15,20 @@ func _init(data: Dictionary = {}) -> void:
 		return
 	
 	name = data.name
-	value = data.value
-	icon = load(data.icon) if data.icon else null
+	value = int(data.value)
+	icon = load(data.icon) if data.icon != "" else null
 	mesh_scene = data.mesh_scene
 	display_scene = data.display_scene
-	fish_data = load(data.fish_data) if data.fish_data else null
+	fish_data = load(data.fish_data) if data.fish_data != "" else null
 
 
 func get_data() -> Dictionary:
-	var icon_path: String = icon.resource_path if icon else ""
-	var fish_data_path: String = fish_data.resource_path if fish_data else ""
 	var data: Dictionary = {
 		"name": name,
 		"value": value,
-		"icon": icon_path,
+		"icon": icon.resource_path if icon != null else "",
 		"mesh_scene": mesh_scene,
 		"display_scene": display_scene,
-		"fish_data": fish_data_path,
+		"fish_data": fish_data.resource_path if fish_data != null else "",
 	}
 	return data
