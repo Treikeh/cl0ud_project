@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://3gn1kqoo470b"]
 
-[ext_resource type="Script" uid="uid://dpp8na32kj1c6" path="res://gui/vendor/buy_entry/buy_entry.gd" id="1_6wlvj"]
+[ext_resource type="Script" uid="uid://dpp8na32kj1c6" path="res://entities/vendor/menu/buy_entry/buy_entry.gd" id="1_6wlvj"]
 
 [node name="BuyEntry" type="PanelContainer" unique_id=208481528 node_paths=PackedStringArray("_name_label", "_value_label")]
 offset_right = 105.0

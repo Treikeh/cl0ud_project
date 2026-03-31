@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://c4u80mtdabi0p" path="res://common/scripts/inventory/inventory.gd" id="5_fkugw"]
 [ext_resource type="Script" uid="uid://b7maretlulvud" path="res://entities/player/player_movement.gd" id="5_qiwj3"]
 [ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/scripts/inventory/item_data.gd" id="6_8fjmc"]
-[ext_resource type="PackedScene" uid="uid://eikdd5p1w6ay" path="res://gui/hud/hud.tscn" id="9_bectd"]
+[ext_resource type="PackedScene" uid="uid://eikdd5p1w6ay" path="res://entities/player/hud/hud.tscn" id="9_bectd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bls4j"]
 friction = 0.0

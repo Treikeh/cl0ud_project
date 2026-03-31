@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://diy715xds7cni"]
 
-[ext_resource type="Script" uid="uid://dojfj2q1p8ef2" path="res://gui/vendor/vendor_menu.gd" id="1_44yr2"]
+[ext_resource type="Script" uid="uid://dojfj2q1p8ef2" path="res://entities/vendor/menu/vendor_menu.gd" id="1_44yr2"]
 [ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="2_51ia8"]
 [ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/scripts/inventory/item_data.gd" id="3_vu42w"]
 

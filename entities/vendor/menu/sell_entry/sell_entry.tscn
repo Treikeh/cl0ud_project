@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d4epumjlgldtn"]
 
-[ext_resource type="Script" uid="uid://yltpfdtj76i6" path="res://gui/vendor/sell_entry/sell_entry.gd" id="1_23urj"]
+[ext_resource type="Script" uid="uid://yltpfdtj76i6" path="res://entities/vendor/menu/sell_entry/sell_entry.gd" id="1_23urj"]
 
 [node name="SellEntry" type="PanelContainer" unique_id=309478878 node_paths=PackedStringArray("_name_label", "_value_label")]
 script = ExtResource("1_23urj")
