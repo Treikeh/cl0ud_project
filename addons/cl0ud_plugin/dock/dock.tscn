@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dr3sanlex60fm"]
+
+[ext_resource type="Script" uid="uid://skc43pnuhb0r" path="res://addons/cl0ud_plugin/dock/dock.gd" id="1_4q10j"]
+
+[node name="Dock" type="Control" unique_id=391463245 node_paths=PackedStringArray("_enable_save_check_box", "_dialogue_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4q10j")
+_enable_save_check_box = NodePath("VBoxContainer/EnableSaveContainer/EnableSaveCheckBox")
+_dialogue_button = NodePath("VBoxContainer/DialogueButton")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1314947263]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EnableSaveContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1589019383]
+layout_mode = 2
+tooltip_text = "Should the save game be saved/loaded when playing."
+
+[node name="Label" type="Label" parent="VBoxContainer/EnableSaveContainer" unique_id=762042472]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Enable save game"
+
+[node name="EnableSaveCheckBox" type="CheckBox" parent="VBoxContainer/EnableSaveContainer" unique_id=278256174]
+layout_mode = 2
+button_pressed = true
+
+[node name="DialogueButton" type="Button" parent="VBoxContainer" unique_id=1103884167]
+layout_mode = 2
+text = "Create Dialogue Data"

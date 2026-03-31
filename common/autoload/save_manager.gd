@@ -1,11 +1,13 @@
 extends Node
 
 
-const FILE_NAME: String = "save.ini"
+const FILE_NAME: String = ".save"
+const DEBUG_FILE_NAME: String = "save.ini"
 
 var _save_data: Dictionary = {}
 
-@onready var _file_path: String = Globals.get_data_dir() + FILE_NAME
+@onready var _file_name: String = DEBUG_FILE_NAME if Globals.in_editor else FILE_NAME
+@onready var _save_path: String = Globals.get_data_dir() + _file_name
 
 
 func _ready() -> void:
@@ -33,47 +35,17 @@ func save_game() -> void:
 	_save_data_to_file()
 
 
-#region Save/Load data to/from file
-
-const COMPRESION_MODE: int = FileAccess.COMPRESSION_DEFLATE
-
-
 func _load_data_from_file() -> void:
-	var data_as_text: String = Globals.load_text_from_file(_file_path)
-	# Check if there is any data
-	if data_as_text == "":
+	if not Globals.save_enabled:
 		return
 	
-	# Decode save data when not in editor
-	data_as_text = _decode_data(data_as_text)
-	
-	_save_data = JSON.parse_string(data_as_text)
+	_save_data = Globals.load_data_from_file(_save_path)
+
 
 func _save_data_to_file() -> void:
-	var data_as_text: String = JSON.stringify(_save_data, "\t")
+	if not Globals.save_enabled:
+		return
 	
-	# Encode save data when not in the editor
-	data_as_text = _encode_data(data_as_text)
-	
-	Globals.save_text_to_file(_file_path, data_as_text)
-
-
-func _encode_data(data: String) -> String:
-	if Globals.in_editor:
-		return data
-	
-	var ascii_encode: PackedByteArray = data.to_ascii_buffer()
-	var compress: PackedByteArray = ascii_encode.compress(COMPRESION_MODE)
-	var hex_encode: String = compress.hex_encode()
-	return hex_encode
-
-func _decode_data(data: String) -> String:
-	if Globals.in_editor:
-		return data
-	
-	var hex_decode: PackedByteArray = data.hex_decode()
-	var decompress: PackedByteArray = hex_decode.decompress_dynamic(-1, COMPRESION_MODE)
-	var ascii_decode: String = decompress.get_string_from_ascii()
-	return ascii_decode
-
-#endregion
+	# Hide the save file if not in the editor
+	var hidden: bool = false if Globals.in_editor else true
+	Globals.save_data_to_file(_save_path, _save_data, hidden)

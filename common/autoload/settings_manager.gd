@@ -15,18 +15,9 @@ func _exit_tree() -> void:
 	_save_settings_to_file()
 
 
-#region Save/Load settings to/from file
-
 func _load_settings_from_file() -> void:
-	var settings_as_text: String = Globals.load_text_from_file(_file_path)
-	# Check if there are any settings
-	if settings_as_text == "":
-		return
-	
-	_settings = JSON.parse_string(settings_as_text)
+	_settings = Globals.load_data_from_file(_file_path)
+
 
 func _save_settings_to_file() -> void:
-	var settings_as_text: String = JSON.stringify(_settings, "\t")
-	Globals.save_text_to_file(_file_path, settings_as_text)
-
-#endregion
+	Globals.save_data_to_file(_file_path, _settings)
