@@ -1,11 +1,11 @@
-extends FishDataDispaly
+extends FishDataDisplay
 
 
 @export var _sender_label: Label
 @export var _recipient_label: Label
 
 
-func with_data(data: FishData) -> FishDataDispaly:
+func with_data(data: FishData) -> FishDataDisplay:
 	if data is MessageData:
 		_sender_label.text = data.sender
 		_recipient_label.text = data.recipient

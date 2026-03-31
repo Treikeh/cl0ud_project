@@ -1,4 +1,4 @@
-extends FishDataDispaly
+extends FishDataDisplay
 
 
 @export var _from_label: Label
@@ -7,7 +7,7 @@ extends FishDataDispaly
 @export var _content_label: Label
 
 
-func with_data(data: FishData) -> FishDataDispaly:
+func with_data(data: FishData) -> FishDataDisplay:
 	if data is MailData:
 		_from_label.text = data.from
 		_to_label.text = data.to

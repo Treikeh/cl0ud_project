@@ -165,19 +165,25 @@ func get_save_data() -> Dictionary:
 	var data: Dictionary = {
 		SAVE_DATA_KEY: {
 			"position": var_to_str(global_position),
-			"head_rotation": var_to_str(_head.rotation_degrees),
-			"orientation": var_to_str(_orientation.rotation_degrees),
+			"head_rotation": var_to_str(_head.rotation_degrees.x),
+			"orientation": var_to_str(_orientation.rotation_degrees.y),
+			"inventory": inventory.get_save_data()
 		},
 	}
 	return data
 
 func _load_save_data() -> void:
+	# Load and set save data
 	var data: Dictionary = SaveManager.get_save_data(SAVE_DATA_KEY)
 	if data.is_empty():
 		return
 	
+	# Update position
 	global_position = str_to_var(data.position)
-	_orientation.rotation_degrees = str_to_var(data.orientation)
-	_head.rotation_degrees = str_to_var(data.head_rotation)
+	# Update rotation
+	_orientation.rotation_degrees.y = str_to_var(data.orientation)
+	_head.rotation_degrees.x = str_to_var(data.head_rotation)
+	# Update inventory
+	inventory.load_save_data(data.inventory)
 
 #endregion

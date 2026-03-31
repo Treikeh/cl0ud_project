@@ -6,5 +6,31 @@ class_name ItemData
 @export var value: int = 0
 @export var icon: Texture
 @export_file("*.tscn") var mesh_scene: String
-@export_file("*.tscn") var dispaly_scene: String
+@export_file("*.tscn") var display_scene: String
 @export var fish_data: FishData
+
+
+func _init(data: Dictionary = {}) -> void:
+	if data.is_empty():
+		return
+	
+	name = data.name
+	value = data.value
+	icon = load(data.icon) if data.icon else null
+	mesh_scene = data.mesh_scene
+	display_scene = data.display_scene
+	fish_data = load(data.fish_data) if data.fish_data else null
+
+
+func get_data() -> Dictionary:
+	var icon_path: String = icon.resource_path if icon else ""
+	var fish_data_path: String = fish_data.resource_path if fish_data else ""
+	var data: Dictionary = {
+		"name": name,
+		"value": value,
+		"icon": icon_path,
+		"mesh_scene": mesh_scene,
+		"display_scene": display_scene,
+		"fish_data": fish_data_path,
+	}
+	return data

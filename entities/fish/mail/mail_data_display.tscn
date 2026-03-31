@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cyuo21l0gwdm5"]
 
-[ext_resource type="Script" uid="uid://bu5n7qf877ogg" path="res://entities/fish/mail/mail_data_dispaly.gd" id="1_bejpv"]
+[ext_resource type="Script" uid="uid://bu5n7qf877ogg" path="res://entities/fish/mail/mail_data_display.gd" id="1_bejpv"]
 
-[node name="MailDataDispaly" type="Control" unique_id=307770116 node_paths=PackedStringArray("_from_label", "_to_label", "_subject_label", "_content_label")]
+[node name="MailDataDisplay" type="Control" unique_id=307770116 node_paths=PackedStringArray("_from_label", "_to_label", "_subject_label", "_content_label")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_bejpv")

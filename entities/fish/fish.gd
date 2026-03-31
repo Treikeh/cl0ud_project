@@ -30,15 +30,16 @@ func _create_item_data(type: Type) -> ItemData:
 	var type_as_text: String = Type.keys()[type].to_lower()
 	var files_path: String = FOLDER_PATH + type_as_text + "/"
 	
-	# Create a new item data based on the file
-	var data := ItemData.new()
-	data.name = str(randi())
-	data.value = randi_range(1, 10)
-	data.icon = load(files_path + type_as_text + "_icon.png")
-	data.mesh_scene = files_path + type_as_text + "_mesh.tscn"
-	data.dispaly_scene = files_path + type_as_text + "_data_dispaly.tscn"
-	data.fish_data = _get_fish_data(files_path)
-	return data
+	# Create dict with all the data the ItemData class needs
+	var data: Dictionary = {
+		"name": str(randi()),
+		"value": randi_range(1, 10),
+		"icon": load(files_path + type_as_text + "_icon.png"),
+		"mesh_scene": files_path + type_as_text + "_mesh.tscn",
+		"display_scene": files_path + type_as_text + "_data_display.tscn",
+		"fish_data": _get_fish_data(files_path)
+	}
+	return ItemData.new(data)
 
 
 # Get a random data file from the foler of the fish type
@@ -53,6 +54,8 @@ func _get_fish_data(path: String) -> FishData:
 	var file_index: int = randi_range(0, files.size() - 1)
 	# Get the name of the file at the file_index position
 	var file: String = files[file_index]
-	print(data_folder_path + file)
+	# Trim the file name
+	#NOTE: Resource files are given the .remap suffix in exported builds
+	file = file.trim_suffix(".remap")
 	# Load the file
-	return load(data_folder_path + file.trim_suffix(".remap"))
+	return load(data_folder_path + file)

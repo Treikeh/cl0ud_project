@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ds5flwipduxn0"]
 
-[ext_resource type="Script" uid="uid://b3o3balij3j1b" path="res://entities/fish/note/note_data_dispaly.gd" id="1_qfa5c"]
+[ext_resource type="Script" uid="uid://b3o3balij3j1b" path="res://entities/fish/note/note_data_display.gd" id="1_qfa5c"]
 
-[node name="NoteDataDispaly" type="Control" unique_id=307770116 node_paths=PackedStringArray("_text_label")]
+[node name="NoteDataDisplay" type="Control" unique_id=307770116 node_paths=PackedStringArray("_text_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -1,6 +1,6 @@
 @abstract
 extends Control
-class_name FishDataDispaly
+class_name FishDataDisplay
 
 
-@abstract func with_data(data: FishData) -> FishDataDispaly
+@abstract func with_data(data: FishData) -> FishDataDisplay

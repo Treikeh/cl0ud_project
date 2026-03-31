@@ -99,12 +99,12 @@ func _show_fish_data_dispaly(item_data: ItemData) -> void:
 		return
 	
 	# Make sure the path is valid before spawning the display
-	var display_scene_path: String = item_data.dispaly_scene
+	var display_scene_path: String = item_data.display_scene
 	if display_scene_path == "":
 		return
 	
-	var dispaly_scene: Resource = load(display_scene_path)
-	var display: FishDataDispaly = dispaly_scene.instantiate().with_data(fish_data)
+	var display_scene: Resource = load(display_scene_path)
+	var display: FishDataDisplay = display_scene.instantiate().with_data(fish_data)
 	_fish_data_dispaly_root.add_child(display)
 
 
