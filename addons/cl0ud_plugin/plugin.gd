@@ -42,6 +42,7 @@ func _create_settings_file() -> void:
 		# Create plugin settings file if it's missing
 		var data: Dictionary = {
 			"save_enabled": var_to_str(false),
+			"dialogue_file_paths": {},
 		}
 		var text: String = JSON.stringify(data, "\t")
 		var file_access := FileAccess.open(FODLER + FILE, FileAccess.WRITE)
