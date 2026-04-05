@@ -7,6 +7,7 @@ var dock: EditorDock
 
 func _enable_plugin() -> void:
 	_create_settings_file()
+	_create_debug_settings_file()
 
 
 func _enter_tree() -> void:
@@ -30,19 +31,32 @@ func _exit_tree() -> void:
 
 func _create_settings_file() -> void:
 	print("Creating settings file for the C.L.0.U.D plugin")
+	# Check if the settings file file exists
+	if not FileAccess.file_exists(Globals.SETTINGS_FILE):
+		# Create settings file
+		var data: Dictionary = {
+			"dialogue_file_paths": {},
+		}
+		var text: String = JSON.stringify(data, "\t")
+		var file_access := FileAccess.open(Globals.SETTINGS_FILE, FileAccess.WRITE)
+		# Save data to file
+		file_access.store_string(text)
+
+
+func _create_debug_settings_file() -> void:
+	print("Creating debug settings file for the C.L.0.U.D plugin")
 	# Check if the debug folder exists
 	const FODLER: String = "res://debug/"
 	if not DirAccess.dir_exists_absolute(FODLER):
 		# Create debug folder if it's missing
 		DirAccess.make_dir_absolute(FODLER)
 	
-	# Check if plugin settings file exists
-	const FILE: String = "plugin_settings.ini"
+	# Check if debug settings file exists
+	const FILE: String = "debug_settings.ini"
 	if not FileAccess.file_exists(FODLER + FILE):
-		# Create plugin settings file if it's missing
+		# Create debug settings file if it's missing
 		var data: Dictionary = {
 			"save_enabled": var_to_str(false),
-			"dialogue_file_paths": {},
 		}
 		var text: String = JSON.stringify(data, "\t")
 		var file_access := FileAccess.open(FODLER + FILE, FileAccess.WRITE)
