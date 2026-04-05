@@ -35,6 +35,8 @@ func _create_settings_file() -> void:
 	if not FileAccess.file_exists(Globals.SETTINGS_FILE):
 		# Create settings file
 		var data: Dictionary = {
+			"items_file_paths": {},
+			"fish_data_file_paths": {},
 			"dialogue_file_paths": {},
 		}
 		var text: String = JSON.stringify(data, "\t")
