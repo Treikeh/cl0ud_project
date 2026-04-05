@@ -85,10 +85,10 @@ func _parse_dialogue_file() -> void:
 			dialogue = load(file_path)
 		
 		# Get data from the row
-		#var chr_name: String = row[1]
+		var chr_name: String = row[1]
 		var text: String = row[2]
-		
 		# Set data on the dialogue object
+		dialogue.name = chr_name
 		dialogue.text = text
 		
 		# Save dialogue data
@@ -102,5 +102,7 @@ func _parse_dialogue_file() -> void:
 	# Update and save the uids of the dialogue files
 	_file_paths.dialogue_file_paths = file_paths
 	Globals.save_data_to_file(Globals.SETTINGS_FILE, _file_paths)
+	# Refresh files
+	EditorInterface.get_resource_filesystem().scan()
 
 #endregion
