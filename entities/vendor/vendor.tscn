@@ -8,7 +8,26 @@
 [sub_resource type="Resource" id="Resource_m2i5e"]
 script = ExtResource("2_tuhri")
 name = "Vendor"
-text = "Buying or selling?"
+text = "Buying?"
+metadata/_custom_type_script = "uid://b0pj0dtodw2q8"
+
+[sub_resource type="Resource" id="Resource_7slro"]
+script = ExtResource("2_tuhri")
+name = "Vendor"
+text = "or selling?"
+choices = Array[String](["Buying", "Nevermind"])
+metadata/_custom_type_script = "uid://b0pj0dtodw2q8"
+
+[sub_resource type="Resource" id="Resource_tuhri"]
+script = ExtResource("2_tuhri")
+name = "Vendor"
+text = "Bye then"
+metadata/_custom_type_script = "uid://b0pj0dtodw2q8"
+
+[sub_resource type="Resource" id="Resource_qccll"]
+script = ExtResource("2_tuhri")
+name = "Vendor"
+text = "Bye"
 metadata/_custom_type_script = "uid://b0pj0dtodw2q8"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_72uc0"]
@@ -19,7 +38,9 @@ size = Vector3(0.6, 1.8000001, 0.4)
 [node name="Vendor" type="Node3D" unique_id=520470945 node_paths=PackedStringArray("_head_marker")]
 script = ExtResource("1_72uc0")
 _head_marker = NodePath("HeadMarker")
-_dialogue = Array[ExtResource("2_tuhri")]([SubResource("Resource_m2i5e")])
+_interact_dialogue = Array[ExtResource("2_tuhri")]([SubResource("Resource_m2i5e"), SubResource("Resource_7slro")])
+_nevermind_dialogue = Array[ExtResource("2_tuhri")]([SubResource("Resource_tuhri")])
+_close_shop_dialogue = Array[ExtResource("2_tuhri")]([SubResource("Resource_qccll")])
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1191746555]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90000004, 0)

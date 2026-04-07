@@ -4,16 +4,27 @@ extends Node3D
 const VENDOR_MENU_SCENE: PackedScene = preload("uid://diy715xds7cni")
 
 @export var _head_marker: Marker3D
-@export var _dialogue: Array[DialogueData] = []
+@export var _interact_dialogue: Array[DialogueData] = []
+@export var _nevermind_dialogue: Array[DialogueData] = []
+@export var _close_shop_dialogue: Array[DialogueData] = []
 
 
 func _on_interact_area_3d_interacted(player: Player) -> void:
+	# Start dialogue when interacting with the vendor
 	player.update_look_position(_head_marker.global_position)
-	var dialogue: Control = player.hud.start_dialogue(_dialogue)
-	dialogue.dialogue_ended.connect(_on_dialogue_ended.bind(player))
+	var dialogue: Control = player.hud.start_dialogue(_interact_dialogue)
+	dialogue.dialouge_choice_made.connect(_on_dialouge_choice_made.bind(player))
 
 
-func _on_dialogue_ended(player: Player) -> void:
+func _on_dialouge_choice_made(choice: int, player: Player) -> void:
+	match choice:
+		0: # Buying?
+			_open_vendor_menu(player)
+		1: # Nevermind
+			player.hud.start_dialogue.call_deferred(_nevermind_dialogue)
+
+
+func _open_vendor_menu(player: Player) -> void:
 	var vendor_menu: Control = VENDOR_MENU_SCENE.instantiate().with_data(player.inventory)
 	add_child(vendor_menu)
 	vendor_menu.closed.connect(_on_vendor_menu_closed.bind(player))
@@ -26,7 +37,4 @@ func _on_dialogue_ended(player: Player) -> void:
 
 
 func _on_vendor_menu_closed(player: Player) -> void:
-	# Enable input
-	player.input.set_enabled(true)
-	# Allow the player look around
-	player.update_look_position(Vector3.ZERO)
+	player.hud.start_dialogue.call_deferred(_close_shop_dialogue)
