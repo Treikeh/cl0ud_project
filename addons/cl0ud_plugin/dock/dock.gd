@@ -125,7 +125,6 @@ func _create_item_resources(data: Array[PackedStringArray], file_paths: Dictiona
 		print(type)
 		var icon: Texture
 		var mesh_scene: String
-		var display_scene: String
 		var fish_data: FishData
 		
 		match type:
@@ -134,7 +133,6 @@ func _create_item_resources(data: Array[PackedStringArray], file_paths: Dictiona
 				# Get stuff from fish data
 				icon = load("res://entities/fish/%s/%s_icon.png" % [fish_type, fish_type])
 				mesh_scene = "res://entities/fish/%s/%s_mesh.tscn" % [fish_type, fish_type]
-				display_scene = "res://entities/fish/%s/%s_data_display" % [fish_type, fish_type]
 				fish_data = load("res://entities/fish/%s/data/%s" % [fish_type, row[7]])
 			_:
 				icon = load(row[5])
@@ -146,7 +144,6 @@ func _create_item_resources(data: Array[PackedStringArray], file_paths: Dictiona
 		item.type = type
 		item.icon = icon
 		item.mesh_scene = mesh_scene
-		item.display_scene = display_scene
 		item.fish_data = fish_data
 		
 		_save_resource(item, path, file_paths, id)

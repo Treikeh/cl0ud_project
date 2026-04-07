@@ -37,7 +37,6 @@ func _create_item_data(type: Type) -> ItemData:
 		"type": type_as_text.to_upper(),
 		"icon": files_path + type_as_text + "_icon.png",
 		"mesh_scene": files_path + type_as_text + "_mesh.tscn",
-		"display_scene": files_path + type_as_text + "_data_display.tscn",
 		"fish_data": _get_fish_data_path(files_path)
 	}
 	return ItemData.new(data)

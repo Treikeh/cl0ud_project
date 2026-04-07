@@ -23,6 +23,7 @@ func _ready() -> void:
 	_read_data_button.pressed.connect(_on_read_data_button_pressed)
 	if _item_data.fish_data == null:
 		_read_data_button.hide()
+		_read_data_button.disabled = true
 
 
 func _on_read_data_button_pressed() -> void:
@@ -30,11 +31,7 @@ func _on_read_data_button_pressed() -> void:
 	if _fish_data_dispaly_root.get_child_count() > 0:
 		return
 	
-	# Make sure the path is valid before spawning the display
-	var display_scene_path: String = _item_data.display_scene
-	if display_scene_path == "":
-		return
-	
+	var display_scene_path: String = _item_data.fish_data.get_display_scene()
 	var display_scene: Resource = load(display_scene_path)
 	var display: FishDataDisplay = display_scene.instantiate().with_data(_item_data.fish_data)
 	_fish_data_dispaly_root.add_child(display)
