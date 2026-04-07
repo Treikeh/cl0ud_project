@@ -222,12 +222,17 @@ func _create_dialogue_resources(data: Array[PackedStringArray], file_paths: Dict
 			# Load the old file
 			dialogue = load(path)
 		
-		# Get data from the row
-		var chr_name: String = row[1]
-		var text: String = row[2]
+		# Get choices
+		var choices: Array[String] = []
+		# Remove the space in front of each option
+		for choice: String in row[3].split("|"):
+			choice = choice.strip_edges()
+			choices.append(choice)
+		
 		# Set data on the dialogue object
-		dialogue.name = chr_name
-		dialogue.text = text
+		dialogue.name = row[1]
+		dialogue.text = row[2]
+		dialogue.choices = choices
 		
 		_save_resource(dialogue, path, file_paths, id)
 
