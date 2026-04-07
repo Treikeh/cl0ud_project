@@ -4,6 +4,7 @@ extends Control
 signal dialogue_ended
 
 
+@export var _name_label: Label
 @export var _text_label: Label
 
 var _dialogue_progress: int = 0
@@ -26,6 +27,7 @@ func _input(event: InputEvent) -> void:
 
 func _update_dialogue_box() -> void:
 	var dialogue: DialogueData = _dialogue[_dialogue_progress]
+	_name_label.text = dialogue.name
 	_text_label.text = dialogue.text
 
 
