@@ -1,6 +1,11 @@
 @tool
 extends Node
 
+@warning_ignore_start("unused_signal")
+signal fish_hooked
+signal fish_caught
+signal fish_escaped
+
 
 func _ready() -> void:
 	_load_debug_settings()

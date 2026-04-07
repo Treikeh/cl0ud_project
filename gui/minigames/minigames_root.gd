@@ -1,10 +1,6 @@
 extends Control
 
 
-signal minigames_failed
-signal minigames_succeeded
-
-
 @export var _catch_minigame: Control
 @export var reel_inn_minigame: Control
 
@@ -52,9 +48,9 @@ func _on_catch_minigame_succeeded() -> void:
 
 func _on_reel_in_minigame_succeeded() -> void:
 	_end_minigames()
-	minigames_succeeded.emit()
+	Globals.fish_caught.emit()
 
 
 func _on_minigames_failed() -> void:
 	_end_minigames()
-	minigames_failed.emit()
+	Globals.fish_escaped.emit()

@@ -1,9 +1,6 @@
 extends Node3D
 
 
-signal fish_hooked
-
-
 enum FishingState {
 	IDLE,
 	READY_THROW,
@@ -29,9 +26,6 @@ var _fishing_state: FishingState = FishingState.IDLE
 
 func _ready() -> void:
 	_player.fishing_rod = self
-	
-	# Connect signals
-	fish_hooked.connect(_player._on_fish_hooked)
 	
 	# Add timer for fishing
 	_fish_timer = Timer.new()
@@ -120,7 +114,7 @@ func _on_hook_hit_water() -> void:
 func _on_fish_hooked() -> void:
 	if _fishing_state == FishingState.WAITING:
 		_fishing_state = FishingState.FISH_HOOKED
-		fish_hooked.emit()
+		Globals.fish_hooked.emit()
 
 
 func fish_caught() -> void:

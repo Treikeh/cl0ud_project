@@ -12,6 +12,10 @@ var hud: Hud
 
 
 func _ready() -> void:
+	Globals.fish_caught.connect(_on_fish_caught)
+	Globals.fish_hooked.connect(_on_fish_hooked)
+	Globals.fish_escaped.connect(_on_fish_escaped)
+	
 	_interact_ray.prompt_updated.connect(hud.update_interact_prompt)
 	
 	_load_save_data.call_deferred()
@@ -138,9 +142,6 @@ func _on_fish_hooked() -> void:
 	
 	var minigames_root: Control = MINIGMAES_SCENE.instantiate().with_data(self)
 	add_child(minigames_root)
-	
-	minigames_root.minigames_succeeded.connect(_on_fish_caught)
-	minigames_root.minigames_failed.connect(_on_fish_escaped)
 
 
 func _on_fish_caught() -> void:
