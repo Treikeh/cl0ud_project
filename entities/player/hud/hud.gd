@@ -6,12 +6,17 @@ const DIALOGUE_BOX_SCENE: PackedScene = preload("uid://4tbnv1ykb0mi")
 
 
 @export var _interact_prompt: Label
+@export var _fish_collected_promtp: Control
 
 @onready var _player: Player = get_owner()
 
 
 func _ready() -> void:
 	_player.hud = self
+	
+	Globals.fish_collected.connect(_on_fish_collected)
+	
+	_fish_collected_promtp.hide()
 
 
 func update_interact_prompt(prompt: String) -> void:
@@ -30,3 +35,8 @@ func start_dialogue(dialogue: Array[DialogueData]) -> Control:
 func _on_dialogue_ended() -> void:
 	_player.input.set_enabled(true)
 	_player.update_look_position(Vector3.ZERO)
+
+
+func _on_fish_collected(item: ItemData) -> void:
+	_fish_collected_promtp.show()
+	_fish_collected_promtp.update(item)

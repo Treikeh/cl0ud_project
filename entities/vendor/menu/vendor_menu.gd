@@ -59,7 +59,7 @@ func _on_item_bought(buy_entry: BuyEntry) -> void:
 	if _inventory.currency >= buy_entry.item.value:
 		_inventory.currency -= buy_entry.item.value
 		_currency_label.text = str(_inventory.currency) + "$"
-		_inventory.add_item(buy_entry.item)
+		#_inventory.add_item(buy_entry.item)
 		buy_entry.queue_free()
 
 

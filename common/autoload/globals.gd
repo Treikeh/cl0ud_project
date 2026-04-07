@@ -5,6 +5,7 @@ extends Node
 signal fish_hooked
 signal fish_caught
 signal fish_escaped
+signal fish_collected(item: ItemData)
 
 
 func _ready() -> void:

@@ -103,6 +103,7 @@ func _reset_rod() -> void:
 
 
 func _collect_fish() -> void:
+	Globals.fish_collected.emit(_hooked_fish.item_data)
 	_player.inventory.add_item(_hooked_fish.item_data)
 	_hooked_fish.queue_free()
 

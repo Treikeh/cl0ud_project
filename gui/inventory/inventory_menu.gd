@@ -5,18 +5,22 @@ signal closed
 
 
 const SLOT_SCENE: PackedScene = preload("uid://cs35qk6fai74g")
+const ITEM_DISPALY_SCENE: PackedScene = preload("uid://cye3hnmivani4")
 
 @export var _slot_grid: GridContainer
 @export var _select_marker: ColorRect
 @export var _currency_label: Label
-@export var _fish_data_dispaly_root: Control
+@export var _upgrades_label: Label
+@export var _item_dispaly_root: Control
 @export var _mesh_marker: Marker3D
 
+var _upgrades: Array[String] = []
 var _inventory: Inventory
 
 
-func with_data(inventory: Inventory) -> Control:
+func with_data(inventory: Inventory, upgrades: Array[String]) -> Control:
 	_inventory = inventory
+	_upgrades = upgrades
 	return self
 
 
@@ -40,6 +44,9 @@ func _open() -> void:
 	_populate_slot_grid()
 	
 	_currency_label.text = str(_inventory.currency) + "$"
+	
+	for upgrade: String in _upgrades:
+		_upgrades_label.text += upgrade + "\n"
 
 
 func _close() -> void:
@@ -64,7 +71,7 @@ func _populate_slot_grid() -> void:
 func _on_slot_pressed(slot_index: int) -> void:
 	# Remove the old mesh preview
 	_remove_preview_mesh()
-	_remove_fish_data_display()
+	_remove_item_display()
 	
 	# Get the new pressed slot
 	var pressed_slot: InventorySlot = _slot_grid.get_child(slot_index)
@@ -76,7 +83,7 @@ func _on_slot_pressed(slot_index: int) -> void:
 	var item_data: ItemData = _inventory.get_slot_data(slot_index)
 	if item_data:
 		_show_preview_mesh(item_data)
-		_show_fish_data_dispaly(item_data)
+		_show_item_dispaly(item_data)
 
 
 func _show_preview_mesh(item_data: ItemData) -> void:
@@ -93,22 +100,12 @@ func _remove_preview_mesh() -> void:
 		child.queue_free()
 
 
-func _show_fish_data_dispaly(item_data: ItemData) -> void:
-	var fish_data: FishData = item_data.fish_data
-	if fish_data == null:
-		return
-	
-	# Make sure the path is valid before spawning the display
-	var display_scene_path: String = item_data.display_scene
-	if display_scene_path == "":
-		return
-	
-	var display_scene: Resource = load(display_scene_path)
-	var display: FishDataDisplay = display_scene.instantiate().with_data(fish_data)
-	_fish_data_dispaly_root.add_child(display)
+func _show_item_dispaly(item_data: ItemData) -> void:
+	var display: Control = ITEM_DISPALY_SCENE.instantiate().with_data(item_data)
+	_item_dispaly_root.add_child(display)
 
 
-func _remove_fish_data_display() -> void:
-	for child: Control in _fish_data_dispaly_root.get_children():
-		_fish_data_dispaly_root.remove_child(child)
+func _remove_item_display() -> void:
+	for child: Control in _item_dispaly_root.get_children():
+		_item_dispaly_root.remove_child(child)
 		child.queue_free()

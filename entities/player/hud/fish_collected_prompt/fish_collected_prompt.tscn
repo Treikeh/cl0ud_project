@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://d0ftqot8bubts"]
+
+[ext_resource type="Script" uid="uid://dlsd6l245823n" path="res://entities/player/hud/fish_collected_prompt/fish_collected_prompt.gd" id="1_kycp3"]
+[ext_resource type="Texture2D" uid="uid://cdh1uvulx0tfd" path="res://entities/fish/message/message_icon.png" id="2_gil8t"]
+
+[node name="FishCollectedPrompt" type="MarginContainer" unique_id=1441646127 node_paths=PackedStringArray("_icon", "_timer")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -88.0
+offset_bottom = 99.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+script = ExtResource("1_kycp3")
+_icon = NodePath("HBoxContainer/VBoxContainer/IconPanel/Icon")
+_timer = NodePath("HBoxContainer/Timer")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=5563499]
+layout_mode = 2
+
+[node name="NewEntryLabel" type="Label" parent="HBoxContainer" unique_id=935902774]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/line_spacing = -4
+theme_override_font_sizes/font_size = 15
+text = "N
+E
+W
+E
+N
+T
+R
+Y"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=961159403]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IconPanel" type="PanelContainer" parent="HBoxContainer/VBoxContainer" unique_id=372995336]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/VBoxContainer/IconPanel" unique_id=557181343]
+layout_mode = 2
+texture = ExtResource("2_gil8t")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1992755580]
+layout_mode = 2
+text = "X to open file"
+
+[node name="Timer" type="Timer" parent="HBoxContainer" unique_id=922595520]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="HBoxContainer/Timer" to="." method="_on_timer_timeout"]

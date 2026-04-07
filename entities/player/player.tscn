@@ -31,6 +31,7 @@ script = ExtResource("1_symyc")
 _orientation = NodePath("Orientation")
 _head = NodePath("Orientation/Head")
 _interact_ray = NodePath("Orientation/Head/InteractRay")
+_upgrades = Array[String](["Hello", "What", "Is", "This"])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1270325616]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)

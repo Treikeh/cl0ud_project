@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cye3hnmivani4"]
+
+[ext_resource type="Script" uid="uid://1p4adi13rbia" path="res://gui/inventory/item_display/item_display.gd" id="1_u0h22"]
+
+[node name="ItemDisplay" type="Control" unique_id=1218238382 node_paths=PackedStringArray("_name_label", "_value_label", "_type_label", "_read_data_button", "_fish_data_dispaly_root")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 147.0
+offset_bottom = 112.0
+script = ExtResource("1_u0h22")
+_name_label = NodePath("PanelContainer/VBoxContainer/NameLabel")
+_value_label = NodePath("PanelContainer/VBoxContainer/ValueLabel")
+_type_label = NodePath("PanelContainer/VBoxContainer/TypeLabel")
+_read_data_button = NodePath("PanelContainer/VBoxContainer/ReadDataButton")
+_fish_data_dispaly_root = NodePath("FishDataDispalyRoot")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=300713218]
+layout_mode = 0
+offset_right = 147.0
+offset_bottom = 112.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=62075600]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=712551791]
+layout_mode = 2
+text = "Name: Placeholder"
+
+[node name="ValueLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=431447506]
+layout_mode = 2
+text = "Value: 10"
+
+[node name="TypeLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=333823445]
+layout_mode = 2
+text = "Type: Mail"
+
+[node name="ReadDataButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1924262656]
+layout_mode = 2
+text = "Read Data"
+
+[node name="FishDataDispalyRoot" type="Control" parent="." unique_id=1484601016]
+anchors_preset = 0
+offset_left = 161.0
+offset_right = 161.0

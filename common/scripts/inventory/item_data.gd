@@ -4,6 +4,7 @@ class_name ItemData
 
 @export var name: String = "Name"
 @export var value: int = 0
+@export var type: String = ""
 @export var icon: Texture
 @export_file("*.tscn") var mesh_scene: String
 @export_file("*.tscn") var display_scene: String
@@ -16,6 +17,7 @@ func _init(data: Dictionary = {}) -> void:
 	
 	name = data.name
 	value = int(data.value)
+	type = data.type
 	icon = load(data.icon) if data.icon != "" else null
 	mesh_scene = data.mesh_scene
 	display_scene = data.display_scene
@@ -26,6 +28,7 @@ func get_data() -> Dictionary:
 	var data: Dictionary = {
 		"name": name,
 		"value": value,
+		"type": type,
 		"icon": icon.resource_path if icon != null else "",
 		"mesh_scene": mesh_scene,
 		"display_scene": display_scene,

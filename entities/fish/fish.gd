@@ -34,6 +34,7 @@ func _create_item_data(type: Type) -> ItemData:
 	var data: Dictionary = {
 		"name": str(randi()),
 		"value": randi_range(1, 10),
+		"type": type_as_text.to_upper(),
 		"icon": files_path + type_as_text + "_icon.png",
 		"mesh_scene": files_path + type_as_text + "_mesh.tscn",
 		"display_scene": files_path + type_as_text + "_data_display.tscn",
