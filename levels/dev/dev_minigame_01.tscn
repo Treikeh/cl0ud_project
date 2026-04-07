@@ -2,23 +2,9 @@
 
 [ext_resource type="Material" uid="uid://ce2hxdgei0dpw" path="res://common/materials/dev_grid_gray_01.tres" id="1_8iyw0"]
 [ext_resource type="Script" uid="uid://yujpmwatwi0d" path="res://levels/dev/dev_minigame_01.gd" id="1_o8832"]
+[ext_resource type="PackedScene" uid="uid://bli63q1qswjvg" path="res://levels/day_night_cycle/day_night_cycle.tscn" id="2_0wui5"]
 [ext_resource type="PackedScene" uid="uid://dfwa3ko7oftnj" path="res://entities/player/player.tscn" id="2_jg8us"]
 [ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/vendor/vendor.tscn" id="4_8kye5"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qwri6"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_8iyw0"]
-sky_material = SubResource("ProceduralSkyMaterial_qwri6")
-
-[sub_resource type="Environment" id="Environment_jg8us"]
-background_mode = 2
-sky = SubResource("Sky_8iyw0")
-tonemap_mode = 2
-glow_enabled = true
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jg8us"]
 size = Vector3(100, 40, 100)
@@ -26,12 +12,8 @@ size = Vector3(100, 40, 100)
 [node name="DevMinigame01" type="Node3D" unique_id=1968061625]
 script = ExtResource("1_o8832")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1604946950]
-environment = SubResource("Environment_jg8us")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=97457936]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 10, 0)
-shadow_enabled = true
+[node name="DayNightCycle" parent="." unique_id=50702471 instance=ExtResource("2_0wui5")]
+transform = Transform3D(0.80719733, 0, -0.59028167, 0, 1, 0, 0.59028167, 0, 0.80719733, 0, 0, 0)
 
 [node name="Environment" type="Node3D" parent="." unique_id=396595707]
 
