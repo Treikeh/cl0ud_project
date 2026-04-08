@@ -11,12 +11,6 @@ enum Type {
 const FOLDER_PATH: String = "res://entities/fish/"
 
 var item_data: ItemData
-var _loot_pool: LootPool
-
-
-func with_data(loot_pool: LootPool) -> Fish:
-	_loot_pool = loot_pool
-	return self
 
 
 func _ready() -> void:
@@ -25,6 +19,17 @@ func _ready() -> void:
 	# Spawn fish mesh
 	var mesh: Node3D = load(item_data.mesh_scene).instantiate()
 	add_child(mesh)
+	
+	var type: Type = _get_random_type()
+	var type_as_text: String = Type.keys()[type]
+	#print(Globals.fish_loot_table[type_as_text])
+	var type_loot_table: Dictionary = Globals.fish_loot_table[type_as_text]
+	type_loot_table.sort()
+	for item: String in type_loot_table:
+		var rarity: int = int(type_loot_table[item])
+		if rarity > 0:
+			print(item)
+			return
 
 
 func _create_item_data() -> ItemData:
@@ -37,7 +42,7 @@ func _create_item_data() -> ItemData:
 	# Create dict with all the data the ItemData class needs
 	var data: Dictionary = {
 		"name": fish_data.split("/")[-1].trim_suffix(".tres"),
-		"value": _loot_pool.get_value(),
+		"value": randi_range(5, 25),
 		"type": type_as_text.to_upper(),
 		"icon": files_path + type_as_text + "_icon.png",
 		"mesh_scene": files_path + type_as_text + "_mesh.tscn",

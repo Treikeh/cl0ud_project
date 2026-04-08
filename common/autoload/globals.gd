@@ -11,14 +11,25 @@ signal started_fishing
 signal stopped_fishing
 
 
+const FISH_LOOT_TABLE_FILE: String = "res://common/items/_fish_loot_table.ini"
+
 var hook_distance: float = 0.0
 var mail_fish_chance: float = 1.0
 var note_fish_chance: float = 1.0
 var message_fish_chance: float = 1.0
 
+var fish_loot_table: Dictionary
+
 
 func _ready() -> void:
 	_load_debug_settings()
+	# Only load loot table when the game loads, not when the editor loads
+	if not Engine.is_editor_hint():
+		_load_fish_loot_table()
+
+
+func _load_fish_loot_table() -> void:
+	fish_loot_table = load_data_from_file(FISH_LOOT_TABLE_FILE)
 
 
 #region Save/Load data to/from files

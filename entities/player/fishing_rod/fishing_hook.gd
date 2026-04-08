@@ -11,11 +11,8 @@ const FISH_SCENE: PackedScene = preload("uid://i5dq3bivh8i0")
 
 var hooked_fish: Fish
 
-var _loot_pool: LootPool
 
-
-func hit_water(loot_pool: LootPool) -> void:
-	_loot_pool = loot_pool
+func hit_water() -> void:
 	gravity_scale = 0.0
 	linear_velocity = Vector3.ZERO
 	angular_velocity = Vector3.ZERO
@@ -24,5 +21,5 @@ func hit_water(loot_pool: LootPool) -> void:
 
 func spawn_fish() -> void:
 	# Spawn a fish on the hook
-	hooked_fish = FISH_SCENE.instantiate().with_data(_loot_pool)
+	hooked_fish = FISH_SCENE.instantiate()
 	_hook_marker.add_child(hooked_fish)

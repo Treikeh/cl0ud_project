@@ -1,9 +1,9 @@
 @tool
 extends Control
 
-const ITEM_SAVE_PATH: String = "res://debug/items/"
-const FISH_DATA_SAVE_PATH: String = "res://debug/fish_data/"
-const DIALOGUE_SAVE_PATH: String = "res://debug/dialogue/"
+const ITEM_SAVE_PATH: String = "res://common/items/"
+const FISH_DATA_SAVE_PATH: String = "res://entities/fish/"
+const DIALOGUE_SAVE_PATH: String = "res://common/dialogue/"
 
 var _file_paths: Dictionary = {}
 var _debug_settings: Dictionary = {}
@@ -107,6 +107,7 @@ func _save_resource(resource: Resource, path: String, file_paths: Dictionary, id
 
 
 func _create_item_resources(data: Array[PackedStringArray], file_paths: Dictionary) -> void:
+	var loot_table: Dictionary = {}
 	# Create item data for each data element
 	for row: PackedStringArray in data:
 		var id: String = row[0]
@@ -122,7 +123,6 @@ func _create_item_resources(data: Array[PackedStringArray], file_paths: Dictiona
 		#var description: String = row[2]
 		var value: int = str_to_var(row[3])
 		var type: String = row[4]
-		print(type)
 		var icon: Texture
 		var mesh_scene: String
 		var fish_data: FishData
@@ -134,6 +134,19 @@ func _create_item_resources(data: Array[PackedStringArray], file_paths: Dictiona
 				icon = load("res://entities/fish/%s/%s_icon.png" % [fish_type, fish_type])
 				mesh_scene = "res://entities/fish/%s/%s_mesh.tscn" % [fish_type, fish_type]
 				fish_data = load("res://entities/fish/%s/data/%s" % [fish_type, row[7]])
+				var loot_entry: Dictionary = {
+					# Path to the file : Rarity of the items
+					path: row[8]
+				}
+				
+				# Add fish item to fish loot table
+				var type_loot_table: Dictionary = {}
+				if loot_table.has(type):
+					type_loot_table = loot_table[type]
+				# Add the new loot entry to the loot table
+				type_loot_table.merge(loot_entry)
+				# Set loot table for the type
+				loot_table[type] = type_loot_table
 			_:
 				icon = load(row[5])
 				mesh_scene = row[6]
@@ -147,13 +160,15 @@ func _create_item_resources(data: Array[PackedStringArray], file_paths: Dictiona
 		item.fish_data = fish_data
 		
 		_save_resource(item, path, file_paths, id)
+	Globals.save_data_to_file(Globals.FISH_LOOT_TABLE_FILE, loot_table)
 
 
 func _create_fish_data(data: Array[PackedStringArray], file_paths: Dictionary) -> void:
 	# Create item data for each data element
 	for row: PackedStringArray in data:
 		var id: String = row[0]
-		var path: String = FISH_DATA_SAVE_PATH + id + ".tres"
+		var type: String = row[1]
+		var path: String = FISH_DATA_SAVE_PATH + type.to_lower() + "/data/" + id + ".tres"
 		
 		var fish: FishData
 		if _file_exists(file_paths, id):
@@ -161,7 +176,6 @@ func _create_fish_data(data: Array[PackedStringArray], file_paths: Dictionary) -
 			fish = load(path)
 		
 		# Create the right fish data type
-		var type: String = row[1]
 		match type:
 			"MAIL":
 				# Get mail data

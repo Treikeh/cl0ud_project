@@ -6,18 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dfwa3ko7oftnj" path="res://entities/player/player.tscn" id="2_jg8us"]
 [ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/vendor/vendor.tscn" id="4_8kye5"]
 [ext_resource type="PackedScene" uid="uid://bocx17sre2uti" path="res://common/scripts/fish_area/fish_area_3d.tscn" id="6_k8yb8"]
-[ext_resource type="Resource" uid="uid://by1sh8hx1saia" path="res://common/scripts/fish_area/loot_pools/easy_loot_pool.tres" id="7_iy1a4"]
-[ext_resource type="Resource" uid="uid://d0rbavaqn8pa1" path="res://common/scripts/fish_area/loot_pools/medium_loot_pool.tres" id="8_wn3sd"]
-[ext_resource type="Resource" uid="uid://cx8vl10rmavdm" path="res://common/scripts/fish_area/loot_pools/hard_loot_pool.tres" id="9_28qvq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fhc5p"]
-size = Vector3(100, 50, 70)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_usx6l"]
-size = Vector3(100, 50, 30)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_iy1a4"]
-size = Vector3(100, 50, 50)
+size = Vector3(100, 50, 100)
 
 [node name="DevMinigame01" type="Node3D" unique_id=1968061625]
 script = ExtResource("1_o8832")
@@ -39,9 +30,18 @@ operation = 2
 size = Vector3(19.5, 1, 19.5)
 material = ExtResource("1_8iyw0")
 
+[node name="FishArea" parent="Environment" unique_id=1857351977 instance=ExtResource("6_k8yb8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -35, 0)
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/FishArea" unique_id=542202473]
+shape = SubResource("BoxShape3D_fhc5p")
+debug_color = Color(0, 1, 0, 0.41960785)
+
 [node name="FogVolume" type="FogVolume" parent="Environment" unique_id=937911758]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -32.419815, 0)
-visible = false
 size = Vector3(100, 40, 100)
 
 [node name="Player" parent="." unique_id=913738857 instance=ExtResource("2_jg8us")]
@@ -49,39 +49,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -6.736341)
 
 [node name="Vendor" parent="." unique_id=520470945 instance=ExtResource("4_8kye5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 6.9)
-
-[node name="FishingAreas" type="Node3D" parent="." unique_id=2023146696]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -35, 0)
-
-[node name="EasyArea" parent="FishingAreas" unique_id=1857351977 instance=ExtResource("6_k8yb8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-collision_layer = 0
-collision_mask = 8
-monitorable = false
-_loot_pool = ExtResource("7_iy1a4")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FishingAreas/EasyArea" unique_id=542202473]
-shape = SubResource("BoxShape3D_fhc5p")
-debug_color = Color(0, 1, 0, 0.41960785)
-
-[node name="MediumArea" parent="FishingAreas" unique_id=1756344042 instance=ExtResource("6_k8yb8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45)
-collision_layer = 0
-collision_mask = 8
-monitorable = false
-_loot_pool = ExtResource("8_wn3sd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FishingAreas/MediumArea" unique_id=1729451282]
-shape = SubResource("BoxShape3D_usx6l")
-debug_color = Color(1, 1, 0, 0.41960785)
-
-[node name="HardArea" parent="FishingAreas" unique_id=2027333714 instance=ExtResource("6_k8yb8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -85)
-collision_layer = 0
-collision_mask = 8
-monitorable = false
-_loot_pool = ExtResource("9_28qvq")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FishingAreas/HardArea" unique_id=1964487491]
-shape = SubResource("BoxShape3D_iy1a4")
-debug_color = Color(1, 0, 0, 0.41960785)
