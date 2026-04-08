@@ -16,6 +16,9 @@ func _ready() -> void:
 	Globals.fish_hooked.connect(_on_fish_hooked)
 	Globals.fish_escaped.connect(_on_fish_escaped)
 	
+	Globals.started_fishing.connect(_on_started_fishing)
+	Globals.stopped_fishing.connect(_on_stopped_fishing)
+	
 	_interact_ray.prompt_updated.connect(hud.update_interact_prompt)
 	
 	_load_save_data.call_deferred()
@@ -108,15 +111,16 @@ const MINIGMAES_SCENE: PackedScene = preload("uid://cge1q8m11mo65")
 const PAUSE_SCENE: PackedScene = preload("uid://c0fsgd03bj03a")
 
 @export var _upgrades: Array[String] = []
+var _inventory_menu: Control
 
 
 func _on_inventory_opened() -> void:
 	input.set_enabled(false)
 	
 	# Spawn inventory
-	var inventory_menu: Control = INVENTORY_SCENE.instantiate().with_data(inventory, _upgrades)
-	add_child(inventory_menu)
-	inventory_menu.closed.connect(_on_inventory_closed)
+	_inventory_menu = INVENTORY_SCENE.instantiate().with_data(inventory, _upgrades)
+	add_child(_inventory_menu)
+	_inventory_menu.closed.connect(_on_inventory_closed)
 
 func _on_inventory_closed() -> void:
 	# call_deffered to avoid having the inventory close in the same frame it's opened
@@ -139,7 +143,19 @@ func _on_pause_closed() -> void:
 
 #region Fishing
 
+func _on_started_fishing() -> void:
+	_interact_ray.can_interact = false
+
+
+func _on_stopped_fishing() -> void:
+	_interact_ray.can_interact = true
+
+
 func _on_fish_hooked() -> void:
+	if _inventory_menu != null:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		_inventory_menu.queue_free()
+	
 	input.set_enabled(false)
 	
 	var minigames_root: Control = MINIGMAES_SCENE.instantiate().with_data(self)

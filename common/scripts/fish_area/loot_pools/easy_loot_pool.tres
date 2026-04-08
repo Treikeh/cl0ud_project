@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="LootPool" format=3 uid="uid://by1sh8hx1saia"]
+
+[ext_resource type="Script" uid="uid://n86x6yi1yov1" path="res://common/scripts/fish_area/loot_pool.gd" id="1_4guim"]
+
+[resource]
+script = ExtResource("1_4guim")
+metadata/_custom_type_script = "uid://n86x6yi1yov1"

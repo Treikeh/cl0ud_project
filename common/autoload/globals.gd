@@ -7,6 +7,15 @@ signal fish_caught
 signal fish_escaped
 signal fish_collected(item: ItemData)
 
+signal started_fishing
+signal stopped_fishing
+
+
+var hook_distance: float = 0.0
+var mail_fish_chance: float = 1.0
+var note_fish_chance: float = 1.0
+var message_fish_chance: float = 1.0
+
 
 func _ready() -> void:
 	_load_debug_settings()

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bocx17sre2uti"]
+
+[ext_resource type="Script" uid="uid://liul40u0n850" path="res://common/scripts/fish_area/fish_area_3d.gd" id="1_wtdiy"]
+
+[node name="FishArea3D" type="Area3D" unique_id=1857351977]
+script = ExtResource("1_wtdiy")

@@ -10,14 +10,15 @@ enum FishingState {
 }
 
 
-@export var _hook: RigidBody3D
+@export var _throw_force: float = 10.0
+@export var _hook: FishingHook
 @export var _pin_joint: PinJoint3D
 @export var _pin_anchor: StaticBody3D
 @export var _fishing_line: MeshInstance3D
 @export var _fishing_line_mat: Material
 
+var _throw_pos: Vector3
 var _fish_timer: Timer
-var _hooked_fish: Fish
 var _fishing_state: FishingState = FishingState.IDLE
 
 @onready var _player: Player = get_owner()
@@ -26,6 +27,8 @@ var _fishing_state: FishingState = FishingState.IDLE
 
 func _ready() -> void:
 	_player.fishing_rod = self
+	
+	_hook.hook_hit_water.connect(_on_hook_hit_water)
 	
 	# Add timer for fishing
 	_fish_timer = Timer.new()
@@ -69,10 +72,12 @@ func _display_fishing_line() -> void:
 
 func _ready_rod() -> void:
 	_fishing_state = FishingState.READY_THROW
+	Globals.started_fishing.emit()
 
 
 func _throw_hook() -> void:
 	_fishing_state = FishingState.WAITING
+	_throw_pos = global_position
 	
 	# Disconnect hook from pin
 	_pin_joint.node_b = _pin_anchor.get_path()
@@ -82,10 +87,11 @@ func _throw_hook() -> void:
 	_fishing_state = FishingState.WAITING
 	
 	_hook.global_position = global_position
-	_hook.apply_central_impulse(-global_basis.z * 15.0)
+	_hook.apply_central_impulse(-global_basis.z * _throw_force)
 
 
 func _reset_rod() -> void:
+	Globals.stopped_fishing.emit()
 	_fishing_state = FishingState.IDLE
 	
 	# Reset hook
@@ -103,12 +109,13 @@ func _reset_rod() -> void:
 
 
 func _collect_fish() -> void:
-	Globals.fish_collected.emit(_hooked_fish.item_data)
-	_player.inventory.add_item(_hooked_fish.item_data)
-	_hooked_fish.queue_free()
+	Globals.fish_collected.emit(_hook.hooked_fish.item_data)
+	_player.inventory.add_item(_hook.hooked_fish.item_data)
+	_hook.hooked_fish.queue_free()
 
 
 func _on_hook_hit_water() -> void:
+	Globals.hook_distance = _throw_pos.distance_squared_to(_hook.global_position)
 	_fish_timer.start()
 
 
@@ -120,10 +127,8 @@ func _on_fish_hooked() -> void:
 
 func fish_caught() -> void:
 	_fishing_state = FishingState.REEL_IN
-	# Spawn a fish on the hook
-	var test_fish_scene: PackedScene = load("uid://i5dq3bivh8i0")
-	_hooked_fish = test_fish_scene.instantiate()
-	_hook.get_child(1).add_child(_hooked_fish)
+	
+	_hook.spawn_fish()
 
 
 func fish_escaped() -> void:
@@ -136,7 +141,7 @@ func fish_escaped() -> void:
 
 func use_rod() -> void:
 	if _fishing_state == FishingState.IDLE:
-		if _hooked_fish:
+		if _hook.hooked_fish != null:
 			_collect_fish()
 		else:
 			_ready_rod()

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cu6p31ihl50lr" path="res://entities/player/fishing_rod/art/fishing_hook_001_fbx.tscn" id="1_hepjd"]
 [ext_resource type="Script" uid="uid://88i703fu373r" path="res://entities/player/fishing_rod/fishing_rod.gd" id="1_kjkgm"]
+[ext_resource type="Script" uid="uid://c5rvwjf8tiwj5" path="res://entities/player/fishing_rod/fishing_hook.gd" id="2_pr2vv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjkgm"]
 
@@ -69,11 +70,14 @@ shape = SubResource("SphereShape3D_fkugw")
 top_level = true
 mesh = SubResource("ImmediateMesh_sglur")
 
-[node name="Hook" type="RigidBody3D" parent="." unique_id=2128759198]
+[node name="Hook" type="RigidBody3D" parent="." unique_id=1130430333 node_paths=PackedStringArray("_hook_marker")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.3, 0.13064414, -1.0899494)
 collision_layer = 8
 collision_mask = 9
 linear_damp = 2.0
+script = ExtResource("2_pr2vv")
+_hook_marker = NodePath("HookMarker")
+metadata/_custom_type_script = "uid://c5rvwjf8tiwj5"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hook" unique_id=1487744205]
 shape = SubResource("SphereShape3D_bls4j")
