@@ -110,7 +110,6 @@ const INVENTORY_SCENE: PackedScene = preload("uid://6lg7o50gd213")
 const MINIGMAES_SCENE: PackedScene = preload("uid://cge1q8m11mo65")
 const PAUSE_SCENE: PackedScene = preload("uid://c0fsgd03bj03a")
 
-@export var _upgrades: Array[String] = []
 var _inventory_menu: Control
 
 
@@ -118,7 +117,7 @@ func _on_inventory_opened() -> void:
 	input.set_enabled(false)
 	
 	# Spawn inventory
-	_inventory_menu = INVENTORY_SCENE.instantiate().with_data(inventory, _upgrades)
+	_inventory_menu = INVENTORY_SCENE.instantiate().with_data(inventory, upgrades)
 	add_child(_inventory_menu)
 	_inventory_menu.closed.connect(_on_inventory_closed)
 

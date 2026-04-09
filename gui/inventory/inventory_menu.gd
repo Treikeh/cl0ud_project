@@ -14,11 +14,11 @@ const ITEM_DISPALY_SCENE: PackedScene = preload("uid://cye3hnmivani4")
 @export var _item_dispaly_root: Control
 @export var _mesh_marker: Marker3D
 
-var _upgrades: Array[String] = []
+var _upgrades: Array[Upgrade] = []
 var _inventory: Inventory
 
 
-func with_data(inventory: Inventory, upgrades: Array[String]) -> Control:
+func with_data(inventory: Inventory, upgrades: Array[Upgrade]) -> Control:
 	_inventory = inventory
 	_upgrades = upgrades
 	return self
@@ -45,8 +45,8 @@ func _open() -> void:
 	
 	_currency_label.text = str(_inventory.currency) + "$"
 	
-	for upgrade: String in _upgrades:
-		_upgrades_label.text += upgrade + "\n"
+	for upgrade: Upgrade in _upgrades:
+		_upgrades_label.text += upgrade.name + "\n"
 
 
 func _close() -> void:
