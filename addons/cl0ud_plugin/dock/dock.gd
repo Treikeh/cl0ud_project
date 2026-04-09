@@ -127,29 +127,29 @@ func _create_item_resources(data: Array[PackedStringArray], file_paths: Dictiona
 		var mesh_scene: String
 		var fish_data: FishData
 		
-		match type:
-			"MAIL", "NOTE", "MESSAGE":
-				var fish_type: String = type.to_lower()
-				# Get stuff from fish data
-				icon = load("res://entities/fish/%s/%s_icon.png" % [fish_type, fish_type])
-				mesh_scene = "res://entities/fish/%s/%s_mesh.tscn" % [fish_type, fish_type]
-				fish_data = load("res://entities/fish/%s/data/%s" % [fish_type, row[7]])
-				var loot_entry: Dictionary = {
-					# Path to the file : Rarity of the items
-					path: row[8]
-				}
-				
-				# Add fish item to fish loot table
-				var type_loot_table: Dictionary = {}
-				if loot_table.has(type):
-					type_loot_table = loot_table[type]
-				# Add the new loot entry to the loot table
-				type_loot_table.merge(loot_entry)
-				# Set loot table for the type
-				loot_table[type] = type_loot_table
-			_:
-				icon = load(row[5])
-				mesh_scene = row[6]
+		var is_fish_item: bool = Fish.Type.keys().has(type)
+		if is_fish_item:
+			var fish_type: String = type.to_lower()
+			# Get stuff from fish data
+			icon = load("res://entities/fish/%s/%s_icon.png" % [fish_type, fish_type])
+			mesh_scene = "res://entities/fish/%s/%s_mesh.tscn" % [fish_type, fish_type]
+			fish_data = load("res://entities/fish/%s/data/%s" % [fish_type, row[7]])
+			
+			# Add fish item to fish loot table
+			# Get the loot table of the fish type
+			var type_loot_table: Dictionary = {}
+			if loot_table.has(type):
+				type_loot_table = loot_table[type]
+			
+			# Create and add new loot entry for fish
+			var loot_entry: Dictionary = { path: row[8] }
+			type_loot_table.merge(loot_entry)
+			
+			# Update loot table
+			loot_table[type] = type_loot_table
+		else:
+			icon = load(row[5])
+			mesh_scene = row[6]
 		
 		# Set item data
 		item.name = item_name

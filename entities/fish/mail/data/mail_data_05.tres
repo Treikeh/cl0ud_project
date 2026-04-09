@@ -4,8 +4,7 @@
 
 [resource]
 script = ExtResource("1_02ify")
-from = "From 05"
-to = "To 05"
-subject = "Subject 05"
-content = "Content 05"
-metadata/_custom_type_script = "uid://bgk7ttf5teu14"
+from = "Per "
+to = "Pål "
+subject = "Espen "
+content = "Han er ute på eventyr"

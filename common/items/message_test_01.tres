@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://0c1ecy2x8pfj"]
+
+[ext_resource type="Resource" uid="uid://yjwd7mti3hvo" path="res://entities/fish/message/data/message_data_01.tres" id="1_bxc25"]
+[ext_resource type="Texture2D" uid="uid://cdh1uvulx0tfd" path="res://entities/fish/message/message_icon.png" id="2_67p6t"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/scripts/inventory/item_data.gd" id="3_3w7oc"]
+
+[resource]
+script = ExtResource("3_3w7oc")
+name = "Message 01"
+value = 5
+type = "MESSAGE"
+icon = ExtResource("2_67p6t")
+mesh_scene = "res://entities/fish/message/message_mesh.tscn"
+fish_data = ExtResource("1_bxc25")

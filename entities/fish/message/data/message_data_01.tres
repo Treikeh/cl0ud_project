@@ -4,6 +4,5 @@
 
 [resource]
 script = ExtResource("1_6g2wh")
-sender = "Sender 01"
-recipient = "Recipient 01"
-metadata/_custom_type_script = "uid://knk2w0s0q2la"
+sender = "Per "
+recipient = "Pål"

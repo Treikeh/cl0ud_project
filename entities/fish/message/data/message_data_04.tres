@@ -4,6 +4,5 @@
 
 [resource]
 script = ExtResource("1_xjfix")
-sender = "Sender 04"
-recipient = "Recipient 04"
-metadata/_custom_type_script = "uid://knk2w0s0q2la"
+sender = "Per "
+recipient = "Pål"

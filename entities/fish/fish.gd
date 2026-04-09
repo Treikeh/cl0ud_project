@@ -14,44 +14,52 @@ var item_data: ItemData
 
 
 func _ready() -> void:
-	item_data = _create_item_data()
+	var type: String = _get_random_type()
+	if randi() & 1:
+		item_data = _create_item_data(type)
+		print("Create item data")
+	else:
+		print("Load item data")
+		item_data = _get_random_item_from_loot_table(type)
 	
 	# Spawn fish mesh
 	var mesh: Node3D = load(item_data.mesh_scene).instantiate()
 	add_child(mesh)
-	
-	var type: Type = _get_random_type()
-	var type_as_text: String = Type.keys()[type]
-	#print(Globals.fish_loot_table[type_as_text])
-	var type_loot_table: Dictionary = Globals.fish_loot_table[type_as_text]
-	type_loot_table.sort()
-	for item: String in type_loot_table:
-		var rarity: int = int(type_loot_table[item])
-		if rarity > 0:
-			print(item)
-			return
 
 
-func _create_item_data() -> ItemData:
-	var type: Type = _get_random_type()
+func _create_item_data(type: String) -> ItemData:
 	# Get fish type as text and its files path
-	var type_as_text: String = Type.keys()[type].to_lower()
-	var files_path: String = FOLDER_PATH + type_as_text + "/"
+	var files_path: String = FOLDER_PATH + type.to_lower() + "/"
 	var fish_data: String = _get_fish_data_path(files_path)
 	
 	# Create dict with all the data the ItemData class needs
 	var data: Dictionary = {
-		"name": fish_data.split("/")[-1].trim_suffix(".tres"),
+		"name": str(randi_range(0, 10000)),
 		"value": randi_range(5, 25),
-		"type": type_as_text.to_upper(),
-		"icon": files_path + type_as_text + "_icon.png",
-		"mesh_scene": files_path + type_as_text + "_mesh.tscn",
+		"type": type,
+		"icon": files_path + type.to_lower() + "_icon.png",
+		"mesh_scene": files_path + type.to_lower() + "_mesh.tscn",
 		"fish_data": fish_data
 	}
 	return ItemData.new(data)
 
 
-func _get_random_type() -> Type:
+func _get_random_item_from_loot_table(type: String) -> ItemData:
+	# Loot table to the type of fish
+	var type_loot_table: Dictionary = Globals.fish_loot_table[type]
+	type_loot_table.sort()
+	
+	var item_path: String = type_loot_table.keys()[0]
+	# Get the path of an item in the list which is close to the hook distance
+	for item: String in type_loot_table:
+		var rarity: int = int(type_loot_table[item])
+		if rarity > Globals.hook_distance:
+			item_path = item
+			break
+	return load(item_path)
+
+
+func _get_random_type() -> String:
 	# Dictionary[Type, float(weight chance to get the value)]
 	var types: Dictionary[Type, float] = {
 		Type.MAIL: Globals.mail_fish_chance,
@@ -60,7 +68,8 @@ func _get_random_type() -> Type:
 	}
 	#TODO: Get a random fish based on the chances
 	var type: Type = randi_range(0, types.values().size() - 1) as Type
-	return type
+	var type_as_text: String = Type.keys()[type]
+	return type_as_text
 
 
 # Get a random data file from the flder of the fish type
