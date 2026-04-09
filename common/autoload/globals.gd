@@ -23,6 +23,7 @@ var fish_loot_table: Dictionary
 
 func _ready() -> void:
 	_load_debug_settings()
+	
 	# Only load loot table when the game loads, not when the editor loads
 	if not Engine.is_editor_hint():
 		_load_fish_loot_table()
