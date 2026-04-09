@@ -32,7 +32,7 @@ func _exit_tree() -> void:
 func _create_settings_file() -> void:
 	print("Creating settings file for the C.L.0.U.D plugin")
 	# Check if the settings file file exists
-	if not FileAccess.file_exists(Globals.SETTINGS_FILE):
+	if not FileAccess.file_exists(Globals.PLUGIN_SETTINGS_FILE):
 		# Create settings file
 		var data: Dictionary = {
 			"items_file_paths": {},
@@ -40,7 +40,7 @@ func _create_settings_file() -> void:
 			"dialogue_file_paths": {},
 		}
 		var text: String = JSON.stringify(data, "\t")
-		var file_access := FileAccess.open(Globals.SETTINGS_FILE, FileAccess.WRITE)
+		var file_access := FileAccess.open(Globals.PLUGIN_SETTINGS_FILE, FileAccess.WRITE)
 		# Save data to file
 		file_access.store_string(text)
 

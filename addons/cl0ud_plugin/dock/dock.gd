@@ -41,7 +41,7 @@ func _enable_save(toggled_on: bool) -> void:
 
 func _parse_file(file: String) -> void:
 	# Load file paths
-	_file_paths = Globals.load_data_from_file(Globals.SETTINGS_FILE)
+	_file_paths = Globals.load_data_from_file(Globals.PLUGIN_SETTINGS_FILE)
 	var file_paths: Dictionary = _file_paths.get("%s_file_paths" % file)
 	
 	# Get data from file
@@ -60,7 +60,7 @@ func _parse_file(file: String) -> void:
 	
 	# Update and save the uids of the new files
 	_file_paths.set("%s_file_paths" % file, file_paths)
-	Globals.save_data_to_file(Globals.SETTINGS_FILE, _file_paths)
+	Globals.save_data_to_file(Globals.PLUGIN_SETTINGS_FILE, _file_paths)
 	# Refresh files
 	EditorInterface.get_resource_filesystem().scan()
 

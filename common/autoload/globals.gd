@@ -69,7 +69,7 @@ func save_data_to_file(file_path: String, data: Dictionary, hidden: bool = false
 
 #region Debug
 
-const SETTINGS_FILE: String = "res://addons/cl0ud_plugin/settings.ini"
+const PLUGIN_SETTINGS_FILE: String = "res://addons/cl0ud_plugin/plugin_settings.ini"
 const DEBUG_SETTINGS_FILE: String = "res://debug/debug_settings.ini"
 
 var save_enabled: bool = true
