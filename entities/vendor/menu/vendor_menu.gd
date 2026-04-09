@@ -10,7 +10,8 @@ const SELL_ENTRY_SCENE: PackedScene = preload("uid://d4epumjlgldtn")
 @export var _sell_list: VBoxContainer
 @export var _buy_list: VBoxContainer
 @export var _currency_label: Label
-@export var _buy_item: ItemData
+
+@export var _upgrades: Array[Upgrade] = []
 
 var _inventory: Inventory
 
@@ -36,10 +37,11 @@ func _open() -> void:
 			sell_entry.item_sold.connect(_on_item_sold)
 	
 	# Populate but list
-	for i: int in range(0, 5):
-		var buy_entry: BuyEntry = BUT_ENTRY_SCENE.instantiate().with_data(_buy_item)
+	for i: int in _upgrades.size():
+		var buy_entry: BuyEntry = BUT_ENTRY_SCENE.instantiate().with_data(_upgrades[i])
 		_buy_list.add_child(buy_entry)
-		buy_entry.item_bought.connect(_on_item_bought)
+		buy_entry.pressed.connect(_on_upgrade_pressed)
+		buy_entry.bought.connect(_on_upgrade_bought)
 
 
 func _close() -> void:
@@ -55,12 +57,13 @@ func _on_item_sold(sell_entry: SellEntry) -> void:
 	sell_entry.queue_free()
 
 
-func _on_item_bought(buy_entry: BuyEntry) -> void:
-	if _inventory.currency >= buy_entry.item.value:
-		_inventory.currency -= buy_entry.item.value
-		_currency_label.text = str(_inventory.currency) + "$"
-		_inventory.add_item(buy_entry.item)
-		buy_entry.queue_free()
+func _on_upgrade_pressed(buy_entry: BuyEntry) -> void:
+	if buy_entry.can_buy(_inventory.currency):
+		buy_entry.buy(_inventory._player)
+
+func _on_upgrade_bought(cost: int) -> void:
+	_inventory.currency -= cost
+	_currency_label.text = str(_inventory.currency) + "$"
 
 
 func _on_close_button_pressed() -> void:

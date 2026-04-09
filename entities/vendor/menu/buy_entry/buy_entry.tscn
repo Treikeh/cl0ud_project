@@ -1,24 +1,50 @@
 [gd_scene format=3 uid="uid://3gn1kqoo470b"]
 
 [ext_resource type="Script" uid="uid://dpp8na32kj1c6" path="res://entities/vendor/menu/buy_entry/buy_entry.gd" id="1_6wlvj"]
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="2_q7kpp"]
 
-[node name="BuyEntry" type="PanelContainer" unique_id=208481528 node_paths=PackedStringArray("_name_label", "_value_label")]
-offset_right = 105.0
-offset_bottom = 23.0
+[node name="BuyEntry" type="PanelContainer" unique_id=208481528 node_paths=PackedStringArray("_icon", "_name_label", "_description_label", "_cost_label", "_bought_cover")]
+offset_right = 700.0
+offset_bottom = 50.0
 script = ExtResource("1_6wlvj")
-_name_label = NodePath("HBoxContainer/NameLabel")
-_value_label = NodePath("HBoxContainer/ValueLabel")
+_icon = NodePath("HBoxContainer/Icon")
+_name_label = NodePath("HBoxContainer/VBoxContainer/NameLabel")
+_description_label = NodePath("HBoxContainer/VBoxContainer/DescriptionLabel")
+_cost_label = NodePath("HBoxContainer/CostLabel")
+_bought_cover = NodePath("ColorRect")
 metadata/_custom_type_script = "uid://dpp8na32kj1c6"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1915501191]
 layout_mode = 2
-alignment = 1
 
-[node name="NameLabel" type="Label" parent="HBoxContainer" unique_id=1217494960]
+[node name="Icon" type="TextureRect" parent="HBoxContainer" unique_id=382660955]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_q7kpp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1949285294]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NameLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1217494960]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Name"
 
-[node name="ValueLabel" type="Label" parent="HBoxContainer" unique_id=1986768850]
+[node name="DescriptionLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1536363297]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 10
+text = "Description"
+
+[node name="CostLabel" type="Label" parent="HBoxContainer" unique_id=1986768850]
 layout_mode = 2
 text = "{value}"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2128679921]
+layout_mode = 2
+color = Color(0.14406255, 0.14406255, 0.14406255, 0.7019608)

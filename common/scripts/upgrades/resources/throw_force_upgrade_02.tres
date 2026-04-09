@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ThrowForceUpgrade" format=3 uid="uid://ctvk6usfpig2w"]
+
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_de7cp"]
+[ext_resource type="Script" uid="uid://drly7mklucb8x" path="res://common/scripts/upgrades/throw_force_upgrade.gd" id="2_e7b1o"]
+
+[resource]
+script = ExtResource("2_e7b1o")
+_upgrade_amount = 500.0
+name = "Throw distance 02"
+description = "Increase throw distance"
+icon = ExtResource("1_de7cp")
+cost = 10
+metadata/_custom_type_script = "uid://drly7mklucb8x"

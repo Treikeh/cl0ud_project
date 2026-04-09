@@ -1,15 +1,9 @@
 [gd_scene format=3 uid="uid://diy715xds7cni"]
 
 [ext_resource type="Script" uid="uid://dojfj2q1p8ef2" path="res://entities/vendor/menu/vendor_menu.gd" id="1_44yr2"]
-[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="2_51ia8"]
-[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/scripts/inventory/item_data.gd" id="3_vu42w"]
-
-[sub_resource type="Resource" id="Resource_l8016"]
-script = ExtResource("3_vu42w")
-value = 3
-icon = ExtResource("2_51ia8")
-mesh_scene = "uid://cu6p31ihl50lr"
-metadata/_custom_type_script = "uid://cpwq317sdbfrp"
+[ext_resource type="Script" uid="uid://bqlay1xmrt3y1" path="res://common/scripts/upgrades/upgrade.gd" id="2_1ills"]
+[ext_resource type="Resource" uid="uid://tg01trak81t" path="res://common/scripts/upgrades/resources/throw_force_upgrade_01.tres" id="3_1ills"]
+[ext_resource type="Resource" uid="uid://ctvk6usfpig2w" path="res://common/scripts/upgrades/resources/throw_force_upgrade_02.tres" id="4_w33cr"]
 
 [node name="VendorMenu" type="Control" unique_id=1724820824 node_paths=PackedStringArray("_sell_list", "_buy_list", "_currency_label")]
 layout_mode = 3
@@ -22,7 +16,7 @@ script = ExtResource("1_44yr2")
 _sell_list = NodePath("TabContainer/Sell/SellList")
 _buy_list = NodePath("TabContainer/Buy/BuyList")
 _currency_label = NodePath("CurrencyLabel")
-_buy_item = SubResource("Resource_l8016")
+_upgrades = Array[ExtResource("2_1ills")]([ExtResource("3_1ills"), ExtResource("4_w33cr")])
 
 [node name="CloseButton" type="Button" parent="." unique_id=839376987]
 layout_mode = 1

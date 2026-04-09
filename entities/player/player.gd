@@ -143,6 +143,9 @@ func _on_pause_closed() -> void:
 
 #region Fishing
 
+var throw_force: float = 0.0
+
+
 func _on_started_fishing() -> void:
 	_interact_ray.can_interact = false
 
@@ -176,17 +179,52 @@ func _on_fish_escaped() -> void:
 #endregion
 
 
+#region Upgrades
+
+var upgrades: Array[Upgrade] = []
+
+
+func add_upgrade(upgrade: Upgrade) -> void:
+	upgrades.append(upgrade)
+	upgrade.apply_upgrade(self)
+
+
+func _get_upgrades_data() -> Dictionary:
+	var data: Dictionary = {}
+	for upgrade: Upgrade in upgrades:
+		var upgrade_data: Dictionary = {
+			upgrade.name: {
+				"path": upgrade.resource_path,
+				"bought": upgrade.bought,
+			}
+		}
+		data.merge(upgrade_data)
+	return data
+
+
+func _load_upgrades(data: Dictionary) -> void:
+	for entry: String in data:
+		var upgrade_data: Dictionary = data[entry]
+		var upgrade: Upgrade = load(upgrade_data.path)
+		upgrade.bought = upgrade_data.bought
+		add_upgrade(upgrade)
+
+#endregion
+
+
 #region save/load
 
 const SAVE_DATA_KEY: String = "player"
 
 func get_save_data() -> Dictionary:
+	print(_get_upgrades_data())
 	var data: Dictionary = {
 		SAVE_DATA_KEY: {
 			"position": var_to_str(global_position),
 			"head_rotation": var_to_str(_head.rotation_degrees.x),
 			"orientation": var_to_str(_orientation.rotation_degrees.y),
-			"inventory": inventory.get_save_data()
+			"inventory": inventory.get_save_data(),
+			"upgrades": _get_upgrades_data(),
 		},
 	}
 	return data
@@ -204,5 +242,7 @@ func _load_save_data() -> void:
 	_head.rotation_degrees.x = str_to_var(data.head_rotation)
 	# Update inventory
 	inventory.load_save_data(data.inventory)
+	
+	_load_upgrades(data.upgrades)
 
 #endregion

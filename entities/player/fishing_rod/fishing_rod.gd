@@ -10,7 +10,7 @@ enum FishingState {
 }
 
 
-@export var _throw_force: float = 10.0
+@export var throw_force: float = 10.0
 @export var _hook: FishingHook
 @export var _pin_joint: PinJoint3D
 @export var _pin_anchor: StaticBody3D
@@ -87,7 +87,7 @@ func _throw_hook() -> void:
 	_fishing_state = FishingState.WAITING
 	
 	_hook.global_position = global_position
-	_hook.apply_central_impulse(-global_basis.z * _throw_force)
+	_hook.apply_central_impulse(-global_basis.z * (throw_force + _player.throw_force))
 
 
 func _reset_rod() -> void:
