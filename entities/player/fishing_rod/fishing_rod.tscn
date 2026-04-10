@@ -23,6 +23,9 @@ rings = 0
 [sub_resource type="SphereShape3D" id="SphereShape3D_fkugw"]
 radius = 0.05
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pr2vv"]
+cull_mode = 2
+
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_sglur"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pr2vv"]
@@ -69,6 +72,7 @@ shape = SubResource("SphereShape3D_fkugw")
 
 [node name="LineMesh" type="MeshInstance3D" parent="." unique_id=1996639613]
 top_level = true
+material_override = SubResource("StandardMaterial3D_pr2vv")
 mesh = SubResource("ImmediateMesh_sglur")
 
 [node name="Hook" type="RigidBody3D" parent="." unique_id=1130430333 node_paths=PackedStringArray("_hook_marker")]

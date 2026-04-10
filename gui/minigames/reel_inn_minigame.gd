@@ -16,6 +16,7 @@ signal failed
 @export var _hit_area_timer: Timer
 
 var player: Player
+var _time: float = 0.0
 var _hit_area_rotation_direction: int = 1
 var _rotate_hit_area: bool = true
 
@@ -44,6 +45,8 @@ func _process(delta: float) -> void:
 			_hit_area.rotation_degrees = -179.0
 		elif _hit_area.rotation_degrees < -180.0:
 			_hit_area.rotation_degrees = 179.0
+		_time += delta
+		_hit_area.value = 30.0 + (sin(_time * 2.5) * 10.0)
 	
 	# Get the direction of the hit area
 	var hit_area_dir: Vector2 = cursor_start.direction_to(_hit_area_target.global_position)
