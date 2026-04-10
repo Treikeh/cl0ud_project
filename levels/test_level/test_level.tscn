@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dbcx0dnkvo2c4"]
+
+[ext_resource type="PackedScene" uid="uid://dcla54xiom224" path="res://levels/test_level/art/test_level.glb" id="2_qo0ko"]
+[ext_resource type="PackedScene" uid="uid://dfwa3ko7oftnj" path="res://entities/player/player.tscn" id="3_8th66"]
+[ext_resource type="PackedScene" uid="uid://bli63q1qswjvg" path="res://levels/day_night_cycle/day_night_cycle.tscn" id="4_qo0ko"]
+
+[node name="TestLevel" type="Node3D" unique_id=1341884383]
+
+[node name="Collection_003" parent="." unique_id=141788254 instance=ExtResource("2_qo0ko")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0029030964, 0, 0.020396337)
+
+[node name="Player" parent="." unique_id=913738857 instance=ExtResource("3_8th66")]
+
+[node name="DayNightCycle" parent="." unique_id=50702471 instance=ExtResource("4_qo0ko")]

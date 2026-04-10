@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c0fsgd03bj03a"]
 
 [ext_resource type="Script" uid="uid://db38bl3k55siw" path="res://gui/pause/pause_menu.gd" id="1_l7xle"]
+[ext_resource type="Texture2D" uid="uid://cl4i2so1duour" path="res://gui/pause/PauseMenuBG.png" id="2_821si"]
 
 [node name="PauseMenu" type="Control" unique_id=2055431328]
 process_mode = 2
@@ -12,6 +13,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l7xle")
 
+[node name="PauseMenuBg" type="Sprite2D" parent="." unique_id=7570603]
+position = Vector2(575.99994, 324.00003)
+scale = Vector2(0.59999996, 0.6)
+texture = ExtResource("2_821si")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1722416743]
 layout_mode = 1
 anchors_preset = 8
@@ -19,14 +25,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -46.5
-offset_right = 35.0
-offset_bottom = 46.5
+offset_left = -131.0
+offset_top = -148.6
+offset_right = 123.0
+offset_bottom = 252.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=612821952]
+visible = false
 layout_mode = 2
 text = "Paused"
 
