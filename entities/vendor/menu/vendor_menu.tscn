@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://diy715xds7cni"]
 
 [ext_resource type="Script" uid="uid://dojfj2q1p8ef2" path="res://entities/vendor/menu/vendor_menu.gd" id="1_44yr2"]
-[ext_resource type="Script" uid="uid://bqlay1xmrt3y1" path="res://common/scripts/upgrades/upgrade.gd" id="2_1ills"]
-[ext_resource type="Resource" uid="uid://tg01trak81t" path="res://common/scripts/upgrades/resources/throw_force_upgrade_01.tres" id="3_1ills"]
-[ext_resource type="Resource" uid="uid://ctvk6usfpig2w" path="res://common/scripts/upgrades/resources/throw_force_upgrade_02.tres" id="4_w33cr"]
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="2_51ia8"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/scripts/inventory/item_data.gd" id="3_vu42w"]
+[ext_resource type="Texture2D" uid="uid://baesl6gbnbp13" path="res://entities/vendor/art/Vendor Background.png" id="4_1ills"]
+
+[sub_resource type="Resource" id="Resource_l8016"]
+script = ExtResource("3_vu42w")
+value = 3
+icon = ExtResource("2_51ia8")
+mesh_scene = "uid://cu6p31ihl50lr"
+metadata/_custom_type_script = "uid://cpwq317sdbfrp"
 
 [node name="VendorMenu" type="Control" unique_id=1724820824 node_paths=PackedStringArray("_sell_list", "_buy_list", "_currency_label")]
 layout_mode = 3
@@ -18,19 +25,17 @@ _buy_list = NodePath("TabContainer/Buy/BuyList")
 _currency_label = NodePath("CurrencyLabel")
 _upgrades = Array[ExtResource("2_1ills")]([ExtResource("3_1ills"), ExtResource("4_w33cr")])
 
+[node name="VendorBackground" type="Sprite2D" parent="." unique_id=1785979639]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.59999996)
+texture = ExtResource("4_1ills")
+
 [node name="CloseButton" type="Button" parent="." unique_id=839376987]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -25.0
-offset_top = -31.0
-offset_right = 25.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Close"
+offset_left = 60.0
+offset_top = 44.0
+offset_right = 90.0
+offset_bottom = 74.0
 
 [node name="CurrencyLabel" type="Label" parent="." unique_id=990211706]
 layout_mode = 0
@@ -47,9 +52,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -421.0
-offset_top = -252.0
-offset_right = 421.0
+offset_left = -464.0
+offset_top = -131.0
+offset_right = 479.0
 offset_bottom = 252.0
 grow_horizontal = 2
 grow_vertical = 2
