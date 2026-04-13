@@ -1,7 +1,7 @@
 extends Node3D
 
 
-@export var _speed: float = 10.0
+@export var _minutes_in_cycle: float = 12.0
 
 @export_group("World environment")
 @export var _world_environment: WorldEnvironment
@@ -18,7 +18,8 @@ extends Node3D
 
 func _process(delta: float) -> void:
 	# Change light rotation
-	_directional_light.rotation_degrees.x += _speed * delta
+	var speed: float = 360.0 / (_minutes_in_cycle * 60.0)
+	_directional_light.rotation_degrees.x += speed * delta
 	# Make sure the rotation stays within -180 to 180 deg
 	if _directional_light.rotation_degrees.x > 180.0:
 		_directional_light.rotation_degrees.x = -179.0
