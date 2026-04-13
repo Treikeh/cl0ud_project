@@ -2,6 +2,30 @@
 
 [ext_resource type="Script" uid="uid://dxh20yacti85m" path="res://levels/day_night_cycle/day_night_cycle.gd" id="1_wtxaj"]
 
+[sub_resource type="Gradient" id="Gradient_irgiq"]
+offsets = PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
+colors = PackedColorArray(0.93333334, 0.49803922, 0.38039216, 1, 0.38431373, 0.45490196, 0.54901963, 1, 0.9346835, 0.49637836, 0.37983805, 1, 0.100968994, 0.21115115, 0.463369, 1, 0.93333334, 0.49803922, 0.38039216, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bobqa"]
+gradient = SubResource("Gradient_irgiq")
+width = 360
+
+[sub_resource type="Gradient" id="Gradient_bobqa"]
+offsets = PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
+colors = PackedColorArray(0.3882353, 0.39607844, 0.4117647, 1, 0.6627451, 0.67058825, 0.6862745, 1, 0.3882353, 0.39607844, 0.4117647, 1, 0, 0, 0, 1, 0.38967648, 0.39735043, 0.41271245, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pa5u4"]
+gradient = SubResource("Gradient_bobqa")
+width = 360
+
+[sub_resource type="Gradient" id="Gradient_nb80x"]
+offsets = PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
+colors = PackedColorArray(0.2, 0.16862746, 0.13333334, 1, 0.38806304, 0.2851421, 0.22538441, 1, 0.2, 0.16862746, 0.13333334, 1, 0, 0, 0, 1, 0.2, 0.16862746, 0.13333334, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_byxxb"]
+gradient = SubResource("Gradient_nb80x")
+width = 360
+
 [sub_resource type="Curve" id="Curve_wtxaj"]
 _limits = [0.0, 1.0, -180.0, 180.0]
 _data = [Vector2(-180, 0.50468934), 0.0, 0.0, 0, 0, Vector2(-90.000015, 1), 0.0, 0.0, 0, 0, Vector2(90, 0), 0.0, 0.0, 0, 0, Vector2(180, 0.49506778), 0.0, 0.0, 0, 0]
@@ -9,7 +33,7 @@ point_count = 4
 
 [sub_resource type="Gradient" id="Gradient_wtxaj"]
 offsets = PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
-colors = PackedColorArray(0.99607843, 0.8392157, 0.6666667, 1, 1, 1, 1, 1, 0.99758595, 0.8379967, 0.6674726, 1, 0.4056447, 0.17103931, 0.8316446, 1, 0.99607843, 0.8392157, 0.6666667, 1)
+colors = PackedColorArray(0.99607843, 0.8392157, 0.6666667, 1, 1, 1, 1, 1, 0.99758595, 0.8379967, 0.6674726, 1, 0.27810064, 0.008196282, 0.62108004, 1, 0.99607843, 0.8392157, 0.6666667, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_m3cjs"]
 gradient = SubResource("Gradient_wtxaj")
@@ -32,11 +56,14 @@ volumetric_fog_density = 0.0
 
 [node name="DayNightCycle" type="Node3D" unique_id=50702471 node_paths=PackedStringArray("_world_environment", "_directional_light") groups=["persistent"]]
 script = ExtResource("1_wtxaj")
-_speed = 1.0
 _world_environment = NodePath("WorldEnvironment")
+_sky_top_color = SubResource("GradientTexture1D_bobqa")
+_sky_horizon_color = SubResource("GradientTexture1D_pa5u4")
+_ground_horizon_color = SubResource("GradientTexture1D_pa5u4")
+_ground_bottom_color = SubResource("GradientTexture1D_byxxb")
 _directional_light = NodePath("DirectionalLight3D")
-_curve = SubResource("Curve_wtxaj")
-_color_gradient = SubResource("GradientTexture1D_m3cjs")
+_sky_light_curve = SubResource("Curve_wtxaj")
+_sky_light_color = SubResource("GradientTexture1D_m3cjs")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1037190567]
 environment = SubResource("Environment_wtxaj")
