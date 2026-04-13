@@ -54,7 +54,7 @@ func _process(delta: float) -> void:
 	var hit_area_offset: float = _hit_area.value
 	
 	var cursor_rotation: float = rad_to_deg(atan2(cursor_dir.x, -cursor_dir.y))
-	if cursor_rotation >= (hit_area_rot - hit_area_offset) and cursor_rotation <= (hit_area_rot + hit_area_offset):
+	if cursor_rotation >= (hit_area_rot - hit_area_offset) and cursor_rotation <= (hit_area_rot + hit_area_offset) and cursor_distance > 25.0:
 		# Increase value if inside hit area
 		_border.value += _increase_speed * delta
 		if _border.value >= 100.0:
