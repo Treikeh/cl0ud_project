@@ -32,9 +32,6 @@ material = ExtResource("1_8iyw0")
 
 [node name="FishArea" parent="Environment" unique_id=1857351977 instance=ExtResource("6_k8yb8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -35, 0)
-collision_layer = 0
-collision_mask = 8
-monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/FishArea" unique_id=542202473]
 shape = SubResource("BoxShape3D_fhc5p")
