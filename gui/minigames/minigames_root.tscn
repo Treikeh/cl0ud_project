@@ -109,6 +109,7 @@ grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [node name="ReelInnMinigame" type="Control" parent="." unique_id=2117237796 node_paths=PackedStringArray("_center", "_cursor", "_border", "_hit_area", "_hit_area_target", "_hit_area_timer")]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

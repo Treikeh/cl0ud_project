@@ -55,15 +55,18 @@ func _progress_dialogue() -> void:
 
 
 func _show_dialogue_choices(dialogue: DialogueData) -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	for choice: String in dialogue.choices:
 		var button := Button.new()
 		button.text = choice
 		_dialogue_choice_container.add_child(button)
 		button.pressed.connect(_on_dialogue_choice_selected.bind(button))
 	
-	_dialogue_choice_container.get_child(0).grab_focus()
+	#NOTE: Call deferred to stop progress input to chose an option when the buttons spawn
+	_dialogue_choice_container.get_child(0).grab_focus.call_deferred()
 
 
 func _on_dialogue_choice_selected(choice: Control) -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	_end_dialogue()
 	dialouge_choice_made.emit(choice.get_index())

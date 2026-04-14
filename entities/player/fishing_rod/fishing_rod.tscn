@@ -3,80 +3,81 @@
 [ext_resource type="PackedScene" uid="uid://cu6p31ihl50lr" path="res://entities/player/fishing_rod/art/fishing_hook_001_fbx.tscn" id="1_hepjd"]
 [ext_resource type="Script" uid="uid://88i703fu373r" path="res://entities/player/fishing_rod/fishing_rod.gd" id="1_kjkgm"]
 [ext_resource type="Script" uid="uid://c5rvwjf8tiwj5" path="res://entities/player/fishing_rod/fishing_hook.gd" id="2_pr2vv"]
+[ext_resource type="PackedScene" uid="uid://ck338hnie1hb1" path="res://entities/player/fishing_rod/art/fishing_rod_01_sk.tscn" id="4_ho2or"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjkgm"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_sglur"]
-top_radius = 0.01
-bottom_radius = 0.05
-height = 1.4
-radial_segments = 8
-rings = 0
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_bls4j"]
-top_radius = 0.1
-bottom_radius = 0.1
-height = 0.1
-radial_segments = 8
-rings = 0
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_fkugw"]
-radius = 0.05
+[sub_resource type="Curve" id="Curve_ho2or"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 0.75154126), 1.5580777, 1.5580777, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pr2vv"]
 cull_mode = 2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_sglur"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_fkugw"]
+radius = 0.05
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pr2vv"]
 radius = 0.15
 height = 0.5
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sglur"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_bls4j"]
-transitions = ["Start", "End", SubResource("AnimationNodeStateMachineTransition_sglur")]
-
-[node name="FishingRod" type="Node3D" unique_id=949060003 node_paths=PackedStringArray("_hook", "_pin_joint", "_pin_anchor", "_fishing_line")]
+[node name="FishingRod" type="Node3D" unique_id=949060003 node_paths=PackedStringArray("_rod_mesh", "_hook", "_pin_joint", "_pin_anchor", "_fishing_line")]
 script = ExtResource("1_kjkgm")
+_rod_mesh = NodePath("FishingRod_01_SK")
 _hook = NodePath("Hook")
-_pin_joint = NodePath("Mesh/PinJoint3D")
-_pin_anchor = NodePath("Mesh/PinAnchor")
+_pin_joint = NodePath("PinAnchor/PinJoint3D")
+_pin_anchor = NodePath("PinAnchor/PinAnchor")
 _fishing_line = NodePath("LineMesh")
 _fishing_line_mat = SubResource("StandardMaterial3D_kjkgm")
+_throw_charge_curve = SubResource("Curve_ho2or")
 
-[node name="Mesh" type="Node3D" parent="." unique_id=1989503610]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0.3, -0.5, -0.1)
+[node name="FishingRod_01_SK" parent="." unique_id=1701640527 instance=ExtResource("4_ho2or")]
 
-[node name="Rod" type="MeshInstance3D" parent="Mesh" unique_id=1294525868]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
-mesh = SubResource("CylinderMesh_sglur")
+[node name="Skeleton3D" parent="FishingRod_01_SK" index="0" unique_id=1747403243]
+bones/2/position = Vector3(-0.41509, -0.35030088, -0.37405333)
+bones/2/rotation = Quaternion(0.010096832, 0.46866044, 0.88264537, 0.034532797)
+bones/3/rotation = Quaternion(-0.030512199, 4.4386553e-08, -2.9007002e-10, 0.99953437)
+bones/4/rotation = Quaternion(-0.030512216, -1.2094221e-09, -4.323376e-10, 0.99953437)
 
-[node name="Reel" type="MeshInstance3D" parent="Mesh" unique_id=845596214]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0.3, -0.1)
-mesh = SubResource("CylinderMesh_bls4j")
+[node name="AnimationTree" parent="FishingRod_01_SK" index="2" unique_id=806796295]
+parameters/SM/ReadyThrow/blend_position = 0.07169866492939833
 
-[node name="PinJoint3D" type="PinJoint3D" parent="Mesh" unique_id=835895105]
-transform = Transform3D(1, 0, 0, 0, 0.7071067, -0.7071068, 0, 0.7071068, 0.7071067, 0, 1.4000001, 3.7252903e-08)
-node_a = NodePath("../PinAnchor")
-node_b = NodePath("../../Hook")
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="." unique_id=1524872158]
+transform = Transform3D(0.99741113, 0.05722491, -0.043548137, -0.014544521, 0.7536076, 0.65716374, 0.07042433, -0.654829, 0.75248885, 0.49668172, 0.8129045, -1.2607356)
+bone_name = "rod_tip.001"
+bone_idx = 5
+use_external_skeleton = true
+external_skeleton = NodePath("../FishingRod_01_SK/Skeleton3D")
 
-[node name="PinAnchor" type="StaticBody3D" parent="Mesh" unique_id=346476059]
-transform = Transform3D(1, 0, 0, 0, 0.70710665, -0.70710677, 0, 0.70710677, 0.70710665, 0, 1.4000001, 5.9604645e-08)
-collision_layer = 0
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mesh/PinAnchor" unique_id=2024889275]
-shape = SubResource("SphereShape3D_fkugw")
+[node name="AnchorTransform" type="RemoteTransform3D" parent="BoneAttachment3D" unique_id=957157511]
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, -5.9604645e-08, 0, 2.9802322e-08, 1.0000005, 0, 0, 0)
+remote_path = NodePath("../../PinAnchor")
+update_rotation = false
 
 [node name="LineMesh" type="MeshInstance3D" parent="." unique_id=1996639613]
 top_level = true
 material_override = SubResource("StandardMaterial3D_pr2vv")
 mesh = SubResource("ImmediateMesh_sglur")
 
+[node name="PinAnchor" type="Node3D" parent="." unique_id=1366592501]
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000005, 0.49668172, 0.8129045, -1.2607356)
+
+[node name="PinJoint3D" type="PinJoint3D" parent="PinAnchor" unique_id=835895105]
+transform = Transform3D(0.99999994, 0, 0, 0, 1.0000001, 0, 0, 0, 0.99999994, 0, 0, 0)
+node_a = NodePath("../PinAnchor")
+node_b = NodePath("../../Hook")
+
+[node name="PinAnchor" type="StaticBody3D" parent="PinAnchor" unique_id=346476059]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PinAnchor/PinAnchor" unique_id=2024889275]
+shape = SubResource("SphereShape3D_fkugw")
+
 [node name="Hook" type="RigidBody3D" parent="." unique_id=1130430333 node_paths=PackedStringArray("_hook_marker")]
-transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.3, 0.13064414, -1.0899494)
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.50198185, 0.33064413, -1.2750937)
 collision_layer = 8
 collision_mask = 9
 linear_damp = 2.0
@@ -95,8 +96,4 @@ transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.4999999
 [node name="Fishing_Hook_001_FBX" parent="Hook" unique_id=1270857284 instance=ExtResource("1_hepjd")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.6, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1103987937]
-
-[node name="AnimationTree" type="AnimationTree" parent="." unique_id=352659169]
-tree_root = SubResource("AnimationNodeStateMachine_bls4j")
-anim_player = NodePath("../AnimationPlayer")
+[editable path="FishingRod_01_SK"]
