@@ -101,12 +101,12 @@ func _throw_hook() -> void:
 	
 	var force: Vector3 = -global_basis.z * (throw_force + _player.throw_force) + global_basis.y * 2.0
 	_hook.set_axis_velocity(force * _throw_charge)
-	_throw_charge = 0.0
 	_throw_charge_time = 0.0
 
 
 func _reset_rod() -> void:
 	Globals.stopped_fishing.emit()
+	_throw_charge = 0.0
 	_fishing_state = FishingState.IDLE
 	
 	# Reset hook
