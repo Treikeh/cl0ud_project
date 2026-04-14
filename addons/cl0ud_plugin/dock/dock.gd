@@ -133,7 +133,7 @@ func _create_item_resources(data: Array[PackedStringArray], file_paths: Dictiona
 			# Get stuff from fish data
 			icon = load("res://entities/fish/%s/%s_icon.png" % [fish_type, fish_type])
 			mesh_scene = "res://entities/fish/%s/%s_mesh.tscn" % [fish_type, fish_type]
-			fish_data = load("res://entities/fish/%s/data/%s" % [fish_type, row[7]])
+			fish_data = load("res://entities/fish/%s/data/%s.tres" % [fish_type, row[7]])
 			
 			# Add fish item to fish loot table
 			# Get the loot table of the fish type
