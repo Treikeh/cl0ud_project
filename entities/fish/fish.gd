@@ -68,8 +68,31 @@ func _get_random_type() -> String:
 		Type.MESSAGE: Globals.message_fish_chance,
 		Type.JUNK: Globals.junk_fish_chance,
 	}
-	#TODO: Get a random fish based on the chances
+	
+	# Get all the fish types as an array
+	var types_chances: Array[Type] = types.keys()
+	# Randomize the order of the types
+	types_chances.shuffle()
+	# Sort types by the chances to get it (from low to high)
+	types_chances.sort_custom(
+		func(a: Type, b: Type) -> bool:
+			return types[a] < types[b]
+	)
+	
+	var total_chance: float = 0.0
+	for chance: float in types:
+		total_chance += chance
+	
 	var type: Type = randi_range(0, types.values().size() - 1) as Type
+	var roll: float = randf_range(0.1, total_chance)
+	var cumulative: float = 0.0
+	for t: Type in types_chances:
+		if roll > cumulative:
+			type = t
+		else:
+			cumulative += types[t]
+	
+	#TODO: Get a random fish based on the chances
 	var type_as_text: String = Type.keys()[type]
 	return type_as_text
 
