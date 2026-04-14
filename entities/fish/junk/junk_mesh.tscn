@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b3jb1ta6dleu7"]
+
+[ext_resource type="Texture2D" uid="uid://dqc0qqx14avd2" path="res://entities/fish/junk/junk_icon.png" id="1_fju0i"]
+
+[node name="JunkFishMesh" type="Node3D" unique_id=901966367]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=22786713]
+transform = Transform3D(-0.0038603134, 0.049850754, 0, -0.049850754, -0.0038603134, 0, 0, 0, 0.05, 0.15012838, -0.27993104, 0)
+texture = ExtResource("1_fju0i")

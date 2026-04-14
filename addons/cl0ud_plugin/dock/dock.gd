@@ -237,6 +237,9 @@ func _create_fish_data(data: Array[PackedStringArray], file_paths: Dictionary) -
 				fish.sender = sender
 				fish.recipient = sender
 				fish.messages = messages
+			"JUNK":
+				if fish == null:
+					fish = JunkData.new()
 		
 		_save_resource(fish, path, file_paths, id)	
 

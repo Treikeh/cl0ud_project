@@ -6,6 +6,7 @@ enum Type {
 	MAIL,
 	MESSAGE,
 	NOTE,
+	JUNK,
 }
 
 const FOLDER_PATH: String = "res://entities/fish/"
@@ -65,6 +66,7 @@ func _get_random_type() -> String:
 		Type.MAIL: Globals.mail_fish_chance,
 		Type.NOTE: Globals.note_fish_chance,
 		Type.MESSAGE: Globals.message_fish_chance,
+		Type.JUNK: Globals.junk_fish_chance,
 	}
 	#TODO: Get a random fish based on the chances
 	var type: Type = randi_range(0, types.values().size() - 1) as Type

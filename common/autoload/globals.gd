@@ -18,6 +18,7 @@ var hook_distance: float = 0.0
 var mail_fish_chance: float = 1.0
 var note_fish_chance: float = 1.0
 var message_fish_chance: float = 1.0
+var junk_fish_chance: float = 1.0
 
 var fish_loot_table: Dictionary
 
