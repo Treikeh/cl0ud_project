@@ -40,6 +40,7 @@ func _input(event: InputEvent) -> void:
 	if not _enabled:
 		looked.emit(Vector2.ZERO)
 		moved.emit(Vector2.ZERO)
+		jumped.emit(false)
 		return
 	
 	# Interact input

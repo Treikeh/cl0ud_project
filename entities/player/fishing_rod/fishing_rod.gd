@@ -1,4 +1,5 @@
 extends Node3D
+class_name FishingRod
 
 
 enum FishingState {
@@ -11,12 +12,22 @@ enum FishingState {
 
 
 @export var throw_force: float = 10.0
+@export var _rod_mesh: Node3D
 @export var _hook: FishingHook
 @export var _pin_joint: PinJoint3D
 @export var _pin_anchor: StaticBody3D
 @export var _fishing_line: MeshInstance3D
 @export var _fishing_line_mat: Material
+@export var _throw_charge_curve: Curve
 
+@export_group("SFX")
+@export var _cast_sfx: FmodEventEmitter3D
+@export var _reel_sfx: FmodEventEmitter3D
+@export var _caught_sfx: FmodEventEmitter3D
+@export var _escaped_sfx: FmodEventEmitter3D
+
+var _throw_charge: float = 0.0
+var _throw_charge_time: float = 0.0
 var _throw_pos: Vector3
 var _fish_timer: Timer
 var _fishing_state: FishingState = FishingState.IDLE
@@ -39,12 +50,20 @@ func _ready() -> void:
 	_fish_timer.timeout.connect(_on_fish_hooked)
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	if _fishing_state == FishingState.READY_THROW and _throw_charge_time < 1.0:
+		_throw_charge_time += delta * 2.0
+		_throw_charge = _throw_charge_curve.sample(_throw_charge_time)
+	
 	if _fishing_state == FishingState.FISH_HOOKED:
 		_player.update_look_position(_hook.global_position)
 	
 	#NOTE: call_deferred to avoid the line being 1 frame late when using a controller to look around
 	_display_fishing_line.call_deferred()
+	
+	_rod_mesh.fishing_state = _fishing_state
+	_rod_mesh.throw_charge = _throw_charge
+	_rod_mesh.fish_dir = _player._minigame_look_dir
 
 
 func _physics_process(_delta: float) -> void:
@@ -86,12 +105,17 @@ func _throw_hook() -> void:
 	
 	_fishing_state = FishingState.WAITING
 	
-	_hook.global_position = global_position
-	_hook.apply_central_impulse(-global_basis.z * (throw_force + _player.throw_force))
+	var force: Vector3 = -global_basis.z * (throw_force + _player.throw_force) + global_basis.y * 2.0
+	_hook.set_axis_velocity(force * _throw_charge)
+	_throw_charge_time = 0.0
+	
+	#SFX
+	_cast_sfx.play_one_shot()
 
 
 func _reset_rod() -> void:
 	Globals.stopped_fishing.emit()
+	_throw_charge = 0.0
 	_fishing_state = FishingState.IDLE
 	
 	# Reset hook
@@ -106,6 +130,9 @@ func _reset_rod() -> void:
 	var hook_offset: Vector3 = -_pin_anchor.global_basis.y * 0.3
 	_hook.global_position = _pin_anchor.global_position + hook_offset
 	_pin_joint.node_b = _hook.get_path()
+	
+	#SFX
+	_reel_sfx.play_one_shot()
 
 
 func _collect_fish() -> void:
@@ -129,12 +156,18 @@ func fish_caught() -> void:
 	_fishing_state = FishingState.REEL_IN
 	
 	_hook.spawn_fish()
+	
+	#SFX
+	_caught_sfx.play_one_shot()
 
 
 func fish_escaped() -> void:
 	if _fishing_state == FishingState.FISH_HOOKED:
 		_fishing_state = FishingState.WAITING
 		_fish_timer.start()
+		
+		#SFX
+		_escaped_sfx.play_one_shot()
 
 
 #region Public

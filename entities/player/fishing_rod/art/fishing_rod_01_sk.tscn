@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://ck338hnie1hb1"]
+
+[ext_resource type="PackedScene" uid="uid://ci86rh0ia1vds" path="res://entities/player/fishing_rod/art/fishing_rod_01_sk.glb" id="1_vy635"]
+[ext_resource type="Script" uid="uid://nlu0yem3tnux" path="res://entities/player/fishing_rod/art/fishing_rod_01_sk.gd" id="2_07n6i"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pis18"]
+animation = &"waiting_001"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_44l05"]
+animation = &"fish_hooked_l_001"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ogw22"]
+animation = &"fish_hooked_r_001"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2o6ko"]
+animation = &"fish_hooked_d_001"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jogm4"]
+animation = &"fish_hooked_u_001"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_07n6i"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_pis18")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_44l05")
+blend_point_1/pos = Vector2(-1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_ogw22")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_2o6ko")
+blend_point_3/pos = Vector2(0, 1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_jogm4")
+blend_point_4/pos = Vector2(0, -1)
+snap = Vector2(0.5, 0.5)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_07n6i"]
+animation = &"idle_001"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_amcap"]
+animation = &"ready_throw_001"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_fvbo5"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_07n6i")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_amcap")
+blend_point_1/pos = 1.0
+min_space = 0.0
+snap = 0.5
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n1wkw"]
+animation = &"reel_inn_001"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fvbo5"]
+animation = &"throw_001"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_niyvt"]
+animation = &"waiting_001"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pis18"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_07n6i"]
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_niyvt"]
+advance_mode = 2
+advance_condition = &"waiting"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_44l05"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_amcap"]
+advance_mode = 2
+advance_condition = &"fish_hooked"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fvbo5"]
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ogw22"]
+advance_mode = 2
+advance_condition = &"waiting"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6c8w1"]
+advance_mode = 2
+advance_condition = &"reel_inn"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4eyxr"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2o6ko"]
+advance_mode = 2
+advance_condition = &"reel_inn"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_fvbo5"]
+states/FishHooked/node = SubResource("AnimationNodeBlendSpace2D_07n6i")
+states/FishHooked/position = Vector2(540, 355)
+states/ReadyThrow/node = SubResource("AnimationNodeBlendSpace1D_fvbo5")
+states/ReadyThrow/position = Vector2(407, 100)
+states/reel_inn_001/node = SubResource("AnimationNodeAnimation_n1wkw")
+states/reel_inn_001/position = Vector2(540, 179)
+states/throw_001/node = SubResource("AnimationNodeAnimation_fvbo5")
+states/throw_001/position = Vector2(540, -15)
+states/waiting_001/node = SubResource("AnimationNodeAnimation_niyvt")
+states/waiting_001/position = Vector2(664, 100)
+transitions = ["Start", "ReadyThrow", SubResource("AnimationNodeStateMachineTransition_pis18"), "waiting_001", "ReadyThrow", SubResource("AnimationNodeStateMachineTransition_07n6i"), "ReadyThrow", "throw_001", SubResource("AnimationNodeStateMachineTransition_niyvt"), "throw_001", "waiting_001", SubResource("AnimationNodeStateMachineTransition_44l05"), "waiting_001", "FishHooked", SubResource("AnimationNodeStateMachineTransition_amcap"), "FishHooked", "ReadyThrow", SubResource("AnimationNodeStateMachineTransition_fvbo5"), "FishHooked", "waiting_001", SubResource("AnimationNodeStateMachineTransition_ogw22"), "FishHooked", "reel_inn_001", SubResource("AnimationNodeStateMachineTransition_6c8w1"), "reel_inn_001", "ReadyThrow", SubResource("AnimationNodeStateMachineTransition_4eyxr"), "waiting_001", "reel_inn_001", SubResource("AnimationNodeStateMachineTransition_2o6ko")]
+graph_offset = Vector2(-32, -70)
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_niyvt"]
+graph_offset = Vector2(-100, 11)
+nodes/SM/node = SubResource("AnimationNodeStateMachine_fvbo5")
+nodes/SM/position = Vector2(-100, 180)
+node_connections = [&"output", 0, &"SM"]
+
+[node name="FishingRod_01_SK" unique_id=439076844 node_paths=PackedStringArray("_anim_tree") instance=ExtResource("1_vy635")]
+script = ExtResource("2_07n6i")
+_anim_tree = NodePath("AnimationTree")
+
+[node name="Skeleton3D" parent="." index="0" unique_id=1730573919]
+bones/2/position = Vector3(-0.41509, -0.35704988, -0.3988657)
+bones/2/rotation = Quaternion(0.006817979, 0.017124265, 0.9992058, 0.03532622)
+bones/3/rotation = Quaternion(-0.036805987, 4.106065e-08, 4.948645e-10, 0.9993224)
+bones/4/rotation = Quaternion(-0.036805984, -1.9221555e-09, 3.7132533e-10, 0.9993224)
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2" unique_id=806796295]
+tree_root = SubResource("AnimationNodeBlendTree_niyvt")
+anim_player = NodePath("../AnimationPlayer")
+parameters/SM/conditions/fish_hooked = false
+parameters/SM/conditions/idle = false
+parameters/SM/conditions/reel_inn = false
+parameters/SM/conditions/waiting = false
+parameters/SM/FishHooked/blend_position = Vector2(0.7519685, 0.29896903)
+parameters/SM/ReadyThrow/blend_position = 0.016331

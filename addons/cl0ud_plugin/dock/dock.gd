@@ -133,7 +133,7 @@ func _create_item_resources(data: Array[PackedStringArray], file_paths: Dictiona
 			# Get stuff from fish data
 			icon = load("res://entities/fish/%s/%s_icon.png" % [fish_type, fish_type])
 			mesh_scene = "res://entities/fish/%s/%s_mesh.tscn" % [fish_type, fish_type]
-			fish_data = load("res://entities/fish/%s/data/%s" % [fish_type, row[7]])
+			fish_data = load("res://entities/fish/%s/data/%s.tres" % [fish_type, row[7]])
 			
 			# Add fish item to fish loot table
 			# Get the loot table of the fish type
@@ -206,14 +206,40 @@ func _create_fish_data(data: Array[PackedStringArray], file_paths: Dictionary) -
 			"MESSAGE":
 				# Get message data
 				var text: String = row[2]
-				var sender: int = text.find("[s]")
-				var recipient: int = text.find("[r]")
+				var s_start: int = text.find("[s]")
+				var r_start: int = text.find("[r]")
+				var r_end: int = text.find(" [", r_start)
+				
+				var sender: String = text.substr(s_start, r_start - s_start).trim_prefix("[s]")
+				var recipient: String = text.substr(r_start, r_end - r_start).trim_prefix("[r]")
+				
+				var content: Array = text.split("[")
+				# Remove the frist few useless lines
+				content.pop_front()
+				content.pop_front()
+				content.pop_front()
+				
+				# Set up the messages array
+				var messages: Array[Dictionary] = []
+				for message: String in content:
+					var lines: Array = message.split("|")
+					lines[0] = lines[0].trim_prefix("f]").trim_prefix("t]")
+					var who: String = recipient if message.begins_with("f]") else sender
+					var dict: Dictionary = {
+						"WHO": who,
+						"LINES": lines
+					}
+					messages.append(dict)
 				
 				# Set message data
 				if fish == null:
 					fish = MessageData.new()
-				fish.sender = text.substr(sender, recipient - sender).trim_prefix("[s]")
-				fish.recipient = text.substr(recipient, text.length() - recipient).trim_prefix("[r]")
+				fish.sender = sender
+				fish.recipient = sender
+				fish.messages = messages
+			"JUNK":
+				if fish == null:
+					fish = JunkData.new()
 		
 		_save_resource(fish, path, file_paths, id)	
 

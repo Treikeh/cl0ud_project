@@ -11,6 +11,13 @@ const GRAVITY_DIR: Vector3 = Vector3.DOWN
 @export var _air_accel: float = 200.0
 @export var _jump_force: float = 5.0
 
+@export_group("SFX")
+@export var _footsteps_freq: float = 2.0
+@export var _footsteps_sfx: FmodEventEmitter3D
+
+var _is_left_step: bool = false
+var _footsteps_time: float = 0.0
+
 var _enabled: bool = true
 var _is_jumping: bool = false
 var _move_dir: Vector3
@@ -57,6 +64,8 @@ func _walking_physics(delta: float) -> void:
 	_player.apply_central_force(needed_vel * _ground_accel * delta)
 	_ground_check.snap_to_ground()
 	#_camera.apply_head_bobbing(linear_velocity, delta)
+	
+	_play_foot_steps(delta)
 
 
 func _falling_physics(delta: float) -> void:
@@ -84,6 +93,19 @@ func _falling_physics(delta: float) -> void:
 func _jumping() -> void:
 	_player.set_axis_velocity(-GRAVITY_DIR * _jump_force)
 	_state_machine.switch(FALLING)
+
+
+func _play_foot_steps(delta: float) -> void:
+	_footsteps_time += delta * _player.linear_velocity.length()
+	var horizontal: float = cos(_footsteps_time * _footsteps_freq)
+	if _is_left_step:
+		if horizontal > 0.9:
+			_footsteps_sfx.play_one_shot()
+			_is_left_step = false
+	else:
+		if horizontal < -0.9:
+			_footsteps_sfx.play_one_shot()
+			_is_left_step = true
 
 
 #region Public

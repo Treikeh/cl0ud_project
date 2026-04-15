@@ -2,11 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dtqc7i2r1eyd1" path="res://entities/vendor/art/character_01_sk.glb" id="1_j5nki"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j5nki"]
-
 [node name="character_01_sk" unique_id=581165237 instance=ExtResource("1_j5nki")]
 
-[node name="Skeleton3D" parent="Armature_001" parent_id_path=PackedInt32Array(484280671) index="0" unique_id=1681361912]
+[node name="Skeleton3D" parent="Armature_001" parent_id_path=PackedInt32Array(546560604) index="0" unique_id=1182233557]
 bones/1/position = Vector3(-8.595555e-16, 0.03985116, 0.89735985)
 bones/1/rotation = Quaternion(0.69923276, -5.397301e-08, -5.27906e-08, 0.7148942)
 bones/2/rotation = Quaternion(-0.020237816, 1.1918487e-07, 6.432906e-10, 0.9997952)
@@ -27,8 +25,5 @@ bones/16/rotation = Quaternion(-0.037794296, 0.009388774, 0.998006, 0.049675103)
 bones/17/rotation = Quaternion(-0.14798984, -5.5132485e-08, 4.2006625e-09, 0.98898894)
 bones/18/rotation = Quaternion(0.6522573, -0.013975786, 0.060833357, 0.7554233)
 
-[node name="CharacterMesh_001" parent="Armature_001/Skeleton3D" index="0" unique_id=1909122094]
-surface_material_override/0 = SubResource("StandardMaterial3D_j5nki")
-
-[node name="AnimationPlayer" parent="." index="1" unique_id=1084211563]
+[node name="AnimationPlayer" parent="." index="1" unique_id=1506214914]
 autoplay = &"idle_001"

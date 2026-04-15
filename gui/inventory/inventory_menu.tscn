@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cs35qk6fai74g" path="res://gui/inventory/inventory_slot/inventory_slot.tscn" id="2_6o4wp"]
 [ext_resource type="Texture2D" uid="uid://cngsolmk4b8bs" path="res://gui/inventory/art/Inventory Alt Textured_v2.png" id="2_enr3t"]
 
-[node name="Inventory" type="Control" unique_id=814013906 node_paths=PackedStringArray("_slot_grid", "_select_marker", "_currency_label", "_upgrades_label", "_item_dispaly_root", "_mesh_marker")]
+[node name="Inventory" type="Control" unique_id=814013906 node_paths=PackedStringArray("_slot_grid", "_select_marker", "_currency_label", "_upgrades_label", "_item_dispaly_root", "_mesh_marker", "_open_sfx", "_close_sfx")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,6 +18,8 @@ _currency_label = NodePath("CurrencyLabel")
 _upgrades_label = NodePath("UpgradesLabel")
 _item_dispaly_root = NodePath("ItemDisplayRoot")
 _mesh_marker = NodePath("PreviewMeshViewport/SubViewport/MeshMarker")
+_open_sfx = NodePath("SFX/Open")
+_close_sfx = NodePath("SFX/Close")
 
 [node name="InventoryAltTexturedV2" type="Sprite2D" parent="." unique_id=1030784044]
 position = Vector2(241.00002, 324.00003)
@@ -164,3 +166,13 @@ offset_left = 100.0
 offset_top = 188.0
 offset_right = 311.075
 offset_bottom = 504.22003
+
+[node name="SFX" type="Node" parent="." unique_id=2007378864]
+
+[node name="Open" type="FmodEventEmitter2D" parent="SFX" unique_id=1068609080]
+event_name = "event:/UI/Open Inventory"
+event_guid = "{18b1f05d-fb36-45e5-8916-938b4fff548c}"
+
+[node name="Close" type="FmodEventEmitter2D" parent="SFX" unique_id=618553427]
+event_name = "event:/UI/Close Inventory"
+event_guid = "{9b7c0e1b-3771-4d51-aa63-c1a471eeecd8}"

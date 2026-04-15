@@ -10,6 +10,9 @@ signal fish_collected(item: ItemData)
 signal started_fishing
 signal stopped_fishing
 
+signal day_started
+signal day_ended
+
 
 const FISH_LOOT_TABLE_FILE: String = "res://common/items/_fish_loot_table.ini"
 
@@ -18,6 +21,7 @@ var hook_distance: float = 0.0
 var mail_fish_chance: float = 1.0
 var note_fish_chance: float = 1.0
 var message_fish_chance: float = 1.0
+var junk_fish_chance: float = 1.0
 
 var fish_loot_table: Dictionary
 

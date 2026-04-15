@@ -1,12 +1,28 @@
 extends FishDataDisplay
 
 
-@export var _sender_label: Label
-@export var _recipient_label: Label
+@export var _message_root: VBoxContainer
+var _data: MessageData
 
 
 func with_data(data: FishData) -> FishDataDisplay:
 	if data is MessageData:
-		_sender_label.text = data.sender
-		_recipient_label.text = data.recipient
+		_data = data
 	return self
+
+
+func _ready() -> void:
+	for message: Dictionary in _data.messages:
+		# Get label text
+		var text: String = message.WHO + "\n"
+		for line: String in message.LINES:
+			text += line + "\n"
+		
+		# Add label
+		var label := Label.new()
+		label.text = text
+		_message_root.add_child(label)
+		
+		# Set alignment
+		if message.WHO == _data.recipient:
+			label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT

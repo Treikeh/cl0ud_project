@@ -20,6 +20,9 @@ func _ready() -> void:
 	reel_inn_minigame.succeeded.connect(_on_reel_in_minigame_succeeded)
 	reel_inn_minigame.failed.connect(_on_minigames_failed)
 	
+	_catch_minigame.hide()
+	reel_inn_minigame.hide()
+	
 	_start_minigames()
 
 

@@ -5,9 +5,9 @@
 
 [resource]
 script = ExtResource("1_q3qd8")
-_upgrade_amount = 5.0
+_upgrade_amount = 2.5
 name = "Throw distance 01"
 description = "Increase throw distance"
 icon = ExtResource("1_ksdtm")
-cost = 10
+cost = 15
 metadata/_custom_type_script = "uid://drly7mklucb8x"
