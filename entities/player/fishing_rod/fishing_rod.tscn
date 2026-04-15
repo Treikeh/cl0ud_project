@@ -23,7 +23,7 @@ cull_mode = 2
 radius = 0.15
 height = 0.5
 
-[node name="FishingRod" type="Node3D" unique_id=949060003 node_paths=PackedStringArray("_rod_mesh", "_hook", "_pin_joint", "_pin_anchor", "_fishing_line")]
+[node name="FishingRod" type="Node3D" unique_id=949060003 node_paths=PackedStringArray("_rod_mesh", "_hook", "_pin_joint", "_pin_anchor", "_fishing_line", "_cast_sfx", "_reel_sfx", "_caught_sfx", "_escaped_sfx")]
 script = ExtResource("1_kjkgm")
 _rod_mesh = NodePath("FishingRod_01_SK")
 _hook = NodePath("HookLine/Hook")
@@ -32,6 +32,10 @@ _pin_anchor = NodePath("HookLine/PinAnchor/PinAnchor")
 _fishing_line = NodePath("HookLine/LineMesh")
 _fishing_line_mat = SubResource("StandardMaterial3D_kjkgm")
 _throw_charge_curve = SubResource("Curve_ho2or")
+_cast_sfx = NodePath("SFX/Cast")
+_reel_sfx = NodePath("SFX/Reel")
+_caught_sfx = NodePath("SFX/Caught")
+_escaped_sfx = NodePath("SFX/Escaped")
 
 [node name="FishingRod_01_SK" parent="." unique_id=1963881671 instance=ExtResource("4_ho2or")]
 
@@ -99,5 +103,21 @@ transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.4999999
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.6, 0)
 
 [node name="SFX" type="Node3D" parent="." unique_id=1957665866]
+
+[node name="Cast" type="FmodEventEmitter3D" parent="SFX" unique_id=1757768530]
+event_name = "event:/Actions/Fishing Cast"
+event_guid = "{54a5d128-75d1-4f63-a8f5-7f145962b413}"
+
+[node name="Reel" type="FmodEventEmitter3D" parent="SFX" unique_id=1718737241]
+event_name = "event:/Actions/Fishing Reel"
+event_guid = "{af8813d6-7528-46c4-b540-77fc5b58908d}"
+
+[node name="Caught" type="FmodEventEmitter3D" parent="SFX" unique_id=1774190882]
+event_name = "event:/Actions/Fish Caught"
+event_guid = "{d6177260-abd0-4680-9f19-e258422d8337}"
+
+[node name="Escaped" type="FmodEventEmitter3D" parent="SFX" unique_id=1287896646]
+event_name = "event:/Actions/Fish Escaped"
+event_guid = "{2f810c07-fefc-4f37-b561-e050e7d948ad}"
 
 [editable path="FishingRod_01_SK"]

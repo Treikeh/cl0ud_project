@@ -54,8 +54,9 @@ script = ExtResource("2_abrql")
 
 [node name="FmodListener3D" type="FmodListener3D" parent="Orientation/Head" unique_id=463241591]
 
-[node name="Movement" type="Node3D" parent="." unique_id=302736872]
+[node name="Movement" type="Node3D" parent="." unique_id=302736872 node_paths=PackedStringArray("_footsteps_sfx")]
 script = ExtResource("5_qiwj3")
+_footsteps_sfx = NodePath("SFX/FootSteps")
 
 [node name="GroundCheck" type="ShapeCast3D" parent="Movement" unique_id=1000335560]
 shape = SubResource("CapsuleShape3D_bls4j")
@@ -69,7 +70,11 @@ _leave_floor_force = 3.0
 target_position = Vector3(0, -1.6, 0)
 debug_shape_custom_color = Color(1, 0, 0.28235295, 1)
 
-[node name="SFX" type="Node3D" parent="." unique_id=1956867442]
+[node name="SFX" type="Node3D" parent="Movement" unique_id=1956867442]
+
+[node name="FootSteps" type="FmodEventEmitter3D" parent="Movement/SFX" unique_id=1404631984]
+event_name = "event:/Actions/Footsteps"
+event_guid = "{7826b2cc-6f8b-4b52-ae59-c02fc3b6336e}"
 
 [node name="Input" type="Node" parent="." unique_id=891247422]
 script = ExtResource("5_26q78")

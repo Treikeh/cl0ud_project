@@ -20,6 +20,12 @@ enum FishingState {
 @export var _fishing_line_mat: Material
 @export var _throw_charge_curve: Curve
 
+@export_group("SFX")
+@export var _cast_sfx: FmodEventEmitter3D
+@export var _reel_sfx: FmodEventEmitter3D
+@export var _caught_sfx: FmodEventEmitter3D
+@export var _escaped_sfx: FmodEventEmitter3D
+
 var _throw_charge: float = 0.0
 var _throw_charge_time: float = 0.0
 var _throw_pos: Vector3
@@ -102,6 +108,9 @@ func _throw_hook() -> void:
 	var force: Vector3 = -global_basis.z * (throw_force + _player.throw_force) + global_basis.y * 2.0
 	_hook.set_axis_velocity(force * _throw_charge)
 	_throw_charge_time = 0.0
+	
+	#SFX
+	_cast_sfx.play_one_shot()
 
 
 func _reset_rod() -> void:
@@ -121,6 +130,9 @@ func _reset_rod() -> void:
 	var hook_offset: Vector3 = -_pin_anchor.global_basis.y * 0.3
 	_hook.global_position = _pin_anchor.global_position + hook_offset
 	_pin_joint.node_b = _hook.get_path()
+	
+	#SFX
+	_reel_sfx.play_one_shot()
 
 
 func _collect_fish() -> void:
@@ -144,12 +156,18 @@ func fish_caught() -> void:
 	_fishing_state = FishingState.REEL_IN
 	
 	_hook.spawn_fish()
+	
+	#SFX
+	_caught_sfx.play_one_shot()
 
 
 func fish_escaped() -> void:
 	if _fishing_state == FishingState.FISH_HOOKED:
 		_fishing_state = FishingState.WAITING
 		_fish_timer.start()
+		
+		#SFX
+		_escaped_sfx.play_one_shot()
 
 
 #region Public

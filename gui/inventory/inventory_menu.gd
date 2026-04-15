@@ -14,6 +14,10 @@ const ITEM_DISPALY_SCENE: PackedScene = preload("uid://cye3hnmivani4")
 @export var _item_dispaly_root: Control
 @export var _mesh_marker: Marker3D
 
+@export_group("SFX")
+@export var _open_sfx: FmodEventEmitter2D
+@export var _close_sfx: FmodEventEmitter2D
+
 var _upgrades: Array[Upgrade] = []
 var _inventory: Inventory
 
@@ -47,11 +51,14 @@ func _open() -> void:
 	
 	for upgrade: Upgrade in _upgrades:
 		_upgrades_label.text += upgrade.name + "\n"
+	
+	_open_sfx.play_one_shot()
 
 
 func _close() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	closed.emit()
+	_close_sfx.play_one_shot()
 	queue_free()
 
 
