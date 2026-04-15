@@ -216,7 +216,6 @@ func _load_upgrades(data: Dictionary) -> void:
 const SAVE_DATA_KEY: String = "player"
 
 func get_save_data() -> Dictionary:
-	print(_get_upgrades_data())
 	var data: Dictionary = {
 		SAVE_DATA_KEY: {
 			"position": var_to_str(global_position),

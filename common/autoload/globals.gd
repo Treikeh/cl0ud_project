@@ -10,6 +10,9 @@ signal fish_collected(item: ItemData)
 signal started_fishing
 signal stopped_fishing
 
+signal day_started
+signal day_ended
+
 
 const FISH_LOOT_TABLE_FILE: String = "res://common/items/_fish_loot_table.ini"
 

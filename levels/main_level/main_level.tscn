@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://8vuuaq87rbum"]
+
+[ext_resource type="PackedScene" uid="uid://dcla54xiom224" path="res://levels/test_level/art/test_level.glb" id="1_7q3gx"]
+[ext_resource type="PackedScene" uid="uid://bli63q1qswjvg" path="res://levels/day_night_cycle/day_night_cycle.tscn" id="1_b2fg0"]
+[ext_resource type="Script" uid="uid://eafl2by4c1sm" path="res://levels/main_level/main_level.gd" id="1_um8ys"]
+[ext_resource type="Material" uid="uid://ce2hxdgei0dpw" path="res://common/materials/dev_grid_gray_01.tres" id="2_3i7v1"]
+[ext_resource type="PackedScene" uid="uid://dfwa3ko7oftnj" path="res://entities/player/player.tscn" id="2_438kw"]
+[ext_resource type="PackedScene" uid="uid://bocx17sre2uti" path="res://common/scripts/fish_area/fish_area_3d.tscn" id="4_sj11d"]
+[ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/vendor/vendor.tscn" id="6_hp128"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sj11d"]
+size = Vector3(100, 10, 200)
+
+[node name="MainLevel" type="Node3D" unique_id=224384734 node_paths=PackedStringArray("_days", "_day_night_cycle") groups=["persistent"]]
+script = ExtResource("1_um8ys")
+_days = NodePath("Days")
+_day_night_cycle = NodePath("Environment/DayNightCycle")
+
+[node name="Days" type="Node3D" parent="." unique_id=309322458]
+
+[node name="01" type="Node3D" parent="Days" unique_id=705561599]
+visible = false
+
+[node name="Building01" type="CSGBox3D" parent="Days/01" unique_id=471870258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.92532, 12.902218, -13.288574)
+size = Vector3(26.964722, 46.09668, 27.577148)
+material = ExtResource("2_3i7v1")
+
+[node name="02" type="Node3D" parent="Days" unique_id=1955069931]
+visible = false
+
+[node name="Building01" type="CSGBox3D" parent="Days/02" unique_id=1868815198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.92532, 12.902218, -13.288574)
+size = Vector3(26.964722, 46.09668, 27.577148)
+material = ExtResource("2_3i7v1")
+
+[node name="Building02" type="CSGBox3D" parent="Days/02" unique_id=1560022305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.92532, 12.902218, 53.41143)
+size = Vector3(26.964722, 46.09668, 27.577148)
+material = ExtResource("2_3i7v1")
+
+[node name="03" type="Node3D" parent="Days" unique_id=300660882]
+visible = false
+
+[node name="Building01" type="CSGBox3D" parent="Days/03" unique_id=28737739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.92532, 12.902218, -13.288574)
+size = Vector3(26.964722, 46.09668, 27.577148)
+material = ExtResource("2_3i7v1")
+
+[node name="Building02" type="CSGBox3D" parent="Days/03" unique_id=414751532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.92532, 12.902218, 53.41143)
+size = Vector3(26.964722, 46.09668, 27.577148)
+material = ExtResource("2_3i7v1")
+
+[node name="Building03" type="CSGBox3D" parent="Days/03" unique_id=1226778750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.92532, 12.902218, 113.20307)
+size = Vector3(26.964722, 46.09668, 27.577148)
+material = ExtResource("2_3i7v1")
+
+[node name="04" type="Node3D" parent="Days" unique_id=2046660987]
+visible = false
+
+[node name="Building01" type="CSGBox3D" parent="Days/04" unique_id=664710047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.92532, 12.902218, -13.288574)
+size = Vector3(26.964722, 46.09668, 27.577148)
+material = ExtResource("2_3i7v1")
+
+[node name="Building02" type="CSGBox3D" parent="Days/04" unique_id=1148173011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.92532, 12.902218, 53.41143)
+size = Vector3(26.964722, 46.09668, 27.577148)
+material = ExtResource("2_3i7v1")
+
+[node name="Building03" type="CSGBox3D" parent="Days/04" unique_id=526133021]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.92532, 12.902218, 113.20307)
+size = Vector3(26.964722, 46.09668, 27.577148)
+material = ExtResource("2_3i7v1")
+
+[node name="Building04" type="CSGBox3D" parent="Days/04" unique_id=2025163060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.92532, 12.902218, -67.02116)
+size = Vector3(26.964722, 46.09668, 27.577148)
+material = ExtResource("2_3i7v1")
+
+[node name="05" type="Node3D" parent="Days" unique_id=96439273]
+visible = false
+
+[node name="Building01" type="CSGBox3D" parent="Days/05" unique_id=2042084441]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.92532, 12.902218, -13.288574)
+size = Vector3(26.964722, 46.09668, 27.577148)
+material = ExtResource("2_3i7v1")
+
+[node name="Building02" type="CSGBox3D" parent="Days/05" unique_id=1901181723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.92532, 12.902218, 53.41143)
+size = Vector3(26.964722, 46.09668, 27.577148)
+material = ExtResource("2_3i7v1")
+
+[node name="Building03" type="CSGBox3D" parent="Days/05" unique_id=1138825486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.92532, 12.902218, 113.20307)
+size = Vector3(26.964722, 46.09668, 27.577148)
+material = ExtResource("2_3i7v1")
+
+[node name="Building04" type="CSGBox3D" parent="Days/05" unique_id=1468189434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.92532, 12.902218, -67.02116)
+size = Vector3(26.964722, 46.09668, 27.577148)
+material = ExtResource("2_3i7v1")
+
+[node name="Building05" type="CSGBox3D" parent="Days/05" unique_id=1938683910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.92532, 12.902218, -128.01364)
+size = Vector3(26.964722, 46.09668, 27.577148)
+material = ExtResource("2_3i7v1")
+
+[node name="Environment" type="Node3D" parent="." unique_id=929007520]
+
+[node name="DayNightCycle" parent="Environment" unique_id=50702471 instance=ExtResource("1_b2fg0")]
+
+[node name="LevelMesh" parent="Environment" unique_id=58182264 instance=ExtResource("1_7q3gx")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Background" type="Node3D" parent="Environment" unique_id=1097732213]
+
+[node name="Interactable" type="Node3D" parent="." unique_id=2071676137]
+
+[node name="FogVolume" type="FogVolume" parent="Interactable" unique_id=1815325357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.429283, -10, 6.5714226)
+size = Vector3(69.3288, 10, 120.734375)
+
+[node name="MainFishArea" parent="Interactable" unique_id=1857351977 instance=ExtResource("4_sj11d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.602287, -10, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable/MainFishArea" unique_id=2136580904]
+shape = SubResource("BoxShape3D_sj11d")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="Vendor" parent="Interactable" unique_id=520470945 instance=ExtResource("6_hp128")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3000001, 0, 32.84711)
+
+[node name="Player" parent="." unique_id=913738857 instance=ExtResource("2_438kw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5682378, 0)

@@ -52,6 +52,8 @@ script = ExtResource("2_abrql")
 
 [node name="FishingRod" parent="Orientation/Head" unique_id=949060003 instance=ExtResource("3_26q78")]
 
+[node name="FmodListener3D" type="FmodListener3D" parent="Orientation/Head" unique_id=463241591]
+
 [node name="Movement" type="Node3D" parent="." unique_id=302736872]
 script = ExtResource("5_qiwj3")
 
@@ -66,6 +68,8 @@ _leave_floor_force = 3.0
 [node name="RayCast3D" type="RayCast3D" parent="Movement/GroundCheck" unique_id=1829849717]
 target_position = Vector3(0, -1.6, 0)
 debug_shape_custom_color = Color(1, 0, 0.28235295, 1)
+
+[node name="SFX" type="Node3D" parent="." unique_id=1956867442]
 
 [node name="Input" type="Node" parent="." unique_id=891247422]
 script = ExtResource("5_26q78")

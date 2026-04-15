@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://0mwlrko7w0hn"]
+
+[ext_resource type="Script" uid="uid://dbeywwip56i4m" path="res://common/autoload/globals.gd" id="1_k8agx"]
+
+[node name="Globals" type="Node" unique_id=1301974675]
+script = ExtResource("1_k8agx")
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=88466121]
+bank_paths = ["res://common/fmod_banks/Desktop//Master.strings.bank", "res://common/fmod_banks/Desktop//Master.bank"]

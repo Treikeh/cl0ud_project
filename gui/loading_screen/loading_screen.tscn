@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bcgbuisoq6kw"]
+
+[ext_resource type="Script" uid="uid://dmh7mo8kfsd7l" path="res://gui/loading_screen/loading_screen.gd" id="1_mkdfe"]
+
+[node name="LoadingScreen" type="CanvasLayer" unique_id=1918260680 node_paths=PackedStringArray("_control_root")]
+process_mode = 3
+layer = 100
+script = ExtResource("1_mkdfe")
+_control_root = NodePath("ControlRoot")
+
+[node name="ControlRoot" type="Control" parent="." unique_id=1969786316]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ControlRoot" unique_id=779681713]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = -5
+theme_override_constants/margin_top = -5
+theme_override_constants/margin_right = -5
+theme_override_constants/margin_bottom = -5
+
+[node name="ColorRect" type="ColorRect" parent="ControlRoot/MarginContainer" unique_id=619221260]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ControlRoot/MarginContainer" unique_id=253394227]
+layout_mode = 2
+text = "LOADING..."
+horizontal_alignment = 1
+vertical_alignment = 1
