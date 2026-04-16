@@ -10,19 +10,22 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_sj11d"]
 size = Vector3(100, 10, 200)
 
-[node name="MainLevel" type="Node3D" unique_id=224384734 node_paths=PackedStringArray("_day_night_cycle") groups=["persistent"]]
+[node name="MainLevel" type="Node3D" unique_id=224384734 node_paths=PackedStringArray("_day_night_cycle", "_player_marker") groups=["persistent"]]
 script = ExtResource("1_um8ys")
 _day_night_cycle = NodePath("DayNightCycle")
+_player_marker = NodePath("PlayerStartMarker")
+
+[node name="PlayableArea_V2" parent="." unique_id=483264212 instance=ExtResource("6_3i7v1")]
 
 [node name="DayNightCycle" parent="." unique_id=50702471 instance=ExtResource("1_b2fg0")]
-_minutes_in_day = 1.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1425443, -3.334785)
 
 [node name="FogVolume" type="FogVolume" parent="." unique_id=1815325357]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.429283, -10, 6.5714226)
-size = Vector3(69.3288, 10, 120.734375)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.379143, -14.278646, -36.036854)
+size = Vector3(130.94565, 10, 205.95093)
 
 [node name="MainFishArea" parent="." unique_id=1857351977 instance=ExtResource("4_sj11d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.602287, -10, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.602287, -11.547501, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MainFishArea" unique_id=2136580904]
 shape = SubResource("BoxShape3D_sj11d")
@@ -31,7 +34,8 @@ debug_color = Color(1, 0, 0, 0.41960785)
 [node name="Vendor" parent="." unique_id=520470945 instance=ExtResource("6_hp128")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3000001, 0, 32.84711)
 
-[node name="Player" parent="." unique_id=913738857 instance=ExtResource("2_438kw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6781, 4.008253, 0)
+[node name="PlayerStartMarker" type="Marker3D" parent="." unique_id=46245944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.511389, 3.5083027, 0.9735925)
 
-[node name="PlayableArea_V2" parent="." unique_id=483264212 instance=ExtResource("6_3i7v1")]
+[node name="Player" parent="." unique_id=913738857 instance=ExtResource("2_438kw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.511389, 3.5083027, 0.9735925)

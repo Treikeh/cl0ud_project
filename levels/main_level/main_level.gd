@@ -1,18 +1,26 @@
 extends Node3D
+class_name MainLevel
 
 
 @export_file("*.tscn") var _next_day: String
 @export var _day_night_cycle: DayNightCycle
+@export var _player_marker: Marker3D
 
 
 func _ready() -> void:
 	_load_save_data()
 
 
-func end_day(player: Player) -> void:
+func end_day(_player: Player) -> void:
+	# Reset day/night cycle
 	_day_night_cycle.set_time_of_day(_day_night_cycle.day_start)
-	SaveManager.save_game()
+	
+	# Reset position of player
+	var player: Player = get_tree().get_first_node_in_group("player")
+	player.global_position = _player_marker.global_position
+	
 	LevelManager.load_level(_next_day)
+	SaveManager.save_game()
 
 
 #region save/load

@@ -20,7 +20,7 @@ class_name DayNightCycle
 @export var _sky_light_curve: Curve
 @export var _sky_light_color: GradientTexture1D
 
-var _time_of_day: float = day_start
+@onready var _time_of_day: float = day_start
 
 
 func _ready() -> void:

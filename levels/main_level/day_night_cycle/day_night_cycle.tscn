@@ -56,6 +56,7 @@ volumetric_fog_density = 0.0
 
 [node name="DayNightCycle" type="Node3D" unique_id=50702471 node_paths=PackedStringArray("_world_environment", "_sun_rot", "_directional_light")]
 script = ExtResource("1_wtxaj")
+day_start = 6.0
 _world_environment = NodePath("WorldEnvironment")
 _sky_top_color = SubResource("GradientTexture1D_bobqa")
 _sky_horizon_color = SubResource("GradientTexture1D_pa5u4")

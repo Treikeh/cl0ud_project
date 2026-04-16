@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://c5ekxb0gxgxo3"]
 
 [ext_resource type="Script" uid="uid://dk3b7mwi6wymu" path="res://gui/splash_screen/splash_screen.gd" id="1_4jifb"]
+[ext_resource type="Texture2D" uid="uid://bdu275and56u" path="res://gui/splash_screen/art/Made_with_godot.png" id="2_xq6og"]
 
-[node name="SplashScreen" type="Control" unique_id=1283846694]
+[node name="SplashScreen" type="Control" unique_id=1283846694 node_paths=PackedStringArray("_splash_screens_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4jifb")
+_splash_screens_container = NodePath("CenterContainer")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1807905954]
 layout_mode = 1
@@ -20,17 +22,14 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="." unique_id=1731738168]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1444130340]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -85.0
-offset_top = -11.5
-offset_right = 85.0
-offset_bottom = 11.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "You're playing a game"
+
+[node name="Godot" type="TextureRect" parent="CenterContainer" unique_id=645141006]
+layout_mode = 2
+texture = ExtResource("2_xq6og")
