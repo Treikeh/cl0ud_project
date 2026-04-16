@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c8htcgbbdwmnh"]
+
+[ext_resource type="PackedScene" uid="uid://8vuuaq87rbum" path="res://levels/main_level/main_level.tscn" id="1_d0j0e"]
+
+[node name="Day03" type="Node3D" unique_id=669404763]
+
+[node name="MainLevel" parent="." unique_id=224384734 instance=ExtResource("1_d0j0e")]
+
+[node name="Background" type="Node3D" parent="." unique_id=1391951768]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Background" unique_id=1802315254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.550354, 0, -15.339481)
+size = Vector3(13.638672, 32.296875, 11.301758)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Background" unique_id=1792643438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.550354, 0, 6.059828)
+size = Vector3(13.638672, 32.296875, 11.301758)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Background" unique_id=82627614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.550354, 0, -35.930504)
+size = Vector3(13.638672, 32.296875, 11.301758)

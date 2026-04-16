@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cjqbk017vjd6h"]
+
+[ext_resource type="PackedScene" uid="uid://8vuuaq87rbum" path="res://levels/main_level/main_level.tscn" id="1_wbuex"]
+[ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="2_3nyay"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3nyay"]
+size = Vector3(1, 3.3029785, 3.1992188)
+
+[node name="Day01" type="Node3D" unique_id=1476344830]
+
+[node name="MainLevel" parent="." unique_id=224384734 instance=ExtResource("1_wbuex")]
+_next_day = "uid://fcaru7tgmibi"
+
+[node name="EndDayTrigger" parent="." unique_id=1933536461 instance=ExtResource("2_3nyay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.559663, 1.4011574, -11.895851)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EndDayTrigger" unique_id=1433756721]
+shape = SubResource("BoxShape3D_3nyay")
+
+[node name="Background" type="Node3D" parent="." unique_id=1603573262]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Background" unique_id=544522130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.550354, 0, -15.339481)
+size = Vector3(13.638672, 32.296875, 11.301758)
+
+[connection signal="interacted" from="EndDayTrigger" to="MainLevel" method="end_day"]

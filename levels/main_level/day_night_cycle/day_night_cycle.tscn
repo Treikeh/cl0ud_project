@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bli63q1qswjvg"]
 
-[ext_resource type="Script" uid="uid://dxh20yacti85m" path="res://levels/day_night_cycle/day_night_cycle.gd" id="1_wtxaj"]
+[ext_resource type="Script" uid="uid://dxh20yacti85m" path="res://levels/main_level/day_night_cycle/day_night_cycle.gd" id="1_wtxaj"]
 
 [sub_resource type="Gradient" id="Gradient_irgiq"]
 offsets = PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
@@ -54,7 +54,7 @@ glow_enabled = true
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0
 
-[node name="DayNightCycle" type="Node3D" unique_id=50702471 node_paths=PackedStringArray("_world_environment", "_sun_rot", "_directional_light") groups=["persistent"]]
+[node name="DayNightCycle" type="Node3D" unique_id=50702471 node_paths=PackedStringArray("_world_environment", "_sun_rot", "_directional_light")]
 script = ExtResource("1_wtxaj")
 _world_environment = NodePath("WorldEnvironment")
 _sky_top_color = SubResource("GradientTexture1D_bobqa")
