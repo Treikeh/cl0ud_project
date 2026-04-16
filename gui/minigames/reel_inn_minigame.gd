@@ -6,7 +6,11 @@ signal failed
 
 
 @export var _hit_area_rotation_speed: float = 50.0
+@export var _min_change_dir_time: float = 1.0
+@export var _max_change_dir_time: float = 3.0
+## How fast the value will increase
 @export var _increase_speed: float = 30.0
+## How fast the value will decrease
 @export var _decrease_speed: float = 20.0
 @export var _center: Control
 @export var _cursor: Control
@@ -39,7 +43,9 @@ func _process(delta: float) -> void:
 	
 	# Rotate hit area
 	if _rotate_hit_area:
-		_hit_area.rotation_degrees += _hit_area_rotation_direction * _hit_area_rotation_speed * delta
+		# Use hook distance to modify the rotation speed
+		var rotation_speed: float = _hit_area_rotation_speed + (Globals.hook_distance * 0.1)
+		_hit_area.rotation_degrees += _hit_area_rotation_direction * rotation_speed * delta
 		#TODO: Check if clamp_angle can be used here
 		if _hit_area.rotation_degrees > 180.0:
 			_hit_area.rotation_degrees = -179.0
@@ -54,14 +60,18 @@ func _process(delta: float) -> void:
 	var hit_area_offset: float = _hit_area.value
 	
 	var cursor_rotation: float = rad_to_deg(atan2(cursor_dir.x, -cursor_dir.y))
-	if cursor_rotation >= (hit_area_rot - hit_area_offset) and cursor_rotation <= (hit_area_rot + hit_area_offset) and cursor_distance > 25.0:
+	var within_right: bool = cursor_rotation <= (hit_area_rot + hit_area_offset)
+	var within_left: bool = cursor_rotation >= (hit_area_rot - hit_area_offset)
+	var within_distance: bool = cursor_distance > 25.0
+	if within_right and within_left and within_distance:
 		# Increase value if inside hit area
 		_border.value += _increase_speed * delta
 		if _border.value >= 100.0:
 			succeeded.emit()
 	else:
 		# Decrease value if outside of hit area
-		_border.value -= _decrease_speed * delta
+		var hook_mod: float = Globals.hook_distance * 0.05
+		_border.value -= (_decrease_speed + hook_mod) * delta
 		if _border.value <= 0.0:
 			failed.emit()
 
@@ -73,7 +83,7 @@ func start_minigame() -> void:
 	# Reset minigame
 	_border.value = 50.0
 	_hit_area.rotation_degrees = randf_range(-180.0, 180.0)
-	_hit_area_timer.wait_time = randf_range(1.0, 2.0)
+	_hit_area_timer.wait_time = get_change_dir_time()
 	_hit_area_timer.start()
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
@@ -95,8 +105,17 @@ func _on_rotate_hit_area_timer_timeout() -> void:
 	tween.tween_property(_hit_area, "rotation_degrees", hit_area_rot, 0.75)
 	
 	await tween.finished
-	_hit_area_timer.wait_time = randf_range(1.0, 2.0)
+	_hit_area_timer.wait_time = get_change_dir_time()
 	_hit_area_timer.start()
 	# Make the hit area rotate again
 	_rotate_hit_area = true
 	_hit_area_rotation_direction = 1 if randi() & 1 else -1
+
+
+func get_change_dir_time() -> float:
+	var hook_mod: float = Globals.hook_distance * 0.01
+	var max_time: float = _max_change_dir_time - hook_mod
+	if max_time < _min_change_dir_time:
+		max_time = _min_change_dir_time + 0.1
+	
+	return randf_range(_min_change_dir_time, max_time)

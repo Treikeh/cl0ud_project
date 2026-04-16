@@ -25,7 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.379143, -14.278646, -36.0
 size = Vector3(130.94565, 10, 205.95093)
 
 [node name="MainFishArea" parent="." unique_id=1857351977 instance=ExtResource("4_sj11d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.602287, -11.547501, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.602, -9, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MainFishArea" unique_id=2136580904]
 shape = SubResource("BoxShape3D_sj11d")

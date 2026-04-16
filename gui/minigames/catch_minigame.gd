@@ -5,6 +5,9 @@ signal succeeded
 signal failed
 
 
+@export var _min_size: float = 100.0
+@export var _max_size: float = 175.0
+@export var _min_start_pos: float = 200.0
 @export var _marker_speed: float = 600.0
 @export var _background: ColorRect
 @export var _hit_area: ColorRect
@@ -23,7 +26,8 @@ func _process(delta: float) -> void:
 	if not visible:
 		return
 	
-	_hit_marker.position.x += _marker_speed * delta
+	var marker_speed: float = _marker_speed + (Globals.hook_distance * 0.1)
+	_hit_marker.position.x += marker_speed * delta
 	if _hit_marker.position.x >= _background.size.x:
 		failed.emit()
 
@@ -34,13 +38,12 @@ func start_minigame() -> void:
 	process_mode = Node.PROCESS_MODE_INHERIT
 	# Reset minigame
 	_hit_marker.position.x = 0.0
-	var min_size: float = 75.0
-	var max_size: float = 150.0
-	_hit_area.size.x = randf_range(min_size, max_size)
+	var max_size: float = _max_size - (Globals.hook_distance * 0.1)
+	_hit_area.size.x = randf_range(_min_size, max_size)
 	# Set the hit areas positoin
-	var min_pos: float = 200.0
-	var max_pos: float = _background.size.x - _hit_area.size.x - 10.0
-	_hit_area.position.x = randf_range(min_pos, max_pos)
+	const END_OFFSET: float = 10.0
+	var max_pos: float = _background.size.x - _hit_area.size.x - END_OFFSET
+	_hit_area.position.x = randf_range(_min_start_pos, max_pos)
 
 
 func end_minigame() -> void:

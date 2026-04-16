@@ -13,6 +13,7 @@ func with_data(player: Player) -> Control:
 
 
 func _ready() -> void:
+	print(Globals.hook_distance)
 	_catch_minigame.succeeded.connect(_on_catch_minigame_succeeded)
 	_catch_minigame.failed.connect(_on_minigames_failed)
 	
