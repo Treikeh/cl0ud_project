@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://8vuuaq87rbum"]
 
-[ext_resource type="PackedScene" uid="uid://dcla54xiom224" path="res://levels/test_level/art/test_level.glb" id="1_7q3gx"]
 [ext_resource type="PackedScene" uid="uid://bli63q1qswjvg" path="res://levels/main_level/day_night_cycle/day_night_cycle.tscn" id="1_b2fg0"]
 [ext_resource type="Script" uid="uid://eafl2by4c1sm" path="res://levels/main_level/main_level.gd" id="1_um8ys"]
 [ext_resource type="PackedScene" uid="uid://dfwa3ko7oftnj" path="res://entities/player/player.tscn" id="2_438kw"]
 [ext_resource type="PackedScene" uid="uid://bocx17sre2uti" path="res://common/scripts/fish_area/fish_area_3d.tscn" id="4_sj11d"]
+[ext_resource type="PackedScene" uid="uid://bccca7e6hgcls" path="res://levels/main_level/art/PlayableArea_V2.glb" id="6_3i7v1"]
 [ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/vendor/vendor.tscn" id="6_hp128"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sj11d"]
@@ -14,10 +14,8 @@ size = Vector3(100, 10, 200)
 script = ExtResource("1_um8ys")
 _day_night_cycle = NodePath("DayNightCycle")
 
-[node name="LevelMesh" parent="." unique_id=58182264 instance=ExtResource("1_7q3gx")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-
 [node name="DayNightCycle" parent="." unique_id=50702471 instance=ExtResource("1_b2fg0")]
+_minutes_in_day = 1.0
 
 [node name="FogVolume" type="FogVolume" parent="." unique_id=1815325357]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.429283, -10, 6.5714226)
@@ -34,4 +32,6 @@ debug_color = Color(1, 0, 0, 0.41960785)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3000001, 0, 32.84711)
 
 [node name="Player" parent="." unique_id=913738857 instance=ExtResource("2_438kw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5682378, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6781, 4.008253, 0)
+
+[node name="PlayableArea_V2" parent="." unique_id=483264212 instance=ExtResource("6_3i7v1")]
