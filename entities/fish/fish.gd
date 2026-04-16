@@ -22,6 +22,8 @@ func _ready() -> void:
 	else:
 		print("Load item data")
 		item_data = _get_random_item_from_loot_table(type)
+	#item_data = _get_random_item_from_loot_table(type)
+	
 	
 	# Spawn fish mesh
 	var mesh: Node3D = load(item_data.mesh_scene).instantiate()
@@ -50,12 +52,22 @@ func _get_random_item_from_loot_table(type: String) -> ItemData:
 	var type_loot_table: Dictionary = Globals.fish_loot_table[type]
 	type_loot_table.sort()
 	
+	# Get the total rarity of all the fish in the loot table
+	#var total_rarity: int = 0
+	#for fish: String in type_loot_table:
+	#	total_rarity += int(type_loot_table[fish])
+	
 	var item_path: String = type_loot_table.keys()[0]
-	# Get the path of an item in the list which is close to the hook distance
+	var max_roll: int = int(Globals.hook_distance)
+	var max_value: int = int(type_loot_table.values()[-1])
+	if max_roll > max_value:
+		max_roll = max_value - 1
+	var roll: int = randi_range(0, max_roll)
 	for item: String in type_loot_table:
 		var rarity: int = int(type_loot_table[item])
-		if rarity > Globals.hook_distance:
+		if roll < rarity:
 			item_path = item
+			print("Fish rarity: %s, Roll: %s, Hook distance: %s" % [rarity, roll, Globals.hook_distance])
 			break
 	return load(item_path)
 
@@ -84,13 +96,11 @@ func _get_random_type() -> String:
 		total_chance += chance
 	
 	var type: Type = randi_range(0, types.values().size() - 1) as Type
-	var roll: float = randf_range(0.1, total_chance)
-	var cumulative: float = 0.0
+	var roll: float = randf_range(0.0, total_chance)
 	for t: Type in types_chances:
-		if roll > cumulative:
+		if roll < types[t]:
 			type = t
-		else:
-			cumulative += types[t]
+			break
 	
 	#TODO: Get a random fish based on the chances
 	var type_as_text: String = Type.keys()[type]
