@@ -31,6 +31,7 @@ func save_game() -> void:
 		var save_data: Dictionary = node.get_save_data()
 		var save_key: String = save_data.keys()[0]
 		_save_data[save_key] = save_data[save_key]
+	_save_data["glboals"] = {"current_level": LevelManager.current_level_path}
 	
 	_save_data_to_file()
 

@@ -17,7 +17,7 @@ func end_day(player: Player) -> void:
 
 #region save/load
 
-const SAVE_DATA_KEY: String = "level"
+const SAVE_DATA_KEY: String = "main_level"
 
 func get_save_data() -> Dictionary:
 	var data: Dictionary = {
