@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bx4sr0m02ndfl"]
+
+[ext_resource type="Script" uid="uid://ds8efr18ed0um" path="res://common/scripts/respawn_area/respawn_area_3d.gd" id="1_673cp"]
+
+[node name="RespawnArea3D" type="Area3D" unique_id=1922286486]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_673cp")

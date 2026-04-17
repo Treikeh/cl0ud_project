@@ -6,19 +6,29 @@
 [ext_resource type="PackedScene" uid="uid://bocx17sre2uti" path="res://common/scripts/fish_area/fish_area_3d.tscn" id="4_sj11d"]
 [ext_resource type="PackedScene" uid="uid://bccca7e6hgcls" path="res://levels/main_level/art/PlayableArea_V2.glb" id="6_3i7v1"]
 [ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/vendor/vendor.tscn" id="6_hp128"]
+[ext_resource type="PackedScene" uid="uid://bx4sr0m02ndfl" path="res://common/scripts/respawn_area/respawn_area_3d.tscn" id="7_hp128"]
+
+[sub_resource type="Curve" id="Curve_hp128"]
+_limits = [0.0, 10.0, 0.0, 24.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(18, 1), 0.0, 0.0, 0, 0, Vector2(24, 10), 1.9196743, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sj11d"]
 size = Vector3(100, 10, 200)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t80xa"]
+size = Vector3(163.93579, 48.86328, 287.65234)
 
 [node name="MainLevel" type="Node3D" unique_id=224384734 node_paths=PackedStringArray("_day_night_cycle", "_player_marker") groups=["persistent"]]
 script = ExtResource("1_um8ys")
 _day_night_cycle = NodePath("DayNightCycle")
 _player_marker = NodePath("PlayerStartMarker")
+_junk_curve = SubResource("Curve_hp128")
 
 [node name="PlayableArea_V2" parent="." unique_id=483264212 instance=ExtResource("6_3i7v1")]
 
 [node name="DayNightCycle" parent="." unique_id=50702471 instance=ExtResource("1_b2fg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1425443, -3.334785)
+transform = Transform3D(-0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.7071068, 0, 4.1425443, -3.334785)
 
 [node name="FogVolume" type="FogVolume" parent="." unique_id=1815325357]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.379143, -14.278646, -36.036854)
@@ -29,7 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.602, -9, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MainFishArea" unique_id=2136580904]
 shape = SubResource("BoxShape3D_sj11d")
-debug_color = Color(1, 0, 0, 0.41960785)
+debug_color = Color(0, 1, 0, 0.41960785)
 
 [node name="Vendor" parent="." unique_id=520470945 instance=ExtResource("6_hp128")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.502985, 2.4760885, 11.769749)
@@ -39,3 +49,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.511389, 3.5083027, 0.9735
 
 [node name="Player" parent="." unique_id=913738857 instance=ExtResource("2_438kw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.511389, 3.5083027, 0.9735925)
+
+[node name="RespawnArea3D" parent="." unique_id=1922286486 instance=ExtResource("7_hp128")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20.358528, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RespawnArea3D" unique_id=404162084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -23.93164, 0)
+shape = SubResource("BoxShape3D_t80xa")
+debug_color = Color(1, 0, 0, 0.41960785)

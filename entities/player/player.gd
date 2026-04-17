@@ -10,6 +10,8 @@ var movement: PlayerMovement
 var inventory: Inventory
 var hud: Hud
 
+var _respawn_point: Vector3
+
 
 func _ready() -> void:
 	Globals.fish_caught.connect(_on_fish_caught)
@@ -29,6 +31,9 @@ func _physics_process(delta: float) -> void:
 	#TODO: Find a better way to handle the hook and line physics.
 	if _look_position != Vector3.ZERO:
 		_look_at_position(delta)
+	
+	if movement._ground_check.is_grounded() and linear_velocity.length_squared() < 1.0:
+		_respawn_point = global_position
 
 
 # Make the camera look at a point

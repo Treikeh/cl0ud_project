@@ -5,6 +5,7 @@ class_name MainLevel
 @export_file("*.tscn") var _next_day: String
 @export var _day_night_cycle: DayNightCycle
 @export var _player_marker: Marker3D
+@export var _junk_curve: Curve
 
 
 func _ready() -> void:
@@ -21,6 +22,10 @@ func end_day(_player: Player) -> void:
 	
 	LevelManager.load_level(_next_day)
 	SaveManager.save_game()
+
+
+func _process(_delta: float) -> void:
+	Globals.junk_fish_chance = _junk_curve.sample(_day_night_cycle.get_time_of_day())
 
 
 #region save/load
