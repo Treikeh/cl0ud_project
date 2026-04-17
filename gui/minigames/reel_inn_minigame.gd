@@ -19,14 +19,16 @@ signal failed
 @export var _hit_area_target: Control
 @export var _hit_area_timer: Timer
 
+
 var player: Player
+var _is_active: bool = true
 var _time: float = 0.0
 var _hit_area_rotation_direction: int = 1
 var _rotate_hit_area: bool = true
 
 
 func _process(delta: float) -> void:
-	if not visible:
+	if not visible or not _is_active:
 		return
 	
 	# Set the position of the cursor
@@ -64,11 +66,13 @@ func _process(delta: float) -> void:
 	var within_left: bool = cursor_rotation >= (hit_area_rot - hit_area_offset)
 	var within_distance: bool = cursor_distance > 25.0
 	if within_right and within_left and within_distance:
+		_hit_area.texture_progress.gradient.set_color(1, Color.GREEN)
 		# Increase value if inside hit area
 		_border.value += _increase_speed * delta
 		if _border.value >= 100.0:
 			succeeded.emit()
 	else:
+		_hit_area.texture_progress.gradient.set_color(1, Color.RED)
 		# Decrease value if outside of hit area
 		var hook_mod: float = Globals.hook_distance * 0.05
 		_border.value -= (_decrease_speed + hook_mod) * delta
@@ -78,7 +82,13 @@ func _process(delta: float) -> void:
 
 func start_minigame() -> void:
 	# Enable minigame
+	_is_active = true
+	
 	show()
+	scale = Vector2.ZERO
+	var tween: Tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+	tween.tween_property(self, "scale", Vector2.ONE, 0.2)
+	
 	process_mode = Node.PROCESS_MODE_INHERIT
 	# Reset minigame
 	_border.value = 50.0
@@ -91,10 +101,15 @@ func start_minigame() -> void:
 
 func end_minigame() -> void:
 	# Disable minigame
+	_is_active = false
 	_hit_area_timer.stop()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	var tween: Tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BACK)
+	tween.tween_property(self, "scale", Vector2.ZERO, 0.3)
+	await tween.finished
 	hide()
 	process_mode = Node.PROCESS_MODE_DISABLED
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 func _on_rotate_hit_area_timer_timeout() -> void:

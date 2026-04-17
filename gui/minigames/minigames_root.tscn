@@ -52,7 +52,7 @@ script = ExtResource("1_j4w46")
 _catch_minigame = NodePath("CatchMinigame")
 reel_inn_minigame = NodePath("ReelInnMinigame")
 
-[node name="CatchMinigame" type="Control" parent="." unique_id=748998958 node_paths=PackedStringArray("_background", "_hit_area", "_hit_marker")]
+[node name="CatchMinigame" type="Control" parent="." unique_id=748998958 node_paths=PackedStringArray("_background", "_hit_area", "_hit_marker", "_succeeded_sfx", "_failed_sfx")]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -64,6 +64,8 @@ script = ExtResource("2_1j7b8")
 _background = NodePath("Background")
 _hit_area = NodePath("Background/HitArea")
 _hit_marker = NodePath("Background/HitMarker")
+_succeeded_sfx = NodePath("SFX/Succeeded")
+_failed_sfx = NodePath("SFX/Failed")
 
 [node name="Background" type="ColorRect" parent="CatchMinigame" unique_id=1986497002]
 layout_mode = 1
@@ -108,14 +110,24 @@ offset_bottom = 20.0
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 
+[node name="SFX" type="Node" parent="CatchMinigame" unique_id=527035439]
+
+[node name="Succeeded" type="FmodEventEmitter2D" parent="CatchMinigame/SFX" unique_id=28537338]
+event_name = "event:/UI/Start Game Button"
+event_guid = "{f8b427bb-1c9d-4cbe-b4cb-af86cdf7411f}"
+
+[node name="Failed" type="FmodEventEmitter2D" parent="CatchMinigame/SFX" unique_id=1964503235]
+event_name = "event:/UI/Action Unavailable Button"
+event_guid = "{6fce50d8-7833-45c8-a985-ef49aad286ca}"
+
 [node name="ReelInnMinigame" type="Control" parent="." unique_id=2117237796 node_paths=PackedStringArray("_center", "_cursor", "_border", "_hit_area", "_hit_area_target", "_hit_area_timer")]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("3_2dgnq")
 _increase_speed = 25.0
 _decrease_speed = 15.0

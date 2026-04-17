@@ -33,9 +33,11 @@ func _input(event: InputEvent) -> void:
 func _update_dialogue_box() -> void:
 	var dialogue: DialogueData = _dialogue[_dialogue_progress]
 	_name_label.text = dialogue.name
-	_text_label.text = dialogue.text
-	if not dialogue.choices.is_empty():
-		_show_dialogue_choices(dialogue)
+	_text_label.text = ""
+	
+	var tween: Tween = create_tween()
+	tween.tween_property(_text_label, "text", dialogue.text, 0.4)
+	tween.tween_callback(_show_dialogue_choices.bind(dialogue))
 
 
 func _end_dialogue() -> void:
@@ -55,12 +57,16 @@ func _progress_dialogue() -> void:
 
 
 func _show_dialogue_choices(dialogue: DialogueData) -> void:
+	if dialogue.choices.is_empty():
+		return
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	for choice: String in dialogue.choices:
+	for i: int in dialogue.choices.size():
+		var choice: String = dialogue.choices[i]
 		var button := Button.new()
 		button.text = choice
-		_dialogue_choice_container.add_child(button)
 		button.pressed.connect(_on_dialogue_choice_selected.bind(button))
+		_dialogue_choice_container.add_child(button)
 	
 	#NOTE: Call deferred to stop progress input to chose an option when the buttons spawn
 	_dialogue_choice_container.get_child(0).grab_focus.call_deferred()

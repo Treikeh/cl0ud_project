@@ -39,5 +39,4 @@ func _on_dialogue_ended() -> void:
 
 
 func _on_fish_collected(item: ItemData) -> void:
-	_fish_collected_promtp.show()
-	_fish_collected_promtp.update(item)
+	_fish_collected_promtp.open(item)
