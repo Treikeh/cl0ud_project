@@ -46,7 +46,8 @@ func _process(delta: float) -> void:
 	# Rotate hit area
 	if _rotate_hit_area:
 		# Use hook distance to modify the rotation speed
-		var rotation_speed: float = _hit_area_rotation_speed + (Globals.hook_distance * 0.1)
+		var hook_mod: float = Globals.hook_distance * 0.1
+		var rotation_speed: float = _hit_area_rotation_speed + hook_mod - player.hook_mod
 		_hit_area.rotation_degrees += _hit_area_rotation_direction * rotation_speed * delta
 		#TODO: Check if clamp_angle can be used here
 		if _hit_area.rotation_degrees > 180.0:
@@ -75,7 +76,8 @@ func _process(delta: float) -> void:
 		_hit_area.texture_progress.gradient.set_color(1, Color.RED)
 		# Decrease value if outside of hit area
 		var hook_mod: float = Globals.hook_distance * 0.05
-		_border.value -= (_decrease_speed + hook_mod) * delta
+		var player_hook_mod: float = player.hook_mod * 0.5
+		_border.value -= (_decrease_speed + hook_mod - player_hook_mod) * delta
 		if _border.value <= 0.0:
 			failed.emit()
 
@@ -129,7 +131,8 @@ func _on_rotate_hit_area_timer_timeout() -> void:
 
 func get_change_dir_time() -> float:
 	var hook_mod: float = Globals.hook_distance * 0.01
-	var max_time: float = _max_change_dir_time - hook_mod
+	var player_hook_mod: float = player.hook_mod * 0.1
+	var max_time: float = _max_change_dir_time - hook_mod + player_hook_mod
 	if max_time < _min_change_dir_time:
 		max_time = _min_change_dir_time + 0.1
 	

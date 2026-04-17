@@ -16,6 +16,7 @@ signal failed
 @export var _succeeded_sfx: FmodEventEmitter2D
 @export var _failed_sfx: FmodEventEmitter2D
 
+var player: Player
 var _is_active: bool = true
 
 
@@ -31,7 +32,8 @@ func _process(delta: float) -> void:
 	if not visible or not _is_active:
 		return
 	
-	var marker_speed: float = _marker_speed + (Globals.hook_distance * 0.1)
+	var hook_mod: float = Globals.hook_distance * 0.1
+	var marker_speed: float = _marker_speed + hook_mod - player.hook_mod
 	_hit_marker.position.x += marker_speed * delta
 	if _hit_marker.position.x >= _background.size.x:
 		_is_active = false
@@ -46,7 +48,8 @@ func start_minigame() -> void:
 	process_mode = Node.PROCESS_MODE_INHERIT
 	# Reset minigame
 	_hit_marker.position.x = 0.0
-	var max_size: float = _max_size - (Globals.hook_distance * 0.1)
+	var hook_mod: float = Globals.hook_distance * 0.1
+	var max_size: float = _max_size - hook_mod + player.hook_mod
 	_hit_area.size.x = randf_range(_min_size, max_size)
 	
 	# Set the hit areas positoin

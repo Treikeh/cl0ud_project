@@ -81,7 +81,6 @@ script = ExtResource("5_26q78")
 
 [node name="Inventory" type="Node" parent="." unique_id=1803234307]
 script = ExtResource("5_fkugw")
-currency = 150
 items = Array[ExtResource("6_8fjmc")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 
 [node name="Hud" parent="." unique_id=905877039 instance=ExtResource("9_bectd")]

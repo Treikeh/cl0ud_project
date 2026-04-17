@@ -65,6 +65,10 @@ func load_level(level_path: String) -> void:
 	_loading_level = false
 
 
+func reload_level() -> void:
+	load_level(current_level_path)
+
+
 func _unload_level() -> void:
 	# Remove level
 	for child: Node in get_children():

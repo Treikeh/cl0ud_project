@@ -142,6 +142,7 @@ func _on_pause_closed() -> void:
 
 #region Fishing
 
+var hook_mod: float = 0.0
 var throw_force: float = 0.0
 
 

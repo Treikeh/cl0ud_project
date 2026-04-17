@@ -24,4 +24,4 @@ func _quit_game() -> void:
 
 func _on_reload_button_pressed() -> void:
 	get_tree().paused = false
-	get_tree().reload_current_scene()
+	LevelManager.reload_level()
