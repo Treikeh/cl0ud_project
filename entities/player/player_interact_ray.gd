@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 		var collider: Node3D = get_collider()
 		if collider is InteractArea3D:
 			target = collider
-			prompt = collider.prompt
+			prompt = collider.prompt + "\n [E]"
 	
 	_interact_target = target
 	prompt_updated.emit(prompt)

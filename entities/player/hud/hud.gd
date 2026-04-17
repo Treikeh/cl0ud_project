@@ -20,6 +20,7 @@ func _ready() -> void:
 
 
 func update_interact_prompt(prompt: String) -> void:
+	_interact_prompt.visible = _player.input.is_enabled()
 	_interact_prompt.text = prompt
 
 
