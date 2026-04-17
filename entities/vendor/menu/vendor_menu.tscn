@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://bsmvggjup7ypl" path="res://common/upgrades/resources/calm_fish_upgrade_01.tres" id="5_6i1t7"]
 [ext_resource type="Resource" uid="uid://0q0fr715trpy" path="res://common/upgrades/resources/calm_fish_upgrade_02.tres" id="6_17hq5"]
 
-[node name="VendorMenu" type="Control" unique_id=1724820824 node_paths=PackedStringArray("_sell_list", "_buy_list", "_currency_label")]
+[node name="VendorMenu" type="Control" unique_id=1724820824 node_paths=PackedStringArray("_sell_list", "_buy_list", "_currency_label", "_tab_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,6 +19,7 @@ script = ExtResource("1_44yr2")
 _sell_list = NodePath("TabContainer/Sell/SellList")
 _buy_list = NodePath("TabContainer/Buy/BuyList")
 _currency_label = NodePath("CurrencyLabel")
+_tab_container = NodePath("TabContainer")
 _upgrades = Array[ExtResource("2_1ills")]([ExtResource("3_1ills"), ExtResource("4_w33cr"), ExtResource("5_6i1t7"), ExtResource("6_17hq5")])
 
 [node name="VendorBackground" type="Sprite2D" parent="." unique_id=1785979639]
@@ -28,17 +29,19 @@ texture = ExtResource("4_1ills")
 
 [node name="CloseButton" type="Button" parent="." unique_id=839376987]
 layout_mode = 1
-offset_left = 60.0
+offset_left = 1024.0
 offset_top = 44.0
-offset_right = 90.0
-offset_bottom = 74.0
+offset_right = 1094.0
+offset_bottom = 75.0
+text = "CLOSE"
 
 [node name="CurrencyLabel" type="Label" parent="." unique_id=990211706]
 layout_mode = 0
-offset_left = 157.0
-offset_top = 77.0
-offset_right = 197.0
-offset_bottom = 100.0
+offset_left = 108.0
+offset_top = 169.0
+offset_right = 316.0
+offset_bottom = 209.0
+theme_override_font_sizes/font_size = 29
 text = "0$"
 
 [node name="TabContainer" type="TabContainer" parent="." unique_id=29980569]
@@ -81,5 +84,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=126221093]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 42.0
+offset_right = 96.0
+offset_bottom = 76.0
+color = Color(0.21568628, 0.21568628, 0.21568628, 1)
 
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

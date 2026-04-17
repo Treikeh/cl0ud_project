@@ -19,13 +19,15 @@ func _on_interact_area_3d_interacted(player: Player) -> void:
 func _on_dialouge_choice_made(choice: int, player: Player) -> void:
 	match choice:
 		0: # Buying?
-			_open_vendor_menu(player)
-		1: # Nevermind
+			_open_vendor_menu(player, true)
+		1: # Selling
+			_open_vendor_menu(player, false)
+		2: # Nevermind
 			player.hud.start_dialogue.call_deferred(_nevermind_dialogue)
 
 
-func _open_vendor_menu(player: Player) -> void:
-	var vendor_menu: Control = VENDOR_MENU_SCENE.instantiate().with_data(player.inventory)
+func _open_vendor_menu(player: Player, buy: bool) -> void:
+	var vendor_menu: Control = VENDOR_MENU_SCENE.instantiate().with_data(player.inventory, buy)
 	add_child(vendor_menu)
 	vendor_menu.closed.connect(_on_vendor_menu_closed.bind(player))
 	

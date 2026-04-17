@@ -266,7 +266,9 @@ func _create_dialogue_resources(data: Array[PackedStringArray], file_paths: Dict
 		# Remove the space in front of each option
 		for choice: String in row[3].split("|"):
 			choice = choice.strip_edges()
-			choices.append(choice)
+			if choice != "":
+				print("Choice: %s|" % choice)
+				choices.append(choice)
 		
 		# Set data on the dialogue object
 		dialogue.name = row[1]

@@ -10,14 +10,16 @@ const SELL_ENTRY_SCENE: PackedScene = preload("uid://d4epumjlgldtn")
 @export var _sell_list: VBoxContainer
 @export var _buy_list: VBoxContainer
 @export var _currency_label: Label
+@export var _tab_container: TabContainer
 
 @export var _upgrades: Array[Upgrade] = []
 
 var _inventory: Inventory
 
 
-func with_data(inventory: Inventory) -> Control:
+func with_data(inventory: Inventory, buying: bool = true) -> Control:
 	_inventory = inventory
+	_tab_container.current_tab = 0 if buying else 1
 	return self
 
 
