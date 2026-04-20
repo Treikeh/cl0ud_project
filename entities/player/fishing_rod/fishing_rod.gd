@@ -115,7 +115,9 @@ func _throw_hook() -> void:
 	throw_force += _balance_vars.throw_force_upgrade_curve.sample(_player.throw_upgrade_level)
 	# Multiply by charge amount
 	throw_force *= _throw_charge
-	_hook.set_axis_velocity(-global_basis.z * throw_force)
+	const UPWARDS_FORCE: Vector3 = Vector3.UP * 0.4
+	var throw_dir: Vector3 = -global_basis.z + UPWARDS_FORCE
+	_hook.set_axis_velocity(throw_dir * throw_force)
 	_throw_charge_time = 0.0
 	
 	#SFX

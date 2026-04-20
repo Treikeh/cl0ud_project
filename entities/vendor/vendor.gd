@@ -23,7 +23,8 @@ func _on_dialouge_choice_made(choice: int, player: Player) -> void:
 		1: # Selling
 			_open_vendor_menu(player, false)
 		2: # Nevermind
-			player.hud.start_dialogue.call_deferred(_nevermind_dialogue)
+			_on_vendor_menu_closed(player)
+			#player.hud.start_dialogue.call_deferred(_nevermind_dialogue)
 
 
 func _open_vendor_menu(player: Player, buy: bool) -> void:
@@ -39,4 +40,6 @@ func _open_vendor_menu(player: Player, buy: bool) -> void:
 
 
 func _on_vendor_menu_closed(player: Player) -> void:
-	player.hud.start_dialogue.call_deferred(_close_shop_dialogue)
+	player.input.set_enabled.call_deferred(true)
+	player.update_look_position(Vector3.ZERO)
+	#player.hud.start_dialogue.call_deferred(_close_shop_dialogue)

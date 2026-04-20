@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="FishingVariables" format=3 uid="uid://kwyrnihivxsv"]
 
-[ext_resource type="Script" uid="uid://cv83w4uoh5t6j" path="res://common/scripts/fishing_variables.gd" id="1_gd275"]
+[ext_resource type="Script" uid="uid://cv83w4uoh5t6j" path="res://common/scripts/fishing_variables.gd" id="1_2u0wq"]
 
 [sub_resource type="Curve" id="Curve_0uxc5"]
 _limits = [400.0, 1000.0, 0.0, 1000.0]
@@ -63,7 +63,7 @@ _data = [Vector2(0, 50), 0.0, 0.0, 0, 0, Vector2(1000, 20), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [resource]
-script = ExtResource("1_gd275")
+script = ExtResource("1_2u0wq")
 throw_charge_curve = SubResource("Curve_gd275")
 throw_force_upgrade_curve = SubResource("Curve_t12yx")
 min_wait_time = 3.0

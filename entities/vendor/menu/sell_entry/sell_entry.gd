@@ -5,6 +5,7 @@ class_name SellEntry
 signal item_sold(sell_entry: SellEntry)
 
 
+@export var _icon: TextureRect
 @export var _name_label: Label
 @export var _value_label: Label
 
@@ -13,6 +14,7 @@ var index: int = 0
 
 
 func with_data(item_data: ItemData, item_index: int) -> SellEntry:
+	_icon.texture = item_data.icon
 	_name_label.text = item_data.name
 	_value_label.text = str(item_data.value)
 	value = item_data.value
