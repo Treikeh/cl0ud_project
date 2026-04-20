@@ -110,6 +110,14 @@ func _throw_hook() -> void:
 	_cast_sfx.play_one_shot()
 
 
+func _reel_inn() -> void:
+	_fishing_state = FishingState.REEL_IN
+	var launch_dir: Vector3 = _hook.global_position.direction_to(global_position)
+	var launch_force: float = _hook.global_position.distance_to(global_position)
+	_hook.hook_state = FishingHook.HookState.NORMAL
+	_hook.set_axis_velocity(launch_dir * launch_force)
+
+
 func _reset_rod() -> void:
 	_throw_charge = 0.0
 	_fishing_state = FishingState.IDLE
@@ -143,7 +151,7 @@ func _on_fish_hooked() -> void:
 
 
 func _on_fish_caught() -> void:
-	_fishing_state = FishingState.REEL_IN
+	_reel_inn()
 	
 	_hook.spawn_fish()
 	
@@ -175,7 +183,7 @@ func stop_use_rod() -> void:
 
 func reel_inn() -> void:
 	if _fishing_state != FishingState.IDLE:
-		_reset_rod()
+		_reel_inn()
 
 func stop_reel_inn() -> void:
 	pass

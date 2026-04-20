@@ -45,6 +45,7 @@ func hit_water() -> void:
 
 
 func reset_hook() -> void:
+	_fish_timer.stop()
 	top_level = false
 	linear_damp = 2.0
 	gravity_scale = 1.0
@@ -52,7 +53,6 @@ func reset_hook() -> void:
 	angular_velocity = Vector3.ZERO
 	rotation_degrees = Vector3.ZERO
 	hook_state = HookState.NORMAL
-	_fish_timer.stop()
 
 
 func spawn_fish() -> void:
