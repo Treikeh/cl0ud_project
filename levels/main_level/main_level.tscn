@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bccca7e6hgcls" path="res://levels/main_level/art/PlayableArea_V2.glb" id="6_3i7v1"]
 [ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/vendor/vendor.tscn" id="6_hp128"]
 [ext_resource type="PackedScene" uid="uid://bx4sr0m02ndfl" path="res://common/scripts/respawn_area/respawn_area_3d.tscn" id="7_hp128"]
+[ext_resource type="PackedScene" uid="uid://cxn3pwn81mg6g" path="res://levels/art/BuildingOne/BuildingOne_2.glb" id="8_t80xa"]
+[ext_resource type="PackedScene" uid="uid://bj776d7ttynq7" path="res://levels/art/BuildingOne_3.glb" id="9_qywe3"]
 
 [sub_resource type="Curve" id="Curve_hp128"]
 _limits = [0.0, 10.0, 0.0, 24.0]
@@ -31,8 +33,8 @@ _junk_curve = SubResource("Curve_hp128")
 transform = Transform3D(-0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.7071068, 0, 4.1425443, -3.334785)
 
 [node name="FogVolume" type="FogVolume" parent="." unique_id=1815325357]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.379143, -14.278646, -36.036854)
-size = Vector3(130.94565, 10, 205.95093)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.007267, -14.278646, -90.03728)
+size = Vector3(273.71848, 10, 383.72833)
 
 [node name="MainFishArea" parent="." unique_id=1857351977 instance=ExtResource("4_sj11d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.602, -9, 0)
@@ -57,3 +59,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20.358528, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -23.93164, 0)
 shape = SubResource("BoxShape3D_t80xa")
 debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="BuildingOne_2" parent="." unique_id=70569716 instance=ExtResource("8_t80xa")]
+transform = Transform3D(1, 0, 0, 0, 0.98309183, 0, 0, 0, 1.121118, 189.84207, -41.326828, 56.753242)
+
+[node name="BuildingOne_2" parent="BuildingOne_2" unique_id=1390686722 instance=ExtResource("8_t80xa")]
+transform = Transform3D(0.073464505, 0, 1.1180885, 0, 0.98309255, 0, -0.9972978, 0, 0.082362376, 52.750214, -4.779236, -183.19237)
+
+[node name="BuildingOne_3" parent="BuildingOne_2" unique_id=1172658465 instance=ExtResource("9_qywe3")]
+transform = Transform3D(1.4089911, 0, 0, 0, 1.0965433, 0, 0, 0, 1.1104906, 52.029617, -1.4594078, -123.727585)
+
+[node name="BuildingOne_3" parent="." unique_id=1946634505 instance=ExtResource("9_qywe3")]
+transform = Transform3D(1.4089911, 0, 0, 0, 1.0965421, 0, 0, 0, 1.1104906, 220.8475, -56.535595, 46.73665)

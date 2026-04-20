@@ -13,4 +13,5 @@ _next_day = "uid://fcaru7tgmibi"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Background" unique_id=544522130]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.550354, 0, -15.339481)
+visible = false
 size = Vector3(13.638672, 32.296875, 11.301758)
