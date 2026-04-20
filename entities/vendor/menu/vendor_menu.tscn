@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://dojfj2q1p8ef2" path="res://entities/vendor/menu/vendor_menu.gd" id="1_44yr2"]
 [ext_resource type="Script" uid="uid://bqlay1xmrt3y1" path="res://common/upgrades/upgrade.gd" id="2_1ills"]
 [ext_resource type="Resource" uid="uid://tg01trak81t" path="res://common/upgrades/resources/throw_force_upgrade_01.tres" id="3_1ills"]
-[ext_resource type="Texture2D" uid="uid://baesl6gbnbp13" path="res://entities/vendor/art/Vendor Background.png" id="4_1ills"]
 [ext_resource type="Resource" uid="uid://ctvk6usfpig2w" path="res://common/upgrades/resources/throw_force_upgrade_02.tres" id="4_w33cr"]
 [ext_resource type="Resource" uid="uid://bsmvggjup7ypl" path="res://common/upgrades/resources/calm_fish_upgrade_01.tres" id="5_6i1t7"]
 [ext_resource type="Resource" uid="uid://0q0fr715trpy" path="res://common/upgrades/resources/calm_fish_upgrade_02.tres" id="6_17hq5"]
+[ext_resource type="Texture2D" uid="uid://7xcopdk2wy31" path="res://entities/vendor/art/Vendor Background_v2.png" id="7_17hq5"]
 
 [node name="VendorMenu" type="Control" unique_id=1724820824 node_paths=PackedStringArray("_sell_list", "_buy_list", "_currency_label", "_tab_container")]
 layout_mode = 3
@@ -25,15 +25,7 @@ _upgrades = Array[ExtResource("2_1ills")]([ExtResource("3_1ills"), ExtResource("
 [node name="VendorBackground" type="Sprite2D" parent="." unique_id=1785979639]
 position = Vector2(576, 324)
 scale = Vector2(0.6, 0.59999996)
-texture = ExtResource("4_1ills")
-
-[node name="CloseButton" type="Button" parent="." unique_id=839376987]
-layout_mode = 1
-offset_left = 1024.0
-offset_top = 44.0
-offset_right = 1094.0
-offset_bottom = 75.0
-text = "CLOSE"
+texture = ExtResource("7_17hq5")
 
 [node name="CurrencyLabel" type="Label" parent="." unique_id=990211706]
 layout_mode = 0
@@ -51,7 +43,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -464.0
+offset_left = -246.0
 offset_top = -131.0
 offset_right = 479.0
 offset_bottom = 252.0
@@ -86,11 +78,20 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=126221093]
+visible = false
 layout_mode = 0
 offset_left = 58.0
 offset_top = 42.0
 offset_right = 96.0
 offset_bottom = 76.0
-color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+color = Color(0.8365491, 0, 0.09690001, 1)
+
+[node name="CloseButton" type="Button" parent="." unique_id=839376987]
+layout_mode = 1
+offset_left = 57.0
+offset_top = 41.0
+offset_right = 107.0
+offset_bottom = 77.0
+text = "Close"
 
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
