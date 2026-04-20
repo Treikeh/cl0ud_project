@@ -13,11 +13,14 @@ enum FishingState {
 
 @export var _rod_mesh: Node3D
 @export var _hook: FishingHook
+@export var _hook_throw_pos: Marker3D
+@export var _balance_vars: FishingVariables
+
+@export_group("Hook line")
 @export var _pin_joint: PinJoint3D
 @export var _pin_anchor: StaticBody3D
 @export var _fishing_line: MeshInstance3D
 @export var _fishing_line_mat: Material
-@export var _balance_vars: FishingVariables
 
 @export_group("SFX")
 @export var _cast_sfx: FmodEventEmitter3D
@@ -103,6 +106,9 @@ func _throw_hook() -> void:
 	
 	_fishing_state = FishingState.WAITING
 	
+	
+	await get_tree().physics_frame
+	_hook.global_position = _hook_throw_pos.global_position
 	# Launch hook
 	var throw_force: float = _balance_vars.base_throw_force
 	# Add upgrade force

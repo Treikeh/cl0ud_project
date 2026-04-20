@@ -15,15 +15,16 @@ cull_mode = 2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_sglur"]
 
-[node name="FishingRod" type="Node3D" unique_id=949060003 node_paths=PackedStringArray("_rod_mesh", "_hook", "_pin_joint", "_pin_anchor", "_fishing_line", "_cast_sfx", "_reel_sfx", "_caught_sfx", "_escaped_sfx")]
+[node name="FishingRod" type="Node3D" unique_id=949060003 node_paths=PackedStringArray("_rod_mesh", "_hook", "_hook_throw_pos", "_pin_joint", "_pin_anchor", "_fishing_line", "_cast_sfx", "_reel_sfx", "_caught_sfx", "_escaped_sfx")]
 script = ExtResource("1_kjkgm")
 _rod_mesh = NodePath("FishingRod_01_SK")
 _hook = NodePath("HookLine/Hook")
+_hook_throw_pos = NodePath("HookThrowPos")
+_balance_vars = ExtResource("2_ho2or")
 _pin_joint = NodePath("HookLine/PinAnchor/PinJoint3D")
 _pin_anchor = NodePath("HookLine/PinAnchor/PinAnchor")
 _fishing_line = NodePath("HookLine/LineMesh")
 _fishing_line_mat = SubResource("StandardMaterial3D_kjkgm")
-_balance_vars = ExtResource("2_ho2or")
 _cast_sfx = NodePath("SFX/Cast")
 _reel_sfx = NodePath("SFX/Reel")
 _caught_sfx = NodePath("SFX/Caught")
@@ -94,5 +95,8 @@ event_guid = "{9d2e20a9-d4d3-4039-acb1-24afa23dfdfe}"
 [node name="Escaped" type="FmodEventEmitter3D" parent="SFX" unique_id=1287896646]
 event_name = "event:/Actions/Fish Escaped"
 event_guid = "{2f810c07-fefc-4f37-b561-e050e7d948ad}"
+
+[node name="HookThrowPos" type="Marker3D" parent="." unique_id=1845844679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.3, 0)
 
 [editable path="FishingRod_01_SK"]
