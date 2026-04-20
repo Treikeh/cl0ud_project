@@ -1,15 +1,11 @@
 [gd_scene format=3 uid="uid://cyr0p70n201cs"]
 
-[ext_resource type="PackedScene" uid="uid://cu6p31ihl50lr" path="res://entities/player/fishing_rod/art/fishing_hook_001_fbx.tscn" id="1_hepjd"]
 [ext_resource type="Script" uid="uid://88i703fu373r" path="res://entities/player/fishing_rod/fishing_rod.gd" id="1_kjkgm"]
-[ext_resource type="Script" uid="uid://c5rvwjf8tiwj5" path="res://entities/player/fishing_rod/fishing_hook.gd" id="2_pr2vv"]
+[ext_resource type="Resource" uid="uid://kwyrnihivxsv" path="res://fishing_balancing.tres" id="2_ho2or"]
+[ext_resource type="PackedScene" uid="uid://comhrxguptfab" path="res://entities/player/fishing_rod/fishing_hook.tscn" id="4_e6t2x"]
 [ext_resource type="PackedScene" uid="uid://ck338hnie1hb1" path="res://entities/player/fishing_rod/art/fishing_rod_01_sk.tscn" id="4_ho2or"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjkgm"]
-
-[sub_resource type="Curve" id="Curve_ho2or"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 0.75154126), 1.5580777, 1.5580777, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 3
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fkugw"]
 radius = 0.05
@@ -19,10 +15,6 @@ cull_mode = 2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_sglur"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pr2vv"]
-radius = 0.15
-height = 0.5
-
 [node name="FishingRod" type="Node3D" unique_id=949060003 node_paths=PackedStringArray("_rod_mesh", "_hook", "_pin_joint", "_pin_anchor", "_fishing_line", "_cast_sfx", "_reel_sfx", "_caught_sfx", "_escaped_sfx")]
 script = ExtResource("1_kjkgm")
 _rod_mesh = NodePath("FishingRod_01_SK")
@@ -31,7 +23,7 @@ _pin_joint = NodePath("HookLine/PinAnchor/PinJoint3D")
 _pin_anchor = NodePath("HookLine/PinAnchor/PinAnchor")
 _fishing_line = NodePath("HookLine/LineMesh")
 _fishing_line_mat = SubResource("StandardMaterial3D_kjkgm")
-_throw_charge_curve = SubResource("Curve_ho2or")
+_balance_vars = ExtResource("2_ho2or")
 _cast_sfx = NodePath("SFX/Cast")
 _reel_sfx = NodePath("SFX/Reel")
 _caught_sfx = NodePath("SFX/Caught")
@@ -82,30 +74,8 @@ top_level = true
 material_override = SubResource("StandardMaterial3D_pr2vv")
 mesh = SubResource("ImmediateMesh_sglur")
 
-[node name="Hook" type="RigidBody3D" parent="HookLine" unique_id=1130430333 node_paths=PackedStringArray("_hook_marker", "_fish_timer")]
+[node name="Hook" parent="HookLine" unique_id=1629841109 instance=ExtResource("4_e6t2x")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.50198185, 0.33064413, -1.2750937)
-collision_layer = 8
-collision_mask = 9
-linear_damp = 2.0
-script = ExtResource("2_pr2vv")
-_hook_marker = NodePath("HookMarker")
-_fish_timer = NodePath("FishTimer")
-metadata/_custom_type_script = "uid://c5rvwjf8tiwj5"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HookLine/Hook" unique_id=1487744205]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
-shape = SubResource("CapsuleShape3D_pr2vv")
-debug_color = Color(1, 0, 0, 0.41960785)
-
-[node name="HookMarker" type="Marker3D" parent="HookLine/Hook" unique_id=294657687]
-transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.49999997, 0)
-
-[node name="Fishing_Hook_001_FBX" parent="HookLine/Hook" unique_id=1270857284 instance=ExtResource("1_hepjd")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.6, 0)
-
-[node name="FishTimer" type="Timer" parent="HookLine/Hook" unique_id=150744099]
-wait_time = 3.0
-one_shot = true
 
 [node name="SFX" type="Node3D" parent="." unique_id=1957665866]
 
@@ -118,7 +88,8 @@ event_name = "event:/Actions/Fishing Reel"
 event_guid = "{af8813d6-7528-46c4-b540-77fc5b58908d}"
 
 [node name="Caught" type="FmodEventEmitter3D" parent="SFX" unique_id=1774190882]
-event_guid = "{d6177260-abd0-4680-9f19-e258422d8337}"
+event_name = "event:/Actions/Fish Caught"
+event_guid = "{9d2e20a9-d4d3-4039-acb1-24afa23dfdfe}"
 
 [node name="Escaped" type="FmodEventEmitter3D" parent="SFX" unique_id=1287896646]
 event_name = "event:/Actions/Fish Escaped"

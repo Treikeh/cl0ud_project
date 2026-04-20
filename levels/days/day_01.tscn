@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://doe0w0kgn8ehr" path="res://levels/days/days.gd" id="1_85oi3"]
 [ext_resource type="PackedScene" uid="uid://8vuuaq87rbum" path="res://levels/main_level/main_level.tscn" id="1_wbuex"]
 
-[node name="Day01" type="Node3D" unique_id=1476344830 node_paths=PackedStringArray("_main_level")]
+[node name="Day01" type="Node3D" unique_id=1476344830]
 script = ExtResource("1_85oi3")
-_main_level = NodePath("MainLevel")
 
 [node name="MainLevel" parent="." unique_id=224384734 instance=ExtResource("1_wbuex")]
 _next_day = "uid://fcaru7tgmibi"

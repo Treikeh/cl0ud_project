@@ -1,4 +1,4 @@
 extends Node3D
 
 
-@export var _main_level: MainLevel
+@onready var main_level: MainLevel = $MainLevel

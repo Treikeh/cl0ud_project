@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://comhrxguptfab"]
+
+[ext_resource type="Script" uid="uid://c5rvwjf8tiwj5" path="res://entities/player/fishing_rod/fishing_hook.gd" id="1_ud4tc"]
+[ext_resource type="Resource" uid="uid://kwyrnihivxsv" path="res://fishing_balancing.tres" id="2_egwwv"]
+[ext_resource type="PackedScene" uid="uid://cu6p31ihl50lr" path="res://entities/player/fishing_rod/art/fishing_hook_001_fbx.tscn" id="3_1rpfd"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pr2vv"]
+radius = 0.15
+height = 0.5
+
+[node name="Hook" type="RigidBody3D" unique_id=1629841109 node_paths=PackedStringArray("_hook_marker", "_fish_timer")]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+collision_layer = 8
+collision_mask = 9
+linear_damp = 2.0
+script = ExtResource("1_ud4tc")
+_hook_marker = NodePath("HookMarker")
+_fish_timer = NodePath("FishTimer")
+_balance_vars = ExtResource("2_egwwv")
+metadata/_custom_type_script = "uid://c5rvwjf8tiwj5"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=710056216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+shape = SubResource("CapsuleShape3D_pr2vv")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="HookMarker" type="Marker3D" parent="." unique_id=1214656414]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.49999997, 0)
+
+[node name="Fishing_Hook_001_FBX" parent="." unique_id=1270857284 instance=ExtResource("3_1rpfd")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.6, 0)
+
+[node name="FishTimer" type="Timer" parent="." unique_id=334655231]
+wait_time = 3.0
+one_shot = true

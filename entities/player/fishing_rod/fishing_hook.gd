@@ -10,13 +10,13 @@ enum HookState {
 
 
 signal hook_hit_water
-signal fish_hooked
 
 
 const FISH_SCENE: PackedScene = preload("uid://i5dq3bivh8i0")
 
 @export var _hook_marker: Marker3D
 @export var _fish_timer: Timer
+@export var _balance_vars: FishingVariables
 
 var hooked_fish: Fish
 var hook_state: HookState = HookState.NORMAL
@@ -41,6 +41,11 @@ func hit_water() -> void:
 		linear_velocity = Vector3.ZERO
 		angular_velocity = Vector3.ZERO
 		hook_hit_water.emit()
+		
+		# Randomize and start fish timer
+		var min_wait_time: float = _balance_vars.min_wait_time
+		var max_wait_time: float = _balance_vars.max_wait_time
+		_fish_timer.wait_time = randf_range(min_wait_time, max_wait_time)
 		_fish_timer.start()
 
 

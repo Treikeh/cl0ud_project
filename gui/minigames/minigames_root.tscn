@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b6ql3glvvy5g3" path="res://gui/minigames/minigames_root.gd" id="1_j4w46"]
 [ext_resource type="Script" uid="uid://drlcq8ygjjqww" path="res://gui/minigames/catch_minigame.gd" id="2_1j7b8"]
+[ext_resource type="Resource" uid="uid://kwyrnihivxsv" path="res://fishing_balancing.tres" id="3_1j7b8"]
 [ext_resource type="Script" uid="uid://if1588sw7wgk" path="res://gui/minigames/reel_inn_minigame.gd" id="3_2dgnq"]
 
 [sub_resource type="Gradient" id="Gradient_yi2h0"]
@@ -61,6 +62,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_1j7b8")
+_balance_vars = ExtResource("3_1j7b8")
 _background = NodePath("Background")
 _hit_area = NodePath("Background/HitArea")
 _hit_marker = NodePath("Background/HitMarker")
@@ -120,7 +122,7 @@ event_guid = "{f8b427bb-1c9d-4cbe-b4cb-af86cdf7411f}"
 event_name = "event:/UI/Action Unavailable Button"
 event_guid = "{6fce50d8-7833-45c8-a985-ef49aad286ca}"
 
-[node name="ReelInnMinigame" type="Control" parent="." unique_id=2117237796 node_paths=PackedStringArray("_center", "_cursor", "_border", "_hit_area", "_hit_area_target", "_hit_area_timer")]
+[node name="ReelInnMinigame" type="Control" parent="." unique_id=2117237796 node_paths=PackedStringArray("_center", "_cursor", "_border", "_hit_area", "_hit_area_target")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -129,14 +131,12 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("3_2dgnq")
-_increase_speed = 25.0
-_decrease_speed = 15.0
+_balance_vars = ExtResource("3_1j7b8")
 _center = NodePath("Center")
 _cursor = NodePath("Cursor")
 _border = NodePath("CircleBorder")
 _hit_area = NodePath("HitArea")
 _hit_area_target = NodePath("HitArea/HitTarget")
-_hit_area_timer = NodePath("RotateHitAreaTimer")
 
 [node name="Center" type="Control" parent="ReelInnMinigame" unique_id=721787982]
 layout_mode = 1
@@ -212,8 +212,3 @@ offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-
-[node name="RotateHitAreaTimer" type="Timer" parent="ReelInnMinigame" unique_id=319438702]
-one_shot = true
-
-[connection signal="timeout" from="ReelInnMinigame/RotateHitAreaTimer" to="ReelInnMinigame" method="_on_rotate_hit_area_timer_timeout"]

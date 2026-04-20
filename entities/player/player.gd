@@ -161,6 +161,7 @@ func _on_pause_closed() -> void:
 
 var hook_mod: float = 0.0
 var throw_force: float = 0.0
+var throw_upgrade_level: int = 0
 
 
 func _on_started_fishing() -> void:

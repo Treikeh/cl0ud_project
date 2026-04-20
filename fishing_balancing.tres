@@ -1,0 +1,84 @@
+[gd_resource type="Resource" script_class="FishingVariables" format=3 uid="uid://kwyrnihivxsv"]
+
+[ext_resource type="Script" uid="uid://cv83w4uoh5t6j" path="res://common/scripts/fishing_variables.gd" id="1_gd275"]
+
+[sub_resource type="Curve" id="Curve_0uxc5"]
+_limits = [400.0, 1000.0, 0.0, 1000.0]
+_data = [Vector2(0, 400), 0.0, 0.0, 0, 0, Vector2(1000, 1000), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_t12yx"]
+noise_type = 5
+fractal_gain = 0.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0uxc5"]
+seed = 1
+fractal_gain = 0.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_iy4ks"]
+seed = 2
+fractal_gain = 0.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kgi6e"]
+seed = 3
+fractal_gain = 0.0
+
+[sub_resource type="Curve" id="Curve_ggyhm"]
+_limits = [100.0, 1000.0, 0.0, 1000.0]
+_data = [Vector2(0, 100), 0.0, 0.0, 0, 0, Vector2(1000, 1000), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_iy4ks"]
+_limits = [100.0, 500.0, 0.0, 1000.0]
+_data = [Vector2(0, 100), 0.0, 0.0, 0, 0, Vector2(1000, 500), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_kgi6e"]
+_limits = [10.0, 50.0, 0.0, 1000.0]
+_data = [Vector2(0, 50), 0.0, 0.0, 0, 0, Vector2(1000, 10), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_hkncy"]
+_limits = [50.0, 250.0, 0.0, 1000.0]
+_data = [Vector2(0, 250), 0.0, 0.0, 0, 0, Vector2(1000, 50), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_gd275"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_t12yx"]
+_limits = [0.0, 1.0, 0.0, 3.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(3, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_csie1"]
+_limits = [20.0, 50.0, 0.0, 1000.0]
+_data = [Vector2(0, 20), 0.0, 0.0, 0, 0, Vector2(1000, 50), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_jfe8n"]
+_limits = [20.0, 50.0, 0.0, 1000.0]
+_data = [Vector2(0, 50), 0.0, 0.0, 0, 0, Vector2(1000, 20), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[resource]
+script = ExtResource("1_gd275")
+throw_charge_curve = SubResource("Curve_gd275")
+throw_force_upgrade_curve = SubResource("Curve_t12yx")
+min_wait_time = 3.0
+max_wait_time = 5.0
+target_area_size_curve = SubResource("Curve_hkncy")
+cursor_speed_curve = SubResource("Curve_0uxc5")
+hit_area_size_curve = SubResource("Curve_kgi6e")
+hit_area_move_speed_curve = SubResource("Curve_iy4ks")
+value_decrase_speed_curve = SubResource("Curve_csie1")
+value_increase_speed_curve = SubResource("Curve_jfe8n")
+fish_type_move_maps = Dictionary[int, Noise]({
+0: SubResource("FastNoiseLite_t12yx"),
+1: SubResource("FastNoiseLite_0uxc5"),
+2: SubResource("FastNoiseLite_iy4ks"),
+3: SubResource("FastNoiseLite_kgi6e")
+})
+fish_type_move_speed_curve = SubResource("Curve_ggyhm")
+metadata/_custom_type_script = "uid://cv83w4uoh5t6j"

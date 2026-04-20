@@ -11,14 +11,13 @@ enum FishingState {
 }
 
 
-@export var throw_force: float = 10.0
 @export var _rod_mesh: Node3D
 @export var _hook: FishingHook
 @export var _pin_joint: PinJoint3D
 @export var _pin_anchor: StaticBody3D
 @export var _fishing_line: MeshInstance3D
 @export var _fishing_line_mat: Material
-@export var _throw_charge_curve: Curve
+@export var _balance_vars: FishingVariables
 
 @export_group("SFX")
 @export var _cast_sfx: FmodEventEmitter3D
@@ -39,7 +38,6 @@ func _ready() -> void:
 	_player.fishing_rod = self
 	
 	_hook.hook_hit_water.connect(_on_hook_hit_water)
-	_hook.fish_hooked.connect(_on_fish_hooked)
 	
 	Globals.fish_hooked.connect(_on_fish_hooked)
 	Globals.fish_escaped.connect(_on_fish_escaped)
@@ -48,8 +46,11 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if _fishing_state == FishingState.READY_THROW and _throw_charge_time < 1.0:
-		_throw_charge_time += delta * 2.0
-		_throw_charge = _throw_charge_curve.sample(_throw_charge_time)
+		var charge_speed: float = _balance_vars.throw_charge_speed
+		_throw_charge_time += delta * charge_speed
+		
+		var charge_curve: Curve = _balance_vars.throw_charge_curve
+		_throw_charge = charge_curve.sample(_throw_charge_time)
 	
 	if _fishing_state == FishingState.FISH_HOOKED:
 		_player.update_look_position(_hook.global_position)
@@ -102,8 +103,13 @@ func _throw_hook() -> void:
 	
 	_fishing_state = FishingState.WAITING
 	
-	var force: Vector3 = -global_basis.z * (throw_force + _player.throw_force) + global_basis.y * 2.0
-	_hook.set_axis_velocity(force * _throw_charge)
+	# Launch hook
+	var throw_force: float = _balance_vars.base_throw_force
+	# Add upgrade force
+	throw_force += _balance_vars.throw_force_upgrade_curve.sample(_player.throw_upgrade_level)
+	# Multiply by charge amount
+	throw_force *= _throw_charge
+	_hook.set_axis_velocity(-global_basis.z * throw_force)
 	_throw_charge_time = 0.0
 	
 	#SFX

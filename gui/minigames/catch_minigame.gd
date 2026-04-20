@@ -5,13 +5,12 @@ signal succeeded
 signal failed
 
 
-@export var _min_size: float = 100.0
-@export var _max_size: float = 175.0
 @export var _min_start_pos: float = 200.0
-@export var _marker_speed: float = 600.0
+@export var _balance_vars: FishingVariables
 @export var _background: ColorRect
 @export var _hit_area: ColorRect
 @export var _hit_marker: ColorRect
+
 @export_group("SFX")
 @export var _succeeded_sfx: FmodEventEmitter2D
 @export var _failed_sfx: FmodEventEmitter2D
@@ -32,8 +31,7 @@ func _process(delta: float) -> void:
 	if not visible or not _is_active:
 		return
 	
-	var hook_mod: float = Globals.hook_distance * 0.1
-	var marker_speed: float = _marker_speed + hook_mod - player.hook_mod
+	var marker_speed: float = _balance_vars.cursor_speed_curve.sample(Globals.hook_distance)
 	_hit_marker.position.x += marker_speed * delta
 	if _hit_marker.position.x >= _background.size.x:
 		_is_active = false
@@ -48,9 +46,9 @@ func start_minigame() -> void:
 	process_mode = Node.PROCESS_MODE_INHERIT
 	# Reset minigame
 	_hit_marker.position.x = 0.0
-	var hook_mod: float = Globals.hook_distance * 0.1
-	var max_size: float = _max_size - hook_mod + player.hook_mod
-	_hit_area.size.x = randf_range(_min_size, max_size)
+	
+	var hit_area_size: float = _balance_vars.target_area_size_curve.sample(Globals.hook_distance)
+	_hit_area.size.x = hit_area_size
 	
 	# Set the hit areas positoin
 	const END_OFFSET: float = 10.0
