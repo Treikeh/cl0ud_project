@@ -82,13 +82,14 @@ top_level = true
 material_override = SubResource("StandardMaterial3D_pr2vv")
 mesh = SubResource("ImmediateMesh_sglur")
 
-[node name="Hook" type="RigidBody3D" parent="HookLine" unique_id=1130430333 node_paths=PackedStringArray("_hook_marker")]
+[node name="Hook" type="RigidBody3D" parent="HookLine" unique_id=1130430333 node_paths=PackedStringArray("_hook_marker", "_fish_timer")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.50198185, 0.33064413, -1.2750937)
 collision_layer = 8
 collision_mask = 9
 linear_damp = 2.0
 script = ExtResource("2_pr2vv")
 _hook_marker = NodePath("HookMarker")
+_fish_timer = NodePath("FishTimer")
 metadata/_custom_type_script = "uid://c5rvwjf8tiwj5"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HookLine/Hook" unique_id=1487744205]
@@ -102,6 +103,10 @@ transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.4999999
 [node name="Fishing_Hook_001_FBX" parent="HookLine/Hook" unique_id=1270857284 instance=ExtResource("1_hepjd")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.6, 0)
 
+[node name="FishTimer" type="Timer" parent="HookLine/Hook" unique_id=150744099]
+wait_time = 3.0
+one_shot = true
+
 [node name="SFX" type="Node3D" parent="." unique_id=1957665866]
 
 [node name="Cast" type="FmodEventEmitter3D" parent="SFX" unique_id=1757768530]
@@ -113,7 +118,6 @@ event_name = "event:/Actions/Fishing Reel"
 event_guid = "{af8813d6-7528-46c4-b540-77fc5b58908d}"
 
 [node name="Caught" type="FmodEventEmitter3D" parent="SFX" unique_id=1774190882]
-event_name = "event:/Actions/Fish Caught"
 event_guid = "{d6177260-abd0-4680-9f19-e258422d8337}"
 
 [node name="Escaped" type="FmodEventEmitter3D" parent="SFX" unique_id=1287896646]

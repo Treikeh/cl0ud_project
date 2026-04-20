@@ -21,6 +21,8 @@ func _ready() -> void:
 	Globals.started_fishing.connect(_on_started_fishing)
 	Globals.stopped_fishing.connect(_on_stopped_fishing)
 	
+	LevelManager.started_loading_level.connect(_on_started_loading_level)
+	
 	_interact_ray.prompt_updated.connect(hud.update_interact_prompt)
 	
 	_load_save_data.call_deferred()
@@ -32,7 +34,7 @@ func _physics_process(delta: float) -> void:
 	if _look_position != Vector3.ZERO:
 		_look_at_position(delta)
 	
-	if movement._ground_check.is_grounded() and linear_velocity.length_squared() < 1.0:
+	if movement._ground_check.is_grounded() and linear_velocity.length_squared() < 0.5:
 		_respawn_point = global_position
 
 
@@ -61,6 +63,16 @@ func update_look_position(look_position: Vector3 = Vector3.ZERO) -> void:
 
 func update_minigame_look_dir(minigame_look_dir: Vector2) -> void:
 	_minigame_look_dir = minigame_look_dir
+
+
+func _on_started_loading_level() -> void:
+	# Reset upgrades when loading a level to avoid upgrades being bought when going to a previous ->
+	# <- save state (like when reloading the level for playtests).
+	#NOTE: This only works because loading a new level only starts after a the loading screen has ->
+	# <- faded inn. If there was no fade inn, then this wouldn't work. Becaue the load level -> 
+	# <- function is called before the save level function in the main level script.
+	for upgrade: Upgrade in upgrades:
+		upgrade.bought = false
 
 
 #region Input
@@ -172,13 +184,11 @@ func _on_fish_hooked() -> void:
 
 func _on_fish_caught() -> void:
 	input.set_enabled(true)
-	fishing_rod.fish_caught()
 	update_look_position(Vector3.ZERO)
 
 
 func _on_fish_escaped() -> void:
 	input.set_enabled(true)
-	fishing_rod.fish_escaped()
 	update_look_position(Vector3.ZERO)
 
 #endregion

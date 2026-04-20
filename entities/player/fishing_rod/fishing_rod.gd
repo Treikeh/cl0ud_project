@@ -29,7 +29,6 @@ enum FishingState {
 var _throw_charge: float = 0.0
 var _throw_charge_time: float = 0.0
 var _throw_pos: Vector3
-var _fish_timer: Timer
 var _fishing_state: FishingState = FishingState.IDLE
 
 @onready var _player: Player = get_owner()
@@ -40,14 +39,11 @@ func _ready() -> void:
 	_player.fishing_rod = self
 	
 	_hook.hook_hit_water.connect(_on_hook_hit_water)
+	_hook.fish_hooked.connect(_on_fish_hooked)
 	
-	# Add timer for fishing
-	_fish_timer = Timer.new()
-	_fish_timer.wait_time = 3.0
-	_fish_timer.one_shot = true
-	_fish_timer.autostart = false
-	add_child(_fish_timer)
-	_fish_timer.timeout.connect(_on_fish_hooked)
+	Globals.fish_hooked.connect(_on_fish_hooked)
+	Globals.fish_escaped.connect(_on_fish_escaped)
+	Globals.fish_caught.connect(_on_fish_caught)
 
 
 func _process(delta: float) -> void:
@@ -95,13 +91,14 @@ func _ready_rod() -> void:
 
 
 func _throw_hook() -> void:
-	_fishing_state = FishingState.WAITING
 	_throw_pos = global_position
+	_fishing_state = FishingState.WAITING
 	
 	# Disconnect hook from pin
 	_pin_joint.node_b = _pin_anchor.get_path()
 	_hook.top_level = true
 	_hook.linear_damp = 0.0
+	_hook.hook_state = FishingHook.HookState.THROWN
 	
 	_fishing_state = FishingState.WAITING
 	
@@ -114,17 +111,11 @@ func _throw_hook() -> void:
 
 
 func _reset_rod() -> void:
-	Globals.stopped_fishing.emit()
 	_throw_charge = 0.0
 	_fishing_state = FishingState.IDLE
 	
 	# Reset hook
-	_hook.top_level = false
-	_hook.linear_damp = 2.0
-	_hook.gravity_scale = 1.0
-	_hook.linear_velocity = Vector3.ZERO
-	_hook.angular_velocity = Vector3.ZERO
-	_hook.rotation_degrees = Vector3.ZERO
+	_hook.reset_hook()
 	
 	# Reconnect hook to pin
 	var hook_offset: Vector3 = -_pin_anchor.global_basis.y * 0.3
@@ -133,6 +124,7 @@ func _reset_rod() -> void:
 	
 	#SFX
 	_reel_sfx.play_one_shot()
+	Globals.stopped_fishing.emit()
 
 
 func _collect_fish() -> void:
@@ -143,16 +135,14 @@ func _collect_fish() -> void:
 
 func _on_hook_hit_water() -> void:
 	Globals.hook_distance = _throw_pos.distance_squared_to(_hook.global_position)
-	_fish_timer.start()
 
 
 func _on_fish_hooked() -> void:
 	if _fishing_state == FishingState.WAITING:
 		_fishing_state = FishingState.FISH_HOOKED
-		Globals.fish_hooked.emit()
 
 
-func fish_caught() -> void:
+func _on_fish_caught() -> void:
 	_fishing_state = FishingState.REEL_IN
 	
 	_hook.spawn_fish()
@@ -161,10 +151,9 @@ func fish_caught() -> void:
 	_caught_sfx.play_one_shot()
 
 
-func fish_escaped() -> void:
+func _on_fish_escaped() -> void:
 	if _fishing_state == FishingState.FISH_HOOKED:
 		_fishing_state = FishingState.WAITING
-		_fish_timer.start()
 		
 		#SFX
 		_escaped_sfx.play_one_shot()

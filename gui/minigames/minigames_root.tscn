@@ -113,12 +113,12 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 [node name="SFX" type="Node" parent="CatchMinigame" unique_id=527035439]
 
 [node name="Succeeded" type="FmodEventEmitter2D" parent="CatchMinigame/SFX" unique_id=28537338]
-event_name = "event:/Actions/Fish Caught"
-event_guid = "{9d2e20a9-d4d3-4039-acb1-24afa23dfdfe}"
+event_name = "event:/UI/Start Game Button"
+event_guid = "{f8b427bb-1c9d-4cbe-b4cb-af86cdf7411f}"
 
 [node name="Failed" type="FmodEventEmitter2D" parent="CatchMinigame/SFX" unique_id=1964503235]
-event_name = "event:/Actions/Fish Escaped"
-event_guid = "{2f810c07-fefc-4f37-b561-e050e7d948ad}"
+event_name = "event:/UI/Action Unavailable Button"
+event_guid = "{6fce50d8-7833-45c8-a985-ef49aad286ca}"
 
 [node name="ReelInnMinigame" type="Control" parent="." unique_id=2117237796 node_paths=PackedStringArray("_center", "_cursor", "_border", "_hit_area", "_hit_area_target", "_hit_area_timer")]
 layout_mode = 1

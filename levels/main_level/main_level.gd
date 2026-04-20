@@ -20,6 +20,8 @@ func end_day(_player: Player) -> void:
 	var player: Player = get_tree().get_first_node_in_group("player")
 	player.global_position = _player_marker.global_position
 	
+	#NOTE: Level is being loaded before the game is saved because we want to save the new level -> 
+	# <- not the current level.
 	LevelManager.load_level(_next_day)
 	SaveManager.save_game()
 

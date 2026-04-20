@@ -9,6 +9,10 @@ extends Node
 # level loading) avliable when testing.
 
 
+signal started_loading_level
+signal finished_loading_level
+
+
 const LOADING_SCREEN_SCENE: PackedScene = preload("res://gui/loading_screen/loading_screen.tscn")
 
 var current_level_path: String = ""
@@ -51,6 +55,7 @@ func load_level(level_path: String) -> void:
 	_loading_screen.fade_in()
 	await _loading_screen.fully_visible
 	
+	started_loading_level.emit()
 	get_tree().paused = false
 	
 	# Remove old level
@@ -63,6 +68,7 @@ func load_level(level_path: String) -> void:
 	# Hide loading loading screen
 	_loading_screen.fade_out()
 	_loading_level = false
+	finished_loading_level.emit()
 
 
 func reload_level() -> void:

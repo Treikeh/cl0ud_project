@@ -73,7 +73,6 @@ debug_shape_custom_color = Color(1, 0, 0.28235295, 1)
 [node name="SFX" type="Node3D" parent="Movement" unique_id=1956867442]
 
 [node name="FootSteps" type="FmodEventEmitter3D" parent="Movement/SFX" unique_id=1404631984]
-event_name = "event:/Actions/Footsteps"
 event_guid = "{7826b2cc-6f8b-4b52-ae59-c02fc3b6336e}"
 
 [node name="Input" type="Node" parent="." unique_id=891247422]

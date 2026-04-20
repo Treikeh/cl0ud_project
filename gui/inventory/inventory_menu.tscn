@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dqae2162fmbul" path="res://gui/inventory/inventory_menu.gd" id="1_l30io"]
 [ext_resource type="PackedScene" uid="uid://cs35qk6fai74g" path="res://gui/inventory/inventory_slot/inventory_slot.tscn" id="2_6o4wp"]
-[ext_resource type="Texture2D" uid="uid://d2y6aah48j7eb" path="res://gui/inventory/art/Inventory Alt Textured_v3.png" id="2_enr3t"]
+[ext_resource type="Texture2D" uid="uid://cngsolmk4b8bs" path="res://gui/inventory/art/Inventory Alt Textured_v2.png" id="2_enr3t"]
 
 [node name="Inventory" type="Control" unique_id=814013906 node_paths=PackedStringArray("_slot_grid", "_select_marker", "_currency_label", "_upgrades_label", "_item_dispaly_root", "_mesh_marker", "_open_sfx", "_close_sfx")]
 layout_mode = 3
