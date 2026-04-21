@@ -100,7 +100,6 @@ transitions = ["Start", "ReadyThrow", SubResource("AnimationNodeStateMachineTran
 graph_offset = Vector2(-32, -70)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_niyvt"]
-graph_offset = Vector2(-379, 118)
 nodes/SM/node = SubResource("AnimationNodeStateMachine_fvbo5")
 nodes/SM/position = Vector2(-100, 180)
 node_connections = [&"output", 0, &"SM"]
@@ -110,10 +109,10 @@ script = ExtResource("2_07n6i")
 _anim_tree = NodePath("AnimationTree")
 
 [node name="Skeleton3D" parent="." index="0" unique_id=1730573919]
-bones/2/position = Vector3(-0.41509, -0.35551265, -0.3932141)
-bones/2/rotation = Quaternion(0.010198985, 0.43823037, 0.8981421, 0.03450885)
-bones/3/rotation = Quaternion(-0.032331455, 4.4386592e-08, -2.1589226e-10, 0.99947727)
-bones/4/rotation = Quaternion(-0.032331474, -1.264943e-09, -3.6830958e-10, 0.99947727)
+bones/2/position = Vector3(-0.41509, -0.35704988, -0.3988657)
+bones/2/rotation = Quaternion(0.006817979, 0.017124265, 0.9992058, 0.03532622)
+bones/3/rotation = Quaternion(-0.036805987, 4.106065e-08, 4.948645e-10, 0.9993224)
+bones/4/rotation = Quaternion(-0.036805984, -1.9221555e-09, 3.7132533e-10, 0.9993224)
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2" unique_id=806796295]
 tree_root = SubResource("AnimationNodeBlendTree_niyvt")
