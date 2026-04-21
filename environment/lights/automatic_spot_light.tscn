@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://jy28a08t3w22"]
+
+[ext_resource type="Script" uid="uid://dcwnvrtm04xl8" path="res://environment/lights/automatic_spot_light.gd" id="1_t5651"]
+
+[node name="AutomaticSpotLight" type="SpotLight3D" unique_id=1845424586]
+script = ExtResource("1_t5651")

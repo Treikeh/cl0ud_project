@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://kbji3x80wqat"]
+
+[ext_resource type="PackedScene" uid="uid://rkbyrwbkcb6n" path="res://entities/characters/base_mesh/character_base_mesh_01_sk.tscn" id="1_rtexe"]
+[ext_resource type="Script" uid="uid://roavb5pk8gwg" path="res://entities/characters/test_01/test_01.gd" id="1_xx17q"]
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/scripts/dialogue_data.gd" id="2_4uwx2"]
+[ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="3_xn4be"]
+
+[sub_resource type="Resource" id="Resource_26d0c"]
+script = ExtResource("2_4uwx2")
+name = "Test 01"
+metadata/_custom_type_script = "uid://b0pj0dtodw2q8"
+
+[sub_resource type="Resource" id="Resource_4uwx2"]
+script = ExtResource("2_4uwx2")
+name = "Test 01"
+text = "Dialogue 02"
+metadata/_custom_type_script = "uid://b0pj0dtodw2q8"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rtexe"]
+radius = 2.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4uwx2"]
+size = Vector3(0.7, 1.9, 0.5)
+
+[node name="Test01" type="Node3D" unique_id=2113969164 node_paths=PackedStringArray("_default_look_point", "_look_at_target", "_head_marker")]
+script = ExtResource("1_xx17q")
+_default_look_point = NodePath("DefaultLookPoint")
+_look_at_target = NodePath("LookAtTarget")
+_head_marker = NodePath("HeadMarker")
+_interact_dialogue = Array[ExtResource("2_4uwx2")]([SubResource("Resource_26d0c"), SubResource("Resource_4uwx2")])
+
+[node name="CharacterBaseMesh_01_SK" parent="." unique_id=1698147149 instance=ExtResource("1_rtexe")]
+
+[node name="LookAtModifier3D" type="LookAtModifier3D" parent="CharacterBaseMesh_01_SK/Skeleton3D" parent_id_path=PackedInt32Array(1698147149, 429975891) index="1" unique_id=668451126]
+target_node = NodePath("../../../LookAtTarget")
+bone_name = "neck.001"
+bone = 4
+origin_from = 1
+origin_bone_name = "head.001"
+origin_bone = 5
+origin_offset = Vector3(0, 0.08, 0)
+
+[node name="Head" type="BoneAttachment3D" parent="CharacterBaseMesh_01_SK/Skeleton3D" parent_id_path=PackedInt32Array(1698147149, 429975891) index="2" unique_id=785371409]
+transform = Transform3D(-1, 1.5186952e-08, -1.7351626e-07, 8.389991e-09, 0.99923503, 0.039104998, 1.7397743e-07, 0.039104983, -0.99923515, 3.549124e-14, 1.6643871, 0.058681086)
+bone_name = "head.001"
+bone_idx = 5
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="CharacterBaseMesh_01_SK/Skeleton3D/Head" unique_id=1041579149]
+transform = Transform3D(1, 0, 0, -4.440892e-16, 1, 0, 0, 0, 1, 0, 0.060000062, 0.0030000024)
+remote_path = NodePath("../../../../HeadMarker")
+
+[node name="DefaultLookPoint" type="Marker3D" parent="." unique_id=493931039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, -1)
+
+[node name="LookAtTarget" type="Marker3D" parent="." unique_id=1156775004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, -1)
+
+[node name="HeadMarker" type="Marker3D" parent="." unique_id=1528678773]
+transform = Transform3D(-1, 1.5186952e-08, -1.7351626e-07, 8.389991e-09, 0.99923503, 0.039104998, 1.7397743e-07, 0.039104983, -0.99923515, 3.9070439e-10, 1.7244586, 0.058029678)
+
+[node name="PlayerTrigger" type="Area3D" parent="." unique_id=344198062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerTrigger" unique_id=1043413577]
+shape = SubResource("SphereShape3D_rtexe")
+
+[node name="InteractArea3D" parent="." unique_id=1933536461 instance=ExtResource("3_xn4be")]
+prompt = "Talk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea3D" unique_id=1911600330]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0)
+shape = SubResource("BoxShape3D_4uwx2")
+
+[connection signal="body_entered" from="PlayerTrigger" to="." method="_on_player_trigger_body_entered"]
+[connection signal="body_exited" from="PlayerTrigger" to="." method="_on_player_trigger_body_exited"]
+[connection signal="interacted" from="InteractArea3D" to="." method="_on_interact_area_3d_interacted"]
+
+[editable path="CharacterBaseMesh_01_SK"]

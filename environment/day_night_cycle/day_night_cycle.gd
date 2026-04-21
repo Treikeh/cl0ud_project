@@ -43,6 +43,8 @@ func _process(delta: float) -> void:
 	if _time_of_day < 24.0:
 		_time_of_day += speed * delta
 	
+	Globals.time_of_day = _time_of_day
+	
 	# Set rotation of light
 	_sun_rot.rotation_degrees.x = _time_of_day * 15.0
 	

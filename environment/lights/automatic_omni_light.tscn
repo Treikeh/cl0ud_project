@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cuemsjrkpvwxh"]
+
+[ext_resource type="Script" uid="uid://cor2xolpbxrcq" path="res://environment/lights/automatic_omni_light.gd" id="1_bcyfy"]
+
+[node name="AutomaticOmniLight" type="OmniLight3D" unique_id=619135898]
+script = ExtResource("1_bcyfy")

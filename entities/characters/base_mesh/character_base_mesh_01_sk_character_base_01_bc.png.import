@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2veidv43ydrj"
-path.s3tc="res://.godot/imported/BuildingThree_concrete_wall_01_normalmap.png-6ffb1d9d88af33778ec3adc1b0cbe4e7.s3tc.ctex"
+uid="uid://d2ghi3rux5lup"
+path.s3tc="res://.godot/imported/character_base_mesh_01_sk_character_base_01_bc.png-2a9f4cca09abc890c5ad04229d0d3574.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "ad360052e8f1eb3bb1421fa24883fba0"
+"md5": "f9ada99e977025693196d3c5d2d790d5"
 }
 
 [deps]
 
-source_file="res://levels/art/BuildingThree/BuildingThree_concrete_wall_01_normalmap.png"
-dest_files=["res://.godot/imported/BuildingThree_concrete_wall_01_normalmap.png-6ffb1d9d88af33778ec3adc1b0cbe4e7.s3tc.ctex"]
+source_file="res://entities/characters/base_mesh/character_base_mesh_01_sk_character_base_01_bc.png"
+dest_files=["res://.godot/imported/character_base_mesh_01_sk_character_base_01_bc.png-2a9f4cca09abc890c5ad04229d0d3574.s3tc.ctex"]
 
 [params]
 
@@ -25,12 +25,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://levels/art/BuildingThree/BuildingThree_concrete_wall_01_normalmap.png"
+roughness/mode=0
+roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
