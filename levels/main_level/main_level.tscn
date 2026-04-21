@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bjn7ujpgp5jeh" path="res://levels/art/BuildingTwo/BuildingTwo.glb" id="8_ki8py"]
 [ext_resource type="PackedScene" uid="uid://cxn3pwn81mg6g" path="res://levels/art/BuildingOne/BuildingOne_2.glb" id="8_t80xa"]
 [ext_resource type="PackedScene" uid="uid://bj776d7ttynq7" path="res://levels/art/BuildingOne_3.glb" id="9_qywe3"]
+[ext_resource type="PackedScene" uid="uid://bp1sv866328xs" path="res://levels/art/BuildingThree/BuildingThree.glb" id="11_dk47i"]
 
 [sub_resource type="Curve" id="Curve_hp128"]
 _limits = [0.0, 10.0, 0.0, 24.0]
@@ -81,3 +82,6 @@ transform = Transform3D(1.174144, 0, 0, 0, 1.1030219, 0, 0, 0, 1.277501, 398.038
 
 [node name="BuildingOne_3" parent="." unique_id=1946634505 instance=ExtResource("9_qywe3")]
 transform = Transform3D(1.4089911, 0, 0, 0, 1.0965421, 0, 0, 0, 1.1104906, 389.03696, -56.535595, 46.73665)
+
+[node name="BuildingThree" parent="." unique_id=1064706183 instance=ExtResource("11_dk47i")]
+transform = Transform3D(0.7953188, 0, -0.20402469, 0, 0.7262143, 0, 0.18104237, 0, 0.89628005, 281.72882, -64.01216, -13.042442)
