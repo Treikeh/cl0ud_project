@@ -8,7 +8,7 @@
 radius = 0.15
 height = 0.5
 
-[node name="Hook" type="RigidBody3D" unique_id=1629841109 node_paths=PackedStringArray("_hook_marker", "_fish_timer")]
+[node name="Hook" type="RigidBody3D" unique_id=1629841109 node_paths=PackedStringArray("_hook_marker", "_fish_timer", "_hit_water_sfx", "_fish_bites_sfx")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 collision_layer = 8
 collision_mask = 9
@@ -17,6 +17,8 @@ script = ExtResource("1_ud4tc")
 _hook_marker = NodePath("HookMarker")
 _fish_timer = NodePath("FishTimer")
 _balance_vars = ExtResource("2_egwwv")
+_hit_water_sfx = NodePath("Sfx/HitWaterSFX")
+_fish_bites_sfx = NodePath("Sfx/FishBitesSFX")
 metadata/_custom_type_script = "uid://c5rvwjf8tiwj5"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=710056216]
@@ -29,6 +31,17 @@ transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.4999999
 
 [node name="Fishing_Hook_001_FBX" parent="." unique_id=1270857284 instance=ExtResource("3_1rpfd")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.6, 0)
+
+[node name="Sfx" type="Node3D" parent="." unique_id=47361734]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="HitWaterSFX" type="FmodEventEmitter3D" parent="Sfx" unique_id=1280621527]
+event_guid = "{0000005f-006e-0000-6f00-000064000000}"
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="FishBitesSFX" type="FmodEventEmitter3D" parent="Sfx" unique_id=2089665613]
+event_guid = "{0000005f-006e-0000-6f00-000064000000}"
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="FishTimer" type="Timer" parent="." unique_id=334655231]
 wait_time = 3.0

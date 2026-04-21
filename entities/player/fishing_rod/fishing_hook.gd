@@ -18,6 +18,10 @@ const FISH_SCENE: PackedScene = preload("uid://i5dq3bivh8i0")
 @export var _fish_timer: Timer
 @export var _balance_vars: FishingVariables
 
+@export_group("SFX")
+@export var _hit_water_sfx: FmodEventEmitter3D
+@export var _fish_bites_sfx: FmodEventEmitter3D
+
 var hooked_fish: Fish
 var hook_state: HookState = HookState.NORMAL
 
@@ -28,6 +32,7 @@ func _ready() -> void:
 
 func _on_fish_hooked() -> void:
 	Globals.fish_hooked.emit()
+	_fish_bites_sfx.play_one_shot()
 
 
 func _on_fish_escaped() -> void:
@@ -47,6 +52,7 @@ func hit_water() -> void:
 		var max_wait_time: float = _balance_vars.max_wait_time
 		_fish_timer.wait_time = randf_range(min_wait_time, max_wait_time)
 		_fish_timer.start()
+		_hit_water_sfx.play_one_shot()
 
 
 func reset_hook() -> void:
