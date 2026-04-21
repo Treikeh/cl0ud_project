@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bccca7e6hgcls" path="res://levels/main_level/art/PlayableArea_V2.glb" id="6_3i7v1"]
 [ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/vendor/vendor.tscn" id="6_hp128"]
 [ext_resource type="PackedScene" uid="uid://bx4sr0m02ndfl" path="res://common/scripts/respawn_area/respawn_area_3d.tscn" id="7_hp128"]
+[ext_resource type="PackedScene" uid="uid://bjn7ujpgp5jeh" path="res://levels/art/BuildingTwo/BuildingTwo.glb" id="8_ki8py"]
 [ext_resource type="PackedScene" uid="uid://cxn3pwn81mg6g" path="res://levels/art/BuildingOne/BuildingOne_2.glb" id="8_t80xa"]
 [ext_resource type="PackedScene" uid="uid://bj776d7ttynq7" path="res://levels/art/BuildingOne_3.glb" id="9_qywe3"]
 
@@ -60,14 +61,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -23.93164, 0)
 shape = SubResource("BoxShape3D_t80xa")
 debug_color = Color(1, 0, 0, 0.41960785)
 
+[node name="BuildingTwo3" parent="." unique_id=1370231449 instance=ExtResource("8_ki8py")]
+transform = Transform3D(1.0559312, 0, 0.31326467, 0, 0.6304141, 0, -0.5045849, 0, 0.6866358, 300.6336, -86.49105, 210.38086)
+
+[node name="BuildingTwo4" parent="." unique_id=1886137722 instance=ExtResource("8_ki8py")]
+transform = Transform3D(0.048637435, 0, 1.0409298, 0, 0.5497928, 0, -0.7662879, 0, 0.05433991, 354.92572, -90.21438, 83.54971)
+
+[node name="BuildingTwo2" parent="." unique_id=522163439 instance=ExtResource("8_ki8py")]
+transform = Transform3D(-0.72044206, 0, 0.03573711, 0, 0.5392531, 0, -0.045727655, 0, -0.68457437, 355.67697, -53.018284, -216.92795)
+
+[node name="BuildingTwo" parent="." unique_id=280619830 instance=ExtResource("8_ki8py")]
+transform = Transform3D(0.019512743, 0, 0.6257129, 0, 0.5724138, 0, -0.7608164, 0, 0.020170506, 326.48868, -56.894825, -88.7114)
+
+[node name="BuildingOne_4" parent="." unique_id=1172658465 instance=ExtResource("9_qywe3")]
+transform = Transform3D(1.4089911, 0, 0, 0, 1.0780029, 0, 0, 0, 1.244991, 450.06766, -42.76156, -187.95996)
+
 [node name="BuildingOne_2" parent="." unique_id=70569716 instance=ExtResource("8_t80xa")]
-transform = Transform3D(1, 0, 0, 0, 0.98309183, 0, 0, 0, 1.121118, 189.84207, -41.326828, 56.753242)
-
-[node name="BuildingOne_2" parent="BuildingOne_2" unique_id=1390686722 instance=ExtResource("8_t80xa")]
-transform = Transform3D(0.073464505, 0, 1.1180885, 0, 0.98309255, 0, -0.9972978, 0, 0.082362376, 52.750214, -4.779236, -183.19237)
-
-[node name="BuildingOne_3" parent="BuildingOne_2" unique_id=1172658465 instance=ExtResource("9_qywe3")]
-transform = Transform3D(1.4089911, 0, 0, 0, 1.0965433, 0, 0, 0, 1.1104906, 52.029617, -1.4594078, -123.727585)
+transform = Transform3D(1.174144, 0, 0, 0, 1.1030219, 0, 0, 0, 1.277501, 398.03802, -84.64674, 56.753242)
 
 [node name="BuildingOne_3" parent="." unique_id=1946634505 instance=ExtResource("9_qywe3")]
-transform = Transform3D(1.4089911, 0, 0, 0, 1.0965421, 0, 0, 0, 1.1104906, 220.8475, -56.535595, 46.73665)
+transform = Transform3D(1.4089911, 0, 0, 0, 1.0965421, 0, 0, 0, 1.1104906, 389.03696, -56.535595, 46.73665)
