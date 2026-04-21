@@ -12,7 +12,6 @@ func _process(_delta: float) -> void:
 	_anim_tree.set("parameters/SM/conditions/idle", fishing_state == FishingRod.FishingState.IDLE)
 	_anim_tree.set("parameters/SM/conditions/waiting", fishing_state == FishingRod.FishingState.WAITING)
 	_anim_tree.set("parameters/SM/conditions/fish_hooked", fishing_state == FishingRod.FishingState.FISH_HOOKED)
-	_anim_tree.set("parameters/SM/conditions/reel_inn", fishing_state == FishingRod.FishingState.REEL_IN)
 	
 	_anim_tree.set("parameters/SM/ReadyThrow/blend_position", throw_charge)
 	_anim_tree.set("parameters/SM/FishHooked/blend_position", fish_dir)

@@ -57,10 +57,6 @@ animation = &"waiting_001"
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pis18"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_07n6i"]
-advance_mode = 2
-advance_condition = &"idle"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_niyvt"]
 advance_mode = 2
 advance_condition = &"waiting"
@@ -73,17 +69,13 @@ advance_mode = 2
 advance_mode = 2
 advance_condition = &"fish_hooked"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fvbo5"]
-advance_mode = 2
-advance_condition = &"idle"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ogw22"]
 advance_mode = 2
 advance_condition = &"waiting"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6c8w1"]
 advance_mode = 2
-advance_condition = &"reel_inn"
+advance_condition = &"idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4eyxr"]
 switch_mode = 2
@@ -91,24 +83,24 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2o6ko"]
 advance_mode = 2
-advance_condition = &"reel_inn"
+advance_condition = &"idle"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_fvbo5"]
 states/FishHooked/node = SubResource("AnimationNodeBlendSpace2D_07n6i")
-states/FishHooked/position = Vector2(540, 355)
+states/FishHooked/position = Vector2(709, 220)
 states/ReadyThrow/node = SubResource("AnimationNodeBlendSpace1D_fvbo5")
 states/ReadyThrow/position = Vector2(407, 100)
 states/reel_inn_001/node = SubResource("AnimationNodeAnimation_n1wkw")
-states/reel_inn_001/position = Vector2(540, 179)
+states/reel_inn_001/position = Vector2(407, 220)
 states/throw_001/node = SubResource("AnimationNodeAnimation_fvbo5")
-states/throw_001/position = Vector2(540, -15)
+states/throw_001/position = Vector2(565, 16)
 states/waiting_001/node = SubResource("AnimationNodeAnimation_niyvt")
-states/waiting_001/position = Vector2(664, 100)
-transitions = ["Start", "ReadyThrow", SubResource("AnimationNodeStateMachineTransition_pis18"), "waiting_001", "ReadyThrow", SubResource("AnimationNodeStateMachineTransition_07n6i"), "ReadyThrow", "throw_001", SubResource("AnimationNodeStateMachineTransition_niyvt"), "throw_001", "waiting_001", SubResource("AnimationNodeStateMachineTransition_44l05"), "waiting_001", "FishHooked", SubResource("AnimationNodeStateMachineTransition_amcap"), "FishHooked", "ReadyThrow", SubResource("AnimationNodeStateMachineTransition_fvbo5"), "FishHooked", "waiting_001", SubResource("AnimationNodeStateMachineTransition_ogw22"), "FishHooked", "reel_inn_001", SubResource("AnimationNodeStateMachineTransition_6c8w1"), "reel_inn_001", "ReadyThrow", SubResource("AnimationNodeStateMachineTransition_4eyxr"), "waiting_001", "reel_inn_001", SubResource("AnimationNodeStateMachineTransition_2o6ko")]
+states/waiting_001/position = Vector2(709, 100)
+transitions = ["Start", "ReadyThrow", SubResource("AnimationNodeStateMachineTransition_pis18"), "ReadyThrow", "throw_001", SubResource("AnimationNodeStateMachineTransition_niyvt"), "throw_001", "waiting_001", SubResource("AnimationNodeStateMachineTransition_44l05"), "waiting_001", "FishHooked", SubResource("AnimationNodeStateMachineTransition_amcap"), "FishHooked", "waiting_001", SubResource("AnimationNodeStateMachineTransition_ogw22"), "FishHooked", "reel_inn_001", SubResource("AnimationNodeStateMachineTransition_6c8w1"), "reel_inn_001", "ReadyThrow", SubResource("AnimationNodeStateMachineTransition_4eyxr"), "waiting_001", "reel_inn_001", SubResource("AnimationNodeStateMachineTransition_2o6ko")]
 graph_offset = Vector2(-32, -70)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_niyvt"]
-graph_offset = Vector2(-100, 11)
+graph_offset = Vector2(-379, 118)
 nodes/SM/node = SubResource("AnimationNodeStateMachine_fvbo5")
 nodes/SM/position = Vector2(-100, 180)
 node_connections = [&"output", 0, &"SM"]
@@ -118,17 +110,16 @@ script = ExtResource("2_07n6i")
 _anim_tree = NodePath("AnimationTree")
 
 [node name="Skeleton3D" parent="." index="0" unique_id=1730573919]
-bones/2/position = Vector3(-0.41509, -0.35704988, -0.3988657)
-bones/2/rotation = Quaternion(0.006817979, 0.017124265, 0.9992058, 0.03532622)
-bones/3/rotation = Quaternion(-0.036805987, 4.106065e-08, 4.948645e-10, 0.9993224)
-bones/4/rotation = Quaternion(-0.036805984, -1.9221555e-09, 3.7132533e-10, 0.9993224)
+bones/2/position = Vector3(-0.41509, -0.35551265, -0.3932141)
+bones/2/rotation = Quaternion(0.010198985, 0.43823037, 0.8981421, 0.03450885)
+bones/3/rotation = Quaternion(-0.032331455, 4.4386592e-08, -2.1589226e-10, 0.99947727)
+bones/4/rotation = Quaternion(-0.032331474, -1.264943e-09, -3.6830958e-10, 0.99947727)
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2" unique_id=806796295]
 tree_root = SubResource("AnimationNodeBlendTree_niyvt")
 anim_player = NodePath("../AnimationPlayer")
 parameters/SM/conditions/fish_hooked = false
 parameters/SM/conditions/idle = false
-parameters/SM/conditions/reel_inn = false
 parameters/SM/conditions/waiting = false
 parameters/SM/FishHooked/blend_position = Vector2(0.7519685, 0.29896903)
 parameters/SM/ReadyThrow/blend_position = 0.016331

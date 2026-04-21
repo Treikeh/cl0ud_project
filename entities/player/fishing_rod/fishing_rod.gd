@@ -7,7 +7,6 @@ enum FishingState {
 	READY_THROW,
 	WAITING,
 	FISH_HOOKED,
-	REEL_IN,
 }
 
 
@@ -66,15 +65,6 @@ func _process(delta: float) -> void:
 	_rod_mesh.fish_dir = _player._minigame_look_dir
 
 
-func _physics_process(_delta: float) -> void:
-	if _fishing_state == FishingState.REEL_IN:
-		var launch_dir: Vector3 = _hook.global_position.direction_to(global_position) + (Vector3.UP * 0.15)
-		var launch_force: float = _hook.global_position.distance_to(global_position) * 0.75
-		_hook.apply_central_force(launch_dir * launch_force)
-		if _hook.global_position.distance_squared_to(global_position) <= 25.0:
-			_reset_rod()
-
-
 func _display_fishing_line() -> void:
 	_line_mesh.clear_surfaces()
 	_line_mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLE_STRIP, _fishing_line_mat)
@@ -125,16 +115,13 @@ func _throw_hook() -> void:
 
 
 func _reel_inn() -> void:
-	_fishing_state = FishingState.REEL_IN
-	var launch_dir: Vector3 = _hook.global_position.direction_to(global_position)
-	var launch_force: float = _hook.global_position.distance_to(global_position)
-	_hook.hook_state = FishingHook.HookState.NORMAL
-	_hook.set_axis_velocity(launch_dir * launch_force)
+	_fishing_state = FishingState.IDLE
+	await get_tree().create_timer(0.25).timeout
+	_reset_rod()
 
 
 func _reset_rod() -> void:
 	_throw_charge = 0.0
-	_fishing_state = FishingState.IDLE
 	
 	# Reset hook
 	_hook.reset_hook()
