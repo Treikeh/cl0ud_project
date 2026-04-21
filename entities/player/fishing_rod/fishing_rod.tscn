@@ -32,7 +32,7 @@ _escaped_sfx = NodePath("SFX/Escaped")
 
 [node name="FishingRod_01_SK" parent="." unique_id=1963881671 instance=ExtResource("4_ho2or")]
 
-[node name="Skeleton3D" parent="FishingRod_01_SK" index="0" unique_id=1730573919]
+[node name="Skeleton3D" parent="FishingRod_01_SK" index="0" unique_id=506194663]
 bones/2/position = Vector3(-0.41509, -0.35030088, -0.37405333)
 bones/2/rotation = Quaternion(0.010096832, 0.46866044, 0.88264537, 0.034532797)
 bones/3/rotation = Quaternion(-0.030512199, 4.4386553e-08, -2.9007002e-10, 0.99953437)
