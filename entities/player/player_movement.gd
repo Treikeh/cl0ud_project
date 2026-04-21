@@ -37,6 +37,8 @@ func _ready() -> void:
 	
 	# Init first state
 	_state_machine.switch(FALLING)
+	
+	_footsteps_sfx.set_parameter("Surface", "Concrete")
 
 
 func _physics_process(delta: float) -> void:
@@ -100,11 +102,11 @@ func _play_foot_steps(delta: float) -> void:
 	var horizontal: float = cos(_footsteps_time * _footsteps_freq)
 	if _is_left_step:
 		if horizontal > 0.9:
-			_footsteps_sfx.play_one_shot()
+			_footsteps_sfx.play()
 			_is_left_step = false
 	else:
 		if horizontal < -0.9:
-			_footsteps_sfx.play_one_shot()
+			_footsteps_sfx.play()
 			_is_left_step = true
 
 

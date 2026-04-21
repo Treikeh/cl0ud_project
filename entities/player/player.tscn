@@ -73,7 +73,12 @@ debug_shape_custom_color = Color(1, 0, 0.28235295, 1)
 [node name="SFX" type="Node3D" parent="Movement" unique_id=1956867442]
 
 [node name="FootSteps" type="FmodEventEmitter3D" parent="Movement/SFX" unique_id=1404631984]
-event_guid = "{7826b2cc-6f8b-4b52-ae59-c02fc3b6336e}"
+event_name = "event:/Actions/Footsteps"
+event_guid = "{07a966b1-423f-44d1-b5a9-6a3b64a33f66}"
+fmod_parameters/Surface/id = -3282353139975004260
+fmod_parameters/Surface = "Concrete"
+fmod_parameters/Surface/labels = PackedStringArray("Concrete", "Wood", "Metal")
+fmod_parameters/Surface/variant_type = 4
 
 [node name="Input" type="Node" parent="." unique_id=891247422]
 script = ExtResource("5_26q78")
