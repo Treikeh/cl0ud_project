@@ -28,7 +28,7 @@ _day_night_cycle = NodePath("DayNightCycle")
 _player_marker = NodePath("PlayerStartMarker")
 _junk_curve = SubResource("Curve_hp128")
 
-[node name="PlayableArea_V2" parent="." unique_id=707905779 instance=ExtResource("6_3i7v1")]
+[node name="PlayableArea_V2" parent="." unique_id=1408566049 instance=ExtResource("6_3i7v1")]
 
 [node name="DayNightCycle" parent="." unique_id=50702471 instance=ExtResource("1_b2fg0")]
 transform = Transform3D(-0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.7071068, 0, 4.1425443, -3.334785)
@@ -45,7 +45,7 @@ shape = SubResource("BoxShape3D_sj11d")
 debug_color = Color(0, 1, 0, 0.41960785)
 
 [node name="Vendor" parent="." unique_id=520470945 instance=ExtResource("6_hp128")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.502985, 2.4760885, 11.769749)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6926503, 2.4760885, 11.769749)
 
 [node name="PlayerStartMarker" type="Marker3D" parent="." unique_id=46245944]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.511389, 3.5083027, 0.9735925)

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgi1xdialf4en"
-path.s3tc="res://.godot/imported/PlayableArea_V2_pngimg.png-9c0d14732263f664a0c3a63ed9eaa69d.s3tc.ctex"
+uid="uid://bioxf1f4phig3"
+path.s3tc="res://.godot/imported/PlayableArea_V2_d55b34e1-e107-5fba-a0c8-f63f3328416d.jpg-6efd70d5b331525a310fb0c1b3b82ed0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f130416ce00f788b2f8157ad4e6a8248"
+"md5": "720f829a43a5b6699d82df2f03a93053"
 }
 
 [deps]
 
-source_file="res://levels/main_level/art/PlayableArea_V2_pngimg.png"
-dest_files=["res://.godot/imported/PlayableArea_V2_pngimg.png-9c0d14732263f664a0c3a63ed9eaa69d.s3tc.ctex"]
+source_file="res://levels/main_level/art/PlayableArea_V2_d55b34e1-e107-5fba-a0c8-f63f3328416d.jpg"
+dest_files=["res://.godot/imported/PlayableArea_V2_d55b34e1-e107-5fba-a0c8-f63f3328416d.jpg-6efd70d5b331525a310fb0c1b3b82ed0.s3tc.ctex"]
 
 [params]
 

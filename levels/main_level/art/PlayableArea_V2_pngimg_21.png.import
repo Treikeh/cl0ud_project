@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgi1xdialf4en"
-path.s3tc="res://.godot/imported/PlayableArea_V2_pngimg.png-9c0d14732263f664a0c3a63ed9eaa69d.s3tc.ctex"
+uid="uid://38hjy20luno8"
+path.s3tc="res://.godot/imported/PlayableArea_V2_pngimg_21.png-2162fb91f741f0d1e805d6e6a982ad5a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f130416ce00f788b2f8157ad4e6a8248"
+"md5": "988f99e195aecdebaeb710e2df84ea03"
 }
 
 [deps]
 
-source_file="res://levels/main_level/art/PlayableArea_V2_pngimg.png"
-dest_files=["res://.godot/imported/PlayableArea_V2_pngimg.png-9c0d14732263f664a0c3a63ed9eaa69d.s3tc.ctex"]
+source_file="res://levels/main_level/art/PlayableArea_V2_pngimg_21.png"
+dest_files=["res://.godot/imported/PlayableArea_V2_pngimg_21.png-2162fb91f741f0d1e805d6e6a982ad5a.s3tc.ctex"]
 
 [params]
 

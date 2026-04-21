@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgi1xdialf4en"
-path.s3tc="res://.godot/imported/PlayableArea_V2_pngimg.png-9c0d14732263f664a0c3a63ed9eaa69d.s3tc.ctex"
+uid="uid://c0ig177obq3e2"
+path.s3tc="res://.godot/imported/PlayableArea_V2_sticker_shippinglabel_01.jpg-3a79875b7111637cf5b6479ad10eec96.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f130416ce00f788b2f8157ad4e6a8248"
+"md5": "9021b4133c234490525495384dbc7be0"
 }
 
 [deps]
 
-source_file="res://levels/main_level/art/PlayableArea_V2_pngimg.png"
-dest_files=["res://.godot/imported/PlayableArea_V2_pngimg.png-9c0d14732263f664a0c3a63ed9eaa69d.s3tc.ctex"]
+source_file="res://levels/main_level/art/PlayableArea_V2_sticker_shippinglabel_01.jpg"
+dest_files=["res://.godot/imported/PlayableArea_V2_sticker_shippinglabel_01.jpg-3a79875b7111637cf5b6479ad10eec96.s3tc.ctex"]
 
 [params]
 

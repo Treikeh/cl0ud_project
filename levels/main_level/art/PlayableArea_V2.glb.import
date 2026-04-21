@@ -53,9 +53,6 @@ _subresources={
 },
 "PATH:Fan": {
 "generate/physics": true
-},
-"PATH:modular_chainlink_fence_double_007": {
-"generate/physics": true
 }
 }
 }

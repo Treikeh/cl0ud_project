@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgi1xdialf4en"
-path.s3tc="res://.godot/imported/PlayableArea_V2_pngimg.png-9c0d14732263f664a0c3a63ed9eaa69d.s3tc.ctex"
+uid="uid://cdbxukm3ckdsg"
+path.s3tc="res://.godot/imported/PlayableArea_V2_CERWIN-VEGA-CD-90.jpg-f1c64b7d530e4c3e15e0d809ab74e2a9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f130416ce00f788b2f8157ad4e6a8248"
+"md5": "be4ab43b37f79bf68b093e97220e564d"
 }
 
 [deps]
 
-source_file="res://levels/main_level/art/PlayableArea_V2_pngimg.png"
-dest_files=["res://.godot/imported/PlayableArea_V2_pngimg.png-9c0d14732263f664a0c3a63ed9eaa69d.s3tc.ctex"]
+source_file="res://levels/main_level/art/PlayableArea_V2_CERWIN-VEGA-CD-90.jpg"
+dest_files=["res://.godot/imported/PlayableArea_V2_CERWIN-VEGA-CD-90.jpg-f1c64b7d530e4c3e15e0d809ab74e2a9.s3tc.ctex"]
 
 [params]
 
