@@ -7,32 +7,28 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjkgm"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_fkugw"]
-radius = 0.05
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pr2vv"]
 cull_mode = 2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_sglur"]
 
-[node name="FishingRod" type="Node3D" unique_id=949060003 node_paths=PackedStringArray("_rod_mesh", "_hook", "_hook_throw_pos", "_pin_joint", "_pin_anchor", "_fishing_line", "_cast_sfx", "_reel_sfx", "_caught_sfx", "_escaped_sfx")]
+[node name="FishingRod" type="Node3D" unique_id=949060003 node_paths=PackedStringArray("_rod_mesh", "_hook", "_hook_throw_pos", "_fishing_line", "_rod_tip", "_cast_sfx", "_reel_sfx", "_caught_sfx", "_escaped_sfx")]
 script = ExtResource("1_kjkgm")
 _rod_mesh = NodePath("FishingRod_01_SK")
-_hook = NodePath("HookLine/Hook")
+_hook = NodePath("HookLine/HookAttachement/Hook")
 _hook_throw_pos = NodePath("HookThrowPos")
 _balance_vars = ExtResource("2_ho2or")
-_pin_joint = NodePath("HookLine/PinAnchor/PinJoint3D")
-_pin_anchor = NodePath("HookLine/PinAnchor/PinAnchor")
 _fishing_line = NodePath("HookLine/LineMesh")
+_rod_tip = NodePath("HookLine/RodTipAttachement")
 _fishing_line_mat = SubResource("StandardMaterial3D_kjkgm")
 _cast_sfx = NodePath("SFX/Cast")
 _reel_sfx = NodePath("SFX/Reel")
 _caught_sfx = NodePath("SFX/Caught")
 _escaped_sfx = NodePath("SFX/Escaped")
 
-[node name="FishingRod_01_SK" parent="." unique_id=1963881671 instance=ExtResource("4_ho2or")]
+[node name="FishingRod_01_SK" parent="." unique_id=81632285 instance=ExtResource("4_ho2or")]
 
-[node name="Skeleton3D" parent="FishingRod_01_SK" index="0" unique_id=506194663]
+[node name="Skeleton3D" parent="FishingRod_01_SK" index="0" unique_id=547459602]
 bones/2/position = Vector3(-0.41509, -0.35030088, -0.37405333)
 bones/2/rotation = Quaternion(0.010096832, 0.46866044, 0.88264537, 0.034532797)
 bones/3/rotation = Quaternion(-0.030512199, 4.4386553e-08, -2.9007002e-10, 0.99953437)
@@ -43,40 +39,31 @@ parameters/SM/ReadyThrow/blend_position = 0.07169866492939833
 
 [node name="HookLine" type="Node3D" parent="." unique_id=12906906]
 
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="HookLine" unique_id=1524872158]
-transform = Transform3D(0.99741113, 0.05722491, -0.043548137, -0.014544521, 0.7536076, 0.65716374, 0.07042433, -0.654829, 0.75248885, 0.49668172, 0.8129045, -1.2607356)
-bone_name = "rod_tip.001"
-bone_idx = 5
-use_external_skeleton = true
-external_skeleton = NodePath("../../FishingRod_01_SK/Skeleton3D")
-
-[node name="AnchorTransform" type="RemoteTransform3D" parent="HookLine/BoneAttachment3D" unique_id=957157511]
-transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, -5.9604645e-08, 0, 2.9802322e-08, 1.0000005, 0, 0, 0)
-remote_path = NodePath("../../PinAnchor")
-update_rotation = false
-
-[node name="PinAnchor" type="Node3D" parent="HookLine" unique_id=1366592501]
-transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000005, 0.49668172, 0.8129045, -1.2607356)
-
-[node name="PinJoint3D" type="PinJoint3D" parent="HookLine/PinAnchor" unique_id=835895105]
-transform = Transform3D(0.99999994, 0, 0, 0, 1.0000001, 0, 0, 0, 0.99999994, 0, 0, 0)
-node_a = NodePath("../PinAnchor")
-node_b = NodePath("../../Hook")
-
-[node name="PinAnchor" type="StaticBody3D" parent="HookLine/PinAnchor" unique_id=346476059]
-collision_layer = 0
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HookLine/PinAnchor/PinAnchor" unique_id=2024889275]
-shape = SubResource("SphereShape3D_fkugw")
-
 [node name="LineMesh" type="MeshInstance3D" parent="HookLine" unique_id=1996639613]
 top_level = true
 material_override = SubResource("StandardMaterial3D_pr2vv")
 mesh = SubResource("ImmediateMesh_sglur")
 
-[node name="Hook" parent="HookLine" unique_id=1629841109 instance=ExtResource("4_e6t2x")]
-transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.50198185, 0.33064413, -1.2750937)
+[node name="RodTipAttachement" type="BoneAttachment3D" parent="HookLine" unique_id=1524872158]
+transform = Transform3D(0.9970712, 0.015766967, 0.07483621, -0.0052658045, -0.962043, 0.27284768, 0.076297596, -0.27244267, -0.95914227, 0.49668172, 0.8129044, -1.2607355)
+bone_name = "line.001"
+bone_idx = 5
+use_external_skeleton = true
+external_skeleton = NodePath("../../FishingRod_01_SK/Skeleton3D")
+
+[node name="HookAttachement" type="BoneAttachment3D" parent="HookLine" unique_id=213436148]
+transform = Transform3D(0.99703354, 0.005300517, 0.07678518, -0.001770325, -0.99578285, 0.09172659, 0.076947525, -0.09159044, -0.9928195, 0.5019486, 0.32344797, -1.3517438)
+bone_name = "hook.001"
+bone_idx = 7
+use_external_skeleton = true
+external_skeleton = NodePath("../../FishingRod_01_SK/Skeleton3D")
+
+[node name="Hook" parent="HookLine/HookAttachement" unique_id=1629841109 instance=ExtResource("4_e6t2x")]
+process_mode = 4
+transform = Transform3D(0.99999994, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0)
+
+[node name="HookThrowPos" type="Marker3D" parent="." unique_id=1845844679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.3, 0)
 
 [node name="SFX" type="Node3D" parent="." unique_id=1957665866]
 
@@ -95,8 +82,5 @@ event_guid = "{9d2e20a9-d4d3-4039-acb1-24afa23dfdfe}"
 [node name="Escaped" type="FmodEventEmitter3D" parent="SFX" unique_id=1287896646]
 event_name = "event:/Actions/Fish Escaped"
 event_guid = "{2f810c07-fefc-4f37-b561-e050e7d948ad}"
-
-[node name="HookThrowPos" type="Marker3D" parent="." unique_id=1845844679]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.3, 0)
 
 [editable path="FishingRod_01_SK"]

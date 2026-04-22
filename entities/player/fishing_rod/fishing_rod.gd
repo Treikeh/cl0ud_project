@@ -16,9 +16,8 @@ enum FishingState {
 @export var _balance_vars: FishingVariables
 
 @export_group("Hook line")
-@export var _pin_joint: PinJoint3D
-@export var _pin_anchor: StaticBody3D
 @export var _fishing_line: MeshInstance3D
+@export var _rod_tip: Node3D
 @export var _fishing_line_mat: Material
 
 @export_group("SFX")
@@ -73,8 +72,8 @@ func _display_fishing_line() -> void:
 	_line_mesh.surface_add_vertex(_hook.global_position - _hook.global_basis.x * 0.02)
 	
 	# Start point
-	_line_mesh.surface_add_vertex(_pin_anchor.global_position + global_basis.x * 0.02)
-	_line_mesh.surface_add_vertex(_pin_anchor.global_position - global_basis.x * 0.02)
+	_line_mesh.surface_add_vertex(_rod_tip.global_position + global_basis.x * 0.02)
+	_line_mesh.surface_add_vertex(_rod_tip.global_position - global_basis.x * 0.02)
 	
 	_line_mesh.surface_end()
 
@@ -89,7 +88,7 @@ func _throw_hook() -> void:
 	_fishing_state = FishingState.WAITING
 	
 	# Disconnect hook from pin
-	_pin_joint.node_b = _pin_anchor.get_path()
+	_hook.process_mode = Node.PROCESS_MODE_INHERIT
 	_hook.top_level = true
 	_hook.linear_damp = 0.0
 	_hook.hook_state = FishingHook.HookState.THROWN
@@ -127,9 +126,9 @@ func _reset_rod() -> void:
 	_hook.reset_hook()
 	
 	# Reconnect hook to pin
-	var hook_offset: Vector3 = -_pin_anchor.global_basis.y * 0.3
-	_hook.global_position = _pin_anchor.global_position + hook_offset
-	_pin_joint.node_b = _hook.get_path()
+	_hook.position = Vector3.ZERO
+	_hook.rotation_degrees = Vector3(180, 0.0, 0.0)
+	_hook.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	#SFX
 	_reel_sfx.play_one_shot()
