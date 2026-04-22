@@ -60,10 +60,10 @@ settings/0/center_from = 1
 settings/0/center_node = NodePath("../../../../../..")
 
 [node name="RodTipAttachement" parent="Orientation/Head/FishingRod/HookLine" parent_id_path=PackedInt32Array(949060003, 12906906) index="1" unique_id=1524872158]
-transform = Transform3D(0.99705166, 0.011625009, 0.07584739, -0.0038825406, -0.97954816, 0.20117159, 0.0766348, -0.200873, -0.9766149, 0.49668172, 0.8129044, -1.2607355)
+transform = Transform3D(0.99705166, 0.011625001, 0.075847395, -0.0038825253, -0.9795483, 0.20117138, 0.0766348, -0.20087273, -0.976615, 0.49668172, 0.8129044, -1.2607355)
 
 [node name="HookAttachement" parent="Orientation/Head/FishingRod/HookLine" parent_id_path=PackedInt32Array(949060003, 12906906) index="2" unique_id=213436148]
-transform = Transform3D(0.9970298, 0.002470429, 0.07697593, -0.00082515366, -0.9990851, 0.042751845, 0.07701113, -0.042688455, -0.9961157, 0.5002056, 0.31824607, -1.3216258)
+transform = Transform3D(0.9970298, 0.0024704253, 0.076975934, -0.00082512904, -0.99908525, 0.04275156, 0.07701114, -0.042688098, -0.99611574, 0.5002056, 0.31824595, -1.3216257)
 
 [node name="FmodListener3D" type="FmodListener3D" parent="Orientation/Head" unique_id=463241591]
 
