@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://rbxdptqx6skw"]
 
-[ext_resource type="PackedScene" uid="uid://dtqc7i2r1eyd1" path="res://entities/vendor/art/character_01_sk.glb" id="1_j5nki"]
+[ext_resource type="PackedScene" uid="uid://dtqc7i2r1eyd1" path="res://entities/characters/vendor/art/character_01_sk.glb" id="1_j5nki"]
 
 [node name="character_01_sk" unique_id=581165237 instance=ExtResource("1_j5nki")]
 

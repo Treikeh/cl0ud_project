@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bm6fkm1vq75bb"]
+
+[ext_resource type="PackedScene" uid="uid://ywf1dad34t7b" path="res://entities/characters/rig/character.glb" id="1_c6gtc"]
+[ext_resource type="AnimationNodeStateMachine" uid="uid://blwgmxdafsu71" path="res://entities/characters/rig/character_default_anim_sm.tres" id="2_tion6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g0b3o"]
+radius = 2.0
+
+[node name="CharacterMesh" unique_id=1333086119 node_paths=PackedStringArray("_default_look_position") instance=ExtResource("1_c6gtc")]
+_default_look_position = NodePath("DefaultLookPosition")
+_animation = ExtResource("2_tion6")
+
+[node name="LookAtModifier3D" type="LookAtModifier3D" parent="Skeleton3D" parent_id_path=PackedInt32Array(1423203063) index="2" unique_id=980359682]
+target_node = NodePath("../../DefaultLookPosition")
+bone_name = "neck.001"
+bone = 4
+relative = true
+origin_offset = Vector3(0, 0.2, 0)
+duration = 0.4
+use_angle_limitation = true
+symmetry_limitation = true
+primary_limit_angle = 1.0471976
+primary_damp_threshold = 1.0
+secondary_limit_angle = 6.2831855
+secondary_damp_threshold = 1.0
+
+[node name="DefaultLookPosition" type="Marker3D" parent="." index="1" unique_id=1245629346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, -1)
+
+[node name="PlayerLookAtTrigger" type="Area3D" parent="." index="2" unique_id=962875905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerLookAtTrigger" index="0" unique_id=47068830]
+shape = SubResource("SphereShape3D_g0b3o")
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="4" unique_id=2032088472]
+tree_root = ExtResource("2_tion6")
+anim_player = NodePath("../AnimationPlayer")
+
+[connection signal="body_entered" from="PlayerLookAtTrigger" to="." method="_on_player_look_at_trigger_body_entered"]
+[connection signal="body_exited" from="PlayerLookAtTrigger" to="." method="_on_player_look_at_trigger_body_exited"]

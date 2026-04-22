@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://yujpmwatwi0d" path="res://levels/dev/dev_minigame_01.gd" id="1_o8832"]
 [ext_resource type="PackedScene" uid="uid://bli63q1qswjvg" path="res://environment/day_night_cycle/day_night_cycle.tscn" id="2_0wui5"]
 [ext_resource type="PackedScene" uid="uid://dfwa3ko7oftnj" path="res://entities/player/player.tscn" id="2_jg8us"]
-[ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/vendor/vendor.tscn" id="4_8kye5"]
+[ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/characters/vendor/vendor.tscn" id="4_8kye5"]
 [ext_resource type="PackedScene" uid="uid://bocx17sre2uti" path="res://common/scripts/fish_area/fish_area_3d.tscn" id="6_k8yb8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fhc5p"]

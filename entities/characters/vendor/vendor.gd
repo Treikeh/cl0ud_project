@@ -3,7 +3,7 @@ extends Node3D
 
 const VENDOR_MENU_SCENE: PackedScene = preload("uid://diy715xds7cni")
 
-@export var _head_marker: Marker3D
+@export var _head_marker: Node3D
 @export var _interact_dialogue: Array[DialogueData] = []
 @export var _nevermind_dialogue: Array[DialogueData] = []
 @export var _close_shop_dialogue: Array[DialogueData] = []

@@ -3,22 +3,22 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dtqc7i2r1eyd1"
-path="res://.godot/imported/character_01_sk.glb-28c0940ea0ef122573b2a1716d611a49.scn"
+uid="uid://ywf1dad34t7b"
+path="res://.godot/imported/character.glb-270f621f718fc4b21da12ce5f8c4c3df.scn"
 
 [deps]
 
-source_file="res://entities/vendor/art/character_01_sk.glb"
-dest_files=["res://.godot/imported/character_01_sk.glb-28c0940ea0ef122573b2a1716d611a49.scn"]
+source_file="res://entities/characters/rig/character.glb"
+dest_files=["res://.godot/imported/character.glb-270f621f718fc4b21da12ce5f8c4c3df.scn"]
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="Node3D"
 nodes/root_name=""
-nodes/root_script=null
+nodes/root_script=Resource("uid://bgmqggkymwm13", "res://entities/characters/rig/character.gd")
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
-nodes/import_as_skeleton_bones=false
+nodes/import_as_skeleton_bones=true
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
@@ -41,9 +41,9 @@ _subresources={
 "animations": {
 "idle_001": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://entities/vendor/art/anims/idle_001.res",
+"save_to_file/fallback_path": "res://entities/characters/rig/anims/idle_001.res",
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "uid://b0pbfxjxa5nxh",
+"save_to_file/path": "uid://d2l0nxfk60wcp",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
@@ -2095,11 +2095,11 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": 0
 },
-"run_001": {
+"vendor_idle_001": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://entities/vendor/art/anims/run_001.res",
+"save_to_file/fallback_path": "res://entities/characters/rig/anims/vendor_idle_001.res",
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "uid://ctwil8r7mfd58",
+"save_to_file/path": "uid://fw72rww3xawd",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,

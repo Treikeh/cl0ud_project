@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" uid="uid://doe0w0kgn8ehr" path="res://levels/days/days.gd" id="1_85oi3"]
 [ext_resource type="PackedScene" uid="uid://8vuuaq87rbum" path="res://levels/main_level/main_level.tscn" id="1_wbuex"]
-[ext_resource type="PackedScene" uid="uid://rbxdptqx6skw" path="res://entities/vendor/art/character_01_sk.tscn" id="3_85oi3"]
-[ext_resource type="PackedScene" uid="uid://kbji3x80wqat" path="res://entities/characters/test_01/test_01.tscn" id="4_ahgqq"]
 
 [node name="Day01" type="Node3D" unique_id=1476344830]
 script = ExtResource("1_85oi3")
@@ -12,9 +10,3 @@ script = ExtResource("1_85oi3")
 _next_day = "uid://fcaru7tgmibi"
 
 [node name="Characters" type="Node3D" parent="." unique_id=351249826]
-
-[node name="character_01_sk" parent="." unique_id=581165237 instance=ExtResource("3_85oi3")]
-transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, -10.400001, 2.5, -6.5)
-
-[node name="Test01" parent="." unique_id=2113969164 instance=ExtResource("4_ahgqq")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9.920158, 2.4870877, -8.94298)

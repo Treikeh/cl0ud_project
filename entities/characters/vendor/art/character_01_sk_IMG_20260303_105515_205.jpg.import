@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2ghi3rux5lup"
-path.s3tc="res://.godot/imported/character_base_mesh_01_sk_character_base_01_bc.png-2a9f4cca09abc890c5ad04229d0d3574.s3tc.ctex"
+uid="uid://q7v64a7wh320"
+path.s3tc="res://.godot/imported/character_01_sk_IMG_20260303_105515_205.jpg-7d34ad75db5a997f00051f7ebaf9eac9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f9ada99e977025693196d3c5d2d790d5"
+"md5": "3a2f0afaf167f60231fc3c82a3fb3184"
 }
 
 [deps]
 
-source_file="res://entities/characters/base_mesh/character_base_mesh_01_sk_character_base_01_bc.png"
-dest_files=["res://.godot/imported/character_base_mesh_01_sk_character_base_01_bc.png-2a9f4cca09abc890c5ad04229d0d3574.s3tc.ctex"]
+source_file="res://entities/characters/vendor/art/character_01_sk_IMG_20260303_105515_205.jpg"
+dest_files=["res://.godot/imported/character_01_sk_IMG_20260303_105515_205.jpg-7d34ad75db5a997f00051f7ebaf9eac9.s3tc.ctex"]
 
 [params]
 

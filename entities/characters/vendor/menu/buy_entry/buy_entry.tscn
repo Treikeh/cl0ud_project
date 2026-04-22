@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://3gn1kqoo470b"]
 
-[ext_resource type="Script" uid="uid://dpp8na32kj1c6" path="res://entities/vendor/menu/buy_entry/buy_entry.gd" id="1_6wlvj"]
+[ext_resource type="Script" uid="uid://dpp8na32kj1c6" path="res://entities/characters/vendor/menu/buy_entry/buy_entry.gd" id="1_6wlvj"]
 [ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="2_q7kpp"]
 
 [node name="BuyEntry" type="PanelContainer" unique_id=208481528 node_paths=PackedStringArray("_icon", "_name_label", "_description_label", "_cost_label", "_bought_cover")]

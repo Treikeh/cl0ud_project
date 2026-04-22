@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dfwa3ko7oftnj" path="res://entities/player/player.tscn" id="2_438kw"]
 [ext_resource type="PackedScene" uid="uid://bocx17sre2uti" path="res://common/scripts/fish_area/fish_area_3d.tscn" id="4_sj11d"]
 [ext_resource type="PackedScene" uid="uid://bccca7e6hgcls" path="res://levels/main_level/art/PlayableArea_V2.glb" id="6_3i7v1"]
-[ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/vendor/vendor.tscn" id="6_hp128"]
+[ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/characters/vendor/vendor.tscn" id="6_hp128"]
 [ext_resource type="PackedScene" uid="uid://bx4sr0m02ndfl" path="res://common/scripts/respawn_area/respawn_area_3d.tscn" id="7_hp128"]
 [ext_resource type="PackedScene" uid="uid://bjn7ujpgp5jeh" path="res://levels/art/BuildingTwo/BuildingTwo.glb" id="8_ki8py"]
 [ext_resource type="PackedScene" uid="uid://cxn3pwn81mg6g" path="res://levels/art/BuildingOne/BuildingOne_2.glb" id="8_t80xa"]

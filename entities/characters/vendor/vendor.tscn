@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://u13jy1ersfgn"]
+
+[ext_resource type="Script" uid="uid://wq387qckissl" path="res://entities/characters/vendor/vendor.gd" id="1_72uc0"]
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/scripts/dialogue_data.gd" id="2_tuhri"]
+[ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="2_x7g4j"]
+[ext_resource type="Resource" uid="uid://dvrns5pqu5cg6" path="res://common/dialogue/vendor_interact_01.tres" id="3_qccll"]
+[ext_resource type="Resource" uid="uid://bfj0yooguti2i" path="res://common/dialogue/vendor_nevermind_01.tres" id="4_0svej"]
+[ext_resource type="Resource" uid="uid://cxho0e6xi5h75" path="res://common/dialogue/vendor_close_shop_01.tres" id="5_5rk7m"]
+[ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="6_qccll"]
+[ext_resource type="AnimationNodeStateMachine" uid="uid://bjdc7oiy473ob" path="res://entities/characters/vendor/vendor_anim_sm.tres" id="8_5rk7m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_72uc0"]
+size = Vector3(0.6, 1.8000001, 0.4)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x7g4j"]
+
+[node name="Vendor" type="Node3D" unique_id=520470945 node_paths=PackedStringArray("_head_marker")]
+script = ExtResource("1_72uc0")
+_head_marker = NodePath("HeadMarker")
+_interact_dialogue = Array[ExtResource("2_tuhri")]([ExtResource("3_qccll")])
+_nevermind_dialogue = Array[ExtResource("2_tuhri")]([ExtResource("4_0svej")])
+_close_shop_dialogue = Array[ExtResource("2_tuhri")]([ExtResource("5_5rk7m")])
+
+[node name="CharacterMesh" parent="." unique_id=1333086119 instance=ExtResource("6_qccll")]
+_skin = "Vendor"
+_animation = ExtResource("8_5rk7m")
+
+[node name="Skeleton3D" parent="CharacterMesh" index="0" unique_id=1423203063]
+bones/2/position = Vector3(-1.7763568e-15, 0.067006476, 0.9022027)
+bones/3/rotation = Quaternion(-0.020237816, 1.1918487e-07, 6.432906e-10, 0.9997952)
+bones/4/rotation = Quaternion(0.1183377, -8.680849e-08, -1.171894e-15, 0.9929735)
+bones/6/rotation = Quaternion(-0.0940347, 0.19764802, -0.5987004, 0.7704873)
+bones/7/rotation = Quaternion(0.3577502, 0.37531435, -0.56975037, 0.6376037)
+bones/8/rotation = Quaternion(0.27879167, 0.011414933, -0.012179872, 0.9602065)
+bones/9/rotation = Quaternion(-0.056761842, -0.22256994, 0.020403972, 0.97304904)
+bones/10/rotation = Quaternion(-0.09403476, -0.19764811, 0.59870046, 0.7704871)
+bones/11/rotation = Quaternion(0.35775015, -0.3753145, 0.5697504, 0.63760364)
+bones/12/rotation = Quaternion(0.27879193, -0.011414936, 0.012179853, 0.96020645)
+bones/13/rotation = Quaternion(-0.056762062, 0.22256996, -0.020404022, 0.9730491)
+bones/14/rotation = Quaternion(0.021232797, 0.067648545, 0.9974501, -0.008130872)
+bones/15/rotation = Quaternion(-0.1772205, 5.77179e-08, -9.3035615e-09, 0.98417115)
+bones/16/rotation = Quaternion(0.6294127, -0.06727835, 0.028471394, 0.7736295)
+bones/17/rotation = Quaternion(-0.021232631, 0.06764853, 0.9974501, 0.008130861)
+bones/18/rotation = Quaternion(-0.1772205, -6.079511e-08, 1.1524623e-08, 0.98417115)
+bones/19/rotation = Quaternion(0.6294128, 0.06727837, -0.02847142, 0.7736295)
+
+[node name="HeadMarker" type="BoneAttachment3D" parent="." unique_id=229792294]
+transform = Transform3D(-1, 1.5186952e-08, -1.7351627e-07, 1.1815459e-08, 0.9998115, 0.019413978, 1.737784e-07, 0.019413978, -0.9998116, 3.6297178e-14, 1.6554214, 0.084229425)
+bone_name = "head.001"
+bone_idx = 5
+use_external_skeleton = true
+external_skeleton = NodePath("../CharacterMesh/Skeleton3D")
+
+[node name="Marker3D" type="Marker3D" parent="HeadMarker" unique_id=674453881]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1191746555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90000004, 0.06)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1020013531]
+shape = SubResource("BoxShape3D_72uc0")
+
+[node name="InteractArea3D" parent="." unique_id=1933536461 instance=ExtResource("2_x7g4j")]
+prompt = "Talk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea3D" unique_id=990110618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90000004, 0)
+shape = SubResource("CapsuleShape3D_x7g4j")
+
+[connection signal="interacted" from="InteractArea3D" to="." method="_on_interact_area_3d_interacted"]
+
+[editable path="CharacterMesh"]
