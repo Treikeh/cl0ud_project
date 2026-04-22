@@ -7,7 +7,7 @@ class_name Character
 @export var _default_look_position: Node3D
 
 @export_group("Skinning")
-@export_enum("Base", "Vendor") var _skin: String = "Base"
+@export_enum("Base", "Vendor", "Nils") var _skin: String = "Base"
 @export var _animation: AnimationRootNode
 
 @onready var _animation_tree: AnimationTree = $AnimationTree

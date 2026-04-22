@@ -1,12 +1,12 @@
 [gd_resource type="AnimationNodeStateMachine" format=3 uid="uid://bjdc7oiy473ob"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tion6"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qgf78"]
 animation = &"vendor_idle_001"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1qv0m"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rqu6r"]
 advance_mode = 2
 
 [resource]
-states/vendor_idle_001/node = SubResource("AnimationNodeAnimation_tion6")
-states/vendor_idle_001/position = Vector2(419, 104)
-transitions = ["Start", "vendor_idle_001", SubResource("AnimationNodeStateMachineTransition_1qv0m")]
+states/vendor_idle_001/node = SubResource("AnimationNodeAnimation_qgf78")
+states/vendor_idle_001/position = Vector2(473, 100)
+transitions = ["Start", "vendor_idle_001", SubResource("AnimationNodeStateMachineTransition_rqu6r")]

@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://d03dern16pwcb"]
+
+[ext_resource type="Script" uid="uid://c5d4fd2agsogr" path="res://entities/characters/nils/day_01_nils.gd" id="1_3cw0d"]
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/scripts/dialogue_data.gd" id="2_pjgcy"]
+[ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="3_cc2qk"]
+[ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="4_5dqtv"]
+[ext_resource type="AnimationNodeStateMachine" uid="uid://cbygnrgof7bup" path="res://entities/characters/rig/standing_fishing_anim_sm.tres" id="4_pjgcy"]
+
+[sub_resource type="Resource" id="Resource_kfdqj"]
+script = ExtResource("2_pjgcy")
+text = "First time?"
+metadata/_custom_type_script = "uid://b0pj0dtodw2q8"
+
+[sub_resource type="Resource" id="Resource_rxto8"]
+script = ExtResource("2_pjgcy")
+text = "Everything else"
+metadata/_custom_type_script = "uid://b0pj0dtodw2q8"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_85oi3"]
+size = Vector3(0.7, 1.9, 0.5)
+
+[node name="Nils" type="Node3D" unique_id=1391229992 node_paths=PackedStringArray("_head_maker")]
+transform = Transform3D(0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, 0.50000006, 0, 0, 0)
+script = ExtResource("1_3cw0d")
+_head_maker = NodePath("HeadMarker")
+_start_dialogue = Array[ExtResource("2_pjgcy")]([SubResource("Resource_kfdqj")])
+_allready_spoken_dialogue = Array[ExtResource("2_pjgcy")]([SubResource("Resource_rxto8")])
+
+[node name="CharacterMesh" parent="." unique_id=1194805127 instance=ExtResource("3_cc2qk")]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
+_look_at_radius = 2.0
+_skin = "Nils"
+_animation = ExtResource("4_pjgcy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=220955212]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1214350678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95000005, 0)
+shape = SubResource("BoxShape3D_85oi3")
+
+[node name="HeadMarker" type="BoneAttachment3D" parent="." unique_id=648579604]
+transform = Transform3D(-0.9999999, 2.9802322e-08, -3.2782555e-07, 2.296784e-08, 0.9998115, 0.019413963, 3.5762787e-07, 0.01941396, -0.9998114, 0, 1.6554214, 0.08422941)
+bone_name = "head.001"
+bone_idx = 5
+use_external_skeleton = true
+external_skeleton = NodePath("../CharacterMesh/Skeleton3D")
+
+[node name="InteractArea3D" parent="." unique_id=1933536461 instance=ExtResource("4_5dqtv")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea3D" unique_id=1966379174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95000005, 0)
+shape = SubResource("BoxShape3D_85oi3")
+
+[connection signal="interacted" from="InteractArea3D" to="." method="_on_interacted"]
+
+[editable path="CharacterMesh"]

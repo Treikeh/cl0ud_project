@@ -25,25 +25,6 @@ _close_shop_dialogue = Array[ExtResource("2_tuhri")]([ExtResource("5_5rk7m")])
 _skin = "Vendor"
 _animation = ExtResource("8_5rk7m")
 
-[node name="Skeleton3D" parent="CharacterMesh" index="0" unique_id=1423203063]
-bones/2/position = Vector3(-1.7763568e-15, 0.067006476, 0.9022027)
-bones/3/rotation = Quaternion(-0.020237816, 1.1918487e-07, 6.432906e-10, 0.9997952)
-bones/4/rotation = Quaternion(0.1183377, -8.680849e-08, -1.171894e-15, 0.9929735)
-bones/6/rotation = Quaternion(-0.0940347, 0.19764802, -0.5987004, 0.7704873)
-bones/7/rotation = Quaternion(0.3577502, 0.37531435, -0.56975037, 0.6376037)
-bones/8/rotation = Quaternion(0.27879167, 0.011414933, -0.012179872, 0.9602065)
-bones/9/rotation = Quaternion(-0.056761842, -0.22256994, 0.020403972, 0.97304904)
-bones/10/rotation = Quaternion(-0.09403476, -0.19764811, 0.59870046, 0.7704871)
-bones/11/rotation = Quaternion(0.35775015, -0.3753145, 0.5697504, 0.63760364)
-bones/12/rotation = Quaternion(0.27879193, -0.011414936, 0.012179853, 0.96020645)
-bones/13/rotation = Quaternion(-0.056762062, 0.22256996, -0.020404022, 0.9730491)
-bones/14/rotation = Quaternion(0.021232797, 0.067648545, 0.9974501, -0.008130872)
-bones/15/rotation = Quaternion(-0.1772205, 5.77179e-08, -9.3035615e-09, 0.98417115)
-bones/16/rotation = Quaternion(0.6294127, -0.06727835, 0.028471394, 0.7736295)
-bones/17/rotation = Quaternion(-0.021232631, 0.06764853, 0.9974501, 0.008130861)
-bones/18/rotation = Quaternion(-0.1772205, -6.079511e-08, 1.1524623e-08, 0.98417115)
-bones/19/rotation = Quaternion(0.6294128, 0.06727837, -0.02847142, 0.7736295)
-
 [node name="HeadMarker" type="BoneAttachment3D" parent="." unique_id=229792294]
 transform = Transform3D(-1, 1.5186952e-08, -1.7351627e-07, 1.1815459e-08, 0.9998115, 0.019413978, 1.737784e-07, 0.019413978, -0.9998116, 3.6297178e-14, 1.6554214, 0.084229425)
 bone_name = "head.001"

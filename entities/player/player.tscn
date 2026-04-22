@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://o3jq0suibbq8" path="res://entities/player/player.gd" id="1_symyc"]
 [ext_resource type="Script" uid="uid://d25wwc75tdqj5" path="res://entities/player/player_interact_ray.gd" id="2_abrql"]
+[ext_resource type="Script" uid="uid://djhi0x7vqswxl" path="res://entities/player/player_camera.gd" id="2_wvtmh"]
 [ext_resource type="PackedScene" uid="uid://cyr0p70n201cs" path="res://entities/player/fishing_rod/fishing_rod.tscn" id="3_26q78"]
 [ext_resource type="Script" uid="uid://cxekl8tsteanp" path="res://entities/player/player_ground_check.gd" id="3_bls4j"]
 [ext_resource type="Script" uid="uid://c706cj0ksgna4" path="res://entities/player/player_input.gd" id="5_26q78"]
@@ -43,6 +44,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Orientation/Head" unique_id=1569207722]
 fov = 90.0
+script = ExtResource("2_wvtmh")
+hb_frequency = 2.5
 
 [node name="InteractRay" type="RayCast3D" parent="Orientation/Head" unique_id=1370547296]
 target_position = Vector3(0, 0, -1.75)
@@ -66,6 +69,7 @@ transform = Transform3D(0.9970298, 0.0024704253, 0.076975934, -0.00082512904, -0
 
 [node name="Movement" type="Node3D" parent="." unique_id=302736872 node_paths=PackedStringArray("_footsteps_sfx")]
 script = ExtResource("5_qiwj3")
+_footsteps_freq = 1.0
 _footsteps_sfx = NodePath("SFX/FootSteps")
 
 [node name="GroundCheck" type="ShapeCast3D" parent="Movement" unique_id=1000335560]

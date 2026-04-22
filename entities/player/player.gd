@@ -9,6 +9,7 @@ var input: PlayerInput
 var movement: PlayerMovement
 var inventory: Inventory
 var hud: Hud
+var camera: PlayerCamera
 
 var _respawn_point: Vector3
 
@@ -34,8 +35,11 @@ func _physics_process(delta: float) -> void:
 	if _look_position != Vector3.ZERO:
 		_look_at_position(delta)
 	
-	if movement._ground_check.is_grounded() and linear_velocity.length_squared() < 0.5:
-		_respawn_point = global_position
+	if movement._ground_check.is_grounded():
+		camera.apply_head_bobbing(linear_velocity, delta)
+		if linear_velocity.length_squared() < 0.5:
+			_respawn_point = global_position
+	camera.apply_camera_tilt(linear_velocity, movement._move_dir, delta)
 
 
 # Make the camera look at a point
