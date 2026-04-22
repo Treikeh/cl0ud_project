@@ -65,7 +65,6 @@ func _walking_physics(delta: float) -> void:
 	var needed_vel: Vector3 = target_vel - _player.linear_velocity
 	_player.apply_central_force(needed_vel * _ground_accel * delta)
 	_ground_check.snap_to_ground()
-	_player.camera.apply_head_bobbing(_player.linear_velocity, delta)
 	
 	_play_foot_steps(delta)
 
