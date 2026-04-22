@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://o3jq0suibbq8" path="res://entities/player/player.gd" id="1_symyc"]
 [ext_resource type="Script" uid="uid://d25wwc75tdqj5" path="res://entities/player/player_interact_ray.gd" id="2_abrql"]
+[ext_resource type="Script" uid="uid://djhi0x7vqswxl" path="res://entities/player/player_camera.gd" id="2_wvtmh"]
 [ext_resource type="PackedScene" uid="uid://cyr0p70n201cs" path="res://entities/player/fishing_rod/fishing_rod.tscn" id="3_26q78"]
 [ext_resource type="Script" uid="uid://cxekl8tsteanp" path="res://entities/player/player_ground_check.gd" id="3_bls4j"]
 [ext_resource type="Script" uid="uid://c706cj0ksgna4" path="res://entities/player/player_input.gd" id="5_26q78"]
@@ -43,6 +44,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Orientation/Head" unique_id=1569207722]
 fov = 90.0
+script = ExtResource("2_wvtmh")
+hb_frequency = 2.5
 
 [node name="InteractRay" type="RayCast3D" parent="Orientation/Head" unique_id=1370547296]
 target_position = Vector3(0, 0, -1.75)
@@ -57,15 +60,16 @@ settings/0/center_from = 1
 settings/0/center_node = NodePath("../../../../../..")
 
 [node name="RodTipAttachement" parent="Orientation/Head/FishingRod/HookLine" parent_id_path=PackedInt32Array(949060003, 12906906) index="1" unique_id=1524872158]
-transform = Transform3D(0.99705166, 0.011625001, 0.075847395, -0.0038825253, -0.9795483, 0.20117138, 0.0766348, -0.20087273, -0.976615, 0.49668172, 0.8129044, -1.2607355)
+transform = Transform3D(0.99705166, 0.011625009, 0.07584739, -0.0038825406, -0.97954816, 0.20117159, 0.0766348, -0.200873, -0.9766149, 0.49668172, 0.8129044, -1.2607355)
 
 [node name="HookAttachement" parent="Orientation/Head/FishingRod/HookLine" parent_id_path=PackedInt32Array(949060003, 12906906) index="2" unique_id=213436148]
-transform = Transform3D(0.9970298, 0.0024704253, 0.076975934, -0.00082512904, -0.99908525, 0.04275156, 0.07701114, -0.042688098, -0.99611574, 0.5002056, 0.31824595, -1.3216257)
+transform = Transform3D(0.9970298, 0.002470429, 0.07697593, -0.00082515366, -0.9990851, 0.042751845, 0.07701113, -0.042688455, -0.9961157, 0.5002056, 0.31824607, -1.3216258)
 
 [node name="FmodListener3D" type="FmodListener3D" parent="Orientation/Head" unique_id=463241591]
 
 [node name="Movement" type="Node3D" parent="." unique_id=302736872 node_paths=PackedStringArray("_footsteps_sfx")]
 script = ExtResource("5_qiwj3")
+_footsteps_freq = 1.0
 _footsteps_sfx = NodePath("SFX/FootSteps")
 
 [node name="GroundCheck" type="ShapeCast3D" parent="Movement" unique_id=1000335560]
