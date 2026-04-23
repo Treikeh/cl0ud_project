@@ -33,6 +33,7 @@ _junk_curve = SubResource("Curve_hp128")
 
 [node name="DayNightCycle" parent="." unique_id=50702471 instance=ExtResource("1_b2fg0")]
 transform = Transform3D(-0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.7071068, 0, 4.1425443, -3.334785)
+_minutes_in_day = 1.0
 
 [node name="FogVolume" type="FogVolume" parent="." unique_id=1815325357]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.007267, -14.278646, -90.03728)
