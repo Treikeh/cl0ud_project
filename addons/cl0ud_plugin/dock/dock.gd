@@ -207,6 +207,7 @@ func _create_fish_data(data: Array[PackedStringArray], file_paths: Dictionary) -
 			"NOTE":
 				# Get note data
 				var text: String = row[2]
+				text = text.replace("/n", "\n")
 				
 				# Set note data
 				if fish == null:
@@ -225,6 +226,7 @@ func _create_fish_data(data: Array[PackedStringArray], file_paths: Dictionary) -
 				recipient = recipient.strip_edges()
 				
 				var content_text: String = text.substr(r_end + 1, text.length() - r_end)
+				content_text = content_text.replace("/n", "\n")
 				var content: Array = content_text.split("{")
 				content.pop_front()
 				

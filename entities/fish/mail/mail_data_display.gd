@@ -6,8 +6,6 @@ extends FishDataDisplay
 @export var _subject_label: Label
 @export var _content_label: RichTextLabel
 
-@export var _test: MailData
-
 
 func with_data(data: FishData) -> FishDataDisplay:
 	if data is MailData:
@@ -16,7 +14,3 @@ func with_data(data: FishData) -> FishDataDisplay:
 		_subject_label.text = data.subject
 		_content_label.text = data.content
 	return self
-
-
-func _ready() -> void:
-	with_data(_test)

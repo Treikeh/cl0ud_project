@@ -4,8 +4,6 @@ extends FishDataDisplay
 @export var _message_root: VBoxContainer
 var _data: MessageData
 
-@export var _test: MessageData
-
 func with_data(data: FishData) -> FishDataDisplay:
 	if data is MessageData:
 		_data = data
@@ -13,7 +11,6 @@ func with_data(data: FishData) -> FishDataDisplay:
 
 
 func _ready() -> void:
-	_data = _test
 	for message: Dictionary in _data.messages:
 		# Get label text
 		var text: String = message.WHO + "\n"

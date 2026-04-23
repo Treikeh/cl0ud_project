@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dvohwdqt3uio0"]
+
+[ext_resource type="Resource" uid="uid://bhyc1qj7muslk" path="res://common/data/fish/note_crazy_data_01.tres" id="1_c618d"]
+[ext_resource type="Texture2D" uid="uid://bopc0krq46by3" path="res://entities/fish/note/note_icon.png" id="2_mnd8b"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/scripts/inventory/item_data.gd" id="3_tig11"]
+
+[resource]
+script = ExtResource("3_tig11")
+name = "The Crazy Note"
+value = 7
+type = "NOTE"
+icon = ExtResource("2_mnd8b")
+mesh_scene = "res://entities/fish/note/note_mesh.tscn"
+fish_data = ExtResource("1_c618d")
