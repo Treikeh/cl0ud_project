@@ -4,5 +4,21 @@
 
 [resource]
 script = ExtResource("1_7o1ui")
-sender = ""
+sender = "Per {receiver}Pål | {from} Har du hørt? | Om Espen? {to} Nei | Hva har han gjort nå? {from} Han er ute på eventry igjen..."
 recipient = ""
+messages = Array[Dictionary]([{
+"LINES": ["sender}Per "],
+"WHO": "Per {receiver}Pål | {from} Har du hørt? | Om Espen? {to} Nei | Hva har han gjort nå? {from} Han er ute på eventry igjen..."
+}, {
+"LINES": ["receiver}Pål ", " "],
+"WHO": "Per {receiver}Pål | {from} Har du hørt? | Om Espen? {to} Nei | Hva har han gjort nå? {from} Han er ute på eventry igjen..."
+}, {
+"LINES": [" Har du hørt? ", " Om Espen? "],
+"WHO": ""
+}, {
+"LINES": [" Nei ", " Hva har han gjort nå? "],
+"WHO": "Per {receiver}Pål | {from} Har du hørt? | Om Espen? {to} Nei | Hva har han gjort nå? {from} Han er ute på eventry igjen..."
+}, {
+"LINES": [" Han er ute på eventry igjen..."],
+"WHO": ""
+}])

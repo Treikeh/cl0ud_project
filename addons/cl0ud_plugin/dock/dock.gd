@@ -188,7 +188,10 @@ func _create_fish_data(data: Array[PackedStringArray], file_paths: Dictionary) -
 				var to: int = text.find("{to}")
 				var subject: int = text.find("{subject}")
 				var content: int = text.find("{content}")
-				
+			
+				var from_text: String = text.substr(from, to - from).trim_prefix("{from}")
+				var to_text: String = text.substr(to, subject - to).trim_prefix("{to}")
+				var subject_text: String = text.substr(subject, content - subject).trim_prefix("{subject}")
 				var content_text: String = text.substr(content, text.length() - content).trim_prefix("{content}")
 				# Turn fake new line markers into real new line markers
 				content_text = content_text.replace("/n", "\n")
@@ -197,9 +200,9 @@ func _create_fish_data(data: Array[PackedStringArray], file_paths: Dictionary) -
 				if fish == null:
 					fish = MailData.new()
 				# Get parts of the string that match with the different parts
-				fish.from = text.substr(from, to - from).trim_prefix("{from}")
-				fish.to = text.substr(to, subject - to).trim_prefix("{to}")
-				fish.subject = text.substr(subject, content - subject).trim_prefix("{subject}")
+				fish.from = from_text
+				fish.to = to_text
+				fish.subject = subject_text
 				fish.content = content_text
 			"NOTE":
 				# Get note data

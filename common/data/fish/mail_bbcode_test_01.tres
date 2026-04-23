@@ -8,4 +8,4 @@ from = "Per "
 to = "Pål "
 subject = "Espen "
 content = "Han 
- er [color=green]ute[/color] på eventyr"
+ er {color=green}ute{/color} på eventyr"

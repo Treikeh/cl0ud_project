@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_02ify")
-from = ""
-to = ""
-subject = ""
-content = ""
+from = "Per "
+to = "Pål "
+subject = "Espen "
+content = "Han er ute på eventyr"

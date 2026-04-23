@@ -4,7 +4,10 @@
 
 [resource]
 script = ExtResource("1_mh5jp")
-from = ""
-to = ""
-subject = ""
-content = ""
+from = "Johnny "
+to = "Terry "
+subject = "Beer Party "
+content = "YO TERRY! 
+ There is gonna be this crazy beer party on Concrete Avenue Street 4. Ryan is bringing all of his craft beers from that legendary Yukon valley brewery! 
+ You gotta be there! 
+ -Johnny"
