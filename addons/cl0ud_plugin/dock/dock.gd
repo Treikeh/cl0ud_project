@@ -217,13 +217,13 @@ func _create_fish_data(data: Array[PackedStringArray], file_paths: Dictionary) -
 				# Get message data
 				var text: String = row[2]
 				var s_start: int = text.find("{sender}")
-				var r_start: int = text.find("{reciver}")
+				var r_start: int = text.find("{receiver}")
 				var r_end: int = text.find("|", r_start)
 				
 				var sender: String = text.substr(s_start, r_start - s_start).trim_prefix("{sender}")
-				sender = sender.strip_edges()
-				var recipient: String = text.substr(r_start, r_end - r_start).trim_prefix("{reciver}")
-				recipient = recipient.strip_edges()
+				#sender = sender.strip_edges()
+				var recipient: String = text.substr(r_start, r_end - r_start).trim_prefix("{receiver}")
+				#recipient = recipient.strip_edges()
 				
 				var content_text: String = text.substr(r_end + 1, text.length() - r_end)
 				content_text = content_text.replace("/n", "\n")

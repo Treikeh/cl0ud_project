@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="JunkData" format=3 uid="uid://drxvhaq5la0yc"]
 
-[ext_resource type="Script" uid="uid://do4nr47jj2g8p" path="res://entities/fish/junk/junk_data.gd" id="1_2teqm"]
+[ext_resource type="Script" uid="uid://do4nr47jj2g8p" path="res://entities/fish/junk/junk_data.gd" id="1_th3wj"]
 
 [resource]
-script = ExtResource("1_2teqm")
+script = ExtResource("1_th3wj")

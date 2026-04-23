@@ -4,27 +4,21 @@
 
 [resource]
 script = ExtResource("1_wpb0l")
-sender = "Per {receiver}Pål | {from}Har du hørt? | Om Espen? {to} Nei | Hva har han gjort nå? {from} Han er {b}ute{/b} på eventry igjen..."
-recipient = ""
+sender = "Per "
+recipient = "Pål "
 messages = Array[Dictionary]([{
-"LINES": ["sender}Per "],
-"WHO": "Per {receiver}Pål | {from}Har du hørt? | Om Espen? {to} Nei | Hva har han gjort nå? {from} Han er {b}ute{/b} på eventry igjen..."
-}, {
-"LINES": ["receiver}Pål ", " "],
-"WHO": "Per {receiver}Pål | {from}Har du hørt? | Om Espen? {to} Nei | Hva har han gjort nå? {from} Han er {b}ute{/b} på eventry igjen..."
-}, {
 "LINES": ["Har du hørt? ", " Om Espen? "],
-"WHO": ""
+"WHO": "Pål "
 }, {
 "LINES": [" Nei ", " Hva har han gjort nå? "],
-"WHO": "Per {receiver}Pål | {from}Har du hørt? | Om Espen? {to} Nei | Hva har han gjort nå? {from} Han er {b}ute{/b} på eventry igjen..."
+"WHO": "Per "
 }, {
 "LINES": [" Han er "],
-"WHO": ""
+"WHO": "Pål "
 }, {
 "LINES": ["b}ute"],
-"WHO": "Per {receiver}Pål | {from}Har du hørt? | Om Espen? {to} Nei | Hva har han gjort nå? {from} Han er {b}ute{/b} på eventry igjen..."
+"WHO": "Per "
 }, {
 "LINES": ["/b} på eventry igjen..."],
-"WHO": "Per {receiver}Pål | {from}Har du hørt? | Om Espen? {to} Nei | Hva har han gjort nå? {from} Han er {b}ute{/b} på eventry igjen..."
+"WHO": "Per "
 }])

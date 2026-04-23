@@ -1,24 +1,18 @@
 [gd_resource type="Resource" script_class="MessageData" format=3 uid="uid://bmpnbwkkrtagm"]
 
-[ext_resource type="Script" uid="uid://knk2w0s0q2la" path="res://entities/fish/message/message_data.gd" id="1_1dxm5"]
+[ext_resource type="Script" uid="uid://knk2w0s0q2la" path="res://entities/fish/message/message_data.gd" id="1_r7bt5"]
 
 [resource]
-script = ExtResource("1_1dxm5")
-sender = "Per {receiver}Pål {from} Har du hørt? | Om Espen? {to} Nei | Hva har han gjort nå? {from} Han er ute på eventry igjen..."
-recipient = ""
+script = ExtResource("1_r7bt5")
+sender = "Per "
+recipient = "Pål "
 messages = Array[Dictionary]([{
-"LINES": ["sender}Per "],
-"WHO": "Per {receiver}Pål {from} Har du hørt? | Om Espen? {to} Nei | Hva har han gjort nå? {from} Han er ute på eventry igjen..."
-}, {
-"LINES": ["receiver}Pål "],
-"WHO": "Per {receiver}Pål {from} Har du hørt? | Om Espen? {to} Nei | Hva har han gjort nå? {from} Han er ute på eventry igjen..."
-}, {
 "LINES": [" Har du hørt? ", " Om Espen? "],
-"WHO": ""
+"WHO": "Pål "
 }, {
 "LINES": [" Nei ", " Hva har han gjort nå? "],
-"WHO": "Per {receiver}Pål {from} Har du hørt? | Om Espen? {to} Nei | Hva har han gjort nå? {from} Han er ute på eventry igjen..."
+"WHO": "Per "
 }, {
 "LINES": [" Han er ute på eventry igjen..."],
-"WHO": ""
+"WHO": "Pål "
 }])

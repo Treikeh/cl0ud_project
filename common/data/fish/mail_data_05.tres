@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="MailData" format=3 uid="uid://cqvyhgx883oy4"]
 
-[ext_resource type="Script" uid="uid://bgk7ttf5teu14" path="res://entities/fish/mail/mail_data.gd" id="1_02ify"]
+[ext_resource type="Script" uid="uid://bgk7ttf5teu14" path="res://entities/fish/mail/mail_data.gd" id="1_wrb67"]
 
 [resource]
-script = ExtResource("1_02ify")
+script = ExtResource("1_wrb67")
 from = "Per "
 to = "Pål "
 subject = "Espen "

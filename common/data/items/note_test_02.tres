@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://boufrq32wtpv1"]
 
-[ext_resource type="Resource" uid="uid://54o2oumiv5ml" path="res://common/data/fish/note_data_02.tres" id="1_rfpyc"]
-[ext_resource type="Texture2D" uid="uid://bopc0krq46by3" path="res://entities/fish/note/note_icon.png" id="2_rkoyi"]
-[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/scripts/inventory/item_data.gd" id="3_l4rb0"]
+[ext_resource type="Resource" uid="uid://54o2oumiv5ml" path="res://common/data/fish/note_data_02.tres" id="1_s1n3c"]
+[ext_resource type="Texture2D" uid="uid://bopc0krq46by3" path="res://entities/fish/note/note_icon.png" id="2_rer7p"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/scripts/inventory/item_data.gd" id="3_mqrp8"]
 
 [resource]
-script = ExtResource("3_l4rb0")
+script = ExtResource("3_mqrp8")
 name = "Note 02"
 value = 6
 type = "NOTE"
-icon = ExtResource("2_rkoyi")
+icon = ExtResource("2_rer7p")
 mesh_scene = "res://entities/fish/note/note_mesh.tscn"
-fish_data = ExtResource("1_rfpyc")
+fish_data = ExtResource("1_s1n3c")
