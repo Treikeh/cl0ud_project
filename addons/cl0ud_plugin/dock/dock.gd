@@ -1,9 +1,9 @@
 @tool
 extends Control
 
-const ITEM_SAVE_PATH: String = "res://common/items/"
-const FISH_DATA_SAVE_PATH: String = "res://entities/fish/"
-const DIALOGUE_SAVE_PATH: String = "res://common/dialogue/"
+const ITEM_SAVE_PATH: String = "res://common/data/items/"
+const FISH_DATA_SAVE_PATH: String = "res://common/data/fish/"#"res://entities/fish/"
+const DIALOGUE_SAVE_PATH: String = "res://common/data/dialogue/"
 
 var _file_paths: Dictionary = {}
 var _debug_settings: Dictionary = {}
@@ -122,40 +122,43 @@ func _create_item_resources(data: Array[PackedStringArray], file_paths: Dictiona
 		var item_name: String = row[1]
 		#var description: String = row[2]
 		var value: int = str_to_var(row[3])
-		var type: String = row[4]
+		var fish_data_path: String = row[4]
+		
 		var icon: Texture
 		var mesh_scene: String
 		var fish_data: FishData
+		var item_type: String
 		
-		var is_fish_item: bool = Fish.Type.keys().has(type)
-		if is_fish_item:
-			var fish_type: String = type.to_lower()
+		if fish_data_path != "":
+			fish_data = load(FISH_DATA_SAVE_PATH + fish_data_path + ".tres")
+			var fish_type: String = fish_data.get_type().to_lower()
 			# Get stuff from fish data
+			item_type = fish_type.to_upper()
 			icon = load("res://entities/fish/%s/%s_icon.png" % [fish_type, fish_type])
 			mesh_scene = "res://entities/fish/%s/%s_mesh.tscn" % [fish_type, fish_type]
-			fish_data = load("res://entities/fish/%s/data/%s.tres" % [fish_type, row[7]])
-			
+		
 			# Add fish item to fish loot table
 			# Get the loot table of the fish type
 			var type_loot_table: Dictionary = {}
-			if loot_table.has(type):
-				type_loot_table = loot_table[type]
+			if loot_table.has(item_type):
+				type_loot_table = loot_table[item_type]
 			
 			# Create and add new loot entry for fish
-			var loot_entry: Dictionary = { path: row[8] }
+			var loot_entry: Dictionary = { path: row[5] }
 			type_loot_table.merge(loot_entry)
 			
 			# Update loot table
-			loot_table[type] = type_loot_table
+			loot_table[item_type] = type_loot_table
 		else:
-			icon = load(row[5])
-			mesh_scene = row[6]
+			item_type = row[6]
+			icon = load(row[7])
+			mesh_scene = row[8]
 		
 		# Set item data
 		item.name = item_name
 		item.value = value
-		item.type = type
 		item.icon = icon
+		item.type = item_type
 		item.mesh_scene = mesh_scene
 		item.fish_data = fish_data
 		
@@ -168,7 +171,7 @@ func _create_fish_data(data: Array[PackedStringArray], file_paths: Dictionary) -
 	for row: PackedStringArray in data:
 		var id: String = row[0]
 		var type: String = row[1]
-		var path: String = FISH_DATA_SAVE_PATH + type.to_lower() + "/data/" + id + ".tres"
+		var path: String = FISH_DATA_SAVE_PATH + id + ".tres"
 		
 		var fish: FishData
 		if _file_exists(file_paths, id):
@@ -181,20 +184,23 @@ func _create_fish_data(data: Array[PackedStringArray], file_paths: Dictionary) -
 				# Get mail data
 				var text: String = row[2]
 				# Get where the differnt parts starts
-				var from: int = text.find("[f]")
-				var to: int = text.find("[t]")
-				var subject: int = text.find("[s]")
-				var content: int = text.find("[c]")
+				var from: int = text.find("{from}")
+				var to: int = text.find("{to}")
+				var subject: int = text.find("{subject}")
+				var content: int = text.find("{content}")
+				
+				var content_text: String = text.substr(content, text.length() - content).trim_prefix("{content}")
+				# Turn fake new line markers into real new line markers
+				content_text = content_text.replace("/n", "\n")
 				
 				# Set mail data
 				if fish == null:
 					fish = MailData.new()
 				# Get parts of the string that match with the different parts
-				fish.from = text.substr(from, to - from).trim_prefix("[f]")
-				fish.to = text.substr(to, subject - to).trim_prefix("[t]")
-				fish.subject = text.substr(subject, content - subject).trim_prefix("[s]")
-				fish.content = text.substr(content, text.length() - content).trim_prefix("[c]")
-				#print("From: %s, To: %s, Subject: %s, Content: %s" % [fish.from, fish.to, fish.subject, fish.content])
+				fish.from = text.substr(from, to - from).trim_prefix("{from}")
+				fish.to = text.substr(to, subject - to).trim_prefix("{to}")
+				fish.subject = text.substr(subject, content - subject).trim_prefix("{subject}")
+				fish.content = content_text
 			"NOTE":
 				# Get note data
 				var text: String = row[2]
@@ -206,27 +212,27 @@ func _create_fish_data(data: Array[PackedStringArray], file_paths: Dictionary) -
 			"MESSAGE":
 				# Get message data
 				var text: String = row[2]
-				var s_start: int = text.find("[s]")
-				var r_start: int = text.find("[r]")
-				var r_end: int = text.find(" [", r_start)
+				var s_start: int = text.find("{sender}")
+				var r_start: int = text.find("{reciver}")
+				var r_end: int = text.find("|", r_start)
 				
-				var sender: String = text.substr(s_start, r_start - s_start).trim_prefix("[s]")
-				var recipient: String = text.substr(r_start, r_end - r_start).trim_prefix("[r]")
+				var sender: String = text.substr(s_start, r_start - s_start).trim_prefix("{sender}")
+				sender = sender.strip_edges()
+				var recipient: String = text.substr(r_start, r_end - r_start).trim_prefix("{reciver}")
+				recipient = recipient.strip_edges()
 				
-				var content: Array = text.split("[")
-				# Remove the frist few useless lines
-				content.pop_front()
-				content.pop_front()
+				var content_text: String = text.substr(r_end + 1, text.length() - r_end)
+				var content: Array = content_text.split("{")
 				content.pop_front()
 				
 				# Set up the messages array
 				var messages: Array[Dictionary] = []
 				for message: String in content:
 					var lines: Array = message.split("|")
-					lines[0] = lines[0].trim_prefix("f]").trim_prefix("t]")
-					var who: String = recipient if message.begins_with("f]") else sender
+					lines[0] = lines[0].trim_prefix("from}").trim_prefix("to}").trim_prefix("system}")
+					var who: String = recipient if message.begins_with("from}") else sender
 					var dict: Dictionary = {
-						"WHO": who,
+						"WHO": who if not message.begins_with("system}") else "SYSTEM",
 						"LINES": lines
 					}
 					messages.append(dict)
@@ -235,13 +241,13 @@ func _create_fish_data(data: Array[PackedStringArray], file_paths: Dictionary) -
 				if fish == null:
 					fish = MessageData.new()
 				fish.sender = sender
-				fish.recipient = sender
+				fish.recipient = recipient
 				fish.messages = messages
 			"JUNK":
 				if fish == null:
 					fish = JunkData.new()
 		
-		_save_resource(fish, path, file_paths, id)	
+		_save_resource(fish, path, file_paths, id)
 
 
 func _create_dialogue_resources(data: Array[PackedStringArray], file_paths: Dictionary) -> void:

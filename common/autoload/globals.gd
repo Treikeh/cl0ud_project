@@ -14,7 +14,7 @@ signal day_started
 signal day_ended
 
 
-const FISH_LOOT_TABLE_FILE: String = "res://common/items/_fish_loot_table.ini"
+const FISH_LOOT_TABLE_FILE: String = "res://common/data/items/_fish_loot_table.ini"
 
 var hook_distance: float = 0.0
 var time_of_day: float = 5.0

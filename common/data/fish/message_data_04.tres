@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="MessageData" format=3 uid="uid://ddbbkykcvwjwm"]
+
+[ext_resource type="Script" uid="uid://knk2w0s0q2la" path="res://entities/fish/message/message_data.gd" id="1_xjfix"]
+
+[resource]
+script = ExtResource("1_xjfix")
+sender = ""
+recipient = ""

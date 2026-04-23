@@ -11,7 +11,7 @@ radius = 2.0
 _default_look_position = NodePath("DefaultLookPosition")
 _animation = ExtResource("2_tion6")
 
-[node name="Skeleton3D" parent="." index="0" unique_id=828304975]
+[node name="Skeleton3D" parent="." index="0" unique_id=1477950014]
 bones/2/position = Vector3(8.885667e-16, 0.067006476, 0.9022027)
 bones/3/rotation = Quaternion(-0.020237816, 1.5096494e-07, 1.88772e-15, 0.9997952)
 bones/4/rotation = Quaternion(0.1183377, -1.4993482e-07, 3.577384e-15, 0.9929735)
@@ -39,7 +39,7 @@ origin_offset = Vector3(0, 0.2, 0)
 duration = 0.4
 use_angle_limitation = true
 symmetry_limitation = true
-primary_limit_angle = 1.0471976
+primary_limit_angle = 2.443461
 primary_damp_threshold = 1.0
 secondary_limit_angle = 6.2831855
 secondary_damp_threshold = 1.0

@@ -16,60 +16,18 @@ var item_data: ItemData
 
 func _ready() -> void:
 	var type: String = _get_random_type()
-	if randi() & 1:
-		item_data = _create_item_data(type)
-		print("Create item data")
-	else:
-		print("Load item data")
-		item_data = _get_random_item_from_loot_table(type)
-	#item_data = _get_random_item_from_loot_table(type)
+	item_data = _get_random_item_from_loot_table(type)
+	#if randi() & 1:
+	#	item_data = _create_item_data(type)
+	#	print("Create item data")
+	#else:
+	#	print("Load item data")
+	##item_data = _get_random_item_from_loot_table(type)
 	
 	
 	# Spawn fish mesh
 	var mesh: Node3D = load(item_data.mesh_scene).instantiate()
 	add_child(mesh)
-
-
-func _create_item_data(type: String) -> ItemData:
-	# Get fish type as text and its files path
-	var files_path: String = FOLDER_PATH + type.to_lower() + "/"
-	var fish_data: String = _get_fish_data_path(files_path)
-	
-	# Create dict with all the data the ItemData class needs
-	var data: Dictionary = {
-		"name": str(randi_range(0, 10000)),
-		"value": randi_range(5, 25),
-		"type": type,
-		"icon": files_path + type.to_lower() + "_icon.png",
-		"mesh_scene": files_path + type.to_lower() + "_mesh.tscn",
-		"fish_data": fish_data
-	}
-	return ItemData.new(data)
-
-
-func _get_random_item_from_loot_table(type: String) -> ItemData:
-	# Loot table to the type of fish
-	var type_loot_table: Dictionary = Globals.fish_loot_table[type]
-	type_loot_table.sort()
-	
-	# Get the total rarity of all the fish in the loot table
-	#var total_rarity: int = 0
-	#for fish: String in type_loot_table:
-	#	total_rarity += int(type_loot_table[fish])
-	
-	var item_path: String = type_loot_table.keys()[0]
-	var max_roll: int = int(Globals.hook_distance)
-	var max_value: int = int(type_loot_table.values()[-1])
-	if max_roll > max_value:
-		max_roll = max_value - 1
-	var roll: int = randi_range(0, max_roll)
-	for item: String in type_loot_table:
-		var rarity: int = int(type_loot_table[item])
-		if roll < rarity:
-			item_path = item
-			print("Fish rarity: %s, Roll: %s, Hook distance: %s" % [rarity, roll, Globals.hook_distance])
-			break
-	return load(item_path)
 
 
 func _get_random_type() -> String:
@@ -105,6 +63,50 @@ func _get_random_type() -> String:
 	#TODO: Get a random fish based on the chances
 	var type_as_text: String = Type.keys()[type]
 	return type_as_text
+
+
+func _get_random_item_from_loot_table(type: String) -> ItemData:
+	# Loot table to the type of fish
+	var type_loot_table: Dictionary = Globals.fish_loot_table[type]
+	type_loot_table.sort()
+	
+	# Get the total rarity of all the fish in the loot table
+	#var total_rarity: int = 0
+	#for fish: String in type_loot_table:
+	#	total_rarity += int(type_loot_table[fish])
+	
+	var item_path: String = type_loot_table.keys()[0]
+	var max_roll: int = int(Globals.hook_distance)
+	var max_value: int = int(type_loot_table.values()[-1])
+	if max_roll > max_value:
+		max_roll = max_value - 1
+	var roll: int = randi_range(0, max_roll)
+	for item: String in type_loot_table:
+		var rarity: int = int(type_loot_table[item])
+		if roll < rarity:
+			item_path = item
+			print("Fish rarity: %s, Roll: %s, Hook distance: %s" % [rarity, roll, Globals.hook_distance])
+			break
+	return load(item_path)
+
+
+#region Generate fish
+
+func _create_item_data(type: String) -> ItemData:
+	# Get fish type as text and its files path
+	var files_path: String = FOLDER_PATH + type.to_lower() + "/"
+	var fish_data: String = _get_fish_data_path(files_path)
+	
+	# Create dict with all the data the ItemData class needs
+	var data: Dictionary = {
+		"name": str(randi_range(0, 10000)),
+		"value": randi_range(5, 25),
+		"type": type,
+		"icon": files_path + type.to_lower() + "_icon.png",
+		"mesh_scene": files_path + type.to_lower() + "_mesh.tscn",
+		"fish_data": fish_data
+	}
+	return ItemData.new(data)
 
 
 # Get a random data file from the flder of the fish type

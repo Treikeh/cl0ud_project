@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bkfoj6a5cs277"]
+
+[ext_resource type="Script" uid="uid://cdtvwovdkjing" path="res://common/scripts/dialogue_interact_area/dialogue_interact_area_3d.gd" id="1_v16p8"]
+
+[node name="DialogueInteractArea3D" type="Area3D" unique_id=465762898]
+collision_layer = 16
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_v16p8")
+prompt = "Talk"
+metadata/_custom_type_script = "uid://bnft5uq1tqk2w"

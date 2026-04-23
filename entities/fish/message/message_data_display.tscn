@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d30nisxmluxd1"]
 
 [ext_resource type="Script" uid="uid://dcgit0e41onmc" path="res://entities/fish/message/message_data_display.gd" id="1_pilat"]
+[ext_resource type="Resource" uid="uid://bbttxjoyjhrx" path="res://common/data/fish/message_bbcode_test_01.tres" id="2_gsv0e"]
 
 [node name="MessageDataDisplay" type="Control" unique_id=307770116 node_paths=PackedStringArray("_message_root")]
 layout_mode = 3
@@ -10,12 +11,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pilat")
-_message_root = NodePath("PanelContainer/MessagesRoot")
+_message_root = NodePath("PanelContainer/ScrollContainer/MessagesRoot")
+_test = ExtResource("2_gsv0e")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1779217254]
 layout_mode = 0
-offset_right = 265.0
-offset_bottom = 50.0
+offset_right = 729.0
+offset_bottom = 610.0
 
-[node name="MessagesRoot" type="VBoxContainer" parent="PanelContainer" unique_id=635444931]
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer" unique_id=223608402]
 layout_mode = 2
+
+[node name="MessagesRoot" type="VBoxContainer" parent="PanelContainer/ScrollContainer" unique_id=635444931]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

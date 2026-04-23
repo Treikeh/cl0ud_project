@@ -6,4 +6,4 @@
 script = ExtResource("1_k8agx")
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=88466121]
-bank_paths = ["res://common/fmod_banks/Desktop//Master.strings.bank", "res://common/fmod_banks/Desktop//Master.bank", "res://common/fmod_banks/Desktop//Actions.bank", "res://common/fmod_banks/Desktop//Ambience.bank", "res://common/fmod_banks/Desktop//UI.bank"]
+bank_paths = ["res://common/fmod_banks/Desktop//Master.strings.bank", "res://common/fmod_banks/Desktop//Master.bank", "res://common/fmod_banks/Desktop//Actions.bank", "res://common/fmod_banks/Desktop//Ambience.bank", "res://common/fmod_banks/Desktop//UI.bank", "res://common/fmod_banks/Desktop//Music.bank"]

@@ -1,3 +1,4 @@
+@tool
 extends FishData
 class_name MessageData
 
@@ -9,3 +10,6 @@ class_name MessageData
 
 func get_display_scene() -> String:
 	return "uid://d30nisxmluxd1"
+
+func get_type() -> String:
+	return Fish.Type.keys()[Fish.Type.MESSAGE]

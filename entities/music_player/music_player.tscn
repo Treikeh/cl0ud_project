@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://16hefv04ucbs"]
+
+[ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="1_1t21v"]
+[ext_resource type="Script" uid="uid://bo0a3g1mqs7ng" path="res://entities/music_player/music_player.gd" id="1_5lvtd"]
+[ext_resource type="Script" uid="uid://b2x6jepn4j23" path="res://common/scripts/hide_on_ready.gd" id="2_6wyhc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iq13m"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1t21v"]
+
+[node name="MusicPlayer" type="Node3D" unique_id=978888495 node_paths=PackedStringArray("_audio_emitter", "_interact_area")]
+script = ExtResource("1_5lvtd")
+_audio_emitter = NodePath("FmodEventEmitter3D")
+_interact_area = NodePath("InteractArea3D")
+
+[node name="InteractArea3D" parent="." unique_id=1933536461 instance=ExtResource("1_1t21v")]
+prompt = "Pause"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea3D" unique_id=387469676]
+shape = SubResource("BoxShape3D_iq13m")
+
+[node name="DebugMesh" type="MeshInstance3D" parent="." unique_id=335272658]
+mesh = SubResource("BoxMesh_1t21v")
+script = ExtResource("2_6wyhc")
+
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="." unique_id=566728372]
+event_name = "event:/Music/Radio"
+event_guid = "{56e6350d-cff2-4455-b413-55f5aea24db7}"
+autoplay = true
+
+[connection signal="interacted" from="InteractArea3D" to="." method="_on_interacted"]

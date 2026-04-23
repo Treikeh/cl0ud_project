@@ -40,7 +40,6 @@ func _process(delta: float) -> void:
 	
 	var noise_map_value: float = _balance_vars.fish_type_move_maps[Fish.Type.MAIL].get_noise_1d(_time)
 	_hit_area_rotation_direction = 1.0 if noise_map_value > 0.0 else -1.0
-	print(_hit_area_rotation_direction)
 	
 	# Use hook distance to modify the rotation speed
 	var rot_speed: float = _balance_vars.hit_area_move_speed_curve.sample(Globals.hook_distance)

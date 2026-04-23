@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://doe0w0kgn8ehr" path="res://levels/days/days.gd" id="1_85oi3"]
 [ext_resource type="PackedScene" uid="uid://8vuuaq87rbum" path="res://levels/main_level/main_level.tscn" id="1_wbuex"]
 [ext_resource type="PackedScene" uid="uid://d03dern16pwcb" path="res://entities/characters/nils/day_01_nils.tscn" id="3_85oi3"]
+[ext_resource type="PackedScene" uid="uid://16hefv04ucbs" path="res://entities/music_player/music_player.tscn" id="4_ahgqq"]
 
 [node name="Day01" type="Node3D" unique_id=1476344830]
 script = ExtResource("1_85oi3")
@@ -14,3 +15,6 @@ _next_day = "uid://fcaru7tgmibi"
 
 [node name="Nils" parent="Characters" unique_id=1391229992 instance=ExtResource("3_85oi3")]
 transform = Transform3D(0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, 0.50000006, -4.2798023, 2.487089, -0.46151805)
+
+[node name="MusicPlayer" parent="Characters" unique_id=978888495 instance=ExtResource("4_ahgqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.420695, 3.6429343, -10.911379)

@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://wq387qckissl" path="res://entities/characters/vendor/vendor.gd" id="1_72uc0"]
 [ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/scripts/dialogue_data.gd" id="2_tuhri"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="2_x7g4j"]
-[ext_resource type="Resource" uid="uid://dvrns5pqu5cg6" path="res://common/dialogue/vendor_interact_01.tres" id="3_qccll"]
-[ext_resource type="Resource" uid="uid://bfj0yooguti2i" path="res://common/dialogue/vendor_nevermind_01.tres" id="4_0svej"]
-[ext_resource type="Resource" uid="uid://cxho0e6xi5h75" path="res://common/dialogue/vendor_close_shop_01.tres" id="5_5rk7m"]
+[ext_resource type="Resource" uid="uid://dvrns5pqu5cg6" path="res://common/data/dialogue/vendor_interact_01.tres" id="3_qccll"]
+[ext_resource type="Resource" uid="uid://bfj0yooguti2i" path="res://common/data/dialogue/vendor_nevermind_01.tres" id="4_0svej"]
+[ext_resource type="Resource" uid="uid://cxho0e6xi5h75" path="res://common/data/dialogue/vendor_close_shop_01.tres" id="5_5rk7m"]
 [ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="6_qccll"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://bjdc7oiy473ob" path="res://entities/characters/vendor/vendor_anim_sm.tres" id="8_5rk7m"]
 
@@ -26,7 +26,7 @@ _skin = "Vendor"
 _animation = ExtResource("8_5rk7m")
 
 [node name="HeadMarker" type="BoneAttachment3D" parent="." unique_id=229792294]
-transform = Transform3D(-1, 1.5186952e-08, -1.7351627e-07, 1.1815459e-08, 0.9998115, 0.019413978, 1.737784e-07, 0.019413978, -0.9998116, 3.6297178e-14, 1.6554214, 0.084229425)
+transform = Transform3D(-1, 5.2461395e-08, -4.4839578e-07, -5.43863e-08, 0.97199243, 0.23501207, 4.4816636e-07, 0.23501201, -0.97199255, 3.0166563e-14, 1.6562505, 0.102132425)
 bone_name = "head.001"
 bone_idx = 5
 use_external_skeleton = true

@@ -1,3 +1,4 @@
+@tool
 extends FishData
 class_name MailData
 
@@ -10,3 +11,6 @@ class_name MailData
 
 func get_display_scene() -> String:
 	return "uid://cyuo21l0gwdm5"
+
+func get_type() -> String:
+	return Fish.Type.keys()[Fish.Type.MAIL]

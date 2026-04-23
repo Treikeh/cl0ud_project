@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MessageData" format=3 uid="uid://bsbetmgdnn5nd"]
+
+[ext_resource type="Script" uid="uid://knk2w0s0q2la" path="res://entities/fish/message/message_data.gd" id="1_6kv6d"]
+
+[resource]
+script = ExtResource("1_6kv6d")
+sender = ""
+recipient = ""
+messages = Array[Dictionary]([{
+"LINES": ["f} Har du hørt? ", " Om Espen? [t] Nei ", " Hva har han gjort nå? [f] Han er ute på eventry igjen..."],
+"WHO": ""
+}])

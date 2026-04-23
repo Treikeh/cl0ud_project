@@ -5,5 +5,6 @@
 [node name="InteractArea3D" type="Area3D" unique_id=1933536461]
 collision_layer = 16
 collision_mask = 0
+monitoring = false
 script = ExtResource("1_yvegl")
 metadata/_custom_type_script = "uid://bnft5uq1tqk2w"
