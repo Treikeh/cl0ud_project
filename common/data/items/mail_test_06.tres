@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bd8kdh1va4qsv"]
 
-[ext_resource type="Resource" uid="uid://debltn1wkai4d" path="res://common/data/fish/mail_data_02.tres" id="1_7dqoa"]
-[ext_resource type="Texture2D" uid="uid://konw78nn60up" path="res://entities/fish/mail/mail_icon.png" id="2_q0cmw"]
-[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/scripts/inventory/item_data.gd" id="3_2uhsu"]
+[ext_resource type="Resource" uid="uid://debltn1wkai4d" path="res://common/data/fish/mail_data_02.tres" id="1_f6tts"]
+[ext_resource type="Texture2D" uid="uid://konw78nn60up" path="res://entities/fish/mail/mail_icon.png" id="2_27dc5"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/scripts/inventory/item_data.gd" id="3_vtueh"]
 
 [resource]
-script = ExtResource("3_2uhsu")
+script = ExtResource("3_vtueh")
 name = "Mail 06"
 value = 4
 type = "MAIL"
-icon = ExtResource("2_q0cmw")
+icon = ExtResource("2_27dc5")
 mesh_scene = "res://entities/fish/mail/mail_mesh.tscn"
-fish_data = ExtResource("1_7dqoa")
+fish_data = ExtResource("1_f6tts")

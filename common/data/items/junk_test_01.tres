@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://hmiylpgmctyx"]
 
-[ext_resource type="Texture2D" uid="uid://dqc0qqx14avd2" path="res://entities/fish/junk/junk_icon.png" id="1_8xx2o"]
-[ext_resource type="Resource" uid="uid://drxvhaq5la0yc" path="res://common/data/fish/junk_data_01.tres" id="1_sgvdp"]
-[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/scripts/inventory/item_data.gd" id="2_sgvdp"]
+[ext_resource type="Resource" uid="uid://drxvhaq5la0yc" path="res://common/data/fish/junk_data_01.tres" id="1_hnp78"]
+[ext_resource type="Texture2D" uid="uid://dqc0qqx14avd2" path="res://entities/fish/junk/junk_icon.png" id="2_te8pv"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/scripts/inventory/item_data.gd" id="3_6uhyq"]
 
 [resource]
-script = ExtResource("2_sgvdp")
+script = ExtResource("3_6uhyq")
 name = "Junk 01"
 value = 1
 type = "JUNK"
-icon = ExtResource("1_8xx2o")
+icon = ExtResource("2_te8pv")
 mesh_scene = "res://entities/fish/junk/junk_mesh.tscn"
-fish_data = ExtResource("1_sgvdp")
+fish_data = ExtResource("1_hnp78")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MailData" format=3 uid="uid://bsun26tbaip2m"]
+
+[ext_resource type="Script" uid="uid://bgk7ttf5teu14" path="res://entities/fish/mail/mail_data.gd" id="1_5m7e4"]
+
+[resource]
+script = ExtResource("1_5m7e4")
+from = "Johnny "
+to = "Terry "
+subject = "Beer Party "
+content = "YO TERRY! 
+ There is gonna be this crazy beer party on Concrete Avenue Street 4. Ryan is bringing all of his craft beers from that legendary Yukon valley brewery! 
+ You gotta be there! 
+ -Johnny"
