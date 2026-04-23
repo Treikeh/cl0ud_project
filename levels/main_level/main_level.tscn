@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bjn7ujpgp5jeh" path="res://levels/art/BuildingTwo/BuildingTwo.glb" id="8_ki8py"]
 [ext_resource type="PackedScene" uid="uid://cxn3pwn81mg6g" path="res://levels/art/BuildingOne/BuildingOne_2.glb" id="8_t80xa"]
 [ext_resource type="PackedScene" uid="uid://bj776d7ttynq7" path="res://levels/art/BuildingOne_3.glb" id="9_qywe3"]
+[ext_resource type="PackedScene" uid="uid://jy28a08t3w22" path="res://environment/lights/automatic_spot_light.tscn" id="11_dk47i"]
 
 [sub_resource type="Curve" id="Curve_hp128"]
 _limits = [0.0, 10.0, 0.0, 24.0]
@@ -81,3 +82,15 @@ transform = Transform3D(1.174144, 0, 0, 0, 1.1030219, 0, 0, 0, 1.277501, 398.038
 
 [node name="BuildingOne_3" parent="." unique_id=1946634505 instance=ExtResource("9_qywe3")]
 transform = Transform3D(1.4089911, 0, 0, 0, 1.0965421, 0, 0, 0, 1.1104906, 389.03696, -56.535595, 46.73665)
+
+[node name="AutomaticSpotLight" parent="." unique_id=1845424586 instance=ExtResource("11_dk47i")]
+transform = Transform3D(-0.49721622, 0, -0.86762667, 0, 1, 0, 0.86762667, 0, -0.49721622, -15.222596, 4.060165, -1.2774582)
+spot_range = 12.427
+spot_attenuation = -0.28
+spot_angle = 33.52
+
+[node name="AutomaticSpotLight2" parent="." unique_id=1549120822 instance=ExtResource("11_dk47i")]
+transform = Transform3D(-0.9659258, 0, -0.25881913, 0, 1, 0, 0.25881913, 0, -0.9659258, -7.8847528, 4.090805, -10.770191)
+spot_range = 11.551
+spot_attenuation = -0.34
+spot_angle = 39.56
