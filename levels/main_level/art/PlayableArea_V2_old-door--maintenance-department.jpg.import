@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvlr7b6b2ndpi"
-path.s3tc="res://.godot/imported/PlayableArea_V2_pngimg_17.png-fae4f860a87c717ded5c859b08b3d5ba.s3tc.ctex"
+uid="uid://bl2bpswt25krp"
+path.s3tc="res://.godot/imported/PlayableArea_V2_old-door--maintenance-department.jpg-da934f12ad004d7021f093dd3d72ea5b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "751be449f908b663614b03e09fa05a54"
+"md5": "bddbc5aa0bb9231ae63a9dc4a518f392"
 }
 
 [deps]
 
-source_file="res://levels/main_level/art/PlayableArea_V2_pngimg_17.png"
-dest_files=["res://.godot/imported/PlayableArea_V2_pngimg_17.png-fae4f860a87c717ded5c859b08b3d5ba.s3tc.ctex"]
+source_file="res://levels/main_level/art/PlayableArea_V2_old-door--maintenance-department.jpg"
+dest_files=["res://.godot/imported/PlayableArea_V2_old-door--maintenance-department.jpg-da934f12ad004d7021f093dd3d72ea5b.s3tc.ctex"]
 
 [params]
 
