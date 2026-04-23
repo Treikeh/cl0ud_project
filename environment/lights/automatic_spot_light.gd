@@ -31,4 +31,4 @@ func _process(_delta: float) -> void:
 	if time > _turn_on_time and not _is_on:
 		_is_on = true
 		var tween: Tween = create_tween().set_ease(_turn_on_off_ease).set_trans(_turn_on_off_trans)
-		tween.tween_property(self, "light_energy", light_energy, _turn_on_duration)
+		tween.tween_property(self, "light_energy", _light_energy, _turn_on_duration)
