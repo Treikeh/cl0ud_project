@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvlr7b6b2ndpi"
-path.s3tc="res://.godot/imported/PlayableArea_V2_pngimg_17.png-fae4f860a87c717ded5c859b08b3d5ba.s3tc.ctex"
+uid="uid://c1w4cx0py7w6i"
+path.s3tc="res://.godot/imported/PlayableArea_V2_TutorialWhiteboard_v2.png-4839debe5fd7f6354ca98cb3a9541c29.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "751be449f908b663614b03e09fa05a54"
+"md5": "790c5d73d6e3ed34e7af780e6ba56373"
 }
 
 [deps]
 
-source_file="res://levels/main_level/art/PlayableArea_V2_pngimg_17.png"
-dest_files=["res://.godot/imported/PlayableArea_V2_pngimg_17.png-fae4f860a87c717ded5c859b08b3d5ba.s3tc.ctex"]
+source_file="res://levels/main_level/art/PlayableArea_V2_TutorialWhiteboard_v2.png"
+dest_files=["res://.godot/imported/PlayableArea_V2_TutorialWhiteboard_v2.png-4839debe5fd7f6354ca98cb3a9541c29.s3tc.ctex"]
 
 [params]
 
@@ -25,12 +25,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=2
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://levels/main_level/art/PlayableArea_V2_TutorialWhiteboard_v2.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

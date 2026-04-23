@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvlr7b6b2ndpi"
-path.s3tc="res://.godot/imported/PlayableArea_V2_pngimg_17.png-fae4f860a87c717ded5c859b08b3d5ba.s3tc.ctex"
+uid="uid://dm3vjp73431y7"
+path.s3tc="res://.godot/imported/PlayableArea_V2_Vendor Sign.png-34031b820285c94e947f81d77cda9c05.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "751be449f908b663614b03e09fa05a54"
+"md5": "bc34082e6466cca4e53f983eaf2565ad"
 }
 
 [deps]
 
-source_file="res://levels/main_level/art/PlayableArea_V2_pngimg_17.png"
-dest_files=["res://.godot/imported/PlayableArea_V2_pngimg_17.png-fae4f860a87c717ded5c859b08b3d5ba.s3tc.ctex"]
+source_file="res://levels/main_level/art/PlayableArea_V2_Vendor Sign.png"
+dest_files=["res://.godot/imported/PlayableArea_V2_Vendor Sign.png-34031b820285c94e947f81d77cda9c05.s3tc.ctex"]
 
 [params]
 
