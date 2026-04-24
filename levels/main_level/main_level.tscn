@@ -49,7 +49,7 @@ debug_color = Color(0, 1, 0, 0.41960785)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6926503, 2.4760885, 11.769749)
 
 [node name="PlayerStartMarker" type="Marker3D" parent="." unique_id=46245944]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.511389, 3.5083027, 0.9735925)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.413929, 3.5083036, 4.860615)
 
 [node name="Player" parent="." unique_id=913738857 instance=ExtResource("2_438kw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.413929, 3.5083036, 4.860615)
