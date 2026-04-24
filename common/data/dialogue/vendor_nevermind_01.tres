@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_f8mb3")
-name = "Vendor"
+name = "\"Chops\""
 lines = Array[String](["Quit wastin' my time."])
