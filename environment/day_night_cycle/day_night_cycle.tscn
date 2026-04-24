@@ -54,7 +54,8 @@ glow_enabled = true
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0
 
-[node name="DayNightCycle" type="Node3D" unique_id=50702471 node_paths=PackedStringArray("_world_environment", "_sun_rot", "_directional_light")]
+[node name="DayNightCycle" type="Node3D" unique_id=50702471 node_paths=PackedStringArray("_world_environment", "_sun_rot", "_directional_light") groups=["day_night_cycle"]]
+process_mode = 3
 script = ExtResource("1_wtxaj")
 day_start = 6.0
 _world_environment = NodePath("WorldEnvironment")

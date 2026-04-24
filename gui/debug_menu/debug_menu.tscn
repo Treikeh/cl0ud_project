@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://davj7v88afq44"]
+
+[ext_resource type="Script" uid="uid://d0sgc5hwn2y3l" path="res://gui/debug_menu/debug_menu.gd" id="1_4gen1"]
+
+[node name="DebugMenu" type="Control" unique_id=1422368651 node_paths=PackedStringArray("_panel")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4gen1")
+_panel = NodePath("PanelContainer")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=637408119]
+layout_mode = 0
+offset_right = 529.0
+offset_bottom = 136.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1675000655]
+layout_mode = 2
+
+[node name="TimeOfDay" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=911207022]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/TimeOfDay" unique_id=429511556]
+layout_mode = 2
+text = "Time of day"
+
+[node name="TimeOfDaySlider" type="HSlider" parent="PanelContainer/VBoxContainer/TimeOfDay" unique_id=1317598413]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 24.0
+step = 0.1
+
+[node name="TimeOfDaySpinBox" type="SpinBox" parent="PanelContainer/VBoxContainer/TimeOfDay" unique_id=1334677615]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 24.0
+step = 0.1
+
+[node name="MinutesInDay" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=267609070]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/MinutesInDay" unique_id=1020782307]
+layout_mode = 2
+text = "Minutes in day"
+
+[node name="MinutesInDaySlider" type="HSlider" parent="PanelContainer/VBoxContainer/MinutesInDay" unique_id=90548001]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = 0.1
+max_value = 15.0
+step = 0.1
+value = 0.1
+allow_greater = true
+
+[node name="MinutesInDaySpinBox" type="SpinBox" parent="PanelContainer/VBoxContainer/MinutesInDay" unique_id=1733456642]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 0.1
+max_value = 15.0
+step = 0.1
+value = 0.1
+allow_greater = true
+
+[node name="ThrowUpgrade" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=309498435]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/ThrowUpgrade" unique_id=2029515253]
+layout_mode = 2
+text = "Throw upgrade level"
+
+[node name="ThrowUpgradeSlider" type="HSlider" parent="PanelContainer/VBoxContainer/ThrowUpgrade" unique_id=1456813342]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 3.0
+
+[node name="ThrowUpgradeSpinBox" type="SpinBox" parent="PanelContainer/VBoxContainer/ThrowUpgrade" unique_id=623264297]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 3.0
+
+[node name="CalmUpgrade" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1878381650]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/CalmUpgrade" unique_id=1388840770]
+layout_mode = 2
+text = "Calm upgrade level"
+
+[node name="CalmUpgradeSlider" type="HSlider" parent="PanelContainer/VBoxContainer/CalmUpgrade" unique_id=2121637700]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 3.0
+
+[node name="CalmUpgradeSpinBox" type="SpinBox" parent="PanelContainer/VBoxContainer/CalmUpgrade" unique_id=1164329404]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 3.0
+
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/TimeOfDay/TimeOfDaySlider" to="." method="_on_time_of_day_value_changed"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/TimeOfDay/TimeOfDaySpinBox" to="." method="_on_time_of_day_value_changed"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/MinutesInDay/MinutesInDaySlider" to="." method="_on_minutes_in_day_value_changed"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/MinutesInDay/MinutesInDaySpinBox" to="." method="_on_minutes_in_day_value_changed"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/ThrowUpgrade/ThrowUpgradeSlider" to="." method="_on_throw_upgrade_value_changed"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/ThrowUpgrade/ThrowUpgradeSpinBox" to="." method="_on_throw_upgrade_value_changed"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/CalmUpgrade/CalmUpgradeSlider" to="." method="_on_calm_upgrade_value_changed"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/CalmUpgrade/CalmUpgradeSpinBox" to="." method="_on_calm_upgrade_value_changed"]

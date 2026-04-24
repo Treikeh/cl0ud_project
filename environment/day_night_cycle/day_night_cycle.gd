@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 	var hours_in_day: float = 24.0 - day_start
 	var speed: float = hours_in_day / (_minutes_in_day * 60.0)
 	# Only change the time of day when the day hasn't reached it's end
-	if _time_of_day < 24.0:
+	if _time_of_day < 24.0 and not get_tree().paused:
 		_time_of_day += speed * delta
 	
 	Globals.time_of_day = _time_of_day
@@ -48,6 +48,10 @@ func _process(delta: float) -> void:
 	# Set rotation of light
 	_sun_rot.rotation_degrees.x = _time_of_day * 15.0
 	
+	_update_skybox()
+
+
+func _update_skybox() -> void:
 	var color_sample: int = int(_sun_rot.rotation_degrees.x)
 	var color_sample_remap: float = remap(color_sample, 0.0, 360.0, 0.0, 1.0)
 	
