@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://baesl6gbnbp13" path="res://entities/characters/vendor/art/Vendor Background.png" id="4_1ills"]
 [ext_resource type="Resource" uid="uid://ctvk6usfpig2w" path="res://common/upgrades/resources/throw_force_upgrade_02.tres" id="4_w33cr"]
 [ext_resource type="Resource" uid="uid://bsmvggjup7ypl" path="res://common/upgrades/resources/calm_fish_upgrade_01.tres" id="5_6i1t7"]
+[ext_resource type="Resource" uid="uid://ymjkgk23ecty" path="res://common/upgrades/resources/throw_force_upgrade_03.tres" id="5_hjdg2"]
 [ext_resource type="Resource" uid="uid://0q0fr715trpy" path="res://common/upgrades/resources/calm_fish_upgrade_02.tres" id="6_17hq5"]
+[ext_resource type="Resource" uid="uid://yr23djyi4gd6" path="res://common/upgrades/resources/calm_fish_upgrade_03.tres" id="8_a0ftu"]
 
 [node name="VendorMenu" type="Control" unique_id=1724820824 node_paths=PackedStringArray("_sell_list", "_buy_list", "_currency_label", "_tab_container")]
 layout_mode = 3
@@ -20,7 +22,7 @@ _sell_list = NodePath("TabContainer/Sell/SellList")
 _buy_list = NodePath("TabContainer/Buy/BuyList")
 _currency_label = NodePath("CurrencyLabel")
 _tab_container = NodePath("TabContainer")
-_upgrades = Array[ExtResource("2_1ills")]([ExtResource("3_1ills"), ExtResource("4_w33cr"), ExtResource("5_6i1t7"), ExtResource("6_17hq5")])
+_upgrades = Array[ExtResource("2_1ills")]([ExtResource("3_1ills"), ExtResource("4_w33cr"), ExtResource("5_hjdg2"), ExtResource("5_6i1t7"), ExtResource("6_17hq5"), ExtResource("8_a0ftu")])
 
 [node name="VendorBackground" type="Sprite2D" parent="." unique_id=1785979639]
 position = Vector2(576, 324)

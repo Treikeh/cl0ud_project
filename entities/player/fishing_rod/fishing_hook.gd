@@ -27,6 +27,7 @@ var hook_state: HookState = HookState.NORMAL
 
 
 func _ready() -> void:
+	Globals.fish_escaped.connect(_on_fish_escaped)
 	_fish_timer.timeout.connect(_on_fish_hooked)
 
 

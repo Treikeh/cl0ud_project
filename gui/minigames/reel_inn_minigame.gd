@@ -16,6 +16,7 @@ signal failed
 var player: Player
 var _is_active: bool = true
 var _time: float = 0.0
+var _hook_distance: float
 var _hit_area_rotation_direction: float = 1
 
 
@@ -35,14 +36,14 @@ func _process(delta: float) -> void:
 	var look_dir: Vector2 = (cursor_dir * remap(cursor_distance, 0.0, 100.0, 0.0, 1.0)) / 7.5
 	player.update_minigame_look_dir(look_dir)
 	
-	var noise_move_speed: float = _balance_vars.fish_type_move_speed_curve.sample(Globals.hook_distance)
+	var noise_move_speed: float = _balance_vars.fish_type_move_speed_curve.sample(_hook_distance)
 	_time += delta * noise_move_speed
 	
 	var noise_map_value: float = _balance_vars.fish_type_move_maps[Fish.Type.MAIL].get_noise_1d(_time)
 	_hit_area_rotation_direction = 1.0 if noise_map_value > 0.0 else -1.0
 	
 	# Use hook distance to modify the rotation speed
-	var rot_speed: float = _balance_vars.hit_area_move_speed_curve.sample(Globals.hook_distance)
+	var rot_speed: float = _balance_vars.hit_area_move_speed_curve.sample(_hook_distance)
 	_hit_area.rotation_degrees += _hit_area_rotation_direction * rot_speed * delta
 	
 	#TODO: Check if clamp_angle can be used here
@@ -51,7 +52,7 @@ func _process(delta: float) -> void:
 	elif _hit_area.rotation_degrees < -180.0:
 		_hit_area.rotation_degrees = 179.0
 	
-	var hit_area_size: float = _balance_vars.hit_area_size_curve.sample(Globals.hook_distance)
+	var hit_area_size: float = _balance_vars.hit_area_size_curve.sample(_hook_distance)
 	_hit_area.value = hit_area_size#30.0 + (sin(_time * 2.5) * 10.0)
 	
 	# Get the direction of the hit area
@@ -66,14 +67,14 @@ func _process(delta: float) -> void:
 	if within_right and within_left and within_distance:
 		_hit_area.texture_progress.gradient.set_color(1, Color.GREEN)
 		# Increase value if inside hit area
-		var increase_speed: float = _balance_vars.value_increase_speed_curve.sample(Globals.hook_distance)
+		var increase_speed: float = _balance_vars.value_increase_speed_curve.sample(_hook_distance)
 		_border.value += increase_speed * delta
 		if _border.value >= 100.0:
 			succeeded.emit()
 	else:
 		_hit_area.texture_progress.gradient.set_color(1, Color.RED)
 		# Decrease value if outside of hit area
-		var decrease_speed: float = _balance_vars.value_decrase_speed_curve.sample(Globals.hook_distance)
+		var decrease_speed: float = _balance_vars.value_decrase_speed_curve.sample(_hook_distance)
 		_border.value -= decrease_speed * delta
 		if _border.value <= 0.0:
 			failed.emit()
@@ -92,6 +93,8 @@ func start_minigame() -> void:
 	# Reset minigame
 	_border.value = 50.0
 	_hit_area.rotation_degrees = randf_range(-180.0, 180.0)
+	_hook_distance = _balance_vars.hook_distance_curve.sample(Globals.hook_distance)
+	_hook_distance -= _balance_vars.calm_fish_upgrade_curve.sample(player.calm_fish_upgrade_level)
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 

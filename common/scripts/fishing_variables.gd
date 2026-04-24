@@ -3,12 +3,14 @@ class_name FishingVariables
 
 
 @export_group("Fishing")
+@export var hook_distance_curve: Curve
 @export var throw_charge_speed: float = 2.0
 @export var throw_charge_curve: Curve
 @export var base_throw_force: float = 10.0
 ## How much the throw force should be increased at each upgrade level.
 ## Value is force, Domain is upgrade level
 @export var throw_force_upgrade_curve: Curve
+@export var calm_fish_upgrade_curve: Curve
 ## Min time the player has to wait before a fish gets hooked
 @export var min_wait_time: float = 5.0
 ## Max time the palyer has to wait before a fish gets hooked

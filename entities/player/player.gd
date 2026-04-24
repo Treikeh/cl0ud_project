@@ -75,8 +75,7 @@ func _on_started_loading_level() -> void:
 	#NOTE: This only works because loading a new level only starts after a the loading screen has ->
 	# <- faded inn. If there was no fade inn, then this wouldn't work. Becaue the load level -> 
 	# <- function is called before the save level function in the main level script.
-	for upgrade: Upgrade in upgrades:
-		upgrade.bought = false
+	_reset_upgrades()
 
 
 #region Input
@@ -164,8 +163,8 @@ func _on_pause_closed() -> void:
 #region Fishing
 
 var hook_mod: float = 0.0
-var throw_force: float = 0.0
 var throw_upgrade_level: int = 0
+var calm_fish_upgrade_level: int = 0
 
 
 func _on_started_fishing() -> void:
@@ -228,6 +227,11 @@ func _load_upgrades(data: Dictionary) -> void:
 		var upgrade: Upgrade = load(upgrade_data.path)
 		upgrade.bought = upgrade_data.bought
 		add_upgrade(upgrade)
+
+
+func _reset_upgrades() -> void:
+	for upgrade: Upgrade in upgrades:
+		upgrade.bought = false
 
 #endregion
 

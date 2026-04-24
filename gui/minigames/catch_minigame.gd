@@ -17,6 +17,7 @@ signal failed
 
 var player: Player
 var _is_active: bool = true
+var _hook_distance: float
 
 
 func _input(event: InputEvent) -> void:
@@ -31,7 +32,7 @@ func _process(delta: float) -> void:
 	if not visible or not _is_active:
 		return
 	
-	var marker_speed: float = _balance_vars.cursor_speed_curve.sample(Globals.hook_distance)
+	var marker_speed: float = _balance_vars.cursor_speed_curve.sample(_hook_distance)
 	_hit_marker.position.x += marker_speed * delta
 	if _hit_marker.position.x >= _background.size.x:
 		_is_active = false
@@ -46,8 +47,10 @@ func start_minigame() -> void:
 	process_mode = Node.PROCESS_MODE_INHERIT
 	# Reset minigame
 	_hit_marker.position.x = 0.0
+	_hook_distance = _balance_vars.hook_distance_curve.sample(Globals.hook_distance)
+	_hook_distance -= _balance_vars.calm_fish_upgrade_curve.sample(player.calm_fish_upgrade_level)
 	
-	var hit_area_size: float = _balance_vars.target_area_size_curve.sample(Globals.hook_distance)
+	var hit_area_size: float = _balance_vars.target_area_size_curve.sample(_hook_distance)
 	_hit_area.size.x = hit_area_size
 	
 	# Set the hit areas positoin
