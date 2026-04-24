@@ -110,7 +110,7 @@ func _setup_calm_upgrade() -> void:
 
 func _on_calm_upgrade_value_changed(value: float) -> void:
 	var player: Player = get_tree().get_first_node_in_group("player")
-	player.throw_upgrade_level = int(value)
+	player.calm_fish_upgrade_level = int(value)
 	
 	%CalmUpgradeSlider.value = value
 	%CalmUpgradeSpinBox.value = value
