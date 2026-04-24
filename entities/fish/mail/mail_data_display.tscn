@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cyuo21l0gwdm5"]
 
 [ext_resource type="Script" uid="uid://bu5n7qf877ogg" path="res://entities/fish/mail/mail_data_display.gd" id="1_bejpv"]
-[ext_resource type="Resource" uid="uid://ckqdgilaoxya2" path="res://common/data/fish/mail_bbcode_test_01.tres" id="2_h1x40"]
 
 [node name="MailDataDisplay" type="Control" unique_id=307770116 node_paths=PackedStringArray("_from_label", "_to_label", "_subject_label", "_content_label")]
 layout_mode = 3
@@ -11,7 +10,6 @@ _from_label = NodePath("PanelContainer/VBoxContainer/FromLabel")
 _to_label = NodePath("PanelContainer/VBoxContainer/ToLabel")
 _subject_label = NodePath("PanelContainer/VBoxContainer/SubjectLabel")
 _content_label = NodePath("PanelContainer/VBoxContainer/ContentLabel")
-_test = ExtResource("2_h1x40")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=581672]
 layout_mode = 0
