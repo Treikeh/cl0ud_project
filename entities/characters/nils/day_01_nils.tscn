@@ -6,31 +6,44 @@
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="4_5dqtv"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://cbygnrgof7bup" path="res://entities/characters/rig/standing_fishing_anim_sm.tres" id="4_pjgcy"]
 
-[sub_resource type="Resource" id="Resource_kfdqj"]
+[sub_resource type="Resource" id="Resource_5dqtv"]
 script = ExtResource("2_pjgcy")
-text = "First time?"
+lines = Array[String](["Hello", "This is the first time we're talking"])
 metadata/_custom_type_script = "uid://b0pj0dtodw2q8"
 
-[sub_resource type="Resource" id="Resource_rxto8"]
+[sub_resource type="Resource" id="Resource_pjgcy"]
 script = ExtResource("2_pjgcy")
-text = "Everything else"
+lines = Array[String](["Want to know a secret?"])
+choices = Array[String](["Yes", "No"])
+metadata/_custom_type_script = "uid://b0pj0dtodw2q8"
+
+[sub_resource type="Resource" id="Resource_cc2qk"]
+script = ExtResource("2_pjgcy")
+lines = Array[String](["Espen er ute på eventyr"])
 metadata/_custom_type_script = "uid://b0pj0dtodw2q8"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_85oi3"]
 size = Vector3(0.7, 1.9, 0.5)
 
 [node name="Nils" type="Node3D" unique_id=1391229992 node_paths=PackedStringArray("_head_maker")]
-transform = Transform3D(0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, 0.50000006, 0, 0, 0)
 script = ExtResource("1_3cw0d")
 _head_maker = NodePath("HeadMarker")
-_start_dialogue = Array[ExtResource("2_pjgcy")]([SubResource("Resource_kfdqj")])
-_allready_spoken_dialogue = Array[ExtResource("2_pjgcy")]([SubResource("Resource_rxto8")])
+_start_dialogue = SubResource("Resource_5dqtv")
+_spoken_dialogue = SubResource("Resource_pjgcy")
+_secret_dialogue = SubResource("Resource_cc2qk")
 
 [node name="CharacterMesh" parent="." unique_id=1194805127 instance=ExtResource("3_cc2qk")]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
 _look_at_radius = 2.0
 _skin = "Nils"
 _animation = ExtResource("4_pjgcy")
+
+[node name="HeadMarker" type="BoneAttachment3D" parent="." unique_id=648579604]
+transform = Transform3D(-0.9999999, 2.6230714e-08, -2.996957e-07, 2.0407493e-08, 0.9998115, 0.019413993, 3.0014846e-07, 0.01941399, -0.9998115, 3.383448e-14, 1.6554214, 0.08422942)
+bone_name = "head.001"
+bone_idx = 5
+use_external_skeleton = true
+external_skeleton = NodePath("../CharacterMesh/Skeleton3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=220955212]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
@@ -40,13 +53,6 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1214350678]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95000005, 0)
 shape = SubResource("BoxShape3D_85oi3")
-
-[node name="HeadMarker" type="BoneAttachment3D" parent="." unique_id=648579604]
-transform = Transform3D(-0.9999999, 2.9802322e-08, -3.2782555e-07, 2.296784e-08, 0.9998115, 0.019413963, 3.5762787e-07, 0.01941396, -0.9998114, 0, 1.6554214, 0.08422941)
-bone_name = "head.001"
-bone_idx = 5
-use_external_skeleton = true
-external_skeleton = NodePath("../CharacterMesh/Skeleton3D")
 
 [node name="InteractArea3D" parent="." unique_id=1933536461 instance=ExtResource("4_5dqtv")]
 

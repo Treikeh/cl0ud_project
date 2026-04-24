@@ -2,7 +2,6 @@ extends Control
 
 
 signal dialogue_ended
-signal dialouge_choice_made(choice: int)
 
 
 @export var _name_label: Label
@@ -10,10 +9,10 @@ signal dialouge_choice_made(choice: int)
 @export var _dialogue_choice_container: Container
 
 var _dialogue_progress: int = 0
-var _dialogue: Array[DialogueData]
+var _dialogue: DialogueData
 
 
-func with_data(dialogue: Array[DialogueData]) -> Control:
+func with_data(dialogue: DialogueData) -> Control:
 	_dialogue = dialogue
 	return self
 
@@ -23,7 +22,7 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("interact") or event.is_action_pressed("throw_hook"):
 		if _dialogue_choice_container.get_child_count() > 0:
 			pass
 		else:
@@ -31,13 +30,13 @@ func _input(event: InputEvent) -> void:
 
 
 func _update_dialogue_box() -> void:
-	var dialogue: DialogueData = _dialogue[_dialogue_progress]
-	_name_label.text = dialogue.name
+	var line: String = _dialogue.lines[_dialogue_progress]
+	_name_label.text = _dialogue.name
 	_text_label.text = ""
 	
 	var tween: Tween = create_tween()
-	tween.tween_property(_text_label, "text", dialogue.text, 0.4)
-	tween.tween_callback(_show_dialogue_choices.bind(dialogue))
+	tween.tween_property(_text_label, "text", line, 0.4)
+	tween.tween_callback(_show_dialogue_choices)
 
 
 func _end_dialogue() -> void:
@@ -49,20 +48,20 @@ func _end_dialogue() -> void:
 
 func _progress_dialogue() -> void:
 	var desired_progress: int = _dialogue_progress + 1
-	if desired_progress >= _dialogue.size():
+	if desired_progress >= _dialogue.lines.size():
 		_end_dialogue()
 	else:
 		_dialogue_progress = desired_progress
 		_update_dialogue_box()
 
 
-func _show_dialogue_choices(dialogue: DialogueData) -> void:
-	if dialogue.choices.is_empty():
+func _show_dialogue_choices() -> void:
+	if _dialogue.choices.is_empty():
 		return
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	for i: int in dialogue.choices.size():
-		var choice: String = dialogue.choices[i]
+	for i: int in _dialogue.choices.size():
+		var choice: String = _dialogue.choices[i]
 		var button := Button.new()
 		button.text = choice
 		button.pressed.connect(_on_dialogue_choice_selected.bind(button))
@@ -75,4 +74,4 @@ func _show_dialogue_choices(dialogue: DialogueData) -> void:
 func _on_dialogue_choice_selected(choice: Control) -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	_end_dialogue()
-	dialouge_choice_made.emit(choice.get_index())
+	_dialogue.choice_made.emit(choice.get_index())

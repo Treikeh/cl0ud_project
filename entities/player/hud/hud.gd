@@ -24,7 +24,7 @@ func update_interact_prompt(prompt: String) -> void:
 	_interact_prompt.text = prompt
 
 
-func start_dialogue(dialogue: Array[DialogueData]) -> Control:
+func start_dialogue(dialogue: DialogueData) -> Control:
 	_player.input.set_enabled(false)
 	
 	var dialogue_box: Control = DIALOGUE_BOX_SCENE.instantiate().with_data(dialogue)

@@ -121,7 +121,7 @@ func _create_item_resources(data: Array[PackedStringArray], file_paths: Dictiona
 		# Get item data
 		var item_name: String = row[1]
 		#var description: String = row[2]
-		var value: int = str_to_var(row[3])
+		var value: int = int(row[3])
 		var fish_data_path: String = row[4]
 		
 		var icon: Texture
@@ -272,18 +272,23 @@ func _create_dialogue_resources(data: Array[PackedStringArray], file_paths: Dict
 			# Load the old file
 			dialogue = load(path)
 		
+		var lines: Array[String] = []
+		for line: String in row[2].split("|"):
+			line = line.strip_edges()
+			if line != "":
+				lines.append(line)
+		
 		# Get choices
 		var choices: Array[String] = []
 		# Remove the space in front of each option
 		for choice: String in row[3].split("|"):
 			choice = choice.strip_edges()
 			if choice != "":
-				print("Choice: %s|" % choice)
 				choices.append(choice)
 		
 		# Set data on the dialogue object
 		dialogue.name = row[1]
-		dialogue.text = row[2]
+		dialogue.lines = lines
 		dialogue.choices = choices
 		
 		_save_resource(dialogue, path, file_paths, id)
