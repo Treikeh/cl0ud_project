@@ -1,15 +1,11 @@
 [gd_scene format=3 uid="uid://d03dern16pwcb"]
 
 [ext_resource type="Script" uid="uid://c5d4fd2agsogr" path="res://entities/characters/nils/day_01_nils.gd" id="1_3cw0d"]
+[ext_resource type="Resource" uid="uid://daoxlatyjttmi" path="res://common/data/dialogue/oldman_speak_01.tres" id="2_cc2qk"]
 [ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/scripts/dialogue_data.gd" id="2_pjgcy"]
 [ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="3_cc2qk"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="4_5dqtv"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://cbygnrgof7bup" path="res://entities/characters/rig/standing_fishing_anim_sm.tres" id="4_pjgcy"]
-
-[sub_resource type="Resource" id="Resource_5dqtv"]
-script = ExtResource("2_pjgcy")
-lines = Array[String](["Hello", "This is the first time we're talking"])
-metadata/_custom_type_script = "uid://b0pj0dtodw2q8"
 
 [sub_resource type="Resource" id="Resource_pjgcy"]
 script = ExtResource("2_pjgcy")
@@ -28,7 +24,7 @@ size = Vector3(0.7, 1.9, 0.5)
 [node name="Nils" type="Node3D" unique_id=1391229992 node_paths=PackedStringArray("_head_maker")]
 script = ExtResource("1_3cw0d")
 _head_maker = NodePath("HeadMarker")
-_start_dialogue = SubResource("Resource_5dqtv")
+_start_dialogue = ExtResource("2_cc2qk")
 _spoken_dialogue = SubResource("Resource_pjgcy")
 _secret_dialogue = SubResource("Resource_cc2qk")
 

@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_4wgyf")
 name = "Vendor"
-lines = Array[String](["Bye"])
+lines = Array[String](["Cya around, Compadre."])

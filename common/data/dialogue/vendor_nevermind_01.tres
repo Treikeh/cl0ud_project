@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_f8mb3")
 name = "Vendor"
-lines = Array[String](["Bye then [color=green]test[/color]"])
+lines = Array[String](["Quit wastin' my time."])

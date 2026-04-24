@@ -13,10 +13,10 @@ var _times_spoken: int = 0
 
 func _on_interacted(player: Player) -> void:
 	match _times_spoken:
-		0: # First time we speak to nils
-			player.hud.start_dialogue(_start_dialogue)
-		_: # Every other time we speak to nils
-			player.hud.start_dialogue(_spoken_dialogue)
+		# First time we speak to nils
+		_: player.hud.start_dialogue(_start_dialogue)
+		# Every other time we speak to nils
+		#_: player.hud.start_dialogue(_spoken_dialogue)
 	
 	_times_spoken += 1
 	player.update_look_position(_head_maker.global_position)

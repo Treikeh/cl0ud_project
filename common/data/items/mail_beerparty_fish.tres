@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bnf1s544cqvjb"]
+
+[ext_resource type="Resource" uid="uid://bsun26tbaip2m" path="res://common/data/fish/mail_beerparty_data.tres" id="1_fohcw"]
+[ext_resource type="Texture2D" uid="uid://konw78nn60up" path="res://entities/fish/mail/mail_icon.png" id="2_7b7fs"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/scripts/inventory/item_data.gd" id="3_1dm24"]
+
+[resource]
+script = ExtResource("3_1dm24")
+name = "Mail Fish \"Beer Party\""
+value = 4
+type = "MAIL"
+icon = ExtResource("2_7b7fs")
+mesh_scene = "res://entities/fish/mail/mail_mesh.tscn"
+fish_data = ExtResource("1_fohcw")

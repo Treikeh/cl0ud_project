@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MailData" format=3 uid="uid://dt5i1ql22p6we"]
+
+[ext_resource type="Script" uid="uid://bgk7ttf5teu14" path="res://entities/fish/mail/mail_data.gd" id="1_0vf8o"]
+
+[resource]
+script = ExtResource("1_0vf8o")
+from = "Cornelius McTaro "
+to = "Harris Goodwill "
+subject = "The new MFC opening "
+content = "We are finally doing it! 
+ 
+ We are opening a new Mississippi Fried Chicken location here in Cloud City. I hired two brigades of security forces to keep the location secure, and I secured that deal with those Chickina bio-meat plants to the south. I am talking about some real synthetic chicken, grown at a 70% purity rate! 1 kilogram for 100 cloudbucks! 
+ 
+ I am telling you, Harris, if we sell those deep-battered Mississippi-inspired chicken strips that only contain 50 grams of Chickina chicken meat at 30 cloudbucks a piece, then we are starting to look at getting, not just new cars, but a new fricken mansion each! 
+ 
+ Think about the offer, Harris, i'll contact you later with the details of our contract. 
+ 
+ Your business partner: Cornelius McTaro"

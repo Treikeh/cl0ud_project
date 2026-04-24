@@ -33,7 +33,6 @@ _junk_curve = SubResource("Curve_hp128")
 
 [node name="DayNightCycle" parent="." unique_id=50702471 instance=ExtResource("1_b2fg0")]
 transform = Transform3D(-0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.7071068, 0, 4.1425443, -3.334785)
-_minutes_in_day = 1.0
 
 [node name="FogVolume" type="FogVolume" parent="." unique_id=1815325357]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.007267, -14.278646, -90.03728)
@@ -53,7 +52,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6926503, 2.4760885, 11.769
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.511389, 3.5083027, 0.9735925)
 
 [node name="Player" parent="." unique_id=913738857 instance=ExtResource("2_438kw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.511389, 3.5083027, 0.9735925)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.413929, 3.5083036, 4.860615)
 
 [node name="RespawnArea3D" parent="." unique_id=1922286486 instance=ExtResource("7_hp128")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20.358528, 0)
@@ -95,3 +94,10 @@ transform = Transform3D(-0.9659258, 0, -0.25881913, 0, 1, 0, 0.25881913, 0, -0.9
 spot_range = 11.551
 spot_attenuation = -0.34
 spot_angle = 39.56
+
+[node name="SFX" type="Node3D" parent="." unique_id=516107422]
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="SFX" unique_id=1304015899]
+event_name = "event:/Ambience/Base Ambience Loop"
+event_guid = "{ea579e07-8d00-4320-bd16-a7da71609eab}"
+autoplay = true

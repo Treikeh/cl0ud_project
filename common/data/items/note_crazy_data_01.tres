@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("3_tig11")
-name = "The Crazy Note"
+name = "Bloody Note Fish?"
 value = 7
 type = "NOTE"
 icon = ExtResource("2_mnd8b")

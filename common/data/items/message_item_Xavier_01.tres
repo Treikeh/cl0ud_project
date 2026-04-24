@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("3_5rj8n")
 name = "Xavier Data-Fish 1"
-value = 10
+value = 12
 type = "MESSAGE"
 icon = ExtResource("2_c6bie")
 mesh_scene = "res://entities/fish/message/message_mesh.tscn"
