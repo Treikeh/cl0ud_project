@@ -76,7 +76,7 @@ settings/0/center_node = NodePath("../../../../../..")
 transform = Transform3D(0.99705166, 0.011625001, 0.075847395, -0.0038825253, -0.9795483, 0.20117138, 0.0766348, -0.20087273, -0.976615, 0.49668172, 0.8129044, -1.2607355)
 
 [node name="HookAttachement" parent="Orientation/Head/FishingRod/HookLine" parent_id_path=PackedInt32Array(949060003, 12906906) index="2" unique_id=213436148]
-transform = Transform3D(0.9970298, 0.0024704281, 0.076975934, -0.0008251433, -0.99908525, 0.04275177, 0.07701113, -0.04268832, -0.9961157, 0.5002056, 0.31824595, -1.3216258)
+transform = Transform3D(0.9970298, 0.002470472, 0.07697593, -0.00082511106, -0.99908525, 0.042751934, 0.07701113, -0.042688485, -0.99611574, 0.5002056, 0.31824595, -1.3216258)
 
 [node name="FmodListener3D" type="FmodListener3D" parent="Orientation/Head" unique_id=463241591]
 
