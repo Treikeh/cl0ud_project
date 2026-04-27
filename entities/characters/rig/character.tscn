@@ -7,18 +7,18 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_g0b3o"]
 radius = 2.0
 
-[node name="CharacterMesh" unique_id=1194805127 node_paths=PackedStringArray("_default_look_position") instance=ExtResource("1_c6gtc")]
+[node name="CharacterMesh" unique_id=1405056203 node_paths=PackedStringArray("_default_look_position") instance=ExtResource("1_c6gtc")]
 _default_look_position = NodePath("DefaultLookPosition")
 _animation = ExtResource("2_tion6")
 
-[node name="Skeleton3D" parent="." index="0" unique_id=1477950014]
+[node name="Skeleton3D" parent="." index="0" unique_id=1995264488]
 bones/2/position = Vector3(8.885667e-16, 0.067006476, 0.9022027)
 bones/3/rotation = Quaternion(-0.020237816, 1.5096494e-07, 1.88772e-15, 0.9997952)
 bones/4/rotation = Quaternion(0.1183377, -1.4993482e-07, 3.577384e-15, 0.9929735)
 bones/6/rotation = Quaternion(-0.09403472, 0.19764802, -0.5987004, 0.77048725)
-bones/7/rotation = Quaternion(0.4052076, 0.23692784, -0.61211765, 0.63638365)
-bones/8/rotation = Quaternion(0.66474086, 0.008873768, -0.029041193, 0.7464566)
-bones/9/rotation = Quaternion(-0.16497412, -0.08278272, 0.049283274, 0.9815812)
+bones/7/rotation = Quaternion(0.40415248, 0.2366783, -0.61183023, 0.637423)
+bones/8/rotation = Quaternion(0.66995496, 0.008818106, -0.02926903, 0.7417722)
+bones/9/rotation = Quaternion(-0.17095044, -0.08285243, 0.0489048, 0.98057115)
 bones/10/rotation = Quaternion(-0.09403483, -0.197648, 0.59870034, 0.7704872)
 bones/11/rotation = Quaternion(0.41801363, -0.2718653, 0.6103177, 0.6155211)
 bones/12/rotation = Quaternion(0.5681764, -0.0097776465, 0.024822582, 0.82247424)
