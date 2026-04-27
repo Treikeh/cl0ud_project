@@ -8,6 +8,7 @@ signal pause_pressed
 signal jumped(jump_input: bool)
 signal hook_thrown(throw_input: bool)
 signal hook_reeled(reel_input: bool)
+signal crouched(crouch_input: bool)
 signal looked(look_input: Vector2)
 signal moved(move_input: Vector2)
 
@@ -31,6 +32,7 @@ func _ready() -> void:
 	jumped.connect(_player._on_jumped)
 	hook_thrown.connect(_player._on_hook_thrown)
 	hook_reeled.connect(_player._on_hook_reeled)
+	crouched.connect(_player._on_crouched)
 	
 	looked.connect(_player._on_looked)
 	moved.connect(_player._on_moved)
@@ -68,6 +70,12 @@ func _input(event: InputEvent) -> void:
 		hook_reeled.emit(true)
 	elif event.is_action_released("reel_hook"):
 		hook_reeled.emit(false)
+	
+	# Crouch
+	if event.is_action_pressed("crouch"):
+		crouched.emit(true)
+	elif event.is_action_released("crouch"):
+		crouched.emit(false)
 	
 	# Pause input
 	if event.is_action_pressed("pause"):

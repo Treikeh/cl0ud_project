@@ -29,9 +29,7 @@ func _ready() -> void:
 	_load_save_data.call_deferred()
 
 
-func _physics_process(delta: float) -> void:
-	#NOTE: In physics process to stop the hook from freezing when the camera is moving.
-	#TODO: Find a better way to handle the hook and line physics.
+func _process(delta: float) -> void:
 	if _look_position != Vector3.ZERO:
 		_look_at_position(delta)
 	
@@ -40,6 +38,11 @@ func _physics_process(delta: float) -> void:
 		if linear_velocity.length_squared() < 0.5:
 			_respawn_point = global_position
 	camera.apply_camera_tilt(linear_velocity, movement._move_dir, delta)
+	
+	if _wants_to_crouch and not movement.is_crouching:
+		_crouch()
+	elif not _wants_to_crouch and movement.is_crouching and not movement.uncrouch_check.is_colliding():
+		_uncrouch()
 
 
 # Make the camera look at a point
@@ -84,8 +87,12 @@ func _on_started_loading_level() -> void:
 @export var _orientation: Node3D
 @export var _head: Node3D
 @export var _interact_ray: RayCast3D
+@export var _standing_collision: CollisionShape3D
+@export var _crouch_collision: CollisionShape3D
 
+var _wants_to_crouch: bool = false
 var fishing_rod: Node3D
+var crouch_tween: Tween
 
 
 func _on_interacted() -> void:
@@ -108,6 +115,10 @@ func _on_hook_reeled(reel_input: bool) -> void:
 		fishing_rod.reel_inn()
 
 
+func _on_crouched(crouch_input: bool) -> void:
+	_wants_to_crouch = crouch_input
+
+
 func _on_looked(look_input: Vector2) -> void:
 	if _look_position != Vector3.ZERO:
 		return
@@ -120,6 +131,34 @@ func _on_looked(look_input: Vector2) -> void:
 func _on_moved(move_input: Vector2) -> void:
 	var move_dir: Vector3 = _orientation.global_basis * Vector3(move_input.x, 0.0, move_input.y).normalized()
 	movement.update_move_dir(move_dir)
+
+
+func _crouch() -> void:
+	if crouch_tween:
+		crouch_tween.stop()
+	
+	var height: float = -0.8
+	crouch_tween = create_tween()
+	crouch_tween.tween_property(_orientation, "position:y", height, 0.15)
+	
+	movement.is_crouching = true
+	
+	_standing_collision.disabled = true
+	_crouch_collision.disabled = false
+
+
+func _uncrouch() -> void:
+	if crouch_tween:
+		crouch_tween.stop()
+	
+	var height: float = 0.0
+	crouch_tween = create_tween()
+	crouch_tween.tween_property(_orientation, "position:y", height, 0.15)
+	
+	movement.is_crouching = false
+	
+	_standing_collision.disabled = false
+	_crouch_collision.disabled = true
 
 #endregion
 

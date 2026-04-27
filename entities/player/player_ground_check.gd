@@ -21,7 +21,6 @@ func setup(player: Player, gravity_dir: Vector3) -> void:
 	_player = player
 	_gravity_dir = gravity_dir
 	_ray_cast_3d.collision_mask = collision_mask
-	
 
 
 func is_grounded() -> bool:

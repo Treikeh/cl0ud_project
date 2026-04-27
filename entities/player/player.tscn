@@ -19,11 +19,19 @@ rough = true
 radius = 0.4
 height = 1.5
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wvtmh"]
+radius = 0.4
+height = 0.9
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bls4j"]
-radius = 0.25
+radius = 0.3
 height = 1.0
 
-[node name="Player" type="RigidBody3D" unique_id=913738857 node_paths=PackedStringArray("_orientation", "_head", "_interact_ray") groups=["persistent", "player"]]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7thud"]
+radius = 0.35
+height = 1.0
+
+[node name="Player" type="RigidBody3D" unique_id=913738857 node_paths=PackedStringArray("_orientation", "_head", "_interact_ray", "_standing_collision", "_crouch_collision") groups=["persistent", "player"]]
 collision_layer = 2
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_bls4j")
@@ -32,10 +40,16 @@ script = ExtResource("1_symyc")
 _orientation = NodePath("Orientation")
 _head = NodePath("Orientation/Head")
 _interact_ray = NodePath("Orientation/Head/InteractRay")
+_standing_collision = NodePath("StandingCollision")
+_crouch_collision = NodePath("CrouchCollision")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1270325616]
+[node name="StandingCollision" type="CollisionShape3D" parent="." unique_id=1270325616]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 shape = SubResource("CapsuleShape3D_sfv1e")
+
+[node name="CrouchCollision" type="CollisionShape3D" parent="." unique_id=1471624043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+shape = SubResource("CapsuleShape3D_wvtmh")
 
 [node name="Orientation" type="Node3D" parent="." unique_id=255627194]
 
@@ -63,18 +77,18 @@ settings/0/center_node = NodePath("../../../../../..")
 transform = Transform3D(0.99705166, 0.011625001, 0.075847395, -0.0038825253, -0.9795483, 0.20117138, 0.0766348, -0.20087273, -0.976615, 0.49668172, 0.8129044, -1.2607355)
 
 [node name="HookAttachement" parent="Orientation/Head/FishingRod/HookLine" parent_id_path=PackedInt32Array(949060003, 12906906) index="2" unique_id=213436148]
-transform = Transform3D(0.9970298, 0.0024704253, 0.076975934, -0.00082512904, -0.99908525, 0.04275156, 0.07701114, -0.042688098, -0.99611574, 0.5002056, 0.31824595, -1.3216257)
+transform = Transform3D(0.9970298, 0.0024704225, 0.07697594, -0.0008251665, -0.99908525, 0.04275201, 0.07701114, -0.04268856, -0.99611574, 0.5002056, 0.31824595, -1.3216258)
 
 [node name="FmodListener3D" type="FmodListener3D" parent="Orientation/Head" unique_id=463241591]
 
 [node name="Movement" type="Node3D" parent="." unique_id=302736872 node_paths=PackedStringArray("_footsteps_sfx")]
 script = ExtResource("5_qiwj3")
+_crouch_speed = 2.0
 _footsteps_freq = 1.0
 _footsteps_sfx = NodePath("SFX/FootSteps")
 
 [node name="GroundCheck" type="ShapeCast3D" parent="Movement" unique_id=1000335560]
 shape = SubResource("CapsuleShape3D_bls4j")
-margin = 0.1
 max_results = 1
 debug_shape_custom_color = Color(1, 0, 0.2833333, 1)
 script = ExtResource("3_bls4j")
@@ -83,6 +97,12 @@ _leave_floor_force = 3.0
 [node name="RayCast3D" type="RayCast3D" parent="Movement/GroundCheck" unique_id=1829849717]
 target_position = Vector3(0, -1.6, 0)
 debug_shape_custom_color = Color(1, 0, 0.28235295, 1)
+
+[node name="UncrouchCheck" type="ShapeCast3D" parent="Movement" unique_id=107485265]
+shape = SubResource("CapsuleShape3D_7thud")
+target_position = Vector3(0, 0.4, 0)
+max_results = 1
+debug_shape_custom_color = Color(1, 0, 0, 1)
 
 [node name="SFX" type="Node3D" parent="Movement" unique_id=1956867442]
 
