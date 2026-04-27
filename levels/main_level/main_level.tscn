@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cxn3pwn81mg6g" path="res://levels/art/BuildingOne/BuildingOne_2.glb" id="8_t80xa"]
 [ext_resource type="PackedScene" uid="uid://bj776d7ttynq7" path="res://levels/art/BuildingOne_3.glb" id="9_qywe3"]
 [ext_resource type="PackedScene" uid="uid://jy28a08t3w22" path="res://environment/lights/automatic_spot_light.tscn" id="11_dk47i"]
+[ext_resource type="Material" uid="uid://ciehglpo48eeu" path="res://environment/cloud_shader_material.tres" id="12_lkn3a"]
 
 [sub_resource type="Curve" id="Curve_hp128"]
 _limits = [0.0, 10.0, 0.0, 24.0]
@@ -23,6 +24,13 @@ size = Vector3(100, 10, 200)
 [sub_resource type="BoxShape3D" id="BoxShape3D_t80xa"]
 size = Vector3(163.93579, 48.86328, 287.65234)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_qtms1"]
+size = Vector2(1000, 1000)
+subdivide_width = 16
+subdivide_depth = 16
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oqmyk"]
+
 [node name="MainLevel" type="Node3D" unique_id=224384734 node_paths=PackedStringArray("_day_night_cycle", "_player_marker") groups=["persistent"]]
 script = ExtResource("1_um8ys")
 _day_night_cycle = NodePath("DayNightCycle")
@@ -34,12 +42,8 @@ _junk_curve = SubResource("Curve_hp128")
 [node name="DayNightCycle" parent="." unique_id=50702471 instance=ExtResource("1_b2fg0")]
 transform = Transform3D(-0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.7071068, 0, 4.1425443, -3.334785)
 
-[node name="FogVolume" type="FogVolume" parent="." unique_id=1815325357]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.007267, -14.278646, -90.03728)
-size = Vector3(273.71848, 10, 383.72833)
-
 [node name="MainFishArea" parent="." unique_id=1857351977 instance=ExtResource("4_sj11d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.602, -9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.602, -12.63784, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MainFishArea" unique_id=2136580904]
 shape = SubResource("BoxShape3D_sj11d")
@@ -101,3 +105,19 @@ spot_angle = 39.56
 event_name = "event:/Ambience/Base Ambience Loop"
 event_guid = "{ea579e07-8d00-4320-bd16-a7da71609eab}"
 autoplay = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=491901860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.11311, 0)
+material_override = ExtResource("12_lkn3a")
+mesh = SubResource("PlaneMesh_qtms1")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1185094350]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.821646, 0)
+material_override = SubResource("ShaderMaterial_oqmyk")
+mesh = SubResource("PlaneMesh_qtms1")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=295724552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.8315268, 0)
+material_override = SubResource("ShaderMaterial_oqmyk")
+material_overlay = ExtResource("12_lkn3a")
+mesh = SubResource("PlaneMesh_qtms1")
