@@ -4,11 +4,12 @@
 [ext_resource type="Script" uid="uid://drlcq8ygjjqww" path="res://gui/minigames/catch_minigame.gd" id="2_1j7b8"]
 [ext_resource type="Resource" uid="uid://kwyrnihivxsv" path="res://fishing_balancing.tres" id="3_1j7b8"]
 [ext_resource type="Script" uid="uid://if1588sw7wgk" path="res://gui/minigames/reel_inn_minigame.gd" id="3_2dgnq"]
+[ext_resource type="Texture2D" uid="uid://be0f5kdkx7wgt" path="res://gui/minigames/cursor.png" id="5_2dgnq"]
 
 [sub_resource type="Gradient" id="Gradient_yi2h0"]
 interpolation_mode = 1
 offsets = PackedFloat32Array(0, 0.16546762, 0.62589926)
-colors = PackedColorArray(1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0)
+colors = PackedColorArray(1, 0, 0, 0, 0.68307734, 0.6830774, 0.68307734, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_i4ntl"]
 gradient = SubResource("Gradient_yi2h0")
@@ -41,7 +42,7 @@ height = 80
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="MinigamesRoot" type="Control" unique_id=348223635 node_paths=PackedStringArray("_catch_minigame", "reel_inn_minigame")]
+[node name="MinigamesRoot" type="Control" unique_id=348223635 node_paths=PackedStringArray("_catch_minigame", "reel_inn_minigame") groups=["minigames"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -122,7 +123,7 @@ event_guid = "{f8b427bb-1c9d-4cbe-b4cb-af86cdf7411f}"
 event_name = "event:/UI/Action Unavailable Button"
 event_guid = "{6fce50d8-7833-45c8-a985-ef49aad286ca}"
 
-[node name="ReelInnMinigame" type="Control" parent="." unique_id=2117237796 node_paths=PackedStringArray("_center", "_cursor", "_border", "_hit_area", "_hit_area_target")]
+[node name="ReelInnMinigame" type="Control" parent="." unique_id=2117237796 node_paths=PackedStringArray("_center", "_cursor", "_cursor_2", "_border", "_hit_area", "_hit_area_target")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -134,6 +135,7 @@ script = ExtResource("3_2dgnq")
 _balance_vars = ExtResource("3_1j7b8")
 _center = NodePath("Center")
 _cursor = NodePath("Cursor")
+_cursor_2 = NodePath("Cursor2")
 _border = NodePath("CircleBorder")
 _hit_area = NodePath("HitArea")
 _hit_area_target = NodePath("HitArea/HitTarget")
@@ -198,7 +200,26 @@ fill_mode = 4
 texture_under = SubResource("GradientTexture2D_uffwq")
 texture_progress = SubResource("GradientTexture2D_yi2h0")
 
+[node name="Cursor2" type="TextureRect" parent="ReelInnMinigame" unique_id=105596098]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -524.0
+offset_right = 100.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 1)
+texture = ExtResource("5_2dgnq")
+stretch_mode = 5
+
 [node name="Cursor" type="ColorRect" parent="ReelInnMinigame" unique_id=2104651889]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

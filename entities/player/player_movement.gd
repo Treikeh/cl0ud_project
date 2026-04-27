@@ -7,6 +7,7 @@ enum {WALKING, FALLING, JUMPING}
 const GRAVITY_DIR: Vector3 = Vector3.DOWN
 
 @export var _move_speed: float = 6.0
+@export var _crouch_speed: float = 3.0
 @export var _ground_accel: float = 500.0
 @export var _air_accel: float = 200.0
 @export var _jump_force: float = 5.0
@@ -20,10 +21,12 @@ var _footsteps_time: float = 0.0
 
 var _enabled: bool = true
 var _is_jumping: bool = false
+var is_crouching: bool = false
 var _move_dir: Vector3
 
 @onready var _player: Player = get_owner()
-@onready var _ground_check: ShapeCast3D = get_child(0)
+@onready var _ground_check: ShapeCast3D = $GroundCheck
+@onready var uncrouch_check: ShapeCast3D = $UncrouchCheck
 @onready var _state_machine := StateMachine.new({
 	WALKING: {StateMachine.PHYSICS: _walking_physics},
 	FALLING: {StateMachine.PHYSICS: _falling_physics},
@@ -61,7 +64,8 @@ func _walking_physics(delta: float) -> void:
 		_state_machine.switch(FALLING)
 		return
 	
-	var target_vel: Vector3 = _move_dir * _move_speed
+	var speed: float = _crouch_speed if is_crouching else _move_speed
+	var target_vel: Vector3 = _move_dir * speed
 	var needed_vel: Vector3 = target_vel - _player.linear_velocity
 	_player.apply_central_force(needed_vel * _ground_accel * delta)
 	_ground_check.snap_to_ground()
@@ -77,14 +81,15 @@ func _falling_physics(delta: float) -> void:
 		_state_machine.switch(WALKING)
 		return
 	
-	var target_vel: Vector3 = _move_dir * _move_speed
+	var speed: float = _crouch_speed if is_crouching else _move_speed
+	var target_vel: Vector3 = _move_dir * speed
 	var slope_normal: Vector3 = Vector3.ZERO
 	
 	#Bad fix for sliding up steep slopes while in the air
 	if _move_dir and _ground_check.is_colliding():
 		slope_normal = _ground_check.ground_normal
 		slope_normal = Vector3(slope_normal.x, 0.0, slope_normal.z)
-		target_vel = (_move_dir + slope_normal) * _move_speed
+		target_vel = (_move_dir + slope_normal) * speed
 	
 	var gravity_vector: Vector3 = _player.linear_velocity.dot(GRAVITY_DIR) * GRAVITY_DIR
 	var needed_vel: Vector3 = target_vel - (_player.linear_velocity - gravity_vector)

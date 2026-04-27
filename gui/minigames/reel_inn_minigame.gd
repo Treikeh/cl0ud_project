@@ -8,6 +8,7 @@ signal failed
 @export var _balance_vars: FishingVariables
 @export var _center: Control
 @export var _cursor: Control
+@export var _cursor_2: Control
 @export var _border: TextureProgressBar
 @export var _hit_area: TextureProgressBar
 @export var _hit_area_target: Control
@@ -60,19 +61,22 @@ func _process(delta: float) -> void:
 	var hit_area_rot: float = rad_to_deg(atan2(hit_area_dir.x, -hit_area_dir.y))
 	var hit_area_offset: float = _hit_area.value
 	var cursor_rotation: float = rad_to_deg(atan2(cursor_dir.x, -cursor_dir.y))
+	_cursor_2.rotation_degrees = cursor_rotation
 	# Check if cursor is inside the hit area
 	var within_right: bool = cursor_rotation <= (hit_area_rot + hit_area_offset)
 	var within_left: bool = cursor_rotation >= (hit_area_rot - hit_area_offset)
 	var within_distance: bool = cursor_distance > 25.0
 	if within_right and within_left and within_distance:
-		_hit_area.texture_progress.gradient.set_color(1, Color.GREEN)
+		#_hit_area.texture_progress.gradient.set_color(1, Color.GREEN)
+		_border.texture_progress.gradient.set_color(1, Color.GREEN)
 		# Increase value if inside hit area
 		var increase_speed: float = _balance_vars.value_increase_speed_curve.sample(_hook_distance)
 		_border.value += increase_speed * delta
 		if _border.value >= 100.0:
 			succeeded.emit()
 	else:
-		_hit_area.texture_progress.gradient.set_color(1, Color.RED)
+		#_hit_area.texture_progress.gradient.set_color(1, Color.RED)
+		_border.texture_progress.gradient.set_color(1, Color.RED)
 		# Decrease value if outside of hit area
 		var decrease_speed: float = _balance_vars.value_decrase_speed_curve.sample(_hook_distance)
 		_border.value -= decrease_speed * delta

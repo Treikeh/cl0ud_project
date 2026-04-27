@@ -14,6 +14,7 @@ enum FishingState {
 @export var _hook: FishingHook
 @export var _hook_throw_pos: Marker3D
 @export var _balance_vars: FishingVariables
+@export var _distance_label: Label3D
 
 @export_group("Hook line")
 @export var _fishing_line: MeshInstance3D
@@ -52,6 +53,11 @@ func _process(delta: float) -> void:
 		
 		var charge_curve: Curve = _balance_vars.throw_charge_curve
 		_throw_charge = charge_curve.sample(_throw_charge_time)
+	
+	if _fishing_state == FishingState.WAITING:
+		var distance: float = _throw_pos.distance_squared_to(_hook.global_position)
+		var distance_curve: float = _balance_vars.hook_distance_curve.sample(distance)
+		_distance_label.text = str(int(distance_curve))
 	
 	if _fishing_state == FishingState.FISH_HOOKED:
 		_player.update_look_position(_hook.global_position)
