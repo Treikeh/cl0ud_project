@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://qtxedfdabwdw"]
+
+[ext_resource type="Script" uid="uid://blwvwt1olcubn" path="res://environment/lights/blinking_light.gd" id="1_ys4xu"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ys4xu"]
+fractal_type = 2
+fractal_octaves = 1
+
+[node name="BlinkingLight" type="OmniLight3D" unique_id=1438144511]
+script = ExtResource("1_ys4xu")
+_noise_map = SubResource("FastNoiseLite_ys4xu")
