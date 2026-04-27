@@ -12,12 +12,13 @@ cull_mode = 2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_sglur"]
 
-[node name="FishingRod" type="Node3D" unique_id=949060003 node_paths=PackedStringArray("_rod_mesh", "_hook", "_hook_throw_pos", "_fishing_line", "_rod_tip", "_cast_sfx", "_reel_sfx", "_caught_sfx", "_escaped_sfx")]
+[node name="FishingRod" type="Node3D" unique_id=949060003 node_paths=PackedStringArray("_rod_mesh", "_hook", "_hook_throw_pos", "_distance_label", "_fishing_line", "_rod_tip", "_cast_sfx", "_reel_sfx", "_caught_sfx", "_escaped_sfx")]
 script = ExtResource("1_kjkgm")
 _rod_mesh = NodePath("FishingRod_01_SK")
 _hook = NodePath("HookLine/HookAttachement/Hook")
 _hook_throw_pos = NodePath("HookThrowPos")
 _balance_vars = ExtResource("2_ho2or")
+_distance_label = NodePath("BoneAttachment3D/DistanceLabel")
 _fishing_line = NodePath("HookLine/LineMesh")
 _rod_tip = NodePath("HookLine/RodTipAttachement")
 _fishing_line_mat = SubResource("StandardMaterial3D_kjkgm")
@@ -45,14 +46,14 @@ material_override = SubResource("StandardMaterial3D_pr2vv")
 mesh = SubResource("ImmediateMesh_sglur")
 
 [node name="RodTipAttachement" type="BoneAttachment3D" parent="HookLine" unique_id=1524872158]
-transform = Transform3D(0.9970712, 0.015766967, 0.07483621, -0.0052658045, -0.962043, 0.27284768, 0.076297596, -0.27244267, -0.95914227, 0.49668172, 0.8129044, -1.2607355)
+transform = Transform3D(0.99705166, 0.011625007, 0.075847395, -0.0038825383, -0.97954816, 0.20117165, 0.0766348, -0.200873, -0.9766149, 0.49668172, 0.8129044, -1.2607355)
 bone_name = "line.001"
 bone_idx = 5
 use_external_skeleton = true
 external_skeleton = NodePath("../../FishingRod_01_SK/Skeleton3D")
 
 [node name="HookAttachement" type="BoneAttachment3D" parent="HookLine" unique_id=213436148]
-transform = Transform3D(0.99703354, 0.005300517, 0.07678518, -0.001770325, -0.99578285, 0.09172659, 0.076947525, -0.09159044, -0.9928195, 0.5019486, 0.32344797, -1.3517438)
+transform = Transform3D(0.9970298, 0.0024704207, 0.076975934, -0.0008251511, -0.99908525, 0.04275183, 0.07701112, -0.04268838, -0.99611574, 0.5002056, 0.31824607, -1.3216258)
 bone_name = "hook.001"
 bone_idx = 7
 use_external_skeleton = true
@@ -82,5 +83,16 @@ event_guid = "{9d2e20a9-d4d3-4039-acb1-24afa23dfdfe}"
 [node name="Escaped" type="FmodEventEmitter3D" parent="SFX" unique_id=1287896646]
 event_name = "event:/Actions/Fish Escaped"
 event_guid = "{2f810c07-fefc-4f37-b561-e050e7d948ad}"
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="." unique_id=166742561]
+transform = Transform3D(0.99741113, 0.05149646, -0.050192162, -0.014544469, 0.8280193, 0.5605108, 0.0704244, -0.55832964, 0.8266247, 0.41509, -0.3740533, -0.35030085)
+bone_name = "rod.001"
+bone_idx = 2
+use_external_skeleton = true
+external_skeleton = NodePath("../FishingRod_01_SK/Skeleton3D")
+
+[node name="DistanceLabel" type="Label3D" parent="BoneAttachment3D" unique_id=1097884886]
+transform = Transform3D(0.51961523, 0, -0.3, 0, 0.6, 0, 0.3, 0, 0.51961523, -0.04346666, 0.2, 0.08835314)
+text = "000"
 
 [editable path="FishingRod_01_SK"]
