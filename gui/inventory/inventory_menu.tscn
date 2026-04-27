@@ -145,10 +145,10 @@ text = "0$"
 
 [node name="ItemDisplayRoot" type="Control" parent="." unique_id=102973274]
 anchors_preset = 0
-offset_left = 293.0
-offset_top = 174.0
-offset_right = 293.0
-offset_bottom = 174.0
+offset_left = 386.0
+offset_top = 103.0
+offset_right = 386.0
+offset_bottom = 103.0
 
 [node name="UpgradesLabel" type="Label" parent="." unique_id=953597692]
 layout_mode = 0

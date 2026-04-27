@@ -35,6 +35,9 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("inventory"):
 		_close()
+	
+	if event.is_action_pressed("ui_cancel"):
+		_close()
 
 
 func _process(delta: float) -> void:
@@ -108,8 +111,14 @@ func _remove_preview_mesh() -> void:
 
 
 func _show_item_dispaly(item_data: ItemData) -> void:
-	var display: Control = ITEM_DISPALY_SCENE.instantiate().with_data(item_data)
-	_item_dispaly_root.add_child(display)
+	if item_data.fish_data:
+		var display_scene_path: String = item_data.fish_data.get_display_scene()
+		var display_scene: Resource = load(display_scene_path)
+		var display: FishDataDisplay = display_scene.instantiate().with_data(item_data.fish_data)
+		_item_dispaly_root.add_child(display)
+	#var display: Control = ITEM_DISPALY_SCENE.instantiate().with_data(item_data)
+	#_item_dispaly_root.add_child(display)
+
 
 
 func _remove_item_display() -> void:
