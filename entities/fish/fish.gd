@@ -12,6 +12,12 @@ enum Type {
 const FOLDER_PATH: String = "res://entities/fish/"
 
 var item_data: ItemData
+var _loot_table: String
+
+
+func with_data(loot_table: String) -> Fish:
+	_loot_table = loot_table
+	return self
 
 
 func _ready() -> void:
@@ -67,7 +73,11 @@ func _get_random_type() -> String:
 
 func _get_random_item_from_loot_table(type: String) -> ItemData:
 	# Loot table to the type of fish
-	var type_loot_table: Dictionary = Globals.fish_loot_table[type]
+	while not Globals.fish_loot_table[_loot_table].has(type):
+		print("No %s in %s loot table" % [type, _loot_table])
+		type = _get_random_type()
+	
+	var type_loot_table: Dictionary = Globals.fish_loot_table[_loot_table][type]
 	type_loot_table.sort()
 	
 	# Get the total rarity of all the fish in the loot table

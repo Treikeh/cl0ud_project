@@ -136,23 +136,34 @@ func _create_item_resources(data: Array[PackedStringArray], file_paths: Dictiona
 			item_type = fish_type.to_upper()
 			icon = load("res://entities/fish/%s/%s_icon.png" % [fish_type, fish_type])
 			mesh_scene = "res://entities/fish/%s/%s_mesh.tscn" % [fish_type, fish_type]
-		
-			# Add fish item to fish loot table
-			# Get the loot table of the fish type
-			var type_loot_table: Dictionary = {}
-			if loot_table.has(item_type):
-				type_loot_table = loot_table[item_type]
 			
-			# Create and add new loot entry for fish
-			var loot_entry: Dictionary = { path: row[5] }
-			type_loot_table.merge(loot_entry)
-			
-			# Update loot table
-			loot_table[item_type] = type_loot_table
+			# Add the fish to the different loot tables
+			var loot_tables: PackedStringArray = row[6].split(",")
+			for table: String in loot_tables:
+				table = table.to_upper().strip_edges()
+				# Get the old loot table
+				var old_table: Dictionary = {}
+				old_table[table] = {}
+				if loot_table.has(table):
+					old_table[table] = loot_table[table]
+				
+				if not old_table[table].has(item_type):
+					old_table[table][item_type] = {}
+				
+				# Create entry for loot table
+				var entry: Dictionary = { path: row[5]}
+				var type_table: Dictionary = {}
+				if old_table[table].has(item_type):
+					type_table = old_table[table][item_type]
+				
+				type_table.merge(entry)
+				
+				old_table[table][item_type].merge(type_table)
+				loot_table.merge(old_table)
 		else:
-			item_type = row[6]
-			icon = load(row[7])
-			mesh_scene = row[8]
+			item_type = row[7]
+			icon = load(row[8])
+			mesh_scene = row[9]
 		
 		# Set item data
 		item.name = item_name

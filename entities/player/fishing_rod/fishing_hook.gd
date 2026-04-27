@@ -24,7 +24,7 @@ const FISH_SCENE: PackedScene = preload("uid://i5dq3bivh8i0")
 
 var hooked_fish: Fish
 var hook_state: HookState = HookState.NORMAL
-
+var _loot_table: String
 
 func _ready() -> void:
 	Globals.fish_escaped.connect(_on_fish_escaped)
@@ -40,13 +40,14 @@ func _on_fish_escaped() -> void:
 	_fish_timer.start()
 
 
-func hit_water() -> void:
+func hit_water(loot_table: String) -> void:
 	if hook_state == HookState.THROWN:
 		hook_state = HookState.IN_WATER
 		gravity_scale = 0.0
 		linear_velocity = Vector3.ZERO
 		angular_velocity = Vector3.ZERO
 		hook_hit_water.emit()
+		_loot_table = loot_table
 		
 		# Randomize and start fish timer
 		var min_wait_time: float = _balance_vars.min_wait_time
@@ -69,5 +70,5 @@ func reset_hook() -> void:
 
 func spawn_fish() -> void:
 	# Spawn a fish on the hook
-	hooked_fish = FISH_SCENE.instantiate()
+	hooked_fish = FISH_SCENE.instantiate().with_data(_loot_table)
 	_hook_marker.add_child(hooked_fish)
