@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://qtxedfdabwdw" path="res://environment/lights/blinking_light.tscn" id="13_qtms1"]
 [ext_resource type="PackedScene" uid="uid://cuemsjrkpvwxh" path="res://environment/lights/automatic_omni_light.tscn" id="14_oqmyk"]
 [ext_resource type="Shader" uid="uid://d1wyxea5aaolm" path="res://environment/shaders/fire_shader.gdshader" id="15_2f633"]
+[ext_resource type="PackedScene" uid="uid://2ubaxhpyylwj" path="res://levels/art/crane/Crane.glb" id="16_2f633"]
 
 [sub_resource type="Curve" id="Curve_hp128"]
 _limits = [0.0, 10.0, 0.0, 24.0]
@@ -304,3 +305,6 @@ spot_angle = 33.871086
 [node name="AutomaticOmniLight2" parent="AutomaticSpotLight11" unique_id=1490858431 instance=ExtResource("14_oqmyk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2522068)
 light_color = Color(0.85882354, 0.67058825, 0, 1)
+
+[node name="Crane" parent="." unique_id=664852381 instance=ExtResource("16_2f633")]
+transform = Transform3D(0.15930757, 0, 0.38688838, 0, 0.26836556, 0, -0.32919157, 0, 0.1872291, 172.1002, -43.541317, -135.87567)
