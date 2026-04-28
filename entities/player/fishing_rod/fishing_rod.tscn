@@ -14,13 +14,14 @@ metallic_specular = 0.0
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_sglur"]
 
-[node name="FishingRod" type="Node3D" unique_id=949060003 node_paths=PackedStringArray("_rod_mesh", "_hook", "_hook_throw_pos", "_distance_label", "_fishing_line", "_rod_tip", "_cast_sfx", "_reel_sfx", "_caught_sfx", "_escaped_sfx")]
+[node name="FishingRod" type="Node3D" unique_id=949060003 node_paths=PackedStringArray("_rod_mesh", "_hook", "_hook_throw_pos", "_distance_label", "_hook_transform", "_fishing_line", "_rod_tip", "_cast_sfx", "_reel_sfx", "_caught_sfx", "_escaped_sfx")]
 script = ExtResource("1_kjkgm")
 _rod_mesh = NodePath("FishingRod_01_SK")
 _hook = NodePath("Hook")
 _hook_throw_pos = NodePath("HookThrowPos")
 _balance_vars = ExtResource("2_ho2or")
 _distance_label = NodePath("BoneAttachment3D/DistanceLabel")
+_hook_transform = NodePath("HookLine/HookAttachement/RemoteTransform3D")
 _fishing_line = NodePath("HookLine/LineMesh")
 _rod_tip = NodePath("HookLine/RodTipAttachement")
 _fishing_line_mat = SubResource("StandardMaterial3D_kjkgm")
@@ -56,7 +57,7 @@ use_external_skeleton = true
 external_skeleton = NodePath("../../FishingRod_01_SK/Skeleton3D")
 
 [node name="HookAttachement" type="BoneAttachment3D" parent="HookLine" unique_id=213436148]
-transform = Transform3D(0.09970298, 0.00024704664, 0.007697589, -8.2510676e-05, -0.09990852, 0.0042751776, 0.007701111, -0.004268837, -0.09961158, 0.050020557, 0.031824615, -0.1321626)
+transform = Transform3D(0.09970298, 0.00024704664, 0.007697589, -8.25106e-05, -0.09990852, 0.004275176, 0.007701111, -0.0042688358, -0.09961158, 0.050020557, 0.031824615, -0.1321626)
 bone_name = "hook.001"
 bone_idx = 7
 use_external_skeleton = true
@@ -100,6 +101,6 @@ text = "000"
 
 [node name="Hook" parent="." unique_id=1629841109 instance=ExtResource("4_e6t2x")]
 process_mode = 4
-transform = Transform3D(0.09970298, -0.0002470473, -0.007697589, -8.2510676e-05, 0.09990852, -0.0042751865, 0.007701111, 0.004268846, 0.09961158, 0.050020557, 0.031824615, -0.1321626)
+transform = Transform3D(0.09970298, -0.0002470473, -0.007697589, -8.25106e-05, 0.09990852, -0.004275185, 0.007701111, 0.0042688446, 0.09961158, 0.050020557, 0.031824615, -0.1321626)
 
 [editable path="FishingRod_01_SK"]

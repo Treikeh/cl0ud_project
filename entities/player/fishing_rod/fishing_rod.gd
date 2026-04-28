@@ -15,6 +15,7 @@ enum FishingState {
 @export var _hook_throw_pos: Marker3D
 @export var _balance_vars: FishingVariables
 @export var _distance_label: Label3D
+@export var _hook_transform: RemoteTransform3D
 
 @export_group("Hook line")
 @export var _fishing_line: MeshInstance3D
@@ -58,6 +59,8 @@ func _process(delta: float) -> void:
 		var distance: float = _throw_pos.distance_squared_to(_hook.global_position)
 		var distance_curve: float = _balance_vars.hook_distance_curve.sample(distance)
 		_distance_label.text = str(int(distance_curve))
+		if global_position.distance_to(_throw_pos) > 10.0:
+			_reel_inn()
 	
 	if _fishing_state == FishingState.FISH_HOOKED:
 		_player.update_look_position(_hook.global_position)
@@ -93,7 +96,7 @@ func _throw_hook() -> void:
 	_throw_pos = global_position
 	_fishing_state = FishingState.WAITING
 	
-	$HookLine/HookAttachement/RemoteTransform3D.remote_path = ""
+	_hook_transform.remote_path = ""
 	# Disconnect hook from pin
 	_hook.scale = Vector3.ONE
 	_hook.process_mode = Node.PROCESS_MODE_INHERIT
@@ -137,7 +140,7 @@ func _reset_rod() -> void:
 	_hook.position = Vector3.ZERO
 	_hook.rotation_degrees = Vector3(180, 0.0, 0.0)
 	_hook.process_mode = Node.PROCESS_MODE_DISABLED
-	$HookLine/HookAttachement/RemoteTransform3D.remote_path = _hook.get_path()
+	_hook_transform.remote_path = _hook.get_path()
 	
 	#SFX
 	_reel_sfx.play_one_shot()
@@ -169,11 +172,7 @@ func _on_fish_caught() -> void:
 
 
 func _on_fish_escaped() -> void:
-	if _fishing_state == FishingState.FISH_HOOKED:
-		_fishing_state = FishingState.WAITING
-		
-		#SFX
-		_escaped_sfx.play_one_shot()
+	_reel_inn()
 
 
 #region Public
