@@ -65,8 +65,8 @@ func _process(delta: float) -> void:
 	# Check if cursor is inside the hit area
 	var within_right: bool = cursor_rotation <= (hit_area_rot + hit_area_offset)
 	var within_left: bool = cursor_rotation >= (hit_area_rot - hit_area_offset)
-	var within_distance: bool = cursor_distance > 25.0
-	if within_right and within_left and within_distance:
+	#var within_distance: bool = cursor_distance > 25.0
+	if within_right and within_left:# and within_distance:
 		#_hit_area.texture_progress.gradient.set_color(1, Color.GREEN)
 		_border.texture_progress.gradient.set_color(1, Color.GREEN)
 		# Increase value if inside hit area

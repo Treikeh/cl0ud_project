@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bio2e7voof108"]
+
+[ext_resource type="Script" uid="uid://dfmaqny5h8bki" path="res://entities/profile_wall/profile_wall.gd" id="1_ev7wo"]
+[ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="2_di50e"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0isjb"]
+size = Vector3(3, 2, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ytnt"]
+size = Vector3(3, 2, 0.1)
+
+[node name="ProfileWall" type="Node3D" unique_id=1612584203]
+script = ExtResource("1_ev7wo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1347538220]
+mesh = SubResource("BoxMesh_0isjb")
+
+[node name="InteractArea3D" parent="." unique_id=1933536461 instance=ExtResource("2_di50e")]
+prompt = "Check"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea3D" unique_id=1830689382]
+shape = SubResource("BoxShape3D_8ytnt")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=941172457]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.9054205, -0.063583605)
+text = "Profiles"
+
+[connection signal="interacted" from="InteractArea3D" to="." method="_on_interact_area_3d_interacted"]

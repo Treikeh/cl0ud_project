@@ -26,7 +26,9 @@ func is_grounded() -> bool:
 		return false
 	
 	if is_colliding():
-		ground_normal = get_collision_normal(0)
+		var pos: Vector3 = get_collision_point(0)
+		ground_normal = _get_ground_normal(pos)
+		#ground_normal = get_collision_normal(0)
 		# Compare ground normal to upwards direction to get the slope angle
 		if ground_normal.angle_to(Vector3.UP) < deg_to_rad(_max_slope_angle):
 			return true
@@ -41,3 +43,14 @@ func snap_to_ground() -> void:
 	var dispalcement: float = hit_distance - _rest_height
 	var force: float = (_spring_force * dispalcement) - (normal_vel * _spring_damping)
 	_player.apply_central_force(_gravity_dir * force)
+
+
+func _get_ground_normal(pos: Vector3) -> Vector3:
+	var direct_state := get_world_3d().direct_space_state
+	var ray_params := PhysicsRayQueryParameters3D.create(
+			pos + Vector3.UP,
+			pos - Vector3.UP,
+			collision_mask
+	)
+	var ray := direct_state.intersect_ray(ray_params)
+	return ray.normal if not ray.is_empty() else Vector3.UP

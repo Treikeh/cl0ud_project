@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://debltn1wkai4d" path="res://common/data/fish/mail_data_02.tres" id="1_cbryn"]
 [ext_resource type="Texture2D" uid="uid://konw78nn60up" path="res://entities/fish/mail/mail_icon.png" id="2_v73gm"]
-[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/scripts/inventory/item_data.gd" id="3_d182q"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_d182q"]
 
 [resource]
 script = ExtResource("3_d182q")
