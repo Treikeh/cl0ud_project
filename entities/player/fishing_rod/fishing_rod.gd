@@ -81,8 +81,8 @@ func _display_fishing_line() -> void:
 	_line_mesh.surface_add_vertex(_hook.global_position - _hook.global_basis.x * 0.02)
 	
 	# Start point
-	_line_mesh.surface_add_vertex(_rod_tip.global_position + global_basis.x * 0.02)
-	_line_mesh.surface_add_vertex(_rod_tip.global_position - global_basis.x * 0.02)
+	_line_mesh.surface_add_vertex(_rod_tip.global_position + global_basis.x * 0.02 * 0.1)
+	_line_mesh.surface_add_vertex(_rod_tip.global_position - global_basis.x * 0.02 * 0.1)
 	
 	_line_mesh.surface_end()
 
@@ -172,6 +172,7 @@ func _on_fish_caught() -> void:
 
 
 func _on_fish_escaped() -> void:
+	_escaped_sfx.play_one_shot()
 	_reel_inn()
 
 

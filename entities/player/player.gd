@@ -5,9 +5,11 @@ class_name Player
 var _minigame_look_dir: Vector2
 var _look_position: Vector3
 
+@export var inventory: Inventory
+@export var piece_inventory: Inventory
+
 var input: PlayerInput
 var movement: PlayerMovement
-var inventory: Inventory
 var hud: Hud
 var camera: PlayerCamera
 
@@ -286,6 +288,7 @@ func get_save_data() -> Dictionary:
 			"head_rotation": var_to_str(_head.rotation_degrees.x),
 			"orientation": var_to_str(_orientation.rotation_degrees.y),
 			"inventory": inventory.get_save_data(),
+			"piece_inventory": piece_inventory.get_save_data(),
 			"upgrades": _get_upgrades_data(),
 		},
 	}
@@ -304,6 +307,7 @@ func _load_save_data() -> void:
 	_head.rotation_degrees.x = str_to_var(data.head_rotation)
 	# Update inventory
 	inventory.load_save_data(data.inventory)
+	piece_inventory.load_save_data(data.piece_inventory)
 	
 	_load_upgrades(data.upgrades)
 

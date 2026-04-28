@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c5d4fd2agsogr" path="res://entities/characters/nils/day_01_nils.gd" id="1_3cw0d"]
 [ext_resource type="Resource" uid="uid://daoxlatyjttmi" path="res://common/data/dialogue/oldman_speak_01.tres" id="2_cc2qk"]
-[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/scripts/dialogue_data.gd" id="2_pjgcy"]
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="2_pjgcy"]
 [ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="3_cc2qk"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="4_5dqtv"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://cbygnrgof7bup" path="res://entities/characters/rig/standing_fishing_anim_sm.tres" id="4_pjgcy"]

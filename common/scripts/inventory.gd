@@ -12,12 +12,6 @@ signal item_removed
 
 var _first_empty_slot_index: int = 0
 
-@onready var _player: Player = get_owner()
-
-
-func _ready() -> void:
-	_player.inventory = self
-
 
 func add_item(item_data: ItemData) -> void:
 	items[_first_empty_slot_index] = item_data

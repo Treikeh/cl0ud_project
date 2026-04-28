@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cyr0p70n201cs" path="res://entities/player/fishing_rod/fishing_rod.tscn" id="3_26q78"]
 [ext_resource type="Script" uid="uid://cxekl8tsteanp" path="res://entities/player/player_ground_check.gd" id="3_bls4j"]
 [ext_resource type="Script" uid="uid://c706cj0ksgna4" path="res://entities/player/player_input.gd" id="5_26q78"]
-[ext_resource type="Script" uid="uid://c4u80mtdabi0p" path="res://common/scripts/inventory/inventory.gd" id="5_fkugw"]
+[ext_resource type="Script" uid="uid://c4u80mtdabi0p" path="res://common/scripts/inventory.gd" id="5_fkugw"]
 [ext_resource type="Script" uid="uid://b7maretlulvud" path="res://entities/player/player_movement.gd" id="5_qiwj3"]
-[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/scripts/inventory/item_data.gd" id="6_8fjmc"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="6_8fjmc"]
 [ext_resource type="PackedScene" uid="uid://eikdd5p1w6ay" path="res://entities/player/hud/hud.tscn" id="9_bectd"]
+[ext_resource type="Resource" uid="uid://bnl5c2crd0lfr" path="res://common/data/items/test_01.tres" id="10_7thud"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bls4j"]
 friction = 0.0
@@ -31,12 +32,14 @@ height = 1.0
 radius = 0.35
 height = 1.0
 
-[node name="Player" type="RigidBody3D" unique_id=913738857 node_paths=PackedStringArray("_orientation", "_head", "_interact_ray", "_standing_collision", "_crouch_collision") groups=["persistent", "player"]]
+[node name="Player" type="RigidBody3D" unique_id=913738857 node_paths=PackedStringArray("inventory", "piece_inventory", "_orientation", "_head", "_interact_ray", "_standing_collision", "_crouch_collision") groups=["persistent", "player"]]
 collision_layer = 2
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_bls4j")
 lock_rotation = true
 script = ExtResource("1_symyc")
+inventory = NodePath("Inventory")
+piece_inventory = NodePath("PieceInventory")
 _orientation = NodePath("Orientation")
 _head = NodePath("Orientation/Head")
 _interact_ray = NodePath("Orientation/Head/InteractRay")
@@ -107,5 +110,10 @@ script = ExtResource("5_26q78")
 [node name="Inventory" type="Node" parent="." unique_id=1803234307]
 script = ExtResource("5_fkugw")
 items = Array[ExtResource("6_8fjmc")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+
+[node name="PieceInventory" type="Node" parent="." unique_id=669873985]
+script = ExtResource("5_fkugw")
+items = Array[ExtResource("6_8fjmc")]([ExtResource("10_7thud")])
+metadata/_custom_type_script = "uid://c4u80mtdabi0p"
 
 [node name="Hud" parent="." unique_id=905877039 instance=ExtResource("9_bectd")]
