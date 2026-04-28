@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b0l8syuol7cs4"]
+
+[ext_resource type="Script" uid="uid://j4j3aq7mw8y7" path="res://entities/profile_wall/printer/profile_printer.gd" id="1_40c73"]
+[ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="2_mxh1j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_40c73"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mxh1j"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_40c73"]
+
+[node name="ProfilePrinter" type="Node3D" unique_id=356552838]
+script = ExtResource("1_40c73")
+
+[node name="InteractArea3D" parent="." unique_id=1933536461 instance=ExtResource("2_mxh1j")]
+prompt = "Open"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea3D" unique_id=658717915]
+shape = SubResource("BoxShape3D_40c73")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1649853648]
+mesh = SubResource("BoxMesh_mxh1j")
+
+[node name="PaperMesh" type="MeshInstance3D" parent="." unique_id=487481126]
+mesh = SubResource("CylinderMesh_40c73")
+
+[connection signal="interacted" from="InteractArea3D" to="." method="_on_interact_area_3d_interacted"]

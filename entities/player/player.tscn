@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://b7maretlulvud" path="res://entities/player/player_movement.gd" id="5_qiwj3"]
 [ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="6_8fjmc"]
 [ext_resource type="PackedScene" uid="uid://eikdd5p1w6ay" path="res://entities/player/hud/hud.tscn" id="9_bectd"]
-[ext_resource type="Resource" uid="uid://bnl5c2crd0lfr" path="res://common/data/items/test_01.tres" id="10_7thud"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bls4j"]
 friction = 0.0
@@ -113,7 +112,7 @@ items = Array[ExtResource("6_8fjmc")]([null, null, null, null, null, null, null,
 
 [node name="PieceInventory" type="Node" parent="." unique_id=669873985]
 script = ExtResource("5_fkugw")
-items = Array[ExtResource("6_8fjmc")]([ExtResource("10_7thud")])
+items = Array[ExtResource("6_8fjmc")]([null, null, null, null, null])
 metadata/_custom_type_script = "uid://c4u80mtdabi0p"
 
 [node name="Hud" parent="." unique_id=905877039 instance=ExtResource("9_bectd")]

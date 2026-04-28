@@ -2,21 +2,24 @@ extends Control
 
 
 signal closed
+signal fish_printed(item_data: ItemData)
 
 
-var _piece_inventory: Inventory
+var _inventory: Inventory
 
 
-func with_data(piece_inventory: Inventory) -> Control:
-	_piece_inventory = piece_inventory
+func with_data(inventory: Inventory) -> Control:
+	_inventory = inventory
 	return self
 
 
 func _ready() -> void:
-	for item: ItemData in _piece_inventory.items:
-		if item:
-			print(item.name)
 	_open()
+
+
+func _print_fish() -> void:
+	fish_printed.emit(_inventory.get_slot_data(0))
+	_close()
 
 
 func _open() -> void:
