@@ -11,7 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://cxn3pwn81mg6g" path="res://levels/art/BuildingOne/BuildingOne_2.glb" id="8_t80xa"]
 [ext_resource type="PackedScene" uid="uid://bj776d7ttynq7" path="res://levels/art/BuildingOne_3.glb" id="9_qywe3"]
 [ext_resource type="PackedScene" uid="uid://jy28a08t3w22" path="res://environment/lights/automatic_spot_light.tscn" id="11_dk47i"]
-[ext_resource type="Material" uid="uid://ciehglpo48eeu" path="res://environment/cloud_shader_material.tres" id="12_lkn3a"]
+[ext_resource type="Material" uid="uid://ciehglpo48eeu" path="res://environment/shaders/cloud_shader/cloud_shader_material.tres" id="12_lkn3a"]
+[ext_resource type="PackedScene" uid="uid://qtxedfdabwdw" path="res://environment/lights/blinking_light.tscn" id="13_qtms1"]
+[ext_resource type="PackedScene" uid="uid://cuemsjrkpvwxh" path="res://environment/lights/automatic_omni_light.tscn" id="14_oqmyk"]
+[ext_resource type="Shader" uid="uid://d1wyxea5aaolm" path="res://environment/shaders/fire_shader.gdshader" id="15_2f633"]
 
 [sub_resource type="Curve" id="Curve_hp128"]
 _limits = [0.0, 10.0, 0.0, 24.0]
@@ -31,13 +34,64 @@ subdivide_depth = 16
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oqmyk"]
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qtms1"]
+noise_type = 5
+frequency = 0.0318
+fractal_octaves = 2
+fractal_lacunarity = 2.095
+fractal_gain = 1.67
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u0ke0"]
+noise_type = 0
+frequency = 0.0086
+fractal_octaves = 3
+fractal_gain = 0.97
+fractal_weighted_strength = 0.11
+domain_warp_amplitude = 22.5
+domain_warp_frequency = -3.98
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_2f633"]
+noise = SubResource("FastNoiseLite_u0ke0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u0ke0"]
+render_priority = 0
+shader = ExtResource("15_2f633")
+shader_parameter/raymarch_steps = 6
+shader_parameter/sample_jitter = true
+shader_parameter/potato_mode = false
+shader_parameter/sample_noise = SubResource("NoiseTexture3D_2f633")
+shader_parameter/billboard = false
+shader_parameter/billboard_z_offset = 0.675
+shader_parameter/proximity_fade_distance = 0.08
+shader_parameter/time_scale = 0.025
+shader_parameter/noise_scale = 2.3
+shader_parameter/noise_threshold = 0.535
+shader_parameter/fire_height = 0.46
+shader_parameter/fire_width = 1.07
+shader_parameter/box_center = Vector3(0, 0, 0)
+shader_parameter/box_rotation = Vector3(0, 0, 0)
+shader_parameter/taper_factor = 0.025
+shader_parameter/wobble_strength = 2.84
+shader_parameter/wobble_speed = 12.61
+shader_parameter/wobble_noise_frequency = 0.25500000885262
+shader_parameter/sharpness_cutoff = 5.8970002801075
+shader_parameter/emission_strength = 17.205
+shader_parameter/core_glow_multiplier = 10.926000518985
+shader_parameter/color_core = Vector3(1, 0.9, 0.5)
+shader_parameter/color_mid = Vector3(1, 0.625, 0)
+shader_parameter/color_outer = Vector3(0.8, 0.01, 0)
+shader_parameter/color_smoke = Vector3(-0.067, -0.067, 2.873)
+shader_parameter/jitter_multiplier = 1.4450000686375
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_u0ke0"]
+
 [node name="MainLevel" type="Node3D" unique_id=224384734 node_paths=PackedStringArray("_day_night_cycle", "_player_marker") groups=["persistent"]]
 script = ExtResource("1_um8ys")
 _day_night_cycle = NodePath("DayNightCycle")
 _player_marker = NodePath("PlayerStartMarker")
 _junk_curve = SubResource("Curve_hp128")
 
-[node name="PlayableArea_V2" parent="." unique_id=1117595364 instance=ExtResource("6_3i7v1")]
+[node name="PlayableArea_V2" parent="." unique_id=783862769 instance=ExtResource("6_3i7v1")]
 
 [node name="DayNightCycle" parent="." unique_id=50702471 instance=ExtResource("1_b2fg0")]
 transform = Transform3D(-0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.7071068, 0, 4.1425443, -3.334785)
@@ -66,25 +120,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -23.93164, 0)
 shape = SubResource("BoxShape3D_t80xa")
 debug_color = Color(1, 0, 0, 0.41960785)
 
-[node name="BuildingTwo3" parent="." unique_id=1370231449 instance=ExtResource("8_ki8py")]
+[node name="BuildingTwo3" parent="." unique_id=1847187905 instance=ExtResource("8_ki8py")]
 transform = Transform3D(1.0559312, 0, 0.31326467, 0, 0.6304141, 0, -0.5045849, 0, 0.6866358, 300.6336, -86.49105, 210.38086)
 
-[node name="BuildingTwo4" parent="." unique_id=1886137722 instance=ExtResource("8_ki8py")]
+[node name="BuildingTwo4" parent="." unique_id=456492849 instance=ExtResource("8_ki8py")]
 transform = Transform3D(0.048637435, 0, 1.0409298, 0, 0.5497928, 0, -0.7662879, 0, 0.05433991, 354.92572, -90.21438, 83.54971)
 
-[node name="BuildingTwo2" parent="." unique_id=522163439 instance=ExtResource("8_ki8py")]
+[node name="BuildingTwo2" parent="." unique_id=1646036254 instance=ExtResource("8_ki8py")]
 transform = Transform3D(-0.72044206, 0, 0.03573711, 0, 0.5392531, 0, -0.045727655, 0, -0.68457437, 355.67697, -53.018284, -216.92795)
 
-[node name="BuildingTwo" parent="." unique_id=280619830 instance=ExtResource("8_ki8py")]
+[node name="BuildingTwo" parent="." unique_id=231892023 instance=ExtResource("8_ki8py")]
 transform = Transform3D(0.019512743, 0, 0.6257129, 0, 0.5724138, 0, -0.7608164, 0, 0.020170506, 326.48868, -56.894825, -88.7114)
 
-[node name="BuildingOne_4" parent="." unique_id=1172658465 instance=ExtResource("9_qywe3")]
+[node name="BuildingOne_4" parent="." unique_id=876004339 instance=ExtResource("9_qywe3")]
 transform = Transform3D(1.4089911, 0, 0, 0, 1.0780029, 0, 0, 0, 1.244991, 450.06766, -42.76156, -187.95996)
 
-[node name="BuildingOne_2" parent="." unique_id=70569716 instance=ExtResource("8_t80xa")]
+[node name="BuildingOne_2" parent="." unique_id=2044558201 instance=ExtResource("8_t80xa")]
 transform = Transform3D(1.174144, 0, 0, 0, 1.1030219, 0, 0, 0, 1.277501, 398.03802, -84.64674, 56.753242)
 
-[node name="BuildingOne_3" parent="." unique_id=1946634505 instance=ExtResource("9_qywe3")]
+[node name="BuildingOne_3" parent="." unique_id=1635238816 instance=ExtResource("9_qywe3")]
 transform = Transform3D(1.4089911, 0, 0, 0, 1.0965421, 0, 0, 0, 1.1104906, 389.03696, -56.535595, 46.73665)
 
 [node name="AutomaticSpotLight" parent="." unique_id=1845424586 instance=ExtResource("11_dk47i")]
@@ -95,9 +149,10 @@ spot_angle = 33.52
 
 [node name="AutomaticSpotLight2" parent="." unique_id=1549120822 instance=ExtResource("11_dk47i")]
 transform = Transform3D(-0.9659258, 0, -0.25881913, 0, 1, 0, 0.25881913, 0, -0.9659258, -7.8847528, 4.090805, -10.770191)
-spot_range = 11.551
-spot_attenuation = -0.34
-spot_angle = 39.56
+spot_range = 15.27
+spot_attenuation = -0.27
+spot_angle = 37.75
+spot_angle_attenuation = 0.7578572
 
 [node name="SFX" type="Node3D" parent="." unique_id=516107422]
 
@@ -107,17 +162,67 @@ event_guid = "{ea579e07-8d00-4320-bd16-a7da71609eab}"
 autoplay = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=491901860]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.11311, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19.805752, 0)
 material_override = ExtResource("12_lkn3a")
 mesh = SubResource("PlaneMesh_qtms1")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1185094350]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.821646, 0)
-material_override = SubResource("ShaderMaterial_oqmyk")
-mesh = SubResource("PlaneMesh_qtms1")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=295724552]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.8315268, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.168639, 0)
 material_override = SubResource("ShaderMaterial_oqmyk")
 material_overlay = ExtResource("12_lkn3a")
 mesh = SubResource("PlaneMesh_qtms1")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=295724552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.6203523, 0)
+material_override = SubResource("ShaderMaterial_oqmyk")
+material_overlay = ExtResource("12_lkn3a")
+mesh = SubResource("PlaneMesh_qtms1")
+
+[node name="BlinkingLight" parent="." unique_id=1438144511 instance=ExtResource("13_qtms1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.292074, 4.7158036, 6.0023894)
+omni_range = 3.382
+omni_attenuation = 0.115
+_speed = 100.0
+_min_value = 0.0
+_max_value = 4.325
+_noise_map = SubResource("FastNoiseLite_qtms1")
+
+[node name="AutomaticSpotLight3" parent="." unique_id=505384588 instance=ExtResource("11_dk47i")]
+transform = Transform3D(-0.13842526, 0.046154846, -0.98929685, 0.010680896, 0.99892485, 0.045109544, 0.9903153, -0.0043222783, -0.13876942, -33.585064, 4.0576887, -0.084996015)
+spot_range = 17.214
+spot_attenuation = 1.05
+spot_angle = 37.7
+
+[node name="AutomaticSpotLight4" parent="." unique_id=721637865 instance=ExtResource("11_dk47i")]
+transform = Transform3D(0.668495, 0, -0.74371696, 0, 1, 0, 0.74371696, 0, 0.668495, -2.8840268, 1.1403085, -56.08118)
+spot_range = 23.21
+spot_attenuation = 0.26
+spot_angle = 41.98
+
+[node name="AutomaticSpotLight5" parent="." unique_id=287774260 instance=ExtResource("11_dk47i")]
+transform = Transform3D(-0.52167976, 0, -0.85314137, 0, 1, 0, 0.85314137, 0, -0.52167976, -3.043233, 1.1403083, -62.65996)
+spot_range = 55.139
+spot_attenuation = 0.19
+spot_angle = 40.17
+
+[node name="AutomaticOmniLight" parent="." unique_id=619135898 instance=ExtResource("14_oqmyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.103935, 5.2915354, 0.16252026)
+light_color = Color(0.38446438, 0.7309622, 0.3040274, 1)
+omni_range = 2.105
+omni_attenuation = -0.49
+_turn_on_time = 24.0
+
+[node name="Fire" type="MeshInstance3D" parent="." unique_id=39830721]
+transform = Transform3D(-0.5053087, 2.4054378e-16, 0.030904714, -6.568736e-09, -0.4779367, -5.1524534e-08, 0.032072786, -4.1782542e-08, 0.59200585, -10.183664, 3.3974304, 5.728025)
+material_override = SubResource("ShaderMaterial_u0ke0")
+mesh = SubResource("CylinderMesh_u0ke0")
+
+[node name="BlinkingLight2" parent="Fire" unique_id=1529296856 instance=ExtResource("13_qtms1")]
+transform = Transform3D(-1.9724525, -9.001809e-09, 0.102968715, 1.5589055e-08, -2.0923269, -1.8291702e-07, 0.10686051, -1.471844e-07, 1.6835939, 0.0027694702, -0.20332718, -0.05054474)
+light_color = Color(0.9607843, 0.4509804, 0.1254902, 1)
+light_energy = 0.892
+light_indirect_energy = 1.644
+light_volumetric_fog_energy = 0.57
+light_size = 0.141
+light_specular = 0.655
+_speed = 100.0
