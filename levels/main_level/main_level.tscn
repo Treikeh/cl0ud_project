@@ -142,10 +142,13 @@ transform = Transform3D(1.174144, 0, 0, 0, 1.1030219, 0, 0, 0, 1.277501, 398.038
 transform = Transform3D(1.4089911, 0, 0, 0, 1.0965421, 0, 0, 0, 1.1104906, 389.03696, -72.23445, 46.73665)
 
 [node name="AutomaticSpotLight" parent="." unique_id=1845424586 instance=ExtResource("11_dk47i")]
-transform = Transform3D(-0.49721622, 0, -0.86762667, 0, 1, 0, 0.86762667, 0, -0.49721622, -15.222596, 4.060165, -1.2774582)
+transform = Transform3D(-0.49721622, 0, -0.86762667, 0, 1, 0, 0.86762667, 0, -0.49721622, -15.304897, 4.060165, -1.2325625)
 spot_range = 12.427
 spot_attenuation = -0.28
 spot_angle = 33.52
+
+[node name="AutomaticOmniLight" parent="AutomaticSpotLight" unique_id=619135898 instance=ExtResource("14_oqmyk")]
+omni_range = 0.5
 
 [node name="AutomaticSpotLight2" parent="." unique_id=1549120822 instance=ExtResource("11_dk47i")]
 transform = Transform3D(-0.9659258, 0, -0.25881913, 0, 1, 0, 0.25881913, 0, -0.9659258, -7.8847528, 4.090805, -10.770191)
@@ -153,6 +156,10 @@ spot_range = 15.27
 spot_attenuation = -0.27
 spot_angle = 37.75
 spot_angle_attenuation = 0.7578572
+
+[node name="AutomaticOmniLight" parent="AutomaticSpotLight2" unique_id=1653121036 instance=ExtResource("14_oqmyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03233719, 0, -0.13066006)
+omni_range = 0.5
 
 [node name="SFX" type="Node3D" parent="." unique_id=516107422]
 
@@ -193,11 +200,19 @@ spot_range = 17.214
 spot_attenuation = 1.05
 spot_angle = 37.7
 
+[node name="AutomaticOmniLight" parent="AutomaticSpotLight3" unique_id=2137023620 instance=ExtResource("14_oqmyk")]
+transform = Transform3D(1, -4.656613e-10, 0, -9.313226e-10, 0.99999994, 2.0372681e-09, 1.4901161e-08, -1.8044375e-09, 1, -0.39773178, 0.017082691, -0.28411102)
+omni_range = 0.5
+
 [node name="AutomaticSpotLight4" parent="." unique_id=721637865 instance=ExtResource("11_dk47i")]
 transform = Transform3D(0.668495, 0, -0.74371696, 0, 1, 0, 0.74371696, 0, 0.668495, -2.8840268, 1.1403085, -56.08118)
 spot_range = 23.21
 spot_attenuation = 0.26
 spot_angle = 41.98
+
+[node name="AutomaticOmniLight" parent="AutomaticSpotLight4" unique_id=1181692398 instance=ExtResource("14_oqmyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15280151, -0.23536575, -0.095085144)
+omni_range = 0.5
 
 [node name="AutomaticSpotLight5" parent="." unique_id=287774260 instance=ExtResource("11_dk47i")]
 transform = Transform3D(-0.52167976, 0, -0.85314137, 0, 1, 0, 0.85314137, 0, -0.52167976, -3.043233, 1.1403083, -62.65996)
@@ -205,12 +220,20 @@ spot_range = 55.139
 spot_attenuation = 0.19
 spot_angle = 40.17
 
-[node name="AutomaticOmniLight" parent="." unique_id=619135898 instance=ExtResource("14_oqmyk")]
+[node name="AutomaticOmniLight" parent="AutomaticSpotLight5" unique_id=232674775 instance=ExtResource("14_oqmyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17472708, 0)
+omni_range = 0.5
+
+[node name="AutomaticOmniLight2" parent="AutomaticSpotLight5" unique_id=1389129824 instance=ExtResource("14_oqmyk")]
+transform = Transform3D(-0.52167976, 0, 0.85314137, 0, 1, 0, -0.85314137, 0, -0.52167976, 68.75531, 4.3828382, -36.01261)
+light_color = Color(0.85882354, 0.67058825, 0, 1)
+
+[node name="AutomaticOmniLight" parent="." unique_id=536668736 instance=ExtResource("14_oqmyk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.103935, 5.2915354, 0.16252026)
 light_color = Color(0.38446438, 0.7309622, 0.3040274, 1)
 omni_range = 2.105
 omni_attenuation = -0.49
-_turn_on_time = 24.0
+_turn_on_time = 23.0
 
 [node name="Fire" type="MeshInstance3D" parent="." unique_id=39830721]
 transform = Transform3D(-0.5053087, 2.4054378e-16, 0.030904714, -6.568736e-09, -0.4779367, -5.1524534e-08, 0.032072786, -4.1782542e-08, 0.59200585, -10.183664, 3.4309258, 5.728025)
@@ -226,3 +249,58 @@ light_volumetric_fog_energy = 0.57
 light_size = 0.141
 light_specular = 0.655
 _speed = 100.0
+
+[node name="AutomaticSpotLight7" parent="." unique_id=561220816 instance=ExtResource("11_dk47i")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -15.797389, 23.53624, -5.5030346)
+light_color = Color(0.86019135, 0.67228115, 0, 1)
+light_energy = 6.202
+spot_range = 29.996923
+spot_angle = 33.871086
+
+[node name="AutomaticOmniLight2" parent="AutomaticSpotLight7" unique_id=1962948976 instance=ExtResource("14_oqmyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2522068)
+light_color = Color(0.85882354, 0.67058825, 0, 1)
+
+[node name="AutomaticSpotLight8" parent="." unique_id=2022350933 instance=ExtResource("11_dk47i")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -15.797389, 23.53624, 8.296966)
+light_color = Color(0.86019135, 0.67228115, 0, 1)
+light_energy = 6.202
+spot_range = 29.996923
+spot_angle = 33.871086
+
+[node name="AutomaticOmniLight2" parent="AutomaticSpotLight8" unique_id=1564265714 instance=ExtResource("14_oqmyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2522068)
+light_color = Color(0.85882354, 0.67058825, 0, 1)
+
+[node name="AutomaticSpotLight9" parent="." unique_id=778899934 instance=ExtResource("11_dk47i")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -15.797389, 23.53624, -19.403034)
+light_color = Color(0.86019135, 0.67228115, 0, 1)
+light_energy = 6.202
+spot_range = 29.996923
+spot_angle = 33.871086
+
+[node name="AutomaticOmniLight2" parent="AutomaticSpotLight9" unique_id=2132578654 instance=ExtResource("14_oqmyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2522068)
+light_color = Color(0.85882354, 0.67058825, 0, 1)
+
+[node name="AutomaticSpotLight10" parent="." unique_id=1714200343 instance=ExtResource("11_dk47i")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -15.797389, 23.53624, 22.196968)
+light_color = Color(0.86019135, 0.67228115, 0, 1)
+light_energy = 6.202
+spot_range = 29.996923
+spot_angle = 33.871086
+
+[node name="AutomaticOmniLight2" parent="AutomaticSpotLight10" unique_id=1350496103 instance=ExtResource("14_oqmyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2522068)
+light_color = Color(0.85882354, 0.67058825, 0, 1)
+
+[node name="AutomaticSpotLight11" parent="." unique_id=2062716294 instance=ExtResource("11_dk47i")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -15.797389, 23.53624, 35.996967)
+light_color = Color(0.86019135, 0.67228115, 0, 1)
+light_energy = 6.202
+spot_range = 29.996923
+spot_angle = 33.871086
+
+[node name="AutomaticOmniLight2" parent="AutomaticSpotLight11" unique_id=1490858431 instance=ExtResource("14_oqmyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2522068)
+light_color = Color(0.85882354, 0.67058825, 0, 1)

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bli63q1qswjvg"]
 
 [ext_resource type="Script" uid="uid://dxh20yacti85m" path="res://environment/day_night_cycle/day_night_cycle.gd" id="1_wtxaj"]
+[ext_resource type="Environment" uid="uid://cwbx16s54ahdp" path="res://environment/day_night_cycle/main_environment.tres" id="2_ij7be"]
 
 [sub_resource type="Gradient" id="Gradient_irgiq"]
 offsets = PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
@@ -39,21 +40,6 @@ colors = PackedColorArray(0.2784314, 0.007843138, 0.61960787, 1, 0.99607843, 0.8
 gradient = SubResource("Gradient_wtxaj")
 width = 360
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dh6gv"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_8iyw0"]
-sky_material = SubResource("ProceduralSkyMaterial_dh6gv")
-
-[sub_resource type="Environment" id="Environment_wtxaj"]
-background_mode = 2
-sky = SubResource("Sky_8iyw0")
-tonemap_mode = 2
-glow_enabled = true
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.0
-
 [node name="DayNightCycle" type="Node3D" unique_id=50702471 node_paths=PackedStringArray("_world_environment", "_sun_rot", "_directional_light") groups=["day_night_cycle"]]
 process_mode = 3
 script = ExtResource("1_wtxaj")
@@ -69,7 +55,7 @@ _sky_light_curve = SubResource("Curve_wtxaj")
 _sky_light_color = SubResource("GradientTexture1D_m3cjs")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1037190567]
-environment = SubResource("Environment_wtxaj")
+environment = ExtResource("2_ij7be")
 
 [node name="SunRot" type="Marker3D" parent="." unique_id=1904478581]
 gizmo_extents = 3.0
