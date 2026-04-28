@@ -2,7 +2,7 @@ extends InteractArea3D
 
 
 @export var _head_marker: Node3D
-@export var _dialogue: Array[DialogueData] = []
+@export var _dialogue: DialogueData
 
 
 func _ready() -> void:
