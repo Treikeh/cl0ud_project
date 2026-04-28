@@ -13,6 +13,7 @@ class_name DayNightCycle
 @export var _sky_horizon_color: GradientTexture1D
 @export var _ground_horizon_color: GradientTexture1D
 @export var _ground_bottom_color: GradientTexture1D
+@export var _fog_color: GradientTexture1D
 
 @export_group("Sky light")
 @export var _sun_rot: Node3D
@@ -62,6 +63,8 @@ func _update_skybox() -> void:
 	sky_mat.ground_horizon_color = _ground_horizon_color.gradient.sample(color_sample_remap)
 	sky_mat.ground_bottom_color = _ground_bottom_color.gradient.sample(color_sample_remap)
 	
+	# Change fog color
+	_world_environment.environment.fog_light_color = _fog_color.gradient.sample(color_sample_remap)
 	
 	# Change light intensity
 	var curve_sample: float = _sun_rot.rotation_degrees.x
