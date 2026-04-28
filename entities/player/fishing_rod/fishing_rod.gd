@@ -93,7 +93,9 @@ func _throw_hook() -> void:
 	_throw_pos = global_position
 	_fishing_state = FishingState.WAITING
 	
+	$HookLine/HookAttachement/RemoteTransform3D.remote_path = ""
 	# Disconnect hook from pin
+	_hook.scale = Vector3.ONE
 	_hook.process_mode = Node.PROCESS_MODE_INHERIT
 	_hook.top_level = true
 	_hook.linear_damp = 0.0
@@ -135,6 +137,7 @@ func _reset_rod() -> void:
 	_hook.position = Vector3.ZERO
 	_hook.rotation_degrees = Vector3(180, 0.0, 0.0)
 	_hook.process_mode = Node.PROCESS_MODE_DISABLED
+	$HookLine/HookAttachement/RemoteTransform3D.remote_path = _hook.get_path()
 	
 	#SFX
 	_reel_sfx.play_one_shot()

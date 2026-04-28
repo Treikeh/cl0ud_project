@@ -23,8 +23,9 @@ height = 1.5
 radius = 0.4
 height = 1.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_wvtmh"]
-size = Vector3(0.5, 1, 0.5)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a1qjk"]
+radius = 0.3
+height = 1.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7thud"]
 radius = 0.35
@@ -57,28 +58,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Orientation/Head" unique_id=1569207722]
 fov = 90.0
+near = 0.01
 script = ExtResource("2_wvtmh")
 hb_frequency = 2.5
+
+[node name="FmodListener3D" type="FmodListener3D" parent="Orientation/Head/Camera3D" unique_id=463241591]
+
+[node name="FishingRod" parent="Orientation/Head/Camera3D" unique_id=949060003 instance=ExtResource("3_26q78")]
 
 [node name="InteractRay" type="RayCast3D" parent="Orientation/Head" unique_id=1370547296]
 target_position = Vector3(0, 0, -1.75)
 collision_mask = 17
 collide_with_areas = true
 script = ExtResource("2_abrql")
-
-[node name="FishingRod" parent="Orientation/Head" unique_id=949060003 instance=ExtResource("3_26q78")]
-
-[node name="RotSpringBoneSimulator3D" parent="Orientation/Head/FishingRod/FishingRod_01_SK/Skeleton3D" parent_id_path=PackedInt32Array(949060003, 81632285, 547459602) index="1" unique_id=1981557424]
-settings/0/center_from = 1
-settings/0/center_node = NodePath("../../../../../..")
-
-[node name="RodTipAttachement" parent="Orientation/Head/FishingRod/HookLine" parent_id_path=PackedInt32Array(949060003, 12906906) index="1" unique_id=1524872158]
-transform = Transform3D(0.99705166, 0.011625001, 0.075847395, -0.0038825253, -0.9795483, 0.20117138, 0.0766348, -0.20087273, -0.976615, 0.49668172, 0.8129044, -1.2607355)
-
-[node name="HookAttachement" parent="Orientation/Head/FishingRod/HookLine" parent_id_path=PackedInt32Array(949060003, 12906906) index="2" unique_id=213436148]
-transform = Transform3D(0.9970298, 0.002470472, 0.07697593, -0.00082511106, -0.99908525, 0.042751934, 0.07701113, -0.042688485, -0.99611574, 0.5002056, 0.31824595, -1.3216258)
-
-[node name="FmodListener3D" type="FmodListener3D" parent="Orientation/Head" unique_id=463241591]
 
 [node name="Movement" type="Node3D" parent="." unique_id=302736872 node_paths=PackedStringArray("_footsteps_sfx")]
 script = ExtResource("5_qiwj3")
@@ -87,15 +79,11 @@ _footsteps_freq = 1.0
 _footsteps_sfx = NodePath("SFX/FootSteps")
 
 [node name="GroundCheck" type="ShapeCast3D" parent="Movement" unique_id=1000335560]
-shape = SubResource("BoxShape3D_wvtmh")
+shape = SubResource("CapsuleShape3D_a1qjk")
 max_results = 1
 debug_shape_custom_color = Color(1, 0, 0.2833333, 1)
 script = ExtResource("3_bls4j")
 _leave_floor_force = 3.0
-
-[node name="RayCast3D" type="RayCast3D" parent="Movement/GroundCheck" unique_id=1829849717]
-target_position = Vector3(0, -1.6, 0)
-debug_shape_custom_color = Color(1, 0, 0.28235295, 1)
 
 [node name="UncrouchCheck" type="ShapeCast3D" parent="Movement" unique_id=107485265]
 shape = SubResource("CapsuleShape3D_7thud")
@@ -121,6 +109,3 @@ script = ExtResource("5_fkugw")
 items = Array[ExtResource("6_8fjmc")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 
 [node name="Hud" parent="." unique_id=905877039 instance=ExtResource("9_bectd")]
-
-[editable path="Orientation/Head/FishingRod"]
-[editable path="Orientation/Head/FishingRod/FishingRod_01_SK"]
