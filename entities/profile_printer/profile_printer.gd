@@ -8,11 +8,13 @@ enum State{
 }
 
 
+const TWEEN_DURATION: float = 0.5
 const PRINTER_MENU_SCENE: PackedScene = preload("uid://daoulaw7h8y4p")
 
 
 @export var _terminal_collision: CollisionShape3D
 @export var _printer_collision: CollisionShape3D
+@export var _cam_transform_marker: Marker3D
 
 @export_group("SFX")
 @export var _print_sfx: FmodEventEmitter3D
@@ -43,12 +45,23 @@ func _open_menu(player: Player) -> void:
 	printer_menu.closed.connect(_on_menu_closed.bind(player))
 	printer_menu.fish_printed.connect(_on_fish_printed)
 	_open_menu_sfx.play_one_shot()
+	
+	var cam: Camera3D = player.camera.cam
+	var tween: Tween = create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(cam, "global_transform", _cam_transform_marker.global_transform, TWEEN_DURATION)
 
 
 func _on_menu_closed(player: Player) -> void:
 	player.input.set_enabled.call_deferred(true)
 	player.update_look_position(Vector3.ZERO)
 	_close_menu_sfx.play_one_shot()
+	
+	var cam: Camera3D = player.camera.cam
+	var tween: Tween = create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(cam, "position", Vector3.ZERO, TWEEN_DURATION)
+	tween.tween_property(cam, "rotation", Vector3.ZERO, TWEEN_DURATION)
 
 
 func _on_fish_printed(item_data: ItemData) -> void:

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c7cu5bxtffalu"]
 
 [ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_7wo70"]
-[ext_resource type="Script" uid="uid://23fder8efuo2" path="res://entities/profile_wall/item_entry/item_entry.gd" id="1_fdunx"]
+[ext_resource type="Script" uid="uid://23fder8efuo2" path="res://entities/profile_printer/item_entry/item_entry.gd" id="1_fdunx"]
 
 [node name="ItemEntry" type="PanelContainer" unique_id=1347665274 node_paths=PackedStringArray("_icon", "_label")]
 offset_right = 213.0
