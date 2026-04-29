@@ -7,6 +7,7 @@
 [resource]
 script = ExtResource("3_p1u2x")
 name = "Message 02"
+description = "Message item"
 value = 5
 type = "MESSAGE"
 icon = ExtResource("2_7t3cn")

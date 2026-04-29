@@ -120,7 +120,7 @@ func _create_item_resources(data: Array[PackedStringArray], file_paths: Dictiona
 		
 		# Get item data
 		var item_name: String = row[1]
-		#var description: String = row[2]
+		var description: String = row[2]
 		var value: int = int(row[3])
 		var fish_data_path: String = row[4]
 		
@@ -167,6 +167,7 @@ func _create_item_resources(data: Array[PackedStringArray], file_paths: Dictiona
 		
 		# Set item data
 		item.name = item_name
+		item.description = description
 		item.value = value
 		item.icon = icon
 		item.type = item_type

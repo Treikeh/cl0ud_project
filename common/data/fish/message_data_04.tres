@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MessageData" format=3 uid="uid://fi0ducym3rtx"]
+
+[ext_resource type="Script" uid="uid://knk2w0s0q2la" path="res://entities/fish/message/message_data.gd" id="1_gnjqy"]
+
+[resource]
+script = ExtResource("1_gnjqy")
+sender = "Per "
+recipient = "Pål "
+messages = Array[Dictionary]([{
+"LINES": [" Har du hørt? ", " Om Espen? "],
+"WHO": "Pål "
+}, {
+"LINES": [" Nei ", " Hva har han gjort nå? "],
+"WHO": "Per "
+}, {
+"LINES": [" Han er ute på eventry igjen..."],
+"WHO": "Pål "
+}])

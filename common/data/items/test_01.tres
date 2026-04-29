@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("2_caohm")
 name = "Item 01"
+description = "General item"
 value = 3
 type = "ITEM"
 icon = ExtResource("1_6pmsh")

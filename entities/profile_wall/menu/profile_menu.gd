@@ -68,9 +68,9 @@ func _on_mouse_exited_slot() -> void:
 	_selected_slot = null
 
 
-func _on_slot_recived_data(data: NoteData, source: Control) -> void:
+func _on_slot_recived_data(data: ItemData, source: Control) -> void:
 	var data_types: Dictionary[Label, Control] = _profile.data_types
 	if data_types.values().has(source):
 		var label_index: int = data_types.values().find(source)
 		var label: Label = data_types.keys()[label_index]
-		label.text += data.text
+		label.text += data.description

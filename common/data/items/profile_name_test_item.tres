@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dae7b8a7gtuao"]
+
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_tcu81"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_4gtge"]
+
+[resource]
+script = ExtResource("2_4gtge")
+description = "Mario"
+type = "PROFILE_DATA"
+icon = ExtResource("1_tcu81")
+mesh_scene = "res://entities/player/fishing_rod/art/fishing_hook_001_fbx.tscn"
