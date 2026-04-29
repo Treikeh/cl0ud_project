@@ -92,7 +92,7 @@ _day_night_cycle = NodePath("DayNightCycle")
 _player_marker = NodePath("PlayerStartMarker")
 _junk_curve = SubResource("Curve_hp128")
 
-[node name="PlayableArea_V2" parent="." unique_id=112127797 instance=ExtResource("6_3i7v1")]
+[node name="PlayableArea_V2" parent="." unique_id=1227016839 instance=ExtResource("6_3i7v1")]
 
 [node name="DayNightCycle" parent="." unique_id=50702471 instance=ExtResource("1_b2fg0")]
 transform = Transform3D(-0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.7071068, 0, 4.1425443, -3.334785)
@@ -237,7 +237,7 @@ omni_attenuation = -0.49
 _turn_on_time = 23.0
 
 [node name="Fire" type="MeshInstance3D" parent="." unique_id=39830721]
-transform = Transform3D(-0.5053087, 2.4054378e-16, 0.030904714, -6.568736e-09, -0.4779367, -5.1524534e-08, 0.032072786, -4.1782542e-08, 0.59200585, -10.183664, 3.4309258, 5.728025)
+transform = Transform3D(-0.5053087, 2.4054378e-16, 0.030904714, -6.568736e-09, -0.4779367, -5.1524534e-08, 0.032072786, -4.1782542e-08, 0.59200585, -10.849882, 3.3834972, 4.8677416)
 material_override = SubResource("ShaderMaterial_u0ke0")
 mesh = SubResource("CylinderMesh_u0ke0")
 
