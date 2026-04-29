@@ -86,13 +86,20 @@ shader_parameter/jitter_multiplier = 0.1750000083125
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_u0ke0"]
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2f633"]
+seed = 1
+frequency = 0.0047
+fractal_type = 2
+fractal_octaves = 2
+fractal_gain = 0.62
+
 [node name="MainLevel" type="Node3D" unique_id=224384734 node_paths=PackedStringArray("_day_night_cycle", "_player_marker") groups=["persistent"]]
 script = ExtResource("1_um8ys")
 _day_night_cycle = NodePath("DayNightCycle")
 _player_marker = NodePath("PlayerStartMarker")
 _junk_curve = SubResource("Curve_hp128")
 
-[node name="PlayableArea_V2" parent="." unique_id=1227016839 instance=ExtResource("6_3i7v1")]
+[node name="PlayableArea_V2" parent="." unique_id=241491359 instance=ExtResource("6_3i7v1")]
 
 [node name="DayNightCycle" parent="." unique_id=50702471 instance=ExtResource("1_b2fg0")]
 transform = Transform3D(-0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.7071068, 0, 4.1425443, -3.334785)
@@ -308,3 +315,18 @@ light_color = Color(0.85882354, 0.67058825, 0, 1)
 
 [node name="Crane" parent="." unique_id=664852381 instance=ExtResource("16_2f633")]
 transform = Transform3D(0.15930757, 0, 0.38688838, 0, 0.26836556, 0, -0.32919157, 0, 0.1872291, 172.1002, -43.541317, -135.87567)
+
+[node name="BlinkingLight3" parent="." unique_id=892032282 instance=ExtResource("13_qtms1")]
+transform = Transform3D(1, -8.881785e-16, 0, 8.881785e-16, 1, 0, 0, 0, 1, -14.291512, 3.9701834, 6.8622084)
+light_color = Color(0.5691849, 0.6325848, 0.66415113, 1)
+light_energy = 0.482
+light_indirect_energy = 1.604
+light_volumetric_fog_energy = 1.053
+light_size = 1.056
+light_specular = 0.655
+omni_range = 1.592
+omni_attenuation = -0.986
+_speed = 55.9
+_min_value = 0.955
+_max_value = 7.385
+_noise_map = SubResource("FastNoiseLite_2f633")
