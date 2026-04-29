@@ -2,25 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dcgit0e41onmc" path="res://entities/fish/message/message_data_display.gd" id="1_pilat"]
 
-[node name="MessageDataDisplay" type="Control" unique_id=307770116 node_paths=PackedStringArray("_message_root")]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="PanelContainer" type="PanelContainer" unique_id=1779217254 node_paths=PackedStringArray("_message_root")]
+offset_right = 550.0
+offset_bottom = 141.0
 script = ExtResource("1_pilat")
-_message_root = NodePath("PanelContainer/ScrollContainer/MessagesRoot")
+_message_root = NodePath("MessagesRoot")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1779217254]
-layout_mode = 0
-offset_right = 729.0
-offset_bottom = 610.0
-
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer" unique_id=223608402]
-layout_mode = 2
-
-[node name="MessagesRoot" type="VBoxContainer" parent="PanelContainer/ScrollContainer" unique_id=635444931]
+[node name="MessagesRoot" type="VBoxContainer" parent="." unique_id=635444931]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

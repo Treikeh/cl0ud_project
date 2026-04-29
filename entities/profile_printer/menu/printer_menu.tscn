@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://daoulaw7h8y4p"]
+
+[ext_resource type="Script" uid="uid://dj652tx6fpvh0" path="res://entities/profile_printer/menu/printer_menu.gd" id="1_anq61"]
+
+[node name="PrinterMenu" type="Control" unique_id=670146033 node_paths=PackedStringArray("_fish_list", "_print_button", "_fish_spawn_marker", "_data_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_anq61")
+_fish_list = NodePath("HBoxContainer/FishList/PanelContainer/MarginContainer/VBoxContainer/FishList")
+_print_button = NodePath("HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer/HBoxContainer/PrintButton")
+_fish_spawn_marker = NodePath("HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/SubViewportContainer/SubViewport/FishSpawnPoint")
+_data_container = NodePath("HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/DataContainer/RealDataContainer")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=820335375]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 155.0
+offset_right = -157.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FishList" type="MarginContainer" parent="HBoxContainer" unique_id=886300186]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/FishList" unique_id=1615607024]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/FishList/PanelContainer" unique_id=1205504255]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/FishList/PanelContainer/MarginContainer" unique_id=1123910183]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/FishList/PanelContainer/MarginContainer/VBoxContainer" unique_id=1052547353]
+layout_mode = 2
+text = "Fishes"
+
+[node name="FishList" type="VBoxContainer" parent="HBoxContainer/FishList/PanelContainer/MarginContainer/VBoxContainer" unique_id=574799390]
+layout_mode = 2
+
+[node name="FishPreview" type="MarginContainer" parent="HBoxContainer" unique_id=1180854635]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/FishPreview" unique_id=1432592014]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/FishPreview/PanelContainer" unique_id=410363752]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer" unique_id=1794108775]
+layout_mode = 2
+alignment = 2
+
+[node name="DataContainer" type="ScrollContainer" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer" unique_id=1002882883]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RealDataContainer" type="VBoxContainer" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/DataContainer" unique_id=211355590]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Buttons" type="HBoxContainer" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer" unique_id=2078796219]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons" unique_id=320037145]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/SubViewportContainer" unique_id=802469928]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(200, 200)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/SubViewportContainer/SubViewport" unique_id=899749028]
+
+[node name="FishSpawnPoint" type="Marker3D" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/SubViewportContainer/SubViewport" unique_id=942061783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -0.9)
+
+[node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons" unique_id=623888047]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer" unique_id=337910549]
+layout_mode = 2
+alignment = 1
+
+[node name="PrintButton" type="Button" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer/HBoxContainer" unique_id=1470855503]
+layout_mode = 2
+text = "Print"
+
+[node name="CloseButton" type="Button" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer/HBoxContainer" unique_id=377232754]
+layout_mode = 2
+text = "Close"
+
+[connection signal="pressed" from="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer/HBoxContainer/PrintButton" to="." method="_print_fish"]
+[connection signal="pressed" from="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer/HBoxContainer/CloseButton" to="." method="_close"]

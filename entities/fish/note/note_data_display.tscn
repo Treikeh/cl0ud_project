@@ -2,22 +2,13 @@
 
 [ext_resource type="Script" uid="uid://b3o3balij3j1b" path="res://entities/fish/note/note_data_display.gd" id="1_qfa5c"]
 
-[node name="NoteDataDisplay" type="Control" unique_id=307770116 node_paths=PackedStringArray("_text_label")]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="PanelContainer" type="PanelContainer" unique_id=245863684 node_paths=PackedStringArray("_text_label")]
+offset_right = 141.0
+offset_bottom = 103.0
 script = ExtResource("1_qfa5c")
-_text_label = NodePath("PanelContainer/TextLabel")
+_text_label = NodePath("TextLabel")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=245863684]
-layout_mode = 0
-offset_right = 412.0
-offset_bottom = 184.0
-
-[node name="TextLabel" type="RichTextLabel" parent="PanelContainer" unique_id=1537199126]
+[node name="TextLabel" type="RichTextLabel" parent="." unique_id=1537199126]
 layout_mode = 2
 bbcode_enabled = true
 text = "Text"

@@ -25,4 +25,4 @@ shape = SubResource("BoxShape3D_8ytnt")
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.9054205, -0.063583605)
 text = "Profiles"
 
-[connection signal="interacted" from="InteractArea3D" to="." method="_on_interact_area_3d_interacted"]
+[connection signal="interacted" from="InteractArea3D" to="." method="_on_interacted"]

@@ -2,36 +2,31 @@
 
 [ext_resource type="Script" uid="uid://bu5n7qf877ogg" path="res://entities/fish/mail/mail_data_display.gd" id="1_bejpv"]
 
-[node name="MailDataDisplay" type="Control" unique_id=307770116 node_paths=PackedStringArray("_from_label", "_to_label", "_subject_label", "_content_label")]
-layout_mode = 3
-anchors_preset = 0
-script = ExtResource("1_bejpv")
-_from_label = NodePath("PanelContainer/VBoxContainer/FromLabel")
-_to_label = NodePath("PanelContainer/VBoxContainer/ToLabel")
-_subject_label = NodePath("PanelContainer/VBoxContainer/SubjectLabel")
-_content_label = NodePath("PanelContainer/VBoxContainer/ContentLabel")
-
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=581672]
-layout_mode = 0
+[node name="PanelContainer" type="PanelContainer" unique_id=581672 node_paths=PackedStringArray("_from_label", "_to_label", "_subject_label", "_content_label")]
 offset_right = 226.0
 offset_bottom = 231.0
+script = ExtResource("1_bejpv")
+_from_label = NodePath("VBoxContainer/FromLabel")
+_to_label = NodePath("VBoxContainer/ToLabel")
+_subject_label = NodePath("VBoxContainer/SubjectLabel")
+_content_label = NodePath("VBoxContainer/ContentLabel")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1301804944]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1301804944]
 layout_mode = 2
 
-[node name="FromLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=2125725013]
+[node name="FromLabel" type="Label" parent="VBoxContainer" unique_id=2125725013]
 layout_mode = 2
 text = "From"
 
-[node name="ToLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=154115570]
+[node name="ToLabel" type="Label" parent="VBoxContainer" unique_id=154115570]
 layout_mode = 2
 text = "To"
 
-[node name="SubjectLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=759668136]
+[node name="SubjectLabel" type="Label" parent="VBoxContainer" unique_id=759668136]
 layout_mode = 2
 text = "Subject"
 
-[node name="ContentLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=9052386]
+[node name="ContentLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=9052386]
 layout_mode = 2
 bbcode_enabled = true
 text = "Content"
