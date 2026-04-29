@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dpudvv11ji4un"]
+
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_miwye"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_4c6aj"]
+
+[resource]
+script = ExtResource("2_4c6aj")
+name = "Age"
+description = "30+"
+type = "PROFILE_DATA"
+icon = ExtResource("1_miwye")
+mesh_scene = "res://entities/player/fishing_rod/art/fishing_hook_001_fbx.tscn"

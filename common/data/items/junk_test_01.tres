@@ -7,6 +7,7 @@
 [resource]
 script = ExtResource("3_6uhyq")
 name = "Junk 01"
+description = "Junk"
 value = 1
 type = "JUNK"
 icon = ExtResource("2_te8pv")

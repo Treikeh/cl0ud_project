@@ -7,6 +7,7 @@
 [resource]
 script = ExtResource("3_0wbt3")
 name = "Mail Fish \"MFC\""
+description = "A low-value mail fishing describing a business transaction."
 value = 5
 type = "MAIL"
 icon = ExtResource("2_ebi8r")

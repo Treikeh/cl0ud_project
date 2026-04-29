@@ -53,7 +53,8 @@ func get_save_data() -> Dictionary:
 		var item: ItemData = items[i]
 		# Check if there is an item at the index
 		if item:
-			items_data[i] = item.get_data()
+			#items_data[i] = item.get_data()
+			items_data[i] = item.resource_path
 	
 	# Set save data
 	var data: Dictionary = {
@@ -73,7 +74,8 @@ func load_save_data(data: Dictionary) -> void:
 	var items_data: Dictionary = data.items
 	for key in items_data:
 		# Create a new item
-		var item := ItemData.new(items_data[key])
+		#var item := ItemData.new(items_data[key])
+		var item: ItemData = load(items_data[key])
 		
 		# Set item at the right index
 		var index: int = int(key)

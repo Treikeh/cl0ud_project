@@ -11,10 +11,11 @@
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_40c73"]
 
-[node name="ProfilePrinter" type="Node3D" unique_id=356552838 node_paths=PackedStringArray("_terminal_collision", "_printer_collision", "_print_sfx", "_open_menu_sfx", "_close_menu_sfx")]
+[node name="ProfilePrinter" type="Node3D" unique_id=356552838 node_paths=PackedStringArray("_terminal_collision", "_printer_collision", "_cam_transform_marker", "_print_sfx", "_open_menu_sfx", "_close_menu_sfx")]
 script = ExtResource("1_40c73")
 _terminal_collision = NodePath("TerminalInteractArea/CollisionShape3D")
 _printer_collision = NodePath("PrinterInteractArea/CollisionShape3D")
+_cam_transform_marker = NodePath("CamTransformMarker")
 _print_sfx = NodePath("SFX/PrintingSfx")
 _open_menu_sfx = NodePath("SFX/OpenMenuSfx")
 _close_menu_sfx = NodePath("SFX/CloseMenuSfx")
@@ -37,6 +38,9 @@ mesh = SubResource("BoxMesh_mxh1j")
 
 [node name="PaperMesh" type="MeshInstance3D" parent="." unique_id=487481126]
 mesh = SubResource("CylinderMesh_40c73")
+
+[node name="CamTransformMarker" type="Marker3D" parent="." unique_id=484923087]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.1, -0.60000014)
 
 [node name="SFX" type="Node3D" parent="." unique_id=2118740579]
 

@@ -7,6 +7,7 @@
 [resource]
 script = ExtResource("3_tig11")
 name = "Bloody Note Fish?"
+description = "[color=red][shake rate=20.0 level=5 connected=1]The Truth[/shake][/color]"
 value = 7
 type = "NOTE"
 icon = ExtResource("2_mnd8b")

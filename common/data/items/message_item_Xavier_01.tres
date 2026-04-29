@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c2k4ocr6l0lgp"]
 
-[ext_resource type="Resource" uid="uid://csp7q7sq22t72" path="res://common/data/fish/message_Xavier_data_01.tres" id="1_ae4vk"]
+[ext_resource type="Resource" uid="uid://btegnk6r4juxm" path="res://common/data/fish/message_story_Xavier_data_01.tres" id="1_ae4vk"]
 [ext_resource type="Texture2D" uid="uid://cdh1uvulx0tfd" path="res://entities/fish/message/message_icon.png" id="2_c6bie"]
 [ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_5rj8n"]
 
 [resource]
 script = ExtResource("3_5rj8n")
 name = "Xavier Data-Fish 1"
+description = "A important message fish containing the conversation between [color=yellow]Xavier[/color] and Martin."
 value = 12
 type = "MESSAGE"
 icon = ExtResource("2_c6bie")

@@ -3,6 +3,7 @@ class_name ItemData
 
 
 @export var name: String = "Name"
+@export var description: String = ""
 @export var value: int = 0
 @export var type: String = ""
 @export var icon: Texture

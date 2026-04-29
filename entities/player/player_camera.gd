@@ -1,6 +1,8 @@
-extends Camera3D
+extends Node3D
 class_name PlayerCamera
 
+
+@export var cam: Camera3D
 
 @onready var _player: Player = get_owner();
 

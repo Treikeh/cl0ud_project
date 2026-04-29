@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://cg2ukppievp2t"]
 
 [ext_resource type="Script" uid="uid://b8bktvdxgqqnf" path="res://entities/profile_wall/menu/profile_menu.gd" id="1_3hdgf"]
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="2_e0rgi"]
+[ext_resource type="Script" uid="uid://cgma3bovrjc8o" path="res://entities/profile_wall/menu/profile.gd" id="2_fi1ac"]
+[ext_resource type="Texture2D" uid="uid://chai7badmw5f8" path="res://common/materials/simple_dev_grid_01_bc.png" id="3_jpfac"]
+[ext_resource type="Script" uid="uid://djdcnuypejjdk" path="res://entities/profile_wall/menu/profile_info_slot.gd" id="3_wo5yt"]
+[ext_resource type="Resource" uid="uid://dae7b8a7gtuao" path="res://common/data/items/profile_name_test_item.tres" id="5_000oh"]
+[ext_resource type="Resource" uid="uid://dpudvv11ji4un" path="res://common/data/items/profile_age_test_item.tres" id="7_5gjde"]
+[ext_resource type="Resource" uid="uid://b52500eqghbpw" path="res://common/data/items/profile_job_test_item.tres" id="8_f7neb"]
 
-[node name="ProfileMenu" type="Control" unique_id=794032460 node_paths=PackedStringArray("_pieces_list")]
+[node name="ProfileMenu" type="Control" unique_id=794032460 node_paths=PackedStringArray("_pieces_list", "_selected_item_rect", "_profile")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,7 +17,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3hdgf")
-_pieces_list = NodePath("HBoxContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PicesList")
+_pieces_list = NodePath("HBoxContainer/FishList/PanelContainer/MarginContainer/VBoxContainer/PicesList")
+_selected_item_rect = NodePath("SelectedItem")
+_profile = NodePath("HBoxContainer/Profile/Profile")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1061960141]
 layout_mode = 1
@@ -20,7 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1990145165]
+[node name="FishList" type="MarginContainer" parent="HBoxContainer" unique_id=1990145165]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -28,22 +37,187 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/MarginContainer" unique_id=404517486]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/FishList" unique_id=404517486]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/PanelContainer" unique_id=1579992366]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/FishList/PanelContainer" unique_id=1579992366]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/PanelContainer/MarginContainer" unique_id=154082607]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/FishList/PanelContainer/MarginContainer" unique_id=154082607]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=707116312]
+[node name="Label" type="Label" parent="HBoxContainer/FishList/PanelContainer/MarginContainer/VBoxContainer" unique_id=707116312]
 layout_mode = 2
 text = "Profile pieces"
 
-[node name="PicesList" type="VBoxContainer" parent="HBoxContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1034339893]
+[node name="PicesList" type="VBoxContainer" parent="HBoxContainer/FishList/PanelContainer/MarginContainer/VBoxContainer" unique_id=1034339893]
 layout_mode = 2
+
+[node name="Profile" type="Control" parent="HBoxContainer" unique_id=1939849112]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Profile" type="PanelContainer" parent="HBoxContainer/Profile" unique_id=1055209316 node_paths=PackedStringArray("data_types")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -141.0
+offset_right = 58.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0)
+script = ExtResource("2_fi1ac")
+data_types = {
+NodePath("MarginContainer/VBoxContainer/NameLabel"): NodePath("../NameInfo"),
+NodePath("MarginContainer/VBoxContainer/AgeLabel"): NodePath("../AgeInfo"),
+NodePath("MarginContainer/VBoxContainer/JobLabel"): NodePath("../JobInfo")
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Profile/Profile" unique_id=124574765]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Profile/Profile/MarginContainer" unique_id=162711126]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Profile/Profile/MarginContainer/VBoxContainer" unique_id=1929442133]
+layout_mode = 2
+texture = ExtResource("2_e0rgi")
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="HBoxContainer/Profile/Profile/MarginContainer/VBoxContainer" unique_id=1333901534]
+layout_mode = 2
+text = "Name: "
+vertical_alignment = 1
+
+[node name="AgeLabel" type="Label" parent="HBoxContainer/Profile/Profile/MarginContainer/VBoxContainer" unique_id=639492226]
+layout_mode = 2
+text = "Age: "
+vertical_alignment = 1
+
+[node name="JobLabel" type="Label" parent="HBoxContainer/Profile/Profile/MarginContainer/VBoxContainer" unique_id=770805791]
+layout_mode = 2
+text = "Job: "
+vertical_alignment = 1
+
+[node name="NameInfo" type="PanelContainer" parent="HBoxContainer/Profile" unique_id=661750256 node_paths=PackedStringArray("_icon")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 182.0
+offset_top = -230.0
+offset_right = 266.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_wo5yt")
+_required_data = ExtResource("5_000oh")
+_icon = NodePath("MarginContainer/TextureRect")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Profile/NameInfo" unique_id=449538527]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Profile/NameInfo/MarginContainer" unique_id=1857181939]
+layout_mode = 2
+texture = ExtResource("3_jpfac")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AgeInfo" type="PanelContainer" parent="HBoxContainer/Profile" unique_id=994832437 node_paths=PackedStringArray("_icon")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = -57.0
+offset_right = -187.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_wo5yt")
+_required_data = ExtResource("7_5gjde")
+_icon = NodePath("MarginContainer/TextureRect")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Profile/AgeInfo" unique_id=497244272]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Profile/AgeInfo/MarginContainer" unique_id=654794501]
+layout_mode = 2
+texture = ExtResource("3_jpfac")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="JobInfo" type="PanelContainer" parent="HBoxContainer/Profile" unique_id=381420828 node_paths=PackedStringArray("_icon")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 171.0
+offset_top = 111.0
+offset_right = 255.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_wo5yt")
+_required_data = ExtResource("8_f7neb")
+_icon = NodePath("MarginContainer/TextureRect")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Profile/JobInfo" unique_id=1381173968]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Profile/JobInfo/MarginContainer" unique_id=1581995440]
+layout_mode = 2
+texture = ExtResource("3_jpfac")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SelectedItem" type="TextureRect" parent="." unique_id=1064537131]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="mouse_entered" from="HBoxContainer/Profile/NameInfo" to="." method="_on_mouse_entered_slot" flags=18]
+[connection signal="mouse_exited" from="HBoxContainer/Profile/NameInfo" to="." method="_on_mouse_exited_slot"]
+[connection signal="recived_data" from="HBoxContainer/Profile/NameInfo" to="." method="_on_slot_recived_data" flags=18]
+[connection signal="mouse_entered" from="HBoxContainer/Profile/AgeInfo" to="." method="_on_mouse_entered_slot" flags=18]
+[connection signal="mouse_exited" from="HBoxContainer/Profile/AgeInfo" to="." method="_on_mouse_exited_slot"]
+[connection signal="recived_data" from="HBoxContainer/Profile/AgeInfo" to="." method="_on_slot_recived_data" flags=18]
+[connection signal="mouse_entered" from="HBoxContainer/Profile/JobInfo" to="." method="_on_mouse_entered_slot" flags=18]
+[connection signal="mouse_exited" from="HBoxContainer/Profile/JobInfo" to="." method="_on_mouse_exited_slot"]
+[connection signal="recived_data" from="HBoxContainer/Profile/JobInfo" to="." method="_on_slot_recived_data" flags=18]
