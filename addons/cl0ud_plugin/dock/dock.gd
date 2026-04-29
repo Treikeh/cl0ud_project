@@ -111,6 +111,8 @@ func _create_item_resources(data: Array[PackedStringArray], file_paths: Dictiona
 	# Create item data for each data element
 	for row: PackedStringArray in data:
 		var id: String = row[0]
+		if id == "":
+			continue
 		var path: String = ITEM_SAVE_PATH + id + ".tres"
 		
 		var item := ItemData.new()
@@ -182,6 +184,9 @@ func _create_fish_data(data: Array[PackedStringArray], file_paths: Dictionary) -
 	# Create item data for each data element
 	for row: PackedStringArray in data:
 		var id: String = row[0]
+		if id == "":
+			continue
+		
 		var type: String = row[1]
 		var path: String = FISH_DATA_SAVE_PATH + id + ".tres"
 		
@@ -272,6 +277,8 @@ func _create_dialogue_resources(data: Array[PackedStringArray], file_paths: Dict
 	for row: PackedStringArray in data:
 		# Get the id from the row
 		var id: String = row[0]
+		if id == "":
+			continue
 		# Get the default file save path
 		var path: String = DIALOGUE_SAVE_PATH + id + ".tres"
 		
