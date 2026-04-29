@@ -28,8 +28,8 @@ gradient = SubResource("Gradient_nb80x")
 width = 360
 
 [sub_resource type="Gradient" id="Gradient_ij7be"]
-offsets = PackedFloat32Array(0, 0.5, 1)
-colors = PackedColorArray(0, 0.14117648, 0.43529412, 1, 0.5176471, 0.5529412, 0.60784316, 1, 2.815649e-06, 0.14140326, 0.43557447, 1)
+offsets = PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
+colors = PackedColorArray(0.16225427, 0.15938145, 0.23872006, 1, 0.4509804, 0.38039216, 0.31764707, 1, 0.5176471, 0.5529412, 0.60784316, 1, 0.44925624, 0.37850913, 0.3181207, 1, 0.16078432, 0.16078432, 0.23921569, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_hlsmv"]
 gradient = SubResource("Gradient_ij7be")

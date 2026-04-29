@@ -2,17 +2,12 @@
 
 [ext_resource type="Script" uid="uid://blp7wi1d3huto" path="res://entities/fish/junk/junk_data_display.gd" id="1_b4ea3"]
 
-[node name="JunkDataDisplay" type="Control" unique_id=307770116 node_paths=PackedStringArray("_junk_label")]
-layout_mode = 3
-anchors_preset = 0
-script = ExtResource("1_b4ea3")
-_junk_label = NodePath("PanelContainer/JunkLabel")
-
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=581672]
-layout_mode = 0
-offset_right = 40.0
+[node name="PanelContainer" type="PanelContainer" unique_id=581672 node_paths=PackedStringArray("_junk_label")]
+offset_right = 139.0
 offset_bottom = 40.0
+script = ExtResource("1_b4ea3")
+_junk_label = NodePath("JunkLabel")
 
-[node name="JunkLabel" type="Label" parent="PanelContainer" unique_id=2125725013]
+[node name="JunkLabel" type="Label" parent="." unique_id=2125725013]
 layout_mode = 2
 text = "Junk"

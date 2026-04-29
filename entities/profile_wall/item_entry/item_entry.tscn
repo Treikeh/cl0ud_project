@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c7cu5bxtffalu"]
+
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_7wo70"]
+[ext_resource type="Script" uid="uid://23fder8efuo2" path="res://entities/profile_wall/item_entry/item_entry.gd" id="1_fdunx"]
+
+[node name="ItemEntry" type="PanelContainer" unique_id=1347665274 node_paths=PackedStringArray("_icon", "_label")]
+offset_right = 213.0
+offset_bottom = 40.0
+script = ExtResource("1_fdunx")
+_icon = NodePath("MarginContainer/HBoxContainer/TextureRect")
+_label = NodePath("MarginContainer/HBoxContainer/Label")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=707602829]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=2039988580]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=371349163]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_7wo70")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=2118216674]
+layout_mode = 2
+text = "Name"

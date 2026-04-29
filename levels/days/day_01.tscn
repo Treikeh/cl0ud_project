@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d03dern16pwcb" path="res://entities/characters/nils/day_01_nils.tscn" id="3_85oi3"]
 [ext_resource type="PackedScene" uid="uid://16hefv04ucbs" path="res://entities/music_player/music_player.tscn" id="4_ahgqq"]
 [ext_resource type="PackedScene" uid="uid://bio2e7voof108" path="res://entities/profile_wall/profile_wall.tscn" id="5_1ul8t"]
-[ext_resource type="PackedScene" uid="uid://b0l8syuol7cs4" path="res://entities/profile_wall/printer/profile_printer.tscn" id="6_e0c4c"]
+[ext_resource type="PackedScene" uid="uid://b0l8syuol7cs4" path="res://entities/profile_printer/profile_printer.tscn" id="6_e0c4c"]
 
 [node name="Day01" type="Node3D" unique_id=1476344830]
 script = ExtResource("1_85oi3")

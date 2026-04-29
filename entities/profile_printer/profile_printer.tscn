@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b0l8syuol7cs4"]
+
+[ext_resource type="Script" uid="uid://j4j3aq7mw8y7" path="res://entities/profile_printer/profile_printer.gd" id="1_40c73"]
+[ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="2_mxh1j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_40c73"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mxh1j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mxh1j"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_40c73"]
+
+[node name="ProfilePrinter" type="Node3D" unique_id=356552838 node_paths=PackedStringArray("_terminal_collision", "_printer_collision", "_print_sfx", "_open_menu_sfx", "_close_menu_sfx")]
+script = ExtResource("1_40c73")
+_terminal_collision = NodePath("TerminalInteractArea/CollisionShape3D")
+_printer_collision = NodePath("PrinterInteractArea/CollisionShape3D")
+_print_sfx = NodePath("SFX/PrintingSfx")
+_open_menu_sfx = NodePath("SFX/OpenMenuSfx")
+_close_menu_sfx = NodePath("SFX/CloseMenuSfx")
+
+[node name="TerminalInteractArea" parent="." unique_id=1933536461 instance=ExtResource("2_mxh1j")]
+prompt = "Open"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TerminalInteractArea" unique_id=658717915]
+shape = SubResource("BoxShape3D_40c73")
+
+[node name="PrinterInteractArea" parent="." unique_id=669664736 instance=ExtResource("2_mxh1j")]
+prompt = "Pick up"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PrinterInteractArea" unique_id=1065958003]
+shape = SubResource("BoxShape3D_mxh1j")
+disabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1649853648]
+mesh = SubResource("BoxMesh_mxh1j")
+
+[node name="PaperMesh" type="MeshInstance3D" parent="." unique_id=487481126]
+mesh = SubResource("CylinderMesh_40c73")
+
+[node name="SFX" type="Node3D" parent="." unique_id=2118740579]
+
+[node name="PrintingSfx" type="FmodEventEmitter3D" parent="SFX" unique_id=508430882]
+event_name = "event:/Actions/Fishing Cast"
+event_guid = "{54a5d128-75d1-4f63-a8f5-7f145962b413}"
+
+[node name="OpenMenuSfx" type="FmodEventEmitter2D" parent="SFX" unique_id=41418270]
+event_name = "event:/UI/Open Inventory"
+event_guid = "{18b1f05d-fb36-45e5-8916-938b4fff548c}"
+
+[node name="CloseMenuSfx" type="FmodEventEmitter2D" parent="SFX" unique_id=1375100920]
+event_name = "event:/UI/Close Inventory"
+event_guid = "{9b7c0e1b-3771-4d51-aa63-c1a471eeecd8}"
+
+[connection signal="interacted" from="TerminalInteractArea" to="." method="_on_interacted"]
+[connection signal="interacted" from="PrinterInteractArea" to="." method="_on_interacted"]
