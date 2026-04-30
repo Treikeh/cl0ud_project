@@ -1,17 +1,19 @@
 extends PanelContainer
 
 
-signal pressed(index: int, item_data: ItemData)
+signal pressed(entry: Control)
 
 
 @export var _icon: TextureRect
 @export var _label: Label
 
+var index: int = 0
 var item_data: ItemData
 
 
-func with_data(_item_data: ItemData) -> Control:
+func with_data(_item_data: ItemData, _index: int) -> Control:
 	item_data = _item_data
+	index = _index
 	_icon.texture = item_data.icon
 	_label.text = item_data.name
 	return self
@@ -19,7 +21,7 @@ func with_data(_item_data: ItemData) -> Control:
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
-		pressed.emit(get_index(), item_data)
+		pressed.emit(self)
 
 
 func set_slot_data(_item_data: ItemData) -> void:
