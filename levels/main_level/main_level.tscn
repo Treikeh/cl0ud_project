@@ -118,7 +118,7 @@ _day_night_cycle = NodePath("DayNightCycle")
 _player_marker = NodePath("PlayerStartMarker")
 _junk_curve = SubResource("Curve_hp128")
 
-[node name="PlayableArea_V2" parent="." unique_id=406920894 instance=ExtResource("6_3i7v1")]
+[node name="PlayableArea_V2" parent="." unique_id=1292378392 instance=ExtResource("6_3i7v1")]
 transform = Transform3D(0.9979026, 0, 0, 0, 0.9979026, 0, 0, 0, 0.9979026, 0, 0, 0)
 
 [node name="DayNightCycle" parent="." unique_id=50702471 instance=ExtResource("1_b2fg0")]
