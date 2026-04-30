@@ -94,6 +94,24 @@ fractal_type = 2
 fractal_octaves = 2
 fractal_gain = 0.62
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ddgsd"]
+vertex_color_use_as_albedo = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5gklf"]
+lifetime_randomness = 0.26
+emission_shape_scale = Vector3(0.35, 0.6, 0.975)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 2.455, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ddgsd"]
+size = Vector2(0.025, 0.025)
+orientation = 2
+
 [node name="MainLevel" type="Node3D" unique_id=224384734 node_paths=PackedStringArray("_day_night_cycle", "_player_marker") groups=["persistent"]]
 script = ExtResource("1_um8ys")
 _day_night_cycle = NodePath("DayNightCycle")
@@ -101,6 +119,7 @@ _player_marker = NodePath("PlayerStartMarker")
 _junk_curve = SubResource("Curve_hp128")
 
 [node name="PlayableArea_V2" parent="." unique_id=406920894 instance=ExtResource("6_3i7v1")]
+transform = Transform3D(0.9979026, 0, 0, 0, 0.9979026, 0, 0, 0, 0.9979026, 0, 0, 0)
 
 [node name="DayNightCycle" parent="." unique_id=50702471 instance=ExtResource("1_b2fg0")]
 transform = Transform3D(-0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.7071068, 0, 4.1425443, -3.334785)
@@ -351,6 +370,15 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 332.
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 291.45624, -18.367218, 219.89412)
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1639277045]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.321804, 3.5631871, 6.8428273)
-lifetime = 1.04
-preprocess = 0.65
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.321804, 3.4344854, 6.7442946)
+material_override = SubResource("StandardMaterial3D_ddgsd")
+amount = 4
+amount_ratio = 0.4262
+lifetime = 0.26
+preprocess = 1.17
+speed_scale = 0.33
+randomness = 0.57
+collision_base_size = 0.0
+visibility_aabb = AABB(-4, -3.725, -4, 8, 3.73, 8)
+process_material = SubResource("ParticleProcessMaterial_5gklf")
+draw_pass_1 = SubResource("PlaneMesh_ddgsd")
