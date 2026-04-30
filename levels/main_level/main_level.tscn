@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cuemsjrkpvwxh" path="res://environment/lights/automatic_omni_light.tscn" id="14_oqmyk"]
 [ext_resource type="Shader" uid="uid://d1wyxea5aaolm" path="res://environment/shaders/fire_shader.gdshader" id="15_2f633"]
 [ext_resource type="PackedScene" uid="uid://2ubaxhpyylwj" path="res://levels/art/crane/Crane.glb" id="16_2f633"]
+[ext_resource type="PackedScene" uid="uid://bjae0sst12e6s" path="res://levels/main_level/art/HorizonBuildings/HorizonBuildings.glb" id="17_ddgsd"]
 
 [sub_resource type="Curve" id="Curve_hp128"]
 _limits = [0.0, 10.0, 0.0, 24.0]
@@ -99,7 +100,7 @@ _day_night_cycle = NodePath("DayNightCycle")
 _player_marker = NodePath("PlayerStartMarker")
 _junk_curve = SubResource("Curve_hp128")
 
-[node name="PlayableArea_V2" parent="." unique_id=241491359 instance=ExtResource("6_3i7v1")]
+[node name="PlayableArea_V2" parent="." unique_id=406920894 instance=ExtResource("6_3i7v1")]
 
 [node name="DayNightCycle" parent="." unique_id=50702471 instance=ExtResource("1_b2fg0")]
 transform = Transform3D(-0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.7071068, 0, 4.1425443, -3.334785)
@@ -129,25 +130,25 @@ shape = SubResource("BoxShape3D_t80xa")
 debug_color = Color(1, 0, 0, 0.41960785)
 
 [node name="BuildingTwo3" parent="." unique_id=1847187905 instance=ExtResource("8_ki8py")]
-transform = Transform3D(1.0559312, 0, 0.31326467, 0, 0.6304141, 0, -0.5045849, 0, 0.6866358, 300.6336, -102.31298, 210.38086)
+transform = Transform3D(1.0559312, 0, 0.31326467, 0, 0.6304141, 0, -0.5045849, 0, 0.6866358, 233.6857, -102.31298, 201.45984)
 
 [node name="BuildingTwo4" parent="." unique_id=456492849 instance=ExtResource("8_ki8py")]
-transform = Transform3D(0.048637435, 0, 1.0409298, 0, 0.5497928, 0, -0.7662879, 0, 0.05433991, 354.92572, -97.7205, 83.54971)
+transform = Transform3D(0.048637435, 0, 1.0409298, 0, 0.5497928, 0, -0.7662879, 0, 0.05433991, 291.5291, -97.7205, 83.54971)
 
 [node name="BuildingTwo2" parent="." unique_id=1646036254 instance=ExtResource("8_ki8py")]
-transform = Transform3D(-0.72044206, 0, 0.03573711, 0, 0.5392531, 0, -0.045727655, 0, -0.68457437, 355.67697, -101.5821, -216.92795)
+transform = Transform3D(-0.72044206, 0, 0.03573711, 0, 0.5392531, 0, -0.045727655, 0, -0.68457437, 296.51233, -101.5821, -216.92795)
 
 [node name="BuildingTwo" parent="." unique_id=231892023 instance=ExtResource("8_ki8py")]
-transform = Transform3D(0.019512743, 0, 0.6257129, 0, 0.5724138, 0, -0.7608164, 0, 0.020170506, 326.48868, -91.10595, -88.7114)
+transform = Transform3D(0.019512743, 0, 0.6257129, 0, 0.5724138, 0, -0.7608164, 0, 0.020170506, 278.85583, -91.10595, -88.7114)
 
 [node name="BuildingOne_4" parent="." unique_id=876004339 instance=ExtResource("9_qywe3")]
-transform = Transform3D(1.4089911, 0, 0, 0, 1.0780029, 0, 0, 0, 1.244991, 450.06766, -77.72203, -187.95996)
+transform = Transform3D(1.4089911, 0, 0, 0, 1.0780029, 0, 0, 0, 1.244991, 324.6819, -71.79522, -141.5344)
 
 [node name="BuildingOne_2" parent="." unique_id=2044558201 instance=ExtResource("8_t80xa")]
-transform = Transform3D(1.174144, 0, 0, 0, 1.1030219, 0, 0, 0, 1.277501, 398.03802, -77.66176, 39.719505)
+transform = Transform3D(1.174144, 0, 0, 0, 1.1030219, 0, 0, 0, 1.277501, 298.44778, -77.66176, 39.719505)
 
 [node name="BuildingOne_3" parent="." unique_id=1635238816 instance=ExtResource("9_qywe3")]
-transform = Transform3D(1.4089911, 0, 0, 0, 1.0965421, 0, 0, 0, 1.1104906, 389.03696, -72.23445, 46.73665)
+transform = Transform3D(1.4089911, 0, 0, 0, 1.0965421, 0, 0, 0, 1.1104906, 341.4041, -72.23445, 46.73665)
 
 [node name="AutomaticSpotLight" parent="." unique_id=1845424586 instance=ExtResource("11_dk47i")]
 transform = Transform3D(-0.49721622, 0, -0.86762667, 0, 1, 0, 0.86762667, 0, -0.49721622, -15.304897, 4.060165, -1.2325625)
@@ -314,7 +315,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2522068)
 light_color = Color(0.85882354, 0.67058825, 0, 1)
 
 [node name="Crane" parent="." unique_id=664852381 instance=ExtResource("16_2f633")]
-transform = Transform3D(0.15930757, 0, 0.38688838, 0, 0.26836556, 0, -0.32919157, 0, 0.1872291, 172.1002, -43.541317, -135.87567)
+transform = Transform3D(0.15930757, 0, 0.38688838, 0, 0.26836556, 0, -0.32919157, 0, 0.1872291, 215.32658, -43.541317, -135.87567)
+
+[node name="Crane2" parent="." unique_id=1777324732 instance=ExtResource("16_2f633")]
+transform = Transform3D(0.2156057, 0, -0.3471722, 0, 0.26836556, 0, 0.2953983, 0, 0.25339454, 235.33539, -38.79903, 111.984695)
 
 [node name="BlinkingLight3" parent="." unique_id=892032282 instance=ExtResource("13_qtms1")]
 transform = Transform3D(1, -8.881785e-16, 0, 8.881785e-16, 1, 0, 0, 0, 1, -14.291512, 3.9701834, 6.8622084)
@@ -330,3 +334,23 @@ _speed = 55.9
 _min_value = 0.955
 _max_value = 7.385
 _noise_map = SubResource("FastNoiseLite_2f633")
+
+[node name="HorizonBuildings" parent="." unique_id=1709645425 instance=ExtResource("17_ddgsd")]
+transform = Transform3D(-0.9753231, 0, -0.22078264, 0, 1, 0, 0.22078264, 0, -0.9753231, 264.28693, 0.19361115, -320.53394)
+
+[node name="HorizonBuildings4" parent="." unique_id=1351075275 instance=ExtResource("17_ddgsd")]
+transform = Transform3D(0.09337857, 0, -0.9956307, 0, 1, 0, 0.9956307, 0, 0.09337857, 116.21069, -20.986397, -321.8869)
+
+[node name="HorizonBuildings5" parent="." unique_id=399770154 instance=ExtResource("17_ddgsd")]
+transform = Transform3D(-0.093378484, 0, 0.9956307, 0, 1, 0, -0.9956307, 0, -0.093378484, 116.21069, -32.09951, 190.86484)
+
+[node name="HorizonBuildings2" parent="." unique_id=684779551 instance=ExtResource("17_ddgsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 332.01062, 0.19361115, -50.482864)
+
+[node name="HorizonBuildings3" parent="." unique_id=2061847213 instance=ExtResource("17_ddgsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 291.45624, -18.367218, 219.89412)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1639277045]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.321804, 3.5631871, 6.8428273)
+lifetime = 1.04
+preprocess = 0.65
