@@ -4,8 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://8vuuaq87rbum" path="res://levels/main_level/main_level.tscn" id="1_wbuex"]
 [ext_resource type="PackedScene" uid="uid://d03dern16pwcb" path="res://entities/characters/nils/day_01_nils.tscn" id="3_85oi3"]
 [ext_resource type="PackedScene" uid="uid://16hefv04ucbs" path="res://entities/music_player/music_player.tscn" id="4_ahgqq"]
-[ext_resource type="PackedScene" uid="uid://bio2e7voof108" path="res://entities/profile_wall/profile_wall.tscn" id="5_1ul8t"]
-[ext_resource type="PackedScene" uid="uid://b0l8syuol7cs4" path="res://entities/profile_printer/profile_printer.tscn" id="6_e0c4c"]
 
 [node name="Day01" type="Node3D" unique_id=1476344830]
 script = ExtResource("1_85oi3")
@@ -20,9 +18,3 @@ transform = Transform3D(0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, 0.5000
 
 [node name="MusicPlayer" parent="Characters" unique_id=978888495 instance=ExtResource("4_ahgqq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.420695, 3.6429343, -10.911379)
-
-[node name="ProfileWall" parent="." unique_id=1612584203 instance=ExtResource("5_1ul8t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.900001, 4.3, 10.1)
-
-[node name="ProfilePrinter" parent="." unique_id=356552838 instance=ExtResource("6_e0c4c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.103743, 2.986635, 9.360518)

@@ -33,7 +33,7 @@ height = 1.0
 
 [node name="Player" type="RigidBody3D" unique_id=913738857 node_paths=PackedStringArray("inventory", "piece_inventory", "_orientation", "_head", "_interact_ray", "_standing_collision", "_crouch_collision") groups=["persistent", "player"]]
 collision_layer = 2
-collision_mask = 3
+collision_mask = 67
 physics_material_override = SubResource("PhysicsMaterial_bls4j")
 lock_rotation = true
 script = ExtResource("1_symyc")
@@ -63,6 +63,7 @@ script = ExtResource("2_wvtmh")
 cam = NodePath("Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="Orientation/Head/CameraRoot" unique_id=1569207722]
+current = true
 fov = 90.0
 near = 0.01
 

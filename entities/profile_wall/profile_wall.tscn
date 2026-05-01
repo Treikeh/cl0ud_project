@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="2_di50e"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0isjb"]
-size = Vector3(3, 2, 0.1)
+size = Vector3(5, 2, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ytnt"]
-size = Vector3(3, 2, 0.1)
+size = Vector3(5, 2, 0.1)
 
 [node name="ProfileWall" type="Node3D" unique_id=1612584203]
 script = ExtResource("1_ev7wo")

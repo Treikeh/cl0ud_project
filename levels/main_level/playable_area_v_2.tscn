@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bj5sojwv4l0ud"]
+
+[ext_resource type="PackedScene" uid="uid://bccca7e6hgcls" path="res://levels/main_level/art/PlayableArea_V2.glb" id="1_so441"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_so441"]
+height = 0.9
+radius = 1.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_so441"]
+size = Vector3(1.3000001, 1.8000001, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1br15"]
+size = Vector3(1.5, 0.8, 1)
+
+[node name="PlayableArea_V2" unique_id=151361532 instance=ExtResource("1_so441")]
+
+[node name="@StaticBody3D@72978" parent="." index="109" unique_id=1514866282]
+collision_layer = 64
+
+[node name="StaticBody3D" type="StaticBody3D" parent="@StaticBody3D@72978" index="1" unique_id=752140432]
+collision_layer = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="@StaticBody3D@72978/StaticBody3D" index="0" unique_id=1495539135]
+transform = Transform3D(0.9999892, 0, 0, 0, 0.9999997, 0, 0, 0, 0.9999892, 0, -0.54999995, 0)
+shape = SubResource("CylinderShape3D_so441")
+
+[node name="@StaticBody3D@72981" parent="." index="171" unique_id=1177335718]
+collision_layer = 64
+
+[node name="StaticBody3D" type="StaticBody3D" parent="@StaticBody3D@72981" index="1" unique_id=1404473534]
+collision_layer = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="@StaticBody3D@72981/StaticBody3D" index="0" unique_id=869113467]
+transform = Transform3D(1.000002, 0, 0, 0, 1.0000021, 0, 0, 0, 1, 0.14999771, -0.049999237, 0.50000095)
+shape = SubResource("BoxShape3D_so441")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="@StaticBody3D@72981/StaticBody3D" index="1" unique_id=343715201]
+transform = Transform3D(1.000002, 0, 0, 0, 1.0000021, 0, 0, 0, 1, 0.24999619, -0.54999995, -0.39999866)
+shape = SubResource("BoxShape3D_1br15")
