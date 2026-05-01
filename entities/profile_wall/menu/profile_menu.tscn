@@ -121,6 +121,42 @@ grow_horizontal = 1
 grow_vertical = 1
 _required_data = ExtResource("8_f7neb")
 
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ProfileSpace" unique_id=1009805616]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="PrevProfileButton" type="Button" parent="HBoxContainer/ProfileSpace/HBoxContainer" unique_id=1755743893]
+layout_mode = 2
+text = "<-"
+
+[node name="ConfirmButton" type="Button" parent="HBoxContainer/ProfileSpace/HBoxContainer" unique_id=1088719792]
+layout_mode = 2
+text = "Confirm"
+
+[node name="NextProfileButton" type="Button" parent="HBoxContainer/ProfileSpace/HBoxContainer" unique_id=280075934]
+layout_mode = 2
+text = "->"
+
+[node name="CloseButton" type="Button" parent="HBoxContainer/ProfileSpace" unique_id=1802486397]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Close"
+
 [node name="SelectedItemIcon" type="TextureRect" parent="." unique_id=1775730009]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
@@ -142,3 +178,4 @@ stretch_mode = 5
 [connection signal="mouse_entered" from="HBoxContainer/ProfileSpace/Job" to="." method="_on_mouse_entered_slot" flags=18]
 [connection signal="mouse_exited" from="HBoxContainer/ProfileSpace/Job" to="." method="_on_mouse_exited_slot"]
 [connection signal="recived_data" from="HBoxContainer/ProfileSpace/Job" to="." method="_on_slot_recived_data" flags=18]
+[connection signal="pressed" from="HBoxContainer/ProfileSpace/CloseButton" to="." method="_close"]

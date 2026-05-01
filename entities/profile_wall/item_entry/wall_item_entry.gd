@@ -25,6 +25,6 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.is_action_pressed("throw_hook") and _mouse_inside:
+	if event.is_action_pressed("throw_hook") and _mouse_inside:
 		grabbed.emit.call_deferred(item_data)
 		queue_free()

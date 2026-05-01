@@ -25,10 +25,10 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_cancel") or event.is_action_pressed("inventory"):
 		_close()
 	
-	if event is InputEventMouseButton and event.is_action_pressed("throw_hook"):
+	if event.is_action_pressed("throw_hook"):
 		if _grabbed_item:
 			if _selected_slot:
 				_selected_slot.add_item(_grabbed_item)

@@ -20,7 +20,7 @@ func with_data(_item_data: ItemData, _index: int) -> Control:
 
 
 func _gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
+	if event.is_action_pressed("throw_hook"):
 		pressed.emit(self)
 
 
