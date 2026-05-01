@@ -2,17 +2,13 @@ extends PanelContainer
 class_name ProfileWallEntry
 
 
-signal grabbed(entry: ProfileWallEntry)
-#signal dropped(entry: ProfileWallEntry)
+signal grabbed(item: ItemData)
 
 
 @export var _icon: TextureRect
 @export var _name_label: Label
 
 var item_data: ItemData
-var is_grabbed: bool = false
-var target_position := Vector2.ZERO
-
 var _mouse_inside: bool = false
 
 
@@ -29,10 +25,6 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.is_pressed() and _mouse_inside:
-		grabbed.emit(self)
-
-
-func _process(delta: float) -> void:
-	if target_position and not is_grabbed:
-		global_position = lerp(global_position, target_position, delta)
+	if event is InputEventMouseButton and event.is_action_pressed("throw_hook") and _mouse_inside:
+		grabbed.emit.call_deferred(item_data)
+		queue_free()
