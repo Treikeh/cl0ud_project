@@ -1,6 +1,33 @@
 [gd_scene format=3 uid="uid://daoulaw7h8y4p"]
 
 [ext_resource type="Script" uid="uid://dj652tx6fpvh0" path="res://entities/profile_printer/menu/printer_menu.gd" id="1_anq61"]
+[ext_resource type="Script" uid="uid://c8p7f6bgfvt10" path="res://common/data/recipes/profile_recipe.gd" id="2_q25av"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_sgc82"]
+[ext_resource type="Resource" uid="uid://blms3qy5b5mm4" path="res://common/data/items/mail_test_04.tres" id="4_m7pds"]
+[ext_resource type="Resource" uid="uid://dpudvv11ji4un" path="res://common/data/items/profile_age_test_item.tres" id="5_j7u42"]
+[ext_resource type="Resource" uid="uid://hmiylpgmctyx" path="res://common/data/items/junk_test_01.tres" id="5_sgc82"]
+[ext_resource type="Resource" uid="uid://dvohwdqt3uio0" path="res://common/data/items/note_crazy_data_01.tres" id="6_0bhb6"]
+[ext_resource type="Resource" uid="uid://b52500eqghbpw" path="res://common/data/items/profile_job_test_item.tres" id="7_npx45"]
+[ext_resource type="Resource" uid="uid://ceqoiwr47vxnt" path="res://common/data/items/mail_MFC_fish.tres" id="8_fqatp"]
+[ext_resource type="Resource" uid="uid://dae7b8a7gtuao" path="res://common/data/items/profile_name_test_item.tres" id="9_ek23x"]
+
+[sub_resource type="Resource" id="Resource_uvy1h"]
+script = ExtResource("2_q25av")
+output = ExtResource("5_j7u42")
+allowed_inputs = Array[ExtResource("3_sgc82")]([ExtResource("4_m7pds"), ExtResource("5_sgc82")])
+metadata/_custom_type_script = "uid://c8p7f6bgfvt10"
+
+[sub_resource type="Resource" id="Resource_x6rv1"]
+script = ExtResource("2_q25av")
+output = ExtResource("7_npx45")
+allowed_inputs = Array[ExtResource("3_sgc82")]([ExtResource("6_0bhb6")])
+metadata/_custom_type_script = "uid://c8p7f6bgfvt10"
+
+[sub_resource type="Resource" id="Resource_6kha5"]
+script = ExtResource("2_q25av")
+output = ExtResource("9_ek23x")
+allowed_inputs = Array[ExtResource("3_sgc82")]([ExtResource("8_fqatp")])
+metadata/_custom_type_script = "uid://c8p7f6bgfvt10"
 
 [node name="PrinterMenu" type="Control" unique_id=670146033 node_paths=PackedStringArray("_fish_list", "_print_button", "_fish_spawn_marker", "_data_container")]
 layout_mode = 3
@@ -14,6 +41,7 @@ _fish_list = NodePath("HBoxContainer/FishList/PanelContainer/MarginContainer/VBo
 _print_button = NodePath("HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer/HBoxContainer/PrintButton")
 _fish_spawn_marker = NodePath("HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/SubViewportContainer/SubViewport/FishSpawnPoint")
 _data_container = NodePath("HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/DataContainer/RealDataContainer")
+_recipes = Array[ExtResource("2_q25av")]([SubResource("Resource_uvy1h"), SubResource("Resource_x6rv1"), SubResource("Resource_6kha5")])
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=820335375]
 layout_mode = 1
