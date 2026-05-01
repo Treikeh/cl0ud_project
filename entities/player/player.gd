@@ -29,6 +29,9 @@ func _ready() -> void:
 	_interact_ray.prompt_updated.connect(hud.update_interact_prompt)
 	
 	_load_save_data.call_deferred()
+	
+	inventory.player = self
+	piece_inventory.player = self
 
 
 func _process(delta: float) -> void:

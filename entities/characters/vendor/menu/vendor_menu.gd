@@ -61,7 +61,7 @@ func _on_item_sold(sell_entry: SellEntry) -> void:
 
 func _on_upgrade_pressed(buy_entry: BuyEntry) -> void:
 	if buy_entry.can_buy(_inventory.currency):
-		buy_entry.buy(_inventory._player)
+		buy_entry.buy(_inventory.player)
 
 func _on_upgrade_bought(cost: int) -> void:
 	_inventory.currency -= cost

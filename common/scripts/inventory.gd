@@ -11,6 +11,7 @@ signal item_removed
 
 
 var _first_empty_slot_index: int = 0
+var player: Player
 
 
 func add_item(item_data: ItemData) -> void:
