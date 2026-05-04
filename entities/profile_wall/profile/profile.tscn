@@ -3,11 +3,16 @@
 [ext_resource type="Script" uid="uid://cgma3bovrjc8o" path="res://entities/profile_wall/profile/profile.gd" id="1_n75v3"]
 [ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="2_ggaso"]
 
-[node name="Profile" type="PanelContainer" unique_id=1526504779]
+[node name="Profile" type="PanelContainer" unique_id=1526504779 node_paths=PackedStringArray("_labels")]
 offset_right = 209.0
 offset_bottom = 219.0
 pivot_offset_ratio = Vector2(0.5, 0)
 script = ExtResource("1_n75v3")
+_labels = {
+0: NodePath("MarginContainer/HBoxContainer/VBoxContainer/NameLabel"),
+1: NodePath("MarginContainer/HBoxContainer/VBoxContainer/AgeLabel"),
+2: NodePath("MarginContainer/HBoxContainer/VBoxContainer/JobLabel")
+}
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=15431652]
 layout_mode = 2

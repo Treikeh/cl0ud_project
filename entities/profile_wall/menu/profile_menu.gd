@@ -28,6 +28,8 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") or event.is_action_pressed("inventory"):
+		for slot: Control in _profile.slots:
+			_piece_inventory.add_item(slot.item_data)
 		_close()
 	
 	if event.is_action_pressed("throw_hook"):
@@ -96,3 +98,8 @@ func _create_item_from_profile() -> ItemData:
 	var item := ItemData.new()
 	item.name = "Profile: %s" % _profile.name
 	return item
+
+
+func _on_confirm_button_pressed() -> void:
+	_inventory.add_item(_profile.output_item)
+	_close()

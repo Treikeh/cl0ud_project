@@ -7,6 +7,7 @@ enum Type {
 	MESSAGE,
 	NOTE,
 	JUNK,
+	PROFILE,
 }
 
 const FOLDER_PATH: String = "res://entities/fish/"

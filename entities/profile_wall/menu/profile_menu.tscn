@@ -66,13 +66,18 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Profile" parent="HBoxContainer/ProfileSpace" unique_id=1526504779 instance=ExtResource("2_g8fpx")]
+[node name="Profile" parent="HBoxContainer/ProfileSpace" unique_id=1526504779 node_paths=PackedStringArray("_labels") instance=ExtResource("2_g8fpx")]
 layout_mode = 0
 offset_left = 319.0
 offset_top = 156.0
 offset_right = 528.0
 offset_bottom = 375.0
 _profile_data = SubResource("Resource_5gjde")
+_labels = {
+0: NodePath("MarginContainer/HBoxContainer/VBoxContainer/NameLabel"),
+1: NodePath("MarginContainer/HBoxContainer/VBoxContainer/AgeLabel"),
+2: NodePath("MarginContainer/HBoxContainer/VBoxContainer/JobLabel")
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ProfileSpace" unique_id=1009805616]
 layout_mode = 1
@@ -121,4 +126,5 @@ stretch_mode = 5
 
 [connection signal="slot_grabbed" from="HBoxContainer/ProfileSpace/Profile" to="." method="_on_slot_grabbed"]
 [connection signal="slot_selected" from="HBoxContainer/ProfileSpace/Profile" to="." method="_on_slot_selected"]
+[connection signal="pressed" from="HBoxContainer/ProfileSpace/HBoxContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/ProfileSpace/CloseButton" to="." method="_close"]

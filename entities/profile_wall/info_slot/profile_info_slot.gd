@@ -4,6 +4,7 @@ class_name ProfileWallSlot
 
 signal grabbed(item: ItemData)
 signal data_added(item: ItemData)
+signal data_removed(item: ItemData)
 
 
 @export var _icon: TextureRect
@@ -36,5 +37,8 @@ func add_item(data: ItemData) -> void:
 
 
 func remove_item() -> void:
+	if item_data:
+		var data: ItemData = item_data
+		data_removed.emit(data)
 	_icon.texture = null
 	item_data = null
