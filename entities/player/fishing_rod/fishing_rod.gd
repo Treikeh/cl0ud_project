@@ -21,6 +21,7 @@ enum FishingState {
 @export var _fishing_line: MeshInstance3D
 @export var _rod_tip: Node3D
 @export var _fishing_line_mat: Material
+@export var _hook_los_check: RayCast3D
 
 @export_group("SFX")
 @export var _cast_sfx: FmodEventEmitter3D
@@ -55,11 +56,12 @@ func _process(delta: float) -> void:
 		var charge_curve: Curve = _balance_vars.throw_charge_curve
 		_throw_charge = charge_curve.sample(_throw_charge_time)
 	
+	_hook_los_check.target_position = _hook_los_check.to_local(_hook.global_position)
 	if _fishing_state == FishingState.WAITING:
 		var distance: float = _throw_pos.distance_squared_to(_hook.global_position)
 		var distance_curve: float = _balance_vars.hook_distance_curve.sample(distance)
 		_distance_label.text = str(int(distance_curve))
-		if global_position.distance_to(_throw_pos) > 10.0:
+		if _hook_los_check.is_colliding():
 			_reel_inn()
 	
 	if _fishing_state == FishingState.FISH_HOOKED:

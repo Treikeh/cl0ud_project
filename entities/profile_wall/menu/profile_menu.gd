@@ -10,12 +10,14 @@ const ITEM_ENTRY_SCENE: PackedScene = preload("uid://bnw0d42wub0nx")
 @export var _profile: Control
 @export var _selected_item_icon: TextureRect
 
+var _inventory: Inventory
 var _piece_inventory: Inventory
 var _grabbed_item: ItemData
 var _selected_slot: ProfileWallSlot
 
 
-func with_data(piece_inventory: Inventory) -> Control:
+func with_data(inventory: Inventory, piece_inventory: Inventory) -> Control:
+	_inventory = inventory
 	_piece_inventory = piece_inventory
 	return self
 
@@ -26,7 +28,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") or event.is_action_pressed("inventory"):
-		_close()
+		_on_close_button_pressed()
 	
 	if event.is_action_pressed("throw_hook"):
 		if _grabbed_item:
@@ -50,6 +52,12 @@ func _open() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	_populate_item_list()
 
+
+func _on_close_button_pressed() -> void:
+	for slot: Control in _profile.slots:
+		if slot.item_data:
+			_piece_inventory.add_item(slot.item_data)
+	_close()
 
 func _close() -> void:
 	if _grabbed_item:
@@ -87,13 +95,15 @@ func _on_item_grabbed(item: ItemData) -> void: _grabbed_item = item
 
 
 func _on_slot_grabbed(item: ItemData) -> void: _grabbed_item = item
-func _on_mouse_entered_slot(slot: Control) -> void: _selected_slot = slot
-func _on_mouse_exited_slot() -> void: _selected_slot = null
+func _on_slot_selected(slot: Control) -> void: _selected_slot = slot
 
 
-func _on_slot_recived_data(data: ItemData, source: Control) -> void:
-	var data_types: Dictionary[Label, Control] = _profile.data_types
-	if data_types.values().has(source):
-		var label_index: int = data_types.values().find(source)
-		var label: Label = data_types.keys()[label_index]
-		label.text += data.description
+func _create_item_from_profile() -> ItemData:
+	var item := ItemData.new()
+	item.name = "Profile: %s" % _profile.name
+	return item
+
+
+func _on_confirm_button_pressed() -> void:
+	_inventory.add_item(_profile.output_item)
+	_close()
