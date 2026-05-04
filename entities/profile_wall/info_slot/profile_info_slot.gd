@@ -14,8 +14,14 @@ var _mouse_inside: bool = false
 
 
 func _ready() -> void:
-	mouse_entered.connect(func(): _mouse_inside = true)
-	mouse_exited.connect(func(): _mouse_inside = false)
+	mouse_entered.connect(func():
+			_mouse_inside = true
+			create_tween().tween_property(self, "scale", Vector2.ONE * 1.2, 0.1)
+	)
+	mouse_exited.connect(func():
+			_mouse_inside = false
+			create_tween().tween_property(self, "scale", Vector2.ONE, 0.1)
+	)
 
 
 func _input(event: InputEvent) -> void:

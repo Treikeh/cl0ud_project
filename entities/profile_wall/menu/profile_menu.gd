@@ -28,9 +28,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") or event.is_action_pressed("inventory"):
-		for slot: Control in _profile.slots:
-			_piece_inventory.add_item(slot.item_data)
-		_close()
+		_on_close_button_pressed()
 	
 	if event.is_action_pressed("throw_hook"):
 		if _grabbed_item:
@@ -54,6 +52,12 @@ func _open() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	_populate_item_list()
 
+
+func _on_close_button_pressed() -> void:
+	for slot: Control in _profile.slots:
+		if slot.item_data:
+			_piece_inventory.add_item(slot.item_data)
+	_close()
 
 func _close() -> void:
 	if _grabbed_item:

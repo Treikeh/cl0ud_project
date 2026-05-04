@@ -10,7 +10,10 @@ script = ExtResource("4_000oh")
 data = Dictionary[int, ExtResource("3_tcfk2")]({
 0: null,
 1: null,
-2: null
+2: null,
+3: null,
+4: null,
+5: null
 })
 metadata/_custom_type_script = "uid://jxb6f52u0giu"
 
@@ -76,7 +79,10 @@ _profile_data = SubResource("Resource_5gjde")
 _labels = {
 0: NodePath("MarginContainer/HBoxContainer/VBoxContainer/NameLabel"),
 1: NodePath("MarginContainer/HBoxContainer/VBoxContainer/AgeLabel"),
-2: NodePath("MarginContainer/HBoxContainer/VBoxContainer/JobLabel")
+2: NodePath("MarginContainer/HBoxContainer/VBoxContainer/JobLabel"),
+3: NodePath("MarginContainer/HBoxContainer/VBoxContainer2/AddressLabel"),
+4: NodePath("MarginContainer/HBoxContainer/VBoxContainer2/LikesLabel"),
+5: NodePath("MarginContainer/HBoxContainer/VBoxContainer2/DislikesLabel")
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ProfileSpace" unique_id=1009805616]
@@ -127,4 +133,4 @@ stretch_mode = 5
 [connection signal="slot_grabbed" from="HBoxContainer/ProfileSpace/Profile" to="." method="_on_slot_grabbed"]
 [connection signal="slot_selected" from="HBoxContainer/ProfileSpace/Profile" to="." method="_on_slot_selected"]
 [connection signal="pressed" from="HBoxContainer/ProfileSpace/HBoxContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/ProfileSpace/CloseButton" to="." method="_close"]
+[connection signal="pressed" from="HBoxContainer/ProfileSpace/CloseButton" to="." method="_on_close_button_pressed"]

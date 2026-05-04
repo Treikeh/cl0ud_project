@@ -52,6 +52,8 @@ func _populate_fish_list() -> void:
 		var fish: ItemData = _inventory.items[i]
 		if not fish:
 			continue
+		if not fish.fish_data:
+			continue
 		var item_entry: Control = ITEM_ENTRY_SCENE.instantiate().with_data(fish, i)
 		_fish_list.add_child(item_entry)
 		item_entry.pressed.connect(_on_entry_pressed)

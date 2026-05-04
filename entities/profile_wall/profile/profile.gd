@@ -8,6 +8,7 @@ signal slot_grabbed(item_data: ItemData)
 const PROFILE_WALL_SLOT_SCENE: PackedScene = preload("uid://daynk558nxhes")
 
 @export var _profile_data: ProfileData
+@export var _spawn_points: Control
 @export var _labels: Dictionary[ProfileData.DataTypes, Label]
 
 var slots: Array[ProfileWallSlot] = []
@@ -30,27 +31,28 @@ func _ready() -> void:
 		if _profile_data.data.has(type):
 			# Add a slot for the type
 			var slot: ProfileWallSlot = PROFILE_WALL_SLOT_SCENE.instantiate()
-			$Control/Control.add_child(slot)
+			_spawn_points.get_child(i).add_child(slot)
 			
-			slot.data_added.connect(_on_data_added.bind(label))
-			slot.data_removed.connect(_on_data_removed.bind(label))
+			slot.data_added.connect(_on_data_added.bind(label, type))
+			slot.data_removed.connect(_on_data_removed.bind(label, type))
 		
 			slot.grabbed.connect(_on_slot_grabbed)
 			slot.mouse_entered.connect(_on_slot_mouse_entered.bind(slot))
 			slot.mouse_exited.connect(_on_slot_mouse_exited)
 			
 			slots.append(slot)
-			return
 		else:
 			label.hide()
 
 
-func _on_data_added(item_data: ItemData, label: Label) -> void:
+func _on_data_added(item_data: ItemData, label: Label, type: ProfileData.DataTypes) -> void:
 	label.text += item_data.description
+	_update_item(type, item_data.description)
 
 
-func _on_data_removed(item_data: ItemData, label: Label) -> void:
+func _on_data_removed(item_data: ItemData, label: Label, type: ProfileData.DataTypes) -> void:
 	label.text = label.text.trim_suffix(item_data.description)
+	_update_item(type, "")
 
 
 func _update_item(data_type: ProfileData.DataTypes, data: String) -> void:
