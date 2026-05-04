@@ -10,12 +10,14 @@ const ITEM_ENTRY_SCENE: PackedScene = preload("uid://bnw0d42wub0nx")
 @export var _profile: Control
 @export var _selected_item_icon: TextureRect
 
+var _inventory: Inventory
 var _piece_inventory: Inventory
 var _grabbed_item: ItemData
 var _selected_slot: ProfileWallSlot
 
 
-func with_data(piece_inventory: Inventory) -> Control:
+func with_data(inventory: Inventory, piece_inventory: Inventory) -> Control:
+	_inventory = inventory
 	_piece_inventory = piece_inventory
 	return self
 
@@ -87,13 +89,10 @@ func _on_item_grabbed(item: ItemData) -> void: _grabbed_item = item
 
 
 func _on_slot_grabbed(item: ItemData) -> void: _grabbed_item = item
-func _on_mouse_entered_slot(slot: Control) -> void: _selected_slot = slot
-func _on_mouse_exited_slot() -> void: _selected_slot = null
+func _on_slot_selected(slot: Control) -> void: _selected_slot = slot
 
 
-func _on_slot_recived_data(data: ItemData, source: Control) -> void:
-	var data_types: Dictionary[Label, Control] = _profile.data_types
-	if data_types.values().has(source):
-		var label_index: int = data_types.values().find(source)
-		var label: Label = data_types.keys()[label_index]
-		label.text += data.description
+func _create_item_from_profile() -> ItemData:
+	var item := ItemData.new()
+	item.name = "Profile: %s" % _profile.name
+	return item
