@@ -3,19 +3,25 @@ class_name ProfileWallSlot
 
 
 signal grabbed(item: ItemData)
-signal recived_data(data: ItemData)
+signal data_added(item: ItemData)
+signal data_removed(item: ItemData)
 
 
 @export var _icon: TextureRect
-@export var _required_data: ItemData
 
 var item_data: ItemData
 var _mouse_inside: bool = false
 
 
 func _ready() -> void:
-	mouse_entered.connect(func(): _mouse_inside = true)
-	mouse_exited.connect(func(): _mouse_inside = false)
+	mouse_entered.connect(func():
+			_mouse_inside = true
+			create_tween().tween_property(self, "scale", Vector2.ONE * 1.2, 0.1)
+	)
+	mouse_exited.connect(func():
+			_mouse_inside = false
+			create_tween().tween_property(self, "scale", Vector2.ONE, 0.1)
+	)
 
 
 func _input(event: InputEvent) -> void:
@@ -32,10 +38,13 @@ func add_item(data: ItemData) -> void:
 	
 	item_data = data
 	_icon.texture = item_data.icon
-	if item_data == _required_data:
-		recived_data.emit(item_data)
+	
+	data_added.emit(data)
 
 
 func remove_item() -> void:
+	if item_data:
+		var data: ItemData = item_data
+		data_removed.emit(data)
 	_icon.texture = null
 	item_data = null

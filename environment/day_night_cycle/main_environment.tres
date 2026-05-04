@@ -10,7 +10,7 @@ sky_material = SubResource("ProceduralSkyMaterial_dh6gv")
 [resource]
 background_mode = 2
 sky = SubResource("Sky_8iyw0")
-tonemap_mode = 2
+tonemap_mode = 3
 glow_enabled = true
 fog_enabled = true
 fog_density = 0.0075

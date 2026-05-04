@@ -2,9 +2,20 @@
 
 [ext_resource type="Script" uid="uid://b8bktvdxgqqnf" path="res://entities/profile_wall/menu/profile_menu.gd" id="1_3hdgf"]
 [ext_resource type="PackedScene" uid="uid://1twaxsgrm048" path="res://entities/profile_wall/profile/profile.tscn" id="2_g8fpx"]
-[ext_resource type="Resource" uid="uid://dae7b8a7gtuao" path="res://common/data/items/profile_name_test_item.tres" id="5_000oh"]
-[ext_resource type="PackedScene" uid="uid://daynk558nxhes" path="res://entities/profile_wall/info_slot/profile_info_slot.tscn" id="7_000oh"]
-[ext_resource type="Resource" uid="uid://b52500eqghbpw" path="res://common/data/items/profile_job_test_item.tres" id="8_f7neb"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_tcfk2"]
+[ext_resource type="Script" uid="uid://jxb6f52u0giu" path="res://common/data/profiles/profile_data.gd" id="4_000oh"]
+
+[sub_resource type="Resource" id="Resource_5gjde"]
+script = ExtResource("4_000oh")
+data = Dictionary[int, ExtResource("3_tcfk2")]({
+0: null,
+1: null,
+2: null,
+3: null,
+4: null,
+5: null
+})
+metadata/_custom_type_script = "uid://jxb6f52u0giu"
 
 [node name="ProfileMenu" type="Control" unique_id=794032460 node_paths=PackedStringArray("_pieces_list", "_profile", "_selected_item_icon")]
 layout_mode = 3
@@ -58,68 +69,21 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Profile" parent="HBoxContainer/ProfileSpace" unique_id=1526504779 node_paths=PackedStringArray("data_types") instance=ExtResource("2_g8fpx")]
+[node name="Profile" parent="HBoxContainer/ProfileSpace" unique_id=1526504779 node_paths=PackedStringArray("_labels") instance=ExtResource("2_g8fpx")]
 layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 138.0
-offset_bottom = 165.0
-grow_horizontal = 1
-grow_vertical = 1
-data_types = {
-NodePath("MarginContainer/VBoxContainer/NameLabel"): NodePath("../Name"),
-NodePath("MarginContainer/VBoxContainer/AgeLabel"): NodePath("../Age"),
-NodePath("MarginContainer/VBoxContainer/JobLabel"): NodePath("../Job")
+offset_left = 319.0
+offset_top = 156.0
+offset_right = 528.0
+offset_bottom = 375.0
+_profile_data = SubResource("Resource_5gjde")
+_labels = {
+0: NodePath("MarginContainer/HBoxContainer/VBoxContainer/NameLabel"),
+1: NodePath("MarginContainer/HBoxContainer/VBoxContainer/AgeLabel"),
+2: NodePath("MarginContainer/HBoxContainer/VBoxContainer/JobLabel"),
+3: NodePath("MarginContainer/HBoxContainer/VBoxContainer2/AddressLabel"),
+4: NodePath("MarginContainer/HBoxContainer/VBoxContainer2/LikesLabel"),
+5: NodePath("MarginContainer/HBoxContainer/VBoxContainer2/DislikesLabel")
 }
-
-[node name="Name" parent="HBoxContainer/ProfileSpace" unique_id=829800645 instance=ExtResource("7_000oh")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 590.0
-offset_top = 121.0
-offset_right = 674.0
-offset_bottom = 205.0
-grow_horizontal = 1
-grow_vertical = 1
-_required_data = ExtResource("5_000oh")
-
-[node name="Age" parent="HBoxContainer/ProfileSpace" unique_id=515195711 instance=ExtResource("7_000oh")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 129.0
-offset_top = 242.0
-offset_right = 213.0
-offset_bottom = 326.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="Job" parent="HBoxContainer/ProfileSpace" unique_id=1147961438 instance=ExtResource("7_000oh")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 583.0
-offset_top = 392.0
-offset_right = 667.0
-offset_bottom = 476.0
-grow_horizontal = 1
-grow_vertical = 1
-_required_data = ExtResource("8_f7neb")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ProfileSpace" unique_id=1009805616]
 layout_mode = 1
@@ -166,16 +130,7 @@ mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
 
-[connection signal="grabbed" from="HBoxContainer/ProfileSpace/Name" to="." method="_on_item_grabbed"]
-[connection signal="mouse_entered" from="HBoxContainer/ProfileSpace/Name" to="." method="_on_mouse_entered_slot" flags=18]
-[connection signal="mouse_exited" from="HBoxContainer/ProfileSpace/Name" to="." method="_on_mouse_exited_slot"]
-[connection signal="recived_data" from="HBoxContainer/ProfileSpace/Name" to="." method="_on_slot_recived_data" flags=18]
-[connection signal="grabbed" from="HBoxContainer/ProfileSpace/Age" to="." method="_on_item_grabbed"]
-[connection signal="mouse_entered" from="HBoxContainer/ProfileSpace/Age" to="." method="_on_mouse_entered_slot" flags=18]
-[connection signal="mouse_exited" from="HBoxContainer/ProfileSpace/Age" to="." method="_on_mouse_exited_slot"]
-[connection signal="recived_data" from="HBoxContainer/ProfileSpace/Age" to="." method="_on_slot_recived_data" flags=18]
-[connection signal="grabbed" from="HBoxContainer/ProfileSpace/Job" to="." method="_on_item_grabbed"]
-[connection signal="mouse_entered" from="HBoxContainer/ProfileSpace/Job" to="." method="_on_mouse_entered_slot" flags=18]
-[connection signal="mouse_exited" from="HBoxContainer/ProfileSpace/Job" to="." method="_on_mouse_exited_slot"]
-[connection signal="recived_data" from="HBoxContainer/ProfileSpace/Job" to="." method="_on_slot_recived_data" flags=18]
-[connection signal="pressed" from="HBoxContainer/ProfileSpace/CloseButton" to="." method="_close"]
+[connection signal="slot_grabbed" from="HBoxContainer/ProfileSpace/Profile" to="." method="_on_slot_grabbed"]
+[connection signal="slot_selected" from="HBoxContainer/ProfileSpace/Profile" to="." method="_on_slot_selected"]
+[connection signal="pressed" from="HBoxContainer/ProfileSpace/HBoxContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ProfileSpace/CloseButton" to="." method="_on_close_button_pressed"]

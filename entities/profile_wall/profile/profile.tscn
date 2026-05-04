@@ -3,24 +3,19 @@
 [ext_resource type="Script" uid="uid://cgma3bovrjc8o" path="res://entities/profile_wall/profile/profile.gd" id="1_n75v3"]
 [ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="2_ggaso"]
 
-[node name="Profile" type="PanelContainer" unique_id=1526504779 node_paths=PackedStringArray("data_types")]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -141.0
-offset_right = 58.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Profile" type="PanelContainer" unique_id=1526504779 node_paths=PackedStringArray("_spawn_points", "_labels")]
+offset_right = 209.0
+offset_bottom = 219.0
 pivot_offset_ratio = Vector2(0.5, 0)
 script = ExtResource("1_n75v3")
-data_types = {
-NodePath("MarginContainer/VBoxContainer/NameLabel"): null,
-NodePath("MarginContainer/VBoxContainer/AgeLabel"): null,
-NodePath("MarginContainer/VBoxContainer/JobLabel"): null
+_spawn_points = NodePath("SpawnPoints")
+_labels = {
+0: NodePath("MarginContainer/HBoxContainer/VBoxContainer/NameLabel"),
+1: NodePath("MarginContainer/HBoxContainer/VBoxContainer/AgeLabel"),
+2: NodePath("MarginContainer/HBoxContainer/VBoxContainer/JobLabel"),
+3: NodePath("MarginContainer/HBoxContainer/VBoxContainer2/AddressLabel"),
+4: NodePath("MarginContainer/HBoxContainer/VBoxContainer2/LikesLabel"),
+5: NodePath("MarginContainer/HBoxContainer/VBoxContainer2/DislikesLabel")
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=15431652]
@@ -30,25 +25,94 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=577418532]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=477076387]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1567969111]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=577418532]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1567969111]
 layout_mode = 2
 texture = ExtResource("2_ggaso")
 stretch_mode = 5
 
-[node name="NameLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1637496359]
+[node name="NameLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1637496359]
 layout_mode = 2
 text = "Name: "
 vertical_alignment = 1
 
-[node name="AgeLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=636875024]
+[node name="AgeLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=636875024]
 layout_mode = 2
-text = "Age: "
+text = "Birthday: "
 vertical_alignment = 1
 
-[node name="JobLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1457975500]
+[node name="JobLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1457975500]
 layout_mode = 2
-text = "Job: "
+text = "Occupation: "
 vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=370153989]
+layout_mode = 2
+
+[node name="AddressLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=92547356]
+layout_mode = 2
+text = "Address: "
+
+[node name="LikesLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=638264763]
+layout_mode = 2
+text = "Likes: "
+
+[node name="DislikesLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1488235590]
+layout_mode = 2
+text = "Dislikes: "
+
+[node name="SpawnPoints" type="Control" parent="." unique_id=1152685478]
+layout_mode = 2
+
+[node name="Name" type="Control" parent="SpawnPoints" unique_id=1946658107]
+layout_mode = 1
+anchors_preset = 0
+offset_left = -160.0
+offset_top = -15.0
+offset_right = -160.0
+offset_bottom = -15.0
+
+[node name="Age" type="Control" parent="SpawnPoints" unique_id=2119633458]
+layout_mode = 1
+anchors_preset = 0
+offset_left = -160.0
+offset_top = 100.0
+offset_right = -160.0
+offset_bottom = 100.0
+
+[node name="Job" type="Control" parent="SpawnPoints" unique_id=1552440780]
+layout_mode = 1
+anchors_preset = 0
+offset_left = -160.0
+offset_top = 215.0
+offset_right = -160.0
+offset_bottom = 215.0
+
+[node name="Address" type="Control" parent="SpawnPoints" unique_id=223711644]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 275.0
+offset_top = -15.0
+offset_right = 275.0
+offset_bottom = -15.0
+
+[node name="Likes" type="Control" parent="SpawnPoints" unique_id=1040039606]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 275.0
+offset_top = 100.0
+offset_right = 275.0
+offset_bottom = 100.0
+
+[node name="Dislikes" type="Control" parent="SpawnPoints" unique_id=955548621]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 275.0
+offset_top = 215.0
+offset_right = 275.0
+offset_bottom = 215.0
