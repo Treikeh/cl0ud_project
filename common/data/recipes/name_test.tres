@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="ProfileRecipe" format=3 uid="uid://bmjdg2qhgjmn"]
 
-[ext_resource type="Resource" uid="uid://ceqoiwr47vxnt" path="res://common/data/items/mail_MFC_fish.tres" id="1_e33tf"]
-[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_xbg0q"]
-[ext_resource type="Resource" uid="uid://d2mwv2cvdjkcp" path="res://common/data/items/profile_test_name.tres" id="3_xbg0q"]
-[ext_resource type="Script" uid="uid://c8p7f6bgfvt10" path="res://common/data/recipes/profile_recipe.gd" id="3_ypbpj"]
+[ext_resource type="Resource" uid="uid://ceqoiwr47vxnt" path="res://common/data/items/mail_MFC_fish.tres" id="1_xbg0q"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_ypbpj"]
+[ext_resource type="Resource" uid="uid://d2mwv2cvdjkcp" path="res://common/data/items/profile_test_name.tres" id="3_fydls"]
+[ext_resource type="Script" uid="uid://c8p7f6bgfvt10" path="res://common/data/recipes/profile_recipe.gd" id="4_0mcis"]
 
 [resource]
-script = ExtResource("3_ypbpj")
-input = ExtResource("1_e33tf")
-outputs = Array[ExtResource("2_xbg0q")]([ExtResource("3_xbg0q")])
+script = ExtResource("4_0mcis")
+input = ExtResource("1_xbg0q")
+outputs = Array[ExtResource("2_ypbpj")]([ExtResource("3_fydls")])
