@@ -13,3 +13,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	global_position += -global_basis.z * delta * _speed
+
+
+func _on_timer_timeout() -> void:
+	queue_free()

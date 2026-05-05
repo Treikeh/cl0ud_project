@@ -15,3 +15,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75, 0)
 event_name = "event:/Ambience/Train"
 event_guid = "{d7345ed5-3b1e-403f-94c5-23fc326b6c31}"
 autoplay = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1809345243]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
