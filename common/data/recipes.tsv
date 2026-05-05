@@ -1,0 +1,5 @@
+FILE_NAME	INPUT	POSSIBLE_OUTPUTS
+age_test	note_crazy_data_01	profile_name_test_item
+name_test	mail_MFC_fish	profile_job_test_item
+occupation_test	mail_test_05	profile_job_test_item, profile_name_test_item
+terry_name_address	mail_beerparty_fish	profile_name_terry_item, profile_address_terry_item

@@ -2,13 +2,15 @@
 extends Control
 
 const ITEM_SAVE_PATH: String = "res://common/data/items/"
-const FISH_DATA_SAVE_PATH: String = "res://common/data/fish/"#"res://entities/fish/"
+const FISH_DATA_SAVE_PATH: String = "res://common/data/fish/"
 const DIALOGUE_SAVE_PATH: String = "res://common/data/dialogue/"
+const RECIPES_SAVE_PATH: String = "res://common/data/recipes/"
 
 var _file_paths: Dictionary = {}
 var _debug_settings: Dictionary = {}
 
 @export var _enable_save_check_box: CheckBox
+@export var _recipes_button: Button
 @export var _item_button: Button
 @export var _fish_data_button: Button
 @export var _dialogue_button: Button
@@ -16,6 +18,7 @@ var _debug_settings: Dictionary = {}
 
 func _ready() -> void:
 	_enable_save_check_box.toggled.connect(_enable_save)
+	_recipes_button.pressed.connect(_parse_file.bind("recipes"))
 	_item_button.pressed.connect(_parse_file.bind("items"))
 	_fish_data_button.pressed.connect(_parse_file.bind("fish_data"))
 	_dialogue_button.pressed.connect(_parse_file.bind("dialogue"))
@@ -40,10 +43,6 @@ func _enable_save(toggled_on: bool) -> void:
 #region Parse data
 
 func _parse_file(file: String) -> void:
-	# Load file paths
-	_file_paths = Globals.load_data_from_file(Globals.PLUGIN_SETTINGS_FILE)
-	var file_paths: Dictionary = _file_paths.get("%s_file_paths" % file)
-	
 	# Get data from file
 	var rows: Array[PackedStringArray] = _get_file_data(file)
 	if rows.is_empty():
@@ -52,15 +51,14 @@ func _parse_file(file: String) -> void:
 	# Create differnt resources based on file
 	match file:
 		"items":
-			_create_item_resources(rows, file_paths)
+			_create_item_resources(rows)
 		"fish_data":
-			_create_fish_data(rows, file_paths)
+			_create_fish_data(rows)
 		"dialogue":
-			_create_dialogue_resources(rows, file_paths)
+			_create_dialogue_resources(rows)
+		"recipes":
+			_create_recipes_data(rows)
 	
-	# Update and save the uids of the new files
-	_file_paths.set("%s_file_paths" % file, file_paths)
-	Globals.save_data_to_file(Globals.PLUGIN_SETTINGS_FILE, _file_paths)
 	# Refresh files
 	EditorInterface.get_resource_filesystem().scan()
 
@@ -69,7 +67,7 @@ func _parse_file(file: String) -> void:
 func _get_file_data(file: String) -> Array[PackedStringArray]:
 	# Check if the file exists
 	print("Parsing %s.tsv file" % file)
-	var file_path: String = "res://debug/%s.tsv" % file
+	var file_path: String = "res://common/data/%s.tsv" % file
 	if not FileAccess.file_exists(file_path):
 		push_error("%s file not found" % file_path)
 		return []
@@ -93,20 +91,12 @@ func _get_file_data(file: String) -> Array[PackedStringArray]:
 	return rows
 
 
-func _file_exists(file_paths: Dictionary, id: String) -> bool:
-	return file_paths.has(id) and ResourceUID.has_id(ResourceUID.text_to_id(file_paths[id]))
-
-
-func _save_resource(resource: Resource, path: String, file_paths: Dictionary, id: String) -> void:
+func _save_resource(resource: Resource, path: String) -> void:
 	var save_result: Error = ResourceSaver.save(resource, path)
-	# Save resource uid so that we can check if it exits for the next time we want to ->
-	# <- parse the dialogue data.
-	var resource_id: int = ResourceLoader.get_resource_uid(path)
-	file_paths[id] = ResourceUID.id_to_text(resource_id)
 	print('Saving "%s", Result: %s' % [path, save_result])
 
 
-func _create_item_resources(data: Array[PackedStringArray], file_paths: Dictionary) -> void:
+func _create_item_resources(data: Array[PackedStringArray]) -> void:
 	var loot_table: Dictionary = {}
 	# Create item data for each data element
 	for row: PackedStringArray in data:
@@ -116,9 +106,6 @@ func _create_item_resources(data: Array[PackedStringArray], file_paths: Dictiona
 		var path: String = ITEM_SAVE_PATH + id + ".tres"
 		
 		var item := ItemData.new()
-		if _file_exists(file_paths, id):
-			path = ResourceUID.uid_to_path(file_paths[id])
-			item = load(path)
 		
 		# Get item data
 		var item_name: String = row[1]
@@ -176,11 +163,11 @@ func _create_item_resources(data: Array[PackedStringArray], file_paths: Dictiona
 		item.mesh_scene = mesh_scene
 		item.fish_data = fish_data
 		
-		_save_resource(item, path, file_paths, id)
+		_save_resource(item, path)
 	Globals.save_data_to_file(Globals.FISH_LOOT_TABLE_FILE, loot_table)
 
 
-func _create_fish_data(data: Array[PackedStringArray], file_paths: Dictionary) -> void:
+func _create_fish_data(data: Array[PackedStringArray]) -> void:
 	# Create item data for each data element
 	for row: PackedStringArray in data:
 		var id: String = row[0]
@@ -191,9 +178,6 @@ func _create_fish_data(data: Array[PackedStringArray], file_paths: Dictionary) -
 		var path: String = FISH_DATA_SAVE_PATH + id + ".tres"
 		
 		var fish: FishData
-		if _file_exists(file_paths, id):
-			path = ResourceUID.uid_to_path(file_paths[id])
-			fish = load(path)
 		
 		# Create the right fish data type
 		match type:
@@ -213,9 +197,7 @@ func _create_fish_data(data: Array[PackedStringArray], file_paths: Dictionary) -
 				# Turn fake new line markers into real new line markers
 				content_text = content_text.replace("/n", "\n")
 				
-				# Set mail data
-				if fish == null:
-					fish = MailData.new()
+				fish = MailData.new()
 				# Get parts of the string that match with the different parts
 				fish.from = from_text
 				fish.to = to_text
@@ -226,9 +208,7 @@ func _create_fish_data(data: Array[PackedStringArray], file_paths: Dictionary) -
 				var text: String = row[2]
 				text = text.replace("/n", "\n")
 				
-				# Set note data
-				if fish == null:
-					fish = NoteData.new()
+				fish = NoteData.new()
 				fish.text = text
 			"MESSAGE":
 				# Get message data
@@ -259,20 +239,17 @@ func _create_fish_data(data: Array[PackedStringArray], file_paths: Dictionary) -
 					}
 					messages.append(dict)
 				
-				# Set message data
-				if fish == null:
-					fish = MessageData.new()
+				fish = MessageData.new()
 				fish.sender = sender
 				fish.recipient = recipient
 				fish.messages = messages
 			"JUNK":
-				if fish == null:
-					fish = JunkData.new()
+				fish = JunkData.new()
 		
-		_save_resource(fish, path, file_paths, id)
+		_save_resource(fish, path)
 
 
-func _create_dialogue_resources(data: Array[PackedStringArray], file_paths: Dictionary) -> void:
+func _create_dialogue_resources(data: Array[PackedStringArray]) -> void:
 	# Create dialogue resources for each data element
 	for row: PackedStringArray in data:
 		# Get the id from the row
@@ -284,12 +261,6 @@ func _create_dialogue_resources(data: Array[PackedStringArray], file_paths: Dict
 		
 		# Create new dialogue dialogue object
 		var dialogue := DialogueData.new()
-		# Check if a reference to the files exists
-		if _file_exists(file_paths, id):
-			# Set the save path to the path of the file
-			path = ResourceUID.uid_to_path(file_paths[id])
-			# Load the old file
-			dialogue = load(path)
 		
 		var lines: Array[String] = []
 		for line: String in row[2].split("|"):
@@ -310,6 +281,30 @@ func _create_dialogue_resources(data: Array[PackedStringArray], file_paths: Dict
 		dialogue.lines = lines
 		dialogue.choices = choices
 		
-		_save_resource(dialogue, path, file_paths, id)
+		_save_resource(dialogue, path)
+
+
+func _create_recipes_data(data: Array[PackedStringArray]) -> void:
+	for row: PackedStringArray in data:
+		# Get the id from the row
+		var id: String = row[0]
+		if id == "":
+			continue
+		# Get the default file save path
+		var path: String = RECIPES_SAVE_PATH + id + ".tres"
+		
+		var recipe := ProfileRecipe.new()
+		
+		var input: ItemData = load(ITEM_SAVE_PATH + row[1] + ".tres")
+		var outputs: Array[ItemData] = []
+		
+		var output_entries: PackedStringArray = row[2].split(",")
+		for entry: String in output_entries:
+			outputs.append(load(ITEM_SAVE_PATH + entry.strip_edges() + ".tres"))
+		
+		recipe.input = input
+		recipe.outputs = outputs
+		
+		_save_resource(recipe, path)
 
 #endregion

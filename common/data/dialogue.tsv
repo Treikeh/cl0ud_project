@@ -1,0 +1,5 @@
+FILE_NAME	CHARACTER_NAME	TEXT	CHOICES
+vendor_interact_01	"Chops"	You here to buy or here to sell?	Buying | Selling | Nevermind
+vendor_close_shop_01	"Chops"	Cya around, Compadre.	
+vendor_nevermind_01	"Chops"	Quit wastin' my time.	
+oldman_speak_01	Old Man	Keep your wits about ya. | Aah reckon somethin' is hidin' en the clouds. 	

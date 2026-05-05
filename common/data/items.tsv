@@ -1,0 +1,28 @@
+FILE_NAME	ITEM_NAME	DESCRIPTION	VALUE	FISH_DATA_PATH	FISHING_RARITY	FISH_POOL	ITEM_TYPE	ICON_PATH	MESH_SCENE_PATH
+test_01	Item 01	General item	3			Default	ITEM	res://icon.svg	res://entities/player/fishing_rod/art/fishing_hook_001_fbx.tscn
+mail_beerparty_fish	Mail Fish "Beer Party"	A low-value mail fish containing data on some Beer party.	4	mail_beerparty_data	160	Default			
+mail_MFC_fish	Mail Fish "MFC"	A low-value mail fishing describing a business transaction.	5	mail_MFC_data	280	Default			
+mail_test_03	Mail 03	Mail item	4	mail_data_04	100	Default			
+mail_test_04	Mail 04	Mail item	4	mail_data_04	150	Default			
+mail_test_05	Mail 05	Mail item	4	mail_data_04	200	Default			
+mail_test_06	Mail 06	Mail item	4	mail_data_04	250	Default			
+message_exploration_fish	Message Fish "Exploration"	A low-value message fish with a conversation about exploring.	6	message_exploration_data	360	Default			
+message_test_02	Message 02	Message item	5	message_data_02	50	Default			
+note_crazy_data_01	Bloody Note Fish?	[color=red][shake rate=20.0 level=5 connected=1]The Truth[/shake][/color]	7	note_meatgrinder_data	500	Default			
+note_test_02	Note 02	Note item	6	note_data_02	50	Default			
+junk_test_01	Junk 01	Junk	1	junk_data_01	1	Default, Toilet			
+message_item_Xavier_01	Xavier Data-Fish 1	A important message fish containing the conversation between [color=yellow]Xavier[/color] and Martin.	12	message_story_Xavier_data_01	80	Default			
+									
+profile_test_name	Name	Mario					PROFILE_DATA	res://icon.svg	
+profile_test_age	Age	30+					PROFILE_DATA	res://icon.svg	
+profile_test_job	Job	Plumber					PROFILE_DATA	res://icon.svg	
+									
+									
+profile_ryan_name_item	Ryan's name	Ryan					PROFILE_DATA	res://icon.svg	
+profile_ryan_likes_item	Ryan's likes	Yukon craft-beer					PROFILE_DATA	res://icon.svg	
+profile_terry_name_item	Terry's name	Terry					PROFILE_DATA	res://icon.svg	
+profile_terry_address_item	Terry's address	4th Concrete Avenue Street					PROFILE_DATA	res://icon.svg	
+profile_cornelius_mctaro_name_item	Cornelius' name	Cornelius McTaro					PROFILE_DATA	res://icon.svg	
+profile_cornelius_mctaro_likes_item	Cornelius' likes	Mansions, Cars and Money					PROFILE_DATA	res://icon.svg	
+profile_harris_goodwill_name_item	Harris' name	Harris Goodwill							
+profile_harris_goodwill_likes_item	Harris' likes	Mississippi Fried Chicken							
