@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cx8xdw52gq0v3"]
+
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_ag1kb"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_co310"]
+
+[resource]
+script = ExtResource("2_co310")
+name = "Ryan's likes"
+description = "Yukon craft-beer"
+type = "PROFILE_DATA"
+icon = ExtResource("1_ag1kb")

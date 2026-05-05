@@ -23,10 +23,19 @@ const PRINTER_MENU_SCENE: PackedScene = preload("uid://daoulaw7h8y4p")
 
 var _state: State = State.EMPTY
 var _paper_item: ItemData
+var _recipes: Array[ProfileRecipe] = []
 
 
 func _ready() -> void:
 	$PaperMesh.hide()
+	# load all profile recipes
+	const FOLDER_PATH: String = "res://common/data/recipes/"
+	var recipes_files: PackedStringArray = ResourceLoader.list_directory(FOLDER_PATH)
+	for file: String in recipes_files:
+		if not file.ends_with(".tres"):
+			continue
+		
+		_recipes.append(load(FOLDER_PATH + file))
 
 
 func _on_interacted(player: Player) -> void:
@@ -40,7 +49,7 @@ func _on_interacted(player: Player) -> void:
 func _open_menu(player: Player) -> void:
 	player.input.set_enabled(false)
 	# Spawn printer menu
-	var printer_menu: Control = PRINTER_MENU_SCENE.instantiate().with_data(player.inventory)
+	var printer_menu: Control = PRINTER_MENU_SCENE.instantiate().with_data(player.inventory, _recipes)
 	add_child(printer_menu)
 	printer_menu.closed.connect(_on_menu_closed.bind(player))
 	printer_menu.fish_printed.connect(_on_fish_printed)
