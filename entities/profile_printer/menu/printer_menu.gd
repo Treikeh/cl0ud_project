@@ -12,10 +12,16 @@ const ITEM_ENTRY_SCENE: PackedScene = preload("uid://c7cu5bxtffalu")
 @export var _fish_spawn_marker: Marker3D
 @export var _data_container: Container
 
+@export_group("Output")
+@export var _output_label: Label
+@export var _prev_output_button: Button
+@export var _next_output_button: Button
+
 @export var _recipes: Array[ProfileRecipe] = []
 
 var _inventory: Inventory
 var _selected_entry: Control
+var _current_output_index: int = 0
 var _output_item: ItemData
 
 
@@ -36,6 +42,8 @@ func _input(event: InputEvent) -> void:
 func _open() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	_print_button.disabled = true
+	_prev_output_button.disabled = true
+	_next_output_button.disabled = true
 	
 	_populate_fish_list()
 
@@ -65,6 +73,7 @@ func _on_entry_pressed(entry: Control) -> void:
 	var item_data: ItemData = entry.item_data
 	_update_mesh_dispaly(item_data)
 	_update_data_container(item_data.fish_data)
+	_current_output_index = 0
 	_update_output(item_data)
 
 
@@ -90,21 +99,24 @@ func _update_data_container(fish_data: FishData) -> void:
 
 
 func _update_output(item: ItemData) -> void:
-	var recipes: Array[ProfileRecipe] = _get_output_item(item)
-	if recipes.is_empty():
+	var outputs: Array[ItemData] = _get_recipie_outputs(item)
+	if outputs.is_empty():
 		return
 	
 	_print_button.disabled = false
-	_output_item = recipes[0].output
-	print(_output_item.name)
+	_prev_output_button.disabled = false
+	_next_output_button.disabled = false
+	_output_item = outputs[_current_output_index]
+	_output_item.value = item.value
+	_output_label.text = _output_item.name
 
 
-func _get_output_item(fish: ItemData) -> Array[ProfileRecipe]:
-	var allowed_recipes: Array[ProfileRecipe] = []
+func _get_recipie_outputs(fish: ItemData) -> Array[ItemData]:
+	var outputs: Array[ItemData] = []
 	for recipie: ProfileRecipe in _recipes:
-		if recipie.allowed_inputs.has(fish):
-			allowed_recipes.append(recipie)
-	return allowed_recipes
+		if recipie.input == fish:
+			outputs = recipie.outputs
+	return outputs
 
 
 func _print_fish() -> void:
@@ -113,3 +125,25 @@ func _print_fish() -> void:
 		fish_printed.emit(_output_item)
 		_inventory.remove_item(_selected_entry.index)
 		_close()
+
+
+func _on_prev_output_item_pressed() -> void:
+	var item: ItemData = _selected_entry.item_data
+	var desired_output: int = _current_output_index - 1
+	if desired_output < 0:
+		_current_output_index = _get_recipie_outputs(item).size() - 1
+	else:
+		_current_output_index = desired_output
+	
+	_update_output(item)
+
+
+func _on_next_output_item_pressed() -> void:
+	var item: ItemData = _selected_entry.item_data
+	var desired_output: int = _current_output_index + 1
+	if desired_output > _get_recipie_outputs(item).size() - 1:
+		_current_output_index = 0
+	else:
+		_current_output_index = desired_output
+	
+	_update_output(item)

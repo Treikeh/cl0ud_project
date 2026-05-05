@@ -10,7 +10,13 @@ signal data_removed(item: ItemData)
 @export var _icon: TextureRect
 
 var item_data: ItemData
+var slot_type: ProfileData.DataTypes
 var _mouse_inside: bool = false
+
+
+func with_data(type: ProfileData.DataTypes) -> ProfileWallSlot:
+	slot_type = type
+	return self
 
 
 func _ready() -> void:

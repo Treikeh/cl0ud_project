@@ -59,6 +59,7 @@ func _on_close_button_pressed() -> void:
 			_piece_inventory.add_item(slot.item_data)
 	_close()
 
+
 func _close() -> void:
 	if _grabbed_item:
 		_piece_inventory.add_item(_grabbed_item)
@@ -105,5 +106,8 @@ func _create_item_from_profile() -> ItemData:
 
 
 func _on_confirm_button_pressed() -> void:
+	if _profile.is_empty():
+		return
+	
 	_inventory.add_item(_profile.output_item)
 	_close()
