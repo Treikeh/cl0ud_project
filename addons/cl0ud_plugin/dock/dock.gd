@@ -151,6 +151,7 @@ func _create_item_resources(data: Array[PackedStringArray]) -> void:
 				loot_table.merge(old_table)
 		else:
 			item_type = row[7]
+			print(row[8])
 			icon = load(row[8])
 			mesh_scene = row[9]
 		

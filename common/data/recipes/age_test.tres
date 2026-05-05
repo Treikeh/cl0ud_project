@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ProfileRecipe" format=3 uid="uid://dhq5yj6bccnqy"]
+
+[ext_resource type="Resource" uid="uid://dvohwdqt3uio0" path="res://common/data/items/note_crazy_data_01.tres" id="1_j8wac"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_hnefe"]
+[ext_resource type="Resource" uid="uid://sxctvfgyy1y7" path="res://common/data/items/profile_test_age.tres" id="3_hnefe"]
+[ext_resource type="Script" uid="uid://c8p7f6bgfvt10" path="res://common/data/recipes/profile_recipe.gd" id="3_mgfcs"]
+
+[resource]
+script = ExtResource("3_mgfcs")
+input = ExtResource("1_j8wac")
+outputs = Array[ExtResource("2_hnefe")]([ExtResource("3_hnefe")])
