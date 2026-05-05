@@ -25,8 +25,9 @@ var _current_output_index: int = 0
 var _output_item: ItemData
 
 
-func with_data(inventory: Inventory) -> Control:
+func with_data(inventory: Inventory, recipes: Array[ProfileRecipe]) -> Control:
 	_inventory = inventory
+	_recipes = recipes
 	return self
 
 
