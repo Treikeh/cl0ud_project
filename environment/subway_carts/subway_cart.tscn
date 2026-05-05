@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cajkq10x4643"]
+
+[ext_resource type="PackedScene" uid="uid://6mvhukaxfyfe" path="res://levels/art/subway_carts/SubwayCarts.glb" id="1_d2nh5"]
+[ext_resource type="Script" uid="uid://c6w6ack5xj6rp" path="res://environment/subway_carts/subway_cart.gd" id="1_u38e0"]
+
+[node name="SubwayCart" type="Node3D" unique_id=70316463 node_paths=PackedStringArray("_subway_cart_mesh")]
+script = ExtResource("1_u38e0")
+_speed = 60.0
+_subway_cart_mesh = NodePath("SubwayCarts")
+
+[node name="SubwayCarts" parent="." unique_id=1928586760 instance=ExtResource("1_d2nh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75, 0)
+
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="." unique_id=1726562757]
+event_name = "event:/Ambience/Train"
+event_guid = "{d7345ed5-3b1e-403f-94c5-23fc326b6c31}"
+autoplay = true

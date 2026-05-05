@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dgsrbmkvekxew"]
+
+[ext_resource type="Script" uid="uid://3itlvxxujadr" path="res://environment/subway_carts/subway_cart_spawner.gd" id="1_qx1jr"]
+
+[node name="SubwayCartSpawner" type="Marker3D" unique_id=1384092551]
+gizmo_extents = 5.0
+script = ExtResource("1_qx1jr")
