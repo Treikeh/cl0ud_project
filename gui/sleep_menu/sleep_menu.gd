@@ -30,6 +30,7 @@ func _process(_delta: float) -> void:
 
 func _fade_inn() -> void:
 	var tween: Tween = create_tween()
+	tween.tween_interval(0.75)
 	tween.tween_property(_control_root, "modulate", Color.WHITE, TWEEN_TIME)
 	await tween.finished
 

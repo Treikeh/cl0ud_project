@@ -1,21 +1,17 @@
 [gd_scene format=3 uid="uid://c8htcgbbdwmnh"]
 
 [ext_resource type="PackedScene" uid="uid://8vuuaq87rbum" path="res://levels/main_level/main_level.tscn" id="1_d0j0e"]
+[ext_resource type="PackedScene" uid="uid://16hefv04ucbs" path="res://entities/music_player/music_player.tscn" id="2_6ddsc"]
+[ext_resource type="PackedScene" uid="uid://ci766d3wxxwwr" path="res://environment/elevator_door/elevator_door.tscn" id="3_kgh6a"]
 
 [node name="Day03" type="Node3D" unique_id=669404763]
 
 [node name="MainLevel" parent="." unique_id=224384734 instance=ExtResource("1_d0j0e")]
 
-[node name="Background" type="Node3D" parent="." unique_id=1391951768]
+[node name="Interactable" type="Node3D" parent="." unique_id=1558129349]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Background" unique_id=1802315254]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.550354, 0, -15.339481)
-size = Vector3(13.638672, 32.296875, 11.301758)
+[node name="MusicPlayer" parent="Interactable" unique_id=978888495 instance=ExtResource("2_6ddsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.420695, 3.6429343, -10.911379)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Background" unique_id=1792643438]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.550354, 0, 6.059828)
-size = Vector3(13.638672, 32.296875, 11.301758)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Background" unique_id=82627614]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.550354, 0, -35.930504)
-size = Vector3(13.638672, 32.296875, 11.301758)
+[node name="ElevatorDoor" parent="Interactable" unique_id=1829758497 instance=ExtResource("3_kgh6a")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27.6, 2.5, 4.9)

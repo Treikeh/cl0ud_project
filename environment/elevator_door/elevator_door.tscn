@@ -74,4 +74,3 @@ mesh = SubResource("BoxMesh_kjiu2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1144794101]
 libraries/ = SubResource("AnimationLibrary_a2vi6")
-autoplay = &"open"
