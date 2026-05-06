@@ -92,6 +92,9 @@ func _set_output_value() -> void:
 				if not profiles_added[profile].has(item):
 					profiles_added[profile].append(item)
 		
+		if not profile_to_check:
+			continue
+		
 		var match_value: int = 0
 		for type: ProfileData.DataTypes in profile_to_check.data:
 			var item_: ItemData = profile_to_check.data[type]

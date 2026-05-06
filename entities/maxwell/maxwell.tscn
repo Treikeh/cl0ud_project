@@ -97,6 +97,9 @@ transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, -0.1, 0)
 [node name="cat" parent="MeshRoot" unique_id=2132654654 instance=ExtResource("1_18oa3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 
+[node name="Cube_058" parent="MeshRoot/cat" index="0" unique_id=1053170906]
+transform = Transform3D(0.24030286, 0, 0.011725906, 0, 0.14997825, 0, -0.022540748, 0, 0.12500784, -0.072090864, 0, 0.0067622247)
+
 [node name="InteractArea3D" parent="." unique_id=1933536461 instance=ExtResource("3_ksc4s")]
 prompt = "Pet"
 
@@ -108,3 +111,5 @@ shape = SubResource("BoxShape3D_ycn1q")
 libraries/ = SubResource("AnimationLibrary_ksc4s")
 
 [connection signal="interacted" from="InteractArea3D" to="." method="_on_interact_area_3d_interacted"]
+
+[editable path="MeshRoot/cat"]
