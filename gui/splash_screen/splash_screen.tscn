@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dk3b7mwi6wymu" path="res://gui/splash_screen/splash_screen.gd" id="1_4jifb"]
 [ext_resource type="Texture2D" uid="uid://bdu275and56u" path="res://gui/splash_screen/art/Made_with_godot.png" id="2_xq6og"]
+[ext_resource type="Texture2D" uid="uid://h4js4vdq4i65" path="res://gui/splash_screen/art/Amnesty-International-Emblem_white.png" id="3_fjiqa"]
+[ext_resource type="Texture2D" uid="uid://ck6a3mag2r8ha" path="res://gui/splash_screen/art/FMOD Logo White - Transparent Background.png" id="4_rv1pt"]
 
 [node name="SplashScreen" type="Control" unique_id=1283846694 node_paths=PackedStringArray("_splash_screens_container")]
 layout_mode = 3
@@ -11,18 +13,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4jifb")
-_splash_screens_container = NodePath("CenterContainer")
+_splash_screens_container = NodePath("IconContainer")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1807905954]
+[node name="Background" type="MarginContainer" parent="." unique_id=1899682124]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = -10
+theme_override_constants/margin_top = -10
+theme_override_constants/margin_right = -10
+theme_override_constants/margin_bottom = -10
+
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=1807905954]
+layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1444130340]
+[node name="IconContainer" type="CenterContainer" parent="." unique_id=1444130340]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,6 +39,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Godot" type="TextureRect" parent="CenterContainer" unique_id=645141006]
+[node name="Godot" type="TextureRect" parent="IconContainer" unique_id=645141006]
 layout_mode = 2
 texture = ExtResource("2_xq6og")
+
+[node name="Amnesty" type="TextureRect" parent="IconContainer" unique_id=249718542]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+texture = ExtResource("3_fjiqa")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Fmod" type="TextureRect" parent="IconContainer" unique_id=1261873393]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+texture = ExtResource("4_rv1pt")
+expand_mode = 4
+stretch_mode = 5

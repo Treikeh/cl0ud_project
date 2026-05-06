@@ -96,3 +96,59 @@ func _load_save_data() -> void:
 	set_time_of_day(_time_of_day)
 
 #endregion
+
+
+#@tool
+#extends WorldEnvironment
+#
+#
+### The default rotation of the sun is towards the global -Z direction. This offset will be added ->
+### <- to the X rotation of the sun to make it look straight down when the time of day is 12.0.
+#const ROT_OFFSET: float = 90.0
+### How many degrees the sun should move per hour
+#const ROT_DEG_PER_HOUR: float = 15.0 # 360.0 / 24.0 = 15.0
+#
+#
+### How many minutes it will take for the sun to do a full 360.0 deg rotation.
+#@export var _minutes_in_day: float = 10.0
+### When the day should start
+#@export_range(0.0, 24.0) var _start_time: float = 8.0
+### The Y rotation of the sun
+#@export_range(0.0, 360.0) var _sun_rotation: float = 0.0
+#
+#@export_group("Nodes")
+#@export var _sun: DirectionalLight3D
+#
+#@onready var _time_of_day: float = _start_time
+#
+#
+#func _process(delta: float) -> void:
+#	if Engine.is_editor_hint():
+#		_sun.rotation_degrees.y = _sun_rotation
+#		_sun.rotation_degrees.x = (_start_time * ROT_DEG_PER_HOUR) + ROT_OFFSET
+#		_update_skybox()
+#		return
+#	
+#	var rot_speed: float = 24.0 / (_minutes_in_day * 60.0)
+#	_time_of_day += delta * rot_speed
+#	# Reset time of day when it passes midnight
+#	if _time_of_day > 24.0:
+#		_time_of_day = 0.0
+#	
+#	# Set rotation of the sun based on the time of day
+#	_sun.rotation_degrees.x = (_time_of_day * ROT_DEG_PER_HOUR) + ROT_OFFSET
+#	
+#	_update_skybox()
+#
+#
+#func get_time_of_day() -> float:
+#	return _time_of_day
+#
+#
+#func set_time_of_day(time: float) -> void:
+#	_time_of_day = time
+#
+#
+#func _update_skybox() -> void:
+#	pass
+#
