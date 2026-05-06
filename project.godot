@@ -22,7 +22,7 @@ run/main_scene="uid://c5ekxb0gxgxo3"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="cl0ud"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://buwnwt8v4chyk"
 
 [autoload]
 

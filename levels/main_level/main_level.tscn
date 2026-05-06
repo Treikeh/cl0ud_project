@@ -357,6 +357,9 @@ transform = Transform3D(0.09337857, 0, -0.9956307, 0, 1, 0, 0.9956307, 0, 0.0933
 [node name="HorizonBuildings7" parent="Envronment/Background" unique_id=1553830610 instance=ExtResource("17_ddgsd")]
 transform = Transform3D(0.9956307, 0, 0.09337862, 0, 1, 0, -0.09337862, 0, 0.9956307, -242.15974, -20.986397, -49.791718)
 
+[node name="HorizonBuildings8" parent="Envronment/Background" unique_id=1037113334 instance=ExtResource("17_ddgsd")]
+transform = Transform3D(-0.17962655, 0, 0.9837349, 0, 1, 0, -0.9837349, 0, -0.17962655, -255.56085, -20.986397, 124.24866)
+
 [node name="HorizonBuildings5" parent="Envronment/Background" unique_id=399770154 instance=ExtResource("17_ddgsd")]
 transform = Transform3D(-0.093378484, 0, 0.9956307, 0, 1, 0, -0.9956307, 0, -0.093378484, 116.21069, -32.09951, 190.86484)
 
@@ -421,6 +424,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.413929, 3.5083036, 4.8606
 
 [node name="BuildingFour" parent="." unique_id=648055778 instance=ExtResource("20_xpbmc")]
 transform = Transform3D(0.7756672, 0, 0, 0, 0.52483594, 0, 0, 0, 0.67962694, -174.50278, -74.588455, -91.42559)
+
+[node name="BuildingFour3" parent="." unique_id=485071033 instance=ExtResource("20_xpbmc")]
+transform = Transform3D(0.7756672, 0, 0, 0, 0.52483594, 0, 0, 0, 0.67962694, -141.00565, -75.450615, 65.80385)
 
 [node name="BuildingFour2" parent="." unique_id=24470614 instance=ExtResource("20_xpbmc")]
 transform = Transform3D(0.7756672, 0, 0, 0, 0.52483594, 0, 0, 0, 0.67962694, -223.64597, -86.458, -171.56708)
