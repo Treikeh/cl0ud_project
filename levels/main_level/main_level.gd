@@ -19,6 +19,9 @@ func end_day(_player: Player) -> void:
 	# Reset position of player
 	var player: Player = get_tree().get_first_node_in_group("player")
 	player.global_position = _player_marker.global_position
+	player._orientation.rotation_degrees = Vector3.ZERO
+	player._head.rotation_degrees = Vector3.ZERO
+	player._orientation.rotation_degrees.y = -90.0
 	
 	#NOTE: Level is being loaded before the game is saved because we want to save the new level -> 
 	# <- not the current level.

@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://ci766d3wxxwwr"]
+
+[ext_resource type="Script" uid="uid://c6yanx8hpd88i" path="res://environment/elevator_door/elevator_door.gd" id="1_jvyuu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kjiu2"]
+size = Vector3(2, 2.5, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kjiu2"]
+size = Vector3(2, 2.5, 0.1)
+
+[sub_resource type="Animation" id="Animation_jvyuu"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorBody:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_48bqa"]
+resource_name = "close"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorBody:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(3, 0, 0, 0.16666667, -0.33333334, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+
+[sub_resource type="Animation" id="Animation_a2vi6"]
+resource_name = "open"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorBody:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 3, 0, 0, 0.16666667, -0.33333334),
+"times": PackedFloat32Array(0, 1.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a2vi6"]
+_data = {
+&"RESET": SubResource("Animation_jvyuu"),
+&"close": SubResource("Animation_48bqa"),
+&"open": SubResource("Animation_a2vi6")
+}
+
+[node name="ElevatorDoor" type="Node3D" unique_id=1829758497]
+script = ExtResource("1_jvyuu")
+
+[node name="DoorBody" type="AnimatableBody3D" parent="." unique_id=1314113099]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorBody" unique_id=709900395]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("BoxShape3D_kjiu2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DoorBody" unique_id=1340629205]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+mesh = SubResource("BoxMesh_kjiu2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1144794101]
+libraries/ = SubResource("AnimationLibrary_a2vi6")

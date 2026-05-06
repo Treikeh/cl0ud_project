@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dgpjp7pblgnxr" path="res://entities/player/hud/hud.gd" id="1_34rqw"]
 [ext_resource type="PackedScene" uid="uid://d0ftqot8bubts" path="res://entities/player/hud/fish_collected_prompt/fish_collected_prompt.tscn" id="2_6tyv5"]
 
-[node name="Hud" type="Control" unique_id=905877039 node_paths=PackedStringArray("_interact_prompt", "_fish_collected_promtp")]
+[node name="Hud" type="Control" unique_id=905877039 node_paths=PackedStringArray("_interact_prompt", "_fish_collected_promtp", "_respawn_fade")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +14,7 @@ mouse_filter = 2
 script = ExtResource("1_34rqw")
 _interact_prompt = NodePath("InteractPrompt")
 _fish_collected_promtp = NodePath("FishCollectedPrompt")
+_respawn_fade = NodePath("RespawnFade")
 
 [node name="InteractPrompt" type="Label" parent="." unique_id=1904491611]
 layout_mode = 1
@@ -34,3 +35,14 @@ vertical_alignment = 1
 
 [node name="FishCollectedPrompt" parent="." unique_id=520998565 instance=ExtResource("2_6tyv5")]
 layout_mode = 1
+
+[node name="RespawnFade" type="ColorRect" parent="." unique_id=566492592]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

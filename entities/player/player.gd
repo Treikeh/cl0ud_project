@@ -86,6 +86,15 @@ func _on_started_loading_level() -> void:
 	_reset_upgrades()
 
 
+func respawn() -> void:
+	global_position = _respawn_point
+	linear_velocity = Vector3.ZERO
+	# Stop minigame when respawning
+	_on_hook_reeled(true)
+	var minigames: Control = get_tree().get_first_node_in_group("minigames")
+	if minigames: minigames._on_minigames_failed()
+
+
 #region Input
 
 @export_group("Input")
