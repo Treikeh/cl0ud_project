@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FishingRodUpgrade" format=3 uid="uid://cfm7q37i5iff8"]
+
+[ext_resource type="Script" uid="uid://d1n4txpsbu44a" path="res://common/upgrades/fishing_rod_upgrade.gd" id="1_7c82e"]
+[ext_resource type="Texture2D" uid="uid://buwnwt8v4chyk" path="res://gui/V2.png" id="1_uojnq"]
+
+[resource]
+script = ExtResource("1_7c82e")
+name = "Fishing Rod"
+description = "A fishing rod used to catch fish"
+icon = ExtResource("1_uojnq")
+cost = 25
+metadata/_custom_type_script = "uid://d1n4txpsbu44a"
