@@ -129,4 +129,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7000003, 3.5, 11.099999)
 
 [editable path="Environment/MainLevel"]
 [editable path="Environment/MainLevel/System/ProfileSystem/ProfilePrinter"]
+[editable path="Environment/MainLevel/Player"]
 [editable path="Characters/IntroGuy"]
