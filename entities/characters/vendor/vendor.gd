@@ -1,6 +1,9 @@
 extends Node3D
 
 
+signal left
+
+
 const VENDOR_MENU_SCENE: PackedScene = preload("uid://diy715xds7cni")
 
 @export var _head_marker: Node3D
@@ -49,3 +52,10 @@ func _open_vendor_menu(player: Player, buy: bool) -> void:
 func _on_vendor_menu_closed(player: Player) -> void:
 	player.input.set_enabled.call_deferred(true)
 	player.update_look_position(Vector3.ZERO)
+
+
+func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
+	if Globals.time_of_day > 22.0:
+		left.emit()
+		hide()
+		process_mode = Node.PROCESS_MODE_DISABLED

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cafprahv063un" path="res://environment/door/door.tscn" id="7_kfdqj"]
 [ext_resource type="PackedScene" uid="uid://ci766d3wxxwwr" path="res://environment/elevator_door/elevator_door.tscn" id="8_rxto8"]
 [ext_resource type="PackedScene" uid="uid://c1dcx0rd8honj" path="res://entities/maxwell/maxwell.tscn" id="9_5xhar"]
+[ext_resource type="PackedScene" uid="uid://iomcinpu06my" path="res://environment/vendor_door/vendor_door.tscn" id="10_thlfx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kfdqj"]
 size = Vector3(0.215, 0.47, 0.365)
@@ -69,5 +70,12 @@ shape = SubResource("BoxShape3D_5xhar")
 event_name = "event:/Actions/Bell"
 event_guid = "{aea974cf-9a5f-4d52-9651-90c5f09c5ce4}"
 
+[node name="VendorDoor" parent="." unique_id=525246973 instance=ExtResource("10_thlfx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7000003, 3.5, 11.099999)
+
+[connection signal="left" from="Environment/MainLevel/Vendor" to="VendorDoor" method="close"]
 [connection signal="interacted" from="Interactable/ElevatorButton" to="." method="_end_day"]
 [connection signal="interacted_no_player" from="Interactable/Bell" to="Interactable/Bell/FmodEventEmitter3D" method="play_one_shot"]
+
+[editable path="Environment/MainLevel"]
+[editable path="Environment/MainLevel/System/ProfileSystem/ProfilePrinter"]
