@@ -35,7 +35,7 @@ _skin = "Nils"
 _animation = ExtResource("4_pjgcy")
 
 [node name="HeadMarker" type="BoneAttachment3D" parent="." unique_id=648579604]
-transform = Transform3D(-0.9999999, 2.6230714e-08, -2.996957e-07, 2.0407493e-08, 0.9998115, 0.019413993, 3.0014846e-07, 0.01941399, -0.9998115, 3.383448e-14, 1.6554214, 0.08422942)
+transform = Transform3D(-0.9999999, -2.394437e-07, -3.0133313e-07, -3.8348247e-07, 0.68658775, 0.72704697, 3.280493e-08, 0.7270467, -0.68658775, -7.5216015e-08, 0.74683803, 0.23592612)
 bone_name = "head.001"
 bone_idx = 5
 use_external_skeleton = true
@@ -51,6 +51,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95000005, 0)
 shape = SubResource("BoxShape3D_85oi3")
 
 [node name="InteractArea3D" parent="." unique_id=1933536461 instance=ExtResource("4_5dqtv")]
+prompt = "Talk"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea3D" unique_id=1966379174]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95000005, 0)

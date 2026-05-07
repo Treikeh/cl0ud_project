@@ -1,0 +1,12 @@
+[gd_resource type="AnimationNodeStateMachine" format=3 uid="uid://bsgt83k37tbc3"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iu3nv"]
+animation = &"standing_against_wall_001"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l0hag"]
+advance_mode = 2
+
+[resource]
+states/standing_against_wall_001/node = SubResource("AnimationNodeAnimation_iu3nv")
+states/standing_against_wall_001/position = Vector2(484, 100)
+transitions = ["Start", "standing_against_wall_001", SubResource("AnimationNodeStateMachineTransition_l0hag")]

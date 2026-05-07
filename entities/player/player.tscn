@@ -25,7 +25,7 @@ height = 1.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a1qjk"]
 radius = 0.3
-height = 1.0
+height = 0.7
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7thud"]
 radius = 0.35
@@ -70,6 +70,8 @@ near = 0.01
 [node name="FmodListener3D" type="FmodListener3D" parent="Orientation/Head/CameraRoot/Camera3D" unique_id=463241591]
 
 [node name="FishingRod" parent="Orientation/Head/CameraRoot" unique_id=949060003 instance=ExtResource("3_26q78")]
+process_mode = 4
+visible = false
 
 [node name="InteractRay" type="RayCast3D" parent="Orientation/Head" unique_id=1370547296]
 target_position = Vector3(0, 0, -1.75)
@@ -111,6 +113,7 @@ script = ExtResource("5_26q78")
 
 [node name="Inventory" type="Node" parent="." unique_id=1803234307]
 script = ExtResource("5_fkugw")
+currency = 25
 items = Array[ExtResource("6_8fjmc")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 
 [node name="PieceInventory" type="Node" parent="." unique_id=669873985]

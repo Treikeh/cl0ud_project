@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://iomcinpu06my"]
+
+[ext_resource type="Script" uid="uid://cyke40k878ihr" path="res://environment/vendor_door/vendor_door.gd" id="1_hk6gn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jvk84"]
+size = Vector3(1.2, 1.4, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dms25"]
+size = Vector3(1.2, 1.4, 0.1)
+
+[sub_resource type="Animation" id="Animation_hk6gn"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody3D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.7, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatableBody3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jvk84"]
+resource_name = "close"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody3D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.7, 0, 0, 0.033333335, -0.49577522, 0.7, -0.13333334, 0.022602499, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_dms25"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.7, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dms25"]
+_data = {
+&"RESET": SubResource("Animation_hk6gn"),
+&"close": SubResource("Animation_jvk84"),
+&"open": SubResource("Animation_dms25")
+}
+
+[node name="VendorDoor" type="Node3D" unique_id=525246973]
+script = ExtResource("1_hk6gn")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="." unique_id=991988192]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1396823984]
+shape = SubResource("BoxShape3D_jvk84")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=619100875]
+mesh = SubResource("BoxMesh_dms25")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=588666355]
+libraries/ = SubResource("AnimationLibrary_dms25")
+autoplay = &"open"
+
+[node name="CloseSfx" type="FmodEventEmitter3D" parent="." unique_id=406816726]
+event_name = "event:/Actions/Bell"
+event_guid = "{aea974cf-9a5f-4d52-9651-90c5f09c5ce4}"

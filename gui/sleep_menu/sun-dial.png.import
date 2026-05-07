@@ -2,24 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwg7vr684tiqw"
-path.s3tc="res://.godot/imported/character_base_01_bc.png-9facb7a85e93d305fa7875b47b5d447f.s3tc.ctex"
+uid="uid://cokn3iaoop0v6"
+path="res://.godot/imported/sun-dial.png-0544b6a3836611ae487901a1ecb72655.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
-}
-generator_parameters={
-"md5": "4f794d815e9aa0c3542b6893e2c2d6a3"
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/characters/rig/character_base_01_bc.png"
-dest_files=["res://.godot/imported/character_base_01_bc.png-9facb7a85e93d305fa7875b47b5d447f.s3tc.ctex"]
+source_file="res://gui/sleep_menu/sun-dial.png"
+dest_files=["res://.godot/imported/sun-dial.png-0544b6a3836611ae487901a1ecb72655.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -27,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -41,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

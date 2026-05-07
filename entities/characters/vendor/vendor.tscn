@@ -21,7 +21,7 @@ _skin = "Vendor"
 _animation = ExtResource("8_5rk7m")
 
 [node name="HeadMarker" type="BoneAttachment3D" parent="." unique_id=229792294]
-transform = Transform3D(-1, 2.6230717e-08, -2.9969573e-07, 2.0407494e-08, 0.9998115, 0.019413978, 3.0014849e-07, 0.019413978, -0.9998116, 3.3834484e-14, 1.6554214, 0.084229425)
+transform = Transform3D(-1, -2.3944366e-07, -3.0133316e-07, -3.8348247e-07, 0.6865878, 0.72704697, 3.280499e-08, 0.7270468, -0.6865878, -7.5216015e-08, 0.74683803, 0.23592615)
 bone_name = "head.001"
 bone_idx = 5
 use_external_skeleton = true
@@ -44,6 +44,11 @@ prompt = "Talk"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90000004, 0)
 shape = SubResource("CapsuleShape3D_x7g4j")
 
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1103650986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+aabb = AABB(-0.5, -1, -0.5, 1, 2, 1)
+
 [connection signal="interacted" from="InteractArea3D" to="." method="_on_interacted"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
 
 [editable path="CharacterMesh"]
