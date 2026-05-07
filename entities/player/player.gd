@@ -220,6 +220,16 @@ var throw_upgrade_level: int = 0
 var calm_fish_upgrade_level: int = 0
 
 
+func show_fishing_rod() -> void:
+	fishing_rod.show()
+	fishing_rod.process_mode = Node.PROCESS_MODE_INHERIT
+
+
+func hide_fishing_rod() -> void:
+	fishing_rod.hide()
+	fishing_rod.process_mode = Node.PROCESS_MODE_DISABLED
+
+
 func _on_started_fishing() -> void:
 	_interact_ray.can_interact = false
 
