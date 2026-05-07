@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_7c82e")
 name = "Fishing Rod"
-description = "A fishing rod used to catch fish"
+description = "Can be used to catch fish"
 icon = ExtResource("1_uojnq")
 cost = 25
 metadata/_custom_type_script = "uid://d1n4txpsbu44a"
