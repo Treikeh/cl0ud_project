@@ -41,7 +41,7 @@ func _process(delta: float) -> void:
 	var hours_in_day: float = 24.0 - day_start
 	var speed: float = hours_in_day / (_minutes_in_day * 60.0)
 	# Only change the time of day when the day hasn't reached it's end
-	if _time_of_day < 24.0 and not get_tree().paused:
+	if _time_of_day < 23.9 and not get_tree().paused:
 		_time_of_day += speed * delta
 	
 	Globals.time_of_day = _time_of_day

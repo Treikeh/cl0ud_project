@@ -1,0 +1,12 @@
+[gd_resource type="AnimationNodeStateMachine" format=3 uid="uid://bnsiux2a5homt"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tvi8a"]
+animation = &"squatting_001"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6c2u3"]
+advance_mode = 2
+
+[resource]
+states/squatting_001/node = SubResource("AnimationNodeAnimation_tvi8a")
+states/squatting_001/position = Vector2(363, 75)
+transitions = ["Start", "squatting_001", SubResource("AnimationNodeStateMachineTransition_6c2u3")]

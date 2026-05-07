@@ -18,6 +18,7 @@ class_name Character
 func _ready() -> void:
 	_animation_tree.tree_root = _animation
 	_player_trigger_collision.shape.radius = _look_at_radius
+	_look_at_modifier.target_node = _default_look_position.get_path()
 	
 	# Disable all skins expect for the selected one
 	var skeleton: Skeleton3D = $Skeleton3D

@@ -2,40 +2,42 @@
 
 [ext_resource type="PackedScene" uid="uid://ywf1dad34t7b" path="res://entities/characters/rig/character.glb" id="1_c6gtc"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://blwgmxdafsu71" path="res://entities/characters/rig/idle_anim_sm.tres" id="2_tion6"]
-[ext_resource type="AnimationNodeStateMachine" uid="uid://cbygnrgof7bup" path="res://entities/characters/rig/standing_fishing_anim_sm.tres" id="3_tion6"]
+[ext_resource type="AnimationNodeStateMachine" uid="uid://bnsiux2a5homt" path="res://entities/characters/rig/squatting_anim_sm.tres" id="3_tion6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_g0b3o"]
 radius = 2.0
 
-[node name="CharacterMesh" unique_id=1405056203 node_paths=PackedStringArray("_default_look_position") instance=ExtResource("1_c6gtc")]
+[node name="CharacterMesh" unique_id=1966623919 node_paths=PackedStringArray("_default_look_position") instance=ExtResource("1_c6gtc")]
 _default_look_position = NodePath("DefaultLookPosition")
 _animation = ExtResource("2_tion6")
 
-[node name="Skeleton3D" parent="." index="0" unique_id=1995264488]
-bones/2/position = Vector3(8.885667e-16, 0.067006476, 0.9022027)
-bones/3/rotation = Quaternion(-0.020237816, 1.5096494e-07, 1.88772e-15, 0.9997952)
-bones/4/rotation = Quaternion(0.1183377, -1.4993482e-07, 3.577384e-15, 0.9929735)
-bones/6/rotation = Quaternion(-0.09403472, 0.19764802, -0.5987004, 0.77048725)
-bones/7/rotation = Quaternion(0.40415248, 0.2366783, -0.61183023, 0.637423)
-bones/8/rotation = Quaternion(0.66995496, 0.008818106, -0.02926903, 0.7417722)
-bones/9/rotation = Quaternion(-0.17095044, -0.08285243, 0.0489048, 0.98057115)
-bones/10/rotation = Quaternion(-0.09403483, -0.197648, 0.59870034, 0.7704872)
-bones/11/rotation = Quaternion(0.41801363, -0.2718653, 0.6103177, 0.6155211)
-bones/12/rotation = Quaternion(0.5681764, -0.0097776465, 0.024822582, 0.82247424)
-bones/13/rotation = Quaternion(-0.03442693, 0.08062076, -0.076018356, 0.99324536)
-bones/14/rotation = Quaternion(0.021232797, 0.067648545, 0.9974501, -0.008130872)
-bones/15/rotation = Quaternion(-0.1772205, 5.7717866e-08, -9.303564e-09, 0.98417115)
-bones/16/rotation = Quaternion(0.6294127, -0.06727835, 0.028471394, 0.7736295)
-bones/17/rotation = Quaternion(-0.021232631, 0.06764853, 0.9974501, 0.008130861)
-bones/18/rotation = Quaternion(-0.1772205, -6.079513e-08, 1.1524618e-08, 0.98417115)
-bones/19/rotation = Quaternion(0.6294128, 0.06727837, -0.02847142, 0.7736295)
+[node name="Skeleton3D" parent="." index="0" unique_id=161808251]
+bones/2/position = Vector3(-1.9216471e-15, 0.13338709, 0.24449366)
+bones/2/rotation = Quaternion(0.595352, -2.877017e-08, -6.98012e-08, 0.803465)
+bones/3/rotation = Quaternion(0.47727358, 1.3117581e-07, -7.472158e-08, 0.8787548)
+bones/4/rotation = Quaternion(-0.079858296, -1.469889e-07, -2.9575686e-08, 0.9968063)
+bones/5/rotation = Quaternion(-0.24208458, 1.4463717e-07, 1.9936591e-08, 0.9702552)
+bones/6/rotation = Quaternion(-0.1254717, 0.17451723, -0.6382839, 0.73918486)
+bones/7/rotation = Quaternion(0.4580327, -0.12318094, -0.4120671, 0.77796745)
+bones/8/rotation = Quaternion(0.71648604, 0.008284097, -0.03130172, 0.69684964)
+bones/9/rotation = Quaternion(-0.2180232, 0.25835097, -0.26502255, 0.9030414)
+bones/10/rotation = Quaternion(-0.1254718, -0.17451723, 0.6382839, 0.7391849)
+bones/11/rotation = Quaternion(0.4580326, 0.12318125, 0.4120672, 0.7779674)
+bones/12/rotation = Quaternion(0.7164861, -0.00828416, 0.031301953, 0.6968496)
+bones/13/rotation = Quaternion(-0.21802294, -0.2583506, 0.26502252, 0.90304154)
+bones/14/rotation = Quaternion(0.067670934, 0.7785039, 0.6094984, -0.13365611)
+bones/15/rotation = Quaternion(-0.98371816, -1.3034051e-08, -4.325646e-08, 0.17971846)
+bones/16/rotation = Quaternion(0.79701585, -0.059826326, 0.013185703, 0.60084325)
+bones/17/rotation = Quaternion(-0.06767089, 0.77850384, 0.6094986, 0.13365601)
+bones/18/rotation = Quaternion(-0.98371816, 8.913481e-09, 5.384643e-08, 0.1797185)
+bones/19/rotation = Quaternion(0.797016, 0.05982635, -0.0131856585, 0.6008432)
 
 [node name="LookAtModifier3D" type="LookAtModifier3D" parent="Skeleton3D" index="3" unique_id=980359682]
 target_node = NodePath("../../DefaultLookPosition")
-bone_name = "neck.001"
-bone = 4
+bone_name = "head.001"
+bone = 5
 relative = true
-origin_offset = Vector3(0, 0.2, 0)
+origin_offset = Vector3(0, -0.1, 0)
 duration = 0.4
 use_angle_limitation = true
 symmetry_limitation = true

@@ -20,16 +20,8 @@ _interact_dialogue = ExtResource("3_qccll")
 _skin = "Vendor"
 _animation = ExtResource("8_5rk7m")
 
-[node name="Skeleton3D" parent="CharacterMesh" index="0" unique_id=631089375]
-bones/7/rotation = Quaternion(0.4228129, 0.25059885, -0.61469245, 0.616914)
-bones/8/rotation = Quaternion(0.6672336, 0.008847274, -0.029150132, 0.7442254)
-bones/9/rotation = Quaternion(-0.1889432, -0.23040636, 0.22149639, 0.9285218)
-bones/11/rotation = Quaternion(0.40930343, -0.2854253, 0.6046895, 0.6207686)
-bones/12/rotation = Quaternion(0.5891345, -0.009600397, 0.025738195, 0.80756795)
-bones/13/rotation = Quaternion(-0.029561752, 0.22711226, -0.08686602, 0.9695362)
-
 [node name="HeadMarker" type="BoneAttachment3D" parent="." unique_id=229792294]
-transform = Transform3D(-1, 2.6230717e-08, -2.9969573e-07, 2.0407494e-08, 0.9998115, 0.019413978, 3.0014849e-07, 0.019413978, -0.9998116, 3.3834484e-14, 1.6554214, 0.084229425)
+transform = Transform3D(-1, -2.3944366e-07, -3.0133316e-07, -3.8348247e-07, 0.6865878, 0.72704697, 3.280499e-08, 0.7270468, -0.6865878, -7.5216015e-08, 0.74683803, 0.23592615)
 bone_name = "head.001"
 bone_idx = 5
 use_external_skeleton = true

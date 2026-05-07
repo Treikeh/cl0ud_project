@@ -25,7 +25,7 @@ height = 1.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a1qjk"]
 radius = 0.3
-height = 1.0
+height = 0.7
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7thud"]
 radius = 0.35
