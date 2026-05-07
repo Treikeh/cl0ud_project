@@ -51,11 +51,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.420695, 3.6429343, -10.91
 [node name="ElevatorDoor" parent="Interactable" unique_id=1829758497 instance=ExtResource("8_rxto8")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27.6, 2.5, 4.9)
 
-[node name="EndDayTrigger" parent="Interactable" unique_id=1933536461 instance=ExtResource("6_e0c4c")]
+[node name="ElevatorButton" parent="Interactable" unique_id=1933536461 instance=ExtResource("6_e0c4c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.8, 3.77, 6.1293015)
 prompt = "EndDay"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable/EndDayTrigger" unique_id=895488167]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable/ElevatorButton" unique_id=895488167]
 shape = SubResource("BoxShape3D_kfdqj")
 
 [node name="Bell" parent="Interactable" unique_id=361145576 instance=ExtResource("6_e0c4c")]
@@ -69,5 +69,5 @@ shape = SubResource("BoxShape3D_5xhar")
 event_name = "event:/Actions/Bell"
 event_guid = "{aea974cf-9a5f-4d52-9651-90c5f09c5ce4}"
 
-[connection signal="interacted" from="Interactable/EndDayTrigger" to="." method="_end_day"]
+[connection signal="interacted" from="Interactable/ElevatorButton" to="." method="_end_day"]
 [connection signal="interacted_no_player" from="Interactable/Bell" to="Interactable/Bell/FmodEventEmitter3D" method="play_one_shot"]
