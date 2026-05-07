@@ -2,13 +2,30 @@
 
 [ext_resource type="PackedScene" uid="uid://8vuuaq87rbum" path="res://levels/main_level/main_level.tscn" id="1_d0j0e"]
 [ext_resource type="PackedScene" uid="uid://16hefv04ucbs" path="res://entities/music_player/music_player.tscn" id="2_6ddsc"]
+[ext_resource type="PackedScene" uid="uid://dgsrbmkvekxew" path="res://environment/subway_carts/subway_cart_spawner.tscn" id="2_r30ku"]
 [ext_resource type="PackedScene" uid="uid://ci766d3wxxwwr" path="res://environment/elevator_door/elevator_door.tscn" id="3_kgh6a"]
 [ext_resource type="PackedScene" uid="uid://bmbvlv41vnb6x" path="res://levels/art/door/ApartmentDoor.glb" id="4_6ddsc"]
 [ext_resource type="PackedScene" uid="uid://cf6nk35lslykg" path="res://levels/art/fire_escape_door/FireEscapeDoor.glb" id="5_kgh6a"]
 
 [node name="Day03" type="Node3D" unique_id=669404763]
 
-[node name="MainLevel" parent="." unique_id=224384734 instance=ExtResource("1_d0j0e")]
+[node name="Environment" type="Node3D" parent="." unique_id=1205339970]
+
+[node name="MainLevel" parent="Environment" unique_id=224384734 instance=ExtResource("1_d0j0e")]
+
+[node name="SubwayCartSpawnerTunnel" parent="Environment" unique_id=1384092551 instance=ExtResource("2_r30ku")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -15.9, 11.7, -225)
+_schedule = Array[float]([10.0, 16.0])
+
+[node name="SubwayCartSpawnerBridge" parent="Environment" unique_id=218195664 instance=ExtResource("2_r30ku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8, 11.7, 150)
+_schedule = Array[float]([12.0, 20.0])
+
+[node name="FireEscapeDoor" parent="Environment" unique_id=1107788188 instance=ExtResource("5_kgh6a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.045135, 0.64993346, -69.80684)
+
+[node name="ApartmentDoor" parent="Environment" unique_id=804443877 instance=ExtResource("4_6ddsc")]
+transform = Transform3D(-0.054218233, 0, -0.99852914, 0, 1, 0, 0.99852914, 0, -0.054218233, -34.476036, 3.7600656, 0.3929997)
 
 [node name="Interactable" type="Node3D" parent="." unique_id=1558129349]
 
@@ -17,9 +34,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.420695, 3.6429343, -10.91
 
 [node name="ElevatorDoor" parent="Interactable" unique_id=1829758497 instance=ExtResource("3_kgh6a")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27.6, 2.5, 4.9)
-
-[node name="ApartmentDoor" parent="." unique_id=140362095 instance=ExtResource("4_6ddsc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.20196, 3.7600656, -0.37840542)
-
-[node name="FireEscapeDoor" parent="." unique_id=1343371246 instance=ExtResource("5_kgh6a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.071154, 0.64993346, -69.821266)

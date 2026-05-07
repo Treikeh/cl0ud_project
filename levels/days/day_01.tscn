@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://16hefv04ucbs" path="res://entities/music_player/music_player.tscn" id="4_ahgqq"]
 [ext_resource type="PackedScene" uid="uid://cf6nk35lslykg" path="res://levels/art/fire_escape_door/FireEscapeDoor.glb" id="4_thlfx"]
 [ext_resource type="PackedScene" uid="uid://dgsrbmkvekxew" path="res://environment/subway_carts/subway_cart_spawner.tscn" id="5_1ul8t"]
+[ext_resource type="PackedScene" uid="uid://bmbvlv41vnb6x" path="res://levels/art/door/ApartmentDoor.glb" id="5_p58p1"]
 [ext_resource type="Script" uid="uid://7jmwiagvacoy" path="res://levels/days/day_01_intro_guy.gd" id="6_2ptgh"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="6_e0c4c"]
-[ext_resource type="PackedScene" uid="uid://cafprahv063un" path="res://environment/door/door.tscn" id="7_kfdqj"]
 [ext_resource type="Resource" uid="uid://daoxlatyjttmi" path="res://common/data/dialogue/oldman_speak_01.tres" id="7_mtc2s"]
 [ext_resource type="PackedScene" uid="uid://ci766d3wxxwwr" path="res://environment/elevator_door/elevator_door.tscn" id="8_rxto8"]
 [ext_resource type="PackedScene" uid="uid://c1dcx0rd8honj" path="res://entities/maxwell/maxwell.tscn" id="9_5xhar"]
@@ -46,6 +46,9 @@ _schedule = Array[float]([12.0, 20.0])
 
 [node name="FireEscapeDoor" parent="Environment" unique_id=1343371246 instance=ExtResource("4_thlfx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.045135, 0.64993346, -69.80684)
+
+[node name="ApartmentDoor" parent="Environment" unique_id=804443877 instance=ExtResource("5_p58p1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.20196, 3.7600656, -0.37840542)
 
 [node name="Characters" type="Node3D" parent="." unique_id=351249826]
 
