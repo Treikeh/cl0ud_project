@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cafprahv063un"]
 
-[ext_resource type="PackedScene" uid="uid://cbj6d88max0hu" path="res://levels/art/door/door.glb" id="1_nyt34"]
+[ext_resource type="PackedScene" uid="uid://cbj6d88max0hu" path="res://levels/art/door/old/door.glb" id="1_nyt34"]
 
 [node name="Door" type="Node3D" unique_id=1374106199]
 

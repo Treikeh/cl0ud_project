@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bjae0sst12e6s" path="res://levels/main_level/art/HorizonBuildings/HorizonBuildings.glb" id="17_ddgsd"]
 [ext_resource type="PackedScene" uid="uid://b0l8syuol7cs4" path="res://entities/profile_printer/profile_printer.tscn" id="18_5gklf"]
 [ext_resource type="PackedScene" uid="uid://q3em1bo70ede" path="res://levels/art/BuildingFour/BuildingFour.glb" id="20_xpbmc"]
+[ext_resource type="PackedScene" uid="uid://duqnyxm3y881h" path="res://levels/art/computer/computer.glb" id="21_f1dbq"]
 
 [sub_resource type="Curve" id="Curve_hp128"]
 _limits = [0.0, 10.0, 0.0, 24.0]
@@ -392,16 +393,16 @@ debug_color = Color(1, 0, 0, 0.41960785)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4, 3, 9.3)
 
 [node name="TerminalInteractArea" parent="System/ProfileSystem/ProfilePrinter" index="0" unique_id=1933536461]
-transform = Transform3D(0.7071067, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.7071067, -0.08660254, 0.9000001, 0.44999963)
+transform = Transform3D(0.018569171, 0, 0.9998275, 0, 1, 0, -0.9998275, 0, 0.018569171, 5.0996904, 1.1367521, 0.4499998)
 
 [node name="PrinterInteractArea" parent="System/ProfileSystem/ProfilePrinter" index="1" unique_id=669664736]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3189926, 0.20817924, 0.26540947)
 
 [node name="PaperMesh" parent="System/ProfileSystem/ProfilePrinter" index="2" unique_id=487481126]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.249254, 0, 0.38285828)
 
 [node name="CamTransformMarker" parent="System/ProfileSystem/ProfilePrinter" index="3" unique_id=484923087]
-transform = Transform3D(-0.6897586, 0, 0.7240394, 0, 1, 0, -0.7240394, 0, -0.6897586, 0.32960966, 1.0775515, 0.058655694)
+transform = Transform3D(-0.6897586, 0, 0.7240394, 0, 1, 0, -0.7240394, 0, -0.6897586, 5.285261, 1.0775514, -0.43947887)
 
 [node name="ProfileWall" parent="System/ProfileSystem" unique_id=1612584203 instance=ExtResource("17_224rj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.75, 4.5, 10.05)
@@ -430,5 +431,8 @@ transform = Transform3D(0.7756672, 0, 0, 0, 0.52483594, 0, 0, 0, 0.67962694, -14
 
 [node name="BuildingFour2" parent="." unique_id=24470614 instance=ExtResource("20_xpbmc")]
 transform = Transform3D(0.7756672, 0, 0, 0, 0.52483594, 0, 0, 0, 0.67962694, -223.64597, -86.458, -171.56708)
+
+[node name="Computer" parent="." unique_id=832352687 instance=ExtResource("21_f1dbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.617591, 3.3345091, 10.500334)
 
 [editable path="System/ProfileSystem/ProfilePrinter"]
