@@ -7,7 +7,7 @@
 [ext_resource type="AnimationNodeStateMachine" uid="uid://bsgt83k37tbc3" path="res://entities/characters/rig/standing_wall_anim_sm.tres" id="4_2ptgh"]
 [ext_resource type="PackedScene" uid="uid://16hefv04ucbs" path="res://entities/music_player/music_player.tscn" id="4_ahgqq"]
 [ext_resource type="PackedScene" uid="uid://dgsrbmkvekxew" path="res://environment/subway_carts/subway_cart_spawner.tscn" id="5_1ul8t"]
-[ext_resource type="Script" uid="uid://7jmwiagvacoy" path="res://day_01_intro_guy.gd" id="6_2ptgh"]
+[ext_resource type="Script" uid="uid://7jmwiagvacoy" path="res://levels/days/day_01_intro_guy.gd" id="6_2ptgh"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="6_e0c4c"]
 [ext_resource type="PackedScene" uid="uid://cafprahv063un" path="res://environment/door/door.tscn" id="7_kfdqj"]
 [ext_resource type="Resource" uid="uid://daoxlatyjttmi" path="res://common/data/dialogue/oldman_speak_01.tres" id="7_mtc2s"]
