@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://doe0w0kgn8ehr" path="res://levels/days/days.gd" id="1_4x28q"]
 [ext_resource type="PackedScene" uid="uid://8vuuaq87rbum" path="res://levels/main_level/main_level.tscn" id="1_b4ifv"]
-[ext_resource type="PackedScene" uid="uid://cafprahv063un" path="res://environment/door/door.tscn" id="2_efnv0"]
 [ext_resource type="PackedScene" uid="uid://dgsrbmkvekxew" path="res://environment/subway_carts/subway_cart_spawner.tscn" id="2_tia7i"]
 [ext_resource type="PackedScene" uid="uid://16hefv04ucbs" path="res://entities/music_player/music_player.tscn" id="4_xox54"]
 [ext_resource type="PackedScene" uid="uid://ci766d3wxxwwr" path="res://environment/elevator_door/elevator_door.tscn" id="5_4x28q"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="6_767uw"]
+[ext_resource type="PackedScene" uid="uid://bmbvlv41vnb6x" path="res://levels/art/door/ApartmentDoor.glb" id="7_4x28q"]
+[ext_resource type="PackedScene" uid="uid://cf6nk35lslykg" path="res://levels/art/fire_escape_door/FireEscapeDoor.glb" id="8_767uw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ckkny"]
 size = Vector3(0.215, 0.47, 0.365)
@@ -27,9 +28,6 @@ _schedule = Array[float]([10.0, 16.0])
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8, 11.7, 150)
 _schedule = Array[float]([12.0, 20.0])
 
-[node name="Door" parent="Environment" unique_id=1374106199 instance=ExtResource("2_efnv0")]
-transform = Transform3D(-0.25881907, 0, -0.96592593, 0, 1, 0, 0.96592593, 0, -0.25881907, -35.19818, 2.5037088, 0.401921)
-
 [node name="Interactable" type="Node3D" parent="." unique_id=350526034]
 
 [node name="MusicPlayer" parent="Interactable" unique_id=978888495 instance=ExtResource("4_xox54")]
@@ -44,5 +42,11 @@ prompt = "EndDay"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable/EndDayTrigger" unique_id=945033073]
 shape = SubResource("BoxShape3D_ckkny")
+
+[node name="ApartmentDoor" parent="." unique_id=140362095 instance=ExtResource("7_4x28q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.20815, 3.7591748, -0.3547396)
+
+[node name="FireEscapeDoor" parent="." unique_id=1343371246 instance=ExtResource("8_767uw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.044376, 0.6499336, -69.82164)
 
 [connection signal="interacted" from="Interactable/EndDayTrigger" to="." method="_end_day"]
