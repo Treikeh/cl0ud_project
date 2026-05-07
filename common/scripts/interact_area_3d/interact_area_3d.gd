@@ -2,6 +2,7 @@ extends Area3D
 class_name InteractArea3D
 
 
+signal interacted_no_player
 signal interacted(player: Player)
 
 
@@ -10,3 +11,4 @@ signal interacted(player: Player)
 
 func interact(player: Player) -> void:
 	interacted.emit(player)
+	interacted_no_player.emit()

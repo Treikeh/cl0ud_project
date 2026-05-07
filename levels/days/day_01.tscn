@@ -13,6 +13,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_kfdqj"]
 size = Vector3(0.215, 0.47, 0.365)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5xhar"]
+size = Vector3(0.15, 0.15, 0.15)
+
 [node name="Day01" type="Node3D" unique_id=1476344830]
 script = ExtResource("1_85oi3")
 
@@ -55,4 +58,16 @@ prompt = "EndDay"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable/EndDayTrigger" unique_id=895488167]
 shape = SubResource("BoxShape3D_kfdqj")
 
+[node name="Bell" parent="Interactable" unique_id=361145576 instance=ExtResource("6_e0c4c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2386236, 3.560637, 10.857726)
+prompt = "Ring"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable/Bell" unique_id=2094807935]
+shape = SubResource("BoxShape3D_5xhar")
+
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="Interactable/Bell" unique_id=1089052453]
+event_name = "event:/Actions/Bell"
+event_guid = "{aea974cf-9a5f-4d52-9651-90c5f09c5ce4}"
+
 [connection signal="interacted" from="Interactable/EndDayTrigger" to="." method="_end_day"]
+[connection signal="interacted_no_player" from="Interactable/Bell" to="Interactable/Bell/FmodEventEmitter3D" method="play_one_shot"]
