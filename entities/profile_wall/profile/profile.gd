@@ -81,12 +81,14 @@ func _set_output_value() -> void:
 				continue
 			# Increase the value of the profile if the item is placed in the right slot
 			if profile.data[slot_type] == item:
+				print("Item '%s' matches slot %s" % [item.name, ProfileData.DataTypes.keys()[slot_type]])
 				added_value += 5
 		
 		# Check if item maches items from other profiles
 		var profile_to_check: ProfileData
 		for profile: ProfileData in _profiles:
 			if profile.has_item(item):
+				print("Profile '%s' has item '%s'" % [profile.get_name(), item.name])
 				profile_to_check = profile
 				#print("%s profile has item %s" % [profile.resource_path, item.name])
 				if not profiles_added[profile].has(item):

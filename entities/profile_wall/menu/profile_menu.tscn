@@ -104,6 +104,13 @@ mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
 
+[node name="ValueLabel" type="Label" parent="." unique_id=1674829760]
+layout_mode = 0
+offset_left = 879.0
+offset_top = 576.0
+offset_right = 919.0
+offset_bottom = 599.0
+
 [connection signal="slot_grabbed" from="HBoxContainer/ProfileSpace/Profile" to="." method="_on_slot_grabbed"]
 [connection signal="slot_selected" from="HBoxContainer/ProfileSpace/Profile" to="." method="_on_slot_selected"]
 [connection signal="pressed" from="HBoxContainer/ProfileSpace/ConfirmButton" to="." method="_on_confirm_button_pressed"]

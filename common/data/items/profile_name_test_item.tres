@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("2_4gtge")
 description = "Mario"
+value = 6
 type = "PROFILE_DATA"
 icon = ExtResource("1_tcu81")
 mesh_scene = "res://entities/player/fishing_rod/art/fishing_hook_001_fbx.tscn"
