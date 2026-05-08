@@ -71,6 +71,27 @@ _head_marker = NodePath("HeadMarker")
 _skin = "Vendor"
 _animation = ExtResource("4_2ptgh")
 
+[node name="Skeleton3D" parent="Characters/IntroGuy/CharacterMesh" index="0" unique_id=161808251]
+bones/2/position = Vector3(-1.7898774e-15, 0.17699176, 0.8371117)
+bones/2/rotation = Quaternion(0.66481227, 0.011050309, -0.012413625, 0.7468256)
+bones/3/rotation = Quaternion(0.05948518, 0.0011075826, -0.018580718, 0.9980557)
+bones/4/rotation = Quaternion(0.15450272, -0.005811762, 0.037136354, 0.98727715)
+bones/5/rotation = Quaternion(-0.087191015, 1.5043304e-07, 5.7352324e-11, 0.9961916)
+bones/6/rotation = Quaternion(-0.05827667, 0.15277188, -0.60597205, 0.77850014)
+bones/7/rotation = Quaternion(0.6761979, 0.19913793, -0.33030224, 0.627695)
+bones/8/rotation = Quaternion(0.83699447, 0.006490213, -0.036566745, 0.5459496)
+bones/9/rotation = Quaternion(0.2636195, 0.17539395, -0.29383966, 0.9018869)
+bones/10/rotation = Quaternion(-0.094034806, -0.19764803, 0.59870034, 0.7704872)
+bones/11/rotation = Quaternion(0.70787317, -0.2430675, 0.25600836, 0.6117953)
+bones/12/rotation = Quaternion(0.8879833, -0.0054471353, 0.038794313, 0.45820403)
+bones/13/rotation = Quaternion(-0.3253911, -0.18084463, -0.05205314, 0.92666405)
+bones/14/rotation = Quaternion(0.27673033, 0.2248517, 0.9332144, 0.044416945)
+bones/15/rotation = Quaternion(-0.28374898, 8.1521854e-08, -1.3855663e-08, 0.9588986)
+bones/16/rotation = Quaternion(0.5488268, 0.20988077, 0.042177368, 0.8080596)
+bones/17/rotation = Quaternion(-0.2925379, 0.35187122, 0.875699, -0.15414119)
+bones/18/rotation = Quaternion(-0.4215913, -6.239224e-08, 1.7920105e-08, 0.90678596)
+bones/19/rotation = Quaternion(0.3013828, -0.052952595, 0.012169002, 0.951954)
+
 [node name="AnimationTree" parent="Characters/IntroGuy/CharacterMesh" index="4" unique_id=2032088472]
 tree_root = ExtResource("4_2ptgh")
 
@@ -93,7 +114,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6000004, 0.5220337, -1.800
 shape = SubResource("BoxShape3D_mtc2s")
 
 [node name="HeadMarker" type="BoneAttachment3D" parent="Characters/IntroGuy" unique_id=2116972068]
-transform = Transform3D(-1, -3.1806266e-07, -8.526513e-14, -2.4753547e-07, 0.77826, 0.6279422, -1.9972482e-07, 0.62794197, -0.7782601, 0, 0.88722706, -0.06168616)
+transform = Transform3D(-0.9995569, -0.0017839717, 0.029708287, 0.000902293, 0.99592656, 0.090162605, -0.029748121, 0.09014937, -0.99548393, -0.03533554, 1.5850267, 0.185166)
 bone_name = "head.001"
 bone_idx = 5
 use_external_skeleton = true
