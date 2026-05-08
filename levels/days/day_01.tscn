@@ -11,16 +11,17 @@
 [ext_resource type="PackedScene" uid="uid://bmbvlv41vnb6x" path="res://levels/art/door/ApartmentDoor.glb" id="5_p58p1"]
 [ext_resource type="Script" uid="uid://7jmwiagvacoy" path="res://levels/days/day_01_intro_guy.gd" id="6_2ptgh"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="6_e0c4c"]
-[ext_resource type="Resource" uid="uid://daoxlatyjttmi" path="res://common/data/dialogue/oldman_speak_01.tres" id="7_mtc2s"]
+[ext_resource type="Resource" uid="uid://dvbl8n1jf1s0a" path="res://common/data/dialogue/tutorial_intro_01.tres" id="7_p58p1"]
+[ext_resource type="Resource" uid="uid://cjunkyjuh8irs" path="res://common/data/dialogue/tutorial_intro_old_man.tres" id="8_gbegl"]
 [ext_resource type="PackedScene" uid="uid://ci766d3wxxwwr" path="res://environment/elevator_door/elevator_door.tscn" id="8_rxto8"]
 [ext_resource type="PackedScene" uid="uid://c1dcx0rd8honj" path="res://entities/maxwell/maxwell.tscn" id="9_5xhar"]
-[ext_resource type="PackedScene" uid="uid://iomcinpu06my" path="res://environment/vendor_door/vendor_door.tscn" id="10_thlfx"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_mtc2s"]
-size = Vector3(1, 4.0440674, 4.9)
+[ext_resource type="PackedScene" uid="uid://c1g0jfqp40x5y" path="res://entities/characters/vendor/vendor_day_01.tscn" id="16_gbegl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p58p1"]
 size = Vector3(0.8, 2, 0.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mtc2s"]
+size = Vector3(1, 4.0440674, 4.9)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kfdqj"]
 size = Vector3(0.215, 0.47, 0.365)
@@ -34,7 +35,13 @@ script = ExtResource("1_85oi3")
 [node name="Environment" type="Node3D" parent="." unique_id=2025003428]
 
 [node name="MainLevel" parent="Environment" unique_id=224384734 instance=ExtResource("1_wbuex")]
-_next_day = "uid://fcaru7tgmibi"
+
+[node name="VendorDay01" parent="Environment/MainLevel" unique_id=520470945 instance=ExtResource("16_gbegl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6926503, 2.4760885, 11.769749)
+
+[node name="Vendor" parent="Environment/MainLevel" index="4" unique_id=520470945]
+process_mode = 4
+visible = false
 
 [node name="SubwayCartSpawnerTunnel" parent="Environment" unique_id=1384092551 instance=ExtResource("5_1ul8t")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -15.9, 11.7, -225)
@@ -52,13 +59,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.20196, 3.7600656, -0.3784
 
 [node name="Characters" type="Node3D" parent="." unique_id=351249826]
 
-[node name="IntroGuy" parent="Characters" unique_id=123157983 node_paths=PackedStringArray("_head_marker") instance=ExtResource("3_0o6tx")]
+[node name="IntroGuy" type="Node3D" parent="Characters" unique_id=2111809953 node_paths=PackedStringArray("_head_marker")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7, 2.5, 1.758408)
 script = ExtResource("6_2ptgh")
-_trigger_dialogue = ExtResource("7_mtc2s")
-_head_marker = NodePath("BoneAttachment3D/HeadMarker")
+_trigger_dialogue = ExtResource("7_p58p1")
+_old_man_dialogue = ExtResource("8_gbegl")
+_head_marker = NodePath("HeadMarker")
+
+[node name="CharacterMesh" parent="Characters/IntroGuy" unique_id=1966623919 instance=ExtResource("3_0o6tx")]
 _skin = "Vendor"
 _animation = ExtResource("4_2ptgh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Characters/IntroGuy" unique_id=1570267878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Characters/IntroGuy/StaticBody3D" unique_id=679120058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+shape = SubResource("BoxShape3D_p58p1")
 
 [node name="PlayerTriggerArea" type="Area3D" parent="Characters/IntroGuy" unique_id=641990123]
 collision_layer = 0
@@ -69,23 +88,12 @@ monitorable = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6000004, 0.5220337, -1.8000001)
 shape = SubResource("BoxShape3D_mtc2s")
 
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Characters/IntroGuy" unique_id=1815746903]
+[node name="HeadMarker" type="BoneAttachment3D" parent="Characters/IntroGuy" unique_id=2116972068]
 transform = Transform3D(-1, -3.1806266e-07, -8.526513e-14, -2.4753547e-07, 0.77826, 0.6279422, -1.9972482e-07, 0.62794197, -0.7782601, 0, 0.88722706, -0.06168616)
 bone_name = "head.001"
 bone_idx = 5
 use_external_skeleton = true
-external_skeleton = NodePath("../Skeleton3D")
-
-[node name="HeadMarker" type="Marker3D" parent="Characters/IntroGuy/BoneAttachment3D" unique_id=1075125721]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Characters/IntroGuy" unique_id=1570267878]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-collision_layer = 64
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Characters/IntroGuy/StaticBody3D" unique_id=679120058]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
-shape = SubResource("BoxShape3D_p58p1")
+external_skeleton = NodePath("../CharacterMesh/Skeleton3D")
 
 [node name="Nils" parent="Characters" unique_id=1391229992 instance=ExtResource("3_85oi3")]
 transform = Transform3D(-0.25881898, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, -0.25881898, -4.1935763, 2.543348, -4.6111035)
@@ -119,10 +127,7 @@ shape = SubResource("BoxShape3D_5xhar")
 event_name = "event:/Actions/Bell"
 event_guid = "{aea974cf-9a5f-4d52-9651-90c5f09c5ce4}"
 
-[node name="VendorDoor" parent="." unique_id=525246973 instance=ExtResource("10_thlfx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7000003, 3.5, 11.099999)
-
-[connection signal="left" from="Environment/MainLevel/Vendor" to="VendorDoor" method="close"]
+[connection signal="left" from="Environment/MainLevel/VendorDay01" to="Environment/MainLevel/Vendor" method="show_vendor"]
 [connection signal="body_entered" from="Characters/IntroGuy/PlayerTriggerArea" to="Characters/IntroGuy" method="_body_entered_trigger"]
 [connection signal="interacted" from="Interactable/ElevatorButton" to="." method="_end_day"]
 [connection signal="interacted_no_player" from="Interactable/Bell" to="Interactable/Bell/FmodEventEmitter3D" method="play_one_shot"]
@@ -130,4 +135,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7000003, 3.5, 11.099999)
 [editable path="Environment/MainLevel"]
 [editable path="Environment/MainLevel/System/ProfileSystem/ProfilePrinter"]
 [editable path="Environment/MainLevel/Player"]
-[editable path="Characters/IntroGuy"]
+[editable path="Characters/IntroGuy/CharacterMesh"]

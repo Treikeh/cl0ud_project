@@ -1,22 +1,11 @@
 [gd_scene format=3 uid="uid://d03dern16pwcb"]
 
 [ext_resource type="Script" uid="uid://c5d4fd2agsogr" path="res://entities/characters/nils/day_01_nils.gd" id="1_3cw0d"]
-[ext_resource type="Resource" uid="uid://daoxlatyjttmi" path="res://common/data/dialogue/oldman_speak_01.tres" id="2_cc2qk"]
-[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="2_pjgcy"]
+[ext_resource type="Resource" uid="uid://db8o8qi0pho44" path="res://common/data/dialogue/tutorial_old_man_buy_fishing_rod_01.tres" id="2_cc2qk"]
+[ext_resource type="Resource" uid="uid://b12rngxtn33qx" path="res://common/data/dialogue/tutorial_old_man_buy_fishing_rod_repeat.tres" id="3_5dqtv"]
 [ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="3_cc2qk"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="4_5dqtv"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://cbygnrgof7bup" path="res://entities/characters/rig/standing_fishing_anim_sm.tres" id="4_pjgcy"]
-
-[sub_resource type="Resource" id="Resource_pjgcy"]
-script = ExtResource("2_pjgcy")
-lines = Array[String](["Want to know a secret?"])
-choices = Array[String](["Yes", "No"])
-metadata/_custom_type_script = "uid://b0pj0dtodw2q8"
-
-[sub_resource type="Resource" id="Resource_cc2qk"]
-script = ExtResource("2_pjgcy")
-lines = Array[String](["Espen er ute på eventyr"])
-metadata/_custom_type_script = "uid://b0pj0dtodw2q8"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_85oi3"]
 size = Vector3(0.7, 1.9, 0.5)
@@ -25,8 +14,7 @@ size = Vector3(0.7, 1.9, 0.5)
 script = ExtResource("1_3cw0d")
 _head_maker = NodePath("HeadMarker")
 _start_dialogue = ExtResource("2_cc2qk")
-_spoken_dialogue = SubResource("Resource_pjgcy")
-_secret_dialogue = SubResource("Resource_cc2qk")
+_spoken_dialogue = ExtResource("3_5dqtv")
 
 [node name="CharacterMesh" parent="." unique_id=1194805127 instance=ExtResource("3_cc2qk")]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
@@ -35,7 +23,7 @@ _skin = "Nils"
 _animation = ExtResource("4_pjgcy")
 
 [node name="HeadMarker" type="BoneAttachment3D" parent="." unique_id=648579604]
-transform = Transform3D(-0.9999999, -2.394437e-07, -3.0133313e-07, -3.8348247e-07, 0.68658775, 0.72704697, 3.280493e-08, 0.7270467, -0.68658775, -7.5216015e-08, 0.74683803, 0.23592612)
+transform = Transform3D(-0.9999999, -3.8112037e-07, 7.050429e-08, -2.5233817e-07, 0.77826, 0.6279422, -2.9419218e-07, 0.6279419, -0.77826, -1.1633358e-07, 0.8872272, -0.06168612)
 bone_name = "head.001"
 bone_idx = 5
 use_external_skeleton = true

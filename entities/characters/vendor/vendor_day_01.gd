@@ -7,23 +7,27 @@ signal left
 const VENDOR_MENU_SCENE: PackedScene = preload("uid://diy715xds7cni")
 
 @export var _head_marker: Node3D
-@export var _interact_dialogue: DialogueData
+@export var _buy_fishing_rod_dialogue: DialogueData
 
 var _times_spoken: int = 0
 
 
 func _on_interacted(player: Player) -> void:
 	match _times_spoken:
-		_:
-			# Start dialogue when interacting with the vendor
-			player.hud.start_dialogue(_interact_dialogue)
+		# Start dialogue when interacting with the vendor
+		0: player.hud.start_dialogue(_buy_fishing_rod_dialogue)
 	
 	_times_spoken += 1
 	player.update_look_position(_head_marker.global_position)
 
 
 func _ready() -> void:
-	_interact_dialogue.choice_made.connect(_on_interact_dialouge_choice_made)
+	_buy_fishing_rod_dialogue.choice_made.connect(_on_interact_dialouge_choice_made)
+
+
+func _on_buy_fishing_rod_dialogue_finished() -> void:
+	var player: Player = get_tree().get_first_node_in_group("player")
+	_on_interacted.call_deferred(player)
 
 
 func _on_interact_dialouge_choice_made(choice: int) -> void:
@@ -52,15 +56,11 @@ func _open_vendor_menu(player: Player, buy: bool) -> void:
 func _on_vendor_menu_closed(player: Player) -> void:
 	player.input.set_enabled.call_deferred(true)
 	player.update_look_position(Vector3.ZERO)
+	_on_visible_on_screen_notifier_3d_screen_exited()
 
 
 func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
-	if Globals.time_of_day > 22.0:
+	if _times_spoken >= 1:
 		left.emit()
 		hide()
 		process_mode = Node.PROCESS_MODE_DISABLED
-
-
-func show_vendor() -> void:
-	show()
-	process_mode = Node.PROCESS_MODE_INHERIT
