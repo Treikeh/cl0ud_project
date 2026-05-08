@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ProfileData" format=3 uid="uid://ml1cvvp2x34s"]
+
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="1_p12hs"]
+[ext_resource type="Resource" uid="uid://bok11uxkpw358" path="res://common/data/items/profile_emilio_name_item.tres" id="2_8npeh"]
+[ext_resource type="Resource" uid="uid://c8qu42s7h5k1v" path="res://common/data/items/profile_emilio_age_item.tres" id="3_jkxme"]
+[ext_resource type="Resource" uid="uid://bx5qbnfowq6uj" path="res://common/data/items/profile_emilio_occupation_item.tres" id="4_5xybe"]
+[ext_resource type="Resource" uid="uid://dsrr1v5vfaial" path="res://common/data/items/profile_emilio_likes_item.tres" id="5_hcpxj"]
+[ext_resource type="Script" uid="uid://jxb6f52u0giu" path="res://common/data/profiles/profile_data.gd" id="5_nyrfy"]
+
+[resource]
+script = ExtResource("5_nyrfy")
+data = Dictionary[int, ExtResource("1_p12hs")]({
+0: ExtResource("2_8npeh"),
+1: ExtResource("3_jkxme"),
+2: ExtResource("4_5xybe"),
+4: ExtResource("5_hcpxj")
+})
+metadata/_custom_type_script = "uid://jxb6f52u0giu"
