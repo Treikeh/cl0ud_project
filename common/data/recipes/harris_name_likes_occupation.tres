@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProfileRecipe" format=3 uid="uid://2vtrdw4jfdr1"]
+
+[ext_resource type="Resource" uid="uid://ceqoiwr47vxnt" path="res://common/data/items/mail_MFC_fish.tres" id="1_qqf47"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_u3spl"]
+[ext_resource type="Resource" uid="uid://ccx0x1i63nlu7" path="res://common/data/items/profile_harris_goodwill_name_item.tres" id="3_xhait"]
+[ext_resource type="Resource" uid="uid://c1rto6gthf1vr" path="res://common/data/items/profile_harris_goodwill_likes_item.tres" id="4_fvk0d"]
+[ext_resource type="Resource" uid="uid://bsu4gpo1jx3gx" path="res://common/data/items/profile_harris_occupation_item.tres" id="5_1n8ny"]
+[ext_resource type="Script" uid="uid://c8p7f6bgfvt10" path="res://common/data/recipes/profile_recipe.gd" id="6_x3faq"]
+
+[resource]
+script = ExtResource("6_x3faq")
+input = ExtResource("1_qqf47")
+outputs = Array[ExtResource("2_u3spl")]([ExtResource("3_xhait"), ExtResource("4_fvk0d"), ExtResource("5_1n8ny")])

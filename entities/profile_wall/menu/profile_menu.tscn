@@ -2,9 +2,6 @@
 
 [ext_resource type="Script" uid="uid://b8bktvdxgqqnf" path="res://entities/profile_wall/menu/profile_menu.gd" id="1_3hdgf"]
 [ext_resource type="PackedScene" uid="uid://1twaxsgrm048" path="res://entities/profile_wall/profile/profile.tscn" id="2_g8fpx"]
-[ext_resource type="Script" uid="uid://jxb6f52u0giu" path="res://common/data/profiles/profile_data.gd" id="3_tcfk2"]
-[ext_resource type="Resource" uid="uid://17idptkdwye8" path="res://common/data/profiles/test_01.tres" id="4_g8fpx"]
-[ext_resource type="Resource" uid="uid://dtuqk7gfy0m0v" path="res://common/data/profiles/test_02.tres" id="5_fi1ac"]
 
 [node name="ProfileMenu" type="Control" unique_id=794032460 node_paths=PackedStringArray("_pieces_list", "_profile", "_selected_item_icon")]
 layout_mode = 3
@@ -72,7 +69,6 @@ _labels = {
 4: NodePath("MarginContainer/HBoxContainer/VBoxContainer2/LikesLabel"),
 5: NodePath("MarginContainer/HBoxContainer/VBoxContainer2/DislikesLabel")
 }
-_profiles = Array[ExtResource("3_tcfk2")]([ExtResource("4_g8fpx"), ExtResource("5_fi1ac")])
 
 [node name="ConfirmButton" type="Button" parent="HBoxContainer/ProfileSpace" unique_id=1088719792]
 layout_mode = 0
@@ -103,6 +99,13 @@ offset_bottom = 40.0
 mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
+
+[node name="ValueLabel" type="Label" parent="." unique_id=1674829760]
+layout_mode = 0
+offset_left = 879.0
+offset_top = 576.0
+offset_right = 919.0
+offset_bottom = 599.0
 
 [connection signal="slot_grabbed" from="HBoxContainer/ProfileSpace/Profile" to="." method="_on_slot_grabbed"]
 [connection signal="slot_selected" from="HBoxContainer/ProfileSpace/Profile" to="." method="_on_slot_selected"]

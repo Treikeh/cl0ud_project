@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProfileRecipe" format=3 uid="uid://o23b58n0a86b"]
+
+[ext_resource type="Resource" uid="uid://ceqoiwr47vxnt" path="res://common/data/items/mail_MFC_fish.tres" id="1_2kero"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_a73fk"]
+[ext_resource type="Resource" uid="uid://cul56fib5t6fr" path="res://common/data/items/profile_cornelius_mctaro_name_item.tres" id="3_criq7"]
+[ext_resource type="Resource" uid="uid://gwp1tudvj5pq" path="res://common/data/items/profile_cornelius_mctaro_likes_item.tres" id="4_0a50g"]
+[ext_resource type="Resource" uid="uid://bmuai10o6el4" path="res://common/data/items/profile_cornelius_mctaro_occupation_item.tres" id="5_oxncc"]
+[ext_resource type="Script" uid="uid://c8p7f6bgfvt10" path="res://common/data/recipes/profile_recipe.gd" id="6_mswhy"]
+
+[resource]
+script = ExtResource("6_mswhy")
+input = ExtResource("1_2kero")
+outputs = Array[ExtResource("2_a73fk")]([ExtResource("3_criq7"), ExtResource("4_0a50g"), ExtResource("5_oxncc")])

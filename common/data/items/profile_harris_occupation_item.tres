@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bsu4gpo1jx3gx"]
+
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="1_38mm6"]
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_ft6im"]
+
+[resource]
+script = ExtResource("1_38mm6")
+name = "Harris' occupation"
+description = "Investor"
+type = "PROFILE_DATA"
+icon = ExtResource("1_ft6im")

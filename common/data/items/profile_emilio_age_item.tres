@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c8qu42s7h5k1v"]
+
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_dquif"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="1_o3f8e"]
+
+[resource]
+script = ExtResource("1_o3f8e")
+name = "Emilio's age"
+description = "38"
+type = "PROFILE_DATA"
+icon = ExtResource("1_dquif")

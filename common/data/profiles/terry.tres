@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ProfileData" format=3 uid="uid://bxpoujgtqqf6u"]
+
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="1_pbdfd"]
+[ext_resource type="Resource" uid="uid://d4bqh15rap3go" path="res://common/data/items/profile_terry_name_item.tres" id="2_v5i2a"]
+[ext_resource type="Resource" uid="uid://dyvvdl18dk061" path="res://common/data/items/profile_terry_address_item.tres" id="3_yd7ne"]
+[ext_resource type="Script" uid="uid://jxb6f52u0giu" path="res://common/data/profiles/profile_data.gd" id="4_37mct"]
+
+[resource]
+script = ExtResource("4_37mct")
+data = Dictionary[int, ExtResource("1_pbdfd")]({
+0: ExtResource("2_v5i2a"),
+3: ExtResource("3_yd7ne")
+})
+metadata/_custom_type_script = "uid://jxb6f52u0giu"

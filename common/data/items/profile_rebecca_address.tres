@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dasjku0g2utya"]
+
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_t2cxm"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="1_t84vu"]
+
+[resource]
+script = ExtResource("1_t84vu")
+name = "Rebecca's address"
+description = "93th Nostal Edwards Street"
+type = "PROFILE_DATA"
+icon = ExtResource("1_t2cxm")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dsrr1v5vfaial"]
+
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="1_v0h7a"]
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_x7dab"]
+
+[resource]
+script = ExtResource("1_v0h7a")
+name = "Emilio's likes"
+description = "\"Manstyle\" Perfume"
+type = "PROFILE_DATA"
+icon = ExtResource("1_x7dab")

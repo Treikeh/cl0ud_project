@@ -1,5 +1,13 @@
 FILE_NAME	CHARACTER_NAME	TEXT	CHOICES
-vendor_interact_01	"Chops"	You here to buy or here to sell?	Buying | Selling | Nevermind
+vendor_interact_01	"Chops"	You here to buy or here to sell?	Buying | Selling | Profiles? | Nevermind
+vendor_profiles_01	"Chops"	You can use the pc to your right to print the data on the fish | Then you can use the whiteboard to combine different data slices | If you combine matching data slices the profile will be worth more when sold	
 vendor_close_shop_01	"Chops"	Cya around, Compadre.	
 vendor_nevermind_01	"Chops"	Quit wastin' my time.	
 oldman_speak_01	Old Man	Keep your wits about ya. | Aah reckon somethin' is hidin' en the clouds. 	
+			
+tutorial_intro_01	Name_02	You here to catch fish? | Talk to the old man to learn the ropes	Old man?
+tutorial_intro_old_man	Name_02	Yeah, the old guy fishing by the edge	
+tutorial_old_man_buy_fishing_rod_01	Old Man	You new around here? | I'll can teach you the basics if you want | But you'll need a fishing rod first | I belive the vendor has an old one for sale	
+tutorial_old_man_buy_fishing_rod_repeat	Old Man	Come back once you've gotten your hands on a fishing rod	
+tutorial_old_man_teach_fishing	Old Man	Just throw the hook into the water | The further away you throw the hook, the more valuable the fish will become	
+tutorial_vendor_01	"Chops"	Ahh, fresh fish from the barrel | I'm guessing you're in need of a fishing rod | Well guess what | It's your lucky day | I just happen to have an old one sitting around gathering dust | So, you buying?	Buying | Nevermind

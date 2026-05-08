@@ -102,6 +102,11 @@ func _update_data_container(fish_data: FishData) -> void:
 func _update_output(item: ItemData) -> void:
 	var outputs: Array[ItemData] = _get_recipie_outputs(item)
 	if outputs.is_empty():
+		_output_item = null
+		_output_label.text = ""
+		_print_button.disabled = true
+		_prev_output_button.disabled = true
+		_next_output_button.disabled = true
 		return
 	
 	_print_button.disabled = false

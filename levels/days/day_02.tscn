@@ -9,7 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://c1dcx0rd8honj" path="res://entities/maxwell/maxwell.tscn" id="5_7wmgk"]
 [ext_resource type="PackedScene" uid="uid://bmbvlv41vnb6x" path="res://levels/art/door/ApartmentDoor.glb" id="5_g28r0"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="6_767uw"]
-[ext_resource type="PackedScene" uid="uid://iomcinpu06my" path="res://environment/vendor_door/vendor_door.tscn" id="15_yodib"]
+[ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="11_iajr4"]
+[ext_resource type="AnimationNodeStateMachine" uid="uid://bjkncj1k6kru4" path="res://entities/characters/rig/sitting_couch_anim_sm.tres" id="12_kcbp1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4h47f"]
+size = Vector3(1, 2.3, 1.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kfdqj"]
 size = Vector3(0.215, 0.47, 0.365)
@@ -41,8 +45,18 @@ transform = Transform3D(-0.054218233, 0, -0.99852914, 0, 1, 0, 0.99852914, 0, -0
 
 [node name="Characters" type="Node3D" parent="." unique_id=351249826]
 
-[node name="Maxwell" parent="Characters" unique_id=1585785834 instance=ExtResource("5_7wmgk")]
-transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, -12.9, 3.016487, 3.4)
+[node name="Maxwell" parent="Characters" unique_id=748864273 instance=ExtResource("5_7wmgk")]
+transform = Transform3D(0.23088194, 0, 0.97298175, 0, 1, 0, -0.97298175, 0, 0.23088194, -43.1357, 2.9997973, -2.278222)
+
+[node name="CouchGuy" parent="Characters" unique_id=1966623919 instance=ExtResource("11_iajr4")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, -42.234978, 2.9852662, -2.103635)
+_animation = ExtResource("12_kcbp1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Characters/CouchGuy" unique_id=1681530321]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Characters/CouchGuy/StaticBody3D" unique_id=1167441153]
+transform = Transform3D(1.0000012, 0, 0, 0, 1, 0, 0, 0, 1.0000012, -1.5258789e-05, 0.6500001, 0.10000038)
+shape = SubResource("BoxShape3D_4h47f")
 
 [node name="Interactable" type="Node3D" parent="." unique_id=1143656547]
 
@@ -70,12 +84,9 @@ shape = SubResource("BoxShape3D_5xhar")
 event_name = "event:/Actions/Bell"
 event_guid = "{aea974cf-9a5f-4d52-9651-90c5f09c5ce4}"
 
-[node name="VendorDoor" parent="." unique_id=525246973 instance=ExtResource("15_yodib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7000003, 3.5, 11.099999)
-
-[connection signal="left" from="Environment/MainLevel/Vendor" to="VendorDoor" method="close"]
 [connection signal="interacted" from="Interactable/ElevatorButton" to="." method="_end_day"]
 [connection signal="interacted_no_player" from="Interactable/Bell" to="Interactable/Bell/FmodEventEmitter3D" method="play_one_shot"]
 
 [editable path="Environment/MainLevel"]
 [editable path="Environment/MainLevel/System/ProfileSystem/ProfilePrinter"]
+[editable path="Environment/MainLevel/Player"]

@@ -34,15 +34,19 @@ func _update_dialogue_box() -> void:
 	_name_label.text = _dialogue.name
 	_text_label.text = ""
 	
+	
 	var tween: Tween = create_tween()
 	tween.tween_property(_text_label, "text", line, 0.4)
-	tween.tween_callback(_show_dialogue_choices)
+	tween.tween_interval(0.25)
+	if _dialogue_progress >= _dialogue.lines.size() - 1:
+		tween.tween_callback(_show_dialogue_choices)
 
 
 func _end_dialogue() -> void:
 	#NOTE: call_deferred to make the input of progressing the dialogue not immediately restart the
 	# dialogue when it ends.
 	dialogue_ended.emit.call_deferred()
+	_dialogue.finished.emit()
 	queue_free()
 
 

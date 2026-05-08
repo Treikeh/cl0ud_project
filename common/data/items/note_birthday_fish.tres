@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d4ir3c152hgsc"]
+
+[ext_resource type="Resource" uid="uid://c6ob3wkq2v4ih" path="res://common/data/fish/note_birthday_shopping_list.tres" id="1_y54ot"]
+[ext_resource type="Texture2D" uid="uid://bopc0krq46by3" path="res://entities/fish/note/note_icon.png" id="2_87nbl"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_660ms"]
+
+[resource]
+script = ExtResource("3_660ms")
+name = "Note fish \"Birthday Shopping\""
+description = "The birthday shopping list fish"
+value = 6
+type = "NOTE"
+icon = ExtResource("2_87nbl")
+mesh_scene = "res://entities/fish/note/note_mesh.tscn"
+fish_data = ExtResource("1_y54ot")

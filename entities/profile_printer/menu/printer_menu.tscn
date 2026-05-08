@@ -2,31 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dj652tx6fpvh0" path="res://entities/profile_printer/menu/printer_menu.gd" id="1_anq61"]
 [ext_resource type="Script" uid="uid://c8p7f6bgfvt10" path="res://common/data/recipes/profile_recipe.gd" id="2_q25av"]
-[ext_resource type="Resource" uid="uid://b1kgysh5ua8m7" path="res://common/data/items/message_test_02.tres" id="3_q25av"]
-[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_sgc82"]
-[ext_resource type="Resource" uid="uid://dpudvv11ji4un" path="res://common/data/items/profile_age_test_item.tres" id="5_j7u42"]
-[ext_resource type="Resource" uid="uid://hmiylpgmctyx" path="res://common/data/items/junk_test_01.tres" id="5_sgc82"]
-[ext_resource type="Resource" uid="uid://dvohwdqt3uio0" path="res://common/data/items/note_crazy_data_01.tres" id="6_0bhb6"]
-[ext_resource type="Resource" uid="uid://b52500eqghbpw" path="res://common/data/items/profile_job_test_item.tres" id="7_npx45"]
-[ext_resource type="Resource" uid="uid://dae7b8a7gtuao" path="res://common/data/items/profile_name_test_item.tres" id="9_ek23x"]
-
-[sub_resource type="Resource" id="Resource_uvy1h"]
-script = ExtResource("2_q25av")
-input = ExtResource("3_q25av")
-outputs = Array[ExtResource("3_sgc82")]([ExtResource("9_ek23x")])
-metadata/_custom_type_script = "uid://c8p7f6bgfvt10"
-
-[sub_resource type="Resource" id="Resource_x6rv1"]
-script = ExtResource("2_q25av")
-input = ExtResource("5_sgc82")
-outputs = Array[ExtResource("3_sgc82")]([ExtResource("5_j7u42"), ExtResource("9_ek23x")])
-metadata/_custom_type_script = "uid://c8p7f6bgfvt10"
-
-[sub_resource type="Resource" id="Resource_6kha5"]
-script = ExtResource("2_q25av")
-input = ExtResource("6_0bhb6")
-outputs = Array[ExtResource("3_sgc82")]([ExtResource("7_npx45")])
-metadata/_custom_type_script = "uid://c8p7f6bgfvt10"
+[ext_resource type="Resource" uid="uid://boh7ma3btgk0g" path="res://common/data/recipes/xavier_name.tres" id="3_sgc82"]
+[ext_resource type="Resource" uid="uid://bp4svwjnijf4v" path="res://common/data/recipes/davy_name_likes.tres" id="4_m7pds"]
+[ext_resource type="Resource" uid="uid://4jxub6d7qkr5" path="res://common/data/recipes/ryan_name_likes.tres" id="5_j7u42"]
+[ext_resource type="Resource" uid="uid://pk0rioop5yjx" path="res://common/data/recipes/terry_name_address.tres" id="6_0bhb6"]
+[ext_resource type="Resource" uid="uid://o23b58n0a86b" path="res://common/data/recipes/cornelius_name_likes.tres" id="7_npx45"]
+[ext_resource type="Resource" uid="uid://bkym4atrbnbu4" path="res://common/data/recipes/rebecca_name_likes_address.tres" id="8_fqatp"]
+[ext_resource type="Resource" uid="uid://2vtrdw4jfdr1" path="res://common/data/recipes/harris_name_likes_occupation.tres" id="9_ek23x"]
+[ext_resource type="Resource" uid="uid://dvmc8ew7unswe" path="res://common/data/recipes/emilio_name_likes_occupation_age.tres" id="10_uvy1h"]
 
 [node name="PrinterMenu" type="Control" unique_id=670146033 node_paths=PackedStringArray("_fish_list", "_print_button", "_fish_spawn_marker", "_data_container", "_output_label", "_prev_output_button", "_next_output_button")]
 layout_mode = 3
@@ -43,7 +26,7 @@ _data_container = NodePath("HBoxContainer/FishPreview/PanelContainer/MarginConta
 _output_label = NodePath("HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer/HBoxContainer2/OutputLabel")
 _prev_output_button = NodePath("HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer/HBoxContainer2/PrevOutputItem")
 _next_output_button = NodePath("HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer/HBoxContainer2/NextOutputItem")
-_recipes = Array[ExtResource("2_q25av")]([SubResource("Resource_uvy1h"), SubResource("Resource_x6rv1"), SubResource("Resource_6kha5")])
+_recipes = Array[ExtResource("2_q25av")]([ExtResource("3_sgc82"), ExtResource("4_m7pds"), ExtResource("5_j7u42"), ExtResource("6_0bhb6"), ExtResource("7_npx45"), ExtResource("8_fqatp"), ExtResource("9_ek23x"), ExtResource("10_uvy1h")])
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=820335375]
 layout_mode = 1

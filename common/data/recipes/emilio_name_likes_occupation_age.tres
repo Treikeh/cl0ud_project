@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ProfileRecipe" format=3 uid="uid://dvmc8ew7unswe"]
+
+[ext_resource type="Resource" uid="uid://d4ir3c152hgsc" path="res://common/data/items/note_birthday_fish.tres" id="1_6v3j8"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_p1m8s"]
+[ext_resource type="Resource" uid="uid://bok11uxkpw358" path="res://common/data/items/profile_emilio_name_item.tres" id="3_c46mj"]
+[ext_resource type="Resource" uid="uid://dsrr1v5vfaial" path="res://common/data/items/profile_emilio_likes_item.tres" id="4_nssdy"]
+[ext_resource type="Resource" uid="uid://bx5qbnfowq6uj" path="res://common/data/items/profile_emilio_occupation_item.tres" id="5_ow7uh"]
+[ext_resource type="Resource" uid="uid://c8qu42s7h5k1v" path="res://common/data/items/profile_emilio_age_item.tres" id="6_cpjdg"]
+[ext_resource type="Script" uid="uid://c8p7f6bgfvt10" path="res://common/data/recipes/profile_recipe.gd" id="7_fmxsm"]
+
+[resource]
+script = ExtResource("7_fmxsm")
+input = ExtResource("1_6v3j8")
+outputs = Array[ExtResource("2_p1m8s")]([ExtResource("3_c46mj"), ExtResource("4_nssdy"), ExtResource("5_ow7uh"), ExtResource("6_cpjdg")])

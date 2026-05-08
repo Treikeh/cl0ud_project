@@ -1,22 +1,14 @@
 [gd_scene format=3 uid="uid://d03dern16pwcb"]
 
 [ext_resource type="Script" uid="uid://c5d4fd2agsogr" path="res://entities/characters/nils/day_01_nils.gd" id="1_3cw0d"]
-[ext_resource type="Resource" uid="uid://daoxlatyjttmi" path="res://common/data/dialogue/oldman_speak_01.tres" id="2_cc2qk"]
-[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="2_pjgcy"]
+[ext_resource type="Resource" uid="uid://db8o8qi0pho44" path="res://common/data/dialogue/tutorial_old_man_buy_fishing_rod_01.tres" id="2_cc2qk"]
+[ext_resource type="Resource" uid="uid://b12rngxtn33qx" path="res://common/data/dialogue/tutorial_old_man_buy_fishing_rod_repeat.tres" id="3_5dqtv"]
 [ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="3_cc2qk"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="4_5dqtv"]
+[ext_resource type="Resource" uid="uid://daoxlatyjttmi" path="res://common/data/dialogue/oldman_speak_01.tres" id="4_i31au"]
+[ext_resource type="Resource" uid="uid://biotfiuppbsm4" path="res://common/data/dialogue/tutorial_old_man_teach_fishing.tres" id="4_isgsp"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://cbygnrgof7bup" path="res://entities/characters/rig/standing_fishing_anim_sm.tres" id="4_pjgcy"]
-
-[sub_resource type="Resource" id="Resource_pjgcy"]
-script = ExtResource("2_pjgcy")
-lines = Array[String](["Want to know a secret?"])
-choices = Array[String](["Yes", "No"])
-metadata/_custom_type_script = "uid://b0pj0dtodw2q8"
-
-[sub_resource type="Resource" id="Resource_cc2qk"]
-script = ExtResource("2_pjgcy")
-lines = Array[String](["Espen er ute på eventyr"])
-metadata/_custom_type_script = "uid://b0pj0dtodw2q8"
+[ext_resource type="Resource" uid="uid://cfm7q37i5iff8" path="res://common/upgrades/resources/fishing_rod_upgrade.tres" id="5_isgsp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_85oi3"]
 size = Vector3(0.7, 1.9, 0.5)
@@ -25,8 +17,10 @@ size = Vector3(0.7, 1.9, 0.5)
 script = ExtResource("1_3cw0d")
 _head_maker = NodePath("HeadMarker")
 _start_dialogue = ExtResource("2_cc2qk")
-_spoken_dialogue = SubResource("Resource_pjgcy")
-_secret_dialogue = SubResource("Resource_cc2qk")
+_spoken_dialogue = ExtResource("3_5dqtv")
+_teach_fishing_dialogue = ExtResource("4_isgsp")
+_repeat_dialogue = ExtResource("4_i31au")
+_fishing_rod_upgrade = ExtResource("5_isgsp")
 
 [node name="CharacterMesh" parent="." unique_id=1194805127 instance=ExtResource("3_cc2qk")]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
@@ -34,8 +28,32 @@ _look_at_radius = 2.0
 _skin = "Nils"
 _animation = ExtResource("4_pjgcy")
 
+[node name="Skeleton3D" parent="CharacterMesh" index="0" unique_id=161808251]
+bones/2/position = Vector3(8.885667e-16, 0.067006476, 0.9022027)
+bones/2/rotation = Quaternion(0.69923276, -5.3973036e-08, -5.2790625e-08, 0.7148942)
+bones/3/rotation = Quaternion(-0.020237816, 1.5096494e-07, 1.88772e-15, 0.9997952)
+bones/4/rotation = Quaternion(0.1183377, -1.4993482e-07, 3.577384e-15, 0.9929735)
+bones/5/rotation = Quaternion(-0.087191015, 1.5042073e-07, -3.5426306e-16, 0.9961916)
+bones/6/rotation = Quaternion(-0.09403472, 0.19764802, -0.5987004, 0.77048725)
+bones/7/rotation = Quaternion(0.4228129, 0.25059885, -0.61469245, 0.616914)
+bones/8/rotation = Quaternion(0.6672336, 0.008847274, -0.029150132, 0.7442254)
+bones/9/rotation = Quaternion(-0.1889432, -0.23040636, 0.22149639, 0.9285218)
+bones/10/rotation = Quaternion(-0.09403483, -0.197648, 0.59870034, 0.7704872)
+bones/11/rotation = Quaternion(0.40930343, -0.2854253, 0.6046895, 0.6207686)
+bones/12/rotation = Quaternion(0.5891345, -0.009600397, 0.025738195, 0.80756795)
+bones/13/rotation = Quaternion(-0.029561752, 0.22711226, -0.08686602, 0.9695362)
+bones/14/rotation = Quaternion(0.021232797, 0.067648545, 0.9974501, -0.008130872)
+bones/15/rotation = Quaternion(-0.1772205, 5.7717866e-08, -9.303564e-09, 0.98417115)
+bones/16/rotation = Quaternion(0.6294127, -0.06727835, 0.028471394, 0.7736295)
+bones/17/rotation = Quaternion(-0.021232631, 0.06764853, 0.9974501, 0.008130861)
+bones/18/rotation = Quaternion(-0.1772205, -6.079513e-08, 1.1524618e-08, 0.98417115)
+bones/19/rotation = Quaternion(0.6294128, 0.06727837, -0.02847142, 0.7736295)
+
+[node name="AnimationTree" parent="CharacterMesh" index="4" unique_id=2032088472]
+tree_root = ExtResource("4_pjgcy")
+
 [node name="HeadMarker" type="BoneAttachment3D" parent="." unique_id=648579604]
-transform = Transform3D(-0.9999999, -2.394437e-07, -3.0133313e-07, -3.8348247e-07, 0.68658775, 0.72704697, 3.280493e-08, 0.7270467, -0.68658775, -7.5216015e-08, 0.74683803, 0.23592612)
+transform = Transform3D(-0.9999999, 1.0658139e-14, 7.105427e-14, 2.3092639e-14, 0.99922544, 0.03935127, -1.4210853e-14, 0.039351266, -0.99922544, 1.0220526e-14, 1.6551586, 0.08265058)
 bone_name = "head.001"
 bone_idx = 5
 use_external_skeleton = true

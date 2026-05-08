@@ -8,6 +8,7 @@ const VENDOR_MENU_SCENE: PackedScene = preload("uid://diy715xds7cni")
 
 @export var _head_marker: Node3D
 @export var _interact_dialogue: DialogueData
+@export var _profiles_dialogue: DialogueData
 
 var _times_spoken: int = 0
 
@@ -33,7 +34,9 @@ func _on_interact_dialouge_choice_made(choice: int) -> void:
 			_open_vendor_menu(player, true)
 		1: # Selling
 			_open_vendor_menu(player, false)
-		2: # Nevermind
+		2: # Profiles
+			player.hud.start_dialogue.call_deferred(_profiles_dialogue)
+		3: # Nevermind
 			_on_vendor_menu_closed(player)
 
 
@@ -59,3 +62,8 @@ func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 		left.emit()
 		hide()
 		process_mode = Node.PROCESS_MODE_DISABLED
+
+
+func show_vendor() -> void:
+	show()
+	process_mode = Node.PROCESS_MODE_INHERIT

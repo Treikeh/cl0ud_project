@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="NoteData" format=3 uid="uid://c6ob3wkq2v4ih"]
+
+[ext_resource type="Script" uid="uid://ckvnbenl45otq" path="res://entities/fish/note/note_data.gd" id="1_3hab5"]
+
+[resource]
+script = ExtResource("1_3hab5")
+text = "Last minute shopping list for Emilio's birthday: 
+ 
+ - Construction-themed cake decorations 
+ - 23 Toy Hard Hats 
+ - Yellow-flavoured Cake mix 
+ - Yellow table cloth 
+ - 38-year candle. 
+ - Confetti launchers 
+ - Emilio's favorite \"Manstyle\" Perfume as a gift from Aunt Talia."

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://db8o8qi0pho44"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_fykrx"]
+
+[resource]
+script = ExtResource("1_fykrx")
+name = "Old Man"
+lines = Array[String](["You new around here?", "I'll can teach you the basics if you want", "But you'll need a fishing rod first", "I belive the vendor has an old one for sale"])
