@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cyxs8ixd0p0p3"]
+
+[ext_resource type="PackedScene" uid="uid://cbbo1emxf7ran" path="res://levels/ending_level/ending_level.tscn" id="6_iaxwb"]
+
+[node name="Ending_01" type="Node3D" unique_id=669404763]
+
+[node name="Environment" type="Node3D" parent="." unique_id=1205339970]
+
+[node name="EndingLevel" parent="." unique_id=224384734 instance=ExtResource("6_iaxwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120.10982, 138.06714, 221.03976)
