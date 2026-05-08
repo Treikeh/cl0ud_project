@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://wq387qckissl" path="res://entities/characters/vendor/vendor.gd" id="1_72uc0"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="2_x7g4j"]
+[ext_resource type="Resource" uid="uid://cfrn73n5jww3j" path="res://common/data/dialogue/vendor_profiles_01.tres" id="3_5etum"]
 [ext_resource type="Resource" uid="uid://dvrns5pqu5cg6" path="res://common/data/dialogue/vendor_interact_01.tres" id="3_qccll"]
 [ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="6_qccll"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://bjdc7oiy473ob" path="res://entities/characters/vendor/vendor_anim_sm.tres" id="8_5rk7m"]
@@ -15,6 +16,7 @@ size = Vector3(0.6, 1.8000001, 0.4)
 script = ExtResource("1_72uc0")
 _head_marker = NodePath("HeadMarker")
 _interact_dialogue = ExtResource("3_qccll")
+_profiles_dialogue = ExtResource("3_5etum")
 
 [node name="CharacterMesh" parent="." unique_id=1333086119 instance=ExtResource("6_qccll")]
 _skin = "Vendor"

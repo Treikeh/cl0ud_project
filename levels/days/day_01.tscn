@@ -35,6 +35,7 @@ script = ExtResource("1_85oi3")
 [node name="Environment" type="Node3D" parent="." unique_id=2025003428]
 
 [node name="MainLevel" parent="Environment" unique_id=224384734 instance=ExtResource("1_wbuex")]
+_next_day = "uid://fcaru7tgmibi"
 
 [node name="VendorDay01" parent="Environment/MainLevel" unique_id=520470945 instance=ExtResource("16_gbegl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6926503, 2.4760885, 11.769749)

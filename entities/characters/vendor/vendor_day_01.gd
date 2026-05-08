@@ -35,9 +35,7 @@ func _on_interact_dialouge_choice_made(choice: int) -> void:
 	match choice:
 		0: # Buying
 			_open_vendor_menu(player, true)
-		1: # Selling
-			_open_vendor_menu(player, false)
-		2: # Nevermind
+		1: # Nevermind
 			_on_vendor_menu_closed(player)
 
 
