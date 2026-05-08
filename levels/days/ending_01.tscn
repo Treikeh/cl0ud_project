@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://cyxs8ixd0p0p3"]
 
+[ext_resource type="PackedScene" uid="uid://dp1xjafbt7sxl" path="res://levels/ending_level/art/BG/ending_BG.glb" id="2_aiw2r"]
+[ext_resource type="PackedScene" uid="uid://cxn3pwn81mg6g" path="res://levels/art/BuildingOne/BuildingOne_2.glb" id="3_xj1gk"]
+[ext_resource type="PackedScene" uid="uid://q3em1bo70ede" path="res://levels/art/BuildingFour/BuildingFour.glb" id="4_iaxwb"]
+[ext_resource type="PackedScene" uid="uid://bjae0sst12e6s" path="res://levels/main_level/art/HorizonBuildings/HorizonBuildings.glb" id="5_dc1gu"]
+[ext_resource type="PackedScene" uid="uid://bjn7ujpgp5jeh" path="res://levels/art/BuildingTwo/BuildingTwo.glb" id="6_dc1gu"]
 [ext_resource type="PackedScene" uid="uid://cbbo1emxf7ran" path="res://levels/ending_level/ending_level.tscn" id="6_iaxwb"]
+[ext_resource type="PackedScene" uid="uid://2ubaxhpyylwj" path="res://levels/art/crane/Crane.glb" id="7_gn22a"]
 
 [node name="Ending_01" type="Node3D" unique_id=669404763]
 
@@ -8,3 +14,50 @@
 
 [node name="EndingLevel" parent="." unique_id=224384734 instance=ExtResource("6_iaxwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120.10982, 138.06714, 221.03976)
+
+[node name="BGEnvironment" type="Node3D" parent="." unique_id=1592646689]
+
+[node name="ending_BG" parent="BGEnvironment" unique_id=886536628 instance=ExtResource("2_aiw2r")]
+transform = Transform3D(1.2620292, 0, 0, 0, 1.56671, 0, 0, 0, 1.2102696, -74.057144, 172.69664, 225.45702)
+
+[node name="ending_BG3" parent="BGEnvironment" unique_id=574647866 instance=ExtResource("2_aiw2r")]
+transform = Transform3D(1.2620292, 0, 0, 0, 1.56671, 0, 0, 0, 1.2102696, -74.057144, 172.69664, 589.71606)
+
+[node name="ending_BG2" parent="BGEnvironment" unique_id=1171470202 instance=ExtResource("2_aiw2r")]
+transform = Transform3D(1.2620292, 0, 0, 0, 1.56671, 0, 0, 0, 1.2102696, -48.64232, 168.93678, -136.72934)
+
+[node name="BuildingOne_2" parent="BGEnvironment" unique_id=1961841091 instance=ExtResource("3_xj1gk")]
+transform = Transform3D(0.019563884, 0, 0.9998086, 0, 1, 0, -0.9998086, 0, 0.019563884, 193.7988, 105.50369, 379.7243)
+
+[node name="BuildingOne_3" parent="BGEnvironment" unique_id=1855049882 instance=ExtResource("3_xj1gk")]
+transform = Transform3D(-0.9999577, 0, 0.009197801, 0, 1, 0, -0.009197801, 0, -0.9999577, 275.8695, 91.122284, 79.29935)
+
+[node name="BuildingOne_4" parent="BGEnvironment" unique_id=564415956 instance=ExtResource("3_xj1gk")]
+transform = Transform3D(-0.9999577, 0, 0.009197801, 0, 1, 0, -0.009197801, 0, -0.9999577, 312.09528, 74.96454, 5.636711)
+
+[node name="BuildingFour" parent="BGEnvironment" unique_id=648055778 instance=ExtResource("4_iaxwb")]
+transform = Transform3D(0.058927156, 0, 0.5255583, 0, 0.48647502, 0, -0.7632151, 0, 0.040577896, 55.296173, 77.68761, 295.11588)
+
+[node name="BuildingFour3" parent="BGEnvironment" unique_id=1049749063 instance=ExtResource("4_iaxwb")]
+transform = Transform3D(-0.46845397, 0, 0.41689157, 0, 0.48647502, 0, -0.6054095, 0, -0.32258257, 38.893272, 91.957016, 120.71265)
+
+[node name="BuildingFour2" parent="BGEnvironment" unique_id=357315317 instance=ExtResource("4_iaxwb")]
+transform = Transform3D(0.49351758, 0, -0.40294638, 0, 0.48647508, 0, 0.5851581, 0, 0.33984163, 108.81065, 68.78467, 127.22342)
+
+[node name="HorizonBuildings" parent="BGEnvironment" unique_id=1709645425 instance=ExtResource("5_dc1gu")]
+transform = Transform3D(0.10232373, 0, 0.99475116, 0, 1, 0, -0.99475116, 0, 0.10232373, 74.52756, 134.45886, 343.19174)
+
+[node name="HorizonBuildings2" parent="BGEnvironment" unique_id=1237043552 instance=ExtResource("5_dc1gu")]
+transform = Transform3D(-0.90632993, 0, 0.4225708, 0, 1, 0, -0.4225708, 0, -0.90632993, 255.57115, 116.96838, 256.1304)
+
+[node name="BuildingTwo" parent="BGEnvironment" unique_id=578410307 instance=ExtResource("6_dc1gu")]
+transform = Transform3D(-0.9990452, 0, 0.04368908, 0, 1, 0, -0.04368908, 0, -0.9990452, 166.24231, -14.131462, 3.7871456)
+
+[node name="BuildingTwo3" parent="BGEnvironment" unique_id=995139551 instance=ExtResource("6_dc1gu")]
+transform = Transform3D(-0.91984206, 0, -0.392289, 0, 1, 0, 0.392289, 0, -0.91984206, -62.424843, 21.822762, 21.91094)
+
+[node name="BuildingTwo2" parent="BGEnvironment" unique_id=412381665 instance=ExtResource("6_dc1gu")]
+transform = Transform3D(-0.8611061, 0, 0.5084253, 0, 1, 0, -0.5084253, 0, -0.8611061, 308.0799, 21.182526, -34.928444)
+
+[node name="Crane" parent="BGEnvironment" unique_id=664852381 instance=ExtResource("7_gn22a")]
+transform = Transform3D(0.97034216, 0, -0.2417356, 0, 1, 0, 0.2417356, 0, 0.97034216, 327.70584, 33.77578, 114.0079)
