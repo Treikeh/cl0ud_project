@@ -1,21 +1,10 @@
 [gd_scene format=3 uid="uid://1twaxsgrm048"]
 
 [ext_resource type="Script" uid="uid://cgma3bovrjc8o" path="res://entities/profile_wall/profile/profile.gd" id="1_n75v3"]
-[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_ejyi0"]
 [ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="2_ggaso"]
-[ext_resource type="Resource" uid="uid://dae7b8a7gtuao" path="res://common/data/items/profile_name_test_item.tres" id="3_nrb86"]
-[ext_resource type="Resource" uid="uid://dpudvv11ji4un" path="res://common/data/items/profile_age_test_item.tres" id="4_oc2vy"]
-[ext_resource type="Resource" uid="uid://b52500eqghbpw" path="res://common/data/items/profile_job_test_item.tres" id="5_x3ymq"]
+[ext_resource type="Resource" uid="uid://dtuqk7gfy0m0v" path="res://common/data/profiles/ryan.tres" id="3_snl7a"]
+[ext_resource type="Resource" uid="uid://17idptkdwye8" path="res://common/data/profiles/xavier.tres" id="4_slck1"]
 [ext_resource type="Script" uid="uid://jxb6f52u0giu" path="res://common/data/profiles/profile_data.gd" id="6_2ew2u"]
-
-[sub_resource type="Resource" id="Resource_ejyi0"]
-script = ExtResource("6_2ew2u")
-data = Dictionary[int, ExtResource("2_ejyi0")]({
-0: ExtResource("3_nrb86"),
-1: ExtResource("4_oc2vy"),
-2: ExtResource("5_x3ymq")
-})
-metadata/_custom_type_script = "uid://jxb6f52u0giu"
 
 [node name="Profile" type="PanelContainer" unique_id=1526504779 node_paths=PackedStringArray("_spawn_points", "_labels")]
 offset_right = 209.0
@@ -31,7 +20,7 @@ _labels = {
 4: NodePath("MarginContainer/HBoxContainer/VBoxContainer2/LikesLabel"),
 5: NodePath("MarginContainer/HBoxContainer/VBoxContainer2/DislikesLabel")
 }
-_profiles = Array[ExtResource("6_2ew2u")]([SubResource("Resource_ejyi0")])
+_profiles = Array[ExtResource("6_2ew2u")]([ExtResource("3_snl7a"), ExtResource("4_slck1")])
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=15431652]
 layout_mode = 2

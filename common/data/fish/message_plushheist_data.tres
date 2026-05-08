@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="MessageData" format=3 uid="uid://be1bhwa03iau6"]
+
+[ext_resource type="Script" uid="uid://knk2w0s0q2la" path="res://entities/fish/message/message_data.gd" id="1_vxquq"]
+
+[resource]
+script = ExtResource("1_vxquq")
+sender = "Paul "
+recipient = "Edward "
+messages = Array[Dictionary]([{
+"LINES": [" Yo, you know that recent break-in we did on that warehouse yesterday? "],
+"WHO": "Paul "
+}, {
+"LINES": [" What now? "],
+"WHO": "Edward "
+}, {
+"LINES": [" We snagged those crates you asked for but errr... ", " They're filled with plushes! "],
+"WHO": "Paul "
+}, {
+"LINES": [" So? You shall get your payment once I get my limited edition plushes. "],
+"WHO": "Edward "
+}, {
+"LINES": [" You can't seriously be collecting plushies in your 40s man. ", " There are only 3 plush factories left in the world... ", " How did you even know that this crate was in Cloud City? "],
+"WHO": "Paul "
+}, {
+"LINES": [" I have my methods. ", " Regardless, I want that crate delivered to my home at 12th Kekato Street without much delay. ", " Do not contact me again unless you have delivered the crates."],
+"WHO": "Edward "
+}])

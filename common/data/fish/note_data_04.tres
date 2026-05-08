@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="NoteData" format=3 uid="uid://bmxyxps3hj77u"]
-
-[ext_resource type="Script" uid="uid://ckvnbenl45otq" path="res://entities/fish/note/note_data.gd" id="1_p2yqe"]
-
-[resource]
-script = ExtResource("1_p2yqe")
-text = "Espen er ute på eventyr"

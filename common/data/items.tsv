@@ -1,21 +1,12 @@
 FILE_NAME	ITEM_NAME	DESCRIPTION	VALUE	FISH_DATA_PATH	FISHING_RARITY	FISH_POOL	ITEM_TYPE	ICON_PATH	MESH_SCENE_PATH
-test_01	Item 01	General item	3			Default	ITEM	res://icon.svg	res://entities/player/fishing_rod/art/fishing_hook_001_fbx.tscn
 mail_beerparty_fish	Mail Fish "Beer Party"	A low-value mail fish containing data on some Beer party.	4	mail_beerparty_data	160	Default			
 mail_MFC_fish	Mail Fish "MFC"	A low-value mail fishing describing a business transaction.	5	mail_MFC_data	280	Default			
-mail_test_03	Mail 03	Mail item	4	mail_data_04	100	Default			
-mail_test_04	Mail 04	Mail item	4	mail_data_04	150	Default			
-mail_test_05	Mail 05	Mail item	4	mail_data_04	200	Default			
-mail_test_06	Mail 06	Mail item	4	mail_data_04	250	Default			
 message_exploration_fish	Message Fish "Exploration"	A low-value message fish with a conversation about exploring.	6	message_exploration_data	360	Default			
-message_test_02	Message 02	Message item	5	message_data_02	50	Default			
-note_crazy_data_01	Bloody Note Fish?	[color=red][shake rate=20.0 level=5 connected=1]The Truth[/shake][/color]	7	note_meatgrinder_data	500	Default			
-note_test_02	Note 02	Note item	6	note_data_02	50	Default			
-junk_test_01	Junk 01	Junk	1	junk_data_01	1	Default, Toilet			
-message_item_Xavier_01	Xavier Data-Fish 1	A important message fish containing the conversation between [color=yellow]Xavier[/color] and Martin.	12	message_story_Xavier_data_01	80	Default			
-									
-profile_test_name	Name	Mario					PROFILE_DATA	res://icon.svg	
-profile_test_age	Age	30+					PROFILE_DATA	res://icon.svg	
-profile_test_job	Job	Plumber					PROFILE_DATA	res://icon.svg	
+note_crazy_data_01	[color=red][shake rate=20.0 level=5 connected=1]Bloody Note Fish[/shake][/color]	[color=red][shake rate=20.0 level=5 connected=1]The Truth[/shake][/color]	7	note_meatgrinder_data	500	Default			
+note_birthday_fish	Note fish "Birthday Shopping"	The birthday shopping list fish	6	note_birthday_shopping_list	50	Default			
+junk_01	Junk	Junk	1	junk_data_01	1	Default, Toilet			
+message_item_Xavier_01_01	Message Fish "Xavier Transaction" Part 2	Part 1 of an important message fish containing the conversation between Xavier and Martin.	8	message_story_Xavier_data_01_01	150	Default			
+message_item_Xavier_01_02	Message Fish "Xavier Transaction" Part 2	Part 2 of an important message fish containing the conversation between Xavier and Martin.	8	message_story_Xavier_data_01_02	150	Default			
 									
 									
 profile_ryan_name_item	Ryan's name	Ryan					PROFILE_DATA	res://icon.svg	
@@ -24,5 +15,18 @@ profile_terry_name_item	Terry's name	Terry					PROFILE_DATA	res://icon.svg
 profile_terry_address_item	Terry's address	4th Concrete Avenue Street					PROFILE_DATA	res://icon.svg	
 profile_cornelius_mctaro_name_item	Cornelius' name	Cornelius McTaro					PROFILE_DATA	res://icon.svg	
 profile_cornelius_mctaro_likes_item	Cornelius' likes	Mansions, Cars and Money					PROFILE_DATA	res://icon.svg	
-profile_harris_goodwill_name_item	Harris' name	Harris Goodwill							
-profile_harris_goodwill_likes_item	Harris' likes	Mississippi Fried Chicken							
+profile_cornelius_mctaro_occupation_item	Cornelius' occupation	Investor					PROFILE_DATA	res://icon.svg	
+profile_harris_goodwill_name_item	Harris' name	Harris Goodwill					PROFILE_DATA	res://icon.svg	
+profile_harris_goodwill_likes_item	Harris' likes	Mississippi Fried Chicken					PROFILE_DATA	res://icon.svg	
+profile_harris_occupation_item	Harris' occupation	Investor					PROFILE_DATA	res://icon.svg	
+profile_emilio_name_item	Emilio's name	Emilio					PROFILE_DATA	res://icon.svg	
+profile_emilio_likes_item	Emilio's likes	"Manstyle" Perfume					PROFILE_DATA	res://icon.svg	
+profile_emilio_occupation_item	Emilio's occupation	Construction Worker					PROFILE_DATA	res://icon.svg	
+profile_emilio_age_item	Emilio's age	38					PROFILE_DATA	res://icon.svg	
+profile_rebecca_name_item	Rebecca's name	Rebecca					PROFILE_DATA	res://icon.svg	
+profile_rebecca_likes_item	Rebecca's likes	Urban Exploration					PROFILE_DATA	res://icon.svg	
+profile_rebecca_address	Rebecca's address	93th Nostal Edwards Street					PROFILE_DATA	res://icon.svg	
+profile_davy_name	Davy's name	Davy					PROFILE_DATA	res://icon.svg	
+profile_davy_likes	Davy's likes	Urban Exploration					PROFILE_DATA	res://icon.svg	
+profile_xavier_name	Xavier's name	Xavier Brooks					PROFILE_DATA	res://icon.svg	
+profile_xavier_creditcard	Xavier's credit card information	Card Number 8203 1505 6733 2359					PROFILE_DATA	res://icon.svg	

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ProfileRecipe" format=3 uid="uid://bp4svwjnijf4v"]
+
+[ext_resource type="Resource" uid="uid://lve67wnidf3h" path="res://common/data/items/message_exploration_fish.tres" id="1_se0f8"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_0xb2j"]
+[ext_resource type="Resource" uid="uid://eq8sx1jk3xmp" path="res://common/data/items/profile_davy_name.tres" id="3_finu0"]
+[ext_resource type="Resource" uid="uid://urql71q7tk1o" path="res://common/data/items/profile_davy_likes.tres" id="4_a6w4x"]
+[ext_resource type="Script" uid="uid://c8p7f6bgfvt10" path="res://common/data/recipes/profile_recipe.gd" id="5_u6sdl"]
+
+[resource]
+script = ExtResource("5_u6sdl")
+input = ExtResource("1_se0f8")
+outputs = Array[ExtResource("2_0xb2j")]([ExtResource("3_finu0"), ExtResource("4_a6w4x")])

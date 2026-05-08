@@ -7,27 +7,21 @@ script = ExtResource("1_o1xr8")
 sender = "Rebecca "
 recipient = "Davy "
 messages = Array[Dictionary]([{
-"LINES": [" Hey Davy, me and some friends found this abandoned building with some crazy tunnels. We're thinking of heading into it later today, wanna join? "],
+"LINES": [" Hey Davy, me and some friends found this abandoned building with some crazy tunnels. ", " We're thinking of heading into it later today, wanna join? "],
 "WHO": "Rebecca "
 }, {
-"LINES": [" Isn't every building in Cloud City kinda abandoned and filled with tunnels? "],
+"LINES": [" Isn't every building in Cloud City kinda abandoned? 🤔 "],
 "WHO": "Davy "
 }, {
-"LINES": [" Yeah... but this place isn't filled with criminals! "],
+"LINES": [" Yeah... but this place isn't filled with criminals! 😅 "],
 "WHO": "Rebecca "
 }, {
-"LINES": [" Ok. Tjhat's a good start. ", " What do we expect to find in there? "],
+"LINES": [" Ok. ", " That's a good start. ", " What do we expect to find in there? "],
 "WHO": "Davy "
 }, {
-"LINES": [" Not sure, the building has this gaudy sign outside it with these animals characters. ", " Half of them have melted away in the Cloud so they look kinda scary now. "],
+"LINES": [" No idea! ", " Meet up at my place at 93th Nostal Edwards Street. ", " ❗ Also, don't forget your cloudmask. ❗ ", " I'm 100% sure we are going to stumble into some deep Cloud down in those tunnels. "],
 "WHO": "Rebecca "
 }, {
-"LINES": [" Hm, I think i'll bite, not much on my plate this coming week. ", "  Might as well see if I can salvage something good. "],
-"WHO": "Davy "
-}, {
-"LINES": [" The address for this place is Nostal Edwards Street 93. ", " You can't miss the sign! ", " Also, don't forget your cloudmask. ", " I'm 100% sure we are going to stumble into some deep Cloud down in the tunnels. "],
-"WHO": "Rebecca "
-}, {
-"LINES": [" Yeah."],
+"LINES": [" Roger that."],
 "WHO": "Davy "
 }])

@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="MessageData" format=3 uid="uid://b30pxh2tbsttw"]
+
+[ext_resource type="Script" uid="uid://knk2w0s0q2la" path="res://entities/fish/message/message_data.gd" id="1_je7j5"]
+
+[resource]
+script = ExtResource("1_je7j5")
+sender = " Junior Jack "
+recipient = " Tina "
+messages = Array[Dictionary]([{
+"LINES": [" You know what time it is. "],
+"WHO": " Junior Jack "
+}, {
+"LINES": [" No? "],
+"WHO": " Tina "
+}, {
+"LINES": [" It’s payin’ up time, that’s what. "],
+"WHO": " Junior Jack "
+}, {
+"LINES": [" No clue what you are talking about? "],
+"WHO": " Tina "
+}, {
+"LINES": [" Me and some friends \"cleared\" out those large rats down in the basement. "],
+"WHO": " Junior Jack "
+}, {
+"LINES": [" WHAT!? "],
+"WHO": " Tina "
+}, {
+"LINES": [" Took em out of those see-through crates, killed em and buried them. "],
+"WHO": " Junior Jack "
+}, {
+"LINES": [" Those rats were MY PETS. "],
+"WHO": " Tina "
+}, {
+"LINES": [" Oh... ", " Who the hell chooses to own rats? "],
+"WHO": " Junior Jack "
+}, {
+"LINES": [" Me, you heartless idiot! ", " I sell them as affordable pets! "],
+"WHO": " Tina "
+}, {
+"LINES": [" So, uh, I won't be expecting any payment then... "],
+"WHO": " Junior Jack "
+}, {
+"LINES": [" Tina blocked Junior Jack"],
+"WHO": "SYSTEM"
+}])

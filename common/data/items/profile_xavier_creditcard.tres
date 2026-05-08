@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://rfpk7tjantbn"]
+
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_58frt"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="1_hho2g"]
+
+[resource]
+script = ExtResource("1_hho2g")
+name = "Xavier's credit card information"
+description = "Card Number 8203 1505 6733 2359"
+type = "PROFILE_DATA"
+icon = ExtResource("1_58frt")
