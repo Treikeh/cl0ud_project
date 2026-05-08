@@ -22,6 +22,9 @@ _profiles_dialogue = ExtResource("3_5etum")
 _skin = "Vendor"
 _animation = ExtResource("8_5rk7m")
 
+[node name="AnimationTree" parent="CharacterMesh" index="4" unique_id=2032088472]
+tree_root = ExtResource("8_5rk7m")
+
 [node name="HeadMarker" type="BoneAttachment3D" parent="." unique_id=229792294]
 transform = Transform3D(-1, -3.811204e-07, 7.05043e-08, -2.5233814e-07, 0.77826, 0.6279422, -2.9419215e-07, 0.62794197, -0.7782601, -1.16333595e-07, 0.8872272, -0.06168613)
 bone_name = "head.001"

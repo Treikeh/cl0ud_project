@@ -37,12 +37,12 @@ script = ExtResource("1_85oi3")
 [node name="MainLevel" parent="Environment" unique_id=224384734 instance=ExtResource("1_wbuex")]
 _next_day = "uid://fcaru7tgmibi"
 
-[node name="VendorDay01" parent="Environment/MainLevel" unique_id=520470945 instance=ExtResource("16_gbegl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6926503, 2.4760885, 11.769749)
-
-[node name="Vendor" parent="Environment/MainLevel" index="4" unique_id=520470945]
+[node name="Vendor" parent="Environment/MainLevel" index="3" unique_id=520470945]
 process_mode = 4
 visible = false
+
+[node name="VendorDay01" parent="Environment/MainLevel" unique_id=1556177684 instance=ExtResource("16_gbegl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6926503, 2.4760885, 11.769749)
 
 [node name="SubwayCartSpawnerTunnel" parent="Environment" unique_id=1384092551 instance=ExtResource("5_1ul8t")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -15.9, 11.7, -225)
@@ -70,6 +70,9 @@ _head_marker = NodePath("HeadMarker")
 [node name="CharacterMesh" parent="Characters/IntroGuy" unique_id=1966623919 instance=ExtResource("3_0o6tx")]
 _skin = "Vendor"
 _animation = ExtResource("4_2ptgh")
+
+[node name="AnimationTree" parent="Characters/IntroGuy/CharacterMesh" index="4" unique_id=2032088472]
+tree_root = ExtResource("4_2ptgh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Characters/IntroGuy" unique_id=1570267878]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
