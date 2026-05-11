@@ -2,35 +2,34 @@
 
 [ext_resource type="PackedScene" uid="uid://ywf1dad34t7b" path="res://entities/characters/rig/character.glb" id="1_c6gtc"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://blwgmxdafsu71" path="res://entities/characters/rig/idle_anim_sm.tres" id="2_tion6"]
-[ext_resource type="AnimationNodeStateMachine" uid="uid://bnsiux2a5homt" path="res://entities/characters/rig/squatting_anim_sm.tres" id="3_tion6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_g0b3o"]
 radius = 2.0
 
-[node name="CharacterMesh" unique_id=1966623919 node_paths=PackedStringArray("_default_look_position") instance=ExtResource("1_c6gtc")]
+[node name="CharacterMesh" unique_id=1186258053 node_paths=PackedStringArray("_default_look_position") instance=ExtResource("1_c6gtc")]
 _default_look_position = NodePath("DefaultLookPosition")
 _animation = ExtResource("2_tion6")
 
-[node name="Skeleton3D" parent="." index="0" unique_id=161808251]
-bones/2/position = Vector3(-1.9216471e-15, 0.13338709, 0.24449366)
-bones/2/rotation = Quaternion(0.595352, -2.877017e-08, -6.98012e-08, 0.803465)
-bones/3/rotation = Quaternion(0.47727358, 1.3117581e-07, -7.472158e-08, 0.8787548)
-bones/4/rotation = Quaternion(-0.079858296, -1.469889e-07, -2.9575686e-08, 0.9968063)
-bones/5/rotation = Quaternion(-0.24208458, 1.4463717e-07, 1.9936591e-08, 0.9702552)
-bones/6/rotation = Quaternion(-0.1254717, 0.17451723, -0.6382839, 0.73918486)
-bones/7/rotation = Quaternion(0.4580327, -0.12318094, -0.4120671, 0.77796745)
-bones/8/rotation = Quaternion(0.71648604, 0.008284097, -0.03130172, 0.69684964)
-bones/9/rotation = Quaternion(-0.2180232, 0.25835097, -0.26502255, 0.9030414)
-bones/10/rotation = Quaternion(-0.1254718, -0.17451723, 0.6382839, 0.7391849)
-bones/11/rotation = Quaternion(0.4580326, 0.12318125, 0.4120672, 0.7779674)
-bones/12/rotation = Quaternion(0.7164861, -0.00828416, 0.031301953, 0.6968496)
-bones/13/rotation = Quaternion(-0.21802294, -0.2583506, 0.26502252, 0.90304154)
-bones/14/rotation = Quaternion(0.067670934, 0.7785039, 0.6094984, -0.13365611)
-bones/15/rotation = Quaternion(-0.98371816, -1.3034051e-08, -4.325646e-08, 0.17971846)
-bones/16/rotation = Quaternion(0.79701585, -0.059826326, 0.013185703, 0.60084325)
-bones/17/rotation = Quaternion(-0.06767089, 0.77850384, 0.6094986, 0.13365601)
-bones/18/rotation = Quaternion(-0.98371816, 8.913481e-09, 5.384643e-08, 0.1797185)
-bones/19/rotation = Quaternion(0.797016, 0.05982635, -0.0131856585, 0.6008432)
+[node name="Skeleton3D" parent="." index="0" unique_id=747327207]
+bones/2/position = Vector3(8.885667e-16, 0.067006476, 0.9022027)
+bones/2/rotation = Quaternion(0.71577483, -5.2722548e-08, -5.4039504e-08, 0.6983312)
+bones/3/rotation = Quaternion(-0.020237818, 1.5096492e-07, 1.3463789e-15, 0.9997952)
+bones/4/rotation = Quaternion(0.118337706, -1.4993482e-07, 2.9180844e-15, 0.9929735)
+bones/5/rotation = Quaternion(-0.08719101, 1.5042073e-07, 2.9121819e-16, 0.9961916)
+bones/6/rotation = Quaternion(-0.09403469, 0.19764803, -0.5987004, 0.7704873)
+bones/7/rotation = Quaternion(0.3292624, 0.3625818, -0.5858993, 0.64563364)
+bones/8/rotation = Quaternion(0.2878024, 0.011383119, -0.012573506, 0.9575396)
+bones/9/rotation = Quaternion(-0.039328743, -0.18789954, 0.02593368, 0.9810578)
+bones/11/rotation = Quaternion(-0.094034806, -0.19764803, 0.59870046, 0.7704872)
+bones/12/rotation = Quaternion(0.3292627, -0.3625816, 0.58589953, 0.64563346)
+bones/13/rotation = Quaternion(0.28780174, -0.011383275, 0.012573512, 0.9575398)
+bones/14/rotation = Quaternion(-0.039328396, 0.18789971, -0.025933653, 0.9810579)
+bones/16/rotation = Quaternion(0.021464093, 0.09000495, 0.9956806, -0.0076508527)
+bones/17/rotation = Quaternion(-0.17693375, 5.916558e-08, -9.47164e-09, 0.98422277)
+bones/18/rotation = Quaternion(0.6299418, -0.06727821, 0.028372804, 0.7732025)
+bones/19/rotation = Quaternion(-0.02146392, 0.090004966, 0.9956806, 0.00765084)
+bones/20/rotation = Quaternion(-0.17693375, -6.021509e-08, 1.2282123e-08, 0.98422277)
+bones/21/rotation = Quaternion(0.6299418, 0.067278236, -0.028372835, 0.7732025)
 
 [node name="LookAtModifier3D" type="LookAtModifier3D" parent="Skeleton3D" index="3" unique_id=980359682]
 target_node = NodePath("../../DefaultLookPosition")
@@ -59,7 +58,7 @@ monitorable = false
 shape = SubResource("SphereShape3D_g0b3o")
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="4" unique_id=2032088472]
-tree_root = ExtResource("3_tion6")
+tree_root = ExtResource("2_tion6")
 anim_player = NodePath("../AnimationPlayer")
 
 [connection signal="body_entered" from="PlayerLookAtTrigger" to="." method="_on_player_look_at_trigger_body_entered"]

@@ -41,7 +41,7 @@ _next_day = "uid://fcaru7tgmibi"
 process_mode = 4
 visible = false
 
-[node name="VendorDay01" parent="Environment/MainLevel" unique_id=1556177684 instance=ExtResource("16_gbegl")]
+[node name="VendorDay01" parent="Environment/MainLevel" unique_id=1099009628 instance=ExtResource("16_gbegl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6926503, 2.4760885, 11.769749)
 
 [node name="SubwayCartSpawnerTunnel" parent="Environment" unique_id=1384092551 instance=ExtResource("5_1ul8t")]
@@ -71,26 +71,26 @@ _head_marker = NodePath("HeadMarker")
 _skin = "Vendor"
 _animation = ExtResource("4_2ptgh")
 
-[node name="Skeleton3D" parent="Characters/IntroGuy/CharacterMesh" index="0" unique_id=161808251]
-bones/2/position = Vector3(-1.7898774e-15, 0.17699176, 0.8371117)
-bones/2/rotation = Quaternion(0.66481227, 0.011050309, -0.012413625, 0.7468256)
-bones/3/rotation = Quaternion(0.05948518, 0.0011075826, -0.018580718, 0.9980557)
-bones/4/rotation = Quaternion(0.15450272, -0.005811762, 0.037136354, 0.98727715)
-bones/5/rotation = Quaternion(-0.087191015, 1.5043304e-07, 5.7352324e-11, 0.9961916)
-bones/6/rotation = Quaternion(-0.05827667, 0.15277188, -0.60597205, 0.77850014)
-bones/7/rotation = Quaternion(0.6761979, 0.19913793, -0.33030224, 0.627695)
-bones/8/rotation = Quaternion(0.83699447, 0.006490213, -0.036566745, 0.5459496)
-bones/9/rotation = Quaternion(0.2636195, 0.17539395, -0.29383966, 0.9018869)
-bones/10/rotation = Quaternion(-0.094034806, -0.19764803, 0.59870034, 0.7704872)
-bones/11/rotation = Quaternion(0.70787317, -0.2430675, 0.25600836, 0.6117953)
-bones/12/rotation = Quaternion(0.8879833, -0.0054471353, 0.038794313, 0.45820403)
-bones/13/rotation = Quaternion(-0.3253911, -0.18084463, -0.05205314, 0.92666405)
-bones/14/rotation = Quaternion(0.27673033, 0.2248517, 0.9332144, 0.044416945)
-bones/15/rotation = Quaternion(-0.28374898, 8.1521854e-08, -1.3855663e-08, 0.9588986)
-bones/16/rotation = Quaternion(0.5488268, 0.20988077, 0.042177368, 0.8080596)
-bones/17/rotation = Quaternion(-0.2925379, 0.35187122, 0.875699, -0.15414119)
-bones/18/rotation = Quaternion(-0.4215913, -6.239224e-08, 1.7920105e-08, 0.90678596)
-bones/19/rotation = Quaternion(0.3013828, -0.052952595, 0.012169002, 0.951954)
+[node name="Skeleton3D" parent="Characters/IntroGuy/CharacterMesh" index="0" unique_id=1388878871]
+bones/2/position = Vector3(0, 0.03985116, 0.9010555)
+bones/2/rotation = Quaternion(0.6992328, -5.397304e-08, -5.2790615e-08, 0.7148941)
+bones/3/rotation = Quaternion(-0.020237816, 1.5096494e-07, 1.8877656e-15, 0.9997952)
+bones/4/rotation = Quaternion(0.118337706, -1.4993483e-07, 3.577854e-15, 0.9929734)
+bones/5/rotation = Quaternion(-0.087191015, 1.5042072e-07, 1.7831477e-15, 0.9961916)
+bones/6/rotation = Quaternion(-0.1042522, 0.18796507, -0.5476769, 0.8086103)
+bones/7/rotation = Quaternion(0.17669354, -0.026567206, -0.17737667, 0.9677867)
+bones/8/rotation = Quaternion(0.084354125, 0.0118446, -0.0036852618, 0.99635863)
+bones/9/rotation = Quaternion(-0.048209473, -0.008383197, 0.0014714809, 0.998801)
+bones/10/rotation = Quaternion(7.432282e-16, 1.196446e-07, 1.0066305e-15, 1)
+bones/11/rotation = Quaternion(-0.10425229, -0.18796514, 0.5476769, 0.8086103)
+bones/12/rotation = Quaternion(0.17669354, 0.02656735, 0.17737678, 0.96778667)
+bones/13/rotation = Quaternion(0.08435411, -0.011844773, 0.0036852737, 0.99635863)
+bones/14/rotation = Quaternion(-0.04820948, 0.0083832545, -0.0014714844, 0.998801)
+bones/15/rotation = Quaternion(-1.230132e-15, -1.773866e-07, 2.3795273e-17, 1)
+bones/16/rotation = Quaternion(7.549692e-08, 0.005109452, 0.99998695, 3.8575299e-10)
+bones/17/rotation = Quaternion(-0.14321767, 5.888357e-08, -7.7723366e-09, 0.98969126)
+bones/18/rotation = Quaternion(0.6531336, 4.7913343e-08, 1.19185586e-07, 0.75724274)
+bones/19/rotation = Quaternion(7.549692e-08, 0.005109454, 0.99998695, 3.8575299e-10)
 
 [node name="AnimationTree" parent="Characters/IntroGuy/CharacterMesh" index="4" unique_id=2032088472]
 tree_root = ExtResource("4_2ptgh")
@@ -114,7 +114,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6000004, 0.5220337, -1.800
 shape = SubResource("BoxShape3D_mtc2s")
 
 [node name="HeadMarker" type="BoneAttachment3D" parent="Characters/IntroGuy" unique_id=2116972068]
-transform = Transform3D(-0.9995569, -0.0017839717, 0.029708287, 0.000902293, 0.99592656, 0.090162605, -0.029748121, 0.09014937, -0.99548393, -0.03533554, 1.5850267, 0.185166)
+transform = Transform3D(-1, 4.6185278e-14, 8.526513e-14, 5.5067062e-14, 0.99914217, 0.041412637, 0, 0.04141262, -0.9991423, 0, 1.6540117, 0.055495143)
 bone_name = "head.001"
 bone_idx = 5
 use_external_skeleton = true
@@ -152,7 +152,6 @@ shape = SubResource("BoxShape3D_5xhar")
 event_name = "event:/Actions/Bell"
 event_guid = "{aea974cf-9a5f-4d52-9651-90c5f09c5ce4}"
 
-[connection signal="left" from="Environment/MainLevel/VendorDay01" to="Environment/MainLevel/Vendor" method="show_vendor"]
 [connection signal="body_entered" from="Characters/IntroGuy/PlayerTriggerArea" to="Characters/IntroGuy" method="_body_entered_trigger"]
 [connection signal="interacted" from="Interactable/ElevatorButton" to="." method="_end_day"]
 [connection signal="interacted_no_player" from="Interactable/Bell" to="Interactable/Bell/FmodEventEmitter3D" method="play_one_shot"]
