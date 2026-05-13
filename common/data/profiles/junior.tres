@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProfileData" format=3 uid="uid://kix5c1smybkh"]
+
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="1_1r6iu"]
+[ext_resource type="Resource" uid="uid://dpl8ne332qrvm" path="res://common/data/items/profile_juniorjack_name_item.tres" id="2_flxwd"]
+[ext_resource type="Resource" uid="uid://dmtc7g6kje13j" path="res://common/data/items/profile_juniorjack_occupation_item.tres" id="3_0x8hm"]
+[ext_resource type="Script" uid="uid://jxb6f52u0giu" path="res://common/data/profiles/profile_data.gd" id="4_farvy"]
+
+[resource]
+script = ExtResource("4_farvy")
+data = Dictionary[int, ExtResource("1_1r6iu")]({
+0: ExtResource("2_flxwd"),
+2: ExtResource("3_0x8hm")
+})

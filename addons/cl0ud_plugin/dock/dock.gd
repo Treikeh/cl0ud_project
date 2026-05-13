@@ -16,15 +16,17 @@ var _debug_settings: Dictionary = {}
 @export var _item_button: Button
 @export var _fish_data_button: Button
 @export var _dialogue_button: Button
+@export var _profiles_button: Button
 
 
 func _ready() -> void:
 	_enable_save_check_box.toggled.connect(_enable_save)
+	_parse_data_button.pressed.connect(_parse_all_data)
 	_recipes_button.pressed.connect(_parse_file.bind("recipes"))
 	_item_button.pressed.connect(_parse_file.bind("items"))
 	_fish_data_button.pressed.connect(_parse_file.bind("fish_data"))
 	_dialogue_button.pressed.connect(_parse_file.bind("dialogue"))
-	_parse_data_button.pressed.connect(_parse_all_data)
+	_profiles_button.pressed.connect(_parse_file.bind("profiles"))
 	
 	# Set up dock
 	_debug_settings = Globals.load_data_from_file(Globals.DEBUG_SETTINGS_FILE)
@@ -54,6 +56,8 @@ func _parse_all_data() -> void:
 	_parse_file("items")
 	await get_tree().process_frame
 	_parse_file("recipes")
+	await get_tree().process_frame
+	_parse_file("profiles")
 
 
 func _parse_file(file: String) -> void:
@@ -343,14 +347,28 @@ func _create_profiles_data(data: Array[PackedStringArray]) -> void:
 		var age_file: String = row[2].strip_edges()
 		if not age_file.is_empty():
 			var age_item: ItemData = load(ITEM_SAVE_PATH + age_file + ".tres")
-			profile.data[ProfileData.DataTypes.NAME] = age_item
+			profile.data[ProfileData.DataTypes.BIRTHDAY] = age_item
 		
 		var occupation_file: String = row[3].strip_edges()
 		if not occupation_file.is_empty():
 			var occupation_item: ItemData = load(ITEM_SAVE_PATH + occupation_file + ".tres")
 			profile.data[ProfileData.DataTypes.OCCUPATION] = occupation_item
 		
+		var address_file: String = row[4].strip_edges()
+		if not address_file.is_empty():
+			var address_item: ItemData = load(ITEM_SAVE_PATH + address_file + ".tres")
+			profile.data[ProfileData.DataTypes.ADDRESS] = address_item
+		
+		var likes_file: String = row[5].strip_edges()
+		if not address_file.is_empty():
+			var likes_item: ItemData = load(ITEM_SAVE_PATH + likes_file + ".tres")
+			profile.data[ProfileData.DataTypes.LIKES] = likes_item
+		
+		var dislikes_file: String = row[6].strip_edges()
+		if not dislikes_file.is_empty():
+			var dislikes_item: ItemData = load(ITEM_SAVE_PATH + likes_file + ".tres")
+			profile.data[ProfileData.DataTypes.DISLIKES] = dislikes_item
+		
 		_save_resource(profile, path)
-		return
 
 #endregion

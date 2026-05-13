@@ -3,14 +3,11 @@
 [ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="1_ludvc"]
 [ext_resource type="Resource" uid="uid://ccx0x1i63nlu7" path="res://common/data/items/profile_harris_goodwill_name_item.tres" id="2_ludvc"]
 [ext_resource type="Resource" uid="uid://bsu4gpo1jx3gx" path="res://common/data/items/profile_harris_occupation_item.tres" id="3_7l6gh"]
-[ext_resource type="Resource" uid="uid://c1rto6gthf1vr" path="res://common/data/items/profile_harris_goodwill_likes_item.tres" id="4_x6aap"]
 [ext_resource type="Script" uid="uid://jxb6f52u0giu" path="res://common/data/profiles/profile_data.gd" id="5_7csyr"]
 
 [resource]
 script = ExtResource("5_7csyr")
 data = Dictionary[int, ExtResource("1_ludvc")]({
 0: ExtResource("2_ludvc"),
-2: ExtResource("3_7l6gh"),
-4: ExtResource("4_x6aap")
+2: ExtResource("3_7l6gh")
 })
-metadata/_custom_type_script = "uid://jxb6f52u0giu"

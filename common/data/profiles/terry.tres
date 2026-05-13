@@ -9,6 +9,6 @@
 script = ExtResource("4_37mct")
 data = Dictionary[int, ExtResource("1_pbdfd")]({
 0: ExtResource("2_v5i2a"),
-3: ExtResource("3_yd7ne")
+3: ExtResource("3_yd7ne"),
+4: null
 })
-metadata/_custom_type_script = "uid://jxb6f52u0giu"
