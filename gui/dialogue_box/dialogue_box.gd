@@ -8,6 +8,7 @@ signal dialogue_ended
 @export var _text_label: Label
 @export var _dialogue_choice_container: Container
 
+var _show_chocies: bool = false
 var _dialogue_progress: int = 0
 var _dialogue: DialogueData
 
@@ -34,12 +35,13 @@ func _update_dialogue_box() -> void:
 	_name_label.text = _dialogue.name
 	_text_label.text = ""
 	
+	if _dialogue_progress >= _dialogue.lines.size() - 1 and not _dialogue.choices.is_empty():
+		_show_chocies = true
 	
 	var tween: Tween = create_tween()
 	tween.tween_property(_text_label, "text", line, 0.4)
 	tween.tween_interval(0.25)
-	if _dialogue_progress >= _dialogue.lines.size() - 1:
-		tween.tween_callback(_show_dialogue_choices)
+	tween.tween_callback(_show_dialogue_choices)
 
 
 func _end_dialogue() -> void:
@@ -53,14 +55,18 @@ func _end_dialogue() -> void:
 func _progress_dialogue() -> void:
 	var desired_progress: int = _dialogue_progress + 1
 	if desired_progress >= _dialogue.lines.size():
-		_end_dialogue()
+		if _show_chocies:
+			_show_dialogue_choices()
+			print("SHOW choices")
+		else:
+			_end_dialogue()
 	else:
 		_dialogue_progress = desired_progress
 		_update_dialogue_box()
 
 
 func _show_dialogue_choices() -> void:
-	if _dialogue.choices.is_empty():
+	if not _show_chocies:
 		return
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -73,6 +79,7 @@ func _show_dialogue_choices() -> void:
 	
 	#NOTE: Call deferred to stop progress input to chose an option when the buttons spawn
 	_dialogue_choice_container.get_child(0).grab_focus.call_deferred()
+	_show_chocies = false
 
 
 func _on_dialogue_choice_selected(choice: Control) -> void:
