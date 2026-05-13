@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://eafl2by4c1sm" path="res://levels/main_level/main_level.gd" id="1_um8ys"]
 [ext_resource type="PackedScene" uid="uid://dfwa3ko7oftnj" path="res://entities/player/player.tscn" id="2_438kw"]
 [ext_resource type="PackedScene" uid="uid://bocx17sre2uti" path="res://common/scripts/fish_area/fish_area_3d.tscn" id="4_sj11d"]
-[ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/characters/vendor/vendor.tscn" id="6_hp128"]
 [ext_resource type="PackedScene" uid="uid://bx4sr0m02ndfl" path="res://common/scripts/respawn_area/respawn_area_3d.tscn" id="7_hp128"]
 [ext_resource type="PackedScene" uid="uid://bjn7ujpgp5jeh" path="res://levels/art/BuildingTwo/BuildingTwo.glb" id="8_ki8py"]
 [ext_resource type="PackedScene" uid="uid://cxn3pwn81mg6g" path="res://levels/art/BuildingOne/BuildingOne_2.glb" id="8_t80xa"]
@@ -19,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://bio2e7voof108" path="res://entities/profile_wall/profile_wall.tscn" id="17_224rj"]
 [ext_resource type="PackedScene" uid="uid://bjae0sst12e6s" path="res://levels/main_level/art/HorizonBuildings/HorizonBuildings.glb" id="17_ddgsd"]
 [ext_resource type="PackedScene" uid="uid://b0l8syuol7cs4" path="res://entities/profile_printer/profile_printer.tscn" id="18_5gklf"]
-[ext_resource type="PackedScene" uid="uid://iomcinpu06my" path="res://environment/vendor_door/vendor_door.tscn" id="19_o886p"]
 [ext_resource type="PackedScene" uid="uid://q3em1bo70ede" path="res://levels/art/BuildingFour/BuildingFour.glb" id="20_xpbmc"]
 [ext_resource type="PackedScene" uid="uid://duqnyxm3y881h" path="res://levels/art/computer/computer.glb" id="21_f1dbq"]
 
@@ -390,7 +388,7 @@ shape = SubResource("BoxShape3D_sj11d")
 debug_color = Color(0, 1, 0, 0.41960785)
 
 [node name="RespawnArea3D" parent="System" unique_id=1922286486 instance=ExtResource("7_hp128")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20.358528, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.135313, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="System/RespawnArea3D" unique_id=404162084]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -23.93164, 0)
@@ -424,12 +422,6 @@ event_name = "event:/Ambience/Base Ambience Loop"
 event_guid = "{ea579e07-8d00-4320-bd16-a7da71609eab}"
 autoplay = true
 
-[node name="Vendor" parent="." unique_id=520470945 instance=ExtResource("6_hp128")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6926503, 2.4760885, 11.769749)
-
-[node name="VendorDoor" parent="." unique_id=525246973 instance=ExtResource("19_o886p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7000003, 3.5, 11.099999)
-
 [node name="Player" parent="." unique_id=913738857 instance=ExtResource("2_438kw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.11393, 3.5083036, 4.860615)
 
@@ -441,8 +433,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.11393, 3.5083036, 4.86061
 
 [node name="Computer" parent="." unique_id=832352687 instance=ExtResource("21_f1dbq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.617591, 3.3345091, 10.500334)
-
-[connection signal="left" from="Vendor" to="VendorDoor" method="close"]
 
 [editable path="System/ProfileSystem/ProfilePrinter"]
 [editable path="Player"]
