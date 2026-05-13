@@ -7,6 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://bjn7ujpgp5jeh" path="res://levels/art/BuildingTwo/BuildingTwo.glb" id="6_dc1gu"]
 [ext_resource type="PackedScene" uid="uid://cbbo1emxf7ran" path="res://levels/ending_level/ending_level.tscn" id="6_iaxwb"]
 [ext_resource type="PackedScene" uid="uid://2ubaxhpyylwj" path="res://levels/art/crane/Crane.glb" id="7_gn22a"]
+[ext_resource type="PackedScene" uid="uid://qtxedfdabwdw" path="res://environment/lights/blinking_light.tscn" id="8_gn22a"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gn22a"]
+noise_type = 4
+seed = 38
+frequency = 0.0116
+fractal_type = 3
+fractal_octaves = 2
+fractal_lacunarity = 1.64
+fractal_gain = 0.14
+fractal_ping_pong_strength = 2.235
 
 [node name="Ending_01" type="Node3D" unique_id=669404763]
 
@@ -61,3 +72,31 @@ transform = Transform3D(-0.8611061, 0, 0.5084253, 0, 1, 0, -0.5084253, 0, -0.861
 
 [node name="Crane" parent="BGEnvironment" unique_id=664852381 instance=ExtResource("7_gn22a")]
 transform = Transform3D(0.97034216, 0, -0.2417356, 0, 1, 0, 0.2417356, 0, 0.97034216, 327.70584, 33.77578, 114.0079)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=116334547]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 149.76436, 137.51817, 215.92146)
+light_color = Color(0.85130984, 0.65254664, 0.5278985, 1)
+light_energy = 2.342
+light_indirect_energy = 0.895
+omni_range = 8.036
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1816484503]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 137.09575, 137.51817, 221.23189)
+light_color = Color(0.85130984, 0.65254664, 0.5278985, 1)
+light_energy = 2.342
+light_indirect_energy = 0.895
+omni_range = 11.233
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=956648721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 171.66917, 138.24026, 213.77013)
+light_color = Color(0.85130984, 0.65254664, 0.5278985, 1)
+light_energy = 2.342
+light_indirect_energy = 0.895
+omni_range = 10.623
+
+[node name="BlinkingLight" parent="." unique_id=1438144511 instance=ExtResource("8_gn22a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 185.44148, 139.51453, 210.4724)
+omni_range = 9.77
+omni_attenuation = 0.262
+_speed = 100.0
+_noise_map = SubResource("FastNoiseLite_gn22a")
