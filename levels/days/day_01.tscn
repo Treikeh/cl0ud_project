@@ -64,11 +64,11 @@ _trigger_dialogue = ExtResource("7_p58p1")
 _old_man_dialogue = ExtResource("8_gbegl")
 _head_marker = NodePath("HeadMarker")
 
-[node name="CharacterMesh" parent="Characters/IntroGuy" unique_id=1966623919 instance=ExtResource("3_0o6tx")]
+[node name="CharacterMesh" parent="Characters/IntroGuy" unique_id=1186258053 instance=ExtResource("3_0o6tx")]
 _skin = "Vendor"
 _animation = ExtResource("4_2ptgh")
 
-[node name="Skeleton3D" parent="Characters/IntroGuy/CharacterMesh" index="0" unique_id=75494330]
+[node name="Skeleton3D" parent="Characters/IntroGuy/CharacterMesh" index="0" unique_id=1640439173]
 bones/2/position = Vector3(-1.7898774e-15, 0.17699176, 0.8371117)
 bones/2/rotation = Quaternion(0.66481227, 0.011050309, -0.012413625, 0.7468256)
 bones/3/rotation = Quaternion(0.05948518, 0.0011075826, -0.018580718, 0.9980557)
@@ -123,7 +123,7 @@ transform = Transform3D(-0.25881898, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, -0.25
 [node name="Maxwell" parent="Characters" unique_id=1585785834 instance=ExtResource("9_5xhar")]
 transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, -12.9, 3.016487, 3.4)
 
-[node name="VendorDay01" parent="Characters" unique_id=1099009628 instance=ExtResource("16_gbegl")]
+[node name="VendorDay01" parent="Characters" unique_id=520470945 instance=ExtResource("16_gbegl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6926503, 2.4760885, 11.769749)
 
 [node name="Interactable" type="Node3D" parent="." unique_id=1143656547]

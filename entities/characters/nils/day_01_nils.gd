@@ -19,7 +19,7 @@ func _ready() -> void:
 
 
 func _on_interacted(player: Player) -> void:
-	if player.upgrades.has(_fishing_rod_upgrade):
+	if Globals.upgrades.has(_fishing_rod_upgrade):
 		if _caught_fish:
 			player.hud.start_dialogue(_repeat_dialogue)
 		else:
