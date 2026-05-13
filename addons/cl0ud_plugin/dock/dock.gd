@@ -5,11 +5,13 @@ const ITEM_SAVE_PATH: String = "res://common/data/items/"
 const FISH_DATA_SAVE_PATH: String = "res://common/data/fish/"
 const DIALOGUE_SAVE_PATH: String = "res://common/data/dialogue/"
 const RECIPES_SAVE_PATH: String = "res://common/data/recipes/"
+const PROFILES_SAVE_PATH: String = "res://common/data/profiles/"
 
 var _file_paths: Dictionary = {}
 var _debug_settings: Dictionary = {}
 
 @export var _enable_save_check_box: CheckBox
+@export var _parse_data_button: Button
 @export var _recipes_button: Button
 @export var _item_button: Button
 @export var _fish_data_button: Button
@@ -22,6 +24,7 @@ func _ready() -> void:
 	_item_button.pressed.connect(_parse_file.bind("items"))
 	_fish_data_button.pressed.connect(_parse_file.bind("fish_data"))
 	_dialogue_button.pressed.connect(_parse_file.bind("dialogue"))
+	_parse_data_button.pressed.connect(_parse_all_data)
 	
 	# Set up dock
 	_debug_settings = Globals.load_data_from_file(Globals.DEBUG_SETTINGS_FILE)
@@ -42,6 +45,17 @@ func _enable_save(toggled_on: bool) -> void:
 
 #region Parse data
 
+
+func _parse_all_data() -> void:
+	_parse_file("dialogue")
+	await get_tree().process_frame
+	_parse_file("fish_data")
+	await get_tree().process_frame
+	_parse_file("items")
+	await get_tree().process_frame
+	_parse_file("recipes")
+
+
 func _parse_file(file: String) -> void:
 	# Get data from file
 	var rows: Array[PackedStringArray] = _get_file_data(file)
@@ -58,6 +72,8 @@ func _parse_file(file: String) -> void:
 			_create_dialogue_resources(rows)
 		"recipes":
 			_create_recipes_data(rows)
+		"profiles":
+			_create_profiles_data(rows)
 	
 	# Refresh files
 	EditorInterface.get_resource_filesystem().scan()
@@ -306,5 +322,35 @@ func _create_recipes_data(data: Array[PackedStringArray]) -> void:
 		recipe.outputs = outputs
 		
 		_save_resource(recipe, path)
+
+
+func _create_profiles_data(data: Array[PackedStringArray]) -> void:
+	for row: PackedStringArray in data:
+		# Get the id from the row
+		var id: String = row[0]
+		if id == "":
+			continue
+		# Get the default file save path
+		var path: String = PROFILES_SAVE_PATH + id + ".tres"
+		
+		var profile := ProfileData.new()
+		
+		var name_file: String = row[1].strip_edges()
+		if not name_file.is_empty():
+			var name_item: ItemData = load(ITEM_SAVE_PATH + name_file + ".tres")
+			profile.data[ProfileData.DataTypes.NAME] = name_item
+		
+		var age_file: String = row[2].strip_edges()
+		if not age_file.is_empty():
+			var age_item: ItemData = load(ITEM_SAVE_PATH + age_file + ".tres")
+			profile.data[ProfileData.DataTypes.NAME] = age_item
+		
+		var occupation_file: String = row[3].strip_edges()
+		if not occupation_file.is_empty():
+			var occupation_item: ItemData = load(ITEM_SAVE_PATH + occupation_file + ".tres")
+			profile.data[ProfileData.DataTypes.OCCUPATION] = occupation_item
+		
+		_save_resource(profile, path)
+		return
 
 #endregion

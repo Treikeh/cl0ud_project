@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dd08m0urjrh66"]
 
-[ext_resource type="Resource" uid="uid://bt1v5xjynkto6" path="res://common/data/fish/message_story_Xavier_data_01_01.tres" id="1_axyud"]
+[ext_resource type="Resource" uid="uid://dhkf80rnk7eiu" path="res://common/data/fish/message_story_Xavier_data_01_day_01.tres" id="1_axyud"]
 [ext_resource type="Texture2D" uid="uid://cdh1uvulx0tfd" path="res://entities/fish/message/message_icon.png" id="2_o6fdb"]
 [ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_uvmol"]
 

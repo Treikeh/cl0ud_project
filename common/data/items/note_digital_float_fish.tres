@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d35hjm7taraa4"]
+
+[ext_resource type="Resource" uid="uid://u0pp0damwdho" path="res://common/data/fish/note_digital_float_data.tres" id="1_5hl3o"]
+[ext_resource type="Texture2D" uid="uid://bopc0krq46by3" path="res://entities/fish/note/note_icon.png" id="2_b1vce"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_s8wtf"]
+
+[resource]
+script = ExtResource("3_s8wtf")
+name = "Note \"Digital Float Parade\""
+description = "A fish containing data about some digital float parade."
+value = 4
+type = "NOTE"
+icon = ExtResource("2_b1vce")
+mesh_scene = "res://entities/fish/note/note_mesh.tscn"
+fish_data = ExtResource("1_5hl3o")

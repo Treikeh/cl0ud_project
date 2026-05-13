@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://v2vu4dhpac1v"]
+
+[ext_resource type="Resource" uid="uid://b30pxh2tbsttw" path="res://common/data/fish/message_ratocide_data.tres" id="1_co2pc"]
+[ext_resource type="Texture2D" uid="uid://cdh1uvulx0tfd" path="res://entities/fish/message/message_icon.png" id="2_5xlw5"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_4akqh"]
+
+[resource]
+script = ExtResource("3_4akqh")
+name = "Message Fish \"Rat Genocide\""
+description = "Dead rats :("
+value = 4
+type = "MESSAGE"
+icon = ExtResource("2_5xlw5")
+mesh_scene = "res://entities/fish/message/message_mesh.tscn"
+fish_data = ExtResource("1_co2pc")

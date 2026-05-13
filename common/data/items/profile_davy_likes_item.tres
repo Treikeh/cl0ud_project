@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dp712leyp0r3i"]
+
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_s2xyh"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_i5hxq"]
+
+[resource]
+script = ExtResource("2_i5hxq")
+name = "Davy's likes"
+description = "Urban Exploration"
+type = "PROFILE_DATA"
+icon = ExtResource("1_s2xyh")

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bvvfxhbm8k8ct"]
+
+[ext_resource type="Resource" uid="uid://ojw7ya8lp0u3" path="res://common/data/fish/mail_lan_invitation_data.tres" id="1_jdoy2"]
+[ext_resource type="Texture2D" uid="uid://konw78nn60up" path="res://entities/fish/mail/mail_icon.png" id="2_kalvx"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_pnw81"]
+
+[resource]
+script = ExtResource("3_pnw81")
+name = "Mail Fish \"LAN Invitation\""
+description = "A fish containing data about some \"LAN\" invitation."
+value = 5
+type = "MAIL"
+icon = ExtResource("2_kalvx")
+mesh_scene = "res://entities/fish/mail/mail_mesh.tscn"
+fish_data = ExtResource("1_jdoy2")

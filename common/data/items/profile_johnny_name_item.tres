@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bqy5wvs71am1p"]
+
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_fxj5j"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_a2ler"]
+
+[resource]
+script = ExtResource("2_a2ler")
+name = "Johnny's name"
+description = "Johnny"
+type = "PROFILE_DATA"
+icon = ExtResource("1_fxj5j")

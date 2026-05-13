@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ProfileRecipe" format=3 uid="uid://dr1hakg2pr7q7"]
+
+[ext_resource type="Resource" uid="uid://bvvfxhbm8k8ct" path="res://common/data/items/mail_lan_invitation_fish.tres" id="1_8ap6s"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_vmml8"]
+[ext_resource type="Script" uid="uid://c8p7f6bgfvt10" path="res://common/data/recipes/profile_recipe.gd" id="3_xkpk4"]
+
+[resource]
+script = ExtResource("3_xkpk4")
+input = ExtResource("1_8ap6s")
+outputs = Array[ExtResource("2_vmml8")]([null])

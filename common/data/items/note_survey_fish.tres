@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://y2kmv3qvrm31"]
+
+[ext_resource type="Resource" uid="uid://q10obky2vckb" path="res://common/data/fish/note_surveyresults_data.tres" id="1_py043"]
+[ext_resource type="Texture2D" uid="uid://bopc0krq46by3" path="res://entities/fish/note/note_icon.png" id="2_jdmn2"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_ifblf"]
+
+[resource]
+script = ExtResource("3_ifblf")
+name = "Note Fish \"Ranglo Survey\""
+description = "A fish containing data about an survey."
+value = 6
+type = "NOTE"
+icon = ExtResource("2_jdmn2")
+mesh_scene = "res://entities/fish/note/note_mesh.tscn"
+fish_data = ExtResource("1_py043")

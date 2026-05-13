@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://tldkf38cvb5a"]
+
+[ext_resource type="Resource" uid="uid://bcn2ykdasaiex" path="res://common/data/fish/note_city_announcement_data.tres" id="1_b3wli"]
+[ext_resource type="Texture2D" uid="uid://bopc0krq46by3" path="res://entities/fish/note/note_icon.png" id="2_fax05"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_hqy4s"]
+
+[resource]
+script = ExtResource("3_hqy4s")
+name = "Note \"City System Announcement\""
+description = "A fish containing data about an system announcement regarding Cloud City."
+value = 5
+type = "NOTE"
+icon = ExtResource("2_fax05")
+mesh_scene = "res://entities/fish/note/note_mesh.tscn"
+fish_data = ExtResource("1_b3wli")

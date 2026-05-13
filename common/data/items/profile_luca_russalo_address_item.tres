@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d5rmynyyyvvj"]
+
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_sr6r3"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_2f6us"]
+
+[resource]
+script = ExtResource("2_2f6us")
+name = "Luca Russalo's address"
+description = "11th Eastlane Avenue"
+type = "PROFILE_DATA"
+icon = ExtResource("1_sr6r3")

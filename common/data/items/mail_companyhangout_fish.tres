@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d1kamifxn1nwa"]
+
+[ext_resource type="Resource" uid="uid://ca1moogl5dcc1" path="res://common/data/fish/mail_companyhangout_data.tres" id="1_0fmen"]
+[ext_resource type="Texture2D" uid="uid://konw78nn60up" path="res://entities/fish/mail/mail_icon.png" id="2_mu0pf"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_op8tj"]
+
+[resource]
+script = ExtResource("3_op8tj")
+name = "Mail Fish \"Company Hangout\""
+description = "a fish containing data about some company hangout."
+value = 4
+type = "MAIL"
+icon = ExtResource("2_mu0pf")
+mesh_scene = "res://entities/fish/mail/mail_mesh.tscn"
+fish_data = ExtResource("1_0fmen")

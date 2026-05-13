@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ciedryq168mjs"]
+
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_ee63v"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_2ipkk"]
+
+[resource]
+script = ExtResource("2_2ipkk")
+name = "The_Adriana_Maisy's address"
+description = "Morwell"
+type = "PROFILE_DATA"
+icon = ExtResource("1_ee63v")

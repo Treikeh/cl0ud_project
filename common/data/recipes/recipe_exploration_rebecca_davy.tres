@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ProfileRecipe" format=3 uid="uid://ltfghdj8q5kq"]
+
+[ext_resource type="Resource" uid="uid://lve67wnidf3h" path="res://common/data/items/message_exploration_fish.tres" id="1_1ewpv"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_hmxyh"]
+[ext_resource type="Resource" uid="uid://cnx4ae6gaiebh" path="res://common/data/items/profile_rebecca_name_item.tres" id="3_f2ure"]
+[ext_resource type="Resource" uid="uid://dqaue8yt6ln8g" path="res://common/data/items/profile_rebecca_likes_item.tres" id="4_qnrbo"]
+[ext_resource type="Resource" uid="uid://dasjku0g2utya" path="res://common/data/items/profile_rebecca_address.tres" id="5_k0agf"]
+[ext_resource type="Resource" uid="uid://bcwu4vraeulfu" path="res://common/data/items/profile_davy_name_item.tres" id="6_hkrsu"]
+[ext_resource type="Resource" uid="uid://dp712leyp0r3i" path="res://common/data/items/profile_davy_likes_item.tres" id="7_h5exq"]
+[ext_resource type="Script" uid="uid://c8p7f6bgfvt10" path="res://common/data/recipes/profile_recipe.gd" id="8_twoxl"]
+
+[resource]
+script = ExtResource("8_twoxl")
+input = ExtResource("1_1ewpv")
+outputs = Array[ExtResource("2_hmxyh")]([ExtResource("3_f2ure"), ExtResource("4_qnrbo"), ExtResource("5_k0agf"), ExtResource("6_hkrsu"), ExtResource("7_h5exq")])

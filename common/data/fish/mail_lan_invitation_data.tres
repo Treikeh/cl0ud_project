@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MailData" format=3 uid="uid://ojw7ya8lp0u3"]
+
+[ext_resource type="Script" uid="uid://bgk7ttf5teu14" path="res://entities/fish/mail/mail_data.gd" id="1_sxcry"]
+
+[resource]
+script = ExtResource("1_sxcry")
+from = " Luca Russalo "
+to = " Group Chat \"Humor Hangout\" "
+subject = " Annual Invitation To Le Epic LAN Party "
+content = " Do I even need to spell it out? 🤓
+ 
+ You all know what time it is! My place (11th Eastlane Avenue), starting next week, our week-long LAN is going to be crazy. 🔥 I have all of my favorites on the Cloudstation, including, but not limited to: Alpha Combat, Dino Track Racing, Deflection Strike: The Planetary Defense, Enter Umbra, Topview: Surf Life, and even this new hit called \"Fjord Fury.\" 
+ 
+ Be there or be square and make sure to bring enough water, food and snacks to last the week! See you guys there! 👌"

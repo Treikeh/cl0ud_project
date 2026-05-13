@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MailData" format=3 uid="uid://ca1moogl5dcc1"]
+
+[ext_resource type="Script" uid="uid://bgk7ttf5teu14" path="res://entities/fish/mail/mail_data.gd" id="1_mkrtl"]
+
+[resource]
+script = ExtResource("1_mkrtl")
+from = "Elijah "
+to = "Aravoy Customer Service Team "
+subject = " Company hangout "
+content = " Good day, everyone! 😄 
+ 
+ Thanks to the recent efforts by our team here at Aravoy Customer Service, the customer satisfaction has risen by 9%. This is cause for celebration and as such, the company offers an 25% loan at a 10% monthly interest rate for a company-mandated hangout! 🎊 
+ 
+ The company hangout will be hosted at Terry's place at 4th Concrete Avenue Street. See you all there! 👍"
