@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="NoteData" format=3 uid="uid://q10obky2vckb"]
+
+[ext_resource type="Script" uid="uid://ckvnbenl45otq" path="res://entities/fish/note/note_data.gd" id="1_pmlit"]
+
+[resource]
+script = ExtResource("1_pmlit")
+text = "[b]Ranglo's point-defense system marketability survey results:[/b] 
+ 
+ Respondent number 1 
+ Name: Elijah 
+ Address registered to respondent: 12th Tarvish Blvd 
+ Opinion on product: \"I think it needs a different camouflage pattern\" 
+ 
+ Respondent number 2 
+ Name: Cornelius McTaro 
+ Address registered to respondent: 83th Uron Yapidi Lane 
+ Opinion on product: \"Excellent for protecting small businesses for incoming attacks\" 
+ 
+ Respondent number 3 
+ Name: Johnny 
+ Address registered to respondent: 45th Tescon Street 
+ Opinion on product: \"I would consider buying it if there was a portable version to be used in bird hunting.\" "

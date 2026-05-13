@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c34f1f2qebun0"]
+
+[ext_resource type="Resource" uid="uid://b3nx6hexwxq8r" path="res://common/data/fish/note_cornelius_reminder_data.tres" id="1_1vut3"]
+[ext_resource type="Texture2D" uid="uid://bopc0krq46by3" path="res://entities/fish/note/note_icon.png" id="2_u25w7"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_y663m"]
+
+[resource]
+script = ExtResource("3_y663m")
+name = "Note \"Reminder\""
+description = "A fish containing data about somebody's personal checklist."
+value = 4
+type = "NOTE"
+icon = ExtResource("2_u25w7")
+mesh_scene = "res://entities/fish/note/note_mesh.tscn"
+fish_data = ExtResource("1_1vut3")

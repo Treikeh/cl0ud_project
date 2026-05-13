@@ -13,4 +13,3 @@ data = Dictionary[int, ExtResource("1_pbdfd")]({
 3: ExtResource("3_dlfdl"),
 4: ExtResource("4_3x1u1")
 })
-metadata/_custom_type_script = "uid://jxb6f52u0giu"

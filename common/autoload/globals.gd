@@ -26,6 +26,10 @@ var junk_fish_chance: float = 0.5
 
 var fish_loot_table: Dictionary
 
+var upgrades: Array[Upgrade]
+var inv_items: Array[ItemData]
+var pice_inv_items: Array[ItemData]
+
 
 func _ready() -> void:
 	_load_debug_settings()

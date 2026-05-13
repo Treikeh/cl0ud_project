@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MessageData" format=3 uid="uid://bsrlr8uuaomrk"]
+
+[ext_resource type="Script" uid="uid://knk2w0s0q2la" path="res://entities/fish/message/message_data.gd" id="1_pma0i"]
+
+[resource]
+script = ExtResource("1_pma0i")
+sender = " 🥸 "
+recipient = " 🤠 "
+messages = Array[Dictionary]([{
+"LINES": ["  "],
+"WHO": " 🥸 "
+}, {
+"LINES": [""],
+"WHO": " 🤠 "
+}])

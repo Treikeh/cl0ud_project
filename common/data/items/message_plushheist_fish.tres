@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bfnlg1uf4l8bo"]
+
+[ext_resource type="Resource" uid="uid://be1bhwa03iau6" path="res://common/data/fish/message_plushheist_data.tres" id="1_u7duv"]
+[ext_resource type="Texture2D" uid="uid://cdh1uvulx0tfd" path="res://entities/fish/message/message_icon.png" id="2_qhwgs"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_ciixu"]
+
+[resource]
+script = ExtResource("3_ciixu")
+name = "Message Fish \"Plush Heist\""
+description = "The Plush Heist"
+value = 5
+type = "MESSAGE"
+icon = ExtResource("2_qhwgs")
+mesh_scene = "res://entities/fish/message/message_mesh.tscn"
+fish_data = ExtResource("1_u7duv")

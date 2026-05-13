@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://skc43pnuhb0r" path="res://addons/cl0ud_plugin/dock/dock.gd" id="1_4q10j"]
 
-[node name="Dock" type="Control" unique_id=391463245 node_paths=PackedStringArray("_enable_save_check_box", "_recipes_button", "_item_button", "_fish_data_button", "_dialogue_button")]
+[node name="Dock" type="Control" unique_id=391463245 node_paths=PackedStringArray("_enable_save_check_box", "_parse_data_button", "_recipes_button", "_item_button", "_fish_data_button", "_dialogue_button", "_profiles_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,10 +11,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4q10j")
 _enable_save_check_box = NodePath("VBoxContainer/EnableSaveContainer/EnableSaveCheckBox")
+_parse_data_button = NodePath("VBoxContainer/ParseDataButton")
 _recipes_button = NodePath("VBoxContainer/RecipesButton")
 _item_button = NodePath("VBoxContainer/ItemButton")
 _fish_data_button = NodePath("VBoxContainer/FishDataButton")
 _dialogue_button = NodePath("VBoxContainer/DialogueButton")
+_profiles_button = NodePath("VBoxContainer/ProfilesButton")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1314947263]
 layout_mode = 1
@@ -35,7 +37,10 @@ text = "Enable save game"
 
 [node name="EnableSaveCheckBox" type="CheckBox" parent="VBoxContainer/EnableSaveContainer" unique_id=278256174]
 layout_mode = 2
-button_pressed = true
+
+[node name="ParseDataButton" type="Button" parent="VBoxContainer" unique_id=2071901578]
+layout_mode = 2
+text = "Parse all data"
 
 [node name="RecipesButton" type="Button" parent="VBoxContainer" unique_id=1614882551]
 layout_mode = 2
@@ -52,3 +57,7 @@ text = "Parse fish data"
 [node name="DialogueButton" type="Button" parent="VBoxContainer" unique_id=1103884167]
 layout_mode = 2
 text = "Parse dialogue data"
+
+[node name="ProfilesButton" type="Button" parent="VBoxContainer" unique_id=2052485099]
+layout_mode = 2
+text = "Parse profile data"

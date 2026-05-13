@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ProfileRecipe" format=3 uid="uid://iwlv8y7pbjjd"]
+
+[ext_resource type="Resource" uid="uid://y2kmv3qvrm31" path="res://common/data/items/note_survey_fish.tres" id="1_m0jrm"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_2sktf"]
+[ext_resource type="Resource" uid="uid://bqy5wvs71am1p" path="res://common/data/items/profile_johnny_name_item.tres" id="3_s57nl"]
+[ext_resource type="Resource" uid="uid://dv05c62genjcd" path="res://common/data/items/profile_johnny_address_item.tres" id="4_0pxjc"]
+[ext_resource type="Resource" uid="uid://b0gye4ggpn8xj" path="res://common/data/items/profile_johnny_likes_item.tres" id="5_00a2p"]
+[ext_resource type="Resource" uid="uid://cul56fib5t6fr" path="res://common/data/items/profile_cornelius_mctaro_name_item.tres" id="6_otjdm"]
+[ext_resource type="Resource" uid="uid://d1o8uhmehh243" path="res://common/data/items/profile_cornelius_mctaro_address_item.tres" id="7_5cpod"]
+[ext_resource type="Script" uid="uid://c8p7f6bgfvt10" path="res://common/data/recipes/profile_recipe.gd" id="8_nl3rx"]
+
+[resource]
+script = ExtResource("8_nl3rx")
+input = ExtResource("1_m0jrm")
+outputs = Array[ExtResource("2_2sktf")]([ExtResource("3_s57nl"), ExtResource("4_0pxjc"), ExtResource("5_00a2p"), ExtResource("6_otjdm"), ExtResource("7_5cpod")])

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="NoteData" format=3 uid="uid://bcn2ykdasaiex"]
+
+[ext_resource type="Script" uid="uid://ckvnbenl45otq" path="res://entities/fish/note/note_data.gd" id="1_whfts"]
+
+[resource]
+script = ExtResource("1_whfts")
+text = "[b]WARNING! WARNING! 
+ 
+ INCOMING ANNOUNCEMENT... 
+ 
+ SECTOR 4B, 7A, 2E OF CLOUD CITY IS UNDER LOCKDOWN... 
+ 
+ CAUSE OF LOCKDOWN: UNKNOWN METEORLOGICAL PHENOMENA DETECTED 
+ 
+ AWAITING HUMAN OPERATOR INPUT... 
+ 
+ INPUT EXPECTED WITHIN 981 DAYS...[/b]"

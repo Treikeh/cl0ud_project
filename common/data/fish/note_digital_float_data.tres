@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="NoteData" format=3 uid="uid://u0pp0damwdho"]
+
+[ext_resource type="Script" uid="uid://ckvnbenl45otq" path="res://entities/fish/note/note_data.gd" id="1_jh3xa"]
+
+[resource]
+script = ExtResource("1_jh3xa")
+text = "[b]Digital Parade Float Ideas[/b] 
+ 
+ Yo y'all! I'm Xrayo44 of the c/freecloudcity moderator team.  
+ 
+ As you all know, we are participating in the digital parades this next Saturday, and we asked you guys to come up with suggestions for what I should put on our float. Here are some cool ideas: 
+ 
+ 1. To represent their home in the neighborhood of Morwell, The_Adriana_Maisy suggested that the parade include her favorite animal, the extinct polar bear. 
+ 
+ 2. Another great suggestion that I took a personal liking to was from Geelonglover2011, who suggested we add the cloud effect that surrounds and follows the float. 
+ 
+ 3. The last suggestion is that of a shirtless man dancing some popular Cloud City breakdance moves. This suggestion was, of course, from OfficialCloudCityBreakDanceClub. 
+ 
+ Thank you all for the suggestions. "

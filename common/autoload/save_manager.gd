@@ -10,13 +10,6 @@ var _save_data: Dictionary = {}
 @onready var _save_path: String = Globals.get_data_dir() + _file_name
 
 
-func _ready() -> void:
-	_load_data_from_file()
-
-func _exit_tree() -> void:
-	_save_data_to_file()
-
-
 func set_save_data(key: String, data: Dictionary) -> void:
 	_save_data[key] = data
 
@@ -32,8 +25,6 @@ func save_game() -> void:
 		var save_key: String = save_data.keys()[0]
 		_save_data[save_key] = save_data[save_key]
 	_save_data["glboals"] = {"current_level": LevelManager.current_level_path}
-	
-	_save_data_to_file()
 
 
 func _load_data_from_file() -> void:

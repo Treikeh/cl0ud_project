@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c4qv2yvlxq7dg"]
+
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_l1a1e"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_hc4d4"]
+
+[resource]
+script = ExtResource("2_hc4d4")
+name = "Xrayo44's likes"
+description = "The Cloud"
+type = "PROFILE_DATA"
+icon = ExtResource("1_l1a1e")

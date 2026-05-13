@@ -14,15 +14,18 @@ var _inventory: Inventory
 var _piece_inventory: Inventory
 var _grabbed_item: ItemData
 var _selected_slot: ProfileWallSlot
+var _profiles: Array[ProfileData]
 
 
-func with_data(inventory: Inventory, piece_inventory: Inventory) -> Control:
+func with_data(inventory: Inventory, piece_inventory: Inventory, profiles: Array[ProfileData]) -> Control:
 	_inventory = inventory
 	_piece_inventory = piece_inventory
+	_profiles = profiles
 	return self
 
 
 func _ready() -> void:
+	_profile._profiles = _profiles
 	_open()
 
 

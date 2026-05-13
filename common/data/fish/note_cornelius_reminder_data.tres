@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NoteData" format=3 uid="uid://b3nx6hexwxq8r"]
+
+[ext_resource type="Script" uid="uid://ckvnbenl45otq" path="res://entities/fish/note/note_data.gd" id="1_anb2h"]
+
+[resource]
+script = ExtResource("1_anb2h")
+text = "[b]Reminder to self:[/b]  
+ 
+ - Send mail to Harris Goodwill regarding mutual investment opportunity. ✅ 
+ 
+ - Answer Ranglo's survey. ✅ 
+ 
+ - Contact that Salemans regarding those cars and mansions I am planning to buy. ❌"

@@ -24,8 +24,6 @@ func _ready() -> void:
 	Globals.started_fishing.connect(_on_started_fishing)
 	Globals.stopped_fishing.connect(_on_stopped_fishing)
 	
-	LevelManager.started_loading_level.connect(_on_started_loading_level)
-	
 	_interact_ray.prompt_updated.connect(hud.update_interact_prompt)
 	
 	_load_save_data.call_deferred()
@@ -75,15 +73,6 @@ func update_look_position(look_position: Vector3 = Vector3.ZERO) -> void:
 
 func update_minigame_look_dir(minigame_look_dir: Vector2) -> void:
 	_minigame_look_dir = minigame_look_dir
-
-
-func _on_started_loading_level() -> void:
-	# Reset upgrades when loading a level to avoid upgrades being bought when going to a previous ->
-	# <- save state (like when reloading the level for playtests).
-	#NOTE: This only works because loading a new level only starts after a the loading screen has ->
-	# <- faded inn. If there was no fade inn, then this wouldn't work. Becaue the load level -> 
-	# <- function is called before the save level function in the main level script.
-	_reset_upgrades()
 
 
 func respawn() -> void:
@@ -190,7 +179,7 @@ func _on_inventory_opened() -> void:
 	input.set_enabled(false)
 	
 	# Spawn inventory
-	_inventory_menu = INVENTORY_SCENE.instantiate().with_data(inventory, upgrades)
+	_inventory_menu = INVENTORY_SCENE.instantiate().with_data(inventory, Globals.upgrades)
 	add_child(_inventory_menu)
 	_inventory_menu.closed.connect(_on_inventory_closed)
 
@@ -263,38 +252,16 @@ func _on_fish_escaped() -> void:
 
 #region Upgrades
 
-var upgrades: Array[Upgrade] = []
 
 
 func add_upgrade(upgrade: Upgrade) -> void:
-	upgrades.append(upgrade)
+	Globals.upgrades.append(upgrade)
 	upgrade.apply_upgrade(self)
 
 
-func _get_upgrades_data() -> Dictionary:
-	var data: Dictionary = {}
-	for upgrade: Upgrade in upgrades:
-		var upgrade_data: Dictionary = {
-			upgrade.name: {
-				"path": upgrade.resource_path,
-				"bought": upgrade.bought,
-			}
-		}
-		data.merge(upgrade_data)
-	return data
-
-
-func _load_upgrades(data: Dictionary) -> void:
-	for entry: String in data:
-		var upgrade_data: Dictionary = data[entry]
-		var upgrade: Upgrade = load(upgrade_data.path)
-		upgrade.bought = upgrade_data.bought
-		add_upgrade(upgrade)
-
-
-func _reset_upgrades() -> void:
-	for upgrade: Upgrade in upgrades:
-		upgrade.bought = false
+func _load_upgrades() -> void:
+	for upgrade: Upgrade in Globals.upgrades:
+		upgrade.apply_upgrade(self)
 
 #endregion
 
@@ -304,14 +271,13 @@ func _reset_upgrades() -> void:
 const SAVE_DATA_KEY: String = "player"
 
 func get_save_data() -> Dictionary:
+	Globals.inv_items = inventory.items
+	Globals.pice_inv_items = piece_inventory.items
 	var data: Dictionary = {
 		SAVE_DATA_KEY: {
 			"position": var_to_str(global_position),
 			"head_rotation": var_to_str(_head.rotation_degrees.x),
 			"orientation": var_to_str(_orientation.rotation_degrees.y),
-			"inventory": inventory.get_save_data(),
-			"piece_inventory": piece_inventory.get_save_data(),
-			"upgrades": _get_upgrades_data(),
 		},
 	}
 	return data
@@ -327,10 +293,10 @@ func _load_save_data() -> void:
 	# Update rotation
 	_orientation.rotation_degrees.y = str_to_var(data.orientation)
 	_head.rotation_degrees.x = str_to_var(data.head_rotation)
-	# Update inventory
-	inventory.load_save_data(data.inventory)
-	piece_inventory.load_save_data(data.piece_inventory)
 	
-	_load_upgrades(data.upgrades)
+	inventory.items = Globals.inv_items
+	piece_inventory.items = Globals.pice_inv_items
+	
+	_load_upgrades()
 
 #endregion

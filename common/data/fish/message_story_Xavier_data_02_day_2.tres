@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="MessageData" format=3 uid="uid://nfgakdi4qmqx"]
+
+[ext_resource type="Script" uid="uid://knk2w0s0q2la" path="res://entities/fish/message/message_data.gd" id="1_hafnp"]
+
+[resource]
+script = ExtResource("1_hafnp")
+sender = "Xavier "
+recipient = "Martin "
+messages = Array[Dictionary]([{
+"LINES": [" I totally get it. However, I will be taking that TV off your hands, that's an absolute steal. "],
+"WHO": "Xavier "
+}, {
+"LINES": [" Nice! Send me the cash to my account number: 4102 54 3707 and come meet me at my place. "],
+"WHO": "Martin "
+}, {
+"LINES": [" Will do. I'll also send some of the cash I owe you for the previous weekend hangout. "],
+"WHO": "Xavier "
+}, {
+"LINES": [" Thanks! Remember: Tomorrow at 13:00 at my place. "],
+"WHO": "Martin "
+}, {
+"LINES": [" Your address was Parkstreet Blvd.  ", " 21th house? Concrete building? With that ugly yellow mailbox? "],
+"WHO": "Xavier "
+}, {
+"LINES": [" You got it. See ya there. "],
+"WHO": "Martin "
+}, {
+"LINES": [" Xavier Transfered 3055 Cloudbucks to account number 410253 3707 via the Card 8203 1505 6733 2359."],
+"WHO": "SYSTEM"
+}])

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ProfileRecipe" format=3 uid="uid://cqdore1ochcmm"]
+
+[ext_resource type="Resource" uid="uid://ceqoiwr47vxnt" path="res://common/data/items/mail_MFC_fish.tres" id="1_toyvh"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_3s6u1"]
+[ext_resource type="Resource" uid="uid://cul56fib5t6fr" path="res://common/data/items/profile_cornelius_mctaro_name_item.tres" id="3_jmd02"]
+[ext_resource type="Resource" uid="uid://gwp1tudvj5pq" path="res://common/data/items/profile_cornelius_mctaro_likes_item.tres" id="4_olm1d"]
+[ext_resource type="Resource" uid="uid://bmuai10o6el4" path="res://common/data/items/profile_cornelius_mctaro_occupation_item.tres" id="5_haego"]
+[ext_resource type="Resource" uid="uid://ccx0x1i63nlu7" path="res://common/data/items/profile_harris_goodwill_name_item.tres" id="6_lkedq"]
+[ext_resource type="Resource" uid="uid://c1rto6gthf1vr" path="res://common/data/items/profile_harris_goodwill_likes_item.tres" id="7_fn52b"]
+[ext_resource type="Resource" uid="uid://bsu4gpo1jx3gx" path="res://common/data/items/profile_harris_occupation_item.tres" id="8_kaygg"]
+[ext_resource type="Script" uid="uid://c8p7f6bgfvt10" path="res://common/data/recipes/profile_recipe.gd" id="9_axplb"]
+
+[resource]
+script = ExtResource("9_axplb")
+input = ExtResource("1_toyvh")
+outputs = Array[ExtResource("2_3s6u1")]([ExtResource("3_jmd02"), ExtResource("4_olm1d"), ExtResource("5_haego"), ExtResource("6_lkedq"), ExtResource("7_fn52b"), ExtResource("8_kaygg")])

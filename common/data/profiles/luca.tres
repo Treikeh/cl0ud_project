@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ProfileData" format=3 uid="uid://cuwdmnojvh2tu"]
+
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="1_1r1sm"]
+[ext_resource type="Resource" uid="uid://b8b5vafy165ys" path="res://common/data/items/profile_luca_russalo_name_item.tres" id="2_phoad"]
+[ext_resource type="Resource" uid="uid://d5rmynyyyvvj" path="res://common/data/items/profile_luca_russalo_address_item.tres" id="3_bxo12"]
+[ext_resource type="Resource" uid="uid://cpccbgyhrncqc" path="res://common/data/items/profile_luca_russalo_likes_item.tres" id="4_gu6qs"]
+[ext_resource type="Script" uid="uid://jxb6f52u0giu" path="res://common/data/profiles/profile_data.gd" id="5_r3wfm"]
+
+[resource]
+script = ExtResource("5_r3wfm")
+data = Dictionary[int, ExtResource("1_1r1sm")]({
+0: ExtResource("2_phoad"),
+3: ExtResource("3_bxo12"),
+4: ExtResource("4_gu6qs")
+})

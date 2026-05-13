@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ProfileData" format=3 uid="uid://oxj47y6sx53a"]
+
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="1_6ch88"]
+[ext_resource type="Resource" uid="uid://dsynfqk418u04" path="res://common/data/items/profile_elijah_name_item.tres" id="2_fhbgr"]
+[ext_resource type="Script" uid="uid://jxb6f52u0giu" path="res://common/data/profiles/profile_data.gd" id="3_lyd4p"]
+
+[resource]
+script = ExtResource("3_lyd4p")
+data = Dictionary[int, ExtResource("1_6ch88")]({
+0: ExtResource("2_fhbgr")
+})
