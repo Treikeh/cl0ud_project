@@ -8,6 +8,8 @@ const VENDOR_MENU_SCENE: PackedScene = preload("uid://diy715xds7cni")
 
 @export var _head_marker: Node3D
 @export var _buy_fishing_rod_dialogue: DialogueData
+@export var _interact_dialogue: DialogueData
+@export var _profiles_dialogue: DialogueData
 
 var _times_spoken: int = 0
 
@@ -16,13 +18,15 @@ func _on_interacted(player: Player) -> void:
 	match _times_spoken:
 		# Start dialogue when interacting with the vendor
 		0: player.hud.start_dialogue(_buy_fishing_rod_dialogue)
+		_: player.hud.start_dialogue(_interact_dialogue)
 	
 	_times_spoken += 1
 	player.update_look_position(_head_marker.global_position)
 
 
 func _ready() -> void:
-	_buy_fishing_rod_dialogue.choice_made.connect(_on_interact_dialouge_choice_made)
+	_buy_fishing_rod_dialogue.choice_made.connect(_on_tutorial_dialouge_choice_made)
+	_interact_dialogue.choice_made.connect(_on_interact_dialouge_choice_made)
 
 
 func _on_buy_fishing_rod_dialogue_finished() -> void:
@@ -30,12 +34,25 @@ func _on_buy_fishing_rod_dialogue_finished() -> void:
 	_on_interacted.call_deferred(player)
 
 
-func _on_interact_dialouge_choice_made(choice: int) -> void:
+func _on_tutorial_dialouge_choice_made(choice: int) -> void:
 	var player: Player = get_tree().get_first_node_in_group("player")
 	match choice:
 		0: # Buying
 			_open_vendor_menu(player, true)
 		1: # Nevermind
+			_on_vendor_menu_closed(player)
+
+
+func _on_interact_dialouge_choice_made(choice: int) -> void:
+	var player: Player = get_tree().get_first_node_in_group("player")
+	match choice:
+		0: # Buying
+			_open_vendor_menu(player, true)
+		1: # Selling
+			_open_vendor_menu(player, false)
+		2: # Profiles
+			player.hud.start_dialogue.call_deferred(_profiles_dialogue)
+		3: # Nevermind
 			_on_vendor_menu_closed(player)
 
 
@@ -54,11 +71,10 @@ func _open_vendor_menu(player: Player, buy: bool) -> void:
 func _on_vendor_menu_closed(player: Player) -> void:
 	player.input.set_enabled.call_deferred(true)
 	player.update_look_position(Vector3.ZERO)
-	_on_visible_on_screen_notifier_3d_screen_exited()
 
 
 func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
-	if _times_spoken >= 1:
+	if Globals.time_of_day > 22.0:
 		left.emit()
 		hide()
 		process_mode = Node.PROCESS_MODE_DISABLED

@@ -27,6 +27,11 @@ func _ready() -> void:
 	_open()
 
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel") or event.is_action_pressed("inventory"):
+		_close()
+
+
 func _open() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	_currency_label.text = str(_inventory.currency) + "$"

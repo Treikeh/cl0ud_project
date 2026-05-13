@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://c1dcx0rd8honj" path="res://entities/maxwell/maxwell.tscn" id="5_7wmgk"]
 [ext_resource type="PackedScene" uid="uid://bmbvlv41vnb6x" path="res://levels/art/door/ApartmentDoor.glb" id="5_g28r0"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="6_767uw"]
+[ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/characters/vendor/vendor.tscn" id="9_kcbp1"]
+[ext_resource type="PackedScene" uid="uid://iomcinpu06my" path="res://environment/vendor_door/vendor_door.tscn" id="10_4h47f"]
 [ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="11_iajr4"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://bjkncj1k6kru4" path="res://entities/characters/rig/sitting_couch_anim_sm.tres" id="12_kcbp1"]
 
@@ -27,7 +29,6 @@ script = ExtResource("1_4x28q")
 [node name="Environment" type="Node3D" parent="." unique_id=2025003428]
 
 [node name="MainLevel" parent="Environment" unique_id=224384734 instance=ExtResource("1_b4ifv")]
-_next_day = "uid://c8htcgbbdwmnh"
 
 [node name="SubwayCartSpawnerTunnel" parent="Environment" unique_id=1384092551 instance=ExtResource("2_tia7i")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -15.9, 11.7, -225)
@@ -43,6 +44,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.045135, 0.64993346, -69.8
 [node name="ApartmentDoor" parent="Environment" unique_id=804443877 instance=ExtResource("5_g28r0")]
 transform = Transform3D(-0.054218233, 0, -0.99852914, 0, 1, 0, 0.99852914, 0, -0.054218233, -34.476036, 3.7600656, 0.3929997)
 
+[node name="VendorDoor" parent="Environment" unique_id=525246973 instance=ExtResource("10_4h47f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6926503, 3.5450215, 11.069749)
+
 [node name="Characters" type="Node3D" parent="." unique_id=351249826]
 
 [node name="Maxwell" parent="Characters" unique_id=748864273 instance=ExtResource("5_7wmgk")]
@@ -57,6 +61,9 @@ _animation = ExtResource("12_kcbp1")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Characters/CouchGuy/StaticBody3D" unique_id=1167441153]
 transform = Transform3D(1.0000012, 0, 0, 0, 1, 0, 0, 0, 1.0000012, -1.5258789e-05, 0.6500001, 0.10000038)
 shape = SubResource("BoxShape3D_4h47f")
+
+[node name="Vendor" parent="Characters" unique_id=520470945 instance=ExtResource("9_kcbp1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6926503, 2.4760885, 11.769749)
 
 [node name="Interactable" type="Node3D" parent="." unique_id=1143656547]
 
@@ -84,9 +91,6 @@ shape = SubResource("BoxShape3D_5xhar")
 event_name = "event:/Actions/Bell"
 event_guid = "{aea974cf-9a5f-4d52-9651-90c5f09c5ce4}"
 
+[connection signal="left" from="Characters/Vendor" to="Environment/VendorDoor" method="close"]
 [connection signal="interacted" from="Interactable/ElevatorButton" to="." method="_end_day"]
 [connection signal="interacted_no_player" from="Interactable/Bell" to="Interactable/Bell/FmodEventEmitter3D" method="play_one_shot"]
-
-[editable path="Environment/MainLevel"]
-[editable path="Environment/MainLevel/System/ProfileSystem/ProfilePrinter"]
-[editable path="Environment/MainLevel/Player"]

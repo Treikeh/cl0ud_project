@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://ci766d3wxxwwr" path="res://environment/elevator_door/elevator_door.tscn" id="3_kgh6a"]
 [ext_resource type="PackedScene" uid="uid://bmbvlv41vnb6x" path="res://levels/art/door/ApartmentDoor.glb" id="4_6ddsc"]
 [ext_resource type="PackedScene" uid="uid://cf6nk35lslykg" path="res://levels/art/fire_escape_door/FireEscapeDoor.glb" id="5_kgh6a"]
+[ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/characters/vendor/vendor.tscn" id="7_1w5yc"]
+[ext_resource type="PackedScene" uid="uid://iomcinpu06my" path="res://environment/vendor_door/vendor_door.tscn" id="8_qfutr"]
 
 [node name="Day03" type="Node3D" unique_id=669404763]
 
@@ -27,6 +29,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.045135, 0.64993346, -69.8
 [node name="ApartmentDoor" parent="Environment" unique_id=804443877 instance=ExtResource("4_6ddsc")]
 transform = Transform3D(-0.054218233, 0, -0.99852914, 0, 1, 0, 0.99852914, 0, -0.054218233, -34.476036, 3.7600656, 0.3929997)
 
+[node name="VendorDoor" parent="Environment" unique_id=525246973 instance=ExtResource("8_qfutr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6926503, 3.5450215, 11.069749)
+
+[node name="Characters" type="Node3D" parent="." unique_id=229000780]
+
+[node name="Vendor" parent="Characters" unique_id=520470945 instance=ExtResource("7_1w5yc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6926503, 2.4760885, 11.769749)
+
 [node name="Interactable" type="Node3D" parent="." unique_id=1558129349]
 
 [node name="MusicPlayer" parent="Interactable" unique_id=978888495 instance=ExtResource("2_6ddsc")]
@@ -34,3 +44,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.420695, 3.6429343, -10.91
 
 [node name="ElevatorDoor" parent="Interactable" unique_id=1829758497 instance=ExtResource("3_kgh6a")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27.6, 2.5, 4.9)
+
+[connection signal="left" from="Characters/Vendor" to="Environment/VendorDoor" method="close"]
