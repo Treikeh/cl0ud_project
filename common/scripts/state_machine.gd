@@ -44,3 +44,11 @@ func process(delta: float) -> void:
 func physics(delta: float) -> void:
 	if _current.has(PHYSICS):
 		_current[PHYSICS].call(delta)
+
+
+func in_state(state: int) -> bool:
+	return _states[state] == _current
+
+
+func get_current_state() -> int:
+	return _states.find_key(_current)
