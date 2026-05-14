@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dfmaqny5h8bki" path="res://entities/profile_wall/profile_wall.gd" id="1_ev7wo"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="2_di50e"]
+[ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="3_e1m75"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0isjb"]
 size = Vector3(5, 2, 0.1)
@@ -24,5 +25,6 @@ shape = SubResource("BoxShape3D_8ytnt")
 [node name="Label3D" type="Label3D" parent="." unique_id=941172457]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.9054205, -0.063583605)
 text = "Profiles"
+font = ExtResource("3_e1m75")
 
 [connection signal="interacted" from="InteractArea3D" to="." method="_on_interacted"]

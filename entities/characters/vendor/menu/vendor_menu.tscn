@@ -10,6 +10,8 @@
 [ext_resource type="Resource" uid="uid://0q0fr715trpy" path="res://common/upgrades/resources/calm_fish_upgrade_02.tres" id="6_17hq5"]
 [ext_resource type="Resource" uid="uid://yr23djyi4gd6" path="res://common/upgrades/resources/calm_fish_upgrade_03.tres" id="8_a0ftu"]
 [ext_resource type="Texture2D" uid="uid://eorw41vay2vm" path="res://entities/characters/vendor/art/Vendor Background_v3.png" id="9_a0ftu"]
+[ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="11_o0dn8"]
+[ext_resource type="Theme" uid="uid://cpfg3yoyu638e" path="res://gui/new_theme.tres" id="12_3g26q"]
 
 [node name="VendorMenu" type="Control" unique_id=1724820824 node_paths=PackedStringArray("_sell_list", "_buy_list", "_currency_label", "_tab_container")]
 layout_mode = 3
@@ -36,6 +38,7 @@ offset_left = 1024.0
 offset_top = 44.0
 offset_right = 1094.0
 offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("11_o0dn8")
 text = "CLOSE"
 
 [node name="CurrencyLabel" type="Label" parent="." unique_id=990211706]
@@ -66,6 +69,7 @@ current_tab = 1
 [node name="Buy" type="Control" parent="TabContainer" unique_id=1988680213]
 visible = false
 layout_mode = 2
+theme = ExtResource("12_3g26q")
 metadata/_tab_index = 0
 
 [node name="BuyList" type="VBoxContainer" parent="TabContainer/Buy" unique_id=1573507270]

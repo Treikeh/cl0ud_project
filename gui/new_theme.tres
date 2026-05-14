@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://cpfg3yoyu638e"]
+
+[ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="1_xgmfl"]
+
+[resource]
+Label/fonts/font = ExtResource("1_xgmfl")

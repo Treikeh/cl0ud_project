@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cqwoobh0cxsmc" path="res://gui/sleep_menu/sleep_menu.gd" id="1_wgbmf"]
 [ext_resource type="Texture2D" uid="uid://c1m36kihp0uxh" path="res://gui/sleep_menu/sun-dial-mask.svg" id="2_2rpbq"]
 [ext_resource type="Texture2D" uid="uid://cokn3iaoop0v6" path="res://gui/sleep_menu/sun-dial.png" id="2_hyfk6"]
+[ext_resource type="Theme" uid="uid://cpfg3yoyu638e" path="res://gui/new_theme.tres" id="2_vca0q"]
 
 [node name="SleepMenu" type="CanvasLayer" unique_id=456706051 node_paths=PackedStringArray("_label")]
 layer = 200
@@ -46,6 +47,7 @@ offset_right = 37.0
 offset_bottom = 162.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_vca0q")
 theme_override_font_sizes/font_size = 35
 text = "6.0"
 horizontal_alignment = 1
@@ -63,6 +65,7 @@ offset_right = 141.0
 offset_bottom = -125.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_vca0q")
 theme_override_font_sizes/font_size = 100
 text = "DAY 1"
 

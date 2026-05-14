@@ -2,7 +2,29 @@
 
 [ext_resource type="Script" uid="uid://dqae2162fmbul" path="res://gui/inventory/inventory_menu.gd" id="1_l30io"]
 [ext_resource type="PackedScene" uid="uid://cs35qk6fai74g" path="res://gui/inventory/inventory_slot/inventory_slot.tscn" id="2_6o4wp"]
-[ext_resource type="Texture2D" uid="uid://d2y6aah48j7eb" path="res://gui/inventory/art/Inventory Alt Textured_v3.png" id="2_enr3t"]
+[ext_resource type="Texture2D" uid="uid://bjwanv7kbd71" path="res://gui/inventory/art/Inventory Alt Textured_v7.png" id="2_esdep"]
+[ext_resource type="PackedScene" uid="uid://bypyjnhae5vkb" path="res://entities/fish/mail/mail_mesh.tscn" id="3_a7o7o"]
+[ext_resource type="Shader" uid="uid://dlljcv47wmx67" path="res://environment/shaders/terminal_shader.gdshader" id="4_a7o7o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_esdep"]
+shader = ExtResource("4_a7o7o")
+shader_parameter/max_dots = 58
+shader_parameter/dot_size = 0.5000000074506
+shader_parameter/brightness_mult = 1.20000001788144
+shader_parameter/invert = false
+shader_parameter/primary_color = Color(0, 1, 0, 1)
+shader_parameter/secondary_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_enr3t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ned55"]
+shader = ExtResource("4_a7o7o")
+shader_parameter/max_dots = 172
+shader_parameter/dot_size = 0.80000001192096
+shader_parameter/brightness_mult = 0.30000000447036
+shader_parameter/invert = false
+shader_parameter/primary_color = Color(0, 1, 0, 1)
+shader_parameter/secondary_color = Color(0, 0, 0, 1)
 
 [node name="Inventory" type="Control" unique_id=814013906 node_paths=PackedStringArray("_slot_grid", "_select_marker", "_currency_label", "_upgrades_label", "_item_dispaly_root", "_mesh_marker", "_open_sfx", "_close_sfx")]
 layout_mode = 3
@@ -12,7 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l30io")
-_slot_grid = NodePath("SlotGrid")
+_slot_grid = NodePath("PanelContainer2/SlotGrid")
 _select_marker = NodePath("SelectMarker")
 _currency_label = NodePath("CurrencyLabel")
 _upgrades_label = NodePath("UpgradesLabel")
@@ -22,24 +44,24 @@ _open_sfx = NodePath("SFX/Open")
 _close_sfx = NodePath("SFX/Close")
 
 [node name="InventoryAltTexturedV2" type="Sprite2D" parent="." unique_id=1030784044]
-position = Vector2(241.00002, 324.00003)
+position = Vector2(241.00002, 302)
 scale = Vector2(0.42260173, 0.4455319)
-texture = ExtResource("2_enr3t")
+texture = ExtResource("2_esdep")
 
 [node name="PreviewMeshViewport" type="SubViewportContainer" parent="." unique_id=104791471]
-custom_minimum_size = Vector2(128, 128)
+material = SubResource("ShaderMaterial_esdep")
 layout_mode = 0
-offset_left = 109.0
-offset_top = 147.0
-offset_right = 237.0
-offset_bottom = 275.0
+offset_left = 133.0
+offset_top = 175.0
+offset_right = 233.0
+offset_bottom = 274.0
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="PreviewMeshViewport" unique_id=63324869]
 own_world_3d = true
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(128, 128)
+size = Vector2i(100, 99)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="PreviewMeshViewport/SubViewport" unique_id=930334337]
@@ -47,78 +69,84 @@ render_target_update_mode = 4
 [node name="MeshMarker" type="Marker3D" parent="PreviewMeshViewport/SubViewport" unique_id=2092301341]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.90000004)
 
-[node name="SlotGrid" type="GridContainer" parent="." unique_id=212685224]
+[node name="MailFishMesh" parent="PreviewMeshViewport/SubViewport/MeshMarker" unique_id=901966367 instance=ExtResource("3_a7o7o")]
+
+[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=1221948359]
 layout_mode = 0
-offset_left = 125.0
-offset_top = 310.0
-offset_right = 352.0
-offset_bottom = 522.0
-scale = Vector2(1.02, 1.02)
+offset_left = 155.575
+offset_top = 313.365
+offset_right = 367.57574
+offset_bottom = 525.365
+scale = Vector2(0.805, 0.805)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_enr3t")
+
+[node name="SlotGrid" type="GridContainer" parent="PanelContainer2" unique_id=212685224]
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 4
 
-[node name="InventorySlot" parent="SlotGrid" unique_id=1513532196 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot" parent="PanelContainer2/SlotGrid" unique_id=1513532196 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot2" parent="SlotGrid" unique_id=1089592522 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot2" parent="PanelContainer2/SlotGrid" unique_id=1089592522 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot3" parent="SlotGrid" unique_id=52542229 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot3" parent="PanelContainer2/SlotGrid" unique_id=52542229 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot4" parent="SlotGrid" unique_id=1622904605 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot4" parent="PanelContainer2/SlotGrid" unique_id=1622904605 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot5" parent="SlotGrid" unique_id=2007485940 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot5" parent="PanelContainer2/SlotGrid" unique_id=2007485940 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot6" parent="SlotGrid" unique_id=706433875 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot6" parent="PanelContainer2/SlotGrid" unique_id=706433875 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot7" parent="SlotGrid" unique_id=996935915 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot7" parent="PanelContainer2/SlotGrid" unique_id=996935915 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot8" parent="SlotGrid" unique_id=1689553578 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot8" parent="PanelContainer2/SlotGrid" unique_id=1689553578 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot9" parent="SlotGrid" unique_id=1991645615 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot9" parent="PanelContainer2/SlotGrid" unique_id=1991645615 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot10" parent="SlotGrid" unique_id=1182240907 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot10" parent="PanelContainer2/SlotGrid" unique_id=1182240907 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot11" parent="SlotGrid" unique_id=97321689 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot11" parent="PanelContainer2/SlotGrid" unique_id=97321689 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot12" parent="SlotGrid" unique_id=1515028502 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot12" parent="PanelContainer2/SlotGrid" unique_id=1515028502 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot13" parent="SlotGrid" unique_id=1725802157 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot13" parent="PanelContainer2/SlotGrid" unique_id=1725802157 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot14" parent="SlotGrid" unique_id=1973276136 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot14" parent="PanelContainer2/SlotGrid" unique_id=1973276136 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot15" parent="SlotGrid" unique_id=698048425 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot15" parent="PanelContainer2/SlotGrid" unique_id=698048425 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot16" parent="SlotGrid" unique_id=910111742 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot16" parent="PanelContainer2/SlotGrid" unique_id=910111742 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
@@ -136,11 +164,12 @@ offset_right = 30.0
 offset_bottom = 30.0
 
 [node name="CurrencyLabel" type="Label" parent="." unique_id=1662396914]
+material = SubResource("ShaderMaterial_ned55")
 layout_mode = 0
-offset_left = 100.0
-offset_top = 78.0
-offset_right = 140.0
-offset_bottom = 101.0
+offset_left = 182.0
+offset_top = 90.0
+offset_right = 222.0
+offset_bottom = 113.0
 text = "0$"
 
 [node name="ItemDisplayRoot" type="ScrollContainer" parent="." unique_id=2064339340]

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b8bktvdxgqqnf" path="res://entities/profile_wall/menu/profile_menu.gd" id="1_3hdgf"]
 [ext_resource type="PackedScene" uid="uid://1twaxsgrm048" path="res://entities/profile_wall/profile/profile.tscn" id="2_g8fpx"]
+[ext_resource type="Theme" uid="uid://cpfg3yoyu638e" path="res://gui/new_theme.tres" id="3_jpfac"]
+[ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="4_wo5yt"]
 
 [node name="ProfileMenu" type="Control" unique_id=794032460 node_paths=PackedStringArray("_pieces_list", "_profile", "_selected_item_icon")]
 layout_mode = 3
@@ -61,6 +63,7 @@ offset_left = 319.0
 offset_top = 156.0
 offset_right = 528.0
 offset_bottom = 375.0
+theme = ExtResource("3_jpfac")
 _labels = {
 0: NodePath("MarginContainer/HBoxContainer/VBoxContainer/NameLabel"),
 1: NodePath("MarginContainer/HBoxContainer/VBoxContainer/AgeLabel"),
@@ -76,6 +79,8 @@ offset_left = 388.0
 offset_top = 617.0
 offset_right = 459.0
 offset_bottom = 648.0
+theme = ExtResource("3_jpfac")
+theme_override_fonts/font = ExtResource("4_wo5yt")
 text = "Confirm"
 
 [node name="CloseButton" type="Button" parent="HBoxContainer/ProfileSpace" unique_id=1802486397]
@@ -89,6 +94,7 @@ offset_left = -8.0
 offset_top = -8.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_wo5yt")
 text = "Close"
 
 [node name="SelectedItemIcon" type="TextureRect" parent="." unique_id=1775730009]

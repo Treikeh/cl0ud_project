@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cye3hnmivani4"]
 
 [ext_resource type="Script" uid="uid://1p4adi13rbia" path="res://gui/inventory/item_display/item_display.gd" id="1_u0h22"]
+[ext_resource type="Theme" uid="uid://cpfg3yoyu638e" path="res://gui/new_theme.tres" id="2_7hl0k"]
 
 [node name="ItemDisplay" type="Control" unique_id=1218238382 node_paths=PackedStringArray("_name_label", "_value_label", "_type_label", "_read_data_button", "_fish_data_dispaly_root")]
 layout_mode = 3
@@ -24,18 +25,22 @@ layout_mode = 2
 
 [node name="NameLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=712551791]
 layout_mode = 2
+theme = ExtResource("2_7hl0k")
 text = "Name: Placeholder"
 
 [node name="ValueLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=431447506]
 layout_mode = 2
+theme = ExtResource("2_7hl0k")
 text = "Value: 10"
 
 [node name="TypeLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=333823445]
 layout_mode = 2
+theme = ExtResource("2_7hl0k")
 text = "Type: Mail"
 
 [node name="ReadDataButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1924262656]
 layout_mode = 2
+theme = ExtResource("2_7hl0k")
 text = "Read Data"
 
 [node name="FishDataDispalyRoot" type="Control" parent="." unique_id=1484601016]

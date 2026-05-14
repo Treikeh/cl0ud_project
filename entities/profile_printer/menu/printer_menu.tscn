@@ -10,6 +10,8 @@
 [ext_resource type="Resource" uid="uid://bkym4atrbnbu4" path="res://common/data/recipes/rebecca_name_likes_address.tres" id="8_fqatp"]
 [ext_resource type="Resource" uid="uid://2vtrdw4jfdr1" path="res://common/data/recipes/harris_name_likes_occupation.tres" id="9_ek23x"]
 [ext_resource type="Resource" uid="uid://dvmc8ew7unswe" path="res://common/data/recipes/emilio_name_likes_occupation_age.tres" id="10_uvy1h"]
+[ext_resource type="Theme" uid="uid://cpfg3yoyu638e" path="res://gui/new_theme.tres" id="11_m7pds"]
+[ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="12_j7u42"]
 
 [node name="PrinterMenu" type="Control" unique_id=670146033 node_paths=PackedStringArray("_fish_list", "_print_button", "_fish_spawn_marker", "_data_container", "_output_label", "_prev_output_button", "_next_output_button")]
 layout_mode = 3
@@ -61,7 +63,11 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer/FishList/PanelContainer/MarginContainer/VBoxContainer" unique_id=1052547353]
 layout_mode = 2
-text = "Fishes"
+theme = ExtResource("11_m7pds")
+theme_override_font_sizes/font_size = 25
+text = "Fish"
+horizontal_alignment = 1
+uppercase = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/FishList/PanelContainer/MarginContainer/VBoxContainer" unique_id=1472546989]
 layout_mode = 2
@@ -102,6 +108,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("11_m7pds")
 
 [node name="Buttons" type="HBoxContainer" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer" unique_id=2078796219]
 layout_mode = 2
@@ -132,6 +139,7 @@ alignment = 1
 [node name="Label" type="Label" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer" unique_id=1516929706]
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("11_m7pds")
 text = "Output"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -143,6 +151,8 @@ size_flags_vertical = 3
 [node name="PrevOutputItem" type="Button" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer/HBoxContainer2" unique_id=1337227648]
 layout_mode = 2
 size_flags_vertical = 4
+theme = ExtResource("11_m7pds")
+theme_override_fonts/font = ExtResource("12_j7u42")
 text = "<-"
 
 [node name="OutputLabel" type="Label" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer/HBoxContainer2" unique_id=1484225814]
@@ -155,6 +165,8 @@ vertical_alignment = 1
 [node name="NextOutputItem" type="Button" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer/HBoxContainer2" unique_id=1581458832]
 layout_mode = 2
 size_flags_vertical = 4
+theme = ExtResource("11_m7pds")
+theme_override_fonts/font = ExtResource("12_j7u42")
 text = "->"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer" unique_id=337910549]
@@ -163,10 +175,14 @@ alignment = 1
 
 [node name="PrintButton" type="Button" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer/HBoxContainer" unique_id=1470855503]
 layout_mode = 2
+theme = ExtResource("11_m7pds")
+theme_override_fonts/font = ExtResource("12_j7u42")
 text = "Print"
 
 [node name="CloseButton" type="Button" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer/HBoxContainer" unique_id=377232754]
 layout_mode = 2
+theme = ExtResource("11_m7pds")
+theme_override_fonts/font = ExtResource("12_j7u42")
 text = "Close"
 
 [connection signal="pressed" from="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer/HBoxContainer2/PrevOutputItem" to="." method="_on_prev_output_item_pressed"]

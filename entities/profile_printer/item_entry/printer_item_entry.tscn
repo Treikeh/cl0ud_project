@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_7wo70"]
 [ext_resource type="Script" uid="uid://23fder8efuo2" path="res://entities/profile_printer/item_entry/printer_item_entry.gd" id="1_fdunx"]
+[ext_resource type="Theme" uid="uid://cpfg3yoyu638e" path="res://gui/new_theme.tres" id="2_cnuje"]
 
 [node name="ItemEntry" type="PanelContainer" unique_id=1347665274 node_paths=PackedStringArray("_icon", "_label")]
 offset_right = 213.0
@@ -19,6 +20,7 @@ theme_override_constants/margin_bottom = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=2039988580]
 layout_mode = 2
+theme = ExtResource("2_cnuje")
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=371349163]
 custom_minimum_size = Vector2(50, 50)
@@ -29,4 +31,5 @@ stretch_mode = 5
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=2118216674]
 layout_mode = 2
+theme = ExtResource("2_cnuje")
 text = "Name"

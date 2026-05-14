@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dlsd6l245823n" path="res://entities/player/hud/fish_collected_prompt/fish_collected_prompt.gd" id="1_kycp3"]
 [ext_resource type="Texture2D" uid="uid://cdh1uvulx0tfd" path="res://entities/fish/message/message_icon.png" id="2_gil8t"]
+[ext_resource type="Theme" uid="uid://cpfg3yoyu638e" path="res://gui/new_theme.tres" id="2_nooje"]
 
 [node name="FishCollectedPrompt" type="MarginContainer" unique_id=1441646127 node_paths=PackedStringArray("_icon", "_timer")]
 anchors_preset = 1
@@ -28,6 +29,7 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=659161374]
 layout_mode = 2
+theme = ExtResource("2_nooje")
 text = "New Entry"
 horizontal_alignment = 1
 
@@ -45,6 +47,7 @@ stretch_mode = 5
 
 [node name="TabLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1675490517]
 layout_mode = 2
+theme = ExtResource("2_nooje")
 text = "TAB to view"
 horizontal_alignment = 1
 
