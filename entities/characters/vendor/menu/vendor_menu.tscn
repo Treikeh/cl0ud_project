@@ -9,9 +9,20 @@
 [ext_resource type="Resource" uid="uid://ymjkgk23ecty" path="res://common/upgrades/resources/throw_force_upgrade_03.tres" id="5_hjdg2"]
 [ext_resource type="Resource" uid="uid://0q0fr715trpy" path="res://common/upgrades/resources/calm_fish_upgrade_02.tres" id="6_17hq5"]
 [ext_resource type="Resource" uid="uid://yr23djyi4gd6" path="res://common/upgrades/resources/calm_fish_upgrade_03.tres" id="8_a0ftu"]
-[ext_resource type="Texture2D" uid="uid://eorw41vay2vm" path="res://entities/characters/vendor/art/Vendor Background_v3.png" id="9_a0ftu"]
+[ext_resource type="Texture2D" uid="uid://7n61lwp8kdfd" path="res://entities/characters/vendor/art/Vendor Background_v5.png" id="10_d23ln"]
 [ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="11_o0dn8"]
 [ext_resource type="Theme" uid="uid://cpfg3yoyu638e" path="res://gui/new_theme.tres" id="12_3g26q"]
+[ext_resource type="Shader" uid="uid://dlljcv47wmx67" path="res://environment/shaders/terminal_shader.gdshader" id="12_uadfr"]
+[ext_resource type="FontFile" uid="uid://bk6l4x6b1orkk" path="res://gui/art/fonts/Flexi_IBM_VGA_True.ttf" id="13_3tcns"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ppkc6"]
+shader = ExtResource("12_uadfr")
+shader_parameter/max_dots = 174
+shader_parameter/dot_size = 1.70000002533204
+shader_parameter/brightness_mult = 0.0
+shader_parameter/invert = true
+shader_parameter/primary_color = Color(0, 1, 0, 1)
+shader_parameter/secondary_color = Color(0, 0, 0, 1)
 
 [node name="VendorMenu" type="Control" unique_id=1724820824 node_paths=PackedStringArray("_sell_list", "_buy_list", "_currency_label", "_tab_container")]
 layout_mode = 3
@@ -28,9 +39,9 @@ _tab_container = NodePath("TabContainer")
 _upgrades = Array[ExtResource("2_1ills")]([ExtResource("3_3iybf"), ExtResource("3_1ills"), ExtResource("4_w33cr"), ExtResource("5_hjdg2"), ExtResource("5_6i1t7"), ExtResource("6_17hq5"), ExtResource("8_a0ftu")])
 
 [node name="VendorBackground" type="Sprite2D" parent="." unique_id=1785979639]
-position = Vector2(576, 324)
-scale = Vector2(0.6, 0.59999996)
-texture = ExtResource("9_a0ftu")
+position = Vector2(569, 324)
+scale = Vector2(0.6947917, 0.6824074)
+texture = ExtResource("10_d23ln")
 
 [node name="CloseButton" type="Button" parent="." unique_id=839376987]
 layout_mode = 1
@@ -42,13 +53,16 @@ theme_override_fonts/font = ExtResource("11_o0dn8")
 text = "CLOSE"
 
 [node name="CurrencyLabel" type="Label" parent="." unique_id=990211706]
+material = SubResource("ShaderMaterial_ppkc6")
 layout_mode = 0
-offset_left = 108.0
-offset_top = 169.0
-offset_right = 316.0
-offset_bottom = 209.0
-theme_override_font_sizes/font_size = 29
+offset_left = 143.0
+offset_top = 130.0
+offset_right = 290.0
+offset_bottom = 210.0
+theme_override_fonts/font = ExtResource("13_3tcns")
+theme_override_font_sizes/font_size = 38
 text = "0$"
+vertical_alignment = 1
 
 [node name="TabContainer" type="TabContainer" parent="." unique_id=29980569]
 layout_mode = 1
@@ -57,17 +71,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -464.0
-offset_top = -131.0
-offset_right = 479.0
-offset_bottom = 252.0
+offset_left = -494.0
+offset_top = -139.0
+offset_right = 481.0
+offset_bottom = 271.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 
 [node name="Buy" type="Control" parent="TabContainer" unique_id=1988680213]
-visible = false
 layout_mode = 2
 theme = ExtResource("12_3g26q")
 metadata/_tab_index = 0
@@ -77,10 +90,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 9.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sell" type="Control" parent="TabContainer" unique_id=497809201]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -89,10 +105,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 11.0
+offset_right = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=126221093]
+visible = false
 layout_mode = 0
 offset_left = 58.0
 offset_top = 42.0
