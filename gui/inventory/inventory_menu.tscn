@@ -26,7 +26,19 @@ shader_parameter/invert = false
 shader_parameter/primary_color = Color(0, 1, 0, 1)
 shader_parameter/secondary_color = Color(0, 0, 0, 1)
 
-[node name="Inventory" type="Control" unique_id=814013906 node_paths=PackedStringArray("_slot_grid", "_select_marker", "_currency_label", "_upgrades_label", "_item_dispaly_root", "_mesh_marker", "_open_sfx", "_close_sfx")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_esdep"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.029036114, 0.04329364, 0.029036935, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="Inventory" type="Control" unique_id=814013906 node_paths=PackedStringArray("_slot_grid", "_currency_label", "_item_dispaly_root", "_mesh_marker", "_name_label", "_type_label", "_value_label", "_open_sfx", "_close_sfx")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,12 +46,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l30io")
-_slot_grid = NodePath("PanelContainer2/SlotGrid")
-_select_marker = NodePath("SelectMarker")
+_slot_grid = NodePath("ItemPanel/SlotGrid")
 _currency_label = NodePath("CurrencyLabel")
-_upgrades_label = NodePath("UpgradesLabel")
 _item_dispaly_root = NodePath("ItemDisplayRoot/VBoxContainer")
 _mesh_marker = NodePath("PreviewMeshViewport/SubViewport/MeshMarker")
+_name_label = NodePath("ItemInfoPanel/MarginContainer/VBoxContainer/NameLabel")
+_type_label = NodePath("ItemInfoPanel/MarginContainer/VBoxContainer/TypeLabel")
+_value_label = NodePath("ItemInfoPanel/MarginContainer/VBoxContainer/ValueLabel")
 _open_sfx = NodePath("SFX/Open")
 _close_sfx = NodePath("SFX/Close")
 
@@ -71,97 +84,84 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.90000004)
 
 [node name="MailFishMesh" parent="PreviewMeshViewport/SubViewport/MeshMarker" unique_id=901966367 instance=ExtResource("3_a7o7o")]
 
-[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=1221948359]
+[node name="ItemPanel" type="PanelContainer" parent="." unique_id=1221948359]
 layout_mode = 0
-offset_left = 155.575
-offset_top = 313.365
-offset_right = 367.57574
-offset_bottom = 525.365
+offset_left = 133.0
+offset_top = 308.0
+offset_right = 391.38507
+offset_bottom = 529.118
 scale = Vector2(0.805, 0.805)
 theme_override_styles/panel = SubResource("StyleBoxEmpty_enr3t")
 
-[node name="SlotGrid" type="GridContainer" parent="PanelContainer2" unique_id=212685224]
+[node name="SlotGrid" type="GridContainer" parent="ItemPanel" unique_id=212685224]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 4
 
-[node name="InventorySlot" parent="PanelContainer2/SlotGrid" unique_id=1513532196 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot" parent="ItemPanel/SlotGrid" unique_id=1513532196 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot2" parent="PanelContainer2/SlotGrid" unique_id=1089592522 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot2" parent="ItemPanel/SlotGrid" unique_id=1089592522 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot3" parent="PanelContainer2/SlotGrid" unique_id=52542229 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot3" parent="ItemPanel/SlotGrid" unique_id=52542229 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot4" parent="PanelContainer2/SlotGrid" unique_id=1622904605 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot4" parent="ItemPanel/SlotGrid" unique_id=1622904605 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot5" parent="PanelContainer2/SlotGrid" unique_id=2007485940 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot5" parent="ItemPanel/SlotGrid" unique_id=2007485940 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot6" parent="PanelContainer2/SlotGrid" unique_id=706433875 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot6" parent="ItemPanel/SlotGrid" unique_id=706433875 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot7" parent="PanelContainer2/SlotGrid" unique_id=996935915 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot7" parent="ItemPanel/SlotGrid" unique_id=996935915 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot8" parent="PanelContainer2/SlotGrid" unique_id=1689553578 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot8" parent="ItemPanel/SlotGrid" unique_id=1689553578 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot9" parent="PanelContainer2/SlotGrid" unique_id=1991645615 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot9" parent="ItemPanel/SlotGrid" unique_id=1991645615 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot10" parent="PanelContainer2/SlotGrid" unique_id=1182240907 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot10" parent="ItemPanel/SlotGrid" unique_id=1182240907 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot11" parent="PanelContainer2/SlotGrid" unique_id=97321689 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot11" parent="ItemPanel/SlotGrid" unique_id=97321689 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot12" parent="PanelContainer2/SlotGrid" unique_id=1515028502 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot12" parent="ItemPanel/SlotGrid" unique_id=1515028502 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot13" parent="PanelContainer2/SlotGrid" unique_id=1725802157 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot13" parent="ItemPanel/SlotGrid" unique_id=1725802157 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot14" parent="PanelContainer2/SlotGrid" unique_id=1973276136 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot14" parent="ItemPanel/SlotGrid" unique_id=1973276136 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot15" parent="PanelContainer2/SlotGrid" unique_id=698048425 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot15" parent="ItemPanel/SlotGrid" unique_id=698048425 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="InventorySlot16" parent="PanelContainer2/SlotGrid" unique_id=910111742 instance=ExtResource("2_6o4wp")]
+[node name="InventorySlot16" parent="ItemPanel/SlotGrid" unique_id=910111742 instance=ExtResource("2_6o4wp")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=453896362]
-visible = false
-layout_mode = 0
-offset_left = 97.0
-offset_top = 198.0
-offset_right = 308.075
-offset_bottom = 514.22003
-
-[node name="SelectMarker" type="ColorRect" parent="." unique_id=1670304881]
-layout_mode = 0
-offset_right = 30.0
-offset_bottom = 30.0
 
 [node name="CurrencyLabel" type="Label" parent="." unique_id=1662396914]
 material = SubResource("ShaderMaterial_ned55")
@@ -184,22 +184,69 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="UpgradesLabel" type="Label" parent="." unique_id=953597692]
+[node name="ItemInfoPanel" type="Panel" parent="." unique_id=492376161]
 layout_mode = 0
-offset_left = 97.0
-offset_top = 547.0
-offset_right = 185.0
-offset_bottom = 596.0
-text = "UPGRADES
-"
+offset_left = 242.0
+offset_top = 195.0
+offset_right = 336.0
+offset_bottom = 253.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_esdep")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1852054816]
-visible = false
-layout_mode = 0
-offset_left = 100.0
-offset_top = 188.0
-offset_right = 311.075
-offset_bottom = 504.22003
+[node name="MarginContainer" type="MarginContainer" parent="ItemInfoPanel" unique_id=1190263560]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ItemInfoPanel/MarginContainer" unique_id=1986402008]
+layout_mode = 2
+alignment = 1
+
+[node name="NameLabel" type="RichTextLabel" parent="ItemInfoPanel/MarginContainer/VBoxContainer" unique_id=494342900]
+material = SubResource("ShaderMaterial_ned55")
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 10
+theme_override_font_sizes/bold_italics_font_size = 10
+theme_override_font_sizes/italics_font_size = 10
+theme_override_font_sizes/mono_font_size = 10
+bbcode_enabled = true
+text = "NAME"
+scroll_active = false
+
+[node name="TypeLabel" type="RichTextLabel" parent="ItemInfoPanel/MarginContainer/VBoxContainer" unique_id=1933005598]
+material = SubResource("ShaderMaterial_ned55")
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 10
+theme_override_font_sizes/bold_italics_font_size = 10
+theme_override_font_sizes/italics_font_size = 10
+theme_override_font_sizes/mono_font_size = 10
+bbcode_enabled = true
+text = "TYPE"
+scroll_active = false
+
+[node name="ValueLabel" type="RichTextLabel" parent="ItemInfoPanel/MarginContainer/VBoxContainer" unique_id=768596725]
+material = SubResource("ShaderMaterial_ned55")
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 10
+theme_override_font_sizes/bold_italics_font_size = 10
+theme_override_font_sizes/italics_font_size = 10
+theme_override_font_sizes/mono_font_size = 10
+bbcode_enabled = true
+text = "VALUE"
+scroll_active = false
 
 [node name="SFX" type="Node" parent="." unique_id=2007378864]
 

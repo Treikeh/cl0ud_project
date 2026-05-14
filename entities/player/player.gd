@@ -179,7 +179,7 @@ func _on_inventory_opened() -> void:
 	input.set_enabled(false)
 	
 	# Spawn inventory
-	_inventory_menu = INVENTORY_SCENE.instantiate().with_data(inventory, Globals.upgrades)
+	_inventory_menu = INVENTORY_SCENE.instantiate().with_data(inventory)
 	add_child(_inventory_menu)
 	_inventory_menu.closed.connect(_on_inventory_closed)
 
