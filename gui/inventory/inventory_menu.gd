@@ -8,23 +8,25 @@ const SLOT_SCENE: PackedScene = preload("uid://cs35qk6fai74g")
 const ITEM_DISPALY_SCENE: PackedScene = preload("uid://cye3hnmivani4")
 
 @export var _slot_grid: GridContainer
-@export var _select_marker: ColorRect
 @export var _currency_label: Label
-@export var _upgrades_label: Label
 @export var _item_dispaly_root: Control
 @export var _mesh_marker: Marker3D
+
+@export_group("Item info")
+@export var _name_label: RichTextLabel
+@export var _type_label: RichTextLabel
+@export var _value_label: RichTextLabel
 
 @export_group("SFX")
 @export var _open_sfx: FmodEventEmitter2D
 @export var _close_sfx: FmodEventEmitter2D
 
-var _upgrades: Array[Upgrade] = []
 var _inventory: Inventory
+var _selected_slot: InventorySlot
 
 
-func with_data(inventory: Inventory, upgrades: Array[Upgrade]) -> Control:
+func with_data(inventory: Inventory) -> Control:
 	_inventory = inventory
-	_upgrades = upgrades
 	return self
 
 
@@ -46,14 +48,10 @@ func _process(delta: float) -> void:
 
 func _open() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	_select_marker.hide()
 	_remove_preview_mesh()
 	_populate_slot_grid()
 	
 	_currency_label.text = str(_inventory.currency) + "$"
-	
-	for upgrade: Upgrade in _upgrades:
-		_upgrades_label.text += upgrade.name + "\n"
 	
 	_open_sfx.play_one_shot()
 
@@ -82,18 +80,21 @@ func _on_slot_pressed(slot_index: int) -> void:
 	# Remove the old mesh preview
 	_remove_preview_mesh()
 	_remove_item_display()
+	if _selected_slot:
+		_selected_slot.is_selected = false
 	
 	# Get the new pressed slot
-	var pressed_slot: InventorySlot = _slot_grid.get_child(slot_index)
-	# Move the select marker to the pressed slot
-	_select_marker.show()
-	_select_marker.global_position = pressed_slot.global_position
+	_selected_slot = _slot_grid.get_child(slot_index)
 	
 	# Show new mesh preview
 	var item_data: ItemData = _inventory.get_slot_data(slot_index)
 	if item_data:
 		_show_preview_mesh(item_data)
 		_show_item_dispaly(item_data)
+		_selected_slot.is_selected = true
+		_name_label.text = item_data.name
+		_type_label.text = item_data.type
+		_value_label.text = str(item_data.value)
 
 
 func _show_preview_mesh(item_data: ItemData) -> void:

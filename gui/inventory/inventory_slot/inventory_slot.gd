@@ -6,6 +6,9 @@ signal pressed(slot_index: int)
 
 
 @export var _icon: TextureRect
+@export var _select_highlight: CanvasItem
+
+var is_selected: bool = false
 
 
 func with_data(item_data: ItemData) -> Control:
@@ -16,6 +19,9 @@ func with_data(item_data: ItemData) -> Control:
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		pressed.emit(get_index())
+
+func _process(delta: float) -> void:
+	_select_highlight.visible = is_selected
 
 
 func set_slot_data(item_data: ItemData) -> void:

@@ -2,8 +2,15 @@
 
 [ext_resource type="Script" uid="uid://88i703fu373r" path="res://entities/player/fishing_rod/fishing_rod.gd" id="1_kjkgm"]
 [ext_resource type="Resource" uid="uid://kwyrnihivxsv" path="res://fishing_balancing.tres" id="2_ho2or"]
+[ext_resource type="Script" uid="uid://c4xer7w324wf4" path="res://common/scripts/show_when_upgrade_bought.gd" id="4_6ba55"]
 [ext_resource type="PackedScene" uid="uid://comhrxguptfab" path="res://entities/player/fishing_rod/fishing_hook.tscn" id="4_e6t2x"]
 [ext_resource type="PackedScene" uid="uid://ck338hnie1hb1" path="res://entities/player/fishing_rod/art/fishing_rod_01_sk.tscn" id="4_ho2or"]
+[ext_resource type="Resource" uid="uid://tg01trak81t" path="res://common/upgrades/resources/throw_force_upgrade_01.tres" id="5_v5gg7"]
+[ext_resource type="Resource" uid="uid://ctvk6usfpig2w" path="res://common/upgrades/resources/throw_force_upgrade_02.tres" id="6_1isju"]
+[ext_resource type="Resource" uid="uid://ymjkgk23ecty" path="res://common/upgrades/resources/throw_force_upgrade_03.tres" id="7_hwgj0"]
+[ext_resource type="Resource" uid="uid://bsmvggjup7ypl" path="res://common/upgrades/resources/calm_fish_upgrade_01.tres" id="8_g7xar"]
+[ext_resource type="Resource" uid="uid://0q0fr715trpy" path="res://common/upgrades/resources/calm_fish_upgrade_02.tres" id="9_r6h4i"]
+[ext_resource type="Resource" uid="uid://yr23djyi4gd6" path="res://common/upgrades/resources/calm_fish_upgrade_03.tres" id="10_8uf7n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjkgm"]
 
@@ -14,13 +21,24 @@ metallic_specular = 0.0
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_sglur"]
 
-[node name="FishingRod" type="Node3D" unique_id=949060003 node_paths=PackedStringArray("_rod_mesh", "_hook", "_hook_throw_pos", "_distance_label", "_hook_transform", "_fishing_line", "_rod_tip", "_hook_los_check", "_cast_sfx", "_reel_sfx", "_caught_sfx", "_escaped_sfx")]
+[sub_resource type="ViewportTexture" id="ViewportTexture_6ba55"]
+viewport_path = NodePath("RodHandle/RodScreen/SubViewport")
+
+[sub_resource type="Gradient" id="Gradient_6ba55"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v5gg7"]
+gradient = SubResource("Gradient_6ba55")
+
+[node name="FishingRod" type="Node3D" unique_id=949060003 node_paths=PackedStringArray("_rod_mesh", "_hook", "_hook_throw_pos", "_throw_progress", "_hook_transform", "_fishing_line", "_rod_tip", "_hook_los_check", "_cast_sfx", "_reel_sfx", "_caught_sfx", "_escaped_sfx")]
 script = ExtResource("1_kjkgm")
 _rod_mesh = NodePath("FishingRod_01_SK")
 _hook = NodePath("Hook")
 _hook_throw_pos = NodePath("HookThrowPos")
 _balance_vars = ExtResource("2_ho2or")
-_distance_label = NodePath("RodHandle/DistanceLabel")
+_throw_progress = NodePath("RodHandle/RodScreen/SubViewport/TextureProgressBar")
 _hook_transform = NodePath("HookLine/HookAttachement/RemoteTransform3D")
 _fishing_line = NodePath("HookLine/LineMesh")
 _rod_tip = NodePath("HookLine/RodTipAttachement")
@@ -31,14 +49,38 @@ _reel_sfx = NodePath("SFX/Reel")
 _caught_sfx = NodePath("SFX/Caught")
 _escaped_sfx = NodePath("SFX/Escaped")
 
-[node name="FishingRod_01_SK" parent="." unique_id=81632285 instance=ExtResource("4_ho2or")]
+[node name="FishingRod_01_SK" parent="." unique_id=1206710327 instance=ExtResource("4_ho2or")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
-[node name="Skeleton3D" parent="FishingRod_01_SK" index="0" unique_id=547459602]
-bones/2/position = Vector3(-0.41509, -0.35030088, -0.37405333)
-bones/2/rotation = Quaternion(0.010096832, 0.46866044, 0.88264537, 0.034532797)
-bones/3/rotation = Quaternion(-0.030512199, 4.4386553e-08, -2.9007002e-10, 0.99953437)
-bones/4/rotation = Quaternion(-0.030512216, -1.2094221e-09, -4.323376e-10, 0.99953437)
+[node name="Skeleton3D" parent="FishingRod_01_SK" index="0" unique_id=1255448512]
+bones/2/position = Vector3(-0.40987274, -0.40359578, -0.4065823)
+bones/2/rotation = Quaternion(0.009534292, 0.45292684, 0.89081997, 0.034730744)
+bones/3/rotation = Quaternion(-0.03051221, 4.4170292e-08, 5.749672e-10, 0.99953437)
+bones/4/rotation = Quaternion(-0.030512223, -1.9663295e-09, -1.6217628e-09, 0.99953437)
+
+[node name="UpgradeSlot_001" parent="FishingRod_01_SK/Skeleton3D" index="3" unique_id=887722363]
+script = ExtResource("4_6ba55")
+_upgrade = ExtResource("5_v5gg7")
+
+[node name="UpgradeSlot_002" parent="FishingRod_01_SK/Skeleton3D" index="4" unique_id=1866994339]
+script = ExtResource("4_6ba55")
+_upgrade = ExtResource("6_1isju")
+
+[node name="UpgradeSlot_003" parent="FishingRod_01_SK/Skeleton3D" index="5" unique_id=2031213192]
+script = ExtResource("4_6ba55")
+_upgrade = ExtResource("7_hwgj0")
+
+[node name="UpgradeSlot_004" parent="FishingRod_01_SK/Skeleton3D" index="6" unique_id=994228021]
+script = ExtResource("4_6ba55")
+_upgrade = ExtResource("8_g7xar")
+
+[node name="UpgradeSlot_005" parent="FishingRod_01_SK/Skeleton3D" index="7" unique_id=1997667284]
+script = ExtResource("4_6ba55")
+_upgrade = ExtResource("9_r6h4i")
+
+[node name="UpgradeSlot_006" parent="FishingRod_01_SK/Skeleton3D" index="8" unique_id=2142939688]
+script = ExtResource("4_6ba55")
+_upgrade = ExtResource("10_8uf7n")
 
 [node name="AnimationTree" parent="FishingRod_01_SK" index="2" unique_id=806796295]
 parameters/SM/ReadyThrow/blend_position = 0.07169866492939833
@@ -51,14 +93,14 @@ material_override = SubResource("StandardMaterial3D_pr2vv")
 mesh = SubResource("ImmediateMesh_sglur")
 
 [node name="RodTipAttachement" type="BoneAttachment3D" parent="HookLine" unique_id=1524872158]
-transform = Transform3D(0.09970517, 0.0011624951, 0.0075847353, -0.00038825875, -0.097954825, 0.020117162, 0.0076634767, -0.020087302, -0.097661495, 0.049668174, 0.081290446, -0.12607357)
+transform = Transform3D(0.099708244, 0.001399047, 0.0075036706, -0.00048673825, -0.096940406, 0.024542123, 0.0076174485, -0.024507059, -0.09665076, 0.049391378, 0.074721135, -0.1355496)
 bone_name = "line.001"
 bone_idx = 5
 use_external_skeleton = true
 external_skeleton = NodePath("../../FishingRod_01_SK/Skeleton3D")
 
 [node name="HookAttachement" type="BoneAttachment3D" parent="HookLine" unique_id=213436148]
-transform = Transform3D(0.09970298, 0.00024704664, 0.007697589, -8.2510676e-05, -0.09990852, 0.0042751776, 0.007701111, -0.004268837, -0.09961158, 0.050020557, 0.031824615, -0.1321626)
+transform = Transform3D(0.09970504, 0.00038586798, 0.0076649413, -0.00013424586, -0.09977053, 0.006768903, 0.007673476, -0.0067592426, -0.09947573, 0.049837608, 0.025543405, -0.14336619)
 bone_name = "hook.001"
 bone_idx = 7
 use_external_skeleton = true
@@ -90,20 +132,41 @@ event_name = "event:/Actions/Fish Escaped"
 event_guid = "{2f810c07-fefc-4f37-b561-e050e7d948ad}"
 
 [node name="RodHandle" type="BoneAttachment3D" parent="." unique_id=166742561]
-transform = Transform3D(0.099741116, 0.005149646, -0.0050192163, -0.001454447, 0.08280194, 0.056051087, 0.007042441, -0.05583297, 0.08266248, 0.041509, -0.037405334, -0.03503009)
+transform = Transform3D(0.09974056, 0.0053241, -0.004844764, -0.0014474293, 0.08076147, 0.05895328, 0.0070514344, -0.058730196, 0.08062901, 0.040987276, -0.04065823, -0.04035958)
 bone_name = "rod.001"
 bone_idx = 2
 use_external_skeleton = true
 external_skeleton = NodePath("../FishingRod_01_SK/Skeleton3D")
 
-[node name="DistanceLabel" type="Label3D" parent="RodHandle" unique_id=1097884886]
-transform = Transform3D(0.51961523, 0, -0.3, 0, 0.6, 0, 0.3, 0, 0.51961523, -0.04346666, 0.2, 0.08835314)
-text = "000"
+[node name="RodScreen" type="Sprite3D" parent="RodHandle" unique_id=167206628]
+transform = Transform3D(0.23945563, 0.0010030449, -0.071833126, 0, 0.24997564, 0.003490545, 0.07184013, -0.0033433225, 0.23943229, -0.023, 0.161, 0.074)
+texture = SubResource("ViewportTexture_6ba55")
+
+[node name="SubViewport" type="SubViewport" parent="RodHandle/RodScreen" unique_id=1941168548]
+disable_3d = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(64, 64)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="RodHandle/RodScreen/SubViewport" unique_id=1272039896]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 2500.0
+value = 1250.0
+texture_progress = SubResource("GradientTexture2D_v5gg7")
 
 [node name="HookEnd" type="BoneAttachment3D" parent="." unique_id=1997990020]
-transform = Transform3D(0.099741116, 0.005722491, -0.0043548136, -0.0014544522, 0.07536076, 0.06571638, 0.0070424336, -0.06548291, 0.07524889, 0.046806928, 0.043610074, -0.09333211)
-bone_name = "rod.003"
-bone_idx = 4
+transform = Transform3D(0.09974056, 0.0058744047, -0.004160417, -0.0014474347, 0.07298209, 0.06834852, 0.007051427, -0.068110965, 0.07287778, 0.049391378, 0.074721135, -0.1355496)
+bone_name = "rod_tip.001"
+bone_idx = 8
 use_external_skeleton = true
 external_skeleton = NodePath("../FishingRod_01_SK/Skeleton3D")
 
@@ -111,6 +174,6 @@ external_skeleton = NodePath("../FishingRod_01_SK/Skeleton3D")
 
 [node name="Hook" parent="." unique_id=1629841109 instance=ExtResource("4_e6t2x")]
 process_mode = 4
-transform = Transform3D(0.09970298, -0.0002470473, -0.007697589, -8.2510676e-05, 0.09990852, -0.0042751865, 0.007701111, 0.004268846, 0.09961158, 0.050020557, 0.031824615, -0.1321626)
+transform = Transform3D(0.09970504, -0.00038586865, -0.0076649413, -0.00013424586, 0.09977053, -0.006768912, 0.007673476, 0.0067592515, 0.09947573, 0.049837608, 0.025543405, -0.14336619)
 
 [editable path="FishingRod_01_SK"]

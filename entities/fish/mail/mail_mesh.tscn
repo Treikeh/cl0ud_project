@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://bypyjnhae5vkb"]
 
 [ext_resource type="Texture2D" uid="uid://konw78nn60up" path="res://entities/fish/mail/mail_icon.png" id="1_rl7jg"]
+[ext_resource type="PackedScene" uid="uid://bxjhpv887ewxp" path="res://entities/fish/mail/art/mail_fish_mesh.tscn" id="2_ssamt"]
 
 [node name="MailFishMesh" type="Node3D" unique_id=901966367]
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=22786713]
 transform = Transform3D(-2.1855695e-09, 0.05, 0, -0.05, -2.1855695e-09, 0, 0, 0, 0.05, 0.03142318, -0.33862063, 0)
 texture = ExtResource("1_rl7jg")
+
+[node name="MailFishMesh" parent="." unique_id=1184798690 instance=ExtResource("2_ssamt")]

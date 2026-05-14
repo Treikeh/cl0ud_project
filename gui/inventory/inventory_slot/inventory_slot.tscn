@@ -6,13 +6,15 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_birfg"]
 
-[node name="InventorySlot" type="PanelContainer" unique_id=1513532196 node_paths=PackedStringArray("_icon")]
+[node name="InventorySlot" type="PanelContainer" unique_id=1513532196 node_paths=PackedStringArray("_icon", "_select_highlight")]
 custom_minimum_size = Vector2(40, 40)
 theme_override_styles/panel = SubResource("StyleBoxEmpty_birfg")
 script = ExtResource("1_birfg")
 _icon = NodePath("MarginContainer/TextureRect")
+_select_highlight = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=388255884]
+visible = false
 position = Vector2(20, 20)
 scale = Vector2(0.1171875, 0.1171875)
 texture = ExtResource("3_7nrhm")

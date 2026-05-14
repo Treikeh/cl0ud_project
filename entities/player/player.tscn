@@ -23,6 +23,9 @@ height = 1.5
 radius = 0.4
 height = 1.0
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_wvtmh"]
+viewport_path = NodePath("RodHandle/RodScreen/SubViewport")
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a1qjk"]
 radius = 0.3
 height = 0.7
@@ -73,6 +76,40 @@ near = 0.01
 process_mode = 4
 visible = false
 
+[node name="Skeleton3D" parent="Orientation/Head/CameraRoot/FishingRod/FishingRod_01_SK" parent_id_path=PackedInt32Array(949060003, 1206710327) index="0" unique_id=1109176813]
+bones/2/position = Vector3(0, 0, 0)
+bones/2/rotation = Quaternion(3.090862e-08, 0.70710677, 0.70710677, 3.090862e-08)
+bones/3/rotation = Quaternion(0, 4.371139e-08, 0, 1)
+bones/4/rotation = Quaternion(0, 0, 0, 1)
+
+[node name="RotSpringBoneSimulator3D" parent="Orientation/Head/CameraRoot/FishingRod/FishingRod_01_SK/Skeleton3D" index="1" unique_id=1981557424]
+settings/0/center_from = 1
+settings/0/center_node = NodePath("")
+settings/0/stiffness/value = 0.0
+settings/0/drag/value = 0.05
+settings/0/gravity/value = 0.4
+
+[node name="MoveSpringBoneSimulator3D" parent="Orientation/Head/CameraRoot/FishingRod/FishingRod_01_SK/Skeleton3D" index="2" unique_id=595243233]
+settings/0/stiffness/value = 1.0
+
+[node name="RodTipAttachement" parent="Orientation/Head/CameraRoot/FishingRod/HookLine" parent_id_path=PackedInt32Array(949060003, 12906906) index="1" unique_id=1524872158]
+transform = Transform3D(0.1, 7.1054275e-16, 0, 0, 0, 0.1, 7.1054275e-16, -0.1, 0, 0, 0.15000004, 0)
+
+[node name="HookAttachement" parent="Orientation/Head/CameraRoot/FishingRod/HookLine" parent_id_path=PackedInt32Array(949060003, 12906906) index="2" unique_id=213436148]
+transform = Transform3D(0.1, 7.1054275e-16, 0, 0, 0, 0.1, 7.1054275e-16, -0.1, 0, 3.5527137e-16, 0.15000004, -0.05)
+
+[node name="RodHandle" parent="Orientation/Head/CameraRoot/FishingRod" index="4" unique_id=166742561]
+transform = Transform3D(0.1, 0, -8.742279e-09, 0, 0.1, 0, 8.742279e-09, 0, 0.1, 0, 0, 0)
+
+[node name="RodScreen" parent="Orientation/Head/CameraRoot/FishingRod/RodHandle" index="0" unique_id=167206628]
+texture = SubResource("ViewportTexture_wvtmh")
+
+[node name="HookEnd" parent="Orientation/Head/CameraRoot/FishingRod" index="5" unique_id=1997990020]
+transform = Transform3D(0.1, 0, -7.1054275e-16, 0, 0.1, 0, 7.1054275e-16, 0, 0.1, 0, 0.100000024, 0)
+
+[node name="Hook" parent="Orientation/Head/CameraRoot/FishingRod" index="6" unique_id=1629841109]
+transform = Transform3D(0.1, -7.1054275e-16, 6.211762e-23, 0, -8.742278e-09, -0.1, 7.1054275e-16, 0.1, -8.742278e-09, 3.5527137e-16, 0.15000004, -0.05)
+
 [node name="InteractRay" type="RayCast3D" parent="Orientation/Head" unique_id=1370547296]
 target_position = Vector3(0, 0, -1.75)
 collision_mask = 17
@@ -122,3 +159,6 @@ items = Array[ExtResource("6_8fjmc")]([null, null, null, null, null])
 metadata/_custom_type_script = "uid://c4u80mtdabi0p"
 
 [node name="Hud" parent="." unique_id=905877039 instance=ExtResource("9_bectd")]
+
+[editable path="Orientation/Head/CameraRoot/FishingRod"]
+[editable path="Orientation/Head/CameraRoot/FishingRod/FishingRod_01_SK"]

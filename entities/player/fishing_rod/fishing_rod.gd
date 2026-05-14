@@ -14,7 +14,7 @@ enum FishingState {
 @export var _hook: FishingHook
 @export var _hook_throw_pos: Marker3D
 @export var _balance_vars: FishingVariables
-@export var _distance_label: Label3D
+@export var _throw_progress: TextureProgressBar
 @export var _hook_transform: RemoteTransform3D
 
 @export_group("Hook line")
@@ -65,6 +65,7 @@ func _process(delta: float) -> void:
 	_rod_mesh.fishing_state = _state_machine.get_current_state()
 	_rod_mesh.throw_charge = _throw_charge
 	_rod_mesh.fish_dir = _player._minigame_look_dir
+	_rod_mesh.move_speed = _player.linear_velocity.length()
 
 
 func _display_fishing_line() -> void:
@@ -214,7 +215,7 @@ func _process_ready_throw(delta: float) -> void:
 func _process_waiting(_delta: float) -> void:
 	var distance: float = _throw_pos.distance_squared_to(_hook.global_position)
 	var distance_curve: float = _balance_vars.hook_distance_curve.sample(distance)
-	_distance_label.text = str(int(distance_curve))
+	_throw_progress.value = int(distance_curve)
 	if _hook_los_check.is_colliding():
 		_reel_inn()
 

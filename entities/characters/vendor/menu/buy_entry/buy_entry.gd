@@ -31,7 +31,7 @@ func _ready() -> void:
 
 
 func _gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.is_action_pressed("throw_hook"):
 		pressed.emit(self)
 
 
