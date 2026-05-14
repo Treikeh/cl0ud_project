@@ -23,7 +23,7 @@ func with_data(item_data: ItemData, item_index: int) -> SellEntry:
 
 
 func _gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.is_action_pressed("throw_hook"):
 		_sell_item()
 
 

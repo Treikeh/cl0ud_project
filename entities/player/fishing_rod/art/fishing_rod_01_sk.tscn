@@ -131,7 +131,13 @@ transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("2_07n6i")
 _anim_tree = NodePath("AnimationTree")
 
-[node name="RotSpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Skeleton3D" parent_id_path=PackedInt32Array(1255448512) index="1" unique_id=1981557424]
+[node name="Skeleton3D" parent="." index="0" unique_id=630633705]
+bones/2/position = Vector3(-0.41085237, -0.37718192, -0.34015498)
+bones/2/rotation = Quaternion(0.008518681, 0.54873663, 0.8352276, 0.03479375)
+bones/3/rotation = Quaternion(-0.02478443, 4.421183e-08, 1.7993286e-10, 0.9996928)
+bones/4/rotation = Quaternion(-0.024784442, -1.6474515e-09, -1.600402e-09, 0.9996928)
+
+[node name="RotSpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Skeleton3D" index="1" unique_id=1981557424]
 setting_count = 1
 settings/0/root_bone_name = "line.001"
 settings/0/root_bone = 5
@@ -159,7 +165,7 @@ settings/0/joints/2/bone = 7
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
-[node name="MoveSpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Skeleton3D" parent_id_path=PackedInt32Array(1255448512) index="2" unique_id=595243233]
+[node name="MoveSpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Skeleton3D" index="2" unique_id=595243233]
 influence = 0.4
 setting_count = 1
 settings/0/root_bone_name = "line.001"
