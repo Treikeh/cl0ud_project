@@ -52,33 +52,33 @@ _escaped_sfx = NodePath("SFX/Escaped")
 [node name="FishingRod_01_SK" parent="." unique_id=1206710327 instance=ExtResource("4_ho2or")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
-[node name="Skeleton3D" parent="FishingRod_01_SK" index="0" unique_id=1611054102]
+[node name="Skeleton3D" parent="FishingRod_01_SK" index="0" unique_id=1255448512]
 bones/2/position = Vector3(-0.40987274, -0.40359578, -0.4065823)
 bones/2/rotation = Quaternion(0.009534292, 0.45292684, 0.89081997, 0.034730744)
 bones/3/rotation = Quaternion(-0.03051221, 4.4170292e-08, 5.749672e-10, 0.99953437)
 bones/4/rotation = Quaternion(-0.030512223, -1.9663295e-09, -1.6217628e-09, 0.99953437)
 
-[node name="UpgradeSlot_001" parent="FishingRod_01_SK/Skeleton3D" index="3" unique_id=703380072]
+[node name="UpgradeSlot_001" parent="FishingRod_01_SK/Skeleton3D" index="3" unique_id=887722363]
 script = ExtResource("4_6ba55")
 _upgrade = ExtResource("5_v5gg7")
 
-[node name="UpgradeSlot_002" parent="FishingRod_01_SK/Skeleton3D" index="4" unique_id=108246593]
+[node name="UpgradeSlot_002" parent="FishingRod_01_SK/Skeleton3D" index="4" unique_id=1866994339]
 script = ExtResource("4_6ba55")
 _upgrade = ExtResource("6_1isju")
 
-[node name="UpgradeSlot_003" parent="FishingRod_01_SK/Skeleton3D" index="5" unique_id=620891564]
+[node name="UpgradeSlot_003" parent="FishingRod_01_SK/Skeleton3D" index="5" unique_id=2031213192]
 script = ExtResource("4_6ba55")
 _upgrade = ExtResource("7_hwgj0")
 
-[node name="UpgradeSlot_004" parent="FishingRod_01_SK/Skeleton3D" index="6" unique_id=1638946065]
+[node name="UpgradeSlot_004" parent="FishingRod_01_SK/Skeleton3D" index="6" unique_id=994228021]
 script = ExtResource("4_6ba55")
 _upgrade = ExtResource("8_g7xar")
 
-[node name="UpgradeSlot_005" parent="FishingRod_01_SK/Skeleton3D" index="7" unique_id=514585710]
+[node name="UpgradeSlot_005" parent="FishingRod_01_SK/Skeleton3D" index="7" unique_id=1997667284]
 script = ExtResource("4_6ba55")
 _upgrade = ExtResource("9_r6h4i")
 
-[node name="UpgradeSlot_006" parent="FishingRod_01_SK/Skeleton3D" index="8" unique_id=1502276696]
+[node name="UpgradeSlot_006" parent="FishingRod_01_SK/Skeleton3D" index="8" unique_id=2142939688]
 script = ExtResource("4_6ba55")
 _upgrade = ExtResource("10_8uf7n")
 
@@ -93,14 +93,14 @@ material_override = SubResource("StandardMaterial3D_pr2vv")
 mesh = SubResource("ImmediateMesh_sglur")
 
 [node name="RodTipAttachement" type="BoneAttachment3D" parent="HookLine" unique_id=1524872158]
-transform = Transform3D(0.099708244, 0.0013990488, 0.007503671, -0.00048673694, -0.09694041, 0.024542129, 0.0076174485, -0.024507064, -0.09665077, 0.049391378, 0.074721135, -0.1355496)
+transform = Transform3D(0.099708244, 0.001399047, 0.0075036706, -0.00048673825, -0.096940406, 0.024542123, 0.0076174485, -0.024507059, -0.09665076, 0.049391378, 0.074721135, -0.1355496)
 bone_name = "line.001"
 bone_idx = 5
 use_external_skeleton = true
 external_skeleton = NodePath("../../FishingRod_01_SK/Skeleton3D")
 
 [node name="HookAttachement" type="BoneAttachment3D" parent="HookLine" unique_id=213436148]
-transform = Transform3D(0.09970504, 0.0003858681, 0.007664942, -0.00013424565, -0.09977054, 0.006768902, 0.007673476, -0.006759241, -0.099475734, 0.049837608, 0.025543395, -0.14336619)
+transform = Transform3D(0.09970504, 0.00038586798, 0.0076649413, -0.00013424586, -0.09977053, 0.006768903, 0.007673476, -0.0067592426, -0.09947573, 0.049837608, 0.025543405, -0.14336619)
 bone_name = "hook.001"
 bone_idx = 7
 use_external_skeleton = true
@@ -164,9 +164,9 @@ value = 1250.0
 texture_progress = SubResource("GradientTexture2D_v5gg7")
 
 [node name="HookEnd" type="BoneAttachment3D" parent="." unique_id=1997990020]
-transform = Transform3D(0.09974056, 0.0058744047, -0.004160417, -0.0014474347, 0.07298209, 0.06834852, 0.007051427, -0.068110965, 0.07287778, 0.046454173, 0.038230095, -0.101494126)
-bone_name = "rod.003"
-bone_idx = 4
+transform = Transform3D(0.09974056, 0.0058744047, -0.004160417, -0.0014474347, 0.07298209, 0.06834852, 0.007051427, -0.068110965, 0.07287778, 0.049391378, 0.074721135, -0.1355496)
+bone_name = "rod_tip.001"
+bone_idx = 8
 use_external_skeleton = true
 external_skeleton = NodePath("../FishingRod_01_SK/Skeleton3D")
 
@@ -174,6 +174,6 @@ external_skeleton = NodePath("../FishingRod_01_SK/Skeleton3D")
 
 [node name="Hook" parent="." unique_id=1629841109 instance=ExtResource("4_e6t2x")]
 process_mode = 4
-transform = Transform3D(0.09970504, -0.00038586877, -0.007664942, -0.00013424565, 0.09977054, -0.0067689107, 0.007673476, 0.00675925, 0.099475734, 0.049837608, 0.025543395, -0.14336619)
+transform = Transform3D(0.09970504, -0.00038586865, -0.0076649413, -0.00013424586, 0.09977053, -0.006768912, 0.007673476, 0.0067592515, 0.09947573, 0.049837608, 0.025543405, -0.14336619)
 
 [editable path="FishingRod_01_SK"]

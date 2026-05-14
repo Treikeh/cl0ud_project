@@ -126,18 +126,12 @@ nodes/SM/node = SubResource("AnimationNodeStateMachine_fvbo5")
 nodes/SM/position = Vector2(-100, 180)
 node_connections = [&"output", 0, &"SM"]
 
-[node name="FishingRod_01_SK" unique_id=1206710327 node_paths=PackedStringArray("_anim_tree") instance=ExtResource("1_vy635")]
+[node name="FishingRod_01_SK" unique_id=309730818 node_paths=PackedStringArray("_anim_tree") instance=ExtResource("1_vy635")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("2_07n6i")
 _anim_tree = NodePath("AnimationTree")
 
-[node name="Skeleton3D" parent="." index="0" unique_id=1874701554]
-bones/2/position = Vector3(-0.41509, -0.33389387, -0.31373376)
-bones/2/rotation = Quaternion(0.008873031, 0.56072056, 0.82723504, 0.034583062)
-bones/3/rotation = Quaternion(-0.024784423, 4.438749e-08, -5.227188e-10, 0.9996928)
-bones/4/rotation = Quaternion(-0.024784436, -1.0326314e-09, -6.342565e-10, 0.9996928)
-
-[node name="RotSpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Skeleton3D" index="1" unique_id=1981557424]
+[node name="RotSpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Skeleton3D" parent_id_path=PackedInt32Array(1255448512) index="1" unique_id=1981557424]
 setting_count = 1
 settings/0/root_bone_name = "line.001"
 settings/0/root_bone = 5
@@ -165,7 +159,7 @@ settings/0/joints/2/bone = 7
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
-[node name="MoveSpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Skeleton3D" index="2" unique_id=595243233]
+[node name="MoveSpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Skeleton3D" parent_id_path=PackedInt32Array(1255448512) index="2" unique_id=595243233]
 influence = 0.4
 setting_count = 1
 settings/0/root_bone_name = "line.001"
