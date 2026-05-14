@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwg7vr684tiqw"
-path.s3tc="res://.godot/imported/character_base_01_bc.png-9facb7a85e93d305fa7875b47b5d447f.s3tc.ctex"
+uid="uid://c3r8v12w3rpx0"
+path.s3tc="res://.godot/imported/character_fisher_01_bc.png-357e2cf7bc6ae547f4121880b7ab7309.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "cb18a5d28e77522dfec6a6255bc3847e"
+"md5": "9de64f757431677b007fc6c28be1febe"
 }
 
 [deps]
 
-source_file="res://entities/characters/rig/character_base_01_bc.png"
-dest_files=["res://.godot/imported/character_base_01_bc.png-9facb7a85e93d305fa7875b47b5d447f.s3tc.ctex"]
+source_file="res://entities/characters/rig/character_fisher_01_bc.png"
+dest_files=["res://.godot/imported/character_fisher_01_bc.png-357e2cf7bc6ae547f4121880b7ab7309.s3tc.ctex"]
 
 [params]
 
