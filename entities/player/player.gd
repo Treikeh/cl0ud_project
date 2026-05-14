@@ -30,6 +30,8 @@ func _ready() -> void:
 	
 	inventory.player = self
 	piece_inventory.player = self
+	
+	add_upgrade(FishingRodUpgrade.new())
 
 
 func _process(delta: float) -> void:
