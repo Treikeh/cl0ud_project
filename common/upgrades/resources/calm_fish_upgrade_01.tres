@@ -5,8 +5,7 @@
 
 [resource]
 script = ExtResource("1_2pc2e")
-_upgrade_amount = 5.0
-name = "Calm fish upgrade"
+name = "Calm fish upgrade 01"
 description = "Makes fish calmer"
 icon = ExtResource("1_6rwui")
 cost = 50

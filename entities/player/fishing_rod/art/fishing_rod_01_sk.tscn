@@ -121,21 +121,21 @@ transitions = ["ReadyThrow", "throw_001", SubResource("AnimationNodeStateMachine
 graph_offset = Vector2(-180, -75)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_niyvt"]
-graph_offset = Vector2(-450, 40)
+graph_offset = Vector2(-347, 60)
 nodes/SM/node = SubResource("AnimationNodeStateMachine_fvbo5")
 nodes/SM/position = Vector2(-100, 180)
 node_connections = [&"output", 0, &"SM"]
 
-[node name="FishingRod_01_SK" unique_id=309730818 node_paths=PackedStringArray("_anim_tree") instance=ExtResource("1_vy635")]
+[node name="FishingRod_01_SK" unique_id=1270920744 node_paths=PackedStringArray("_anim_tree") instance=ExtResource("1_vy635")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("2_07n6i")
 _anim_tree = NodePath("AnimationTree")
 
-[node name="Skeleton3D" parent="." index="0" unique_id=630633705]
-bones/2/position = Vector3(-0.41085237, -0.37718192, -0.34015498)
-bones/2/rotation = Quaternion(0.008518681, 0.54873663, 0.8352276, 0.03479375)
-bones/3/rotation = Quaternion(-0.02478443, 4.421183e-08, 1.7993286e-10, 0.9996928)
-bones/4/rotation = Quaternion(-0.024784442, -1.6474515e-09, -1.600402e-09, 0.9996928)
+[node name="Skeleton3D" parent="." index="0" unique_id=939611000]
+bones/2/position = Vector3(-0.40946978, -0.4144611, -0.43617767)
+bones/2/rotation = Quaternion(0.008235844, 0.40844193, 0.9117119, 0.043460306)
+bones/3/rotation = Quaternion(-0.032868046, 4.415368e-08, 7.378384e-10, 0.9994597)
+bones/4/rotation = Quaternion(-0.03286806, -2.0966084e-09, -1.6306951e-09, 0.9994597)
 
 [node name="RotSpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Skeleton3D" index="1" unique_id=1981557424]
 setting_count = 1
@@ -197,10 +197,10 @@ settings/0/exclude_collision_count = 0
 [node name="AnimationTree" type="AnimationTree" parent="." index="2" unique_id=806796295]
 tree_root = SubResource("AnimationNodeBlendTree_niyvt")
 anim_player = NodePath("../AnimationPlayer")
-parameters/SM/conditions/fish_hooked = false
+parameters/SM/conditions/fish_hooked = true
 parameters/SM/conditions/idle = false
-parameters/SM/conditions/ready_throw = true
+parameters/SM/conditions/ready_throw = false
 parameters/SM/conditions/waiting = false
-parameters/SM/FishHooked/blend_position = Vector2(0.7519685, 0.29896903)
+parameters/SM/FishHooked/blend_position = Vector2(0.21182263, 0.3154639)
 parameters/SM/Idle/blend_position = 3.497
 parameters/SM/ReadyThrow/blend_position = 0.246

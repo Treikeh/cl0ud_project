@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_y6lm2")
-name = "Calm fish upgrade 2"
+name = "Calm fish upgrade 03"
 description = "Makes fish calmer"
 icon = ExtResource("1_pc2yy")
-cost = 150
+cost = 200
 metadata/_custom_type_script = "uid://bcn7t44ss40pq"
