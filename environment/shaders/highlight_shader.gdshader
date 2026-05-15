@@ -10,7 +10,7 @@ void fragment( )
 {
 	vec3 vertex = ( INV_VIEW_MATRIX * vec4( VERTEX, 1.0 ) ).xyz;
 	float width = shine_width * 0.001 * cycle_interval;
-	float frequency = floor( sin( vertex.z * cycle_interval + TIME * shine_speed * cycle_interval ) + width );
+	float frequency = floor( sin( vertex.x * cycle_interval + TIME * shine_speed * cycle_interval ) + width );
 	ALBEDO = shine_color.rgb;
 	ALPHA = clamp( ( 1.0 - dot( NORMAL, VIEW ) ) * frequency * shine_color.a, 0.0, 1.0 );
 }
