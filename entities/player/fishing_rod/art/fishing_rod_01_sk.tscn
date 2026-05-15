@@ -132,8 +132,8 @@ script = ExtResource("2_07n6i")
 _anim_tree = NodePath("AnimationTree")
 
 [node name="Skeleton3D" parent="." index="0" unique_id=939611000]
-bones/2/position = Vector3(-0.40946978, -0.4144611, -0.4356295)
-bones/2/rotation = Quaternion(0.008870102, 0.4098506, 0.9111312, 0.04223553)
+bones/2/position = Vector3(-0.40946978, -0.4144611, -0.43617767)
+bones/2/rotation = Quaternion(0.008235844, 0.40844193, 0.9117119, 0.043460306)
 bones/3/rotation = Quaternion(-0.032868046, 4.415368e-08, 7.378384e-10, 0.9994597)
 bones/4/rotation = Quaternion(-0.03286806, -2.0966084e-09, -1.6306951e-09, 0.9994597)
 
