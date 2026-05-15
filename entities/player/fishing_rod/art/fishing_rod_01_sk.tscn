@@ -126,16 +126,16 @@ nodes/SM/node = SubResource("AnimationNodeStateMachine_fvbo5")
 nodes/SM/position = Vector2(-100, 180)
 node_connections = [&"output", 0, &"SM"]
 
-[node name="FishingRod_01_SK" unique_id=819939914 node_paths=PackedStringArray("_anim_tree") instance=ExtResource("1_vy635")]
+[node name="FishingRod_01_SK" unique_id=1176403359 node_paths=PackedStringArray("_anim_tree") instance=ExtResource("1_vy635")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("2_07n6i")
 _anim_tree = NodePath("AnimationTree")
 
-[node name="Skeleton3D" parent="." index="0" unique_id=1779428812]
-bones/2/position = Vector3(-0.41508996, -0.35704988, -0.3988657)
-bones/2/rotation = Quaternion(-0.0045189927, 0.19839646, 0.97591823, 0.090566)
-bones/3/rotation = Quaternion(-0.23028998, 4.2885606e-08, 1.0754205e-08, 0.97312206)
-bones/4/rotation = Quaternion(-0.23028997, -2.6070668e-09, -6.682848e-09, 0.97312206)
+[node name="Skeleton3D" parent="." index="0" unique_id=830128632]
+bones/2/position = Vector3(-0.41243327, -0.38418895, -0.41543025)
+bones/2/rotation = Quaternion(-0.00934939, 0.17271733, 0.9807823, 0.090264425)
+bones/3/rotation = Quaternion(-0.22847697, 4.3260755e-08, 1.0585272e-08, 0.9735493)
+bones/4/rotation = Quaternion(-0.22847697, -1.4578496e-09, -6.2100867e-09, 0.9735493)
 
 [node name="RotSpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Skeleton3D" index="1" unique_id=1981557424]
 setting_count = 1
