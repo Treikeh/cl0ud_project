@@ -3,24 +3,24 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ju8nmcp6n4ic"
-path.s3tc="res://.godot/imported/fishing_rod_01_sk_fishing_rod_bc.png-f1224bbe47d06493e95c6ea29027c145.s3tc.ctex"
+path.bptc="res://.godot/imported/fishing_rod_01_sk_fishing_rod_bc.png-f1224bbe47d06493e95c6ea29027c145.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "ba7f4e72c09bd94f051afc266062112f"
+"md5": "f25689c545e6605fb1224f298a831b9d"
 }
 
 [deps]
 
 source_file="res://entities/player/fishing_rod/art/fishing_rod_01_sk_fishing_rod_bc.png"
-dest_files=["res://.godot/imported/fishing_rod_01_sk_fishing_rod_bc.png-f1224bbe47d06493e95c6ea29027c145.s3tc.ctex"]
+dest_files=["res://.godot/imported/fishing_rod_01_sk_fishing_rod_bc.png-f1224bbe47d06493e95c6ea29027c145.bptc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
