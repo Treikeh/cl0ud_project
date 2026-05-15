@@ -18,12 +18,12 @@
 [ext_resource type="PackedScene" uid="uid://bio2e7voof108" path="res://entities/profile_wall/profile_wall.tscn" id="17_224rj"]
 [ext_resource type="PackedScene" uid="uid://bjae0sst12e6s" path="res://levels/main_level/art/HorizonBuildings/HorizonBuildings.glb" id="17_ddgsd"]
 [ext_resource type="PackedScene" uid="uid://b0l8syuol7cs4" path="res://entities/profile_printer/profile_printer.tscn" id="18_5gklf"]
+[ext_resource type="PackedScene" uid="uid://dxjvd27nnx6ks" path="res://environment/computer/computer.tscn" id="20_f1dbq"]
 [ext_resource type="PackedScene" uid="uid://q3em1bo70ede" path="res://levels/art/BuildingFour/BuildingFour.glb" id="20_xpbmc"]
-[ext_resource type="PackedScene" uid="uid://duqnyxm3y881h" path="res://levels/art/computer/computer.glb" id="21_f1dbq"]
 
 [sub_resource type="Curve" id="Curve_hp128"]
 _limits = [0.0, 10.0, 0.0, 24.0]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(18, 1), 0.0, 0.0, 0, 0, Vector2(24, 10), 1.9196743, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(18, 0.1), 0.0, 0.243, 0, 0, Vector2(24, 3), 1.9196743, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oqmyk"]
@@ -114,6 +114,9 @@ size = Vector3(100, 10, 200)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t80xa"]
 size = Vector3(163.93579, 48.86328, 287.65234)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xpbmc"]
+viewport_path = NodePath("RodHandle/RodScreen/SubViewport")
 
 [node name="MainLevel" type="Node3D" unique_id=224384734 node_paths=PackedStringArray("_day_night_cycle", "_player_marker") groups=["persistent"]]
 script = ExtResource("1_um8ys")
@@ -428,11 +431,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.11393, 3.5083036, 4.86061
 [node name="Orientation" parent="Player" index="2" unique_id=255627194]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
+[node name="RodTipAttachement" parent="Player/Orientation/Head/CameraRoot/FishingRod/HookLine" parent_id_path=PackedInt32Array(913738857, 949060003, 12906906) index="1" unique_id=1524872158]
+transform = Transform3D(0.1, 8.881784e-16, 0, 0, 0, 0.1, 8.881784e-16, -0.1, 0, 0, 0.1500001, 0)
+
+[node name="HookAttachement" parent="Player/Orientation/Head/CameraRoot/FishingRod/HookLine" parent_id_path=PackedInt32Array(913738857, 949060003, 12906906) index="2" unique_id=213436148]
+transform = Transform3D(0.1, 8.881784e-16, 0, 0, 0, 0.1, 8.881784e-16, -0.1, 0, 0, 0.1500001, -0.049999237)
+
+[node name="RodScreen" parent="Player/Orientation/Head/CameraRoot/FishingRod/RodHandle" parent_id_path=PackedInt32Array(913738857, 949060003, 166742561) index="0" unique_id=167206628]
+texture = SubResource("ViewportTexture_xpbmc")
+
+[node name="HookEnd" parent="Player/Orientation/Head/CameraRoot/FishingRod" parent_id_path=PackedInt32Array(913738857, 949060003) index="5" unique_id=1997990020]
+transform = Transform3D(0.1, 0, -8.881784e-16, 0, 0.1, 0, 8.881784e-16, 0, 0.1, 0, 0.1500001, 0)
+
+[node name="Hook" parent="Player/Orientation/Head/CameraRoot/FishingRod" parent_id_path=PackedInt32Array(913738857, 949060003) index="6" unique_id=1629841109]
+transform = Transform3D(0.1, -8.881784e-16, 7.940934e-23, 0, -8.742278e-09, -0.1, 8.881784e-16, 0.1, -8.742278e-09, 0, 0.1500001, -0.049999237)
+
 [node name="PlayerStartMarker" type="Marker3D" parent="." unique_id=46245944]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.11393, 3.5083036, 4.860615)
 
-[node name="Computer" parent="." unique_id=832352687 instance=ExtResource("21_f1dbq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.617591, 3.3345091, 10.500334)
+[node name="Computer2" parent="." unique_id=900398195 instance=ExtResource("20_f1dbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.917456, 2.9868844, 10.383421)
 
 [editable path="System/ProfileSystem/ProfilePrinter"]
 [editable path="Player"]
+[editable path="Player/Orientation/Head/CameraRoot/FishingRod"]
+[editable path="Player/Orientation/Head/CameraRoot/FishingRod/FishingRod_01_SK"]

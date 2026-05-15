@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dxjvd27nnx6ks"]
+
+[ext_resource type="PackedScene" uid="uid://duqnyxm3y881h" path="res://levels/art/computer/computer.glb" id="1_8yvf0"]
+[ext_resource type="Shader" uid="uid://x6aj1inp73ha" path="res://environment/shaders/highlight_shader.gdshader" id="2_ibqcw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ypv45"]
+render_priority = 0
+shader = ExtResource("2_ibqcw")
+shader_parameter/shine_color = Color(0, 1, 0, 1)
+shader_parameter/cycle_interval = 1.5050000477375
+shader_parameter/shine_speed = 1.66800003173
+shader_parameter/shine_width = 3.2800001083
+
+[node name="Computer" unique_id=832352687 instance=ExtResource("1_8yvf0")]
+
+[node name="Cube_065" parent="." index="0" unique_id=1114600982]
+transform = Transform3D(-5.9759325e-10, 0, 0.19422211, 0, -0.005012975, 0, 0.005012975, 0, 2.3153083e-08, -0.3439899, 1.0178008, -0.87962496)
+material_overlay = SubResource("ShaderMaterial_ypv45")
+
+[node name="Cube_066" parent="." index="1" unique_id=1721140680]
+transform = Transform3D(0.661159, 0, 0.7502458, 0, 1, 0, -0.7502458, 0, 0.661159, -0.34399086, 1.0178003, -0.879624)
+material_overlay = SubResource("ShaderMaterial_ypv45")
+
+[node name="Cube_076" parent="." index="2" unique_id=664527838]
+transform = Transform3D(1.7881393e-07, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 1.7881393e-07, -0.3439899, 1.0178003, -0.87962496)
+material_overlay = SubResource("ShaderMaterial_ypv45")
