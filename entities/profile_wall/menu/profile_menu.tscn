@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://1twaxsgrm048" path="res://entities/profile_wall/profile/profile.tscn" id="2_g8fpx"]
 [ext_resource type="Theme" uid="uid://cpfg3yoyu638e" path="res://gui/new_theme.tres" id="3_jpfac"]
 [ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="4_wo5yt"]
+[ext_resource type="FontFile" uid="uid://bk6l4x6b1orkk" path="res://gui/art/fonts/Flexi_IBM_VGA_True.ttf" id="6_fi1ac"]
 
 [node name="ProfileMenu" type="Control" unique_id=794032460 node_paths=PackedStringArray("_pieces_list", "_profile", "_selected_item_icon")]
 layout_mode = 3
@@ -72,13 +73,52 @@ offset_right = 528.0
 offset_bottom = 375.0
 theme = ExtResource("3_jpfac")
 _labels = {
-0: NodePath("MarginContainer/HBoxContainer/VBoxContainer/NameLabel"),
-1: NodePath("MarginContainer/HBoxContainer/VBoxContainer/AgeLabel"),
-2: NodePath("MarginContainer/HBoxContainer/VBoxContainer/JobLabel"),
-3: NodePath("MarginContainer/HBoxContainer/VBoxContainer2/AddressLabel"),
-4: NodePath("MarginContainer/HBoxContainer/VBoxContainer2/LikesLabel"),
-5: NodePath("MarginContainer/HBoxContainer/VBoxContainer2/DislikesLabel")
+0: NodePath("../NewLabels/NameLabelNEW"),
+1: NodePath("../NewLabels/AgeLabelNEW"),
+2: NodePath("../NewLabels/OccupationLabelNEW"),
+3: NodePath("../NewLabels/AddressLabelNEW"),
+4: NodePath("../NewLabels/LikesLabelNEW"),
+5: NodePath("../NewLabels/DislikesLabelNEW")
 }
+
+[node name="MarginContainer" parent="HBoxContainer/ProfileSpace/Profile" index="0" unique_id=15431652]
+visible = false
+
+[node name="Name" parent="HBoxContainer/ProfileSpace/Profile/SpawnPoints" parent_id_path=PackedInt32Array(1526504779, 1152685478) index="0" unique_id=1946658107]
+offset_left = 370.0
+offset_top = -118.0
+offset_right = 370.0
+offset_bottom = -118.0
+
+[node name="Age" parent="HBoxContainer/ProfileSpace/Profile/SpawnPoints" parent_id_path=PackedInt32Array(1526504779, 1152685478) index="1" unique_id=2119633458]
+offset_left = 385.0
+offset_top = 48.0
+offset_right = 385.0
+offset_bottom = 48.0
+
+[node name="Job" parent="HBoxContainer/ProfileSpace/Profile/SpawnPoints" parent_id_path=PackedInt32Array(1526504779, 1152685478) index="2" unique_id=1552440780]
+offset_left = -270.0
+offset_top = -69.0
+offset_right = -270.0
+offset_bottom = -69.0
+
+[node name="Address" parent="HBoxContainer/ProfileSpace/Profile/SpawnPoints" parent_id_path=PackedInt32Array(1526504779, 1152685478) index="3" unique_id=223711644]
+offset_left = 335.0
+offset_top = 222.0
+offset_right = 335.0
+offset_bottom = 222.0
+
+[node name="Likes" parent="HBoxContainer/ProfileSpace/Profile/SpawnPoints" parent_id_path=PackedInt32Array(1526504779, 1152685478) index="4" unique_id=1040039606]
+offset_left = -280.0
+offset_top = 106.0
+offset_right = -280.0
+offset_bottom = 106.0
+
+[node name="Dislikes" parent="HBoxContainer/ProfileSpace/Profile/SpawnPoints" parent_id_path=PackedInt32Array(1526504779, 1152685478) index="5" unique_id=955548621]
+offset_left = -233.0
+offset_top = 280.0
+offset_right = -233.0
+offset_bottom = 280.0
 
 [node name="ConfirmButton" type="Button" parent="HBoxContainer/ProfileSpace" unique_id=1088719792]
 layout_mode = 0
@@ -104,6 +144,59 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("4_wo5yt")
 text = "Close"
 
+[node name="NewLabels" type="Control" parent="HBoxContainer/ProfileSpace" unique_id=2048719450]
+anchors_preset = 0
+offset_left = 404.0
+offset_top = 54.0
+offset_right = 444.0
+offset_bottom = 94.0
+
+[node name="NameLabelNEW" type="Label" parent="HBoxContainer/ProfileSpace/NewLabels" unique_id=1721404256]
+layout_mode = 0
+offset_right = 176.0
+offset_bottom = 23.0
+theme = ExtResource("3_jpfac")
+theme_override_fonts/font = ExtResource("6_fi1ac")
+
+[node name="AgeLabelNEW" type="Label" parent="HBoxContainer/ProfileSpace/NewLabels" unique_id=2010843068]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 42.0
+offset_right = 174.0
+offset_bottom = 65.0
+theme = ExtResource("3_jpfac")
+
+[node name="AddressLabelNEW" type="Label" parent="HBoxContainer/ProfileSpace/NewLabels" unique_id=2023929011]
+layout_mode = 0
+offset_top = 82.0
+offset_right = 176.0
+offset_bottom = 105.0
+theme = ExtResource("3_jpfac")
+
+[node name="OccupationLabelNEW" type="Label" parent="HBoxContainer/ProfileSpace/NewLabels" unique_id=1259824205]
+layout_mode = 0
+offset_left = -131.0
+offset_top = 176.0
+offset_right = 166.0
+offset_bottom = 199.0
+theme = ExtResource("3_jpfac")
+
+[node name="LikesLabelNEW" type="Label" parent="HBoxContainer/ProfileSpace/NewLabels" unique_id=813915180]
+layout_mode = 0
+offset_left = -130.0
+offset_top = 218.0
+offset_right = 165.0
+offset_bottom = 241.0
+theme = ExtResource("3_jpfac")
+
+[node name="DislikesLabelNEW" type="Label" parent="HBoxContainer/ProfileSpace/NewLabels" unique_id=1693204808]
+layout_mode = 0
+offset_left = -132.0
+offset_top = 261.0
+offset_right = 163.0
+offset_bottom = 284.0
+theme = ExtResource("3_jpfac")
+
 [node name="SelectedItemIcon" type="TextureRect" parent="." unique_id=1775730009]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
@@ -124,3 +217,5 @@ offset_bottom = 599.0
 [connection signal="slot_selected" from="HBoxContainer/ProfileSpace/Profile" to="." method="_on_slot_selected"]
 [connection signal="pressed" from="HBoxContainer/ProfileSpace/ConfirmButton" to="." method="_on_confirm_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/ProfileSpace/CloseButton" to="." method="_on_close_button_pressed"]
+
+[editable path="HBoxContainer/ProfileSpace/Profile"]

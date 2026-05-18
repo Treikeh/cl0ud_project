@@ -12,10 +12,13 @@
 [ext_resource type="Resource" uid="uid://cmfp3ncku1m7" path="res://common/data/profiles/harris_goodwill.tres" id="9_snwj1"]
 [ext_resource type="Resource" uid="uid://dhwpx8xpqggbk" path="res://common/data/profiles/cornelius_mctaro.tres" id="10_35jla"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ew2u"]
+
 [node name="Profile" type="PanelContainer" unique_id=1526504779 node_paths=PackedStringArray("_spawn_points", "_labels")]
 offset_right = 209.0
 offset_bottom = 219.0
 pivot_offset_ratio = Vector2(0.5, 0)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2ew2u")
 script = ExtResource("1_n75v3")
 _spawn_points = NodePath("SpawnPoints")
 _labels = {
