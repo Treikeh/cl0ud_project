@@ -213,7 +213,7 @@ func _load_audio_settings() -> void:
 	_ambience_volume_slider.value_changed.connect(_on_ambience_volume_changed)
 	_ambience_volume_spin_box.value_changed.connect(_on_ambience_volume_changed)
 	
-	_on_ui_volume_changed(audio_settings.UI_COLUME)
+	_on_ui_volume_changed(audio_settings.UI_VOLUME)
 	_ui_volume_slider.value_changed.connect(_on_ui_volume_changed)
 	_ui_volume_spin_box.value_changed.connect(_on_ui_volume_changed)
 
