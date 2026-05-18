@@ -36,6 +36,13 @@ func _ready() -> void:
 	
 	looked.connect(_player._on_looked)
 	moved.connect(_player._on_moved)
+	
+	_camera_sens = SettingsManager.get_camera_settings().SENSITIVITY
+	SettingsManager.camera_settings_changed.connect(_on_camera_settings_changed)
+
+
+func _on_camera_settings_changed() -> void:
+	_camera_sens = SettingsManager.get_camera_settings().SENSITIVITY
 
 
 func _input(event: InputEvent) -> void:

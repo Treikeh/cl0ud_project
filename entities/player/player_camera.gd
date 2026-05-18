@@ -9,7 +9,18 @@ class_name PlayerCamera
 
 func _ready() -> void:
 	_player.camera = self
+	
+	# Load camera settings
+	cam.fov = SettingsManager.get_camera_settings().FOV
+	SettingsManager.fov_changed.connect(_on_fov_changed)
 
+
+func _on_fov_changed(fov: float) -> void:
+	cam.fov = fov
+
+
+
+#region Head bobbing
 
 @export_group("Head bobbing")
 @export var hb_frequency: float = 1.0
