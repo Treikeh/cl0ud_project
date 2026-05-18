@@ -15,6 +15,7 @@ const PRINTER_MENU_SCENE: PackedScene = preload("uid://daoulaw7h8y4p")
 @export var _terminal_collision: CollisionShape3D
 @export var _printer_collision: CollisionShape3D
 @export var _cam_transform_marker: Marker3D
+@export var _anim_player: AnimationPlayer
 
 @export_group("SFX")
 @export var _print_sfx: FmodEventEmitter3D
@@ -27,7 +28,7 @@ var _recipes: Array[ProfileRecipe] = []
 
 
 func _ready() -> void:
-	$PaperMesh.hide()
+	_anim_player.play("PrinterNotPrinted")
 	# load all profile recipes
 	const FOLDER_PATH: String = "res://common/data/recipes/"
 	var recipes_files: PackedStringArray = ResourceLoader.list_directory(FOLDER_PATH)
@@ -87,7 +88,8 @@ func _on_fish_printed(item_data: ItemData) -> void:
 func _on_printing_finished() -> void:
 	_state = State.DONE
 	_printer_collision.disabled = false
-	$PaperMesh.show()
+	_anim_player.play("PrinterPrint")
+	_print_sfx.play_one_shot()
 
 
 func _pick_up_piece(player: Player) -> void:
@@ -95,5 +97,4 @@ func _pick_up_piece(player: Player) -> void:
 	_printer_collision.disabled = true
 	_terminal_collision.disabled = false
 	player.piece_inventory.add_item(_paper_item)
-	$PaperMesh.hide()
-	_print_sfx.play_one_shot()
+	_anim_player.play("PrinterNotPrinted")
