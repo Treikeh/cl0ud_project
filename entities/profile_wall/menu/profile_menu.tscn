@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://1twaxsgrm048" path="res://entities/profile_wall/profile/profile.tscn" id="2_g8fpx"]
 [ext_resource type="Theme" uid="uid://cpfg3yoyu638e" path="res://gui/new_theme.tres" id="3_jpfac"]
 [ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="4_wo5yt"]
-[ext_resource type="FontFile" uid="uid://bk6l4x6b1orkk" path="res://gui/art/fonts/Flexi_IBM_VGA_True.ttf" id="6_fi1ac"]
+[ext_resource type="FontFile" uid="uid://cvra0yswwfwwx" path="res://gui/art/fonts/XTypewriter-Regular.ttf" id="6_fi1ac"]
 
 [node name="ProfileMenu" type="Control" unique_id=794032460 node_paths=PackedStringArray("_pieces_list", "_profile", "_selected_item_icon")]
 layout_mode = 3
@@ -156,6 +156,7 @@ layout_mode = 0
 offset_right = 176.0
 offset_bottom = 23.0
 theme = ExtResource("3_jpfac")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_fi1ac")
 
 [node name="AgeLabelNEW" type="Label" parent="HBoxContainer/ProfileSpace/NewLabels" unique_id=2010843068]
@@ -165,6 +166,8 @@ offset_top = 42.0
 offset_right = 174.0
 offset_bottom = 65.0
 theme = ExtResource("3_jpfac")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_fi1ac")
 
 [node name="AddressLabelNEW" type="Label" parent="HBoxContainer/ProfileSpace/NewLabels" unique_id=2023929011]
 layout_mode = 0
@@ -172,6 +175,8 @@ offset_top = 82.0
 offset_right = 176.0
 offset_bottom = 105.0
 theme = ExtResource("3_jpfac")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_fi1ac")
 
 [node name="OccupationLabelNEW" type="Label" parent="HBoxContainer/ProfileSpace/NewLabels" unique_id=1259824205]
 layout_mode = 0
@@ -180,6 +185,8 @@ offset_top = 176.0
 offset_right = 166.0
 offset_bottom = 199.0
 theme = ExtResource("3_jpfac")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_fi1ac")
 
 [node name="LikesLabelNEW" type="Label" parent="HBoxContainer/ProfileSpace/NewLabels" unique_id=813915180]
 layout_mode = 0
@@ -188,6 +195,8 @@ offset_top = 218.0
 offset_right = 165.0
 offset_bottom = 241.0
 theme = ExtResource("3_jpfac")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_fi1ac")
 
 [node name="DislikesLabelNEW" type="Label" parent="HBoxContainer/ProfileSpace/NewLabels" unique_id=1693204808]
 layout_mode = 0
@@ -196,6 +205,8 @@ offset_top = 261.0
 offset_right = 163.0
 offset_bottom = 284.0
 theme = ExtResource("3_jpfac")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_fi1ac")
 
 [node name="SelectedItemIcon" type="TextureRect" parent="." unique_id=1775730009]
 custom_minimum_size = Vector2(50, 50)

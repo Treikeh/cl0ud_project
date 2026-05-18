@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b0hdufr25pscf"]
+
+[ext_resource type="PackedScene" uid="uid://duqnyxm3y881h" path="res://levels/art/computer/computer.glb" id="1_yk8lk"]
+
+[node name="computer" unique_id=861593246 instance=ExtResource("1_yk8lk")]
+
+[node name="Armature" parent="." index="3" unique_id=1746016905]
+transform = Transform3D(1, 0, 0, 0, 0.93808407, 0.34640768, 0, -0.34640768, 0.93808407, -0.42428398, 0.14950643, -0.8448131)
+
+[node name="Skeleton3D" parent="Armature" index="0" unique_id=1870682676]
+bones/0/position = Vector3(-5.1894204e-08, 0.019091845, -0.15852635)
+bones/0/rotation = Quaternion(0.7370163, 6.2193504e-07, 5.4928216e-07, 0.675875)
+bones/0/scale = Vector3(1.2032304, 1.2032303, 1.2032151)
+bones/1/rotation = Quaternion(-0.03173871, -4.0654307e-08, -9.942472e-08, 0.9994963)
+bones/2/rotation = Quaternion(-0.09598964, 0.012152245, -0.0012990788, 0.9953073)
+bones/3/rotation = Quaternion(-0.03464331, -0.0006510699, 0.0036491188, 0.99939287)
+bones/4/rotation = Quaternion(-0.209854, 5.1697985e-05, -8.0672275e-05, 0.9777327)

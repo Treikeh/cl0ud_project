@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://b0l8syuol7cs4" path="res://entities/profile_printer/profile_printer.tscn" id="18_5gklf"]
 [ext_resource type="PackedScene" uid="uid://dxjvd27nnx6ks" path="res://environment/computer/computer.tscn" id="20_f1dbq"]
 [ext_resource type="PackedScene" uid="uid://q3em1bo70ede" path="res://levels/art/BuildingFour/BuildingFour.glb" id="20_xpbmc"]
+[ext_resource type="PackedScene" uid="uid://b0hdufr25pscf" path="res://levels/art/computer/computer.tscn" id="21_f1dbq"]
 
 [sub_resource type="Curve" id="Curve_hp128"]
 _limits = [0.0, 10.0, 0.0, 24.0]
@@ -115,7 +116,7 @@ size = Vector3(100, 10, 200)
 [sub_resource type="BoxShape3D" id="BoxShape3D_t80xa"]
 size = Vector3(163.93579, 48.86328, 287.65234)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_xpbmc"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_f1dbq"]
 viewport_path = NodePath("RodHandle/RodScreen/SubViewport")
 
 [node name="MainLevel" type="Node3D" unique_id=224384734 node_paths=PackedStringArray("_day_night_cycle", "_player_marker") groups=["persistent"]]
@@ -411,6 +412,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3189926, 0.20817924, 0.2654
 
 [node name="PaperMesh" parent="System/ProfileSystem/ProfilePrinter" index="2" unique_id=487481126]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.249254, 0, 0.38285828)
+visible = false
 
 [node name="CamTransformMarker" parent="System/ProfileSystem/ProfilePrinter" index="3" unique_id=484923087]
 transform = Transform3D(-0.6897586, 0, 0.7240394, 0, 1, 0, -0.7240394, 0, -0.6897586, 5.285261, 1.0775514, -0.43947887)
@@ -438,7 +440,7 @@ transform = Transform3D(0.1, 8.881784e-16, 0, 0, 0, 0.1, 8.881784e-16, -0.1, 0, 
 transform = Transform3D(0.1, 8.881784e-16, 0, 0, 0, 0.1, 8.881784e-16, -0.1, 0, 0, 0.1500001, -0.049999237)
 
 [node name="RodScreen" parent="Player/Orientation/Head/CameraRoot/FishingRod/RodHandle" parent_id_path=PackedInt32Array(913738857, 949060003, 166742561) index="0" unique_id=167206628]
-texture = SubResource("ViewportTexture_xpbmc")
+texture = SubResource("ViewportTexture_f1dbq")
 
 [node name="HookEnd" parent="Player/Orientation/Head/CameraRoot/FishingRod" parent_id_path=PackedInt32Array(913738857, 949060003) index="5" unique_id=1997990020]
 transform = Transform3D(0.1, 0, -8.881784e-16, 0, 0.1, 0, 8.881784e-16, 0, 0.1, 0, 0.1500001, 0)
@@ -449,8 +451,12 @@ transform = Transform3D(0.1, -8.881784e-16, 7.940934e-23, 0, -8.742278e-09, -0.1
 [node name="PlayerStartMarker" type="Marker3D" parent="." unique_id=46245944]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.11393, 3.5083036, 4.860615)
 
-[node name="Computer2" parent="." unique_id=900398195 instance=ExtResource("20_f1dbq")]
+[node name="Computer2" parent="." unique_id=832352687 instance=ExtResource("20_f1dbq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.917456, 2.9868844, 10.383421)
+visible = false
+
+[node name="computer" parent="." unique_id=861593246 instance=ExtResource("21_f1dbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.589705, 3.3116217, 10.549475)
 
 [editable path="System/ProfileSystem/ProfilePrinter"]
 [editable path="Player"]
