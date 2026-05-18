@@ -1,0 +1,330 @@
+[gd_scene format=3 uid="uid://bu0oiiqw3xmt4"]
+
+[ext_resource type="Script" uid="uid://c510dh5wvn5qr" path="res://gui/settings/settings_menu.gd" id="1_aw645"]
+
+[node name="SettingsMenu" type="Control" unique_id=360364561]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aw645")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1307690880]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -307.0
+offset_top = -265.0
+offset_right = 307.0
+offset_bottom = 265.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1976076971]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=23115696]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=875874149]
+layout_mode = 2
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1008945827]
+layout_mode = 2
+
+[node name="VIDEO" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2022503260]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+text = "VIDEO"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="DisplayMode" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1252095995]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/DisplayMode" unique_id=343167208]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Display mode"
+
+[node name="DisplayModeOptions" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/DisplayMode" unique_id=1392516862]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+alignment = 1
+selected = 1
+item_count = 3
+popup/item_0/text = "Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Borderless Fullscreen"
+popup/item_1/id = 1
+popup/item_2/text = "Windowed"
+popup/item_2/id = 2
+
+[node name="Vsync" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=363798723]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Vsync" unique_id=1653265577]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "V-Sync"
+
+[node name="VsyncOptions" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/Vsync" unique_id=2067752273]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+alignment = 1
+selected = 1
+item_count = 2
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Enabled"
+popup/item_1/id = 1
+
+[node name="Fps" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=487374020]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Fps" unique_id=1997077595]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Max FPS"
+
+[node name="FpsSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/Fps" unique_id=565004061]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+min_value = 1.0
+max_value = 240.0
+value = 60.0
+allow_greater = true
+
+[node name="FpsSpinBox" type="SpinBox" parent="PanelContainer/MarginContainer/VBoxContainer/Fps" unique_id=1100396701]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 1.0
+max_value = 240.0
+value = 60.0
+allow_greater = true
+alignment = 1
+
+[node name="Camera" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1752247528]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+text = "CAMERA"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="CameraSens" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1758636663]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CameraSens" unique_id=456764694]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Camera Sensitivity"
+
+[node name="CamSensSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/CameraSens" unique_id=588457604]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+min_value = 0.01
+max_value = 3.0
+step = 0.01
+value = 0.1
+
+[node name="CamSensSpinBox" type="SpinBox" parent="PanelContainer/MarginContainer/VBoxContainer/CameraSens" unique_id=2064395124]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 0.01
+max_value = 3.0
+step = 0.01
+value = 0.1
+alignment = 1
+
+[node name="CameraFov" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=421350139]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CameraFov" unique_id=931479002]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Camera Fov"
+
+[node name="CamFovSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/CameraFov" unique_id=1880439449]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+min_value = 75.0
+value = 90.0
+
+[node name="CamFovSpinBox" type="SpinBox" parent="PanelContainer/MarginContainer/VBoxContainer/CameraFov" unique_id=1108877730]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 75.0
+value = 90.0
+alignment = 1
+
+[node name="AUDIO" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=335244878]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+text = "AUDIO"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="MasterVolume" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2019202138]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MasterVolume" unique_id=1460521955]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Master Volume"
+
+[node name="MasterVolSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/MasterVolume" unique_id=213055549]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="MasterVolSpinBox" type="SpinBox" parent="PanelContainer/MarginContainer/VBoxContainer/MasterVolume" unique_id=132175754]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+alignment = 1
+
+[node name="MusicVolume" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1605720981]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MusicVolume" unique_id=59142935]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music Volume"
+
+[node name="MusicVolSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/MusicVolume" unique_id=1888030182]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="MusicVolSpinBox" type="SpinBox" parent="PanelContainer/MarginContainer/VBoxContainer/MusicVolume" unique_id=847234880]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+alignment = 1
+
+[node name="EffectsVolume" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=428521538]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/EffectsVolume" unique_id=460381420]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Effects Volume"
+
+[node name="EffectsVolSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/EffectsVolume" unique_id=43510309]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="EffectsVolSpinBox" type="SpinBox" parent="PanelContainer/MarginContainer/VBoxContainer/EffectsVolume" unique_id=421683224]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+alignment = 1
+
+[node name="AmbienceVolume" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=840055147]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/AmbienceVolume" unique_id=868603387]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Ambience Volume"
+
+[node name="AmbienceVolSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/AmbienceVolume" unique_id=1266766799]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="AmbienceVolSpinBox" type="SpinBox" parent="PanelContainer/MarginContainer/VBoxContainer/AmbienceVolume" unique_id=391244256]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+alignment = 1
+
+[node name="UiVolume" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=148690032]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/UiVolume" unique_id=394794419]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Effects Volume"
+
+[node name="UiVolSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/UiVolume" unique_id=1908765139]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="UiVolSpinBox" type="SpinBox" parent="PanelContainer/MarginContainer/VBoxContainer/UiVolume" unique_id=1901284722]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=527094862]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Buttons" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=857404731]
+layout_mode = 2
+size_flags_vertical = 10
+alignment = 1
+
+[node name="ApplyButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Buttons" unique_id=789552106]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Apply"
+
+[node name="DefaultsButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Buttons" unique_id=14690150]
+layout_mode = 2
+text = "Defaults"
+
+[node name="CloseButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Buttons" unique_id=543884236]
+layout_mode = 2
+text = "Close"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Buttons/ApplyButton" to="." method="_apply_settings"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Buttons/DefaultsButton" to="." method="_reset_settings"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Buttons/CloseButton" to="." method="close"]

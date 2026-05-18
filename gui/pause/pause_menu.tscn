@@ -5,8 +5,6 @@
 [ext_resource type="Theme" uid="uid://cpfg3yoyu638e" path="res://gui/new_theme.tres" id="3_bxmjj"]
 [ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="4_b1bi2"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b1bi2"]
-
 [node name="PauseMenu" type="Control" unique_id=2055431328]
 process_mode = 2
 layout_mode = 3
@@ -30,16 +28,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -131.0
-offset_top = -148.6
+offset_top = -39.600006
 offset_right = 123.0
-offset_bottom = 252.0
+offset_bottom = 143.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=612821952]
-visible = false
-layout_mode = 2
-text = "Paused"
+alignment = 1
 
 [node name="ResumeButton" type="Button" parent="VBoxContainer" unique_id=1584235401]
 layout_mode = 2
@@ -47,19 +41,18 @@ theme = ExtResource("3_bxmjj")
 theme_override_fonts/font = ExtResource("4_b1bi2")
 text = "Resume"
 
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=2078174957]
+layout_mode = 2
+theme = ExtResource("3_bxmjj")
+theme_override_fonts/font = ExtResource("4_b1bi2")
+text = "Settings"
+
 [node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=310436152]
 layout_mode = 2
 theme = ExtResource("3_bxmjj")
 theme_override_fonts/font = ExtResource("4_b1bi2")
 text = "Quit"
 
-[node name="ReloadButton" type="Button" parent="VBoxContainer" unique_id=123866938]
-layout_mode = 2
-theme = ExtResource("3_bxmjj")
-theme_override_fonts/font = ExtResource("4_b1bi2")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_b1bi2")
-text = "Reload"
-
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_resume_game"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_open_Settings"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_quit_game"]
-[connection signal="pressed" from="VBoxContainer/ReloadButton" to="." method="_on_reload_button_pressed"]

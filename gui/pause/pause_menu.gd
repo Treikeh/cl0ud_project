@@ -22,6 +22,12 @@ func _quit_game() -> void:
 	get_tree().quit()
 
 
-func _on_reload_button_pressed() -> void:
-	get_tree().paused = false
-	LevelManager.reload_level()
+func _open_Settings() -> void:
+	hide()
+	var settings_menu := SettingsMenu.create()
+	get_tree().root.add_child(settings_menu)
+	settings_menu.closed.connect(_on_settings_closed)
+
+
+func _on_settings_closed() -> void:
+	show()

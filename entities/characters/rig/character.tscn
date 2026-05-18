@@ -6,11 +6,11 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_g0b3o"]
 radius = 2.0
 
-[node name="CharacterMesh" unique_id=1186258053 node_paths=PackedStringArray("_default_look_position") instance=ExtResource("1_c6gtc")]
+[node name="CharacterMesh" unique_id=2093919317 node_paths=PackedStringArray("_default_look_position") instance=ExtResource("1_c6gtc")]
 _default_look_position = NodePath("DefaultLookPosition")
 _animation = ExtResource("2_tion6")
 
-[node name="Skeleton3D" parent="." index="0" unique_id=2134147189]
+[node name="Skeleton3D" parent="." index="0" unique_id=202476250]
 bones/2/position = Vector3(8.885667e-16, 0.067006476, 0.9022027)
 bones/2/rotation = Quaternion(0.71577483, -5.2722548e-08, -5.4039504e-08, 0.6983312)
 bones/3/rotation = Quaternion(-0.020237818, 1.5096492e-07, 1.3463789e-15, 0.9997952)
