@@ -10,8 +10,19 @@
 [ext_resource type="Resource" uid="uid://bkym4atrbnbu4" path="res://common/data/recipes/rebecca_name_likes_address.tres" id="8_fqatp"]
 [ext_resource type="Resource" uid="uid://2vtrdw4jfdr1" path="res://common/data/recipes/harris_name_likes_occupation.tres" id="9_ek23x"]
 [ext_resource type="Resource" uid="uid://dvmc8ew7unswe" path="res://common/data/recipes/emilio_name_likes_occupation_age.tres" id="10_uvy1h"]
+[ext_resource type="Texture2D" uid="uid://5i7xfayqtasp" path="res://entities/profile_printer/menu/Computer UI_Textured_2.png" id="11_0bhb6"]
 [ext_resource type="Theme" uid="uid://cpfg3yoyu638e" path="res://gui/new_theme.tres" id="11_m7pds"]
 [ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="12_j7u42"]
+
+[sub_resource type="Theme" id="Theme_0bhb6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_npx45"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fqatp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ek23x"]
+
+[sub_resource type="Theme" id="Theme_uvy1h"]
 
 [node name="PrinterMenu" type="Control" unique_id=670146033 node_paths=PackedStringArray("_fish_list", "_print_button", "_fish_spawn_marker", "_data_container", "_output_label", "_prev_output_button", "_next_output_button")]
 layout_mode = 3
@@ -20,6 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_stretch_ratio = 0.0
 script = ExtResource("1_anq61")
 _fish_list = NodePath("HBoxContainer/FishList/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/FishList")
 _print_button = NodePath("HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer/HBoxContainer/PrintButton")
@@ -30,6 +42,11 @@ _prev_output_button = NodePath("HBoxContainer/FishPreview/PanelContainer/MarginC
 _next_output_button = NodePath("HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons/HBoxContainer/HBoxContainer2/NextOutputItem")
 _recipes = Array[ExtResource("2_q25av")]([ExtResource("3_sgc82"), ExtResource("4_m7pds"), ExtResource("5_j7u42"), ExtResource("6_0bhb6"), ExtResource("7_npx45"), ExtResource("8_fqatp"), ExtResource("9_ek23x"), ExtResource("10_uvy1h")])
 
+[node name="ComputerUiTextured" type="Sprite2D" parent="." unique_id=1383030237]
+position = Vector2(560, 312)
+scale = Vector2(0.6265625, 0.60833335)
+texture = ExtResource("11_0bhb6")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=820335375]
 layout_mode = 1
 anchors_preset = 15
@@ -39,10 +56,12 @@ offset_left = 155.0
 offset_right = -157.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.025, 1)
 
 [node name="FishList" type="MarginContainer" parent="HBoxContainer" unique_id=886300186]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+theme = SubResource("Theme_0bhb6")
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 5
@@ -50,6 +69,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/FishList" unique_id=1615607024]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_npx45")
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/FishList/PanelContainer" unique_id=1205504255]
 layout_mode = 2
@@ -88,6 +108,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/FishPreview" unique_id=1432592014]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fqatp")
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/FishPreview/PanelContainer" unique_id=410363752]
 layout_mode = 2
@@ -98,11 +119,13 @@ theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer" unique_id=1794108775]
 layout_mode = 2
-alignment = 2
+size_flags_stretch_ratio = 1.6
+alignment = 1
 
 [node name="DataContainer" type="ScrollContainer" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer" unique_id=1002882883]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ek23x")
 
 [node name="RealDataContainer" type="VBoxContainer" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/DataContainer" unique_id=211355590]
 layout_mode = 2
@@ -112,6 +135,7 @@ theme = ExtResource("11_m7pds")
 
 [node name="Buttons" type="HBoxContainer" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer" unique_id=2078796219]
 layout_mode = 2
+theme = SubResource("Theme_uvy1h")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/FishPreview/PanelContainer/MarginContainer/VBoxContainer/Buttons" unique_id=320037145]
 custom_minimum_size = Vector2(220, 220)
