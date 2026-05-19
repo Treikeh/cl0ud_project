@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://dc3gftjbaw688"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_ny32s"]
+
+[resource]
+script = ExtResource("1_ny32s")
+name = "\"Chops\""
+lines = Array[String](["There we are! Installed and ready to be used.", "...", "Right, you have no clue how to use that thing.", "Ok so, let me give you a quick rundown.", "Most data-fishes will contain sensitive information about someone.", "The terminal on the profile builder allows you to extract any single piece of data from a data-fish.", "However, the process destroys the fish, so pick carefully!", "With that piece of information, you can access the whiteboard to build a profile.", "You slot in one of those piece of data you extracted and boom, you are actively building a profile on someone.", "However, there is an art to this that comes in two forms:", "1. Any specific data can be placed anywhere, but the right data in the right slot increases the value of the profile more.", "2. The more accurate the data is to eachother and to the person you are building a profile on, the more truthful and thus valuable the entire profile becomes.", "Once you have filled out the profile to your liking, you print that profile onto a driver and sell that driver to me for a profit!", "Now, go out there and create some profiles!"])

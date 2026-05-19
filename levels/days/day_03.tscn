@@ -6,8 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://ci766d3wxxwwr" path="res://environment/elevator_door/elevator_door.tscn" id="3_kgh6a"]
 [ext_resource type="PackedScene" uid="uid://bmbvlv41vnb6x" path="res://levels/art/door/ApartmentDoor.glb" id="4_6ddsc"]
 [ext_resource type="PackedScene" uid="uid://cf6nk35lslykg" path="res://levels/art/fire_escape_door/FireEscapeDoor.glb" id="5_kgh6a"]
+[ext_resource type="PackedScene" uid="uid://c0hp5j2f5xkd6" path="res://common/scripts/level_load_trigger.tscn" id="6_qfutr"]
 [ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/characters/vendor/vendor.tscn" id="7_1w5yc"]
 [ext_resource type="PackedScene" uid="uid://iomcinpu06my" path="res://environment/vendor_door/vendor_door.tscn" id="8_qfutr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ofqyv"]
+size = Vector3(2.0927734, 2.8935547, 1)
 
 [node name="Day03" type="Node3D" unique_id=669404763]
 
@@ -24,13 +28,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8, 11.7, 150)
 _schedule = Array[float]([12.0, 20.0])
 
 [node name="FireEscapeDoor" parent="Environment" unique_id=1107788188 instance=ExtResource("5_kgh6a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.045135, 0.64993346, -69.80684)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.045135, 2.6499333, -69.80684)
+
+[node name="FireEscapeDoor2" parent="Environment" unique_id=2087701781 instance=ExtResource("5_kgh6a")]
+transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, -19.045135, 0.64993346, -69.10684)
 
 [node name="ApartmentDoor" parent="Environment" unique_id=804443877 instance=ExtResource("4_6ddsc")]
 transform = Transform3D(-0.054218233, 0, -0.99852914, 0, 1, 0, 0.99852914, 0, -0.054218233, -34.476036, 3.7600656, 0.3929997)
 
 [node name="VendorDoor" parent="Environment" unique_id=525246973 instance=ExtResource("8_qfutr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6926503, 3.5450215, 11.069749)
+
+[node name="LevelLoadTrigger" parent="Environment" unique_id=1664327513 instance=ExtResource("6_qfutr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.26233, -0.4, -71.107346)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/LevelLoadTrigger" unique_id=1832281602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94677734, 0)
+shape = SubResource("BoxShape3D_ofqyv")
 
 [node name="Characters" type="Node3D" parent="." unique_id=229000780]
 

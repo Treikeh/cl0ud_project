@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://bllnwhblauvnu"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_hbixc"]
+
+[resource]
+script = ExtResource("1_hbixc")
+name = "Old Man"
+lines = Array[String](["It technically ain't yer business readin' the data-fishes' contents...", "However, if ye' do, try to keep note on how many people are mentioned in it, and what is mentioned about 'em.", "As Chops probably wants me to tell ye', try to avoid sellin' the fishes raw, and instead, hold onto 'em creating profiles.", "It's gonna earn ye' a lot more Cloudbucks, but in return, the more complete a profile you build on someone, the more harmful the data sold will become.", "It's a multiplyin' effect ye' see.", "An name and an address don't mean much in a vacuum, but together, they become more...", "Valuable...", "But dangerous.", "...", "Be careful, kid, that's all I'm askin'."])

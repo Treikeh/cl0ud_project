@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://b3j3iyovdysgu"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_1i80p"]
+
+[resource]
+script = ExtResource("1_1i80p")
+name = "\"Chops\""
+lines = Array[String](["As I previously mentioned, you put in a data-fish into the terminal over there and choose the desired data to extract from it.", "Remember, this destroys the fish, so pick carefully.", "Then, with that data extracted, access the profile builder on the whiteboard.", "There, you put together an profile by dragging and dropping the data onto one of the slots.", "Try to place the correct data into the correct slot and also to combine data to reference the same person for maximum profit.", "Then, build the profile and bring it to me to sell."])

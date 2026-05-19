@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_fykrx")
 name = "Old Man"
-lines = Array[String](["You new around here?", "I'll can teach you the basics if you want", "But you'll need a fishing rod first", "I belive the vendor has an old one for sale"])
+lines = Array[String](["Ahoy there!", "I see that you made it in one piece.", "However, I notice that you’re lacking one piece of crucial fishin' equipment.", "Your rod!", "I’d check by with “Chops” to see if he has any old rods on hand."])
+choices = Array[String](["\"Chops\"?"])

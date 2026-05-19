@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_y7ydx")
-name = "Name_02"
-lines = Array[String](["You here to catch fish?", "Talk to the old man to learn the ropes"])
+name = "Grahams"
+lines = Array[String](["Hey you!", "This area is off-limits!", "…", "Wait one minute...", "You’re that newcomer Old Man told us about…"])
 choices = Array[String](["Old man?"])

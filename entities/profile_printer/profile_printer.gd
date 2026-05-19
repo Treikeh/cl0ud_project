@@ -16,6 +16,7 @@ const PRINTER_MENU_SCENE: PackedScene = preload("uid://daoulaw7h8y4p")
 @export var _printer_collision: CollisionShape3D
 @export var _cam_transform_marker: Marker3D
 @export var _anim_player: AnimationPlayer
+@export var _required_upgrade: ProfileBuilderUpgrade
 
 @export_group("SFX")
 @export var _print_sfx: FmodEventEmitter3D
@@ -37,6 +38,16 @@ func _ready() -> void:
 			continue
 		
 		_recipes.append(load(FOLDER_PATH + file))
+	
+	_required_upgrade.profile_builder_bought.connect(_show_printer)
+	if not _required_upgrade.bought:
+		hide()
+		process_mode = Node.PROCESS_MODE_DISABLED
+
+
+func _show_printer() -> void:
+	show()
+	process_mode = Node.PROCESS_MODE_INHERIT
 
 
 func _on_interacted(player: Player) -> void:

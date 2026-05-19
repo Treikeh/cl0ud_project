@@ -289,10 +289,10 @@ func _load_save_data() -> void:
 		return
 	
 	# Update position
-	global_position = str_to_var(data.position)
+	#global_position = str_to_var(data.position)
 	# Update rotation
-	_orientation.rotation_degrees.y = str_to_var(data.orientation)
-	_head.rotation_degrees.x = str_to_var(data.head_rotation)
+	#_orientation.rotation_degrees.y = str_to_var(data.orientation)
+	#_head.rotation_degrees.x = str_to_var(data.head_rotation)
 	
 	inventory.items = Globals.inv_items
 	piece_inventory.items = Globals.pice_inv_items

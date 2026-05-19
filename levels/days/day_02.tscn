@@ -29,6 +29,7 @@ script = ExtResource("1_4x28q")
 [node name="Environment" type="Node3D" parent="." unique_id=2025003428]
 
 [node name="MainLevel" parent="Environment" unique_id=224384734 instance=ExtResource("1_b4ifv")]
+_next_day = "uid://c8htcgbbdwmnh"
 
 [node name="SubwayCartSpawnerTunnel" parent="Environment" unique_id=1384092551 instance=ExtResource("2_tia7i")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -15.9, 11.7, -225)

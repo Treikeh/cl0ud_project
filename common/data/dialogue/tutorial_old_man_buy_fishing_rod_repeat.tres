@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_iipqm")
 name = "Old Man"
-lines = Array[String](["Come back once you've gotten your hands on a fishing rod"])
+lines = Array[String](["Still can’t see any fishin' rod in your hands.", "Go talk to Chops to get that sorted out."])
