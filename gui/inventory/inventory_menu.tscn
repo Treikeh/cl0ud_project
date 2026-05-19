@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dqae2162fmbul" path="res://gui/inventory/inventory_menu.gd" id="1_l30io"]
 [ext_resource type="PackedScene" uid="uid://cs35qk6fai74g" path="res://gui/inventory/inventory_slot/inventory_slot.tscn" id="2_6o4wp"]
-[ext_resource type="Texture2D" uid="uid://bjwanv7kbd71" path="res://gui/inventory/art/Inventory Alt Textured_v7.png" id="2_esdep"]
+[ext_resource type="Texture2D" uid="uid://8ydyaj5w23xn" path="res://gui/inventory/art/Inventory Alt Textured_v8.png" id="2_ned55"]
 [ext_resource type="PackedScene" uid="uid://bypyjnhae5vkb" path="res://entities/fish/mail/mail_mesh.tscn" id="3_a7o7o"]
 [ext_resource type="Shader" uid="uid://dlljcv47wmx67" path="res://environment/shaders/terminal_shader.gdshader" id="4_a7o7o"]
 [ext_resource type="FontFile" uid="uid://bk6l4x6b1orkk" path="res://gui/art/fonts/Flexi_IBM_VGA_True.ttf" id="6_ned55"]
@@ -74,9 +74,9 @@ _open_sfx = NodePath("SFX/Open")
 _close_sfx = NodePath("SFX/Close")
 
 [node name="InventoryAltTexturedV2" type="Sprite2D" parent="." unique_id=1030784044]
-position = Vector2(241.00002, 302)
-scale = Vector2(0.42260173, 0.4455319)
-texture = ExtResource("2_esdep")
+position = Vector2(239, 299)
+scale = Vector2(0.45640987, 0.48117447)
+texture = ExtResource("2_ned55")
 
 [node name="PreviewMeshViewport" type="SubViewportContainer" parent="." unique_id=104791471]
 material = SubResource("ShaderMaterial_esdep")

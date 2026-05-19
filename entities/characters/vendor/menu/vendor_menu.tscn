@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://ymjkgk23ecty" path="res://common/upgrades/resources/throw_force_upgrade_03.tres" id="5_hjdg2"]
 [ext_resource type="Resource" uid="uid://0q0fr715trpy" path="res://common/upgrades/resources/calm_fish_upgrade_02.tres" id="6_17hq5"]
 [ext_resource type="Resource" uid="uid://yr23djyi4gd6" path="res://common/upgrades/resources/calm_fish_upgrade_03.tres" id="8_a0ftu"]
-[ext_resource type="Texture2D" uid="uid://7n61lwp8kdfd" path="res://entities/characters/vendor/art/Vendor Background_v5.png" id="10_d23ln"]
+[ext_resource type="Texture2D" uid="uid://bp2r63n51xej2" path="res://entities/characters/vendor/art/Vendor Background_v6.png" id="10_d23ln"]
 [ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="11_o0dn8"]
 [ext_resource type="Theme" uid="uid://cpfg3yoyu638e" path="res://gui/new_theme.tres" id="12_3g26q"]
 [ext_resource type="Shader" uid="uid://dlljcv47wmx67" path="res://environment/shaders/terminal_shader.gdshader" id="12_uadfr"]
