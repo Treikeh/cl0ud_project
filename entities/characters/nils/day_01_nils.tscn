@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://kp08qaggh2cr" path="res://entities/characters/items/fishing_rod_mesh_static.glb" id="10_vis3d"]
 [ext_resource type="Resource" uid="uid://7yvptvt2yxy2" path="res://common/data/dialogue/tips_old_man_01_day_01.tres" id="11_vrqq3"]
 [ext_resource type="Resource" uid="uid://bnanfkya41gpk" path="res://common/data/dialogue/tips_old_man_02_day_01.tres" id="12_c50h1"]
+[ext_resource type="Resource" uid="uid://wsrdx7njuh1f" path="res://common/data/dialogue/tips_old_man_repeat.tres" id="12_vrqq3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_85oi3"]
 size = Vector3(0.7, 1.9, 0.5)
@@ -29,6 +30,7 @@ _spoken_dialogue = ExtResource("3_5dqtv")
 _teach_fishing_dialogue = ExtResource("4_isgsp")
 _repeat_dialogues = Array[ExtResource("7_pmq72")]([ExtResource("8_kq4ww"), ExtResource("9_vrqq3"), ExtResource("10_c50h1")])
 _tips_dialogues = Array[ExtResource("7_pmq72")]([ExtResource("11_vrqq3"), ExtResource("12_c50h1")])
+_no_more_tips_dialogue = ExtResource("12_vrqq3")
 _fishing_rod_upgrade = ExtResource("5_isgsp")
 
 [node name="CharacterMesh" parent="." unique_id=1194805127 instance=ExtResource("3_cc2qk")]
