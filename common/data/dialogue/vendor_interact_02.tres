@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://4nh1kb254r0j"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_2pbhg"]
+
+[resource]
+script = ExtResource("1_2pbhg")
+name = "\"Chops\""
+lines = Array[String](["Well met, friend! Here to buy or off-load your goods?"])
+choices = Array[String](["Buying", "Selling", "Profiles builder?", "Nevermind"])

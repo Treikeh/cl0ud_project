@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://j4j3aq7mw8y7" path="res://entities/profile_printer/profile_printer.gd" id="1_40c73"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="2_mxh1j"]
+[ext_resource type="Resource" uid="uid://cj2apfqebu6sb" path="res://common/upgrades/resources/profile_builder_upgrade.tres" id="2_nydsa"]
 [ext_resource type="PackedScene" uid="uid://b0hdufr25pscf" path="res://levels/art/computer/computer.tscn" id="3_jmsce"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_40c73"]
@@ -14,6 +15,7 @@ _terminal_collision = NodePath("TerminalInteractArea/CollisionShape3D")
 _printer_collision = NodePath("PrinterInteractArea/CollisionShape3D")
 _cam_transform_marker = NodePath("CamTransformMarker")
 _anim_player = NodePath("computer/AnimationPlayer")
+_required_upgrade = ExtResource("2_nydsa")
 _print_sfx = NodePath("SFX/PrintingSfx")
 _open_menu_sfx = NodePath("SFX/OpenMenuSfx")
 _close_menu_sfx = NodePath("SFX/CloseMenuSfx")
@@ -34,7 +36,7 @@ shape = SubResource("BoxShape3D_mxh1j")
 disabled = true
 
 [node name="CamTransformMarker" type="Marker3D" parent="." unique_id=484923087]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.1, -0.60000014)
+transform = Transform3D(-0.99775386, 0, -0.06698805, 0, 1, 0, 0.06698805, 0, -0.99775386, 0.32657403, 0.75217617, -0.41126895)
 
 [node name="SFX" type="Node3D" parent="." unique_id=2118740579]
 

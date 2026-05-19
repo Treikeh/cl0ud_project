@@ -46,6 +46,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_pi2qo")
 text = "TEXT"
+autowrap_mode = 2
 
 [node name="ButtonLabel" type="Label" parent="Panel" unique_id=1234603925]
 layout_mode = 1

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://lfndukbyosw8"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_6ejwj"]
+
+[resource]
+script = ExtResource("1_6ejwj")
+name = "Old Man"
+lines = Array[String](["Now look at that!", "You got yourself a fish!", "Nicely done.", "Now, go over to Chops; he'll probably want to buy that fish off you.", "Or just continue fishin' and sell data-fish in batches.", "Just remember that Chops closes up shop 22:00, so conduct yer business with him before then.", "Anyways, feel free to strike up a conversation with me if you're lookin' for more tips."])

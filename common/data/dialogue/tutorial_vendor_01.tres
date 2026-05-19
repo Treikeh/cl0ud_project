@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_ixwpe")
 name = "\"Chops\""
-lines = Array[String](["Ahh, fresh fish from the barrel", "I'm guessing you're in need of a fishing rod", "Well guess what", "It's your lucky day", "I just happen to have an old one sitting around gathering dust", "So, you buying?"])
-choices = Array[String](["Buying", "Nevermind"])
+lines = Array[String](["Well, well, well! A new face!", "You can call me Chops.", "I am the local dealer here supplying fine data-fishers, like you, with all of the gear they need.", "I also buy data-fishes and profiles off you, once you have any.", "Speaking of which, I see that you have no fishing rod on your person.", "That is one of many problems I can solve, for the right price.", "…", "As you are new… I’d wager you don’t have much disposable income on ya, so I’ll sell you one of my cheaper offerings.", "She might be quite beat-up, but she’ll do the job.", "Have a look."])
+choices = Array[String](["Open Shop", "Nevermind"])

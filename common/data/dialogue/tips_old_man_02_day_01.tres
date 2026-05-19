@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://bnanfkya41gpk"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_jhu3j"]
+
+[resource]
+script = ExtResource("1_jhu3j")
+name = "Old Man"
+lines = Array[String](["Here is one important one: Don't lose yer humanity!", "Alright, I'm pullin' yer leg.", "But seriously... think about what data yer sellin'", "Minimizin' the collateral damage you cause with data sold is important for a variety of reasons.", "I ain't gonna list the reasons, but here are two important ones:", "First, excessive amounts of data-fishin' cause people to invest in alternatives to the Cloud-based communication or in encryption measures.", "Second, ruinin' lives is not good for the soul.", "I know yer not truly evil, kid...", "So don't make the wrong decisions.", "...", "I Hope that helps..."])

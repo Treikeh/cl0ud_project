@@ -14,8 +14,9 @@ enum FishingState {
 @export var _hook: FishingHook
 @export var _hook_throw_pos: Marker3D
 @export var _balance_vars: FishingVariables
-@export var _throw_progress: TextureProgressBar
 @export var _hook_transform: RemoteTransform3D
+@export var _throw_progress: TextureProgressBar
+@export var _time_label: Label
 
 @export_group("Hook line")
 @export var _fishing_line: MeshInstance3D
@@ -66,6 +67,12 @@ func _process(delta: float) -> void:
 	_rod_mesh.throw_charge = _throw_charge
 	_rod_mesh.fish_dir = _player._minigame_look_dir
 	_rod_mesh.move_speed = _player.linear_velocity.length()
+	
+	var hour := int(Globals.time_of_day)
+	var text: String = str(hour) + ":00"
+	if not text.begins_with("1") and not text.begins_with("2"):
+		text = "0" + text
+	_time_label.text = text
 
 
 func _display_fishing_line() -> void:

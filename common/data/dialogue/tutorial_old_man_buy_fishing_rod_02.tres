@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://cr0mxkc5n1qxg"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_iogxc"]
+
+[resource]
+script = ExtResource("1_iogxc")
+name = "Old Man"
+lines = Array[String](["Ah! I forgot you’re new here.", "Chops is our local dealer when it comes to gear and sellin' our fish.", "His shop is located in that doorway with the fire barrel inside it.", "I recommend being quick and firm with your dealings with him as he ain’t the guy to become chummy with if you catch my drift.", "Anyhow, go talk to him, can’t do any fishing without a fishing rod."])

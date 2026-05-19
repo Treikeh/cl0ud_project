@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_pvph0")
 name = "\"Chops\""
-lines = Array[String](["You here to buy or here to sell?"])
-choices = Array[String](["Buying", "Selling", "Profiles?", "Nevermind"])
+lines = Array[String](["Come in! Warm yourself by the fire. Now... Are you buying or selling?"])
+choices = Array[String](["Buying", "Selling", "Profiles builder?", "Nevermind"])

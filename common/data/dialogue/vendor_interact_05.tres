@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://dvokd688hn8kx"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_kdfi6"]
+
+[resource]
+script = ExtResource("1_kdfi6")
+name = "\"Chops\""
+lines = Array[String](["I hope you are not forgetting to use that profile builder. Anyways, what can I help you with?"])
+choices = Array[String](["Buying", "Selling", "Profiles builder?", "Nevermind"])

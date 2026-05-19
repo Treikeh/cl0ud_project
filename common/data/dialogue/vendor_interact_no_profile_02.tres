@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://ckdnpv4bl01q3"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_i6kn0"]
+
+[resource]
+script = ExtResource("1_i6kn0")
+name = "\"Chops\""
+lines = Array[String](["Welcome! Are you buying or selling?"])
+choices = Array[String](["Buying", "Selling", "Nevermind"])
