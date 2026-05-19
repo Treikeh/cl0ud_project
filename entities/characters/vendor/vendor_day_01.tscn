@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://bun848kyh66ui" path="res://common/data/dialogue/tutorial_vendor_01.tres" id="2_ho5a8"]
 [ext_resource type="Resource" uid="uid://cyyq0oslhxqv7" path="res://common/data/dialogue/tutorial_vendor_02.tres" id="3_kfmbj"]
 [ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="3_milc7"]
+[ext_resource type="Resource" uid="uid://cj2apfqebu6sb" path="res://common/upgrades/resources/profile_builder_upgrade.tres" id="3_mu502"]
 [ext_resource type="Resource" uid="uid://dvrns5pqu5cg6" path="res://common/data/dialogue/vendor_interact_01.tres" id="3_sxbb7"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://bjdc7oiy473ob" path="res://entities/characters/vendor/vendor_anim_sm.tres" id="4_sxbb7"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="5_kfmbj"]
@@ -18,6 +19,9 @@
 [ext_resource type="Resource" uid="uid://ckdnpv4bl01q3" path="res://common/data/dialogue/vendor_interact_no_profile_02.tres" id="12_e4lgs"]
 [ext_resource type="Resource" uid="uid://bi7q84mbmiufs" path="res://common/data/dialogue/vendor_interact_no_profile_03.tres" id="13_iwxlb"]
 [ext_resource type="Resource" uid="uid://dl78vjf7a4qpk" path="res://common/data/dialogue/vendor_interact_no_profile_04.tres" id="14_vqwh3"]
+[ext_resource type="Resource" uid="uid://mlpi2gkrdgji" path="res://common/data/dialogue/tutorial_vender_profile_builder_01.tres" id="15_vqwh3"]
+[ext_resource type="Resource" uid="uid://537odw40dqpg" path="res://common/data/dialogue/tutorial_vender_profile_builder_02.tres" id="16_mu502"]
+[ext_resource type="Resource" uid="uid://dc3gftjbaw688" path="res://common/data/dialogue/tutorial_vender_profile_builder_03.tres" id="17_mfri4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x7g4j"]
 
@@ -25,10 +29,14 @@
 script = ExtResource("1_ho5a8")
 _head_marker = NodePath("HeadMarker")
 _fishing_rod_upgrade = ExtResource("6_jkha8")
+_profile_builder_upgrade = ExtResource("3_mu502")
 _buy_fishing_rod_dialogue = ExtResource("2_ho5a8")
 _bought_fishing_rod_dialogue = ExtResource("3_kfmbj")
 _interact_dialogues = Array[ExtResource("5_xem83")]([ExtResource("3_sxbb7"), ExtResource("6_iw5qn"), ExtResource("7_okrif"), ExtResource("8_lbdes"), ExtResource("9_xn2wc")])
 _interact_no_profiles_dialogues = Array[ExtResource("5_xem83")]([ExtResource("11_xn2wc"), ExtResource("12_e4lgs"), ExtResource("13_iwxlb"), ExtResource("14_vqwh3")])
+_profile_builder_01_dialogue = ExtResource("15_vqwh3")
+_profile_builder_02_dialogue = ExtResource("16_mu502")
+_profile_builder_bought_dialogue = ExtResource("17_mfri4")
 _profiles_explain_dialogue = ExtResource("11_xem83")
 
 [node name="CharacterMesh" parent="." unique_id=1333086119 instance=ExtResource("3_milc7")]
