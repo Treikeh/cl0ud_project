@@ -2,26 +2,40 @@
 
 [ext_resource type="Script" uid="uid://bh4rqpl18fk3" path="res://entities/characters/vendor/vendor_day_01.gd" id="1_ho5a8"]
 [ext_resource type="Resource" uid="uid://bun848kyh66ui" path="res://common/data/dialogue/tutorial_vendor_01.tres" id="2_ho5a8"]
+[ext_resource type="Resource" uid="uid://cyyq0oslhxqv7" path="res://common/data/dialogue/tutorial_vendor_02.tres" id="3_kfmbj"]
 [ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="3_milc7"]
 [ext_resource type="Resource" uid="uid://dvrns5pqu5cg6" path="res://common/data/dialogue/vendor_interact_01.tres" id="3_sxbb7"]
-[ext_resource type="Resource" uid="uid://cfrn73n5jww3j" path="res://common/data/dialogue/vendor_profiles_01.tres" id="4_kfmbj"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://bjdc7oiy473ob" path="res://entities/characters/vendor/vendor_anim_sm.tres" id="4_sxbb7"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="5_kfmbj"]
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="5_xem83"]
+[ext_resource type="Resource" uid="uid://4nh1kb254r0j" path="res://common/data/dialogue/vendor_interact_02.tres" id="6_iw5qn"]
+[ext_resource type="Resource" uid="uid://cfm7q37i5iff8" path="res://common/upgrades/resources/fishing_rod_upgrade.tres" id="6_jkha8"]
+[ext_resource type="Resource" uid="uid://6pxtd86s31h6" path="res://common/data/dialogue/vendor_interact_03.tres" id="7_okrif"]
+[ext_resource type="Resource" uid="uid://11qtya6wss4p" path="res://common/data/dialogue/vendor_interact_04.tres" id="8_lbdes"]
+[ext_resource type="Resource" uid="uid://dvokd688hn8kx" path="res://common/data/dialogue/vendor_interact_05.tres" id="9_xn2wc"]
+[ext_resource type="Resource" uid="uid://b3j3iyovdysgu" path="res://common/data/dialogue/vendor_profile_builder_explain.tres" id="11_xem83"]
+[ext_resource type="Resource" uid="uid://wr3f1iqo4lnn" path="res://common/data/dialogue/vendor_interact_no_profile_01.tres" id="11_xn2wc"]
+[ext_resource type="Resource" uid="uid://ckdnpv4bl01q3" path="res://common/data/dialogue/vendor_interact_no_profile_02.tres" id="12_e4lgs"]
+[ext_resource type="Resource" uid="uid://bi7q84mbmiufs" path="res://common/data/dialogue/vendor_interact_no_profile_03.tres" id="13_iwxlb"]
+[ext_resource type="Resource" uid="uid://dl78vjf7a4qpk" path="res://common/data/dialogue/vendor_interact_no_profile_04.tres" id="14_vqwh3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x7g4j"]
 
 [node name="Vendor" type="Node3D" unique_id=520470945 node_paths=PackedStringArray("_head_marker")]
 script = ExtResource("1_ho5a8")
 _head_marker = NodePath("HeadMarker")
+_fishing_rod_upgrade = ExtResource("6_jkha8")
 _buy_fishing_rod_dialogue = ExtResource("2_ho5a8")
-_interact_dialogue = ExtResource("3_sxbb7")
-_profiles_dialogue = ExtResource("4_kfmbj")
+_bought_fishing_rod_dialogue = ExtResource("3_kfmbj")
+_interact_dialogues = Array[ExtResource("5_xem83")]([ExtResource("3_sxbb7"), ExtResource("6_iw5qn"), ExtResource("7_okrif"), ExtResource("8_lbdes"), ExtResource("9_xn2wc")])
+_interact_no_profiles_dialogues = Array[ExtResource("5_xem83")]([ExtResource("11_xn2wc"), ExtResource("12_e4lgs"), ExtResource("13_iwxlb"), ExtResource("14_vqwh3")])
+_profiles_explain_dialogue = ExtResource("11_xem83")
 
 [node name="CharacterMesh" parent="." unique_id=1333086119 instance=ExtResource("3_milc7")]
 _skin = "Vendor"
 _animation = ExtResource("4_sxbb7")
 
-[node name="Skeleton3D" parent="CharacterMesh" index="0" unique_id=75494330]
+[node name="Skeleton3D" parent="CharacterMesh" index="0" unique_id=202476250]
 bones/2/position = Vector3(4.3495396e-16, 0.067006476, 0.8593024)
 bones/2/rotation = Quaternion(0.69923276, -5.3973036e-08, -5.2790625e-08, 0.7148942)
 bones/3/rotation = Quaternion(0.037294902, 1.5081682e-07, -3.6554035e-09, 0.9993043)
