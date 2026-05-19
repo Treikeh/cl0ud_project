@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bqlay1xmrt3y1" path="res://common/upgrades/upgrade.gd" id="2_1ills"]
 [ext_resource type="Resource" uid="uid://tg01trak81t" path="res://common/upgrades/resources/throw_force_upgrade_01.tres" id="3_1ills"]
 [ext_resource type="Resource" uid="uid://cfm7q37i5iff8" path="res://common/upgrades/resources/fishing_rod_upgrade.tres" id="3_3iybf"]
+[ext_resource type="Resource" uid="uid://cj2apfqebu6sb" path="res://common/upgrades/resources/profile_builder_upgrade.tres" id="4_uadfr"]
 [ext_resource type="Resource" uid="uid://ctvk6usfpig2w" path="res://common/upgrades/resources/throw_force_upgrade_02.tres" id="4_w33cr"]
 [ext_resource type="Resource" uid="uid://bsmvggjup7ypl" path="res://common/upgrades/resources/calm_fish_upgrade_01.tres" id="5_6i1t7"]
 [ext_resource type="Resource" uid="uid://ymjkgk23ecty" path="res://common/upgrades/resources/throw_force_upgrade_03.tres" id="5_hjdg2"]
@@ -36,7 +37,7 @@ _sell_list = NodePath("TabContainer/Sell/SellList")
 _buy_list = NodePath("TabContainer/Buy/BuyList")
 _currency_label = NodePath("CurrencyLabel")
 _tab_container = NodePath("TabContainer")
-_upgrades = Array[ExtResource("2_1ills")]([ExtResource("3_3iybf"), ExtResource("3_1ills"), ExtResource("4_w33cr"), ExtResource("5_hjdg2"), ExtResource("5_6i1t7"), ExtResource("6_17hq5"), ExtResource("8_a0ftu")])
+_upgrades = Array[ExtResource("2_1ills")]([ExtResource("3_3iybf"), ExtResource("4_uadfr"), ExtResource("3_1ills"), ExtResource("4_w33cr"), ExtResource("5_hjdg2"), ExtResource("5_6i1t7"), ExtResource("6_17hq5"), ExtResource("8_a0ftu")])
 
 [node name="VendorBackground" type="Sprite2D" parent="." unique_id=1785979639]
 position = Vector2(569, 324)
