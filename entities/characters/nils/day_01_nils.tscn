@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://biotfiuppbsm4" path="res://common/data/dialogue/tutorial_old_man_teach_fishing.tres" id="4_isgsp"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://cbygnrgof7bup" path="res://entities/characters/rig/standing_fishing_anim_sm.tres" id="4_pjgcy"]
 [ext_resource type="Resource" uid="uid://cfm7q37i5iff8" path="res://common/upgrades/resources/fishing_rod_upgrade.tres" id="5_isgsp"]
+[ext_resource type="PackedScene" uid="uid://kp08qaggh2cr" path="res://entities/characters/items/fishing_rod_mesh_static.glb" id="10_vis3d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_85oi3"]
 size = Vector3(0.7, 1.9, 0.5)
@@ -38,11 +39,9 @@ bones/5/rotation = Quaternion(-0.1410824, 1.4557908e-07, 1.9639106e-08, 0.989997
 bones/7/rotation = Quaternion(0.47093797, 0.26385438, -0.5343287, 0.6504547)
 bones/8/rotation = Quaternion(0.7114664, 0.008345114, -0.031082481, 0.7019829)
 bones/9/rotation = Quaternion(-0.18475962, -0.28478548, 0.28245312, 0.8972075)
-bones/10/rotation = Quaternion(-0.09403483, -0.197648, 0.59870034, 0.7704872)
 bones/12/rotation = Quaternion(0.5050656, -0.31430256, 0.4681797, 0.6533992)
 bones/13/rotation = Quaternion(0.63325316, -0.00919415, 0.027665619, 0.77339554)
 bones/14/rotation = Quaternion(-0.014075961, 0.33851096, -0.1924155, 0.9209715)
-bones/15/rotation = Quaternion(-0.1772205, 5.7717866e-08, -9.303564e-09, 0.98417115)
 bones/16/rotation = Quaternion(0.021328896, 0.076777965, 0.9967885, -0.007934505)
 bones/17/rotation = Quaternion(-0.17705412, 5.7867858e-08, -1.010041e-08, 0.98420113)
 bones/18/rotation = Quaternion(0.6296116, -0.0672777, 0.0284327, 0.7734692)
@@ -59,6 +58,16 @@ bone_name = "head.001"
 bone_idx = 5
 use_external_skeleton = true
 external_skeleton = NodePath("../CharacterMesh/Skeleton3D")
+
+[node name="HandLEQ" type="BoneAttachment3D" parent="." unique_id=1285232902]
+transform = Transform3D(0.9895449, 0.12748805, -0.06743496, 0.12191638, -0.489615, 0.8633735, 0.077052705, -0.862568, -0.5000388, -0.0058567, 1.15424, -0.27611566)
+bone_name = "hand_eq.l.001"
+bone_idx = 10
+use_external_skeleton = true
+external_skeleton = NodePath("../CharacterMesh/Skeleton3D")
+
+[node name="FishingRodMesh_001" parent="HandLEQ" unique_id=987361834 instance=ExtResource("10_vis3d")]
+transform = Transform3D(0.9791995, 0.19359015, 0.06075813, 0.05872024, 0.016253173, -0.99814224, -0.19421801, 0.980948, 0.004547447, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=220955212]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
