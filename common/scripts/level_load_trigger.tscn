@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c0hp5j2f5xkd6"]
+
+[ext_resource type="Script" uid="uid://blype4xwnpv7y" path="res://common/scripts/level_load_trigger.gd" id="1_2plhg"]
+
+[node name="LevelLoadTrigger" type="Area3D" unique_id=1664327513]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_2plhg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
