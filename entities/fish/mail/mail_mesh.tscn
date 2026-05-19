@@ -7,6 +7,8 @@
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=22786713]
 transform = Transform3D(-2.1855695e-09, 0.05, 0, -0.05, -2.1855695e-09, 0, 0, 0, 0.05, 0.03142318, -0.33862063, 0)
+visible = false
 texture = ExtResource("1_rl7jg")
 
 [node name="MailFishMesh" parent="." unique_id=1184798690 instance=ExtResource("2_ssamt")]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 0, 0, 0)
