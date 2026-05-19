@@ -6,11 +6,16 @@
 [ext_resource type="Resource" uid="uid://cr0mxkc5n1qxg" path="res://common/data/dialogue/tutorial_old_man_buy_fishing_rod_02.tres" id="3_83mp1"]
 [ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="3_cc2qk"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="4_5dqtv"]
-[ext_resource type="Resource" uid="uid://daoxlatyjttmi" path="res://common/data/dialogue/oldman_speak_01.tres" id="4_i31au"]
 [ext_resource type="Resource" uid="uid://biotfiuppbsm4" path="res://common/data/dialogue/tutorial_old_man_teach_fishing.tres" id="4_isgsp"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://cbygnrgof7bup" path="res://entities/characters/rig/standing_fishing_anim_sm.tres" id="4_pjgcy"]
 [ext_resource type="Resource" uid="uid://cfm7q37i5iff8" path="res://common/upgrades/resources/fishing_rod_upgrade.tres" id="5_isgsp"]
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="7_pmq72"]
+[ext_resource type="Resource" uid="uid://gkugv4exr5b0" path="res://common/data/dialogue/tips_old_man_start_01.tres" id="8_kq4ww"]
+[ext_resource type="Resource" uid="uid://cocchijl1xtg1" path="res://common/data/dialogue/tips_old_man_start_02.tres" id="9_vrqq3"]
+[ext_resource type="Resource" uid="uid://c77cige3cl0dx" path="res://common/data/dialogue/tips_old_man_start_03.tres" id="10_c50h1"]
 [ext_resource type="PackedScene" uid="uid://kp08qaggh2cr" path="res://entities/characters/items/fishing_rod_mesh_static.glb" id="10_vis3d"]
+[ext_resource type="Resource" uid="uid://7yvptvt2yxy2" path="res://common/data/dialogue/tips_old_man_01_day_01.tres" id="11_vrqq3"]
+[ext_resource type="Resource" uid="uid://bnanfkya41gpk" path="res://common/data/dialogue/tips_old_man_02_day_01.tres" id="12_c50h1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_85oi3"]
 size = Vector3(0.7, 1.9, 0.5)
@@ -22,7 +27,8 @@ _start_dialogue = ExtResource("2_cc2qk")
 _chops_dialogue = ExtResource("3_83mp1")
 _spoken_dialogue = ExtResource("3_5dqtv")
 _teach_fishing_dialogue = ExtResource("4_isgsp")
-_repeat_dialogue = ExtResource("4_i31au")
+_repeat_dialogues = Array[ExtResource("7_pmq72")]([ExtResource("8_kq4ww"), ExtResource("9_vrqq3"), ExtResource("10_c50h1")])
+_tips_dialogues = Array[ExtResource("7_pmq72")]([ExtResource("11_vrqq3"), ExtResource("12_c50h1")])
 _fishing_rod_upgrade = ExtResource("5_isgsp")
 
 [node name="CharacterMesh" parent="." unique_id=1194805127 instance=ExtResource("3_cc2qk")]
