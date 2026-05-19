@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_he6m1")
-name = "Name_02"
-lines = Array[String](["Yeah, the old guy fishing by the edge"])
+name = "Grahams"
+lines = Array[String](["Yeah.", "The Old Man found Concrete Cove first and invites only those he trusts to join it.", "He spoke highly of you and told us that you were allowed here.", "I’d wager he wants to speak with you right away.", "Go on, he’s by the ledge."])

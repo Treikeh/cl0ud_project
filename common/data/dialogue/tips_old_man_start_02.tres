@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://cocchijl1xtg1"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_tk1gl"]
+
+[resource]
+script = ExtResource("1_tk1gl")
+name = "Old Man"
+lines = Array[String](["Watcha' need?"])
+choices = Array[String](["Got any tips?", "Nevermind"])
