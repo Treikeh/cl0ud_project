@@ -20,6 +20,12 @@ func _ready() -> void:
 	_load_audio_settings()
 
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().root.set_input_as_handled()
+		close()
+
+
 func _process(_delta: float) -> void:
 	_apply_button.disabled = not _has_settings_changed()
 
