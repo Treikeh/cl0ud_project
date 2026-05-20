@@ -7,6 +7,7 @@ signal dialogue_ended
 @export var _name_label: Label
 @export var _text_label: Label
 @export var _dialogue_choice_container: Container
+@export var _speech_sfx: FmodEventEmitter2D
 
 var _show_chocies: bool = false
 var _dialogue_progress: int = 0
@@ -22,6 +23,11 @@ func _ready() -> void:
 	_update_dialogue_box()
 
 
+func _process(_delta: float) -> void:
+	if _text_label.text == _dialogue.lines[_dialogue_progress] and not _speech_sfx.paused:
+		_speech_sfx.paused = true
+
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") or event.is_action_pressed("throw_hook"):
 		if _dialogue_choice_container.get_child_count() > 0:
@@ -31,6 +37,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _update_dialogue_box() -> void:
+	_speech_sfx.paused = false
 	var line: String = _dialogue.lines[_dialogue_progress]
 	_name_label.text = _dialogue.name
 	_text_label.text = ""
@@ -39,7 +46,7 @@ func _update_dialogue_box() -> void:
 		_show_chocies = true
 	
 	var tween: Tween = create_tween()
-	tween.tween_property(_text_label, "text", line, 0.4)
+	tween.tween_property(_text_label, "text", line, line.length() / 50.0)
 	tween.tween_interval(0.25)
 	tween.tween_callback(_show_dialogue_choices)
 
