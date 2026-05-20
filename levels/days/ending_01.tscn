@@ -102,7 +102,8 @@ omni_range = 10.623
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 185.44148, 139.51453, 210.4724)
 omni_range = 9.77
 omni_attenuation = 0.262
-_speed = 100.0
+_speed = 125.0
+_min_value = 0.2
 _noise_map = SubResource("FastNoiseLite_gn22a")
 
 [node name="Nils" parent="." unique_id=1391229992 instance=ExtResource("9_qirch")]
