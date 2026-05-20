@@ -8,6 +8,8 @@ func _ready() -> void:
 	_fade_thing.modulate = Color.WHITE
 	var tween: Tween = create_tween()
 	tween.tween_property(_fade_thing, "modulate", Color.TRANSPARENT, 3.0)
+	await tween.finished
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 func _on_meta_clicked(meta):

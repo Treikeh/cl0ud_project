@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ctsr011axkbou"]
 
-[ext_resource type="Script" uid="uid://dsirpeclfa8n3" path="res://entities/characters/nils/day_02_nils.gd" id="1_14ha0"]
-[ext_resource type="Resource" uid="uid://gkugv4exr5b0" path="res://common/data/dialogue/tips_old_man_start_01.tres" id="3_s244g"]
-[ext_resource type="Resource" uid="uid://cocchijl1xtg1" path="res://common/data/dialogue/tips_old_man_start_02.tres" id="4_f4hgy"]
+[ext_resource type="Script" uid="uid://bdrlldkalulm3" path="res://entities/characters/nils/ending_nils.gd" id="1_cne6p"]
+[ext_resource type="Resource" uid="uid://gkugv4exr5b0" path="res://common/data/dialogue/tips_old_man_start_01.tres" id="2_6o076"]
+[ext_resource type="Resource" uid="uid://cocchijl1xtg1" path="res://common/data/dialogue/tips_old_man_start_02.tres" id="3_88uwb"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://cjp4ifh7hb0gw" path="res://entities/characters/rig/sitting_edge_anim_sm.tres" id="6_88uwb"]
 [ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="9_udwhc"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="12_7f2bx"]
@@ -11,10 +11,10 @@
 size = Vector3(0.7, 1.9, 0.5)
 
 [node name="Nils" type="Node3D" unique_id=1391229992 node_paths=PackedStringArray("_head_maker")]
-script = ExtResource("1_14ha0")
+script = ExtResource("1_cne6p")
 _head_maker = NodePath("HeadMarker")
-_interact_dialogue = ExtResource("3_s244g")
-_final_dialogue = ExtResource("4_f4hgy")
+_interact_dialogue = ExtResource("2_6o076")
+_final_dialogue = ExtResource("3_88uwb")
 
 [node name="CharacterMesh" parent="." unique_id=1194805127 instance=ExtResource("9_udwhc")]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
