@@ -7,11 +7,8 @@ signal left
 const VENDOR_MENU_SCENE: PackedScene = preload("uid://diy715xds7cni")
 
 @export var _head_marker: Node3D
-@export var _fishing_rod_upgrade: Upgrade
 @export var _profile_builder_upgrade: Upgrade
 @export_group("Dialogue")
-@export var _buy_fishing_rod_dialogue: DialogueData
-@export var _bought_fishing_rod_dialogue: DialogueData
 @export var _interact_dialogues: Array[DialogueData]
 @export var _interact_no_profiles_dialogues: Array[DialogueData]
 @export var _profile_builder_01_dialogue: DialogueData
@@ -25,7 +22,6 @@ var _times_spoken: int = 0
 func _on_interacted(player: Player) -> void:
 	match _times_spoken:
 		# Start dialogue when interacting with the vendor
-		0: player.hud.start_dialogue(_buy_fishing_rod_dialogue)
 		3: player.hud.start_dialogue(_profile_builder_01_dialogue)
 		_: 
 			if _profile_builder_upgrade.bought:
@@ -38,7 +34,6 @@ func _on_interacted(player: Player) -> void:
 
 
 func _ready() -> void:
-	_buy_fishing_rod_dialogue.choice_made.connect(_on_tutorial_dialouge_choice_made)
 	for dialogue: DialogueData in _interact_dialogues:
 		dialogue.choice_made.connect(_on_interact_dialouge_choice_made)
 	
@@ -106,10 +101,6 @@ func _open_vendor_menu(player: Player, buy: bool) -> void:
 
 
 func _on_vendor_menu_closed(player: Player) -> void:
-	if _fishing_rod_upgrade.bought and _times_spoken <= 1:
-		player.hud.start_dialogue.call_deferred(_bought_fishing_rod_dialogue)
-		return
-	
 	if _profile_builder_upgrade.bought and _times_spoken == 4:
 		player.hud.start_dialogue.call_deferred(_profile_builder_bought_dialogue)
 		return

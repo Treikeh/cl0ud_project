@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://bpim3yu3elgpi"]
+
+[ext_resource type="Script" uid="uid://5eums7wkxu81" path="res://entities/characters/vendor/vendor_day_02.gd" id="1_jhbkd"]
+[ext_resource type="Resource" uid="uid://cj2apfqebu6sb" path="res://common/upgrades/resources/profile_builder_upgrade.tres" id="3_f5tnr"]
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="6_fch2y"]
+[ext_resource type="Resource" uid="uid://dvrns5pqu5cg6" path="res://common/data/dialogue/vendor_interact_01.tres" id="7_dnl3j"]
+[ext_resource type="Resource" uid="uid://4nh1kb254r0j" path="res://common/data/dialogue/vendor_interact_02.tres" id="8_duv52"]
+[ext_resource type="Resource" uid="uid://6pxtd86s31h6" path="res://common/data/dialogue/vendor_interact_03.tres" id="9_ober0"]
+[ext_resource type="Resource" uid="uid://11qtya6wss4p" path="res://common/data/dialogue/vendor_interact_04.tres" id="10_gji5j"]
+[ext_resource type="Resource" uid="uid://dvokd688hn8kx" path="res://common/data/dialogue/vendor_interact_05.tres" id="11_l3avj"]
+[ext_resource type="Resource" uid="uid://wr3f1iqo4lnn" path="res://common/data/dialogue/vendor_interact_no_profile_01.tres" id="12_d8lip"]
+[ext_resource type="Resource" uid="uid://ckdnpv4bl01q3" path="res://common/data/dialogue/vendor_interact_no_profile_02.tres" id="13_c8j44"]
+[ext_resource type="Resource" uid="uid://bi7q84mbmiufs" path="res://common/data/dialogue/vendor_interact_no_profile_03.tres" id="14_bfm44"]
+[ext_resource type="Resource" uid="uid://dl78vjf7a4qpk" path="res://common/data/dialogue/vendor_interact_no_profile_04.tres" id="15_g10aa"]
+[ext_resource type="Resource" uid="uid://mlpi2gkrdgji" path="res://common/data/dialogue/tutorial_vender_profile_builder_01.tres" id="16_gdtxq"]
+[ext_resource type="Resource" uid="uid://537odw40dqpg" path="res://common/data/dialogue/tutorial_vender_profile_builder_02.tres" id="17_f5sq5"]
+[ext_resource type="Resource" uid="uid://dc3gftjbaw688" path="res://common/data/dialogue/tutorial_vender_profile_builder_03.tres" id="18_rpcfg"]
+[ext_resource type="Resource" uid="uid://b3j3iyovdysgu" path="res://common/data/dialogue/vendor_profile_builder_explain.tres" id="19_ax1i3"]
+[ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="20_a3k1j"]
+[ext_resource type="AnimationNodeStateMachine" uid="uid://bjdc7oiy473ob" path="res://entities/characters/vendor/vendor_anim_sm.tres" id="21_3ecsx"]
+[ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="22_xupf6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x7g4j"]
+
+[node name="Vendor" type="Node3D" unique_id=520470945 node_paths=PackedStringArray("_head_marker")]
+script = ExtResource("1_jhbkd")
+_head_marker = NodePath("HeadMarker")
+_profile_builder_upgrade = ExtResource("3_f5tnr")
+_interact_dialogues = Array[ExtResource("6_fch2y")]([ExtResource("7_dnl3j"), ExtResource("8_duv52"), ExtResource("9_ober0"), ExtResource("10_gji5j"), ExtResource("11_l3avj")])
+_interact_no_profiles_dialogues = Array[ExtResource("6_fch2y")]([ExtResource("12_d8lip"), ExtResource("13_c8j44"), ExtResource("14_bfm44"), ExtResource("15_g10aa")])
+_profile_builder_01_dialogue = ExtResource("16_gdtxq")
+_profile_builder_02_dialogue = ExtResource("17_f5sq5")
+_profile_builder_bought_dialogue = ExtResource("18_rpcfg")
+_profiles_explain_dialogue = ExtResource("19_ax1i3")
+
+[node name="CharacterMesh" parent="." unique_id=1333086119 instance=ExtResource("20_a3k1j")]
+_skin = "Vendor"
+_animation = ExtResource("21_3ecsx")
+
+[node name="Skeleton3D" parent="CharacterMesh" index="0" unique_id=202476250]
+bones/2/position = Vector3(4.3495396e-16, 0.067006476, 0.8593024)
+bones/2/rotation = Quaternion(0.69923276, -5.3973036e-08, -5.2790625e-08, 0.7148942)
+bones/3/rotation = Quaternion(0.037294902, 1.5081682e-07, -3.6554035e-09, 0.9993043)
+bones/4/rotation = Quaternion(0.07442259, -1.5024521e-07, -2.7844929e-09, 0.9972268)
+bones/5/rotation = Quaternion(-0.08719101, 1.5042072e-07, 1.5404441e-15, 0.9961916)
+bones/6/rotation = Quaternion(-0.0940347, 0.19764802, -0.5987004, 0.7704873)
+bones/7/rotation = Quaternion(0.5824739, 0.24106532, -0.24683814, 0.7359909)
+bones/8/rotation = Quaternion(0.7311202, 0.008101003, -0.031941127, 0.68145245)
+bones/9/rotation = Quaternion(-0.11401769, -0.30901098, -0.020256154, 0.943982)
+bones/10/rotation = Quaternion(-0.094034806, -0.19764803, 0.59870046, 0.7704872)
+bones/11/rotation = Quaternion(-0.09403481, -0.19764803, 0.59870046, 0.7704872)
+bones/12/rotation = Quaternion(0.5824742, -0.24106516, 0.24683823, 0.73599076)
+bones/13/rotation = Quaternion(0.7311201, -0.008101132, 0.031941164, 0.6814525)
+bones/14/rotation = Quaternion(-0.11401775, 0.3090113, 0.020256156, 0.9439819)
+bones/15/rotation = Quaternion(-0.17693375, 5.916558e-08, -9.47164e-09, 0.98422277)
+bones/16/rotation = Quaternion(0.110605285, 0.16561913, 0.9759451, -0.08870206)
+bones/17/rotation = Quaternion(-0.34220093, 5.908854e-08, -1.8159497e-08, 0.9396268)
+bones/18/rotation = Quaternion(0.6783599, 0.0020324849, -0.07286541, 0.73110485)
+bones/19/rotation = Quaternion(-0.11060511, 0.16561912, 0.9759451, 0.08870203)
+bones/20/rotation = Quaternion(-0.34220096, -6.810744e-08, 7.384183e-09, 0.9396268)
+bones/21/rotation = Quaternion(0.6783599, -0.0020324402, 0.07286538, 0.73110485)
+
+[node name="AnimationTree" parent="CharacterMesh" index="4" unique_id=2032088472]
+tree_root = ExtResource("21_3ecsx")
+
+[node name="HeadMarker" type="BoneAttachment3D" parent="." unique_id=229792294]
+transform = Transform3D(-1, -1.31129525e-08, 2.3527917e-09, -1.2879381e-08, 0.9967167, 0.080967665, -3.406825e-09, 0.08096765, -0.99671686, -3.77257e-09, 1.6120628, 0.037611827)
+bone_name = "head.001"
+bone_idx = 5
+use_external_skeleton = true
+external_skeleton = NodePath("../CharacterMesh/Skeleton3D")
+
+[node name="InteractArea3D" parent="." unique_id=1933536461 instance=ExtResource("22_xupf6")]
+prompt = "Talk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea3D" unique_id=990110618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90000004, 0)
+shape = SubResource("CapsuleShape3D_x7g4j")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1103650986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+aabb = AABB(-0.5, -1, -0.5, 1, 2, 1)
+
+[connection signal="interacted" from="InteractArea3D" to="." method="_on_interacted"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
+
+[editable path="CharacterMesh"]
