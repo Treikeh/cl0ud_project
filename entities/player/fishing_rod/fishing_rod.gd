@@ -72,7 +72,7 @@ func _process(delta: float) -> void:
 	
 	# Make the time label blink
 	_time += delta
-	_blink_label.text = " " if int(_time * 2) % 2 else ":"
+	_blink_label.text = " " if int(_time * 1.5) % 2 else ":"
 	# Display the time of day
 	var hour := int(Globals.time_of_day)
 	var text: String = str(hour) + " 00"

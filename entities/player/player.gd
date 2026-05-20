@@ -94,7 +94,7 @@ func respawn() -> void:
 @export var _crouch_collision: CollisionShape3D
 
 var _wants_to_crouch: bool = false
-var fishing_rod: Node3D
+var fishing_rod: FishingRod
 var crouch_tween: Tween
 
 

@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cook0hnta5rmg"]
 
 [ext_resource type="Script" uid="uid://dsirpeclfa8n3" path="res://entities/characters/nils/day_02_nils.gd" id="1_v1xv4"]
+[ext_resource type="Resource" uid="uid://bllnwhblauvnu" path="res://common/data/dialogue/tips_old_man_01_day_02.tres" id="6_1jowo"]
 [ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="6_56swy"]
 [ext_resource type="Resource" uid="uid://gkugv4exr5b0" path="res://common/data/dialogue/tips_old_man_start_01.tres" id="7_0crxc"]
+[ext_resource type="Resource" uid="uid://bxvr107hq4tps" path="res://common/data/dialogue/tips_old_man_02_day_02.tres" id="7_v1qfg"]
 [ext_resource type="Resource" uid="uid://cocchijl1xtg1" path="res://common/data/dialogue/tips_old_man_start_02.tres" id="8_c33hr"]
 [ext_resource type="Resource" uid="uid://c77cige3cl0dx" path="res://common/data/dialogue/tips_old_man_start_03.tres" id="9_bx00r"]
-[ext_resource type="Resource" uid="uid://7yvptvt2yxy2" path="res://common/data/dialogue/tips_old_man_01_day_01.tres" id="10_n07an"]
-[ext_resource type="Resource" uid="uid://bnanfkya41gpk" path="res://common/data/dialogue/tips_old_man_02_day_01.tres" id="11_21nlh"]
 [ext_resource type="Resource" uid="uid://wsrdx7njuh1f" path="res://common/data/dialogue/tips_old_man_repeat.tres" id="12_qyeek"]
 [ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="14_jf2hp"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://cbygnrgof7bup" path="res://entities/characters/rig/standing_fishing_anim_sm.tres" id="15_311aw"]
@@ -20,7 +20,7 @@ size = Vector3(0.7, 1.9, 0.5)
 script = ExtResource("1_v1xv4")
 _head_maker = NodePath("HeadMarker")
 _repeat_dialogues = Array[ExtResource("6_56swy")]([ExtResource("7_0crxc"), ExtResource("8_c33hr"), ExtResource("9_bx00r")])
-_tips_dialogues = Array[ExtResource("6_56swy")]([ExtResource("10_n07an"), ExtResource("11_21nlh")])
+_tips_dialogues = Array[ExtResource("6_56swy")]([ExtResource("6_1jowo"), ExtResource("7_v1qfg")])
 _no_more_tips_dialogue = ExtResource("12_qyeek")
 
 [node name="CharacterMesh" parent="." unique_id=1194805127 instance=ExtResource("14_jf2hp")]
