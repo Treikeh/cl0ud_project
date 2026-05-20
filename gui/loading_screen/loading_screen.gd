@@ -8,10 +8,19 @@ signal fully_visible
 const FADE_DURATION: float = 0.5
 
 @export var _control_root: Control
+@export var _loading_label: Label
+
+var _time: float = 0
 
 
 func _ready() -> void:
 	_control_root.hide()
+
+
+func _process(delta: float) -> void:
+	_time += delta
+	var dots: String = ".".repeat(int(_time * 2) % 4)
+	_loading_label.text = "LOADING" + dots
 
 
 func fade_in() -> void:

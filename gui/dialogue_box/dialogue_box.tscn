@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ch5mutx6js8sn" path="res://gui/dialogue_box/dialogue_box.gd" id="1_lfny5"]
 [ext_resource type="Theme" uid="uid://cpfg3yoyu638e" path="res://gui/new_theme.tres" id="2_pi2qo"]
 
-[node name="DialogueBox" type="Control" unique_id=1119154544 node_paths=PackedStringArray("_name_label", "_text_label", "_dialogue_choice_container")]
+[node name="DialogueBox" type="Control" unique_id=1119154544 node_paths=PackedStringArray("_name_label", "_text_label", "_dialogue_choice_container", "_speech_sfx")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,6 +15,7 @@ script = ExtResource("1_lfny5")
 _name_label = NodePath("Panel/NameLabel")
 _text_label = NodePath("Panel/TextLabel")
 _dialogue_choice_container = NodePath("DialogueChoiceContainer")
+_speech_sfx = NodePath("FmodEventEmitter2D")
 
 [node name="Panel" type="Panel" parent="." unique_id=1632147214]
 layout_mode = 1
@@ -78,3 +79,8 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_pi2qo")
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1645660763]
+event_name = "event:/UI/NPCSpeech"
+event_guid = "{d3591af1-4c3c-4072-9e33-7a08f49377fd}"
+autoplay = true

@@ -133,6 +133,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120.29616, -3.2239418, 13.65
 
 [node name="DayNightCycle" parent="Envronment" unique_id=50702471 instance=ExtResource("3_38xjm")]
 transform = Transform3D(-0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.7071068, 0, 4.1425443, -3.334785)
+day_start = 2.5
+_minutes_in_day = 1000.0
 
 [node name="CloudPlaneTop" type="MeshInstance3D" parent="Envronment" unique_id=295724552]
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 6.9162155e-07, 15.136413, 0)

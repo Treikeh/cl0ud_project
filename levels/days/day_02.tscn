@@ -9,10 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://c1dcx0rd8honj" path="res://entities/maxwell/maxwell.tscn" id="5_7wmgk"]
 [ext_resource type="PackedScene" uid="uid://bmbvlv41vnb6x" path="res://levels/art/door/ApartmentDoor.glb" id="5_g28r0"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="6_767uw"]
-[ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/characters/vendor/vendor.tscn" id="9_kcbp1"]
 [ext_resource type="PackedScene" uid="uid://iomcinpu06my" path="res://environment/vendor_door/vendor_door.tscn" id="10_4h47f"]
+[ext_resource type="PackedScene" uid="uid://bpim3yu3elgpi" path="res://entities/characters/vendor/vendor_day_02.tscn" id="10_kcbp1"]
 [ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="11_iajr4"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://bjkncj1k6kru4" path="res://entities/characters/rig/sitting_couch_anim_sm.tres" id="12_kcbp1"]
+[ext_resource type="PackedScene" uid="uid://cook0hnta5rmg" path="res://entities/characters/nils/day_02_nils.tscn" id="14_4h47f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4h47f"]
 size = Vector3(1, 2.3, 1.2)
@@ -23,8 +24,9 @@ size = Vector3(0.215, 0.47, 0.365)
 [sub_resource type="BoxShape3D" id="BoxShape3D_5xhar"]
 size = Vector3(0.15, 0.15, 0.15)
 
-[node name="Day01" type="Node3D" unique_id=1476344830]
+[node name="Day02" type="Node3D" unique_id=1476344830]
 script = ExtResource("1_4x28q")
+_current_day = 2
 
 [node name="Environment" type="Node3D" parent="." unique_id=2025003428]
 
@@ -55,16 +57,22 @@ transform = Transform3D(0.23088194, 0, 0.97298175, 0, 1, 0, -0.97298175, 0, 0.23
 
 [node name="CouchGuy" parent="Characters" unique_id=1966623919 instance=ExtResource("11_iajr4")]
 transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, -42.234978, 2.9852662, -2.103635)
+_skin = "Fisher01"
 _animation = ExtResource("12_kcbp1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Characters/CouchGuy" unique_id=1681530321]
+collision_layer = 64
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Characters/CouchGuy/StaticBody3D" unique_id=1167441153]
 transform = Transform3D(1.0000012, 0, 0, 0, 1, 0, 0, 0, 1.0000012, -1.5258789e-05, 0.6500001, 0.10000038)
 shape = SubResource("BoxShape3D_4h47f")
 
-[node name="Vendor" parent="Characters" unique_id=520470945 instance=ExtResource("9_kcbp1")]
+[node name="Vendor" parent="Characters" unique_id=520470945 instance=ExtResource("10_kcbp1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6926503, 2.4760885, 11.769749)
+
+[node name="Nils" parent="Characters" unique_id=1391229992 instance=ExtResource("14_4h47f")]
+transform = Transform3D(-0.17155088, 0, -0.98517525, 0, 1, 0, 0.98517525, 0, -0.17155088, -4.5459146, 2.5556087, -6.136618)
 
 [node name="Interactable" type="Node3D" parent="." unique_id=1143656547]
 

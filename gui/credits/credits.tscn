@@ -1,12 +1,258 @@
 [gd_scene format=3 uid="uid://cj1n28hhl3hxo"]
 
 [ext_resource type="Script" uid="uid://cltblpax1e88s" path="res://gui/credits/credits.gd" id="1_wrh7j"]
+[ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="2_g6cn0"]
+[ext_resource type="Texture2D" uid="uid://bdu275and56u" path="res://gui/splash_screen/art/Made_with_godot.png" id="2_qlh8g"]
+[ext_resource type="Texture2D" uid="uid://cd4klxtydfvj" path="res://gui/splash_screen/art/Amnesty-International-Emblem_white copy.png" id="4_yknhu"]
+[ext_resource type="Texture2D" uid="uid://ck6a3mag2r8ha" path="res://gui/splash_screen/art/FMOD Logo White - Transparent Background.png" id="5_yknhu"]
 
-[node name="Credits" type="Control" unique_id=2107071130]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g6cn0"]
+
+[node name="Credits" type="Control" unique_id=2107071130 node_paths=PackedStringArray("_fade_thing")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_wrh7j")
+_fade_thing = NodePath("CanvasLayer/MarginContainer")
+
+[node name="Background" type="MarginContainer" parent="." unique_id=341800545]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = -5
+theme_override_constants/margin_top = -5
+theme_override_constants/margin_right = -5
+theme_override_constants/margin_bottom = -5
+
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=166770642]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1651567711]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.0
+offset_top = -240.0
+offset_right = 304.0
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreditsLabel" type="Label" parent="VBoxContainer" unique_id=463553842]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_g6cn0")
+theme_override_font_sizes/font_size = 55
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=778295462]
+layout_mode = 2
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_g6cn0")
+
+[node name="Names" type="VBoxContainer" parent="VBoxContainer" unique_id=1168984464]
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Anders" type="HBoxContainer" parent="VBoxContainer/Names" unique_id=1528887660]
+layout_mode = 2
+
+[node name="NamesLabel" type="RichTextLabel" parent="VBoxContainer/Names/Anders" unique_id=55619826]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_g6cn0")
+bbcode_enabled = true
+text = "[url=https://hidexout.itch.io/] ANDERS MATHISEN FÅNE[/url]"
+fit_content = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Names/Anders" unique_id=1041016855]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Level" type="Label" parent="VBoxContainer/Names/Anders/VBoxContainer" unique_id=288486204]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_g6cn0")
+text = "LEVEL DESIGN"
+horizontal_alignment = 2
+
+[node name="Sound" type="Label" parent="VBoxContainer/Names/Anders/VBoxContainer" unique_id=839411016]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_g6cn0")
+text = "SOUND DESIGN"
+horizontal_alignment = 2
+
+[node name="UX" type="Label" parent="VBoxContainer/Names/Anders/VBoxContainer" unique_id=1498908941]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_g6cn0")
+text = "UI/UX"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Names" unique_id=1058817136]
+layout_mode = 2
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_g6cn0")
+
+[node name="Henrik" type="HBoxContainer" parent="VBoxContainer/Names" unique_id=1847456454]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 75
+alignment = 1
+
+[node name="NamesLabel" type="RichTextLabel" parent="VBoxContainer/Names/Henrik" unique_id=379922488]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_g6cn0")
+bbcode_enabled = true
+text = "[url=https://hengem.itch.io/]HENRIK FOSSAN HANSEN[/url]"
+fit_content = true
+scroll_active = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Names/Henrik" unique_id=1298057053]
+layout_mode = 2
+
+[node name="Narrative" type="Label" parent="VBoxContainer/Names/Henrik/VBoxContainer" unique_id=276298757]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_g6cn0")
+text = "NARRATIVE"
+horizontal_alignment = 2
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Names" unique_id=1543112147]
+layout_mode = 2
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_g6cn0")
+
+[node name="Treike" type="HBoxContainer" parent="VBoxContainer/Names" unique_id=430563149]
+layout_mode = 2
+theme_override_constants/separation = 75
+alignment = 1
+
+[node name="NamesLabel" type="RichTextLabel" parent="VBoxContainer/Names/Treike" unique_id=1647822433]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_g6cn0")
+bbcode_enabled = true
+text = "[url=https://treikeh.com]TREIKE[/url]"
+fit_content = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Names/Treike" unique_id=2128355120]
+layout_mode = 2
+
+[node name="Programming" type="Label" parent="VBoxContainer/Names/Treike/VBoxContainer" unique_id=487278184]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_g6cn0")
+text = "PROGRAMMING"
+horizontal_alignment = 2
+
+[node name="Character" type="Label" parent="VBoxContainer/Names/Treike/VBoxContainer" unique_id=1502741511]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_g6cn0")
+text = "CHARACTER ART"
+horizontal_alignment = 2
+
+[node name="Images" type="HBoxContainer" parent="VBoxContainer" unique_id=1254090986]
+layout_mode = 2
+alignment = 1
+
+[node name="Godot" type="TextureRect" parent="VBoxContainer/Images" unique_id=136371325]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+texture = ExtResource("2_qlh8g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Amnesty" type="Control" parent="VBoxContainer/Images" unique_id=1114466228]
+clip_contents = true
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+
+[node name="Amnesty" type="TextureRect" parent="VBoxContainer/Images/Amnesty" unique_id=481098055]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_yknhu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Fmod" type="TextureRect" parent="VBoxContainer/Images" unique_id=1332037843]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+texture = ExtResource("5_yknhu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="VBoxContainer" unique_id=464021311]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_g6cn0")
+bbcode_enabled = true
+text = "[url=https://www.amnesty.org/en/tech/surveillance-giants/]READ ABOUT [color=red]SURVEILLANCE[/color] AND HOW IT EFFECTS PEOPLE ON [b][color=gold]AMNESTY.ORG[/color][/b][/url]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="Button" parent="." unique_id=1156264313]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -56.0
+offset_right = -25.0
+offset_bottom = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "QUIT"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=581190690]
+layer = 500
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1496098133]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = -5
+theme_override_constants/margin_top = -5
+theme_override_constants/margin_right = -5
+theme_override_constants/margin_bottom = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer" unique_id=1981020863]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="meta_clicked" from="VBoxContainer/Names/Anders/NamesLabel" to="." method="_on_meta_clicked"]
+[connection signal="meta_clicked" from="VBoxContainer/Names/Henrik/NamesLabel" to="." method="_on_meta_clicked"]
+[connection signal="meta_clicked" from="VBoxContainer/Names/Treike/NamesLabel" to="." method="_on_meta_clicked"]
+[connection signal="meta_clicked" from="VBoxContainer/Label" to="." method="_on_meta_clicked"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

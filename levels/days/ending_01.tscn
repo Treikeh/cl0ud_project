@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cyxs8ixd0p0p3"]
 
+[ext_resource type="Script" uid="uid://buii0xv2ma5y8" path="res://levels/days/ending_01.gd" id="1_yfpc2"]
 [ext_resource type="PackedScene" uid="uid://dp1xjafbt7sxl" path="res://levels/ending_level/art/BG/ending_BG.glb" id="2_aiw2r"]
 [ext_resource type="PackedScene" uid="uid://cxn3pwn81mg6g" path="res://levels/art/BuildingOne/BuildingOne_2.glb" id="3_xj1gk"]
 [ext_resource type="PackedScene" uid="uid://q3em1bo70ede" path="res://levels/art/BuildingFour/BuildingFour.glb" id="4_iaxwb"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cbbo1emxf7ran" path="res://levels/ending_level/ending_level.tscn" id="6_iaxwb"]
 [ext_resource type="PackedScene" uid="uid://2ubaxhpyylwj" path="res://levels/art/crane/Crane.glb" id="7_gn22a"]
 [ext_resource type="PackedScene" uid="uid://qtxedfdabwdw" path="res://environment/lights/blinking_light.tscn" id="8_gn22a"]
+[ext_resource type="PackedScene" uid="uid://ctsr011axkbou" path="res://entities/characters/nils/ending_nils.tscn" id="9_qirch"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gn22a"]
 noise_type = 4
@@ -19,7 +21,9 @@ fractal_lacunarity = 1.64
 fractal_gain = 0.14
 fractal_ping_pong_strength = 2.235
 
-[node name="Ending_01" type="Node3D" unique_id=669404763]
+[node name="Ending_01" type="Node3D" unique_id=669404763 node_paths=PackedStringArray("_fade_color")]
+script = ExtResource("1_yfpc2")
+_fade_color = NodePath("CanvasLayer/MarginContainer")
 
 [node name="Environment" type="Node3D" parent="." unique_id=1205339970]
 
@@ -98,5 +102,29 @@ omni_range = 10.623
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 185.44148, 139.51453, 210.4724)
 omni_range = 9.77
 omni_attenuation = 0.262
-_speed = 100.0
+_speed = 125.0
+_min_value = 0.2
 _noise_map = SubResource("FastNoiseLite_gn22a")
+
+[node name="Nils" parent="." unique_id=1391229992 instance=ExtResource("9_qirch")]
+transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, 183.36694, 134.5979, 208.98248)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1186820607]
+layer = 500
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1220852137]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = -5
+theme_override_constants/margin_top = -5
+theme_override_constants/margin_right = -5
+theme_override_constants/margin_bottom = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer" unique_id=432241925]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

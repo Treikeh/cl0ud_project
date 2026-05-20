@@ -111,7 +111,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6000004, 0.5220337, -1.800
 shape = SubResource("BoxShape3D_mtc2s")
 
 [node name="HeadMarker" type="BoneAttachment3D" parent="Characters/IntroGuy" unique_id=2116972068]
-transform = Transform3D(-0.9995569, -0.0017839717, 0.029708287, 0.000902293, 0.99592656, 0.090162605, -0.029748121, 0.09014937, -0.99548393, -0.03533554, 1.5850267, 0.185166)
+transform = Transform3D(-0.9995569, -0.0017839707, 0.029708285, 0.0009022932, 0.99592656, 0.090162605, -0.029748121, 0.09014937, -0.99548393, -0.03533554, 1.5850267, 0.185166)
 bone_name = "head.001"
 bone_idx = 5
 use_external_skeleton = true
