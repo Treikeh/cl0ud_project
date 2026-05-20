@@ -117,6 +117,9 @@ size = Vector3(100, 10, 200)
 [sub_resource type="BoxShape3D" id="BoxShape3D_t80xa"]
 size = Vector3(163.93579, 48.86328, 287.65234)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_765ah"]
+viewport_path = NodePath("RodHandle/RodScreen/SubViewport")
+
 [node name="EndingLevel" type="Node3D" unique_id=224384734 node_paths=PackedStringArray("_day_night_cycle", "_player_marker") groups=["persistent"]]
 script = ExtResource("1_6l0sb")
 _day_night_cycle = NodePath("Envronment/DayNightCycle")
@@ -418,10 +421,7 @@ transform = Transform3D(0.018569171, 0, 0.9998275, 0, 1, 0, -0.9998275, 0, 0.018
 [node name="PrinterInteractArea" parent="System/ProfileSystem/ProfilePrinter" index="1" unique_id=669664736]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3189926, 0.20817924, 0.26540947)
 
-[node name="PaperMesh" parent="System/ProfileSystem/ProfilePrinter" index="2" unique_id=487481126]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.249254, 0, 0.38285828)
-
-[node name="CamTransformMarker" parent="System/ProfileSystem/ProfilePrinter" index="3" unique_id=484923087]
+[node name="CamTransformMarker" parent="System/ProfileSystem/ProfilePrinter" index="2" unique_id=484923087]
 transform = Transform3D(-0.6897586, 0, 0.7240394, 0, 1, 0, -0.7240394, 0, -0.6897586, 5.285261, 1.0775514, -0.43947887)
 
 [node name="ProfileWall" parent="System/ProfileSystem" unique_id=1612584203 instance=ExtResource("18_j0gwd")]
@@ -449,6 +449,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0726733, -3.8938875, 1.481
 [node name="Orientation" parent="Player" index="2" unique_id=255627194]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
+[node name="RodTipAttachement" parent="Player/Orientation/Head/CameraRoot/FishingRod/HookLine" parent_id_path=PackedInt32Array(913738857, 949060003, 12906906) index="1" unique_id=1524872158]
+transform = Transform3D(0.1, 8.881784e-16, 0, 0, 0, 0.1, 8.881784e-16, -0.1, 0, 0, 0.1500001, 0)
+
+[node name="HookAttachement" parent="Player/Orientation/Head/CameraRoot/FishingRod/HookLine" parent_id_path=PackedInt32Array(913738857, 949060003, 12906906) index="2" unique_id=213436148]
+transform = Transform3D(0.1, 8.881784e-16, 0, 0, 0, 0.1, 8.881784e-16, -0.1, 0, 0, 0.1500001, -0.049999952)
+
+[node name="RodScreen" parent="Player/Orientation/Head/CameraRoot/FishingRod/RodHandle" parent_id_path=PackedInt32Array(913738857, 949060003, 166742561) index="0" unique_id=167206628]
+texture = SubResource("ViewportTexture_765ah")
+
+[node name="HookEnd" parent="Player/Orientation/Head/CameraRoot/FishingRod" parent_id_path=PackedInt32Array(913738857, 949060003) index="5" unique_id=1997990020]
+transform = Transform3D(0.1, 0, -8.881784e-16, 0, 0.1, 0, 8.881784e-16, 0, 0.1, 0, 0.1500001, 0)
+
+[node name="Hook" parent="Player/Orientation/Head/CameraRoot/FishingRod" parent_id_path=PackedInt32Array(913738857, 949060003) index="6" unique_id=1629841109]
+transform = Transform3D(0.1, -8.881784e-16, 7.940934e-23, 0, -8.742278e-09, -0.1, 8.881784e-16, 0.1, -8.742278e-09, 0, 0.1500001, -0.049999952)
+
 [node name="PlayerStartMarker" type="Marker3D" parent="." unique_id=46245944]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0726733, -3.8938875, 1.4815476)
 
@@ -459,4 +474,7 @@ visible = false
 [connection signal="left" from="Vendor" to="VendorDoor" method="close"]
 
 [editable path="System/ProfileSystem/ProfilePrinter"]
+[editable path="System/ProfileSystem/ProfilePrinter/computer"]
 [editable path="Player"]
+[editable path="Player/Orientation/Head/CameraRoot/FishingRod"]
+[editable path="Player/Orientation/Head/CameraRoot/FishingRod/FishingRod_01_SK"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ci766d3wxxwwr"]
 
 [ext_resource type="Script" uid="uid://c6yanx8hpd88i" path="res://environment/elevator_door/elevator_door.gd" id="1_jvyuu"]
+[ext_resource type="PackedScene" uid="uid://c6chdlrgglxv0" path="res://environment/elevator_door/art/ElevatorGate.glb" id="2_48bqa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kjiu2"]
 size = Vector3(2, 2.5, 0.1)
@@ -68,8 +69,12 @@ script = ExtResource("1_jvyuu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 shape = SubResource("BoxShape3D_kjiu2")
 
+[node name="ElevatorGate" parent="DoorBody" unique_id=1692863449 instance=ExtResource("2_48bqa")]
+transform = Transform3D(-4.371139e-08, 0, 1.5913115, 0, 1.5002383, 0, -1, 0, -6.955843e-08, 0, 1.2533383, 0)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DoorBody" unique_id=1340629205]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+visible = false
 mesh = SubResource("BoxMesh_kjiu2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1144794101]

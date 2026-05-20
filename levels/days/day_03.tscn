@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ci766d3wxxwwr" path="res://environment/elevator_door/elevator_door.tscn" id="3_kgh6a"]
 [ext_resource type="PackedScene" uid="uid://bmbvlv41vnb6x" path="res://levels/art/door/ApartmentDoor.glb" id="4_6ddsc"]
 [ext_resource type="PackedScene" uid="uid://cf6nk35lslykg" path="res://levels/art/fire_escape_door/FireEscapeDoor.glb" id="5_kgh6a"]
-[ext_resource type="PackedScene" uid="uid://c0hp5j2f5xkd6" path="res://common/scripts/level_load_trigger.tscn" id="6_qfutr"]
+[ext_resource type="PackedScene" path="res://common/scripts/level_load_trigger.tscn" id="6_qfutr"]
 [ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/characters/vendor/vendor.tscn" id="7_1w5yc"]
 [ext_resource type="PackedScene" uid="uid://iomcinpu06my" path="res://environment/vendor_door/vendor_door.tscn" id="8_qfutr"]
 
