@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://ctsr011axkbou"]
+
+[ext_resource type="Script" uid="uid://dsirpeclfa8n3" path="res://entities/characters/nils/day_02_nils.gd" id="1_14ha0"]
+[ext_resource type="Resource" uid="uid://gkugv4exr5b0" path="res://common/data/dialogue/tips_old_man_start_01.tres" id="3_s244g"]
+[ext_resource type="Resource" uid="uid://cocchijl1xtg1" path="res://common/data/dialogue/tips_old_man_start_02.tres" id="4_f4hgy"]
+[ext_resource type="AnimationNodeStateMachine" uid="uid://cjp4ifh7hb0gw" path="res://entities/characters/rig/sitting_edge_anim_sm.tres" id="6_88uwb"]
+[ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="9_udwhc"]
+[ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="12_7f2bx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_85oi3"]
+size = Vector3(0.7, 1.9, 0.5)
+
+[node name="Nils" type="Node3D" unique_id=1391229992 node_paths=PackedStringArray("_head_maker")]
+script = ExtResource("1_14ha0")
+_head_maker = NodePath("HeadMarker")
+_interact_dialogue = ExtResource("3_s244g")
+_final_dialogue = ExtResource("4_f4hgy")
+
+[node name="CharacterMesh" parent="." unique_id=1194805127 instance=ExtResource("9_udwhc")]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
+_look_at_radius = 2.0
+_skin = "Nils"
+_animation = ExtResource("6_88uwb")
+
+[node name="Skeleton3D" parent="CharacterMesh" index="0" unique_id=202476250]
+bones/2/position = Vector3(-1.9652962e-15, 0.15357861, 0.047420323)
+bones/2/rotation = Quaternion(0.52917767, -5.50317e-08, -5.1686055e-08, 0.8485111)
+bones/3/rotation = Quaternion(0.34780553, 1.4439769e-07, -4.8670962e-08, 0.9375667)
+bones/4/rotation = Quaternion(0.08309777, -1.5441336e-07, 2.0947732e-09, 0.9965414)
+bones/5/rotation = Quaternion(-0.122415975, 1.459879e-07, 2.2170945e-09, 0.9924789)
+bones/6/rotation = Quaternion(-0.052651487, 0.16943215, -0.66800696, 0.72269446)
+bones/7/rotation = Quaternion(0.5295772, 0.07495712, -0.36436275, 0.7623445)
+bones/8/rotation = Quaternion(0.384916, 0.010969378, -0.016816193, 0.92273325)
+bones/9/rotation = Quaternion(0.042491574, 0.23102625, 0.11789984, 0.96484256)
+bones/11/rotation = Quaternion(-0.052651614, -0.16943225, 0.66800696, 0.7226945)
+bones/12/rotation = Quaternion(0.5295773, -0.07495692, 0.3643628, 0.76234454)
+bones/13/rotation = Quaternion(0.38491553, -0.010969488, 0.016816163, 0.9227334)
+bones/14/rotation = Quaternion(0.042491935, -0.23102602, -0.117899835, 0.96484256)
+bones/16/rotation = Quaternion(0.059898444, 0.5077963, 0.85447073, -0.091841936)
+bones/17/rotation = Quaternion(-0.7304993, 5.0802836e-08, -4.5791605e-08, 0.6829135)
+bones/18/rotation = Quaternion(0.35801706, -0.018361975, -0.077335596, 0.93032575)
+bones/19/rotation = Quaternion(-0.059898302, 0.5077963, 0.85447073, 0.09184181)
+bones/20/rotation = Quaternion(-0.7304993, -4.3107924e-08, 5.132336e-08, 0.6829135)
+bones/21/rotation = Quaternion(0.35393837, 0.06254202, 0.094258, 0.92840266)
+
+[node name="DefaultLookPosition" parent="CharacterMesh" index="1" unique_id=1245629346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.100000024, 0.39999998, -0.49999994)
+
+[node name="AnimationTree" parent="CharacterMesh" index="4" unique_id=2032088472]
+tree_root = ExtResource("6_88uwb")
+
+[node name="HeadMarker" type="BoneAttachment3D" parent="." unique_id=648579604]
+transform = Transform3D(-0.99083817, 0.024235282, 0.13286139, -0.023629038, 0.93748415, -0.34722474, -0.1329705, -0.3471829, -0.9283225, -6.1144384e-08, 0.75259906, 0.15782002)
+bone_name = "head.001"
+bone_idx = 5
+use_external_skeleton = true
+external_skeleton = NodePath("../CharacterMesh/Skeleton3D")
+
+[node name="HandLEQ" type="BoneAttachment3D" parent="." unique_id=1285232902]
+transform = Transform3D(0.18663007, 0.19823237, 0.96222293, -0.8539312, -0.4515532, 0.2586529, 0.48576826, -0.86994433, 0.08500338, -0.20640744, 0.10723302, -0.20537698)
+bone_name = "hand_eq.l.001"
+bone_idx = 10
+use_external_skeleton = true
+external_skeleton = NodePath("../CharacterMesh/Skeleton3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=220955212]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1214350678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95000005, 0)
+shape = SubResource("BoxShape3D_85oi3")
+
+[node name="InteractArea3D" parent="." unique_id=1933536461 instance=ExtResource("12_7f2bx")]
+prompt = "Talk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea3D" unique_id=1966379174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95000005, 0)
+shape = SubResource("BoxShape3D_85oi3")
+
+[connection signal="interacted" from="InteractArea3D" to="." method="_on_interacted"]
+
+[editable path="CharacterMesh"]
