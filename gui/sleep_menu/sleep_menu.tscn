@@ -5,9 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://cokn3iaoop0v6" path="res://gui/sleep_menu/sun-dial.png" id="2_hyfk6"]
 [ext_resource type="Theme" uid="uid://cpfg3yoyu638e" path="res://gui/new_theme.tres" id="2_vca0q"]
 
-[node name="SleepMenu" type="CanvasLayer" unique_id=456706051 node_paths=PackedStringArray("_label")]
+[node name="SleepMenu" type="CanvasLayer" unique_id=456706051 node_paths=PackedStringArray("_day_label", "_label")]
 layer = 200
 script = ExtResource("1_wgbmf")
+_day_label = NodePath("Control/DayLabel")
 _label = NodePath("Control/TimeLabel")
 
 [node name="Control" type="Control" parent="." unique_id=654752835]
@@ -68,6 +69,8 @@ grow_vertical = 2
 theme = ExtResource("2_vca0q")
 theme_override_font_sizes/font_size = 100
 text = "DAY 1"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SunDailRoot" type="TextureRect" parent="Control" unique_id=1313596393]
 clip_children = 1

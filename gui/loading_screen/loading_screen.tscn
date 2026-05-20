@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://bcgbuisoq6kw"]
 
 [ext_resource type="Script" uid="uid://dmh7mo8kfsd7l" path="res://gui/loading_screen/loading_screen.gd" id="1_mkdfe"]
+[ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="2_vsl4m"]
 
-[node name="LoadingScreen" type="CanvasLayer" unique_id=1918260680 node_paths=PackedStringArray("_control_root")]
+[node name="LoadingScreen" type="CanvasLayer" unique_id=1918260680 node_paths=PackedStringArray("_control_root", "_loading_label")]
 process_mode = 3
 layer = 100
 script = ExtResource("1_mkdfe")
 _control_root = NodePath("ControlRoot")
+_loading_label = NodePath("ControlRoot/Label")
 
 [node name="ControlRoot" type="Control" parent="." unique_id=1969786316]
 layout_mode = 3
@@ -32,8 +34,20 @@ theme_override_constants/margin_bottom = -5
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="ControlRoot/MarginContainer" unique_id=253394227]
-layout_mode = 2
+[node name="Label" type="Label" parent="ControlRoot" unique_id=253394227]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -352.0
+offset_top = -121.0
+offset_right = -18.125
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_vsl4m")
+theme_override_font_sizes/font_size = 60
 text = "LOADING..."
-horizontal_alignment = 1
 vertical_alignment = 1

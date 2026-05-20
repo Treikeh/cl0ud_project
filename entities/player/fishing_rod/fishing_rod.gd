@@ -17,6 +17,7 @@ enum FishingState {
 @export var _hook_transform: RemoteTransform3D
 @export var _throw_progress: TextureProgressBar
 @export var _time_label: Label
+@export var _blink_label: Label
 
 @export_group("Hook line")
 @export var _fishing_line: MeshInstance3D
@@ -33,6 +34,7 @@ enum FishingState {
 var _throw_charge: float = 0.0
 var _throw_charge_time: float = 0.0
 var _throw_pos: Vector3
+var _time: float = 0.0
 
 @onready var _player: Player = get_owner()
 @onready var _line_mesh: ImmediateMesh = _fishing_line.mesh
@@ -68,8 +70,12 @@ func _process(delta: float) -> void:
 	_rod_mesh.fish_dir = _player._minigame_look_dir
 	_rod_mesh.move_speed = _player.linear_velocity.length()
 	
+	# Make the time label blink
+	_time += delta
+	_blink_label.text = " " if int(_time * 2) % 2 else ":"
+	# Display the time of day
 	var hour := int(Globals.time_of_day)
-	var text: String = str(hour) + ":00"
+	var text: String = str(hour) + " 00"
 	if not text.begins_with("1") and not text.begins_with("2"):
 		text = "0" + text
 	_time_label.text = text
