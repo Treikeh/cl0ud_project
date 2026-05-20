@@ -102,82 +102,68 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, -0.9)
 [node name="MailFishMesh" parent="PreviewMeshViewport/SubViewport/MeshMarker" unique_id=901966367 instance=ExtResource("3_a7o7o")]
 
 [node name="PanelContainer2" type="PanelContainer" parent="." unique_id=1221948359]
+custom_minimum_size = Vector2(260, 220)
 layout_mode = 0
-offset_left = 132.0
-offset_top = 307.0
-offset_right = 392.86957
-offset_bottom = 529.3602
+offset_left = 149.0
+offset_top = 298.0
+offset_right = 409.0
+offset_bottom = 530.0
 scale = Vector2(0.805, 0.805)
 theme_override_styles/panel = SubResource("StyleBoxEmpty_enr3t")
 
 [node name="SlotGrid" type="GridContainer" parent="PanelContainer2" unique_id=212685224]
+custom_minimum_size = Vector2(260, 220)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 4
 
 [node name="InventorySlot" parent="PanelContainer2/SlotGrid" unique_id=1513532196 instance=ExtResource("2_6o4wp")]
-custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
 [node name="InventorySlot2" parent="PanelContainer2/SlotGrid" unique_id=1089592522 instance=ExtResource("2_6o4wp")]
-custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
 [node name="InventorySlot3" parent="PanelContainer2/SlotGrid" unique_id=52542229 instance=ExtResource("2_6o4wp")]
-custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
 [node name="InventorySlot4" parent="PanelContainer2/SlotGrid" unique_id=1622904605 instance=ExtResource("2_6o4wp")]
-custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
 [node name="InventorySlot5" parent="PanelContainer2/SlotGrid" unique_id=2007485940 instance=ExtResource("2_6o4wp")]
-custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
 [node name="InventorySlot6" parent="PanelContainer2/SlotGrid" unique_id=706433875 instance=ExtResource("2_6o4wp")]
-custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
 [node name="InventorySlot7" parent="PanelContainer2/SlotGrid" unique_id=996935915 instance=ExtResource("2_6o4wp")]
-custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
 [node name="InventorySlot8" parent="PanelContainer2/SlotGrid" unique_id=1689553578 instance=ExtResource("2_6o4wp")]
-custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
 [node name="InventorySlot9" parent="PanelContainer2/SlotGrid" unique_id=1991645615 instance=ExtResource("2_6o4wp")]
-custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
 [node name="InventorySlot10" parent="PanelContainer2/SlotGrid" unique_id=1182240907 instance=ExtResource("2_6o4wp")]
-custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
 [node name="InventorySlot11" parent="PanelContainer2/SlotGrid" unique_id=97321689 instance=ExtResource("2_6o4wp")]
-custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
 [node name="InventorySlot12" parent="PanelContainer2/SlotGrid" unique_id=1515028502 instance=ExtResource("2_6o4wp")]
-custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
 [node name="InventorySlot13" parent="PanelContainer2/SlotGrid" unique_id=1725802157 instance=ExtResource("2_6o4wp")]
-custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
 [node name="InventorySlot14" parent="PanelContainer2/SlotGrid" unique_id=1973276136 instance=ExtResource("2_6o4wp")]
-custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
 [node name="InventorySlot15" parent="PanelContainer2/SlotGrid" unique_id=698048425 instance=ExtResource("2_6o4wp")]
-custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
 [node name="InventorySlot16" parent="PanelContainer2/SlotGrid" unique_id=910111742 instance=ExtResource("2_6o4wp")]
-custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
 [node name="CurrencyLabel" type="Label" parent="." unique_id=1662396914]

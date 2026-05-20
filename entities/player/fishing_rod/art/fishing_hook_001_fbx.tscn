@@ -1,5 +1,20 @@
 [gd_scene format=3 uid="uid://cu6p31ihl50lr"]
 
 [ext_resource type="PackedScene" uid="uid://c381j0jew4pue" path="res://entities/player/fishing_rod/art/Fishing_Hook_001_FBX.fbx" id="1_1lkct"]
+[ext_resource type="PackedScene" uid="uid://ckl810g1i0s3c" path="res://entities/player/fishing_rod/Fishing_Hook_001.glb" id="2_fwhfj"]
 
-[node name="Fishing_Hook_001_FBX" unique_id=1270857284 instance=ExtResource("1_1lkct")]
+[node name="Fishing_Hook_001_FBX" unique_id=68731168 instance=ExtResource("1_1lkct")]
+
+[node name="pCylinder1" parent="." index="0" unique_id=2137826627]
+visible = false
+
+[node name="pCylinder2" parent="." index="1" unique_id=772272035]
+visible = false
+
+[node name="pSphere1" parent="." index="2" unique_id=236094038]
+visible = false
+
+[node name="pTorus1" parent="." index="3" unique_id=1783476938]
+visible = false
+
+[node name="Fishing_Hook_001" parent="." index="4" unique_id=900737705 instance=ExtResource("2_fwhfj")]

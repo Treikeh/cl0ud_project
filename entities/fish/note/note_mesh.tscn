@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://blh7c65i5bss1"]
 
 [ext_resource type="Texture2D" uid="uid://bopc0krq46by3" path="res://entities/fish/note/note_icon.png" id="1_qc2pu"]
+[ext_resource type="PackedScene" uid="uid://dxw1jh6ij0g11" path="res://entities/fish/note/art/FISH03.glb" id="2_p188c"]
 
 [node name="MessageFishMesh" type="Node3D" unique_id=1665173443]
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=786757569]
 transform = Transform3D(-2.1855695e-09, 0.05, 0, -0.05, -2.1855695e-09, 0, 0, 0, 0.05, -0.0058874786, -0.37671068, 0)
+visible = false
 texture = ExtResource("1_qc2pu")
+
+[node name="FISH032" parent="." unique_id=1728166838 instance=ExtResource("2_p188c")]
+transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0, 0, 0)

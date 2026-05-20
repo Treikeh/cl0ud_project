@@ -427,6 +427,12 @@ transform = Transform3D(0.1, 8.881784e-16, 0, 0, 0, 0.1, 8.881784e-16, -0.1, 0, 
 [node name="RodScreen" parent="Player/Orientation/Head/CameraRoot/FishingRod/RodHandle" parent_id_path=PackedInt32Array(913738857, 949060003, 166742561) index="0" unique_id=167206628]
 texture = SubResource("ViewportTexture_224rj")
 
+[node name="TextureProgressBar" parent="Player/Orientation/Head/CameraRoot/FishingRod/RodHandle/RodScreen/SubViewport" parent_id_path=PackedInt32Array(913738857, 949060003, 1941168548) index="0" unique_id=1272039896]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+
 [node name="HookEnd" parent="Player/Orientation/Head/CameraRoot/FishingRod" parent_id_path=PackedInt32Array(913738857, 949060003) index="5" unique_id=1997990020]
 transform = Transform3D(0.1, 0, -8.881784e-16, 0, 0.1, 0, 8.881784e-16, 0, 0.1, 0, 0.1500001, 0)
 
