@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cltblpax1e88s" path="res://gui/credits/credits.gd" id="1_wrh7j"]
 [ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="2_g6cn0"]
 [ext_resource type="Texture2D" uid="uid://bdu275and56u" path="res://gui/splash_screen/art/Made_with_godot.png" id="2_qlh8g"]
-[ext_resource type="Texture2D" uid="uid://h4js4vdq4i65" path="res://gui/splash_screen/art/Amnesty-International-Emblem_white.png" id="4_ms2af"]
+[ext_resource type="Texture2D" uid="uid://cd4klxtydfvj" path="res://gui/splash_screen/art/Amnesty-International-Emblem_white copy.png" id="4_yknhu"]
 [ext_resource type="Texture2D" uid="uid://ck6a3mag2r8ha" path="res://gui/splash_screen/art/FMOD Logo White - Transparent Background.png" id="5_yknhu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g6cn0"]
@@ -195,7 +195,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_ms2af")
+texture = ExtResource("4_yknhu")
 expand_mode = 1
 stretch_mode = 5
 
