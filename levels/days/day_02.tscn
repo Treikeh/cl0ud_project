@@ -55,9 +55,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6926503, 3.5450215, 11.069
 [node name="Maxwell" parent="Characters" unique_id=748864273 instance=ExtResource("5_7wmgk")]
 transform = Transform3D(0.23088194, 0, 0.97298175, 0, 1, 0, -0.97298175, 0, 0.23088194, -43.1357, 2.9997973, -2.278222)
 
-[node name="CouchGuy" parent="Characters" unique_id=1966623919 instance=ExtResource("11_iajr4")]
+[node name="CouchGuy" parent="Characters" unique_id=924179477 instance=ExtResource("11_iajr4")]
 transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, -42.234978, 2.9852662, -2.103635)
-_skin = "Fisher01"
+_skin = "Fisher02"
 _animation = ExtResource("12_kcbp1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Characters/CouchGuy" unique_id=1681530321]
