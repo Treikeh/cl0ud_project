@@ -1,7 +1,7 @@
 extends FishDataDisplay
 
 
-@export var _junk_label: Label
+@export var _junk_label: RichTextLabel
 
 
 func with_data(data: FishData) -> FishDataDisplay:

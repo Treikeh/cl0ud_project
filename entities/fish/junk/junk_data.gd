@@ -3,7 +3,7 @@ extends FishData
 class_name JunkData
 
 
-var text: String
+@export var text: String
 
 
 func get_random_text() -> String:
