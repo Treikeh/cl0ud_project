@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="11_iajr4"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://bjkncj1k6kru4" path="res://entities/characters/rig/sitting_couch_anim_sm.tres" id="12_kcbp1"]
 [ext_resource type="PackedScene" uid="uid://cook0hnta5rmg" path="res://entities/characters/nils/day_02_nils.tscn" id="14_4h47f"]
+[ext_resource type="PackedScene" uid="uid://cuemsjrkpvwxh" path="res://environment/lights/automatic_omni_light.tscn" id="15_k0tl5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4h47f"]
 size = Vector3(1, 2.3, 1.2)
@@ -55,10 +56,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6926503, 3.5450215, 11.069
 [node name="Maxwell" parent="Characters" unique_id=748864273 instance=ExtResource("5_7wmgk")]
 transform = Transform3D(0.23088194, 0, 0.97298175, 0, 1, 0, -0.97298175, 0, 0.23088194, -43.1357, 2.9997973, -2.278222)
 
-[node name="CouchGuy" parent="Characters" unique_id=1966623919 instance=ExtResource("11_iajr4")]
+[node name="CouchGuy" parent="Characters" unique_id=924179477 instance=ExtResource("11_iajr4")]
 transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, -42.234978, 2.9852662, -2.103635)
-_skin = "Fisher01"
+_skin = "Fisher02"
 _animation = ExtResource("12_kcbp1")
+
+[node name="Skeleton3D" parent="Characters/CouchGuy" index="0" unique_id=559385597]
+bones/11/rotation = Quaternion(-0.09403479, -0.19764803, 0.59870046, 0.7704872)
+bones/12/rotation = Quaternion(0.32926252, -0.3625817, 0.58589965, 0.6456334)
+bones/13/rotation = Quaternion(0.2878021, -0.011383337, 0.012573507, 0.9575397)
+bones/14/rotation = Quaternion(-0.03932851, 0.18789953, -0.025933666, 0.9810579)
+
+[node name="DefaultLookPosition" parent="Characters/CouchGuy" index="1" unique_id=1245629346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6352987, 0.46818578, -2.2593477)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Characters/CouchGuy" unique_id=1681530321]
 collision_layer = 64
@@ -100,6 +110,14 @@ shape = SubResource("BoxShape3D_5xhar")
 event_name = "event:/Actions/Bell"
 event_guid = "{aea974cf-9a5f-4d52-9651-90c5f09c5ce4}"
 
+[node name="AutomaticOmniLight" parent="." unique_id=619135898 instance=ExtResource("15_k0tl5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.9733, 3.8240137, 6.0793366)
+light_energy = 0.423
+omni_range = 0.3062672
+omni_attenuation = 0.0
+
 [connection signal="left" from="Characters/Vendor" to="Environment/VendorDoor" method="close"]
 [connection signal="interacted" from="Interactable/ElevatorButton" to="." method="_end_day"]
 [connection signal="interacted_no_player" from="Interactable/Bell" to="Interactable/Bell/FmodEventEmitter3D" method="play_one_shot"]
+
+[editable path="Characters/CouchGuy"]

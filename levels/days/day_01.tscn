@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c1dcx0rd8honj" path="res://entities/maxwell/maxwell.tscn" id="9_5xhar"]
 [ext_resource type="PackedScene" uid="uid://iomcinpu06my" path="res://environment/vendor_door/vendor_door.tscn" id="14_kie8o"]
 [ext_resource type="PackedScene" uid="uid://c1g0jfqp40x5y" path="res://entities/characters/vendor/vendor_day_01.tscn" id="16_gbegl"]
+[ext_resource type="PackedScene" uid="uid://cuemsjrkpvwxh" path="res://environment/lights/automatic_omni_light.tscn" id="18_xkfxd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p58p1"]
 size = Vector3(0.8, 2, 0.8)
@@ -68,7 +69,7 @@ _head_marker = NodePath("HeadMarker")
 _skin = "Fisher01"
 _animation = ExtResource("4_2ptgh")
 
-[node name="Skeleton3D" parent="Characters/IntroGuy/CharacterMesh" index="0" unique_id=202476250]
+[node name="Skeleton3D" parent="Characters/IntroGuy/CharacterMesh" index="0" unique_id=559385597]
 bones/2/position = Vector3(-1.7898774e-15, 0.17699176, 0.8371117)
 bones/2/rotation = Quaternion(0.66481227, 0.011050309, -0.012413625, 0.7468256)
 bones/3/rotation = Quaternion(0.05948518, 0.0011075826, -0.018580718, 0.9980557)
@@ -77,11 +78,11 @@ bones/5/rotation = Quaternion(-0.087191015, 1.5043304e-07, 5.7352324e-11, 0.9961
 bones/6/rotation = Quaternion(-0.05827667, 0.15277188, -0.60597205, 0.77850014)
 bones/7/rotation = Quaternion(0.6761979, 0.19913793, -0.33030224, 0.627695)
 bones/8/rotation = Quaternion(0.83699447, 0.006490213, -0.036566745, 0.5459496)
-bones/9/rotation = Quaternion(0.2636195, 0.17539395, -0.29383966, 0.9018869)
-bones/11/rotation = Quaternion(-0.094034806, -0.19764803, 0.59870034, 0.7704872)
-bones/12/rotation = Quaternion(0.70787317, -0.2430675, 0.25600836, 0.6117953)
-bones/13/rotation = Quaternion(0.8879833, -0.0054471353, 0.038794313, 0.45820403)
-bones/14/rotation = Quaternion(-0.3253911, -0.18084463, -0.05205314, 0.92666405)
+bones/9/rotation = Quaternion(0.2636197, 0.17539406, -0.2938397, 0.9018868)
+bones/11/rotation = Quaternion(-0.09403479, -0.19764803, 0.59870046, 0.7704872)
+bones/12/rotation = Quaternion(0.7078729, -0.24306765, 0.25600842, 0.6117955)
+bones/13/rotation = Quaternion(0.8879833, -0.005447136, 0.038794287, 0.45820403)
+bones/14/rotation = Quaternion(-0.3253912, -0.18084466, -0.052053157, 0.9266641)
 bones/16/rotation = Quaternion(0.27673033, 0.2248517, 0.9332144, 0.044416945)
 bones/17/rotation = Quaternion(-0.28374898, 8.1521854e-08, -1.3855663e-08, 0.9588986)
 bones/18/rotation = Quaternion(0.5488268, 0.20988077, 0.042177368, 0.8080596)
@@ -151,6 +152,12 @@ shape = SubResource("BoxShape3D_5xhar")
 [node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="Interactable/Bell" unique_id=1089052453]
 event_name = "event:/Actions/Bell"
 event_guid = "{aea974cf-9a5f-4d52-9651-90c5f09c5ce4}"
+
+[node name="AutomaticOmniLight" parent="." unique_id=619135898 instance=ExtResource("18_xkfxd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.9733, 3.8240137, 6.0793366)
+light_energy = 0.423
+omni_range = 0.3062672
+omni_attenuation = 0.0
 
 [connection signal="body_entered" from="Characters/IntroGuy/PlayerTriggerArea" to="Characters/IntroGuy" method="_body_entered_trigger"]
 [connection signal="left" from="Characters/VendorDay01" to="Environment/VendorDoor" method="close"]
