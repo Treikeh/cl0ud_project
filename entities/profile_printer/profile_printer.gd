@@ -17,6 +17,7 @@ const PRINTER_MENU_SCENE: PackedScene = preload("uid://daoulaw7h8y4p")
 @export var _cam_transform_marker: Marker3D
 @export var _anim_player: AnimationPlayer
 @export var _required_upgrade: ProfileBuilderUpgrade
+@export var _mesh_cover: Node3D
 
 @export_group("SFX")
 @export var _print_sfx: FmodEventEmitter3D
@@ -41,13 +42,13 @@ func _ready() -> void:
 	
 	_required_upgrade.profile_builder_bought.connect(_show_printer)
 	if not _required_upgrade.bought:
-		hide()
-		process_mode = Node.PROCESS_MODE_DISABLED
+		_mesh_cover.show()
+		_terminal_collision.disabled = true
 
 
 func _show_printer() -> void:
-	show()
-	process_mode = Node.PROCESS_MODE_INHERIT
+	_mesh_cover.hide()
+	_terminal_collision.disabled = false
 
 
 func _on_interacted(player: Player) -> void:
