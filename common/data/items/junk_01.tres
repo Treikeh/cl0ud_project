@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("3_y2i02")
-name = "Junk"
+name = "Junk 1"
 description = "Junk"
 value = 1
 type = "JUNK"

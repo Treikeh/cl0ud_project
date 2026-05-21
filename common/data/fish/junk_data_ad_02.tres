@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="JunkData" format=3 uid="uid://dyu8adti0prln"]
+
+[ext_resource type="Script" uid="uid://do4nr47jj2g8p" path="res://entities/fish/junk/junk_data.gd" id="1_5kp0o"]
+
+[resource]
+script = ExtResource("1_5kp0o")
+text = "[img]res://entities/fish/junk/art/ads/freenft.png[/img]"

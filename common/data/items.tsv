@@ -6,13 +6,15 @@ mail_lan_invitation_fish	Mail Fish "LAN Invitation"	A fish containing data about
 message_exploration_fish	Message Fish "Exploration"	A low-value message fish with a conversation about exploring.	6	message_exploration_data	360	Default			
 message_plushheist_fish	Message Fish "Plush Heist"	The Plush Heist	5	message_plushheist_data	300	Default			
 message_ratocide_fish	Message Fish "Rat Genocide"	Dead rats :(	4	message_ratocide_data	200	Default			
-note_crazy_data_01	[color=red][shake rate=20.0 level=5 connected=1]Bloody Note Fish[/shake][/color]	[color=red][shake rate=20.0 level=5 connected=1]The Truth[/shake][/color]	8	note_meatgrinder_data	500	Default			
+note_crazy_data_01	[color=red][shake rate=20.0 level=5 connected=1]Bloody Note Fish[/shake][/color]	[color=red][shake rate=20.0 level=5 connected=1]The Truth[/shake][/color]	8	note_meatgrinder_data	500	Toilet			
 note_birthday_fish	Note fish "Birthday Shopping"	The birthday shopping list fish	4	note_birthday_shopping_list_data	50	Default			
 note_survey_fish	Note Fish "Ranglo Survey"	A fish containing data about an survey.	6	note_surveyresults_data	500	Default			
 note_digital_float_fish	Note "Digital Float Parade"	A fish containing data about some digital float parade.	4	note_digital_float_data	250	Default			
 note_city_announcement_fish	Note "City System Announcement"	A fish containing data about an system announcement regarding Cloud City.	5	note_city_announcement_data	200	Default			
 note_cornelius_reminder_fish	Note "Reminder"	A fish containing data about somebody's personal checklist.	4	note_cornelius_reminder_data	120	Default			
-junk_01	Junk	Junk	1	junk_data_01	1	Default, Toilet			
+junk_01	Junk 1	Junk	1	junk_data_01	1	Default, Toilet			
+junk_02	Junk 2	Junk	1	junk_data_ad_01	2	Default, Toilet			
+junk_02	Junk 3	Junk	1	junk_data_ad_02	3	Default, Toilet			
 message_item_Xavier_01_01	Message Fish "Xavier Transaction" Part 2	Part 1 of an important message fish containing the conversation between Xavier and Martin.	8	message_story_Xavier_data_01_day_01	150	Default			
 message_item_Xavier_01_02	Message Fish "Xavier Transaction" Part 2	Part 2 of an important message fish containing the conversation between Xavier and Martin.	8	message_story_Xavier_data_02_day_2	150	Default			
 									
