@@ -48,6 +48,7 @@ transform = Transform3D(-0.99775386, 0, -0.06698805, 0, 1, 0, 0.06698805, 0, -0.
 [node name="PrintingSfx" type="FmodEventEmitter3D" parent="SFX" unique_id=508430882]
 event_name = "event:/Actions/Printer"
 event_guid = "{83b0d7dc-72f6-4271-ad21-fb5ea307039d}"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.32724714)
 
 [node name="OpenMenuSfx" type="FmodEventEmitter2D" parent="SFX" unique_id=41418270]
 event_name = "event:/UI/Open Inventory"
@@ -57,24 +58,24 @@ event_guid = "{18b1f05d-fb36-45e5-8916-938b4fff548c}"
 event_name = "event:/UI/Close Inventory"
 event_guid = "{9b7c0e1b-3771-4d51-aa63-c1a471eeecd8}"
 
-[node name="computercovered" parent="." unique_id=722542951 instance=ExtResource("4_tg5i2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.90000004)
-visible = false
+[node name="computercovered" parent="." unique_id=877984546 instance=ExtResource("4_tg5i2")]
+transform = Transform3D(1.1022875, 0, 0, 0, 1, 0, 0, 0, 1, -0.0791955, 0, 0.80124706)
 
 [node name="computer" parent="." unique_id=861593246 instance=ExtResource("3_jmsce")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.90000004)
+visible = false
 
-[node name="Armature" parent="computer" index="3" unique_id=578795047]
+[node name="Armature" parent="computer" index="3" unique_id=1746016905]
 transform = Transform3D(1, 0, 0, 0, 0.99785835, 0.065411896, 0, -0.065411896, 0.99785835, -0.42428398, 0.022352591, -1.0719328)
 
-[node name="Skeleton3D" parent="computer/Armature" index="0" unique_id=1091006033]
-bones/0/position = Vector3(-3.5527137e-15, -0.009576433, -0.17507243)
-bones/0/rotation = Quaternion(0.6617401, 6.255859e-07, 5.521638e-07, 0.7497333)
-bones/0/scale = Vector3(1, 0.99999994, 0.9999872)
-bones/1/rotation = Quaternion(0.06222104, -4.357362e-08, 1.0111813e-07, 0.99806243)
-bones/2/rotation = Quaternion(-0.054916926, 0.012195435, -0.00079742755, 0.9984161)
-bones/3/rotation = Quaternion(-0.03847146, -1.6260066e-07, -5.4436367e-08, 0.9992597)
-bones/4/rotation = Quaternion(0.08548212, -0.0038169515, 0.0059436313, 0.9963147)
+[node name="Skeleton3D" parent="computer/Armature" index="0" unique_id=1870682676]
+bones/0/position = Vector3(-2.9802322e-08, -0.009576433, -0.17507243)
+bones/0/rotation = Quaternion(0.6617402, 6.255859e-07, 5.521638e-07, 0.74973327)
+bones/0/scale = Vector3(1, 0.9999999, 0.99998724)
+bones/1/rotation = Quaternion(0.06222103, -4.3573586e-08, 1.0111812e-07, 0.99806243)
+bones/2/rotation = Quaternion(-1.1175869e-08, 5.735412e-13, -1.4202127e-14, 1)
+bones/3/rotation = Quaternion(-0.038471464, -1.628244e-07, -5.4573384e-08, 0.9992597)
+bones/4/rotation = Quaternion(0.010181851, 1.0287437e-11, 1.278441e-08, 0.99994814)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=240107984]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 0)
