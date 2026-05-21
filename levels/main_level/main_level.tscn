@@ -18,7 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://bio2e7voof108" path="res://entities/profile_wall/profile_wall.tscn" id="17_224rj"]
 [ext_resource type="PackedScene" uid="uid://bjae0sst12e6s" path="res://levels/main_level/art/HorizonBuildings/HorizonBuildings.glb" id="17_ddgsd"]
 [ext_resource type="PackedScene" uid="uid://b0l8syuol7cs4" path="res://entities/profile_printer/profile_printer.tscn" id="18_5gklf"]
+[ext_resource type="PackedScene" uid="uid://bypyjnhae5vkb" path="res://entities/fish/mail/mail_mesh.tscn" id="20_f1dbq"]
 [ext_resource type="PackedScene" uid="uid://q3em1bo70ede" path="res://levels/art/BuildingFour/BuildingFour.glb" id="20_xpbmc"]
+[ext_resource type="PackedScene" uid="uid://b5g6py28gim81" path="res://entities/fish/message/message_mesh.tscn" id="21_0doe4"]
+[ext_resource type="PackedScene" uid="uid://blh7c65i5bss1" path="res://entities/fish/note/note_mesh.tscn" id="22_418b2"]
+[ext_resource type="PackedScene" uid="uid://b3jb1ta6dleu7" path="res://entities/fish/junk/junk_mesh.tscn" id="23_pww4q"]
 
 [sub_resource type="Curve" id="Curve_hp128"]
 _limits = [0.0, 10.0, 0.0, 24.0]
@@ -114,7 +118,7 @@ size = Vector3(100, 10, 200)
 [sub_resource type="BoxShape3D" id="BoxShape3D_t80xa"]
 size = Vector3(163.93579, 48.86328, 287.65234)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_224rj"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_o886p"]
 viewport_path = NodePath("RodHandle/RodScreen/SubViewport")
 
 [node name="MainLevel" type="Node3D" unique_id=224384734 node_paths=PackedStringArray("_day_night_cycle", "_player_marker") groups=["persistent"]]
@@ -425,7 +429,7 @@ transform = Transform3D(0.1, 8.881784e-16, 0, 0, 0, 0.1, 8.881784e-16, -0.1, 0, 
 transform = Transform3D(0.1, 8.881784e-16, 0, 0, 0, 0.1, 8.881784e-16, -0.1, 0, 0, 0.1500001, -0.049999237)
 
 [node name="RodScreen" parent="Player/Orientation/Head/CameraRoot/FishingRod/RodHandle" parent_id_path=PackedInt32Array(913738857, 949060003, 166742561) index="0" unique_id=167206628]
-texture = SubResource("ViewportTexture_224rj")
+texture = SubResource("ViewportTexture_o886p")
 
 [node name="TextureProgressBar" parent="Player/Orientation/Head/CameraRoot/FishingRod/RodHandle/RodScreen/SubViewport" parent_id_path=PackedInt32Array(913738857, 949060003, 1941168548) index="0" unique_id=1272039896]
 offset_left = -64.0
@@ -441,6 +445,18 @@ transform = Transform3D(0.1, -8.881784e-16, 7.940934e-23, 0, -8.742278e-09, -0.1
 
 [node name="PlayerStartMarker" type="Marker3D" parent="." unique_id=46245944]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.11393, 3.5083036, 4.860615)
+
+[node name="MailFishMesh" parent="." unique_id=901966367 instance=ExtResource("20_f1dbq")]
+transform = Transform3D(-1.1198579e-08, 0.09835123, -0.3670518, 0.38, -1.6610327e-08, -1.6044346e-08, -2.0196927e-08, -0.3670518, -0.09835123, -14.450744, 3.4367766, 6.9843016)
+
+[node name="MessageFishMesh" parent="." unique_id=1665173443 instance=ExtResource("21_0doe4")]
+transform = Transform3D(-1.42062e-08, 0.07724791, 0.31568614, 0.325, 3.3766137e-09, 1.3799079e-08, 7.394737e-16, 0.31568614, -0.07724791, -14.359594, 3.8204153, 6.407897)
+
+[node name="MessageFishMesh2" parent="." unique_id=1628279309 instance=ExtResource("22_418b2")]
+transform = Transform3D(6.194493e-09, 0.14171349, 0.30905867, 0.33999997, -1.486187e-08, 2.8467708e-16, 1.3509384e-08, 0.30905867, -0.14171349, -14.334256, 3.2675965, 6.319952)
+
+[node name="JunkFishMesh" parent="." unique_id=645014180 instance=ExtResource("23_pww4q")]
+transform = Transform3D(0.3123754, -0.16849957, 0.007383374, 0, 0.015540607, 0.35465974, -0.16866127, -0.31207594, 0.013674658, -14.194872, 3.10944, 7.3614373)
 
 [editable path="Player"]
 [editable path="Player/Orientation/Head/CameraRoot/FishingRod"]
