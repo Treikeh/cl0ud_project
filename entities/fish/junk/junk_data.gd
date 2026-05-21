@@ -3,8 +3,11 @@ extends FishData
 class_name JunkData
 
 
+var text: String
+
+
 func get_random_text() -> String:
-	return str(randi())
+	return text
 
 
 func get_display_scene() -> String:

@@ -42,21 +42,21 @@ layout_mode = 2
 layout_mode = 2
 text = "Parse all data"
 
-[node name="RecipesButton" type="Button" parent="VBoxContainer" unique_id=1614882551]
+[node name="DialogueButton" type="Button" parent="VBoxContainer" unique_id=1103884167]
 layout_mode = 2
-text = "Parse recipes data"
-
-[node name="ItemButton" type="Button" parent="VBoxContainer" unique_id=504867811]
-layout_mode = 2
-text = "Parse item data"
+text = "Parse dialogue data"
 
 [node name="FishDataButton" type="Button" parent="VBoxContainer" unique_id=734596846]
 layout_mode = 2
 text = "Parse fish data"
 
-[node name="DialogueButton" type="Button" parent="VBoxContainer" unique_id=1103884167]
+[node name="ItemButton" type="Button" parent="VBoxContainer" unique_id=504867811]
 layout_mode = 2
-text = "Parse dialogue data"
+text = "Parse item data"
+
+[node name="RecipesButton" type="Button" parent="VBoxContainer" unique_id=1614882551]
+layout_mode = 2
+text = "Parse recipes data"
 
 [node name="ProfilesButton" type="Button" parent="VBoxContainer" unique_id=2052485099]
 layout_mode = 2
