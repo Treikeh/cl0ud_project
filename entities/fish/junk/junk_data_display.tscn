@@ -6,8 +6,10 @@
 offset_right = 139.0
 offset_bottom = 40.0
 script = ExtResource("1_b4ea3")
-_junk_label = NodePath("JunkLabel")
+_junk_label = NodePath("")
 
-[node name="JunkLabel" type="Label" parent="." unique_id=2125725013]
+[node name="JunkLabel" type="RichTextLabel" parent="." unique_id=631533136]
 layout_mode = 2
-text = "Junk"
+bbcode_enabled = true
+text = "[img]res://icon.svg[/img]"
+fit_content = true
