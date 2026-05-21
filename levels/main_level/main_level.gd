@@ -48,8 +48,8 @@ func get_save_data() -> Dictionary:
 func _load_save_data() -> void:
 	# Load and set save data
 	var data: Dictionary = SaveManager.get_save_data(SAVE_DATA_KEY)
-	if not data.is_empty():
-		_day_night_cycle.set_time_of_day(data.time_of_day)
+	#if not data.is_empty():
+	#	_day_night_cycle.set_time_of_day(data.time_of_day)
 
 
 #endregion
