@@ -24,6 +24,7 @@ var slots: Array[ProfileWallSlot] = []
 
 
 func _ready() -> void:
+	output_item.fish_data = ProfileFishData.new()
 	# Set up all slots
 	for i: int in _labels.size():
 		var type: ProfileData.DataTypes = _labels.keys()[i]
@@ -56,7 +57,18 @@ func _on_data_removed(item_data: ItemData, label: Label, type: ProfileData.DataT
 func _update_item(data_type: ProfileData.DataTypes, data: String) -> void:
 	match data_type:
 		ProfileData.DataTypes.NAME:
+			output_item.fish_data.name = data
 			output_item.name = "%s's profile" % data
+		ProfileData.DataTypes.BIRTHDAY:
+			output_item.fish_data.birthday = data
+		ProfileData.DataTypes.OCCUPATION:
+			output_item.fish_data.occupation = data
+		ProfileData.DataTypes.ADDRESS:
+			output_item.fish_data.address = data
+		ProfileData.DataTypes.LIKES:
+			output_item.fish_data.likes = data
+		ProfileData.DataTypes.DISLIKES:
+			output_item.fish_data.dislikes = data
 
 
 func _set_output_value() -> void:

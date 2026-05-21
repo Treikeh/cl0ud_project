@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dqvaj563bfo8a"]
+
+[ext_resource type="Script" uid="uid://cttm5naunruf5" path="res://entities/fish/profile/profile_data_display.gd" id="1_n8uxv"]
+
+[node name="ProfileDataDisplay" type="PanelContainer" unique_id=257661930 node_paths=PackedStringArray("name_label", "occupation_label", "age_label", "address_label", "likes_label", "dislikes_label")]
+offset_right = 200.0
+offset_bottom = 200.0
+script = ExtResource("1_n8uxv")
+name_label = NodePath("VBoxContainer/Name")
+occupation_label = NodePath("VBoxContainer/Job")
+age_label = NodePath("VBoxContainer/Age")
+address_label = NodePath("VBoxContainer/Address")
+likes_label = NodePath("VBoxContainer/Likes")
+dislikes_label = NodePath("VBoxContainer/Dislikes")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=15538730]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="VBoxContainer" unique_id=42535019]
+layout_mode = 2
+text = "Name"
+
+[node name="Job" type="Label" parent="VBoxContainer" unique_id=1151077377]
+layout_mode = 2
+text = "Job"
+
+[node name="Age" type="Label" parent="VBoxContainer" unique_id=1296342640]
+layout_mode = 2
+text = "Age"
+
+[node name="Address" type="Label" parent="VBoxContainer" unique_id=565040956]
+layout_mode = 2
+text = "Address"
+
+[node name="Likes" type="Label" parent="VBoxContainer" unique_id=2146186575]
+layout_mode = 2
+text = "Likes"
+
+[node name="Dislikes" type="Label" parent="VBoxContainer" unique_id=1485621713]
+layout_mode = 2
+text = "Dislikes"

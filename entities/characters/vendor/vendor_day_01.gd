@@ -26,7 +26,11 @@ func _on_interacted(player: Player) -> void:
 	match _times_spoken:
 		# Start dialogue when interacting with the vendor
 		0: player.hud.start_dialogue(_buy_fishing_rod_dialogue)
-		3: player.hud.start_dialogue(_profile_builder_01_dialogue)
+		3: # Profile builder tutorial
+			if _profile_builder_upgrade.bought:
+				player.hud.start_dialogue(_interact_dialogues.pick_random())
+			else:
+				player.hud.start_dialogue(_profile_builder_01_dialogue)
 		_: 
 			if _profile_builder_upgrade.bought:
 				player.hud.start_dialogue(_interact_dialogues.pick_random())
