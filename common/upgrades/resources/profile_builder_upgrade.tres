@@ -8,5 +8,5 @@ script = ExtResource("2_71umb")
 name = "Profile processer"
 description = "Lets you process fish to build profiles"
 icon = ExtResource("1_225mt")
-cost = 150
+cost = 50
 metadata/_custom_type_script = "uid://cw2fltaspao08"

@@ -113,4 +113,5 @@ func _on_confirm_button_pressed() -> void:
 		return
 	
 	_inventory.add_item(_profile.output_item)
+	Globals.fish_collected.emit(_profile.output_item)
 	_close()

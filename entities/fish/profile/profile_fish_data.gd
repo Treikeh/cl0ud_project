@@ -12,7 +12,7 @@ class_name ProfileFishData
 
 
 func get_display_scene() -> String:
-	return "uid://ds5flwipduxn0"
+	return "uid://dqvaj563bfo8a"
 
 
 func get_type() -> String:

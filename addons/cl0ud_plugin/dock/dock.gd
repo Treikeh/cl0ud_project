@@ -264,7 +264,12 @@ func _create_fish_data(data: Array[PackedStringArray]) -> void:
 				fish.recipient = recipient
 				fish.messages = messages
 			"JUNK":
+				# Get note data
+				var text: String = row[2]
+				text = text.replace("/n", "\n")
+				
 				fish = JunkData.new()
+				fish.text = text
 		
 		_save_resource(fish, path)
 
