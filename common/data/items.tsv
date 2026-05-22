@@ -29,7 +29,7 @@ profile_terry_address_item	Terry's address	4th Concrete Avenue Street					PROFIL
 									
 									
 									
-profile_elijah_name_item	Elijah's name	Elijah							
+profile_elijah_name_item	Elijah's name	Elijah					PROFILE_DATA	res://icon.svg	
 profile_cornelius_mctaro_name_item	Cornelius' name	Cornelius McTaro					PROFILE_DATA	res://icon.svg	
 profile_cornelius_mctaro_likes_item	Cornelius' likes	Mansions, Cars and Money					PROFILE_DATA	res://icon.svg	
 profile_cornelius_mctaro_occupation_item	Cornelius' occupation	Investor					PROFILE_DATA	res://icon.svg	
@@ -59,3 +59,7 @@ profile_the_adriana_maisy_address_item	The_Adriana_Maisy's address	Morwell					P
 profile_the_adriana_maisy_likes_item	The_Adriana_Maisy's likes	Polar bears					PROFILE_DATA	res://icon.svg	
 profile_xavier_name_item	Xavier's name	Xavier Brooks					PROFILE_DATA	res://icon.svg	
 profile_xavier_creditcard_item	Xavier's credit card information	Card Number 8203 1505 6733 2359					PROFILE_DATA	res://icon.svg	
+									
+storyitem_oldmanpackage	Package from the Old Man	A package from the Old Man.	0				PACKAGE	res://icon.svg	res://entities/fish/junk/junk_mesh.tscn
+storyitem_cloudmask	Cloud Mask	A rebreather for traversing the deeper parts of the Cloud.	0				MASK	res://icon.svg	res://entities/fish/junk/junk_mesh.tscn
+storyitem_notefromoldman	Note From Old Man	A note from the Old Man.	0	note_story_oldman_day_03			PROFILE_DATA	res://icon.svg	

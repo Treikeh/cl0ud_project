@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://baqkykct0vpab"]
+
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_iqtfj"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="1_uf478"]
+
+[resource]
+script = ExtResource("1_uf478")
+name = "Cloud Mask"
+description = "A rebreather for traversing the deeper parts of the Cloud."
+type = "MASK"
+icon = ExtResource("1_iqtfj")
+mesh_scene = "res://entities/fish/junk/junk_mesh.tscn"

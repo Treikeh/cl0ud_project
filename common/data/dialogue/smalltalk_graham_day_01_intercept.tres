@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://cy0n4l4oppmu0"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_5cs86"]
+
+[resource]
+script = ExtResource("1_5cs86")
+name = "Grahams"
+lines = Array[String](["Mhm, now, killing is always the last resort, but we have other methods.", "Lies. Tricking. Gaslighting. Intimidation. Persuasion. Bribery.", "We use all available methods to turn people away, however…", "There are some bad apples that know what they are doing and have no interest in respecting the private nature of Concrete Cove, so we have to hurt them a little.", "The Old Man disapproves of using violence to deter people from coming to Concrete Cove, but even though he officially founded and oversees Concrete Cove,", "he was outvoted 41 to 1 in allowing violence to be utilized to keep out undesirables.", "He is still somewhat bitter about this, but luckily, we haven’t had to utilize violence in the past 2 weeks.", "Anyways, you’re in safe hands, just keep fishing, and we will ensure you have the peace to do it."])

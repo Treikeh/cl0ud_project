@@ -3,12 +3,18 @@
 [ext_resource type="PackedScene" uid="uid://8vuuaq87rbum" path="res://levels/main_level/main_level.tscn" id="1_d0j0e"]
 [ext_resource type="PackedScene" uid="uid://16hefv04ucbs" path="res://entities/music_player/music_player.tscn" id="2_6ddsc"]
 [ext_resource type="PackedScene" uid="uid://dgsrbmkvekxew" path="res://environment/subway_carts/subway_cart_spawner.tscn" id="2_r30ku"]
+[ext_resource type="Script" uid="uid://bgbkoys1k63vs" path="res://levels/days/day_03_gate.gd" id="3_1pq3v"]
 [ext_resource type="PackedScene" uid="uid://ci766d3wxxwwr" path="res://environment/elevator_door/elevator_door.tscn" id="3_kgh6a"]
 [ext_resource type="PackedScene" uid="uid://bmbvlv41vnb6x" path="res://levels/art/door/ApartmentDoor.glb" id="4_6ddsc"]
+[ext_resource type="Resource" uid="uid://c7nfr0vpt5iij" path="res://common/data/items/storyitem_notefromoldman.tres" id="4_o74af"]
 [ext_resource type="PackedScene" uid="uid://cf6nk35lslykg" path="res://levels/art/fire_escape_door/FireEscapeDoor.glb" id="5_kgh6a"]
-[ext_resource type="PackedScene" path="res://common/scripts/level_load_trigger.tscn" id="6_qfutr"]
-[ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/characters/vendor/vendor.tscn" id="7_1w5yc"]
+[ext_resource type="PackedScene" uid="uid://c0hp5j2f5xkd6" path="res://common/scripts/level_load_trigger.tscn" id="6_qfutr"]
+[ext_resource type="PackedScene" uid="uid://u13jy1ersfgn" path="res://entities/characters/vendor/vendor_day_03.tscn" id="7_1w5yc"]
+[ext_resource type="PackedScene" uid="uid://dpmir0dmbn2xw" path="res://entities/characters/vendor/day_03_package/day_03_pacakge.tscn" id="7_ofqyv"]
 [ext_resource type="PackedScene" uid="uid://iomcinpu06my" path="res://environment/vendor_door/vendor_door.tscn" id="8_qfutr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1pq3v"]
+size = Vector3(20.699371, 11.67688, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ofqyv"]
 size = Vector3(2.0927734, 2.8935547, 1)
@@ -27,11 +33,25 @@ _schedule = Array[float]([10.0, 16.0])
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8, 11.7, 150)
 _schedule = Array[float]([12.0, 20.0])
 
-[node name="FireEscapeDoor" parent="Environment" unique_id=1107788188 instance=ExtResource("5_kgh6a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.045135, 2.6499333, -69.80684)
+[node name="Day03Gate" type="Node3D" parent="Environment" unique_id=1464723539 node_paths=PackedStringArray("_open_gate", "_closed_gate")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.045135, 0.64993334, -69.80684)
+script = ExtResource("3_1pq3v")
+_open_gate = NodePath("FireEscapeDoorOpen")
+_closed_gate = NodePath("FireEscapeDoorClosed")
+_required_item = ExtResource("4_o74af")
 
-[node name="FireEscapeDoor2" parent="Environment" unique_id=2087701781 instance=ExtResource("5_kgh6a")]
-transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, -19.045135, 0.64993346, -69.10684)
+[node name="FireEscapeDoorOpen" parent="Environment/Day03Gate" unique_id=2087701781 instance=ExtResource("5_kgh6a")]
+transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, -1, 1.1920929e-07, 0.69999695)
+
+[node name="FireEscapeDoorClosed" parent="Environment/Day03Gate" unique_id=1107788188 instance=ExtResource("5_kgh6a")]
+
+[node name="CheckPlayerInventoryTrigger" type="Area3D" parent="Environment/Day03Gate" unique_id=40901481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.677559, 0, 7.5150642)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Day03Gate/CheckPlayerInventoryTrigger" unique_id=550441187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8429108, 2.2279663, 0)
+shape = SubResource("BoxShape3D_1pq3v")
+debug_color = Color(0.9367286, 1.3861656e-05, 0.63308996, 0.41960785)
 
 [node name="ApartmentDoor" parent="Environment" unique_id=804443877 instance=ExtResource("4_6ddsc")]
 transform = Transform3D(-0.054218233, 0, -0.99852914, 0, 1, 0, 0.99852914, 0, -0.054218233, -34.476036, 3.7600656, 0.3929997)
@@ -59,4 +79,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.420695, 3.6429343, -10.91
 [node name="ElevatorDoor" parent="Interactable" unique_id=1829758497 instance=ExtResource("3_kgh6a")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27.6, 2.5, 4.9)
 
+[node name="Day03Pacakge" parent="Interactable" unique_id=499769871 instance=ExtResource("7_ofqyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9515653, 4.04, 10.923401)
+
+[connection signal="body_entered" from="Environment/Day03Gate/CheckPlayerInventoryTrigger" to="Environment/Day03Gate" method="_on_area_3d_body_entered"]
 [connection signal="left" from="Characters/Vendor" to="Environment/VendorDoor" method="close"]
+[connection signal="spawn_pacakge" from="Characters/Vendor" to="Interactable/Day03Pacakge" method="make_active"]

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://p25efi0662bn"]
+
+[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_f23y8"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_iuflu"]
+
+[resource]
+script = ExtResource("2_iuflu")
+name = "Package from the Old Man"
+description = "A package from the Old Man."
+type = "PACKAGE"
+icon = ExtResource("1_f23y8")
+mesh_scene = "res://entities/fish/junk/junk_mesh.tscn"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://bo75f6wnguo58"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_p51hy"]
+
+[resource]
+script = ExtResource("1_p51hy")
+name = "Old Man"
+lines = Array[String](["Yeah, because I chose to be better.", "Y’know, I sleep down here, in the Cloud, with the fishes, usually under a makeshift tarp or inside ruins, but never comfortably.", "I fish and sell only useless data-fishes on old advertisements or some other bullshit.", "Not enough to rent out an apartment above the Cloud, but just enough to buy some cans of food and to maintain my gear."])
+choices = Array[String](["You are wearing a Cloud Mask! Those things are not cheap!"])

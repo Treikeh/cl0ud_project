@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://bp7rrxlm6e7eq"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_np66l"]
+
+[resource]
+script = ExtResource("1_np66l")
+name = "Grahams"
+lines = Array[String](["Look, I'm sure you are a nice person to get to know, but I have a job to do.", "And if you want to earn some Cloudbucks, I think you also have a job to do."])

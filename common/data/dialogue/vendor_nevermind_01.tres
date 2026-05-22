@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_jl3sm")
 name = "\"Chops\""
-lines = Array[String](["Quit wasting my time."])
+lines = Array[String](["Don't keep me waiting."])

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://drdffxj3dfc3n"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_tujik"]
+
+[resource]
+script = ExtResource("1_tujik")
+name = "Old Man"
+lines = Array[String](["Ahoy there, friend.", "I didn’t believe you would follow me down here.", "Welcome to the Cloud!", "Watcha' make of it?"])
+choices = Array[String](["It is peaceful.", "It is a deadzone."])

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://ba01al4t7wnku"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_xqrwg"]
+
+[resource]
+script = ExtResource("1_xqrwg")
+name = "Old Man"
+lines = Array[String](["Ha! That’s the million-cloudbuck question, kid.", "Maybe the path to redemption is long for you, but it can be made.", "The most critical step is to start it.", "So, I give you a chance.", "Join me down here.", "I will teach you how to survive without data-fishin’.", "Teaching you how to live like me.", "Fish only what people don’t want and sell the data-fishes people don’t need.", "With time, we can teach potential victims how to protect themselves from data-fishers like you.", "We can make a difference in the world, and possibly overshadow the suffering you have caused.", "…", "All I ask is that you join me…"])
+choices = Array[String](["Join the Old Man", "Leave"])
