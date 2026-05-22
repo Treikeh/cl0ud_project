@@ -80,7 +80,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.420695, 3.6429343, -10.91
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27.6, 2.5, 4.9)
 
 [node name="Day03Pacakge" parent="Interactable" unique_id=499769871 instance=ExtResource("7_ofqyv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9515653, 4.04, 10.923401)
+transform = Transform3D(0.029230082, 0, -0.9995727, 0, 1, 0, 0.9995727, 0, 0.029230082, -7.637793, 3.653218, 10.799132)
 
 [connection signal="body_entered" from="Environment/Day03Gate/CheckPlayerInventoryTrigger" to="Environment/Day03Gate" method="_on_area_3d_body_entered"]
 [connection signal="left" from="Characters/Vendor" to="Environment/VendorDoor" method="close"]

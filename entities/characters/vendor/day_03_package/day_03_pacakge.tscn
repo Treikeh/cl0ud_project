@@ -5,10 +5,10 @@
 [ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_uaoeo"]
 [ext_resource type="Resource" uid="uid://baqkykct0vpab" path="res://common/data/items/storyitem_cloudmask.tres" id="3_mnlt8"]
 [ext_resource type="Resource" uid="uid://c7nfr0vpt5iij" path="res://common/data/items/storyitem_notefromoldman.tres" id="4_44qhe"]
+[ext_resource type="PackedScene" uid="uid://dao822hjkvlm5" path="res://levels/art/CardboardBox/CardboardBox.glb" id="6_mnlt8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ka35l"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_iab7f"]
+size = Vector3(0.2998047, 0.25024414, 0.3486328)
 
 [node name="Day03Pacakge" type="Node3D" unique_id=499769871]
 script = ExtResource("1_iab7f")
@@ -20,7 +20,6 @@ prompt = "Open"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea3D" unique_id=62819305]
 shape = SubResource("BoxShape3D_ka35l")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=387153069]
-mesh = SubResource("BoxMesh_iab7f")
+[node name="CardboardBox" parent="." unique_id=1774145058 instance=ExtResource("6_mnlt8")]
 
 [connection signal="interacted" from="InteractArea3D" to="." method="_on_interact_area_3d_interacted"]
