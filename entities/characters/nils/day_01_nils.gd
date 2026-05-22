@@ -43,6 +43,7 @@ func _on_start_dialogue_choice_made(choice: int) -> void:
 
 
 func _on_interacted(player: Player) -> void:
+	Globals.day_01_spoken_to_old_man.emit()
 	if Globals.upgrades.has(_fishing_rod_upgrade):
 		if _caught_fish:
 			if _tips_dialogues.is_empty():
