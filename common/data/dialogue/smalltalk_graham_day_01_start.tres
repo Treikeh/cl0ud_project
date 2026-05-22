@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://blrinaly2j68m"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_4km8k"]
+
+[resource]
+script = ExtResource("1_4km8k")
+name = "Grahams"
+lines = Array[String](["Oh, you’re talking to me?", "Spoken to the Old man yet?", "You have?", "Good.", "I never introduced myself fully.", "My name is Omar Graham, but you can just call me Graham.", "I am one of the “guards” here at Concrete Cove.", "Cloud City is a dangerous place, especially for you data-fishers.", "So, alongside my twin brother Otto, I intercept and redirect undesired individuals away from Concrete Cove."])
+choices = Array[String](["Otto?", "Intercept and redirect?", "Ok."])

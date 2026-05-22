@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://dhg8sv3v465nm"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_cf367"]
+
+[resource]
+script = ExtResource("1_cf367")
+name = "Old Man"
+lines = Array[String](["…", "Now, I know yer’ curious about why I invited you down here.", "The truth is probably not somethin’ yer’ gonna like to hear, but it’s just how it is.", "The data you have sold recently has caused some trouble for the victims, especially for Ellie, Xavier, and Gideon."])
+choices = Array[String](["How do you know of that?"])

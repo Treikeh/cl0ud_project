@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://cmba42gdkrs7p"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_dy67m"]
+
+[resource]
+script = ExtResource("1_dy67m")
+name = "Old Man"
+lines = Array[String](["I traded my old sea-based fishing trawler for a two-pack of them a long time ago.", "Traditionally fishin' business died a long time ago.", "The only way to earn any sort of money is by Data-fishin’", "Data-fishin’ is a pale imitation of real fishin’", "We might have hurt the real fishes we fished up, but the untold amount of sufferin’ that can be caused by data-fishin is never realized.", "People go about their digital lives, never takin’ data theft seriously.", "And nothing is done to stop us Data-fishers from fishin’", "Especially here in Cloud City, there ain’t no serious police force to stop us, and those who have tried and failed or been bribed.", "…", "…", "*sigh*"])
+choices = Array[String](["What do you really want to achieve here?"])

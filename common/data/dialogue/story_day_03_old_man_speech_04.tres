@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://d2x4kvvarjmur"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_iwwai"]
+
+[resource]
+script = ExtResource("1_iwwai")
+name = "Old Man"
+lines = Array[String](["Kid, regardless of intention,you sold that data and caused a lot of people a lot of sufferin’.", "Ellie’s lost her job and future work prospects,", "God knows what happened to Xavier because of what you did,", "And worst of all, you indirectly helped end the life of Gideon.", "All of this, on top of the many pieces of data-fish and profiles you sold.", "I suppose all of us at Concrete Cove are partly to blame for what happens to the victims of our data-fishin’."])
+choices = Array[String](["Easy for you to say, you can sell and release whatever fish you want."])

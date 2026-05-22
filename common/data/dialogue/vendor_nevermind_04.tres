@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://c2jd7dbd8y700"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_nnuxc"]
+
+[resource]
+script = ExtResource("1_nnuxc")
+name = "\"Chops\""
+lines = Array[String](["Come back if you change your mind."])

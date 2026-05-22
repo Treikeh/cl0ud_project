@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://beo7j3iq1s4sf"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_r44yy"]
+
+[resource]
+script = ExtResource("1_r44yy")
+name = "Old Man"
+lines = Array[String](["It might have been a breach of your privacy on my part,", "but I s’pose it’s appropriate enough to do it towards you, seeing as you have done enough against others.", "Chops traded me some tidbits about the data you sold in recent days.", "I had a hunch, but this confirmed my suspicions."])
+choices = Array[String](["I only care earning Cloudbucks. It was not malice. It was Indifference."])

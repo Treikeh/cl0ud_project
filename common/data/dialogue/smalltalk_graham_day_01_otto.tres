@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://16ld5shakrp0"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_bue7m"]
+
+[resource]
+script = ExtResource("1_bue7m")
+name = "Grahams"
+lines = Array[String](["Yup, my twin brother Otto Graham.", "He always takes the \"long-distance redirection\" approach, which means you ain't gonna see as he is in one of the building apartments across the cloud, overlooking the nearby entrances to Concrete Cove.", "Don't worry, he is a perceptive one, so he ain't gonna mistake you for somebody else.", "Heck, if you look long enough, you might even catch the glint of his scope somewhere in the distane.", "Although, don't count on it.", "Anyways, I think small talk time is over, andd it's time to do our jobs.", "Happy fishing!"])

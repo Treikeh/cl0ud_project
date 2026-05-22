@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://ctsr011axkbou"]
 
 [ext_resource type="Script" uid="uid://bdrlldkalulm3" path="res://entities/characters/nils/ending_nils.gd" id="1_cne6p"]
-[ext_resource type="Resource" uid="uid://gkugv4exr5b0" path="res://common/data/dialogue/tips_old_man_start_01.tres" id="2_6o076"]
-[ext_resource type="Resource" uid="uid://cocchijl1xtg1" path="res://common/data/dialogue/tips_old_man_start_02.tres" id="3_88uwb"]
+[ext_resource type="Resource" uid="uid://drdffxj3dfc3n" path="res://common/data/dialogue/story_day_03_old_man_speech_01.tres" id="2_u4a6j"]
+[ext_resource type="Resource" uid="uid://diwihniiabnok" path="res://common/data/dialogue/story_day_03_old_man_speech_peaceful.tres" id="3_evp0l"]
+[ext_resource type="Resource" uid="uid://g3x6lea4oks1" path="res://common/data/dialogue/story_day_03_old_man_speech_deadzone.tres" id="4_0o7l8"]
+[ext_resource type="Resource" uid="uid://dhg8sv3v465nm" path="res://common/data/dialogue/story_day_03_old_man_speech_02.tres" id="5_ew6ba"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://cjp4ifh7hb0gw" path="res://entities/characters/rig/sitting_edge_anim_sm.tres" id="6_88uwb"]
+[ext_resource type="Resource" uid="uid://beo7j3iq1s4sf" path="res://common/data/dialogue/story_day_03_old_man_speech_03.tres" id="6_sthcp"]
+[ext_resource type="Resource" uid="uid://d2x4kvvarjmur" path="res://common/data/dialogue/story_day_03_old_man_speech_04.tres" id="7_xks21"]
+[ext_resource type="Resource" uid="uid://bo75f6wnguo58" path="res://common/data/dialogue/story_day_03_old_man_speech_05.tres" id="8_gu2ix"]
+[ext_resource type="Resource" uid="uid://cmba42gdkrs7p" path="res://common/data/dialogue/story_day_03_old_man_speech_06.tres" id="9_mfx4o"]
 [ext_resource type="PackedScene" uid="uid://bm6fkm1vq75bb" path="res://entities/characters/rig/character.tscn" id="9_udwhc"]
+[ext_resource type="Resource" uid="uid://ba01al4t7wnku" path="res://common/data/dialogue/story_day_03_old_man_speech_07.tres" id="10_7v5i3"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="12_7f2bx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_85oi3"]
@@ -13,8 +20,15 @@ size = Vector3(0.7, 1.9, 0.5)
 [node name="Nils" type="Node3D" unique_id=1391229992 node_paths=PackedStringArray("_head_maker")]
 script = ExtResource("1_cne6p")
 _head_maker = NodePath("HeadMarker")
-_interact_dialogue = ExtResource("2_6o076")
-_final_dialogue = ExtResource("3_88uwb")
+_interact_dialogue = ExtResource("2_u4a6j")
+_peaceful_dialogue = ExtResource("3_evp0l")
+_deadzone_dialogue = ExtResource("4_0o7l8")
+_dialogue_02 = ExtResource("5_ew6ba")
+_dialogue_03 = ExtResource("6_sthcp")
+_dialogue_04 = ExtResource("7_xks21")
+_dialogue_05 = ExtResource("8_gu2ix")
+_dialogue_06 = ExtResource("9_mfx4o")
+_final_dialogue = ExtResource("10_7v5i3")
 
 [node name="CharacterMesh" parent="." unique_id=1194805127 instance=ExtResource("9_udwhc")]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
@@ -22,7 +36,7 @@ _look_at_radius = 2.0
 _skin = "Nils"
 _animation = ExtResource("6_88uwb")
 
-[node name="Skeleton3D" parent="CharacterMesh" index="0" unique_id=202476250]
+[node name="Skeleton3D" parent="CharacterMesh" index="0" unique_id=559385597]
 bones/2/position = Vector3(-1.9652962e-15, 0.15357861, 0.047420323)
 bones/2/rotation = Quaternion(0.52917767, -5.50317e-08, -5.1686055e-08, 0.8485111)
 bones/3/rotation = Quaternion(0.34780553, 1.4439769e-07, -4.8670962e-08, 0.9375667)
@@ -32,16 +46,16 @@ bones/6/rotation = Quaternion(-0.052651487, 0.16943215, -0.66800696, 0.72269446)
 bones/7/rotation = Quaternion(0.5295772, 0.07495712, -0.36436275, 0.7623445)
 bones/8/rotation = Quaternion(0.384916, 0.010969378, -0.016816193, 0.92273325)
 bones/9/rotation = Quaternion(0.042491574, 0.23102625, 0.11789984, 0.96484256)
-bones/11/rotation = Quaternion(-0.052651614, -0.16943225, 0.66800696, 0.7226945)
-bones/12/rotation = Quaternion(0.5295773, -0.07495692, 0.3643628, 0.76234454)
-bones/13/rotation = Quaternion(0.38491553, -0.010969488, 0.016816163, 0.9227334)
-bones/14/rotation = Quaternion(0.042491935, -0.23102602, -0.117899835, 0.96484256)
+bones/11/rotation = Quaternion(-0.052651607, -0.16943224, 0.66800696, 0.7226945)
+bones/12/rotation = Quaternion(0.52957714, -0.07495707, 0.36436287, 0.7623445)
+bones/13/rotation = Quaternion(0.38491598, -0.010969461, 0.016816236, 0.92273325)
+bones/14/rotation = Quaternion(0.042491768, -0.23102611, -0.117899984, 0.96484256)
 bones/16/rotation = Quaternion(0.059898444, 0.5077963, 0.85447073, -0.091841936)
 bones/17/rotation = Quaternion(-0.7304993, 5.0802836e-08, -4.5791605e-08, 0.6829135)
 bones/18/rotation = Quaternion(0.35801706, -0.018361975, -0.077335596, 0.93032575)
 bones/19/rotation = Quaternion(-0.059898302, 0.5077963, 0.85447073, 0.09184181)
 bones/20/rotation = Quaternion(-0.7304993, -4.3107924e-08, 5.132336e-08, 0.6829135)
-bones/21/rotation = Quaternion(0.35393837, 0.06254202, 0.094258, 0.92840266)
+bones/21/rotation = Quaternion(0.35393837, 0.06254203, 0.094258, 0.92840266)
 
 [node name="DefaultLookPosition" parent="CharacterMesh" index="1" unique_id=1245629346]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.100000024, 0.39999998, -0.49999994)

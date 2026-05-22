@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://c2qyvpeh8273q"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_wip2q"]
+
+[resource]
+script = ExtResource("1_wip2q")
+name = "\"Chops\""
+lines = Array[String](["Ah, right on time! Good.", "As promised, the package from the Old Man.", "I will admit that I’m somewhat curious about the contents of that box, but I think the Old Man wanted you and only you to get this package.", "So, respectfully, I’ll encourage you not to spill the beans of what’s inside that package to me or anyone else…", "I know… the irony of me not wanting to learn some secret about someone is not lost on me.", "regardless, I’m closing up shop soon, so if you have anything to sell or need to make last-minute purchases, now’s the time."])
+choices = Array[String](["Buying", "Selling", "Profiles builder?", "Nevermind"])
