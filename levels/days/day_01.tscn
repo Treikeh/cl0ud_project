@@ -79,30 +79,30 @@ _intercept_dialogue = ExtResource("12_jcsad")
 _ok_dialogue = ExtResource("13_3icp6")
 _repeat_dialogue = ExtResource("14_0entj")
 
-[node name="CharacterMesh" parent="Characters/IntroGuy" unique_id=1186258053 instance=ExtResource("3_0o6tx")]
+[node name="CharacterMesh" parent="Characters/IntroGuy" unique_id=924179477 instance=ExtResource("3_0o6tx")]
 _skin = "Fisher01"
 _animation = ExtResource("4_2ptgh")
 
-[node name="Skeleton3D" parent="Characters/IntroGuy/CharacterMesh" index="0" unique_id=559385597]
-bones/2/position = Vector3(-1.7898774e-15, 0.17699176, 0.8371117)
-bones/2/rotation = Quaternion(0.66481227, 0.011050309, -0.012413625, 0.7468256)
-bones/3/rotation = Quaternion(0.05948518, 0.0011075826, -0.018580718, 0.9980557)
-bones/4/rotation = Quaternion(0.15450272, -0.005811762, 0.037136354, 0.98727715)
-bones/5/rotation = Quaternion(-0.087191015, 1.5043304e-07, 5.7352324e-11, 0.9961916)
-bones/6/rotation = Quaternion(-0.05827667, 0.15277188, -0.60597205, 0.77850014)
-bones/7/rotation = Quaternion(0.6761979, 0.19913793, -0.33030224, 0.627695)
-bones/8/rotation = Quaternion(0.83699447, 0.006490213, -0.036566745, 0.5459496)
-bones/9/rotation = Quaternion(0.2636197, 0.17539406, -0.2938397, 0.9018868)
-bones/11/rotation = Quaternion(-0.09403479, -0.19764803, 0.59870046, 0.7704872)
-bones/12/rotation = Quaternion(0.7078729, -0.24306765, 0.25600842, 0.6117955)
-bones/13/rotation = Quaternion(0.8879833, -0.005447136, 0.038794287, 0.45820403)
-bones/14/rotation = Quaternion(-0.3253912, -0.18084466, -0.052053157, 0.9266641)
-bones/16/rotation = Quaternion(0.27673033, 0.2248517, 0.9332144, 0.044416945)
-bones/17/rotation = Quaternion(-0.28374898, 8.1521854e-08, -1.3855663e-08, 0.9588986)
-bones/18/rotation = Quaternion(0.5488268, 0.20988077, 0.042177368, 0.8080596)
-bones/19/rotation = Quaternion(-0.2925379, 0.35187122, 0.875699, -0.15414119)
-bones/20/rotation = Quaternion(-0.4215913, -6.239224e-08, 1.7920105e-08, 0.90678596)
-bones/21/rotation = Quaternion(0.3013828, -0.052952595, 0.012169002, 0.951954)
+[node name="Skeleton3D" parent="Characters/IntroGuy/CharacterMesh" index="0" unique_id=1195516297]
+bones/2/position = Vector3(-8.881784e-16, 0.03985116, 0.9010555)
+bones/2/rotation = Quaternion(0.69923276, -5.3973036e-08, -5.2790625e-08, 0.7148942)
+bones/3/rotation = Quaternion(-0.020237816, 1.5096494e-07, 1.88772e-15, 0.9997952)
+bones/4/rotation = Quaternion(0.1183377, -1.4993482e-07, 3.577384e-15, 0.9929735)
+bones/5/rotation = Quaternion(-0.087191015, 1.5042073e-07, -3.5426306e-16, 0.9961916)
+bones/6/rotation = Quaternion(-0.1042522, 0.18796511, -0.5476769, 0.8086103)
+bones/7/rotation = Quaternion(0.17786895, -0.02032785, -0.1756292, 0.9680412)
+bones/8/rotation = Quaternion(0.08435637, 0.011844592, -0.0036853596, 0.99635845)
+bones/9/rotation = Quaternion(-0.048198678, -0.014970114, 0.0016629341, 0.9987242)
+bones/11/rotation = Quaternion(-0.10425229, -0.18796512, 0.5476769, 0.8086103)
+bones/12/rotation = Quaternion(0.17787048, 0.020327974, 0.17562914, 0.968041)
+bones/13/rotation = Quaternion(0.08435356, -0.011844775, 0.0036852446, 0.9963587)
+bones/14/rotation = Quaternion(-0.048197422, 0.014970442, -0.0016627468, 0.99872434)
+bones/16/rotation = Quaternion(5.5903435e-08, 0.005109053, 0.99998695, 1.0705408e-09)
+bones/17/rotation = Quaternion(-0.14321695, 5.8883586e-08, -7.772297e-09, 0.9896914)
+bones/18/rotation = Quaternion(0.65313333, -5.494552e-09, 9.7019864e-08, 0.757243)
+bones/19/rotation = Quaternion(1.15555224e-07, 0.0051090624, 0.99998695, -8.002581e-09)
+bones/20/rotation = Quaternion(-0.14321697, -5.9096795e-08, 9.30049e-09, 0.9896914)
+bones/21/rotation = Quaternion(0.65313333, 2.0894205e-08, -1.1254413e-07, 0.757243)
 
 [node name="AnimationTree" parent="Characters/IntroGuy/CharacterMesh" index="4" unique_id=2032088472]
 tree_root = ExtResource("4_2ptgh")
@@ -126,7 +126,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6000004, 0.5220337, -1.800
 shape = SubResource("BoxShape3D_mtc2s")
 
 [node name="HeadMarker" type="BoneAttachment3D" parent="Characters/IntroGuy" unique_id=2116972068]
-transform = Transform3D(-0.9995569, -0.0017839707, 0.029708285, 0.0009022932, 0.99592656, 0.090162605, -0.029748121, 0.09014937, -0.99548393, -0.03533554, 1.5850267, 0.185166)
+transform = Transform3D(-1, 1.4210855e-14, -1.509958e-07, 4.973799e-14, 1, -1.7881393e-07, 1.5099583e-07, -1.6391277e-07, -1.0000001, 0, 1.6540117, 0.055495262)
 bone_name = "head.001"
 bone_idx = 5
 use_external_skeleton = true

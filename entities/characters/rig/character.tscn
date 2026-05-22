@@ -6,32 +6,11 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_g0b3o"]
 radius = 2.0
 
-[node name="CharacterMesh" unique_id=924179477 node_paths=PackedStringArray("_default_look_position") instance=ExtResource("1_c6gtc")]
+[node name="CharacterMesh" unique_id=1059860441 node_paths=PackedStringArray("_default_look_position") instance=ExtResource("1_c6gtc")]
 _default_look_position = NodePath("DefaultLookPosition")
 _animation = ExtResource("2_tion6")
 
-[node name="Skeleton3D" parent="." index="0" unique_id=1120922392]
-bones/2/position = Vector3(8.885667e-16, 0.067006476, 0.9022027)
-bones/2/rotation = Quaternion(0.71577483, -5.2722548e-08, -5.4039504e-08, 0.6983312)
-bones/3/rotation = Quaternion(-0.020237818, 1.5096492e-07, 1.3463789e-15, 0.9997952)
-bones/4/rotation = Quaternion(0.118337706, -1.4993482e-07, 2.9180844e-15, 0.9929735)
-bones/5/rotation = Quaternion(-0.08719101, 1.5042073e-07, 2.9121819e-16, 0.9961916)
-bones/6/rotation = Quaternion(-0.09403469, 0.19764803, -0.5987004, 0.7704873)
-bones/7/rotation = Quaternion(0.3292624, 0.3625818, -0.5858993, 0.64563364)
-bones/8/rotation = Quaternion(0.2878024, 0.011383119, -0.012573506, 0.9575396)
-bones/9/rotation = Quaternion(-0.03932881, -0.1878995, 0.025933662, 0.9810578)
-bones/11/rotation = Quaternion(-0.094034806, -0.19764803, 0.59870046, 0.7704872)
-bones/12/rotation = Quaternion(0.3292627, -0.3625816, 0.58589953, 0.64563346)
-bones/13/rotation = Quaternion(0.28780174, -0.011383275, 0.012573512, 0.9575398)
-bones/14/rotation = Quaternion(-0.039328396, 0.18789971, -0.02593365, 0.9810579)
-bones/16/rotation = Quaternion(0.021464093, 0.09000495, 0.9956806, -0.0076508527)
-bones/17/rotation = Quaternion(-0.17693375, 5.916558e-08, -9.47164e-09, 0.98422277)
-bones/18/rotation = Quaternion(0.6299418, -0.06727821, 0.028372804, 0.7732025)
-bones/19/rotation = Quaternion(-0.02146392, 0.090004966, 0.9956806, 0.00765084)
-bones/20/rotation = Quaternion(-0.17693375, -6.021509e-08, 1.2282123e-08, 0.98422277)
-bones/21/rotation = Quaternion(0.6299418, 0.067278236, -0.028372835, 0.7732025)
-
-[node name="LookAtModifier3D" type="LookAtModifier3D" parent="Skeleton3D" index="3" unique_id=980359682]
+[node name="LookAtModifier3D" type="LookAtModifier3D" parent="Skeleton3D" parent_id_path=PackedInt32Array(1595024805) index="3" unique_id=980359682]
 target_node = NodePath("../../DefaultLookPosition")
 bone_name = "head.001"
 bone = 5
