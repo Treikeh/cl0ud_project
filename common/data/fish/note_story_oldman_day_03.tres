@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="NoteData" format=3 uid="uid://cwn70dtbbw8wy"]
+
+[ext_resource type="Script" uid="uid://ckvnbenl45otq" path="res://entities/fish/note/note_data.gd" id="1_belga"]
+
+[resource]
+script = ExtResource("1_belga")
+text = "Ahoy there, friend! 
+ 
+ I know that since we last talked, we didn’t leave on the best of terms. 
+ 
+ However, I believe in what I said yesterday, and I think I know how to convince you. 
+ 
+ In this package, there is a Cloud Mask, which you can use to traverse the Cloud safely. 
+ 
+ I think it’s time for us to meet again. Come meet me… down in the Cloud… 
+ 
+ -Old Man"

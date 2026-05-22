@@ -37,7 +37,7 @@ _profiles_explain_dialogue = ExtResource("19_ax1i3")
 _skin = "Vendor"
 _animation = ExtResource("21_3ecsx")
 
-[node name="Skeleton3D" parent="CharacterMesh" index="0" unique_id=202476250]
+[node name="Skeleton3D" parent="CharacterMesh" index="0" unique_id=559385597]
 bones/2/position = Vector3(4.3495396e-16, 0.067006476, 0.8593024)
 bones/2/rotation = Quaternion(0.69923276, -5.3973036e-08, -5.2790625e-08, 0.7148942)
 bones/3/rotation = Quaternion(0.037294902, 1.5081682e-07, -3.6554035e-09, 0.9993043)
@@ -46,12 +46,12 @@ bones/5/rotation = Quaternion(-0.08719101, 1.5042072e-07, 1.5404441e-15, 0.99619
 bones/6/rotation = Quaternion(-0.0940347, 0.19764802, -0.5987004, 0.7704873)
 bones/7/rotation = Quaternion(0.5824739, 0.24106532, -0.24683814, 0.7359909)
 bones/8/rotation = Quaternion(0.7311202, 0.008101003, -0.031941127, 0.68145245)
-bones/9/rotation = Quaternion(-0.11401769, -0.30901098, -0.020256154, 0.943982)
+bones/9/rotation = Quaternion(-0.11401764, -0.309011, -0.020256143, 0.9439819)
 bones/10/rotation = Quaternion(-0.094034806, -0.19764803, 0.59870046, 0.7704872)
-bones/11/rotation = Quaternion(-0.09403481, -0.19764803, 0.59870046, 0.7704872)
-bones/12/rotation = Quaternion(0.5824742, -0.24106516, 0.24683823, 0.73599076)
-bones/13/rotation = Quaternion(0.7311201, -0.008101132, 0.031941164, 0.6814525)
-bones/14/rotation = Quaternion(-0.11401775, 0.3090113, 0.020256156, 0.9439819)
+bones/11/rotation = Quaternion(-0.09403479, -0.19764802, 0.5987004, 0.77048725)
+bones/12/rotation = Quaternion(0.5824738, -0.24106517, 0.24683802, 0.73599106)
+bones/13/rotation = Quaternion(0.7311205, -0.008101125, 0.031941168, 0.68145216)
+bones/14/rotation = Quaternion(-0.11401792, 0.30901146, 0.020256093, 0.9439817)
 bones/15/rotation = Quaternion(-0.17693375, 5.916558e-08, -9.47164e-09, 0.98422277)
 bones/16/rotation = Quaternion(0.110605285, 0.16561913, 0.9759451, -0.08870206)
 bones/17/rotation = Quaternion(-0.34220093, 5.908854e-08, -1.8159497e-08, 0.9396268)

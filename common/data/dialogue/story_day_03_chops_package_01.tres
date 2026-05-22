@@ -6,4 +6,4 @@
 script = ExtResource("1_jjsnd")
 name = "\"Chops\""
 lines = Array[String](["May I take you aside for one second?", "So, The Old Man is gone it seems, as per the events that transpired yesterday.", "I ain’t his caretaker or anything, so I don’t mind…", "However, I was given a package to deliver to you at the end of the day.", "from the Old Man.", "Now, I can’t just give it to you right away.", "Part of the deal was that I deliver this package to you sometime after 20:00 today.", "The Old Man spent all of his favors with me for this, so I hope whatever is in this package is worth it.", "So remember: 20:00 today. Here. Or else I leave the package outside my booth.", "Alright? Alright.", "Anyways, back to business, how may I help you?"])
-choices = Array[String](["Buying", "Selling", "What's in the package?", "Profiles builder?", "Nevermind"])
+choices = Array[String](["What's in the package?"])

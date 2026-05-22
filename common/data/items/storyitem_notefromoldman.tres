@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c7nfr0vpt5iij"]
+
+[ext_resource type="Resource" uid="uid://cwn70dtbbw8wy" path="res://common/data/fish/note_story_oldman_day_03.tres" id="1_m18tf"]
+[ext_resource type="Texture2D" uid="uid://bopc0krq46by3" path="res://entities/fish/note/note_icon.png" id="2_tktvt"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_s6mve"]
+
+[resource]
+script = ExtResource("3_s6mve")
+name = "Note From Old Man"
+description = "A note from the Old Man."
+type = "NOTE"
+icon = ExtResource("2_tktvt")
+mesh_scene = "res://entities/fish/note/note_mesh.tscn"
+fish_data = ExtResource("1_m18tf")
