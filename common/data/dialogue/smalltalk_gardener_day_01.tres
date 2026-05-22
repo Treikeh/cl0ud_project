@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://dyo1y0xiupjxg"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_yl7d4"]
+
+[resource]
+script = ExtResource("1_yl7d4")
+name = "The Gardener"
+lines = Array[String](["Why hello there!", "I'm the...", "Well, I'm a gardener...", "The Gardener.", "Is there anything I can help you with?"])
+choices = Array[String](["Gardening? Here?", "Who are you really?"])

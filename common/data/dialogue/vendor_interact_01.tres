@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://dvrns5pqu5cg6"]
 
-[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_pvph0"]
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_opcdf"]
 
 [resource]
-script = ExtResource("1_pvph0")
+script = ExtResource("1_opcdf")
 name = "\"Chops\""
 lines = Array[String](["Come in! Warm yourself by the fire. Now... Are you buying or selling?"])
 choices = Array[String](["Buying", "Selling", "Profiles builder?", "Nevermind"])

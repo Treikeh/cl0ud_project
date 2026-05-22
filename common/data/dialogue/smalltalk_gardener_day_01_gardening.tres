@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://q8sr74v5v3el"]
+
+[ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="1_8m6wp"]
+
+[resource]
+script = ExtResource("1_8m6wp")
+name = "The Gardener"
+lines = Array[String](["Yes, Actually!", "Concrete Cove is an excellent place to grow plantlife.", "It is way above the Cloud so that the plants get both sunlight and clean air.", "Concrete Cove is also fairly protected from bad actors due to the Graham Brothers."])
