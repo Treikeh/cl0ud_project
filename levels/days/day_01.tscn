@@ -15,6 +15,11 @@
 [ext_resource type="Resource" uid="uid://cjunkyjuh8irs" path="res://common/data/dialogue/tutorial_intro_old_man.tres" id="8_gbegl"]
 [ext_resource type="PackedScene" uid="uid://ci766d3wxxwwr" path="res://environment/elevator_door/elevator_door.tscn" id="8_rxto8"]
 [ext_resource type="PackedScene" uid="uid://c1dcx0rd8honj" path="res://entities/maxwell/maxwell.tscn" id="9_5xhar"]
+[ext_resource type="Resource" uid="uid://blrinaly2j68m" path="res://common/data/dialogue/smalltalk_graham_day_01_start.tres" id="10_vub1e"]
+[ext_resource type="Resource" uid="uid://16ld5shakrp0" path="res://common/data/dialogue/smalltalk_graham_day_01_otto.tres" id="11_hpc2s"]
+[ext_resource type="Resource" uid="uid://cy0n4l4oppmu0" path="res://common/data/dialogue/smalltalk_graham_day_01_intercept.tres" id="12_jcsad"]
+[ext_resource type="Resource" uid="uid://b54ymxtd32bn2" path="res://common/data/dialogue/smalltalk_graham_day_01_ok.tres" id="13_3icp6"]
+[ext_resource type="Resource" uid="uid://bp7rrxlm6e7eq" path="res://common/data/dialogue/smalltalk_graham_day_01_repeat.tres" id="14_0entj"]
 [ext_resource type="PackedScene" uid="uid://iomcinpu06my" path="res://environment/vendor_door/vendor_door.tscn" id="14_kie8o"]
 [ext_resource type="PackedScene" uid="uid://c1g0jfqp40x5y" path="res://entities/characters/vendor/vendor_day_01.tscn" id="16_gbegl"]
 [ext_resource type="PackedScene" uid="uid://cuemsjrkpvwxh" path="res://environment/lights/automatic_omni_light.tscn" id="18_xkfxd"]
@@ -24,6 +29,9 @@ size = Vector3(0.8, 2, 0.8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mtc2s"]
 size = Vector3(1, 4.0440674, 4.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xkfxd"]
+size = Vector3(1, 2.3840942, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kfdqj"]
 size = Vector3(0.215, 0.47, 0.365)
@@ -58,12 +66,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6926503, 3.5450215, 11.069
 
 [node name="Characters" type="Node3D" parent="." unique_id=351249826]
 
-[node name="IntroGuy" type="Node3D" parent="Characters" unique_id=2111809953 node_paths=PackedStringArray("_head_marker")]
+[node name="IntroGuy" type="Node3D" parent="Characters" unique_id=2111809953 node_paths=PackedStringArray("_head_marker", "_interact_collision")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7, 2.5, 1.758408)
 script = ExtResource("6_2ptgh")
 _trigger_dialogue = ExtResource("7_p58p1")
 _old_man_dialogue = ExtResource("8_gbegl")
 _head_marker = NodePath("HeadMarker")
+_interact_collision = NodePath("InteractArea3D/CollisionShape3D")
+_interact_dialogue = ExtResource("10_vub1e")
+_otto_dialogue = ExtResource("11_hpc2s")
+_intercept_dialogue = ExtResource("12_jcsad")
+_ok_dialogue = ExtResource("13_3icp6")
+_repeat_dialogue = ExtResource("14_0entj")
 
 [node name="CharacterMesh" parent="Characters/IntroGuy" unique_id=1186258053 instance=ExtResource("3_0o6tx")]
 _skin = "Fisher01"
@@ -118,6 +132,14 @@ bone_idx = 5
 use_external_skeleton = true
 external_skeleton = NodePath("../CharacterMesh/Skeleton3D")
 
+[node name="InteractArea3D" parent="Characters/IntroGuy" unique_id=1933536461 instance=ExtResource("6_e0c4c")]
+prompt = "Talk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Characters/IntroGuy/InteractArea3D" unique_id=1244449818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6920471, 0)
+shape = SubResource("BoxShape3D_xkfxd")
+disabled = true
+
 [node name="Nils" parent="Characters" unique_id=1391229992 instance=ExtResource("3_85oi3")]
 transform = Transform3D(-0.25881898, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, -0.25881898, -4.1935763, 2.543348, -4.6111035)
 
@@ -135,7 +157,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.420695, 3.6429343, -10.91
 [node name="ElevatorDoor" parent="Interactable" unique_id=1829758497 instance=ExtResource("8_rxto8")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27.6, 2.5, 4.9)
 
-[node name="ElevatorButton" parent="Interactable" unique_id=1933536461 instance=ExtResource("6_e0c4c")]
+[node name="ElevatorButton" parent="Interactable" unique_id=1273427353 instance=ExtResource("6_e0c4c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.8, 3.77, 6.1293015)
 prompt = "EndDay"
 
@@ -160,6 +182,7 @@ omni_range = 0.3062672
 omni_attenuation = 0.0
 
 [connection signal="body_entered" from="Characters/IntroGuy/PlayerTriggerArea" to="Characters/IntroGuy" method="_body_entered_trigger"]
+[connection signal="interacted" from="Characters/IntroGuy/InteractArea3D" to="Characters/IntroGuy" method="_on_interact"]
 [connection signal="left" from="Characters/VendorDay01" to="Environment/VendorDoor" method="close"]
 [connection signal="interacted" from="Interactable/ElevatorButton" to="." method="_end_day"]
 [connection signal="interacted_no_player" from="Interactable/Bell" to="Interactable/Bell/FmodEventEmitter3D" method="play_one_shot"]

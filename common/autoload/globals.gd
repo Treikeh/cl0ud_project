@@ -14,6 +14,9 @@ signal day_started
 signal day_ended
 
 
+signal day_01_spoken_to_old_man
+
+
 const FISH_LOOT_TABLE_FILE: String = "res://common/data/items/_fish_loot_table.ini"
 
 var hook_distance: float = 0.0
