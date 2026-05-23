@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="ProfileBuilderUpgrade" format=3 uid="uid://cj2apfqebu6sb"]
 
 [ext_resource type="Texture2D" uid="uid://bopc0krq46by3" path="res://entities/fish/note/note_icon.png" id="1_225mt"]
-[ext_resource type="Script" path="res://common/upgrades/profile_builder_upgrade.gd" id="2_71umb"]
+[ext_resource type="Script" uid="uid://cw2fltaspao08" path="res://common/upgrades/profile_builder_upgrade.gd" id="2_71umb"]
 
 [resource]
 script = ExtResource("2_71umb")
 name = "Profile processer"
 description = "Lets you process fish to build profiles"
 icon = ExtResource("1_225mt")
-cost = 50
+cost = 40
 metadata/_custom_type_script = "uid://cw2fltaspao08"

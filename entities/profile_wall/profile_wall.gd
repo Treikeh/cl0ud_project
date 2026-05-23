@@ -2,11 +2,24 @@ extends Node3D
 
 
 const PROFILE_MENU_SCENE: PackedScene = preload("uid://cg2ukppievp2t")
+
+@export var _required_upgrade: ProfileBuilderUpgrade
+
 var _profiles: Array[ProfileData] = []
 
 
 func _ready() -> void:
 	_load_profiles()
+	
+	_required_upgrade.profile_builder_bought.connect(_show_wall)
+	if not _required_upgrade.bought:
+		hide()
+		process_mode = Node.PROCESS_MODE_DISABLED
+
+
+func _show_wall() -> void:
+	show()
+	process_mode = Node.PROCESS_MODE_INHERIT
 
 
 func _on_interacted(player: Player) -> void:
