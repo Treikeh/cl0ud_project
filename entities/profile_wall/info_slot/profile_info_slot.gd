@@ -13,6 +13,8 @@ var item_data: ItemData
 var slot_type: ProfileData.DataTypes
 var _mouse_inside: bool = false
 
+@onready var _default_image: Texture2D = _icon.texture
+
 
 func with_data(type: ProfileData.DataTypes) -> ProfileWallSlot:
 	slot_type = type
@@ -52,5 +54,5 @@ func remove_item() -> void:
 	if item_data:
 		var data: ItemData = item_data
 		data_removed.emit(data)
-	_icon.texture = null
+	_icon.texture = _default_image
 	item_data = null
