@@ -60,6 +60,7 @@ event_guid = "{9b7c0e1b-3771-4d51-aa63-c1a471eeecd8}"
 
 [node name="computercovered" parent="." unique_id=877984546 instance=ExtResource("4_tg5i2")]
 transform = Transform3D(1.1022875, 0, 0, 0, 1, 0, 0, 0, 1, -0.0791955, 0, 0.80124706)
+visible = false
 
 [node name="computer" parent="." unique_id=861593246 instance=ExtResource("3_jmsce")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.90000004)

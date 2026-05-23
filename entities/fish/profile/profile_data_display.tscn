@@ -6,36 +6,84 @@
 offset_right = 200.0
 offset_bottom = 200.0
 script = ExtResource("1_n8uxv")
-name_label = NodePath("VBoxContainer/Name")
-occupation_label = NodePath("VBoxContainer/Job")
-age_label = NodePath("VBoxContainer/Age")
-address_label = NodePath("VBoxContainer/Address")
-likes_label = NodePath("VBoxContainer/Likes")
-dislikes_label = NodePath("VBoxContainer/Dislikes")
+name_label = NodePath("VBoxContainer/Name/NameLabel")
+occupation_label = NodePath("VBoxContainer/Occupation/OccupationLabel")
+age_label = NodePath("VBoxContainer/Birthday/BirthdayLabel")
+address_label = NodePath("VBoxContainer/Address/AddressLabel")
+likes_label = NodePath("VBoxContainer/Likes/LikesLabel")
+dislikes_label = NodePath("VBoxContainer/Dislikes/DislikesLabel")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=15538730]
 layout_mode = 2
 
-[node name="Name" type="Label" parent="VBoxContainer" unique_id=42535019]
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=698808107]
 layout_mode = 2
-text = "Name"
+text = "PROFILE"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Job" type="Label" parent="VBoxContainer" unique_id=1151077377]
+[node name="Name" type="HBoxContainer" parent="VBoxContainer" unique_id=1624267465]
 layout_mode = 2
-text = "Job"
 
-[node name="Age" type="Label" parent="VBoxContainer" unique_id=1296342640]
+[node name="Label" type="Label" parent="VBoxContainer/Name" unique_id=1630325278]
 layout_mode = 2
-text = "Age"
+text = "Name: "
 
-[node name="Address" type="Label" parent="VBoxContainer" unique_id=565040956]
+[node name="NameLabel" type="Label" parent="VBoxContainer/Name" unique_id=42535019]
 layout_mode = 2
-text = "Address"
+text = "NAME"
 
-[node name="Likes" type="Label" parent="VBoxContainer" unique_id=2146186575]
+[node name="Occupation" type="HBoxContainer" parent="VBoxContainer" unique_id=510975691]
 layout_mode = 2
-text = "Likes"
 
-[node name="Dislikes" type="Label" parent="VBoxContainer" unique_id=1485621713]
+[node name="Label" type="Label" parent="VBoxContainer/Occupation" unique_id=385125005]
 layout_mode = 2
-text = "Dislikes"
+text = "Occupation: "
+
+[node name="OccupationLabel" type="Label" parent="VBoxContainer/Occupation" unique_id=641010482]
+layout_mode = 2
+text = "OCCUPATION"
+
+[node name="Birthday" type="HBoxContainer" parent="VBoxContainer" unique_id=122706753]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Birthday" unique_id=1749150060]
+layout_mode = 2
+text = "Birthday: "
+
+[node name="BirthdayLabel" type="Label" parent="VBoxContainer/Birthday" unique_id=481186613]
+layout_mode = 2
+text = "BIRTHDAY"
+
+[node name="Address" type="HBoxContainer" parent="VBoxContainer" unique_id=2013265011]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Address" unique_id=1831831484]
+layout_mode = 2
+text = "Address: "
+
+[node name="AddressLabel" type="Label" parent="VBoxContainer/Address" unique_id=1604346463]
+layout_mode = 2
+text = "ADDRESS"
+
+[node name="Likes" type="HBoxContainer" parent="VBoxContainer" unique_id=511819524]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Likes" unique_id=1491742558]
+layout_mode = 2
+text = "Likes: "
+
+[node name="LikesLabel" type="Label" parent="VBoxContainer/Likes" unique_id=1470227819]
+layout_mode = 2
+text = "LIKES"
+
+[node name="Dislikes" type="HBoxContainer" parent="VBoxContainer" unique_id=2049909024]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Dislikes" unique_id=136636312]
+layout_mode = 2
+text = "Dislikes: "
+
+[node name="DislikesLabel" type="Label" parent="VBoxContainer/Dislikes" unique_id=2002533816]
+layout_mode = 2
+text = "DISLIKES"

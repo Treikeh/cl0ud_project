@@ -6,7 +6,7 @@ class_name Upgrade
 @export var icon: Texture
 @export var cost: int = 0
 
-var bought: bool = false
+@export var bought: bool = false
 
 
 @warning_ignore("unused_parameter")
