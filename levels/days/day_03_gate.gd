@@ -7,8 +7,8 @@ extends Node3D
 
 
 func _ready() -> void:
-	_enable_node(_open_gate)
-	_disable_node(_closed_gate)
+	_enable_node(_closed_gate)
+	_disable_node(_open_gate)
 
 
 func _enable_node(node: Node3D) -> void:
