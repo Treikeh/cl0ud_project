@@ -4,6 +4,15 @@
 [ext_resource type="Resource" uid="uid://cj2apfqebu6sb" path="res://common/upgrades/resources/profile_builder_upgrade.tres" id="2_3rdhn"]
 [ext_resource type="PackedScene" uid="uid://cj7rn0g8ei4lc" path="res://common/scripts/interact_area_3d/interact_area_3d.tscn" id="2_di50e"]
 [ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="3_e1m75"]
+[ext_resource type="Shader" uid="uid://tg5ernv1lnws" path="res://environment/shaders/highlight_shader.gdshader" id="3_fkpad"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_51wu4"]
+render_priority = 0
+shader = ExtResource("3_fkpad")
+shader_parameter/shine_color = Color(0.19215687, 1, 0, 1)
+shader_parameter/cycle_interval = 0.8450000163875
+shader_parameter/shine_speed = 2.4530000690175
+shader_parameter/shine_width = 3.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_0isjb"]
 size = Vector3(5, 2, 0.1)
@@ -17,6 +26,7 @@ _required_upgrade = ExtResource("2_3rdhn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1347538220]
 visible = false
+material_overlay = SubResource("ShaderMaterial_51wu4")
 mesh = SubResource("BoxMesh_0isjb")
 
 [node name="InteractArea3D" parent="." unique_id=1933536461 instance=ExtResource("2_di50e")]

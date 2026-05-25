@@ -5,10 +5,19 @@
 [ext_resource type="Resource" uid="uid://cj2apfqebu6sb" path="res://common/upgrades/resources/profile_builder_upgrade.tres" id="2_nydsa"]
 [ext_resource type="PackedScene" uid="uid://b0hdufr25pscf" path="res://levels/art/computer/computer.tscn" id="3_jmsce"]
 [ext_resource type="PackedScene" uid="uid://cr2uqrq5qsotb" path="res://levels/art/computer/computerCovered/computercovered.glb" id="4_tg5i2"]
+[ext_resource type="Shader" uid="uid://tg5ernv1lnws" path="res://environment/shaders/highlight_shader.gdshader" id="6_51i50"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_40c73"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mxh1j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_51i50"]
+render_priority = 0
+shader = ExtResource("6_51i50")
+shader_parameter/shine_color = Color(0.19215687, 1, 0, 1)
+shader_parameter/cycle_interval = 1.0
+shader_parameter/shine_speed = 3.0
+shader_parameter/shine_width = 3.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tg5i2"]
 size = Vector3(0.8, 2.4, 0.8)
@@ -59,16 +68,24 @@ event_name = "event:/UI/Close Inventory"
 event_guid = "{9b7c0e1b-3771-4d51-aa63-c1a471eeecd8}"
 
 [node name="computercovered" parent="." unique_id=877984546 instance=ExtResource("4_tg5i2")]
-transform = Transform3D(1.1022875, 0, 0, 0, 1, 0, 0, 0, 1, -0.0791955, 0, 0.80124706)
-visible = false
+transform = Transform3D(1.1022875, 0, 0, 0, 1, 0, 0, 0, 1.0887098, -0.0791955, 0, 0.9089115)
 
 [node name="computer" parent="." unique_id=861593246 instance=ExtResource("3_jmsce")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.90000004)
 
-[node name="Armature" parent="computer" index="3" unique_id=578795047]
+[node name="Cube_065" parent="computer" index="0" unique_id=1490481434]
+material_overlay = SubResource("ShaderMaterial_51i50")
+
+[node name="Cube_066" parent="computer" index="1" unique_id=1705378342]
+material_overlay = SubResource("ShaderMaterial_51i50")
+
+[node name="Cube_076" parent="computer" index="2" unique_id=1458570031]
+material_overlay = SubResource("ShaderMaterial_51i50")
+
+[node name="Armature" parent="computer" index="3" unique_id=1746016905]
 transform = Transform3D(1, 0, 0, 0, 0.99785835, 0.065411896, 0, -0.065411896, 0.99785835, -0.42428398, 0.022352591, -1.0719328)
 
-[node name="Skeleton3D" parent="computer/Armature" index="0" unique_id=1091006033]
+[node name="Skeleton3D" parent="computer/Armature" index="0" unique_id=1870682676]
 bones/0/position = Vector3(-2.9802322e-08, -0.009576433, -0.17507243)
 bones/0/rotation = Quaternion(0.6617402, 6.255859e-07, 5.521638e-07, 0.74973327)
 bones/0/scale = Vector3(1, 0.9999999, 0.99998724)
