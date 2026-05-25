@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://o3jq0suibbq8" path="res://entities/player/player.gd" id="1_symyc"]
 [ext_resource type="Script" uid="uid://d25wwc75tdqj5" path="res://entities/player/player_interact_ray.gd" id="2_abrql"]
 [ext_resource type="Script" uid="uid://djhi0x7vqswxl" path="res://entities/player/player_camera.gd" id="2_wvtmh"]
+[ext_resource type="Shader" uid="uid://bsocrodqyqcuw" path="res://environment/shaders/jpegcomp_shader.gdshader" id="3_7thud"]
 [ext_resource type="PackedScene" uid="uid://cyr0p70n201cs" path="res://entities/player/fishing_rod/fishing_rod.tscn" id="3_26q78"]
 [ext_resource type="Script" uid="uid://cxekl8tsteanp" path="res://entities/player/player_ground_check.gd" id="3_bls4j"]
 [ext_resource type="Script" uid="uid://c706cj0ksgna4" path="res://entities/player/player_input.gd" id="5_26q78"]
@@ -22,6 +23,11 @@ height = 1.5
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wvtmh"]
 radius = 0.4
 height = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a1qjk"]
+shader = ExtResource("3_7thud")
+shader_parameter/quality = 6
+shader_parameter/block_size = 8
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_wvtmh"]
 viewport_path = NodePath("RodHandle/RodScreen/SubViewport")
@@ -72,11 +78,19 @@ near = 0.01
 
 [node name="FmodListener3D" type="FmodListener3D" parent="Orientation/Head/CameraRoot/Camera3D" unique_id=463241591]
 
+[node name="ColorRect" type="ColorRect" parent="Orientation/Head/CameraRoot/Camera3D" unique_id=2049323194]
+material = SubResource("ShaderMaterial_a1qjk")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="FishingRod" parent="Orientation/Head/CameraRoot" unique_id=949060003 instance=ExtResource("3_26q78")]
 process_mode = 4
 visible = false
 
-[node name="Skeleton3D" parent="Orientation/Head/CameraRoot/FishingRod/FishingRod_01_SK" parent_id_path=PackedInt32Array(949060003, 1206710327) index="0" unique_id=1108951824]
+[node name="Skeleton3D" parent="Orientation/Head/CameraRoot/FishingRod/FishingRod_01_SK" parent_id_path=PackedInt32Array(949060003, 1206710327) index="0" unique_id=1802581698]
 bones/2/position = Vector3(0, 0, 0)
 bones/2/rotation = Quaternion(3.090862e-08, 0.70710677, 0.70710677, 3.090862e-08)
 bones/3/rotation = Quaternion(0, 4.371139e-08, 0, 1)
