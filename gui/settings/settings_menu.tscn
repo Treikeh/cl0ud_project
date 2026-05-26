@@ -1,6 +1,23 @@
 [gd_scene format=3 uid="uid://bu0oiiqw3xmt4"]
 
 [ext_resource type="Script" uid="uid://c510dh5wvn5qr" path="res://gui/settings/settings_menu.gd" id="1_aw645"]
+[ext_resource type="Texture2D" uid="uid://df4up27k6huq2" path="res://gui/settings/art/5w6QH.png" id="2_r7k3e"]
+[ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="2_t8tfy"]
+[ext_resource type="Texture2D" uid="uid://dd8kwd1givomk" path="res://gui/settings/art/cloudicon.png" id="3_r7k3e"]
+[ext_resource type="Texture2D" uid="uid://b0u0x1k6hqtc7" path="res://gui/settings/art/cloudicon_highlight.png" id="4_242g4"]
+[ext_resource type="Texture2D" uid="uid://cf18ut002tpf3" path="res://gui/settings/art/cloudicon_deactivated.png" id="6_242g4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_242g4"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.18932138, 0.18932138, 0.18932135, 0.99215686)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [node name="SettingsMenu" type="Control" unique_id=360364561]
 process_mode = 3
@@ -11,6 +28,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_aw645")
+
+[node name="5w6qh" type="Sprite2D" parent="." unique_id=514182972]
+position = Vector2(339, 121.99999)
+scale = Vector2(0.42845306, 0.45833334)
+texture = ExtResource("2_r7k3e")
+
+[node name="5w6qh2" type="Sprite2D" parent="." unique_id=1050591708]
+position = Vector2(839.5625, 365.37503)
+scale = Vector2(0.43190613, 0.6830128)
+texture = ExtResource("2_r7k3e")
+
+[node name="5w6qh3" type="Sprite2D" parent="." unique_id=1842498717]
+position = Vector2(368.00003, 483)
+rotation = 1.9408062
+scale = Vector2(0.49770266, 0.56911916)
+texture = ExtResource("2_r7k3e")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1307690880]
 layout_mode = 1
@@ -25,6 +58,7 @@ offset_right = 307.0
 offset_bottom = 265.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_242g4")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1976076971]
 layout_mode = 2
@@ -38,6 +72,8 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=875874149]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_t8tfy")
+theme_override_font_sizes/font_size = 25
 text = "SETTINGS"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -48,6 +84,8 @@ layout_mode = 2
 [node name="VIDEO" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2022503260]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.4509804, 0.7529412, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("2_t8tfy")
 text = "VIDEO"
 horizontal_alignment = 1
 vertical_alignment = 2
@@ -58,12 +96,14 @@ layout_mode = 2
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/DisplayMode" unique_id=343167208]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_t8tfy")
 text = "Display mode"
 
 [node name="DisplayModeOptions" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/DisplayMode" unique_id=1392516862]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_t8tfy")
 alignment = 1
 selected = 1
 item_count = 3
@@ -80,12 +120,14 @@ layout_mode = 2
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Vsync" unique_id=1653265577]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_t8tfy")
 text = "V-Sync"
 
 [node name="VsyncOptions" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/Vsync" unique_id=2067752273]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_t8tfy")
 alignment = 1
 selected = 1
 item_count = 2
@@ -100,12 +142,16 @@ layout_mode = 2
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Fps" unique_id=1997077595]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_t8tfy")
 text = "Max FPS"
 
 [node name="FpsSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/Fps" unique_id=565004061]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("3_r7k3e")
+theme_override_icons/grabber_highlight = ExtResource("4_242g4")
+theme_override_icons/grabber_disabled = ExtResource("6_242g4")
 min_value = 1.0
 max_value = 240.0
 value = 60.0
@@ -123,6 +169,8 @@ alignment = 1
 [node name="Camera" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1752247528]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.4509804, 0.7529412, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("2_t8tfy")
 text = "CAMERA"
 horizontal_alignment = 1
 vertical_alignment = 2
@@ -133,16 +181,19 @@ layout_mode = 2
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CameraSens" unique_id=456764694]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_t8tfy")
 text = "Camera Sensitivity"
 
 [node name="CamSensSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/CameraSens" unique_id=588457604]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("3_r7k3e")
+theme_override_icons/grabber_highlight = ExtResource("4_242g4")
 min_value = 0.01
 max_value = 3.0
 step = 0.01
-value = 0.1
+value = 0.09999999999999999
 
 [node name="CamSensSpinBox" type="SpinBox" parent="PanelContainer/MarginContainer/VBoxContainer/CameraSens" unique_id=2064395124]
 unique_name_in_owner = true
@@ -150,7 +201,7 @@ layout_mode = 2
 min_value = 0.01
 max_value = 3.0
 step = 0.01
-value = 0.1
+value = 0.09999999999999999
 alignment = 1
 
 [node name="CameraFov" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=421350139]
@@ -159,12 +210,15 @@ layout_mode = 2
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CameraFov" unique_id=931479002]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_t8tfy")
 text = "Camera Fov"
 
 [node name="CamFovSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/CameraFov" unique_id=1880439449]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("3_r7k3e")
+theme_override_icons/grabber_highlight = ExtResource("4_242g4")
 min_value = 75.0
 value = 90.0
 
@@ -178,6 +232,8 @@ alignment = 1
 [node name="AUDIO" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=335244878]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.4509804, 0.7529412, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("2_t8tfy")
 text = "AUDIO"
 horizontal_alignment = 1
 vertical_alignment = 2
@@ -188,12 +244,15 @@ layout_mode = 2
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MasterVolume" unique_id=1460521955]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_t8tfy")
 text = "Master Volume"
 
 [node name="MasterVolSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/MasterVolume" unique_id=213055549]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("3_r7k3e")
+theme_override_icons/grabber_highlight = ExtResource("4_242g4")
 max_value = 1.0
 step = 0.01
 value = 1.0
@@ -212,12 +271,15 @@ layout_mode = 2
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MusicVolume" unique_id=59142935]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_t8tfy")
 text = "Music Volume"
 
 [node name="MusicVolSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/MusicVolume" unique_id=1888030182]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("3_r7k3e")
+theme_override_icons/grabber_highlight = ExtResource("4_242g4")
 max_value = 1.0
 step = 0.01
 value = 1.0
@@ -236,12 +298,15 @@ layout_mode = 2
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/EffectsVolume" unique_id=460381420]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_t8tfy")
 text = "Effects Volume"
 
 [node name="EffectsVolSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/EffectsVolume" unique_id=43510309]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("3_r7k3e")
+theme_override_icons/grabber_highlight = ExtResource("4_242g4")
 max_value = 1.0
 step = 0.01
 value = 1.0
@@ -260,12 +325,15 @@ layout_mode = 2
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/AmbienceVolume" unique_id=868603387]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_t8tfy")
 text = "Ambience Volume"
 
 [node name="AmbienceVolSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/AmbienceVolume" unique_id=1266766799]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("3_r7k3e")
+theme_override_icons/grabber_highlight = ExtResource("4_242g4")
 max_value = 1.0
 step = 0.01
 value = 1.0
@@ -284,12 +352,15 @@ layout_mode = 2
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/UiVolume" unique_id=394794419]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_t8tfy")
 text = "Effects Volume"
 
 [node name="UiVolSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/UiVolume" unique_id=1908765139]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("3_r7k3e")
+theme_override_icons/grabber_highlight = ExtResource("4_242g4")
 max_value = 1.0
 step = 0.01
 value = 1.0
@@ -314,15 +385,21 @@ alignment = 1
 [node name="ApplyButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Buttons" unique_id=789552106]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(0.7254902, 0.87058824, 1, 1)
+theme_override_fonts/font = ExtResource("2_t8tfy")
 disabled = true
 text = "Apply"
 
 [node name="DefaultsButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Buttons" unique_id=14690150]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.7254902, 0.87058824, 1, 1)
+theme_override_fonts/font = ExtResource("2_t8tfy")
 text = "Defaults"
 
 [node name="CloseButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Buttons" unique_id=543884236]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.7254902, 0.87058824, 1, 1)
+theme_override_fonts/font = ExtResource("2_t8tfy")
 text = "Close"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Buttons/ApplyButton" to="." method="_apply_settings"]
