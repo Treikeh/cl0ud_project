@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cul56fib5t6fr"]
 
-[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="1_tep6e"]
+[ext_resource type="Texture2D" uid="uid://dusgnikt1f2ks" path="res://entities/profile_wall/item_entry/art/name_icon.png" id="1_tep6e"]
 [ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_6rfv6"]
 
 [resource]

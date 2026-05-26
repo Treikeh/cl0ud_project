@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bnw0d42wub0nx"]
 
 [ext_resource type="Script" uid="uid://dqxmeloqrchlx" path="res://entities/profile_wall/item_entry/wall_item_entry.gd" id="1_lnx1y"]
-[ext_resource type="Texture2D" uid="uid://cpch73jm56apu" path="res://entities/profile_wall/item_entry/art/entry-icon.png" id="2_lnx1y"]
 
 [node name="ItemEntry" type="PanelContainer" unique_id=1420000498 node_paths=PackedStringArray("_icon", "_name_label")]
 script = ExtResource("1_lnx1y")
@@ -24,7 +23,6 @@ mouse_filter = 2
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("2_lnx1y")
 expand_mode = 1
 stretch_mode = 5
 

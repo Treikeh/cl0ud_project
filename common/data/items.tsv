@@ -29,35 +29,35 @@ profile_terry_address_item	Terry's address	4th Concrete Avenue Street					PROFIL
 									
 									
 									
-profile_elijah_name_item	Elijah's name	Elijah					PROFILE_DATA	res://icon.svg	
-profile_cornelius_mctaro_name_item	Cornelius' name	Cornelius McTaro					PROFILE_DATA	res://icon.svg	
-profile_cornelius_mctaro_likes_item	Cornelius' likes	Mansions, Cars and Money					PROFILE_DATA	res://icon.svg	
-profile_cornelius_mctaro_occupation_item	Cornelius' occupation	Investor					PROFILE_DATA	res://icon.svg	
-profile_cornelius_mctaro_address_item	Cornelius' address	83th Uron Yapidi Lane					PROFILE_DATA	res://icon.svg	
-profile_harris_goodwill_name_item	Harris' name	Harris Goodwill					PROFILE_DATA	res://icon.svg	
-profile_harris_goodwill_likes_item	Harris' likes	Mississippi Fried Chicken					PROFILE_DATA	res://icon.svg	
-profile_harris_occupation_item	Harris' occupation	Investor					PROFILE_DATA	res://icon.svg	
-profile_luca_russalo_name_item	Luca Russalo's name	Luca Russalo					PROFILE_DATA	res://icon.svg	
-profile_luca_russalo_address_item	Luca Russalo's address	11th Eastlane Avenue					PROFILE_DATA	res://icon.svg	
-profile_luca_russalo_likes_item	Luca Russalo's likes	Cloudstation videogames					PROFILE_DATA	res://icon.svg	
-profile_juniorjack_name_item	Junior Jack's name	Junior Jack					PROFILE_DATA	res://icon.svg	
-profile_juniorjack_occupation_item	Junior Jack's occupation	Rodent Control Specialist					PROFILE_DATA	res://icon.svg	
-profile_tina_name_item	Tina's name	Tina					PROFILE_DATA	res://icon.svg	
-profile_tina_occupation_item	Tina's occupation	Rat Merchant					PROFILE_DATA	res://icon.svg	
-profile_emilio_name_item	Emilio's name	Emilio					PROFILE_DATA	res://icon.svg	
-profile_emilio_likes_item	Emilio's likes	"Manstyle" Perfume					PROFILE_DATA	res://icon.svg	
-profile_emilio_occupation_item	Emilio's occupation	Construction Worker					PROFILE_DATA	res://icon.svg	
-profile_emilio_age_item	Emilio's age	38					PROFILE_DATA	res://icon.svg	
-profile_rebecca_name_item	Rebecca's name	Rebecca					PROFILE_DATA	res://icon.svg	
-profile_rebecca_likes_item	Rebecca's likes	Urban Exploration					PROFILE_DATA	res://icon.svg	
-profile_rebecca_address	Rebecca's address	93th Nostal Edwards Street					PROFILE_DATA	res://icon.svg	
-profile_davy_name_item	Davy's name	Davy					PROFILE_DATA	res://icon.svg	
-profile_davy_likes_item	Davy's likes	Urban Exploration					PROFILE_DATA	res://icon.svg	
-profile_xrayo44_occupation_item	Xrayo44's occupation	c/freecloudcity Moderator					PROFILE_DATA	res://icon.svg	
-profile_xrayo44_likes_item	Xrayo44's likes	The Cloud					PROFILE_DATA	res://icon.svg	
-profile_the_adriana_maisy_address_item	The_Adriana_Maisy's address	Morwell					PROFILE_DATA	res://icon.svg	
-profile_the_adriana_maisy_likes_item	The_Adriana_Maisy's likes	Polar bears					PROFILE_DATA	res://icon.svg	
-profile_xavier_name_item	Xavier's name	Xavier Brooks					PROFILE_DATA	res://icon.svg	
+profile_elijah_name_item	Elijah's name	Elijah					PROFILE_DATA	res://entities/profile_wall/item_entry/art/name_icon.png	
+profile_cornelius_mctaro_name_item	Cornelius' name	Cornelius McTaro					PROFILE_DATA	res://entities/profile_wall/item_entry/art/name_icon.png	
+profile_cornelius_mctaro_likes_item	Cornelius' likes	Mansions, Cars and Money					PROFILE_DATA	res://entities/profile_wall/item_entry/art/like_icon.png	
+profile_cornelius_mctaro_occupation_item	Cornelius' occupation	Investor					PROFILE_DATA	res://entities/profile_wall/item_entry/art/occupation_icon.png	
+profile_cornelius_mctaro_address_item	Cornelius' address	83th Uron Yapidi Lane					PROFILE_DATA	res://entities/profile_wall/item_entry/art/address_icon.png	
+profile_harris_goodwill_name_item	Harris' name	Harris Goodwill					PROFILE_DATA	res://entities/profile_wall/item_entry/art/name_icon.png	
+profile_harris_goodwill_likes_item	Harris' likes	Mississippi Fried Chicken					PROFILE_DATA	res://entities/profile_wall/item_entry/art/like_icon.png	
+profile_harris_occupation_item	Harris' occupation	Investor					PROFILE_DATA	res://entities/profile_wall/item_entry/art/occupation_icon.png	
+profile_luca_russalo_name_item	Luca Russalo's name	Luca Russalo					PROFILE_DATA	res://entities/profile_wall/item_entry/art/name_icon.png	
+profile_luca_russalo_address_item	Luca Russalo's address	11th Eastlane Avenue					PROFILE_DATA	res://entities/profile_wall/item_entry/art/address_icon.png	
+profile_luca_russalo_likes_item	Luca Russalo's likes	Cloudstation videogames					PROFILE_DATA	res://entities/profile_wall/item_entry/art/like_icon.png	
+profile_juniorjack_name_item	Junior Jack's name	Junior Jack					PROFILE_DATA	res://entities/profile_wall/item_entry/art/name_icon.png	
+profile_juniorjack_occupation_item	Junior Jack's occupation	Rodent Control Specialist					PROFILE_DATA	res://entities/profile_wall/item_entry/art/occupation_icon.png	
+profile_tina_name_item	Tina's name	Tina					PROFILE_DATA	res://entities/profile_wall/item_entry/art/name_icon.png	
+profile_tina_occupation_item	Tina's occupation	Rat Merchant					PROFILE_DATA	res://entities/profile_wall/item_entry/art/occupation_icon.png	
+profile_emilio_name_item	Emilio's name	Emilio					PROFILE_DATA	res://entities/profile_wall/item_entry/art/name_icon.png	
+profile_emilio_likes_item	Emilio's likes	"Manstyle" Perfume					PROFILE_DATA	res://entities/profile_wall/item_entry/art/like_icon.png	
+profile_emilio_occupation_item	Emilio's occupation	Construction Worker					PROFILE_DATA	res://entities/profile_wall/item_entry/art/occupation_icon.png	
+profile_emilio_age_item	Emilio's age	38					PROFILE_DATA	res://entities/profile_wall/item_entry/art/address_icon.png	
+profile_rebecca_name_item	Rebecca's name	Rebecca					PROFILE_DATA	res://entities/profile_wall/item_entry/art/name_icon.png	
+profile_rebecca_likes_item	Rebecca's likes	Urban Exploration					PROFILE_DATA	res://entities/profile_wall/item_entry/art/like_icon.png	
+profile_rebecca_address	Rebecca's address	93th Nostal Edwards Street					PROFILE_DATA	res://entities/profile_wall/item_entry/art/address_icon.png	
+profile_davy_name_item	Davy's name	Davy					PROFILE_DATA	res://entities/profile_wall/item_entry/art/name_icon.png	
+profile_davy_likes_item	Davy's likes	Urban Exploration					PROFILE_DATA	res://entities/profile_wall/item_entry/art/like_icon.png	
+profile_xrayo44_occupation_item	Xrayo44's occupation	c/freecloudcity Moderator					PROFILE_DATA	res://entities/profile_wall/item_entry/art/occupation_icon.png	
+profile_xrayo44_likes_item	Xrayo44's likes	The Cloud					PROFILE_DATA	res://entities/profile_wall/item_entry/art/like_icon.png	
+profile_the_adriana_maisy_address_item	The_Adriana_Maisy's address	Morwell					PROFILE_DATA	res://entities/profile_wall/item_entry/art/address_icon.png	
+profile_the_adriana_maisy_likes_item	The_Adriana_Maisy's likes	Polar bears					PROFILE_DATA	res://entities/profile_wall/item_entry/art/like_icon.png	
+profile_xavier_name_item	Xavier's name	Xavier Brooks					PROFILE_DATA	res://entities/profile_wall/item_entry/art/name_icon.png	
 profile_xavier_creditcard_item	Xavier's credit card information	Card Number 8203 1505 6733 2359					PROFILE_DATA	res://icon.svg	
 									
 storyitem_oldmanpackage	Package from the Old Man	A package from the Old Man.	0				PACKAGE	res://icon.svg	res://entities/fish/junk/junk_mesh.tscn
