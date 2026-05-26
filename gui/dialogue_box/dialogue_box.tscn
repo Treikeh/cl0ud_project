@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://ch5mutx6js8sn" path="res://gui/dialogue_box/dialogue_box.gd" id="1_lfny5"]
 [ext_resource type="Theme" uid="uid://cpfg3yoyu638e" path="res://gui/new_theme.tres" id="2_pi2qo"]
+[ext_resource type="Texture2D" uid="uid://bjudmortaoqlv" path="res://gui/dialogue_box/art/DialogueBox_2.png" id="3_84gmr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_84gmr"]
 
 [node name="DialogueBox" type="Control" unique_id=1119154544 node_paths=PackedStringArray("_name_label", "_text_label", "_dialogue_choice_container", "_speech_sfx")]
 layout_mode = 3
@@ -17,32 +20,42 @@ _text_label = NodePath("Panel/TextLabel")
 _dialogue_choice_container = NodePath("DialogueChoiceContainer")
 _speech_sfx = NodePath("FmodEventEmitter2D")
 
+[node name="DialogueBox" type="Sprite2D" parent="." unique_id=1724832224]
+position = Vector2(597.00006, 544)
+scale = Vector2(0.47864586, 0.49629632)
+texture = ExtResource("3_84gmr")
+
 [node name="Panel" type="Panel" parent="." unique_id=1632147214]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 213.0
-offset_top = -196.0
-offset_right = -213.0
-offset_bottom = -76.0
+offset_left = 212.0
+offset_top = -189.0
+offset_right = -212.0
+offset_bottom = -82.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_84gmr")
 
 [node name="NameLabel" type="Label" parent="Panel" unique_id=1417575058]
 layout_mode = 0
-offset_top = -25.0
-offset_right = 47.0
-offset_bottom = -2.0
+offset_left = 8.0
+offset_top = -38.0
+offset_right = 55.0
+offset_bottom = -15.0
 theme = ExtResource("2_pi2qo")
 text = "NAME"
 
 [node name="TextLabel" type="Label" parent="Panel" unique_id=177122019]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.901
+offset_left = 1.0
+offset_top = 6.0
+offset_bottom = 4.8799973
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_pi2qo")

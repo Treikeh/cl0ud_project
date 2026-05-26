@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bcgbuisoq6kw"]
 
 [ext_resource type="Script" uid="uid://dmh7mo8kfsd7l" path="res://gui/loading_screen/loading_screen.gd" id="1_mkdfe"]
+[ext_resource type="Texture2D" uid="uid://bd3yxxdxtpkcr" path="res://gui/loading_screen/art/LoadingScreen Background.png" id="2_sm2e5"]
 [ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="2_vsl4m"]
 
 [node name="LoadingScreen" type="CanvasLayer" unique_id=1918260680 node_paths=PackedStringArray("_control_root", "_loading_label")]
@@ -30,7 +31,13 @@ theme_override_constants/margin_top = -5
 theme_override_constants/margin_right = -5
 theme_override_constants/margin_bottom = -5
 
+[node name="LoadingScreenBackground" type="Sprite2D" parent="ControlRoot/MarginContainer" unique_id=220567455]
+position = Vector2(576.5, 324.00003)
+scale = Vector2(0.6005208, 0.60185194)
+texture = ExtResource("2_sm2e5")
+
 [node name="ColorRect" type="ColorRect" parent="ControlRoot/MarginContainer" unique_id=619221260]
+visible = false
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
