@@ -25,31 +25,31 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -106.0
+offset_left = -119.00003
 offset_top = 119.0
-offset_right = 53.550537
-offset_bottom = 464.0
+offset_right = 57.029907
+offset_bottom = 340.72284
 grow_horizontal = 2
 scale = Vector2(1.335, 1.335)
 alignment = 1
 
 [node name="ResumeButton" type="Button" parent="VBoxContainer" unique_id=1584235401]
 layout_mode = 2
-size_flags_vertical = 6
+size_flags_vertical = 4
 theme = ExtResource("3_bxmjj")
 theme_override_fonts/font = ExtResource("4_b1bi2")
 text = "Resume"
 
 [node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=2078174957]
 layout_mode = 2
-size_flags_vertical = 6
+size_flags_vertical = 4
 theme = ExtResource("3_bxmjj")
 theme_override_fonts/font = ExtResource("4_b1bi2")
 text = "Settings"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=310436152]
 layout_mode = 2
-size_flags_vertical = 6
+size_flags_vertical = 4
 theme = ExtResource("3_bxmjj")
 theme_override_fonts/font = ExtResource("4_b1bi2")
 text = "Quit"

@@ -1,12 +1,25 @@
 [gd_scene format=3 uid="uid://daynk558nxhes"]
 
 [ext_resource type="Script" uid="uid://djdcnuypejjdk" path="res://entities/profile_wall/info_slot/profile_info_slot.gd" id="1_b7bla"]
-[ext_resource type="Texture2D" uid="uid://chai7badmw5f8" path="res://common/materials/simple_dev_grid_01_bc.png" id="3_25308"]
+[ext_resource type="Texture2D" uid="uid://d2b2cbkjp4x2e" path="res://entities/profile_wall/info_slot/art/Question_mark_(black).svg.png" id="2_os55a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7bla"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 0.21960784)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [node name="ProfileInfoSlot" type="PanelContainer" unique_id=515195711 node_paths=PackedStringArray("_icon")]
 offset_right = 99.0
 offset_bottom = 133.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_b7bla")
 script = ExtResource("1_b7bla")
 _icon = NodePath("MarginContainer/TextureRect")
 
@@ -19,6 +32,6 @@ theme_override_constants/margin_bottom = 10
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=54814672]
 layout_mode = 2
-texture = ExtResource("3_25308")
+texture = ExtResource("2_os55a")
 expand_mode = 1
 stretch_mode = 5

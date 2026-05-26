@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ch5mutx6js8sn" path="res://gui/dialogue_box/dialogue_box.gd" id="1_lfny5"]
 [ext_resource type="Theme" uid="uid://cpfg3yoyu638e" path="res://gui/new_theme.tres" id="2_pi2qo"]
-[ext_resource type="Texture2D" uid="uid://bjudmortaoqlv" path="res://gui/dialogue_box/art/DialogueBox_2.png" id="3_84gmr"]
+[ext_resource type="Texture2D" uid="uid://df4up27k6huq2" path="res://gui/settings/art/5w6QH.png" id="3_aepaq"]
+[ext_resource type="Texture2D" uid="uid://u8joxetoy657" path="res://gui/dialogue_box/art/DialogueBox_3.png" id="4_mckkj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_84gmr"]
 
@@ -20,10 +21,21 @@ _text_label = NodePath("Panel/TextLabel")
 _dialogue_choice_container = NodePath("DialogueChoiceContainer")
 _speech_sfx = NodePath("FmodEventEmitter2D")
 
+[node name="5w6qh" type="Sprite2D" parent="." unique_id=1354549086]
+position = Vector2(282, 462.00006)
+scale = Vector2(0.32430938, 0.30641025)
+texture = ExtResource("3_aepaq")
+
+[node name="5w6qh2" type="Sprite2D" parent="." unique_id=1274850865]
+position = Vector2(862.95386, 522.3539)
+rotation = 3.4540067
+scale = Vector2(0.2864035, 0.26700065)
+texture = ExtResource("3_aepaq")
+
 [node name="DialogueBox" type="Sprite2D" parent="." unique_id=1724832224]
 position = Vector2(597.00006, 544)
 scale = Vector2(0.47864586, 0.49629632)
-texture = ExtResource("3_84gmr")
+texture = ExtResource("4_mckkj")
 
 [node name="Panel" type="Panel" parent="." unique_id=1632147214]
 layout_mode = 1
