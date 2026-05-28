@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bli63q1qswjvg" path="res://environment/day_night_cycle/day_night_cycle.tscn" id="1_b2fg0"]
 [ext_resource type="Script" uid="uid://eafl2by4c1sm" path="res://levels/main_level/main_level.gd" id="1_um8ys"]
 [ext_resource type="PackedScene" uid="uid://dfwa3ko7oftnj" path="res://entities/player/player.tscn" id="2_438kw"]
+[ext_resource type="Texture2D" uid="uid://bjcxp6y4t1ylq" path="res://environment/vendor_door/Vendor times Sign.png" id="3_0bpnx"]
 [ext_resource type="PackedScene" uid="uid://bocx17sre2uti" path="res://common/scripts/fish_area/fish_area_3d.tscn" id="4_sj11d"]
 [ext_resource type="PackedScene" uid="uid://bx4sr0m02ndfl" path="res://common/scripts/respawn_area/respawn_area_3d.tscn" id="7_hp128"]
 [ext_resource type="PackedScene" uid="uid://bjn7ujpgp5jeh" path="res://levels/art/BuildingTwo/BuildingTwo.glb" id="8_ki8py"]
@@ -27,11 +28,18 @@
 [ext_resource type="PackedScene" uid="uid://b3jb1ta6dleu7" path="res://entities/fish/junk/junk_mesh.tscn" id="23_pww4q"]
 [ext_resource type="PackedScene" uid="uid://ca2s3mw54s4mt" path="res://levels/art/paintbucket/paintbucket.glb" id="24_418b2"]
 [ext_resource type="Shader" uid="uid://d1mgb7evsx4fs" path="res://environment/shaders/flag_shader.gdshader" id="27_bvkhb"]
+[ext_resource type="Texture2D" uid="uid://da36ajb51dm5r" path="res://environment/posters/PanopticonPoster_2.png" id="28_klxx3"]
 
 [sub_resource type="Curve" id="Curve_hp128"]
 _limits = [0.0, 10.0, 0.0, 24.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(18, 0.1), 0.0, 0.243, 0, 0, Vector2(24, 3), 1.9196743, 0.0, 0, 0]
 point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oos8u"]
+transparency = 1
+albedo_texture = ExtResource("3_0bpnx")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_x3was"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oqmyk"]
 
@@ -237,6 +245,11 @@ shader_parameter/Rotate_Deg = 3.415
 
 [sub_resource type="QuadMesh" id="QuadMesh_8j51j"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0bpnx"]
+albedo_texture = ExtResource("28_klxx3")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oos8u"]
+
 [node name="MainLevel" type="Node3D" unique_id=224384734 node_paths=PackedStringArray("_day_night_cycle", "_player_marker") groups=["persistent"]]
 script = ExtResource("1_um8ys")
 _day_night_cycle = NodePath("Envronment/DayNightCycle")
@@ -246,6 +259,11 @@ _junk_curve = SubResource("Curve_hp128")
 [node name="Envronment" type="Node3D" parent="." unique_id=1893607766]
 
 [node name="PlayableArea_V2" parent="Envronment" unique_id=151361532 instance=ExtResource("13_224rj")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Envronment/PlayableArea_V2" unique_id=990711750]
+transform = Transform3D(-0.34512007, -8.742278e-08, 1.111885e-15, 0, -4.371139e-08, -0.29096493, 3.0171357e-08, -1, 1.2718481e-08, -6.6502724, 4.313089, 10.981831)
+material_override = SubResource("StandardMaterial3D_oos8u")
+mesh = SubResource("PlaneMesh_x3was")
 
 [node name="DayNightCycle" parent="Envronment" unique_id=50702471 instance=ExtResource("1_b2fg0")]
 transform = Transform3D(-0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.7071068, 0, 4.1425443, -3.334785)
@@ -600,6 +618,11 @@ transform = Transform3D(1.105633, 0, 0, 0, 1.0813731, -0.038707215, 0, 0.0341157
 transform = Transform3D(-4.262991, -0.10522508, 0.9560412, 8.693394, -0.051599745, 0.46881515, 6.670884e-07, 4.731118, 0.026376473, 25.330952, 18.039515, -119.59977)
 material_override = SubResource("ShaderMaterial_lcd8i")
 mesh = SubResource("QuadMesh_8j51j")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1023046773]
+transform = Transform3D(-0.35355523, -8.546769e-08, 0.020735726, -0.015176898, -4.7420468e-08, -0.48305148, 3.093724e-08, -0.99999994, 2.1134285e-08, -43.543884, 4.4919043, 0.3510058)
+material_override = SubResource("StandardMaterial3D_0bpnx")
+mesh = SubResource("PlaneMesh_oos8u")
 
 [editable path="Player"]
 [editable path="Player/Orientation/Head/CameraRoot/FishingRod"]

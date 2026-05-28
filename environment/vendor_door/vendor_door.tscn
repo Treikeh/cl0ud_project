@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://iomcinpu06my"]
 
 [ext_resource type="Script" uid="uid://cyke40k878ihr" path="res://environment/vendor_door/vendor_door.gd" id="1_hk6gn"]
+[ext_resource type="PackedScene" uid="uid://che675gjsxhxf" path="res://environment/vendor_door/VendorGate.glb" id="2_jvk84"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jvk84"]
 size = Vector3(1.2, 1.4, 0.1)
@@ -81,7 +82,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
 shape = SubResource("BoxShape3D_jvk84")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=619100875]
+visible = false
 mesh = SubResource("BoxMesh_dms25")
+
+[node name="VendorGate" parent="AnimatableBody3D" unique_id=997103002 instance=ExtResource("2_jvk84")]
+transform = Transform3D(1.5365667, 0, 0, 0, 1.967808, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=588666355]
 libraries/ = SubResource("AnimationLibrary_dms25")
