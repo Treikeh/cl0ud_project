@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cook0hnta5rmg"]
 
-[ext_resource type="Script" uid="uid://dsirpeclfa8n3" path="res://entities/characters/nils/day_02_nils.gd" id="1_v1xv4"]
+[ext_resource type="Script" path="res://entities/characters/nils/day_02_nils.gd" id="1_v1xv4"]
 [ext_resource type="Resource" uid="uid://bllnwhblauvnu" path="res://common/data/dialogue/tips_old_man_01_day_02.tres" id="6_1jowo"]
 [ext_resource type="Script" uid="uid://b0pj0dtodw2q8" path="res://common/data/dialogue/dialogue_data.gd" id="6_56swy"]
 [ext_resource type="Resource" uid="uid://gkugv4exr5b0" path="res://common/data/dialogue/tips_old_man_start_01.tres" id="7_0crxc"]
@@ -29,36 +29,18 @@ _look_at_radius = 2.0
 _skin = "Nils"
 _animation = ExtResource("15_311aw")
 
-[node name="Skeleton3D" parent="CharacterMesh" index="0" unique_id=202476250]
-bones/2/rotation = Quaternion(0.70605093, -5.346468e-08, -5.3305378e-08, 0.708161)
-bones/3/rotation = Quaternion(0.022610614, 1.5095726e-07, 2.6645353e-15, 0.99974436)
-bones/4/rotation = Quaternion(0.1183377, -1.4993482e-07, 3.577384e-15, 0.9929735)
-bones/5/rotation = Quaternion(-0.1410824, 1.4557908e-07, 1.9639106e-08, 0.9899979)
-bones/7/rotation = Quaternion(0.47093797, 0.26385438, -0.5343287, 0.6504547)
-bones/8/rotation = Quaternion(0.7114664, 0.008345114, -0.031082481, 0.7019829)
-bones/9/rotation = Quaternion(-0.18475962, -0.28478548, 0.28245312, 0.8972075)
-bones/12/rotation = Quaternion(0.5050656, -0.31430256, 0.4681797, 0.6533992)
-bones/13/rotation = Quaternion(0.63325316, -0.00919415, 0.027665619, 0.77339554)
-bones/14/rotation = Quaternion(-0.014075961, 0.33851096, -0.1924155, 0.9209715)
-bones/16/rotation = Quaternion(0.021328896, 0.076777965, 0.9967885, -0.007934505)
-bones/17/rotation = Quaternion(-0.17705412, 5.7867858e-08, -1.010041e-08, 0.98420113)
-bones/18/rotation = Quaternion(0.6296116, -0.0672777, 0.0284327, 0.7734692)
-bones/19/rotation = Quaternion(-0.021328729, 0.07677797, 0.9967885, 0.007934497)
-bones/20/rotation = Quaternion(-0.17705414, -5.7222433e-08, 1.2018229e-08, 0.98420113)
-bones/21/rotation = Quaternion(0.6296116, 0.06727773, -0.028432723, 0.7734692)
-
 [node name="AnimationTree" parent="CharacterMesh" index="4" unique_id=2032088472]
 tree_root = ExtResource("15_311aw")
 
 [node name="HeadMarker" type="BoneAttachment3D" parent="." unique_id=648579604]
-transform = Transform3D(-0.9999999, 3.7808267e-08, 5.6843412e-14, 3.777784e-08, 0.999195, 0.040115327, 1.5166675e-09, 0.040115353, -0.999195, 4.639131e-15, 1.6536838, 0.029421758)
+transform = Transform3D(-0.9999999, 1.4210853e-14, -1.5099579e-07, 4.973799e-14, 1, -1.7881393e-07, 1.5099582e-07, -1.6391276e-07, -1, 1.199727e-14, 1.6540115, 0.055495266)
 bone_name = "head.001"
 bone_idx = 5
 use_external_skeleton = true
 external_skeleton = NodePath("../CharacterMesh/Skeleton3D")
 
 [node name="HandLEQ" type="BoneAttachment3D" parent="." unique_id=1285232902]
-transform = Transform3D(0.9895449, 0.12748805, -0.06743496, 0.12191638, -0.489615, 0.8633735, 0.077052705, -0.862568, -0.5000388, -0.0058567, 1.15424, -0.27611566)
+transform = Transform3D(3.4016557e-07, -1, -6.705513e-08, -1.0000001, -3.525056e-07, -3.4732264e-07, 3.1565756e-07, 1.490116e-07, -0.9999997, -0.82952094, 1.5139414, 0.056586683)
 bone_name = "hand_eq.l.001"
 bone_idx = 10
 use_external_skeleton = true

@@ -32,6 +32,9 @@ collision_layer = 8
 [node name="_StaticBody3D_72978#StaticBody3D" type="StaticBody3D" parent="." index="5" unique_id=752140432]
 collision_layer = 8
 
+[node name="Vendor Sign" parent="." index="183" unique_id=882477510]
+transform = Transform3D(-1, 7.549791e-08, 7.549791e-08, -7.549791e-08, 0, -1, -7.549791e-08, -1, 0, -7.70155, 3.2285607, 10.727894)
+
 [node name="Cube_061" parent="." index="213" unique_id=2012330290]
 visible = false
 
