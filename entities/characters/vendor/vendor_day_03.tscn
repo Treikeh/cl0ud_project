@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="17_1u18n"]
 [ext_resource type="Resource" uid="uid://baqkykct0vpab" path="res://common/data/items/storyitem_cloudmask.tres" id="18_gop7n"]
 [ext_resource type="Resource" uid="uid://c7nfr0vpt5iij" path="res://common/data/items/storyitem_notefromoldman.tres" id="19_pk5sd"]
+[ext_resource type="ArrayMesh" uid="uid://cjmc1otu0vc7d" path="res://entities/characters/vendor/art/new folder/chops_vendor_mesh_001.res" id="22_gop7n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_72uc0"]
 size = Vector3(0.6, 1.8000001, 0.4)
@@ -44,32 +45,14 @@ _pacakge_items = Array[ExtResource("17_1u18n")]([ExtResource("18_gop7n"), ExtRes
 _skin = "Vendor"
 _animation = ExtResource("5_3mk3t")
 
-[node name="Skeleton3D" parent="CharacterMesh" index="0" unique_id=559385597]
-bones/2/position = Vector3(4.3495396e-16, 0.067006476, 0.8593024)
-bones/2/rotation = Quaternion(0.69923276, -5.3973036e-08, -5.2790625e-08, 0.7148942)
-bones/3/rotation = Quaternion(0.037294902, 1.5081682e-07, -3.6554035e-09, 0.9993043)
-bones/4/rotation = Quaternion(0.07442259, -1.5024521e-07, -2.7844929e-09, 0.9972268)
-bones/5/rotation = Quaternion(-0.08719101, 1.5042072e-07, 1.5404441e-15, 0.9961916)
-bones/6/rotation = Quaternion(-0.0940347, 0.19764802, -0.5987004, 0.7704873)
-bones/7/rotation = Quaternion(0.5824739, 0.24106532, -0.24683814, 0.7359909)
-bones/8/rotation = Quaternion(0.7311202, 0.008101003, -0.031941127, 0.68145245)
-bones/9/rotation = Quaternion(-0.11401764, -0.309011, -0.020256143, 0.9439819)
-bones/11/rotation = Quaternion(-0.09403479, -0.19764802, 0.5987004, 0.77048725)
-bones/12/rotation = Quaternion(0.5824738, -0.24106517, 0.24683802, 0.73599106)
-bones/13/rotation = Quaternion(0.7311205, -0.008101125, 0.031941168, 0.68145216)
-bones/14/rotation = Quaternion(-0.11401792, 0.30901146, 0.020256093, 0.9439817)
-bones/16/rotation = Quaternion(0.110605285, 0.16561913, 0.9759451, -0.08870206)
-bones/17/rotation = Quaternion(-0.34220093, 5.908854e-08, -1.8159497e-08, 0.9396268)
-bones/18/rotation = Quaternion(0.6783599, 0.0020324849, -0.07286541, 0.73110485)
-bones/19/rotation = Quaternion(-0.11060511, 0.16561912, 0.9759451, 0.08870203)
-bones/20/rotation = Quaternion(-0.34220096, -6.810744e-08, 7.384183e-09, 0.9396268)
-bones/21/rotation = Quaternion(0.6783599, -0.0020324402, 0.07286538, 0.73110485)
+[node name="Vendor" parent="CharacterMesh/Skeleton3D" parent_id_path=PackedInt32Array(1333086119, 65424730) index="7" unique_id=1117878562]
+mesh = ExtResource("22_gop7n")
 
 [node name="AnimationTree" parent="CharacterMesh" index="4" unique_id=2032088472]
 tree_root = ExtResource("5_3mk3t")
 
 [node name="HeadMarker" type="BoneAttachment3D" parent="." unique_id=229792294]
-transform = Transform3D(-1, -1.31129525e-08, 2.3527917e-09, -1.2879381e-08, 0.9967167, 0.080967665, -3.406825e-09, 0.08096765, -0.99671686, -3.77257e-09, 1.6120628, 0.037611827)
+transform = Transform3D(-1, 1.4210855e-14, -1.509958e-07, 4.973799e-14, 1, -1.7881393e-07, 1.5099583e-07, -1.6391277e-07, -1.0000001, 1.1997271e-14, 1.6540115, 0.055495273)
 bone_name = "head.001"
 bone_idx = 5
 use_external_skeleton = true
