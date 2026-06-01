@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MailData" format=3 uid="uid://beri15hwnqvgd"]
+
+[ext_resource type="Script" uid="uid://bgk7ttf5teu14" path="res://entities/fish/mail/mail_data.gd" id="1_x36lg"]
+
+[resource]
+script = ExtResource("1_x36lg")
+from = "Xavier "
+to = "BanksNational Customer Service "
+subject = "Bank Account Recovery "
+content = " Hello, I am contacting customer service because I have lost access to my main account. 
+ 
+ I believe I lost access sometime yesterday, but I’m not sure. If you guys are able, I’d be willing to have a phone call to resolve this. 
+ 
+ Many thanks.  
+ 
+ -Xavier"

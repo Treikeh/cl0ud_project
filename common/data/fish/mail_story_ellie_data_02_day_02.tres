@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MailData" format=3 uid="uid://4saomlqfoyjo"]
+
+[ext_resource type="Script" uid="uid://bgk7ttf5teu14" path="res://entities/fish/mail/mail_data.gd" id="1_ob51k"]
+
+[resource]
+script = ExtResource("1_ob51k")
+from = "Ellie "
+to = "Andy "
+subject = "Security and personal wellbeing checkup. "
+content = " Oh, this was today? Sorry for not remembering. 
+ 
+ I pushed updates 5.32, 5.33, and 5.34 yesterday to the firewall. 
+ 
+ As for your wellbeing question, part of a company-wide wellbeing checkup, I live at 44th Whiteplane Lane with my husband and daughter. Our living situation is somewhat good, but we had to invest in the security of our gated community. 
+ 
+ Sensitive information to ask about, but I suppose it was part of the work contract and our cybersecurity is top-notch so I don’t mind. 
+ 
+ -Ellie."

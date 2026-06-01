@@ -207,7 +207,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_dp1w7")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_bvkhb"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_0bpnx"]
 viewport_path = NodePath("RodHandle/RodScreen/SubViewport")
 
 [sub_resource type="Gradient" id="Gradient_klxx3"]
@@ -568,7 +568,7 @@ transform = Transform3D(0.1, 8.881784e-16, 0, 0, 0, 0.1, 8.881784e-16, -0.1, 0, 
 transform = Transform3D(0.1, 8.881784e-16, 0, 0, 0, 0.1, 8.881784e-16, -0.1, 0, 0, 0.1500001, -0.049999237)
 
 [node name="RodScreen" parent="Player/Orientation/Head/CameraRoot/FishingRod/RodHandle" parent_id_path=PackedInt32Array(913738857, 949060003, 166742561) index="0" unique_id=167206628]
-texture = SubResource("ViewportTexture_bvkhb")
+texture = SubResource("ViewportTexture_0bpnx")
 
 [node name="TextureProgressBar" parent="Player/Orientation/Head/CameraRoot/FishingRod/RodHandle/RodScreen/SubViewport" parent_id_path=PackedInt32Array(913738857, 949060003, 1941168548) index="0" unique_id=1272039896]
 offset_left = -64.0

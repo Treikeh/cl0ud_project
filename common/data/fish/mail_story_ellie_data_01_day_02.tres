@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="MailData" format=3 uid="uid://clchpj7jor6b3"]
+
+[ext_resource type="Script" uid="uid://bgk7ttf5teu14" path="res://entities/fish/mail/mail_data.gd" id="1_ly4mb"]
+
+[resource]
+script = ExtResource("1_ly4mb")
+from = "Andy "
+to = "Ellie "
+subject = "Security and personal wellbeing checkup. "
+content = " How are you hanging, Ellie? 
+ 
+ I’m sending this mail to retrieve your personal worklog for firewall updates for the Aravoy cloud storage. 
+ 
+ Additionally, as part of a company-wide wellbeing checkup, we wish to learn how your personal life is going and how your living situation is. 
+ 
+ Please respond as soon as possible. 
+ 
+ Thank you in advance. 
+ 
+ Your manager, Andy."

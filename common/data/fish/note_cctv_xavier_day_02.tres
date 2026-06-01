@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="NoteData" format=3 uid="uid://cpfxgynilr2qr"]
+
+[ext_resource type="Script" uid="uid://ckvnbenl45otq" path="res://entities/fish/note/note_data.gd" id="1_81q5n"]
+
+[resource]
+script = ExtResource("1_81q5n")
+text = "[b]Case no. [REDACTED] evidence[b/] [img]res://entities/fish
+ote/art/docs/xavier/apartment_burglar_cctv.png[/img]"

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="NoteData" format=3 uid="uid://biacclwkwop17"]
+
+[ext_resource type="Script" uid="uid://ckvnbenl45otq" path="res://entities/fish/note/note_data.gd" id="1_52wu8"]
+
+[resource]
+script = ExtResource("1_52wu8")
+text = "[img]res://entities/fish
+ote/art/docs/xavier/Loss_bank_statement.png[/img]"

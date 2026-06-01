@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="MessageData" format=3 uid="uid://dhkf80rnk7eiu"]
 
-[ext_resource type="Script" uid="uid://knk2w0s0q2la" path="res://entities/fish/message/message_data.gd" id="1_bf52k"]
+[ext_resource type="Script" uid="uid://knk2w0s0q2la" path="res://entities/fish/message/message_data.gd" id="1_1s7xj"]
 
 [resource]
-script = ExtResource("1_bf52k")
+script = ExtResource("1_1s7xj")
 sender = "Xavier "
 recipient = "Martin "
 messages = Array[Dictionary]([{
@@ -22,6 +22,6 @@ messages = Array[Dictionary]([{
 "LINES": [" Nah, It's just alittle dusty, That's all. ", " I just haven't spent as much time watching TV in the recent months, and I need this money for something else ASAP. "],
 "WHO": "Martin "
 }, {
-"LINES": [" Missing continued data."],
+"LINES": [" Data continued on seperate fish transference."],
 "WHO": "SYSTEM"
 }])

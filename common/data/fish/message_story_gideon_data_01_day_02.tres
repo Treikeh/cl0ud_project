@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="MessageData" format=3 uid="uid://bs2k3wwd1rcjx"]
+
+[ext_resource type="Script" uid="uid://knk2w0s0q2la" path="res://entities/fish/message/message_data.gd" id="1_panic"]
+
+[resource]
+script = ExtResource("1_panic")
+sender = "Anonymous Smog-Rider "
+recipient = "Gideon "
+messages = Array[Dictionary]([{
+"LINES": [" Yo, Gideon, I got a question. ", " I heard the Los Sangrientos are heavily armed. ", " How are we gonna take them on? "],
+"WHO": "Anonymous Smog-Rider "
+}, {
+"LINES": [" No worries, they might be heavily armed, but they're undisciplined and have poor lookouts. ", " If we take them by surprise, we are gonna get in and get out without any casualties or trouble. "],
+"WHO": "Gideon "
+}, {
+"LINES": [" Hmm. Alright. I trust ya. "],
+"WHO": "Anonymous Smog-Rider "
+}, {
+"LINES": [" I understand your concerns, but if there’s something I hate most in the world, it's seeing innocent people hurt. "],
+"WHO": "Gideon "
+}, {
+"LINES": [" Yeah… They have been causing trouble recently. "],
+"WHO": "Anonymous Smog-Rider "
+}, {
+"LINES": [" Indeed. ", " Let’s seize their weapons before they cause more problems in the nearby neighborhoods."],
+"WHO": "Gideon "
+}])

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MailData" format=3 uid="uid://bwn5ww6wqfagp"]
+
+[ext_resource type="Script" uid="uid://bgk7ttf5teu14" path="res://entities/fish/mail/mail_data.gd" id="1_k702t"]
+
+[resource]
+script = ExtResource("1_k702t")
+from = "Xavier "
+to = "BanksNational Automated Customer Service "
+subject = "Bank Account Recovery "
+content = " Are you serious?!?! 3 months?!?! I have rent to pay within the week! 
+ 
+ Do you guys not believe it’s me? Ok, let me answer my security question: My favorite hobbies are skating and urban parkour. 
+ 
+ I request to get in contact with a human worker today or tomorrow. 
+ 
+ -Xavier"

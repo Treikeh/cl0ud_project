@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MailData" format=3 uid="uid://cmfmnh18v0mnu"]
+
+[ext_resource type="Script" uid="uid://bgk7ttf5teu14" path="res://entities/fish/mail/mail_data.gd" id="1_c6rmq"]
+
+[resource]
+script = ExtResource("1_c6rmq")
+from = "BanksNational Automated Customer Service "
+to = "Xavier "
+subject = "Bank Account Recovery "
+content = " Hello Xavier! 
+ 
+ We at BanksNational take account recovery very seriously. 
+ 
+ However, due to the nature of your Mail and our automated anti-scam methods, your previous mail was detected as potentially harmful to Mr. Xavier’s account security, and we are unable to provide assistance. A human worker will need to review this case. This is expected to happen within 3 months. 
+ 
+ Thank you for understanding.  
+ 
+ -BanksNational Automated Customer Service “Tony” number 412"

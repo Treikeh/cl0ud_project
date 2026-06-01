@@ -17,6 +17,9 @@ junk_02	Junk 2	Junk	1	junk_data_ad_01	2	Default, Toilet
 junk_02	Junk 3	Junk	1	junk_data_ad_02	3	Default, Toilet			
 message_item_Xavier_01_01	Message Fish "Xavier Transaction" Part 2	Part 1 of an important message fish containing the conversation between Xavier and Martin.	8	message_story_Xavier_data_01_day_01	150	Default			
 message_item_Xavier_01_02	Message Fish "Xavier Transaction" Part 2	Part 2 of an important message fish containing the conversation between Xavier and Martin.	8	message_story_Xavier_data_02_day_2	150	Default			
+note_item_Xavier_01			9	note_bank_statement_xavier_day_02	200	Default			
+note_item_Xavier_02			7	note_cctv_xavier_day_02	300	Default			
+note_item_Xavier_03			12	note_police_report_xavier_day_03	250	Default			
 									
 									
 profile_johnny_name_item	Johnny's name	Johnny					PROFILE_DATA	res://icon.svg	

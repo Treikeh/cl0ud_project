@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="MailData" format=3 uid="uid://xhacjoggvsk2"]
+
+[ext_resource type="Script" uid="uid://bgk7ttf5teu14" path="res://entities/fish/mail/mail_data.gd" id="1_srcai"]
+
+[resource]
+script = ExtResource("1_srcai")
+from = "Gideon "
+to = "Smog-Riders "
+subject = "Upcoming operations "
+content = " Hello y’all. Gideon here. 
+ 
+ As mentioned in previous announcements, we’re conducting a raid against the Los Sangrientos warehouses tomorrow. 
+ 
+ We are breaking and entering to take some of their improvised bombs and some of their firearms. Hopefully, several crates of them. 
+ 
+ Meetup is tomorrow at our central warehouse at 09:00 exactly. 
+ 
+ I want only those capable of fighting and who own armored bikes. 
+ 
+ The operation will be straightforward, but contact me if you have any further questions. 
+ 
+ -Gideon"

@@ -37,13 +37,13 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.6, 0)
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="HitWaterSFX" type="FmodEventEmitter3D" parent="Sfx" unique_id=1280621527]
-event_name = "event:/Actions/Fishing Reel"
-event_guid = "{af8813d6-7528-46c4-b540-77fc5b58908d}"
+event_name = "event:/Actions/Cloud Hit"
+event_guid = "{4274d297-3d51-4825-98f4-8635b8aea0e8}"
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="FishBitesSFX" type="FmodEventEmitter3D" parent="Sfx" unique_id=2089665613]
-event_name = "event:/Actions/Fishing Reel"
-event_guid = "{af8813d6-7528-46c4-b540-77fc5b58908d}"
+event_name = "event:/Actions/Fish Bite"
+event_guid = "{7929f0b0-d9d4-4076-9ac6-993d44522d1f}"
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="FishTimer" type="Timer" parent="." unique_id=334655231]

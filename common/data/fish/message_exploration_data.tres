@@ -7,7 +7,7 @@ script = ExtResource("1_o1xr8")
 sender = "Rebecca "
 recipient = "Davy "
 messages = Array[Dictionary]([{
-"LINES": [" Hey Davy, me and some friends found this abandoned building with some crazy tunnels. ", " We're thinking of heading into it later today, wanna join? "],
+"LINES": [" Hey Davy, some friends and I found this abandoned building with some crazy tunnels. ", " We're thinking of heading into it later today, wanna join? "],
 "WHO": "Rebecca "
 }, {
 "LINES": [" Isn't every building in Cloud City kinda abandoned? 🤔 "],
@@ -19,7 +19,7 @@ messages = Array[Dictionary]([{
 "LINES": [" Ok. ", " That's a good start. ", " What do we expect to find in there? "],
 "WHO": "Davy "
 }, {
-"LINES": [" No idea! ", " Meet up at my place at 93th Nostal Edwards Street. ", " ❗ Also, don't forget your cloudmask. ❗ ", " I'm 100% sure we are going to stumble into some deep Cloud down in those tunnels. "],
+"LINES": [" No idea! ", " Meet up at my place at 93rd Nostal Edwards Street. ", " ❗ Also, don't forget your cloudmask. ❗ ", " I'm 100% sure we are going to stumble into some deep Cloud down in those tunnels. "],
 "WHO": "Rebecca "
 }, {
 "LINES": [" Roger that."],
