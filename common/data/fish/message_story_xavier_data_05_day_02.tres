@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="MessageData" format=3 uid="uid://dt6mpxb2wvrgn"]
+
+[ext_resource type="Script" uid="uid://knk2w0s0q2la" path="res://entities/fish/message/message_data.gd" id="1_y6uqc"]
+
+[resource]
+script = ExtResource("1_y6uqc")
+sender = "Xavier "
+recipient = "Martin "
+messages = Array[Dictionary]([{
+"LINES": [" Hey Martin, I recently got locked out of my bank account and need some physical cloudbucks for paying some rent. ", " Is it possible for me to refund the TV I bought from you? "],
+"WHO": "Xavier "
+}, {
+"LINES": [" You mean the Preuss?. ", " I’m sorry, bro, but that money is gone. ", " I owed somebody that money and had to sell the TV to repay them. "],
+"WHO": "Martin "
+}, {
+"LINES": [" Are you serious? You don’t even have like 500 cloudbucks I could get as an upfront? "],
+"WHO": "Xavier "
+}, {
+"LINES": [" Nah, I’m sorry. ", " But can’t you ask your parents or family? "],
+"WHO": "Martin "
+}, {
+"LINES": [" Nah, I don’t like talking to my family. ", " They’re the reason I moved to Cloud City, remember? ", " Besides, they wouldn’t give me that money anyway. "],
+"WHO": "Xavier "
+}, {
+"LINES": [" Damn. ", " Sorry to hear that, but I do have some cans of food I could give you instead. ", " It might not help pay your rent, but it might keep you full for some days. ", " I'll bring them over tomorrow sometime."],
+"WHO": "Martin "
+}])

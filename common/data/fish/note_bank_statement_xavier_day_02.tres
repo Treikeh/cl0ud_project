@@ -4,5 +4,4 @@
 
 [resource]
 script = ExtResource("1_52wu8")
-text = "[img]res://entities/fish
-ote/art/docs/xavier/Loss_bank_statement.png[/img]"
+text = "[img]res://entities/fish/note/art/docs/xavier/Loss_bank_statement.png[/img]"

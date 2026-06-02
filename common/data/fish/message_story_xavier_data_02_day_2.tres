@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="MessageData" format=3 uid="uid://dw3ks1ashe1r4"]
+
+[ext_resource type="Script" uid="uid://knk2w0s0q2la" path="res://entities/fish/message/message_data.gd" id="1_n4lht"]
+
+[resource]
+script = ExtResource("1_n4lht")
+sender = "Xavier "
+recipient = "Martin "
+messages = Array[Dictionary]([{
+"LINES": [" I totally get it. However, I will be taking that TV off your hands, that's an absolute steal. "],
+"WHO": "Xavier "
+}, {
+"LINES": [" Nice! ", " Send me the cash to through Chipps and I'll bring it to your home. ", " Also where did you live again? "],
+"WHO": "Martin "
+}, {
+"LINES": [" My address was 21rd Parkstreet Blvd. "],
+"WHO": "Xavier "
+}, {
+"LINES": [" Nice, I'll bring it tomorrow around 11:00. ", " You had that ugly yellow mailbox, right? "],
+"WHO": "Martin "
+}, {
+"LINES": [" Yup. "],
+"WHO": "Martin "
+}, {
+"LINES": [" Xavier Chipped 3002 Cloudbucks to account number 410253 3707 via the Card 8203 1505 6733 2359."],
+"WHO": "SYSTEM"
+}])

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="NoteData" format=3 uid="uid://djb3pxgafkk3m"]
+
+[ext_resource type="Script" uid="uid://ckvnbenl45otq" path="res://entities/fish/note/note_data.gd" id="1_xjwt2"]
+
+[resource]
+script = ExtResource("1_xjwt2")
+text = "[b]Xavier’s Diary Entry 98.[/b] 
+ 
+ It’s been a while since I’ve written in my diary, but I have to get my thoughts together and figure out what to do going forward.  
+ 
+ I recently lost access to my bank account, which has led to my card being either deactivated or drained. I only had about 80 cloudbucks at home, which isn’t enough to cover my car's gas. I’m facing the possibility of losing my warehouse stocker job because I can't drive to my worksite. Not even one person can hitch me a ride?!  
+ 
+ The worst part is that fucking bank doesn’t believe it’s me. So they’ve cut off all communication with my IP and won’t respond. 
+ 
+ I have no choice but to ask for a refund from my friend for that TV… 
+ 
+ I also swear that I saw somebody watching me through the window..."

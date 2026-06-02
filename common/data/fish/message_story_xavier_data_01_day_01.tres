@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="MessageData" format=3 uid="uid://durjvvoav1qrt"]
+
+[ext_resource type="Script" uid="uid://knk2w0s0q2la" path="res://entities/fish/message/message_data.gd" id="1_1s7xj"]
+
+[resource]
+script = ExtResource("1_1s7xj")
+sender = "Xavier "
+recipient = "Martin "
+messages = Array[Dictionary]([{
+"LINES": [" Xavier my man, you said you wanted a TV? ", " Well, You're in luck, I plan on selling mine on Praigslist soon, but you can take it off my hands early if you give me that good ka-ching. "],
+"WHO": "Martin "
+}, {
+"LINES": [" Hell yeah I want to buy a TV, which model is it? "],
+"WHO": "Xavier "
+}, {
+"LINES": [" It's a Preuss 55\" TOS2000/4 4K LED smart TV. ", " It's market price is around 8000 cloudbucks but ill give it over for 3000 since its been used. "],
+"WHO": "Martin "
+}, {
+"LINES": [" It ain't broken, is it? That's a very large discount... "],
+"WHO": "Xavier "
+}, {
+"LINES": [" Nah, It's just alittle dusty, That's all. ", " I just haven't spent as much time watching TV in the recent months, and I need this money for something else ASAP. "],
+"WHO": "Martin "
+}, {
+"LINES": [" Data continued on seperate fish transference."],
+"WHO": "SYSTEM"
+}])

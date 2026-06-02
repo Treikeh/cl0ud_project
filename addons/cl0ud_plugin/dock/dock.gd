@@ -226,7 +226,8 @@ func _create_fish_data(data: Array[PackedStringArray]) -> void:
 			"NOTE":
 				# Get note data
 				var text: String = row[2]
-				text = text.replace("/n", "\n")
+				if not text.begins_with("[img]"):
+					text = text.replace("/n", "\n")
 				
 				fish = NoteData.new()
 				fish.text = text

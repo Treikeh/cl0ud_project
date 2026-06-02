@@ -4,5 +4,4 @@
 
 [resource]
 script = ExtResource("1_81q5n")
-text = "[b]Case no. [REDACTED] evidence[b/] [img]res://entities/fish
-ote/art/docs/xavier/apartment_burglar_cctv.png[/img]"
+text = "[img]res://entities/fish/note/art/docs/xavier/apartment_burglar_cctv.png[/img]"
