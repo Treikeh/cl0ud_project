@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ProfileBuilderUpgrade" format=3 uid="uid://cj2apfqebu6sb"]
 
-[ext_resource type="Texture2D" uid="uid://bopc0krq46by3" path="res://entities/fish/note/note_icon.png" id="1_225mt"]
+[ext_resource type="Texture2D" uid="uid://7p4bsmw0jynd" path="res://entities/characters/vendor/menu/buy_entry/art/investigation-icon-style_1134108-55659_2.png" id="1_225mt"]
 [ext_resource type="Script" uid="uid://cw2fltaspao08" path="res://common/upgrades/profile_builder_upgrade.gd" id="2_71umb"]
 
 [resource]

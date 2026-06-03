@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://3gn1kqoo470b"]
 
 [ext_resource type="Script" uid="uid://dpp8na32kj1c6" path="res://entities/characters/vendor/menu/buy_entry/buy_entry.gd" id="1_6wlvj"]
-[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="2_q7kpp"]
+[ext_resource type="Texture2D" uid="uid://dnmdb03pr7ln8" path="res://entities/characters/vendor/menu/buy_entry/art/free-database-upgrade-icon-2379-thumb_2.png" id="2_lr1ve"]
+[ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="3_ptq4r"]
 
 [node name="BuyEntry" type="PanelContainer" unique_id=208481528 node_paths=PackedStringArray("_icon", "_name_label", "_description_label", "_cost_label", "_bought_cover")]
 offset_right = 700.0
@@ -21,7 +22,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-texture = ExtResource("2_q7kpp")
+texture = ExtResource("2_lr1ve")
 expand_mode = 1
 stretch_mode = 5
 
@@ -32,17 +33,20 @@ size_flags_horizontal = 3
 [node name="NameLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1217494960]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_ptq4r")
 text = "Name"
 
 [node name="DescriptionLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1536363297]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_ptq4r")
 theme_override_font_sizes/font_size = 10
 text = "Description"
 
 [node name="CostLabel" type="Label" parent="HBoxContainer" unique_id=1986768850]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ptq4r")
 text = "{value}"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2128679921]

@@ -121,7 +121,7 @@ func _reset_rod() -> void:
 	_hook_transform.remote_path = _hook.get_path()
 	
 	#SFX
-	_reel_sfx.play_one_shot()
+	
 	Globals.stopped_fishing.emit()
 
 

@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="CalmFishUpgrade" format=3 uid="uid://yr23djyi4gd6"]
 
-[ext_resource type="Texture2D" uid="uid://cdh1uvulx0tfd" path="res://entities/fish/message/message_icon.png" id="1_pc2yy"]
+[ext_resource type="Texture2D" uid="uid://bywk0kh016f2y" path="res://entities/characters/vendor/menu/buy_entry/art/2824464_2.png" id="1_pc2yy"]
 [ext_resource type="Script" uid="uid://bcn7t44ss40pq" path="res://common/upgrades/calm_fish_upgrade.gd" id="2_y6lm2"]
 
 [resource]
 script = ExtResource("2_y6lm2")
 name = "Calm fish upgrade 03"
-description = "Makes fish calmer"
+description = "Fish are less erratic once hooked"
 icon = ExtResource("1_pc2yy")
 cost = 200
 metadata/_custom_type_script = "uid://bcn7t44ss40pq"
