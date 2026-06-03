@@ -26,9 +26,11 @@
 [ext_resource type="PackedScene" uid="uid://b5g6py28gim81" path="res://entities/fish/message/message_mesh.tscn" id="21_0doe4"]
 [ext_resource type="PackedScene" uid="uid://blh7c65i5bss1" path="res://entities/fish/note/note_mesh.tscn" id="22_418b2"]
 [ext_resource type="PackedScene" uid="uid://b3jb1ta6dleu7" path="res://entities/fish/junk/junk_mesh.tscn" id="23_pww4q"]
+[ext_resource type="Shader" uid="uid://ciln7fyam2285" path="res://environment/shaders/fisheye_shader.gdshader" id="23_x3was"]
 [ext_resource type="PackedScene" uid="uid://ca2s3mw54s4mt" path="res://levels/art/paintbucket/paintbucket.glb" id="24_418b2"]
 [ext_resource type="Shader" uid="uid://d1mgb7evsx4fs" path="res://environment/shaders/flag_shader.gdshader" id="27_bvkhb"]
 [ext_resource type="Texture2D" uid="uid://da36ajb51dm5r" path="res://environment/posters/PanopticonPoster_2.png" id="28_klxx3"]
+[ext_resource type="Texture2D" uid="uid://bytxrn26oe8hc" path="res://levels/art/cc.png" id="30_oos8u"]
 
 [sub_resource type="Curve" id="Curve_hp128"]
 _limits = [0.0, 10.0, 0.0, 24.0]
@@ -207,7 +209,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_dp1w7")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_0bpnx"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a1qjk"]
+shader = ExtResource("23_x3was")
+shader_parameter/effect_amount = 0.4350001394124998
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_x3was"]
 viewport_path = NodePath("RodHandle/RodScreen/SubViewport")
 
 [sub_resource type="Gradient" id="Gradient_klxx3"]
@@ -249,6 +255,13 @@ shader_parameter/Rotate_Deg = 3.415
 albedo_texture = ExtResource("28_klxx3")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_oos8u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lcd8i"]
+albedo_texture = ExtResource("30_oos8u")
+uv1_scale = Vector3(3.005, 1.94, 3.005)
+uv1_offset = Vector3(-0.99, -0.96, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8j51j"]
 
 [node name="MainLevel" type="Node3D" unique_id=224384734 node_paths=PackedStringArray("_day_night_cycle", "_player_marker") groups=["persistent"]]
 script = ExtResource("1_um8ys")
@@ -561,6 +574,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.11393, 3.5083036, 4.86061
 [node name="Orientation" parent="Player" index="2" unique_id=255627194]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
+[node name="ColorRect2" type="ColorRect" parent="Player/Orientation/Head/CameraRoot/Camera3D" parent_id_path=PackedInt32Array(913738857, 1569207722) index="2" unique_id=519211044]
+material = SubResource("ShaderMaterial_a1qjk")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
 [node name="RodTipAttachement" parent="Player/Orientation/Head/CameraRoot/FishingRod/HookLine" parent_id_path=PackedInt32Array(913738857, 949060003, 12906906) index="1" unique_id=1524872158]
 transform = Transform3D(0.1, 8.881784e-16, 0, 0, 0, 0.1, 8.881784e-16, -0.1, 0, 0, 0.1500001, 0)
 
@@ -568,7 +590,7 @@ transform = Transform3D(0.1, 8.881784e-16, 0, 0, 0, 0.1, 8.881784e-16, -0.1, 0, 
 transform = Transform3D(0.1, 8.881784e-16, 0, 0, 0, 0.1, 8.881784e-16, -0.1, 0, 0, 0.1500001, -0.049999237)
 
 [node name="RodScreen" parent="Player/Orientation/Head/CameraRoot/FishingRod/RodHandle" parent_id_path=PackedInt32Array(913738857, 949060003, 166742561) index="0" unique_id=167206628]
-texture = SubResource("ViewportTexture_0bpnx")
+texture = SubResource("ViewportTexture_x3was")
 
 [node name="TextureProgressBar" parent="Player/Orientation/Head/CameraRoot/FishingRod/RodHandle/RodScreen/SubViewport" parent_id_path=PackedInt32Array(913738857, 949060003, 1941168548) index="0" unique_id=1272039896]
 offset_left = -64.0
@@ -623,6 +645,11 @@ mesh = SubResource("QuadMesh_8j51j")
 transform = Transform3D(-0.35355523, -8.546769e-08, 0.020735726, -0.015176898, -4.7420468e-08, -0.48305148, 3.093724e-08, -0.99999994, 2.1134285e-08, -43.543884, 4.4919043, 0.3510058)
 material_override = SubResource("StandardMaterial3D_0bpnx")
 mesh = SubResource("PlaneMesh_oos8u")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=2073513658]
+transform = Transform3D(0.10665294, 0, -0.41267288, 0, 0.025615638, 0, 0.44159213, 0, 0.09966835, -13.853158, 3.4204328, 9.356856)
+material_override = SubResource("StandardMaterial3D_lcd8i")
+mesh = SubResource("BoxMesh_8j51j")
 
 [editable path="Player"]
 [editable path="Player/Orientation/Head/CameraRoot/FishingRod"]

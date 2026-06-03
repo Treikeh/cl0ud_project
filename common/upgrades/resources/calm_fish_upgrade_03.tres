@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CalmFishUpgrade" format=3 uid="uid://yr23djyi4gd6"]
 
-[ext_resource type="Texture2D" uid="uid://bywk0kh016f2y" path="res://entities/characters/vendor/menu/buy_entry/art/2824464_2.png" id="1_pc2yy"]
+[ext_resource type="Texture2D" uid="uid://baxs18mpjxsm6" path="res://entities/characters/vendor/menu/buy_entry/art/22-223037_fishing-icon-vector_2.png" id="1_pc2yy"]
 [ext_resource type="Script" uid="uid://bcn7t44ss40pq" path="res://common/upgrades/calm_fish_upgrade.gd" id="2_y6lm2"]
 
 [resource]
