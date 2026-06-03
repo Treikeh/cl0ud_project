@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bj5sojwv4l0ud"]
 
 [ext_resource type="PackedScene" uid="uid://bccca7e6hgcls" path="res://levels/main_level/art/PlayableArea_V2.glb" id="1_so441"]
+[ext_resource type="Texture2D" uid="uid://bwywut4dk4jk1" path="res://environment/shaders/misc_gray_01.jpg" id="2_1br15"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_so441"]
 size = Vector3(1.3000001, 1.8000001, 1)
@@ -11,6 +12,12 @@ size = Vector3(1.5, 0.8, 1)
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_so441"]
 height = 0.9
 radius = 1.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l27qr"]
+albedo_texture = ExtResource("2_1br15")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1il7u"]
+albedo_texture = ExtResource("2_1br15")
 
 [node name="PlayableArea_V2" unique_id=151361532 instance=ExtResource("1_so441")]
 
@@ -32,17 +39,23 @@ collision_layer = 8
 [node name="_StaticBody3D_72978#StaticBody3D" type="StaticBody3D" parent="." index="5" unique_id=752140432]
 collision_layer = 8
 
-[node name="qr-code-1777546684493" parent="." index="49" unique_id=421652496]
+[node name="qr-code-1777546684493" parent="." index="49" unique_id=1319903]
 visible = false
 
-[node name="playtest" parent="." index="50" unique_id=595776259]
+[node name="playtest" parent="." index="50" unique_id=1252330849]
 visible = false
 
-[node name="Vendor Sign" parent="." index="183" unique_id=882477510]
+[node name="Couch_001" parent="." index="55" unique_id=1395139477]
+material_override = SubResource("StandardMaterial3D_l27qr")
+
+[node name="Vendor Sign" parent="." index="183" unique_id=1412062504]
 transform = Transform3D(-1, 7.549791e-08, 7.549791e-08, -7.549791e-08, 0, -1, -7.549791e-08, -1, 0, -7.70155, 3.2285607, 10.727894)
 
-[node name="Cube_061" parent="." index="213" unique_id=2012330290]
+[node name="Couch" parent="." index="188" unique_id=1747167016]
+material_override = SubResource("StandardMaterial3D_1il7u")
+
+[node name="Cube_061" parent="." index="213" unique_id=847261647]
 visible = false
 
-[node name="Plane" parent="." index="219" unique_id=1662429925]
+[node name="Plane" parent="." index="219" unique_id=67283002]
 gi_mode = 2

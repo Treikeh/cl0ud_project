@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c4eq3tesunpj8"]
+
+[ext_resource type="Resource" uid="uid://biacclwkwop17" path="res://common/data/fish/note_bank_statement_xavier_day_02.tres" id="1_hr3h7"]
+[ext_resource type="Texture2D" uid="uid://bopc0krq46by3" path="res://entities/fish/note/note_icon.png" id="2_gsqwa"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_5u67k"]
+
+[resource]
+script = ExtResource("3_5u67k")
+name = ""
+value = 10
+type = "NOTE"
+icon = ExtResource("2_gsqwa")
+mesh_scene = "res://entities/fish/note/note_mesh.tscn"
+fish_data = ExtResource("1_hr3h7")

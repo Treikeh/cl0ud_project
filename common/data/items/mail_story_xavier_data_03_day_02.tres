@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ktw5xx6naaw4"]
+
+[ext_resource type="Resource" uid="uid://bwn5ww6wqfagp" path="res://common/data/fish/mail_story_xavier_data_03_day_02.tres" id="1_yf51p"]
+[ext_resource type="Texture2D" uid="uid://konw78nn60up" path="res://entities/fish/mail/mail_icon.png" id="2_c3g5q"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_pmqo3"]
+
+[resource]
+script = ExtResource("3_pmqo3")
+name = "Mail Fish \"Xavier Bank Account Recovery\" Part 3"
+value = 10
+type = "MAIL"
+icon = ExtResource("2_c3g5q")
+mesh_scene = "res://entities/fish/mail/mail_mesh.tscn"
+fish_data = ExtResource("1_yf51p")

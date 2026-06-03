@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="MessageData" format=3 uid="uid://1p0tlyuo25id"]
+
+[ext_resource type="Script" uid="uid://knk2w0s0q2la" path="res://entities/fish/message/message_data.gd" id="1_gv8s6"]
+
+[resource]
+script = ExtResource("1_gv8s6")
+sender = "Ellie "
+recipient = "Anil "
+messages = Array[Dictionary]([{
+"LINES": [" Hello honey. ", " Do you have a minute? ", " "],
+"WHO": "Ellie "
+}, {
+"LINES": [" Anytime, babe, what's going on? "],
+"WHO": "Anil "
+}, {
+"LINES": [" I have some really bad news... ", " I have been fired from my job...  "],
+"WHO": "Ellie "
+}, {
+"LINES": [" Oh no, babe. ", " That's horrible. ", " How did you get fired? "],
+"WHO": "Anil "
+}, {
+"LINES": [" There was a large data breach at Aravoy, and somebody had gotten their hands on my information to gain backdoor access. ", " We failed to stop the data breach within 2 hours. ", " They pulled some clauses from my work contract, the ones I hoped they would never use. ", " I got my termination notice not so long ago... ", " Honey, I'm shaking and feeling awful, even more so when I am surrounded by people... ", " Can you come home? "],
+"WHO": "Ellie "
+}, {
+"LINES": [" Of course. I'm on my way home as we text. "],
+"WHO": "Anil "
+}])

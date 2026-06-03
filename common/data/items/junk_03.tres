@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://vv7p6vje61wb"]
+
+[ext_resource type="Resource" uid="uid://dyu8adti0prln" path="res://common/data/fish/junk_data_ad_02.tres" id="1_5dbow"]
+[ext_resource type="Texture2D" uid="uid://dqc0qqx14avd2" path="res://entities/fish/junk/junk_icon.png" id="2_ilvm8"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_303eo"]
+
+[resource]
+script = ExtResource("3_303eo")
+name = "Junk 3"
+description = "Junk"
+value = 1
+type = "JUNK"
+icon = ExtResource("2_ilvm8")
+mesh_scene = "res://entities/fish/junk/junk_mesh.tscn"
+fish_data = ExtResource("1_5dbow")

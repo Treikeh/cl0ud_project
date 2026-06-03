@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MessageData" format=3 uid="uid://cgdynpsalgvjk"]
+
+[ext_resource type="Script" uid="uid://knk2w0s0q2la" path="res://entities/fish/message/message_data.gd" id="1_vkjv7"]
+
+[resource]
+script = ExtResource("1_vkjv7")
+sender = "Gideon "
+recipient = "Jordan "
+messages = Array[Dictionary]([{
+"LINES": [" Jordan? ", " Do you copy? ", " I lost connection due to an signal jammer they deployed. ", " Fuck we lost so many. ", " It's just me and Molly left in squadron 1. ", " I don't typically want to do this but shit is hitting the fan, and I've lost contact with Squadron 3 and 5. ", " Emergency regrouping at in my personal home. ", " It's the 77th Fairdon street. ", " I think we've might have our communications leaked previously, which means we gotta go to somewhere unexpected. ", " Please try to get contact with Squadron 6 in person to relay this information. ", " Please respond. ", " Gideon out."],
+"WHO": "Gideon "
+}])

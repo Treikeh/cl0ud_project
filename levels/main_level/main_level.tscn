@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cuemsjrkpvwxh" path="res://environment/lights/automatic_omni_light.tscn" id="14_oqmyk"]
 [ext_resource type="Shader" uid="uid://d1wyxea5aaolm" path="res://environment/shaders/fire_shader.gdshader" id="15_2f633"]
 [ext_resource type="PackedScene" uid="uid://2ubaxhpyylwj" path="res://levels/art/crane/Crane.glb" id="16_2f633"]
+[ext_resource type="PackedScene" uid="uid://rbxdptqx6skw" path="res://entities/characters/vendor/art/character_01_sk.tscn" id="16_lcd8i"]
 [ext_resource type="PackedScene" uid="uid://bio2e7voof108" path="res://entities/profile_wall/profile_wall.tscn" id="17_224rj"]
 [ext_resource type="PackedScene" uid="uid://bjae0sst12e6s" path="res://levels/main_level/art/HorizonBuildings/HorizonBuildings.glb" id="17_ddgsd"]
 [ext_resource type="PackedScene" uid="uid://b0l8syuol7cs4" path="res://entities/profile_printer/profile_printer.tscn" id="18_5gklf"]
@@ -531,12 +532,16 @@ transform = Transform3D(0.7756672, 0, 0, 0, 0.52483594, 0, 0, 0, 0.67962694, -14
 [node name="BuildingFour2" parent="Envronment/Background" unique_id=24470614 instance=ExtResource("20_xpbmc")]
 transform = Transform3D(0.7756672, 0, 0, 0, 0.52483594, 0, 0, 0, 0.67962694, -223.64597, -86.458, -171.56708)
 
+[node name="character_01_sk" parent="Envronment" unique_id=581165237 instance=ExtResource("16_lcd8i")]
+transform = Transform3D(-0.98244715, 0, 0.18654117, 0, 1, 0, -0.18654117, 0, -0.98244715, 24.503597, 9.404176, -117.71566)
+
 [node name="System" type="Node3D" parent="." unique_id=415321137]
 
 [node name="MainFishArea" parent="System" unique_id=1857351977 instance=ExtResource("4_sj11d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.602, -12.63784, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="System/MainFishArea" unique_id=2136580904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.223707, 0, 0)
 shape = SubResource("BoxShape3D_sj11d")
 debug_color = Color(0, 1, 0, 0.41960785)
 

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://lrbm6c3vqhay"]
+
+[ext_resource type="Resource" uid="uid://4saomlqfoyjo" path="res://common/data/fish/mail_story_ellie_data_02_day_02.tres" id="1_6x47h"]
+[ext_resource type="Texture2D" uid="uid://konw78nn60up" path="res://entities/fish/mail/mail_icon.png" id="2_476ij"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_iihdc"]
+
+[resource]
+script = ExtResource("3_iihdc")
+name = ""
+value = 16
+type = "MAIL"
+icon = ExtResource("2_476ij")
+mesh_scene = "res://entities/fish/mail/mail_mesh.tscn"
+fish_data = ExtResource("1_6x47h")

@@ -16,6 +16,6 @@ messages = Array[Dictionary]([{
 "LINES": [" I insist! ", " Can we at least feed you and your comrades? ", " We are planning on having a neighborhood-wide dumpling dinner. ", " Atleast come and taste them! "],
 "WHO": "Anonymous Resident of Cloud City "
 }, {
-"LINES": [" Now, there is an offer I can take up, they are my favorite dinner. "],
+"LINES": [" Now, there is an offer I can take up, they are my favorites meal afterall."],
 "WHO": "Gideon "
 }])

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="MessageData" format=3 uid="uid://ccjkdkce6qijv"]
+
+[ext_resource type="Script" uid="uid://knk2w0s0q2la" path="res://entities/fish/message/message_data.gd" id="1_8ff1u"]
+
+[resource]
+script = ExtResource("1_8ff1u")
+sender = "Andy "
+recipient = "Ellie "
+messages = Array[Dictionary]([{
+"LINES": [" Ellie! We need you to log into the firewall and help us identify a breach immediately. "],
+"WHO": "Andy "
+}, {
+"LINES": [" What? ", " Is it happening right now? "],
+"WHO": "Ellie "
+}, {
+"LINES": [" We have no time for details. ", " You are our senior cybersecurity analyst for Aravoy. ", " We need you logged in asap. "],
+"WHO": "Andy "
+}, {
+"LINES": [" Yes, sir, I’ll log in as quickly as possible. "],
+"WHO": "Ellie "
+}, {
+"LINES": [" It's getting bad Ellie! ", " For fuck's sake hurry up!"],
+"WHO": "Andy "
+}])

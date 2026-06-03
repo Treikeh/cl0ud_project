@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cf5mdbjcwyvbt"]
+
+[ext_resource type="Resource" uid="uid://nfgakdi4qmqx" path="res://common/data/fish/message_story_Xavier_data_02_day_2.tres" id="1_t8tej"]
+[ext_resource type="Texture2D" uid="uid://cdh1uvulx0tfd" path="res://entities/fish/message/message_icon.png" id="2_fa4s0"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_0fb8b"]
+
+[resource]
+script = ExtResource("3_0fb8b")
+name = "Message Fish \"Xavier Transaction\" Part 2"
+description = "Part 2 of an important message fish containing the conversation between Xavier and Martin."
+value = 8
+type = "MESSAGE"
+icon = ExtResource("2_fa4s0")
+mesh_scene = "res://entities/fish/message/message_mesh.tscn"
+fish_data = ExtResource("1_t8tej")

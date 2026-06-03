@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="NoteData" format=3 uid="uid://i4l8ymnvoxh0"]
+
+[ext_resource type="Script" uid="uid://ckvnbenl45otq" path="res://entities/fish/note/note_data.gd" id="1_7spe6"]
+
+[resource]
+script = ExtResource("1_7spe6")
+text = "Shit, it's over. 
+ 
+ We had a good run, but now it’s come to an end. 
+ 
+ We got ambushed outside my home as well. Molly is dead, Jordan is dead, and Teagan is dead. I haven’t heard from the other squadron leaders as well. 
+ 
+ If you’re reading this note, I assume you’re either a Smog-Rider, a Los Sangrientos scumbag, or the fucker that tapped our communications. So, let me lay it out like this. 
+ 
+ If you are a Los Sangrientos dirtbag, then fuck you. Hope I see you in hell. I’ve worked as a garbage man for over 20 years, and the most vile piece of trash I have taken out has always been your kind. 
+ 
+ If you are Smog-Rider reading this, then you have prepared for what is to happen next. You are to lie low and contact Thea, who is my successor. You are to disband the smog-riders for now, until the heat on our group has gone away. Don’t look for me or try to save me because I’m probably dead anyway. I hear them banging at my door, and that gun wound in my leg is squirting like a red fountain. 
+ 
+ Lastly, if you are the person who has tapped this network, then I ask this. Why? Why did you do this? You might not have known or cared for who I am, but if you had any good in your heart, then you’d know that the Smog-Riders are decent folk, protecting even more decent folk. Cloud City is a cold and heartless place, but we tried our best to warm our section of it and to push out the wickedness that infested our homes. Our work will probably crumble away and leave the world worse for it because of this failed operation. You… you… motherfuckerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr. 
+ 
+ [b]SYSTEM MESSAGE: DEVICE POWER DEPLETED, NOTE EDITING STOPPED.[/b]"

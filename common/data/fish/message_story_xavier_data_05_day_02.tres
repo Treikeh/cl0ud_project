@@ -19,7 +19,7 @@ messages = Array[Dictionary]([{
 "LINES": [" Nah, I’m sorry. ", " But can’t you ask your parents or family? "],
 "WHO": "Martin "
 }, {
-"LINES": [" Nah, I don’t like talking to my family. ", " They’re the reason I moved to Cloud City, remember? ", " Besides, they wouldn’t give me that money anyway. "],
+"LINES": [" Nah, I don’t like talking to my family. ", " They’re don't understand me and is the reason I moved to Cloud City, remember? ", " Besides, they wouldn’t give me that money anyway. "],
 "WHO": "Xavier "
 }, {
 "LINES": [" Damn. ", " Sorry to hear that, but I do have some cans of food I could give you instead. ", " It might not help pay your rent, but it might keep you full for some days. ", " I'll bring them over tomorrow sometime."],

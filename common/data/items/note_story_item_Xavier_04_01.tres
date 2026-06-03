@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b3pis3bq5c3yb"]
+
+[ext_resource type="Resource" uid="uid://cpfxgynilr2qr" path="res://common/data/fish/note_cctv_xavier_day_02.tres" id="1_l2i08"]
+[ext_resource type="Texture2D" uid="uid://bopc0krq46by3" path="res://entities/fish/note/note_icon.png" id="2_sf7vo"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_6ebwn"]
+
+[resource]
+script = ExtResource("3_6ebwn")
+name = ""
+value = 7
+type = "NOTE"
+icon = ExtResource("2_sf7vo")
+mesh_scene = "res://entities/fish/note/note_mesh.tscn"
+fish_data = ExtResource("1_l2i08")

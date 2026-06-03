@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="MessageData" format=3 uid="uid://dwosa8d171gcl"]
+
+[ext_resource type="Script" uid="uid://knk2w0s0q2la" path="res://entities/fish/message/message_data.gd" id="1_mqdsv"]
+
+[resource]
+script = ExtResource("1_mqdsv")
+sender = "Jordan "
+recipient = "Gideon "
+messages = Array[Dictionary]([{
+"LINES": [" Gideon... ", " Fuck... ", " Are you alive? "],
+"WHO": "Jordan "
+}, {
+"LINES": [" Shit, Jordan, what's going on? What's your guys status? "],
+"WHO": "Gideon "
+}, {
+"LINES": [" They're all dead. ", " We got fucking ambushed two blocks ahead. ", " They knew! "],
+"WHO": "Jordan "
+}, {
+"LINES": [" Shit. Retreat if you can, we can't lose you Jordan. ", " I've given the order to my squadron to break off and - "],
+"WHO": "Gideon "
+}, {
+"LINES": [" I'm stuck in this apartment. My cloud respirator got hit, so I'll need to go to higher ground. ", " Do you copy? ", " Gideon?"],
+"WHO": "Jordan "
+}])

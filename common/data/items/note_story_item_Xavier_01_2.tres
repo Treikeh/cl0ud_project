@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c1hg3x6shn65p"]
+
+[ext_resource type="Resource" uid="uid://csx1nef8bt4ra" path="res://common/data/fish/note_police_report_xavier_day_03.tres" id="1_30aad"]
+[ext_resource type="Texture2D" uid="uid://bopc0krq46by3" path="res://entities/fish/note/note_icon.png" id="2_sj2by"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_asp88"]
+
+[resource]
+script = ExtResource("3_asp88")
+name = ""
+value = 12
+type = "NOTE"
+icon = ExtResource("2_sj2by")
+mesh_scene = "res://entities/fish/note/note_mesh.tscn"
+fish_data = ExtResource("1_30aad")

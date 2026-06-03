@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="MailData" format=3 uid="uid://lk6h6qxnl2uk"]
+
+[ext_resource type="Script" uid="uid://bgk7ttf5teu14" path="res://entities/fish/mail/mail_data.gd" id="1_h757g"]
+
+[resource]
+script = ExtResource("1_h757g")
+from = "Aravoy C-suite "
+to = "Ellie "
+subject = "Immediate Termination Notice "
+content = " Hello Ellie. 
+ 
+ We here at Aravoy Incorporated are entrusted by other corporations to safeguard their data and to provide an adequate service to them. However, earlier today, due to a third party utilizing an backdoor access via your login information, a major data breach occurred, and you and your department were unable to close it within 2 hours. 
+ 
+ It is estimated that data worth over 501,321,000 cloudbucks has been leaked and or lost. This, alongside your personal data being utilized to breach the network, is a clear breach of the work contract sections 592 and 595 relating to providing a good work efficiency and preventing personal data from negatively affecting Aravoy's property and assets. 
+ 
+ We are left no choice but to terminate your employment here at Aravoy Incorporated. Your personal belongings at your desk will be shipped to your home at your expense, in accordance with clause 712 of your work contract, within 2-5 business days. 
+ 
+ We thank you for your 8 years of employment with us out of your 26 years alive and hope you understand. 
+ 
+ -Aravoy C-suite representatives. "
