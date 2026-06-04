@@ -32,6 +32,8 @@
 [ext_resource type="Shader" uid="uid://d1mgb7evsx4fs" path="res://environment/shaders/flag_shader.gdshader" id="27_bvkhb"]
 [ext_resource type="Texture2D" uid="uid://da36ajb51dm5r" path="res://environment/posters/PanopticonPoster_2.png" id="28_klxx3"]
 [ext_resource type="Texture2D" uid="uid://bytxrn26oe8hc" path="res://levels/art/cc.png" id="30_oos8u"]
+[ext_resource type="Texture2D" uid="uid://c0ns0u4y0srhy" path="res://environment/posters/CLOUD_Poster_5.png" id="32_v1sad"]
+[ext_resource type="Texture2D" uid="uid://bh587k52ofq55" path="res://environment/posters/CLOUD_Poster_4.png" id="33_awk15"]
 
 [sub_resource type="Curve" id="Curve_hp128"]
 _limits = [0.0, 10.0, 0.0, 24.0]
@@ -214,7 +216,7 @@ shadow_mesh = SubResource("ArrayMesh_dp1w7")
 shader = ExtResource("23_x3was")
 shader_parameter/effect_amount = 0.4350001394124998
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_x3was"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_v1sad"]
 viewport_path = NodePath("RodHandle/RodScreen/SubViewport")
 
 [sub_resource type="Gradient" id="Gradient_klxx3"]
@@ -252,10 +254,30 @@ shader_parameter/Rotate_Deg = 3.415
 
 [sub_resource type="QuadMesh" id="QuadMesh_8j51j"]
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_awk15"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xqrui"]
+viewport_path = NodePath("TVScreen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e26ov"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_xqrui")
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_2mp7r"]
+file = "res://environment/video/trailer_edited_nosound.ogg"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0bpnx"]
 albedo_texture = ExtResource("28_klxx3")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_oos8u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6lke2"]
+albedo_texture = ExtResource("32_v1sad")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_e26ov"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2mp7r"]
+albedo_texture = ExtResource("33_awk15")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lcd8i"]
 albedo_texture = ExtResource("30_oos8u")
@@ -595,7 +617,7 @@ transform = Transform3D(0.1, 8.881784e-16, 0, 0, 0, 0.1, 8.881784e-16, -0.1, 0, 
 transform = Transform3D(0.1, 8.881784e-16, 0, 0, 0, 0.1, 8.881784e-16, -0.1, 0, 0, 0.1500001, -0.049999237)
 
 [node name="RodScreen" parent="Player/Orientation/Head/CameraRoot/FishingRod/RodHandle" parent_id_path=PackedInt32Array(913738857, 949060003, 166742561) index="0" unique_id=167206628]
-texture = SubResource("ViewportTexture_x3was")
+texture = SubResource("ViewportTexture_v1sad")
 
 [node name="TextureProgressBar" parent="Player/Orientation/Head/CameraRoot/FishingRod/RodHandle/RodScreen/SubViewport" parent_id_path=PackedInt32Array(913738857, 949060003, 1941168548) index="0" unique_id=1272039896]
 offset_left = -64.0
@@ -646,9 +668,37 @@ transform = Transform3D(-4.262991, -0.10522508, 0.9560412, 8.693394, -0.05159974
 material_override = SubResource("ShaderMaterial_lcd8i")
 mesh = SubResource("QuadMesh_8j51j")
 
+[node name="TVScreen" type="MeshInstance3D" parent="." unique_id=931800812]
+transform = Transform3D(0.4, 0, 0, 0, -9.8350625e-09, -0.225, 0, 0.225, -9.8350625e-09, -42.216797, 3.4299111, -4.17507)
+mesh = SubResource("PlaneMesh_awk15")
+surface_material_override/0 = SubResource("StandardMaterial3D_e26ov")
+
+[node name="SubViewport" type="SubViewport" parent="TVScreen" unique_id=129401959]
+size = Vector2i(1920, 1080)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="TVScreen/SubViewport" unique_id=1135782306]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="TVScreen/SubViewport/SubViewportContainer" unique_id=2023306205]
+layout_mode = 2
+stream = SubResource("VideoStreamTheora_2mp7r")
+autoplay = true
+loop = true
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1023046773]
-transform = Transform3D(-0.35355523, -8.546769e-08, 0.020735726, -0.015176898, -4.7420468e-08, -0.48305148, 3.093724e-08, -0.99999994, 2.1134285e-08, -43.543884, 4.4919043, 0.3510058)
+transform = Transform3D(-1.5482842e-08, 0.99999976, -2.2040672e-08, -0.0023964169, -4.5881258e-08, -0.48348522, -0.35387266, -4.34419e-08, 0.0032741558, -51.229404, 4.416695, -1.8703495)
 material_override = SubResource("StandardMaterial3D_0bpnx")
+mesh = SubResource("PlaneMesh_oos8u")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1497921342]
+transform = Transform3D(0.3538015, 1.7575127e-07, 0.010235268, 0.0074913944, -4.1850896e-08, -0.48338795, -6.186754e-08, 0.99999976, -2.2029075e-08, -41.750164, 4.3220663, -4.8386564)
+material_override = SubResource("StandardMaterial3D_6lke2")
+mesh = SubResource("PlaneMesh_e26ov")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=280918007]
+transform = Transform3D(4.6388433e-08, -0.99999976, 2.2482059e-08, 0.007491394, -4.18509e-08, -0.48338795, 0.3538015, 1.320399e-07, 0.010235267, -40.20907, 4.1522393, -3.1291547)
+material_override = SubResource("StandardMaterial3D_2mp7r")
 mesh = SubResource("PlaneMesh_oos8u")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=2073513658]

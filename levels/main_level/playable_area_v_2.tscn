@@ -48,6 +48,9 @@ visible = false
 [node name="Couch_001" parent="." index="55" unique_id=1395139477]
 material_override = SubResource("StandardMaterial3D_l27qr")
 
+[node name="Cube_083" parent="." index="61" unique_id=354529939]
+transform = Transform3D(0.42973813, 0, 0, 0, 0.25174934, 0, 0, 0, 0.28741392, -42.221275, 3.425653, -4.4647756)
+
 [node name="Vendor Sign" parent="." index="183" unique_id=1412062504]
 transform = Transform3D(-1, 7.549791e-08, 7.549791e-08, -7.549791e-08, 0, -1, -7.549791e-08, -1, 0, -7.70155, 3.2285607, 10.727894)
 
