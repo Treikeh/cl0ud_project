@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dv83houjus4rf"]
+
+[ext_resource type="Resource" uid="uid://dwosa8d171gcl" path="res://common/data/fish/message_story_gideon_data_01_day_03.tres" id="1_tmult"]
+[ext_resource type="Texture2D" uid="uid://cdh1uvulx0tfd" path="res://entities/fish/message/message_icon.png" id="2_uexsc"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_wc33y"]
+
+[resource]
+script = ExtResource("3_wc33y")
+name = "Message Fish \"Gideon Failed Raid\" Part 1"
+value = 14
+type = "MESSAGE"
+icon = ExtResource("2_uexsc")
+mesh_scene = "res://entities/fish/message/message_mesh.tscn"
+fish_data = ExtResource("1_tmult")

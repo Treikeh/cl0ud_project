@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d37cjvccoplal"]
+
+[ext_resource type="Resource" uid="uid://1p0tlyuo25id" path="res://common/data/fish/message_story_ellie_data_02_day_03.tres" id="1_liat8"]
+[ext_resource type="Texture2D" uid="uid://cdh1uvulx0tfd" path="res://entities/fish/message/message_icon.png" id="2_0ebi3"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_0wp48"]
+
+[resource]
+script = ExtResource("3_0wp48")
+name = "Message Fish \"Ellie's Termination\" Part 2"
+value = 13
+type = "MESSAGE"
+icon = ExtResource("2_0ebi3")
+mesh_scene = "res://entities/fish/message/message_mesh.tscn"
+fish_data = ExtResource("1_liat8")

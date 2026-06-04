@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ba6hddql4uqoh"]
+
+[ext_resource type="Resource" uid="uid://s77gr6vl83i5" path="res://common/data/fish/mail_story_gideon_data_01_day_02.tres" id="1_3xx1e"]
+[ext_resource type="Texture2D" uid="uid://konw78nn60up" path="res://entities/fish/mail/mail_icon.png" id="2_5ypmj"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_emsqi"]
+
+[resource]
+script = ExtResource("3_emsqi")
+name = "Mail Fish \"Gideon Pre-Raid Announcements\""
+value = 13
+type = "MAIL"
+icon = ExtResource("2_5ypmj")
+mesh_scene = "res://entities/fish/mail/mail_mesh.tscn"
+fish_data = ExtResource("1_3xx1e")

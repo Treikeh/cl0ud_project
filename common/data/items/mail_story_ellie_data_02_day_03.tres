@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dooucu1y1axnt"]
+
+[ext_resource type="Resource" uid="uid://lk6h6qxnl2uk" path="res://common/data/fish/mail_story_ellie_data_02_day_03.tres" id="1_e537s"]
+[ext_resource type="Texture2D" uid="uid://konw78nn60up" path="res://entities/fish/mail/mail_icon.png" id="2_wueke"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_bvfc5"]
+
+[resource]
+script = ExtResource("3_bvfc5")
+name = "Mail Fish \"Ellie's Termination\" Part 1"
+value = 11
+type = "MAIL"
+icon = ExtResource("2_wueke")
+mesh_scene = "res://entities/fish/mail/mail_mesh.tscn"
+fish_data = ExtResource("1_e537s")

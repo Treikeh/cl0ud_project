@@ -130,7 +130,7 @@ fractal_octaves = 2
 fractal_gain = 0.62
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sj11d"]
-size = Vector3(100, 10, 200)
+size = Vector3(211.75928, 10, 403.34412)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t80xa"]
 size = Vector3(163.93579, 48.86328, 287.65234)
@@ -563,7 +563,7 @@ transform = Transform3D(-0.98244715, 0, 0.18654117, 0, 1, 0, -0.18654117, 0, -0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.602, -12.63784, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="System/MainFishArea" unique_id=2136580904]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.223707, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.006666, 0, -39.606537)
 shape = SubResource("BoxShape3D_sj11d")
 debug_color = Color(0, 1, 0, 0.41960785)
 

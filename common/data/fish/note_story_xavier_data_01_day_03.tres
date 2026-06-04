@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="NoteData" format=3 uid="uid://8meka0w78lor"]
+
+[ext_resource type="Script" uid="uid://ckvnbenl45otq" path="res://entities/fish/note/note_data.gd" id="1_hrvmq"]
+
+[resource]
+script = ExtResource("1_hrvmq")
+text = "[b]APARTMENT AUDIO TRANSCRIPT RECORDING INITATED[/b] 
+ 
+ *Apartment Door Closing* “Shit shit f-fuck, w-who… they got h-him. M-Martin got shot, he… ah shit shit shit…” *Knocking on Apartment Door* “I know you’re in there! You fucking immigrant!” *Banging on Apartment Door* *Gun Shots* 
+ 
+ [b]AUDIO DEEMED TO INDICATE AN ASSAULT AND/OR HOME INVASION IN PROGRESS…[/b]
+ [b]CALLING LAW ENFORCEMENT…[/b][b]DUE TO APARTMENT LOCATION: LAW ENFORCEMENT EXPECTED TO ARRIVE IN 9999 DAYS…[/b] 
+ 
+ “FUCK ME, you can afford one of those personal house AIs? HUH?! You’re in league with the fuckers who are peddling machines to TAKE OUR JOBS. Because that’s what you do, OUTSIDER, you take OUR JOBS! JUST LIKE MACHINES! … Just come out already and fucking die!” *Banging on Apartment Door* “L-leave me, please! Y-you’re not getting in! Not in a million years-” *Loud impact noise* “F-fuck.” *Running* 
+ 
+ [b]SWITCHING TO LIVING ROOM AUDIO TRANSCRIPTOR.[/b]"

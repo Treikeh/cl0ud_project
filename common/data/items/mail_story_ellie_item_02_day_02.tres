@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bcdxhtjqjkm8p"]
+
+[ext_resource type="Resource" uid="uid://4saomlqfoyjo" path="res://common/data/fish/mail_story_ellie_data_02_day_02.tres" id="1_gn43n"]
+[ext_resource type="Texture2D" uid="uid://konw78nn60up" path="res://entities/fish/mail/mail_icon.png" id="2_luri4"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_ww7yb"]
+
+[resource]
+script = ExtResource("3_ww7yb")
+name = "Mail Fish \"Ellie Manager Mails\" Part 2"
+value = 16
+type = "MAIL"
+icon = ExtResource("2_luri4")
+mesh_scene = "res://entities/fish/mail/mail_mesh.tscn"
+fish_data = ExtResource("1_gn43n")

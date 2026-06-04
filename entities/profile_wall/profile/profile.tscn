@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://1twaxsgrm048"]
 
 [ext_resource type="Script" uid="uid://cgma3bovrjc8o" path="res://entities/profile_wall/profile/profile.gd" id="1_n75v3"]
-[ext_resource type="Texture2D" uid="uid://dfp8es2k28jgu" path="res://icon.svg" id="2_ggaso"]
 [ext_resource type="Resource" uid="uid://dtuqk7gfy0m0v" path="res://common/data/profiles/ryan.tres" id="3_snl7a"]
 [ext_resource type="Resource" uid="uid://17idptkdwye8" path="res://common/data/profiles/xavier.tres" id="4_slck1"]
 [ext_resource type="Resource" uid="uid://cjdwlnjswm2rt" path="res://common/data/profiles/davy.tres" id="5_2ew2u"]
@@ -11,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://b7p3tehskbsu0" path="res://common/data/profiles/rebecca.tres" id="8_b6dpe"]
 [ext_resource type="Resource" uid="uid://cmfp3ncku1m7" path="res://common/data/profiles/harris_goodwill.tres" id="9_snwj1"]
 [ext_resource type="Resource" uid="uid://dhwpx8xpqggbk" path="res://common/data/profiles/cornelius_mctaro.tres" id="10_35jla"]
+[ext_resource type="Texture2D" uid="uid://dusgnikt1f2ks" path="res://entities/profile_wall/item_entry/art/name_icon.png" id="11_2ew2u"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ew2u"]
 
@@ -46,7 +46,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1567969111]
 layout_mode = 2
-texture = ExtResource("2_ggaso")
+texture = ExtResource("11_2ew2u")
 stretch_mode = 5
 
 [node name="NameLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1637496359]

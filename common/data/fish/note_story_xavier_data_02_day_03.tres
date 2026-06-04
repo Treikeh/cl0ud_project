@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NoteData" format=3 uid="uid://twdy8hddso1o"]
+
+[ext_resource type="Script" uid="uid://ckvnbenl45otq" path="res://entities/fish/note/note_data.gd" id="1_lqk1q"]
+
+[resource]
+script = ExtResource("1_lqk1q")
+text = "[b]LIVING ROOM AUDIO TRANSCRIPT RECORDING INITATED[/b] 
+ 
+ *Running* *Running* *Shuffle/Trip* “A-augh! Shit!” *Shuffling* *Running*  
+ 
+ [b] SWITCHING TO BEDROOM AUDIO TRANSCRIPTOR… [/b] *Door Slammed shut* *Banging on Bedroom Door* “ANOTHER FUCKING DOOR? JUST HIDING ARE WE? COWARDLY, LIKE YOUR PEOPLE ARE KNOWN FOR!“ *Gun Shots* “Nobody will come and save your ass. You have no family nor friends. None that you like or that are alive! You said so yourself!” *Shuffling* *Rummaging* *Opening Case* *Cocks Gun* “f-fuck me, I gotta s-stop shaking.” *Shuffling* *Banging on Bedroom Door* *Gunshots* … *Silence* *Gun Shots* *Gun Shots* *Silence* 
+ 
+ AUDIO TRANSCRIPT ENDED DUE TO DAMAGED DEVICE. "

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://qqx5n1ppikhr"]
+
+[ext_resource type="Resource" uid="uid://bs2k3wwd1rcjx" path="res://common/data/fish/message_story_gideon_data_01_day_02.tres" id="1_tmoei"]
+[ext_resource type="Texture2D" uid="uid://cdh1uvulx0tfd" path="res://entities/fish/message/message_icon.png" id="2_6104v"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_mm8nd"]
+
+[resource]
+script = ExtResource("3_mm8nd")
+name = "Message Fish \"Gideon Questioning\""
+value = 9
+type = "MESSAGE"
+icon = ExtResource("2_6104v")
+mesh_scene = "res://entities/fish/message/message_mesh.tscn"
+fish_data = ExtResource("1_tmoei")

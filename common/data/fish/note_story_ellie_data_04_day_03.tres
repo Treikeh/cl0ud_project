@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NoteData" format=3 uid="uid://c3lrdg7fbngxl"]
+
+[ext_resource type="Script" uid="uid://ckvnbenl45otq" path="res://entities/fish/note/note_data.gd" id="1_3uu5m"]
+
+[resource]
+script = ExtResource("1_3uu5m")
+text = "[b]My Diary. 11/4/2036.[/b] I don’t know where to start… So, I’ll start with some bad news… 
+ 
+ I have been fired from my job at Aravoy due to misconduct and inability to perform my work contract. There was a serious data breach that caused several million cloud bucks in damage. Middle management needed someone to pin the blame on, so that became me. And I thought my luck was turning around finally. I have been crying for hours. I’ve been trying to calm myself with some of my favorite games on my Cloudtendo device until Anil could get home… My dream job, my dream home, and my 2-year-old daughter, who knows what will happen? 
+ 
+ We will have to move. Somewhere less safe. We can’t afford to give private education to sweet little Julie. I don’t know what to do… Without stable income… We will have to undergo so much change… 
+ 
+ I’m not ready for that. It’s not fair. I… I can’t write anymore. "

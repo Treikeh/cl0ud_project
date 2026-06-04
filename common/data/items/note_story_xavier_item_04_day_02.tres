@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://2yl8g6rt0dnv"]
+
+[ext_resource type="Resource" uid="uid://djb3pxgafkk3m" path="res://common/data/fish/note_story_xavier_data_04_day_02.tres" id="1_wmqbj"]
+[ext_resource type="Texture2D" uid="uid://bopc0krq46by3" path="res://entities/fish/note/note_icon.png" id="2_ec6al"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="3_0m2br"]
+
+[resource]
+script = ExtResource("3_0m2br")
+name = "Note Fish \"Xavier's Diary\""
+value = 14
+type = "NOTE"
+icon = ExtResource("2_ec6al")
+mesh_scene = "res://entities/fish/note/note_mesh.tscn"
+fish_data = ExtResource("1_wmqbj")

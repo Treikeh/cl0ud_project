@@ -1,20 +1,20 @@
 FILE_NAME	ITEM_NAME	DESCRIPTION	VALUE	FISH_DATA_PATH	FISHING_RARITY	FISH_POOL	ITEM_TYPE	ICON_PATH	MESH_SCENE_PATH
 mail_beerparty_fish	Mail Fish "Beer Party"	A low-value mail fish containing data on some Beer party.	4	mail_beerparty_data	160	Default			
-mail_MFC_fish	Mail Fish "MFC"	A low-value mail fishing describing a business transaction.	5	mail_MFC_data	200	Default			
+mail_MFC_fish	Mail Fish "MFC"	A low-value mail fishing describing a business transaction.	5	mail_MFC_data	500	Toilet			
 mail_companyhangout_fish	Mail Fish "Company Hangout"	a fish containing data about some company hangout.	4	mail_companyhangout_data	320	Default			
 mail_lan_invitation_fish	Mail Fish "LAN Invitation"	A fish containing data about some "LAN" invitation.	5	mail_lan_invitation_data	170	Default			
-message_exploration_fish	Message Fish "Exploration"	A low-value message fish with a conversation about exploring.	6	message_exploration_data	400	Default			
+message_exploration_fish	Message Fish "Exploration"	A low-value message fish with a conversation about exploring.	6	message_exploration_data	800	Toilet			
 message_plushheist_fish	Message Fish "Plush Heist"	The Plush Heist	5	message_plushheist_data	300	Default			
 message_ratocide_fish	Message Fish "Rat Genocide"	Dead rats :(	4	message_ratocide_data	380	Default			
 note_crazy_data_01	[color=red][shake rate=20.0 level=5 connected=1]Bloody Note Fish[/shake][/color]	[color=red][shake rate=20.0 level=5 connected=1]The Truth[/shake][/color]	8	note_meatgrinder_data	500	Toilet			
 note_birthday_fish	Note fish "Birthday Shopping"	The birthday shopping list fish	4	note_birthday_shopping_list_data	50	Default			
-note_survey_fish	Note Fish "Ranglo Survey"	A fish containing data about an survey.	6	note_surveyresults_data	500	Default			
+note_survey_fish	Note Fish "Ranglo Survey"	A fish containing data about an survey.	6	note_surveyresults_data	555	Default			
 note_digital_float_fish	Note "Digital Float Parade"	A fish containing data about some digital float parade.	4	note_digital_float_data	250	Default			
 note_city_announcement_fish	Note "City System Announcement"	A fish containing data about an system announcement regarding Cloud City.	5	note_city_announcement_data	220	Default			
 note_cornelius_reminder_fish	Note "Reminder"	A fish containing data about somebody's personal checklist.	4	note_cornelius_reminder_data	120	Default			
-junk_01	Junk 1	Junk	1	junk_data_ad_03	35	Default, Toilet			
-junk_02	Junk 2	Junk	1	junk_data_ad_01	1	Default, Toilet			
-junk_03	Junk 3	Junk	1	junk_data_ad_02	20	Default, Toilet			
+junk_01	Junk 1	Junk	1	junk_data_ad_03	50	Default, Toilet			
+junk_02	Junk 2	Junk	1	junk_data_ad_01	10	Default, Toilet			
+junk_03	Junk 3	Junk	1	junk_data_ad_02	30	Default, Toilet			
 									
 									
 message_story_item_Xavier_01_01	Message Fish "Xavier Transaction" Part 2	Part 1 of an important message fish containing the conversation between Xavier and Martin.	8	message_story_Xavier_data_01_day_01	150	Default			
@@ -22,34 +22,34 @@ message_story_item_Xavier_01_02	Message Fish "Xavier Transaction" Part 2	Part 2 
 note_story_item_Xavier_03_01			10	note_bank_statement_xavier_day_02	200	Default			
 note_story_item_Xavier_04_01			7	note_cctv_xavier_day_02	220	Default			
 note_story_item_Xavier_01_0x			12	note_police_report_xavier_day_03	250	Default			
-mail_story_gideon_data_01_day_01	Mail Fish "Gideon Upcoming Operations"		8	mail_story_gideon_data_01_day_01	270	Default			
-message_story_gideon_data_02_day_01	Message Fish "Gideon Questioning"		9	message_story_gideon_data_01_day_02	280	Default			
+mail_story_gideon_item_01_day_01	Mail Fish "Gideon Upcoming Operations"		8	mail_story_gideon_data_01_day_01	270	Default			
+message_story_gideon_item_02_day_01	Message Fish "Gideon Questioning"		9	message_story_gideon_data_01_day_02	280	Default			
 									
-mail_story_xavier_data_01_day_02	Mail Fish "Xavier Bank Account Recovery" Part 1		14	mail_story_xavier_data_01_day_02	245	Default			
-mail_story_xavier_data_02_day_02	Mail Fish "Xavier Bank Account Recovery" Part 2		12	mail_story_xavier_data_02_day_02	350	Default			
-mail_story_xavier_data_03_day_02	Mail Fish "Xavier Bank Account Recovery" Part 3		10	mail_story_xavier_data_03_day_02	320	Default			
+mail_story_xavier_item_01_day_02	Mail Fish "Xavier Bank Account Recovery" Part 1		14	mail_story_xavier_data_01_day_02	245	Default			
+mail_story_xavier_item_02_day_02	Mail Fish "Xavier Bank Account Recovery" Part 2		12	mail_story_xavier_data_02_day_02	350	Default			
+mail_story_xavier_item_03_day_02	Mail Fish "Xavier Bank Account Recovery" Part 3		10	mail_story_xavier_data_03_day_02	320	Default			
 									
-mail_story_ellie_data_01_day_02			11	mail_story_ellie_data_01_day_02	300	Default			
-mail_story_ellie_data_02_day_02			16	mail_story_ellie_data_02_day_02	365	Default			
+mail_story_ellie_item_01_day_02	Mail Fish "Ellie Manager Mails" Part 1		11	mail_story_ellie_data_01_day_02	300	Default			
+mail_story_ellie_item_02_day_02	Mail Fish "Ellie Manager Mails" Part 2		16	mail_story_ellie_data_02_day_02	365	Default			
 						Default			
-note_story_xavier_data_04_day_02			14	note_story_xavier_data_04_day_02	380	Default			
-message_story_xavier_data_05_day_02			13	message_story_xavier_data_05_day_02	400	Default			
-						Default			
-						Default			
-						Default			
-						Default			
-						Default			
-						Default			
-						Default			
+note_story_xavier_item_04_day_02	Note Fish "Xavier's Diary"		14	note_story_xavier_data_04_day_02	380	Default			
+message_story_xavier_item_05_day_02	Message Fish "Xavier Refund Conversation"		13	message_story_xavier_data_05_day_02	400	Default			
 									
+message_story_gideon_item_01_01	Message Fish "Gideon Charitable Conversation"		12	mail_story_gideon_data_01_day_01	420	Default			
+mail_story_gideon_item_02_01	Mail Fish "Gideon Pre-Raid Announcements"		13	mail_story_gideon_data_01_day_02	430	Default			
 									
+message_story_ellie_item_01_day_03	Message Fish "Ellie Data Breach"		16	message_story_ellie_data_01_day_03	450	Default			
 									
+message_story_gideon_item_01_day_03	Message Fish "Gideon Failed Raid" Part 1		14	message_story_gideon_data_01_day_03	410	Default			
+message_story_gideon_item_02_day_03	Message Fish "Gideon Failed Raid" Part 2		15	message_story_gideon_data_02_day_03	390	Default			
+note_story_gideon_item_03_day_03	Note Fish "Gideon's Last Diary"		12	note_story_gideon_data_03_day_03	310	Default			
 									
+mail_story_ellie_data_02_day_03	Mail Fish "Ellie's Termination" Part 1		11	mail_story_ellie_data_02_day_03	460	Default			
+message_story_ellie_data_02_day_03	Message Fish "Ellie's Termination" Part 2		13	message_story_ellie_data_02_day_03	470	Default			
 									
-									
-									
-									
-									
+note_cctv_misc_01				note_cctv_misc_01	490	Default			
+note_cctv_misc_02				note_cctv_misc_02	520	Default			
+note_cctv_misc_03				note_cctv_misc_03	545	Default			
 									
 									
 									
