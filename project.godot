@@ -16,7 +16,7 @@ General/should_load_by_name=true
 [application]
 
 config/name="C.L.0.U.D."
-config/version="0.0.1"
+config/version="1.0.0"
 config/tags=PackedStringArray("school")
 run/main_scene="uid://c5ekxb0gxgxo3"
 config/use_custom_user_dir=true
