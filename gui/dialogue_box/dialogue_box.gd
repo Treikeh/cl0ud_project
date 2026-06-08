@@ -4,6 +4,9 @@ extends Control
 signal dialogue_ended
 
 
+const CHOICE_SCENE: PackedScene = preload("res://gui/dialogue_box/choice_entry/choice_entry.tscn")
+
+
 @export var _name_label: Label
 @export var _text_label: Label
 @export var _dialogue_choice_container: Container
@@ -79,8 +82,7 @@ func _show_dialogue_choices() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	for i: int in _dialogue.choices.size():
 		var choice: String = _dialogue.choices[i]
-		var button := Button.new()
-		button.text = choice
+		var button: Button = CHOICE_SCENE.instantiate().with_data(choice)
 		button.pressed.connect(_on_dialogue_choice_selected.bind(button))
 		_dialogue_choice_container.add_child(button)
 	

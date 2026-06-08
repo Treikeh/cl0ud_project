@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dgpjp7pblgnxr" path="res://entities/player/hud/hud.gd" id="1_34rqw"]
 [ext_resource type="PackedScene" uid="uid://d0ftqot8bubts" path="res://entities/player/hud/fish_collected_prompt/fish_collected_prompt.tscn" id="2_6tyv5"]
+[ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="2_vflup"]
 
 [node name="Hud" type="Control" unique_id=905877039 node_paths=PackedStringArray("_interact_prompt", "_fish_collected_promtp", "_respawn_fade")]
 layout_mode = 3
@@ -24,11 +25,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -31.0
-offset_top = -11.5
+offset_top = 33.0
 offset_right = 31.0
-offset_bottom = 11.5
+offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_vflup")
 text = "Interact"
 horizontal_alignment = 1
 vertical_alignment = 1

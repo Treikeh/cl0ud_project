@@ -9,12 +9,12 @@
 [sub_resource type="Gradient" id="Gradient_yi2h0"]
 interpolation_mode = 1
 offsets = PackedFloat32Array(0, 0.16546762, 0.62589926)
-colors = PackedColorArray(1, 0, 0, 0, 0.68307734, 0.6830774, 0.68307734, 1, 1, 1, 1, 0)
+colors = PackedColorArray(0.9999998, 0.9941912, 0.9931868, 0, 0.11490468, 0.9256045, 0.42015594, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_i4ntl"]
 gradient = SubResource("Gradient_yi2h0")
-width = 80
-height = 80
+width = 400
+height = 400
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -25,8 +25,8 @@ colors = PackedColorArray(0, 0, 0, 0, 0.21230483, 0.21230483, 0.21230483, 1, 1, 
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_uffwq"]
 gradient = SubResource("Gradient_y7mac")
-width = 80
-height = 80
+width = 400
+height = 400
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -37,8 +37,8 @@ colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_yi2h0"]
 gradient = SubResource("Gradient_uffwq")
-width = 80
-height = 80
+width = 400
+height = 400
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -164,7 +164,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(5, 5)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 max_value = 180.0
 value = 30.0
@@ -192,7 +191,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(5, 5)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 step = 0.0
 value = 50.0

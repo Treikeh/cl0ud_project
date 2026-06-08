@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cl2ifbg361qrw"]
+
+[ext_resource type="FontFile" uid="uid://43p228wlk5vr" path="res://gui/art/fonts/Striker.ttf" id="1_817j0"]
+[ext_resource type="Script" uid="uid://ca48kti0bcpxe" path="res://gui/dialogue_box/choice_entry/choice_entry.gd" id="2_63hwl"]
+
+[node name="ChoiceEntry" type="Button" unique_id=1325582101]
+custom_minimum_size = Vector2(250, 0)
+offset_right = 216.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("1_817j0")
+text = "Choice"
+script = ExtResource("2_63hwl")
