@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cp8ia0unc37ak"]
+
+[ext_resource type="Texture2D" uid="uid://bp2msnup5cxhp" path="res://entities/profile_wall/item_entry/art/occupation_icon.png" id="1_e6ms2"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_occ48"]
+
+[resource]
+script = ExtResource("2_occ48")
+name = "Ellie's Occupation"
+description = "Senior Cybersecurity Analyst"
+type = "PROFILE_DATA"
+icon = ExtResource("1_e6ms2")

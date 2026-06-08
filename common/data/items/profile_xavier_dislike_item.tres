@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ctljfk64s4bfm"]
+
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="1_2pwvj"]
+
+[resource]
+script = ExtResource("1_2pwvj")
+name = "Xavier's dislikes"
+type = "PROFILE_DATA"

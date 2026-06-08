@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://j22p1erxslxo"]
+
+[ext_resource type="Texture2D" uid="uid://bp2msnup5cxhp" path="res://entities/profile_wall/item_entry/art/occupation_icon.png" id="1_ed2eu"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_76xva"]
+
+[resource]
+script = ExtResource("2_76xva")
+name = "Xavier's Occupation"
+description = "Warehouse Stocker"
+type = "PROFILE_DATA"
+icon = ExtResource("1_ed2eu")

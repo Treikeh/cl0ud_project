@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d0cw8umcmmoou"]
+
+[ext_resource type="Texture2D" uid="uid://bp2msnup5cxhp" path="res://entities/profile_wall/item_entry/art/occupation_icon.png" id="1_le714"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_kqcd6"]
+
+[resource]
+script = ExtResource("2_kqcd6")
+name = "Gideon's Occupation"
+description = "Garbage Man"
+type = "PROFILE_DATA"
+icon = ExtResource("1_le714")

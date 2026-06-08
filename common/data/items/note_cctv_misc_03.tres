@@ -6,7 +6,8 @@
 
 [resource]
 script = ExtResource("3_vbkvh")
-name = ""
+name = "cctv_footage_03"
+value = 11
 type = "NOTE"
 icon = ExtResource("2_u33ik")
 mesh_scene = "res://entities/fish/note/note_mesh.tscn"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dbrb0e7sxaxlr"]
+
+[ext_resource type="Texture2D" uid="uid://82daqa2k7gbg" path="res://entities/profile_wall/item_entry/art/address_icon.png" id="1_0fgib"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_g4vxg"]
+
+[resource]
+script = ExtResource("2_g4vxg")
+name = "Gideon's address"
+description = "77th Fairdon street"
+type = "PROFILE_DATA"
+icon = ExtResource("1_0fgib")

@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("3_6ebwn")
-name = ""
+name = "2"
 value = 7
 type = "NOTE"
 icon = ExtResource("2_sf7vo")

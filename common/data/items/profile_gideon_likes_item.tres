@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cg5b1appjp8rk"]
+
+[ext_resource type="Texture2D" uid="uid://b6tfdr370layn" path="res://entities/profile_wall/item_entry/art/like_icon.png" id="1_l2edf"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_d8wdw"]
+
+[resource]
+script = ExtResource("2_d8wdw")
+name = "Gideon's likes"
+description = "Dumplings"
+type = "PROFILE_DATA"
+icon = ExtResource("1_l2edf")

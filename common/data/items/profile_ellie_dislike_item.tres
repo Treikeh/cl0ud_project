@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bfpgro1l6l0c8"]
+
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="1_2qy3c"]
+
+[resource]
+script = ExtResource("1_2qy3c")
+name = "Ellie's dislikes"
+description = "Big Crowds of People"
+type = "PROFILE_DATA"

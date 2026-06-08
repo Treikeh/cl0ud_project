@@ -80,6 +80,7 @@ func _get_random_item_from_loot_table(type: String) -> ItemData:
 	
 	var type_loot_table: Dictionary = Globals.fish_loot_table[_loot_table][type]
 	type_loot_table.sort()
+	#print(JSON.stringify(type_loot_table, "\t"))
 	
 	# Get the total rarity of all the fish in the loot table
 	#var total_rarity: int = 0
@@ -88,16 +89,18 @@ func _get_random_item_from_loot_table(type: String) -> ItemData:
 	
 	var item_path: String = type_loot_table.keys()[0]
 	var max_roll: int = int(Globals.hook_distance)
-	var max_value: int = int(type_loot_table.values()[-1])
-	if max_roll > max_value:
-		max_roll = max_value - 1
+	#var max_value: int = int(type_loot_table.values()[-1])
+	#if max_roll > max_value:
+	#	max_roll = max_value - 1
 	var roll: int = randi_range(0, max_roll)
+	var t: int = 0
 	for item: String in type_loot_table:
 		var rarity: int = int(type_loot_table[item])
-		if roll < rarity:
+		if t >= roll:
 			item_path = item
 			print("Fish rarity: %s, Roll: %s, Hook distance: %s" % [rarity, roll, Globals.hook_distance])
 			break
+		t += rarity
 	return load(item_path)
 
 

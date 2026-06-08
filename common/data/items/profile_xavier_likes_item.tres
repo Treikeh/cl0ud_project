@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://jksdq4dt2ela"]
+
+[ext_resource type="Texture2D" uid="uid://b6tfdr370layn" path="res://entities/profile_wall/item_entry/art/like_icon.png" id="1_tht3a"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_6f82b"]
+
+[resource]
+script = ExtResource("2_6f82b")
+name = "Xavier's likes"
+type = "PROFILE_DATA"
+icon = ExtResource("1_tht3a")

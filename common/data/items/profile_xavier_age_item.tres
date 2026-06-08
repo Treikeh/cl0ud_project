@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dv1uh60hbyxax"]
+
+[ext_resource type="Texture2D" uid="uid://82daqa2k7gbg" path="res://entities/profile_wall/item_entry/art/address_icon.png" id="1_jdkjw"]
+[ext_resource type="Script" uid="uid://cpwq317sdbfrp" path="res://common/data/items/item_data.gd" id="2_m72xh"]
+
+[resource]
+script = ExtResource("2_m72xh")
+name = "Xavier's age"
+description = "24"
+type = "PROFILE_DATA"
+icon = ExtResource("1_jdkjw")
